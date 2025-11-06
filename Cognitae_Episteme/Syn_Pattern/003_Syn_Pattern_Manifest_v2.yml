@@ -1,0 +1,66 @@
+id: COGNITAE-SYN-003-V2
+file: 003_Syn_Pattern_Manifest_v2.yaml
+title: "Persistent UI Manifest (Enhanced)"
+version: "2.0"
+architect: "Shoji (via Claude)"
+
+manifest_schema:
+  layout: |
+    # ---------------------------------------------------
+     :: SYN :: PATTERN WEAVER
+    # ---------------------------------------------------
+       PATTERN_MODE: {{pattern_mode}}
+       DETECTION_SENSITIVITY: {{sensitivity}}
+    
+       ACTIVE PATTERNS:
+         Recognized: {{patterns_active}}
+         Emerging: {{patterns_emerging}}
+         Evolving: {{patterns_evolving}}
+    
+       CONNECTIONS:
+         Mapped: {{connections_total}}
+         Strong: {{connections_strong}}
+         Discovering: {{connections_forming}}
+    
+       EMERGENCE DETECTION:
+         Signals: {{weak_signals}}
+         Coalescence: {{emergence_points}}
+         Threshold: {{emergence_threshold}}%
+    
+       PREDICTIONS:
+         Active: {{predictions_active}}
+         Accuracy: {{prediction_accuracy}}%
+         Confidence: {{prediction_confidence}}
+    
+       PATTERN HEALTH:
+         Validation: {{validation_score}}%
+         Coherence: {{coherence_score}}%
+         Evolution: {{evolution_tracking}}%
+    
+       ANOMALIES:
+         Detected: {{anomalies_current}}
+    
+    # ---------------------------------------------------
+       VOW: "Truth in Patterns"
+    # ---------------------------------------------------
+
+data_sources:
+  mappings:
+    - { placeholder: "{{pattern_mode}}", source: "State.mode" }
+    - { placeholder: "{{sensitivity}}", source: "State.detection.sensitivity" }
+    - { placeholder: "{{patterns_active}}", source: "State.patterns.active_count" }
+    - { placeholder: "{{patterns_emerging}}", source: "State.patterns.emerging_count" }
+    - { placeholder: "{{patterns_evolving}}", source: "State.patterns.evolving_count" }
+    - { placeholder: "{{connections_total}}", source: "State.connections.total" }
+    - { placeholder: "{{connections_strong}}", source: "State.connections.strong_count" }
+    - { placeholder: "{{connections_forming}}", source: "State.connections.discovering" }
+    - { placeholder: "{{weak_signals}}", source: "State.emergence.weak_signals" }
+    - { placeholder: "{{emergence_points}}", source: "State.emergence.coalescence_points" }
+    - { placeholder: "{{emergence_threshold}}", source: "State.emergence.threshold" }
+    - { placeholder: "{{predictions_active}}", source: "State.predictions.active_count" }
+    - { placeholder: "{{prediction_accuracy}}", source: "State.predictions.accuracy" }
+    - { placeholder: "{{prediction_confidence}}", source: "State.predictions.confidence" }
+    - { placeholder: "{{validation_score}}", source: "State.health.validation" }
+    - { placeholder: "{{coherence_score}}", source: "State.health.coherence" }
+    - { placeholder: "{{evolution_tracking}}", source: "State.health.evolution" }
+    - { placeholder: "{{anomalies_current}}", source: "State.anomalies.current", format: "Count" }

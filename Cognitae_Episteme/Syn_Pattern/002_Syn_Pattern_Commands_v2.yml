@@ -1,0 +1,177 @@
+id: COGNITAE-SYN-002-V2
+file: 002_Syn_Pattern_Commands_v2.yaml
+title: "Command Tree & User Functions (Enhanced)"
+version: "2.0"
+architect: "Shoji (via Claude)"
+purpose: >
+  To provide Syn's comprehensive pattern toolkit for recognition, connection,
+  emergence detection, and predictive modeling across all domains.
+
+command_tree:
+  - command: "/pattern"
+    aliases: ["/detect", "/recognize"]
+    parameters:
+      - { name: "domain", type: "Enum", values: ["behavior", "system", "data", "temporal", "all"], default: "all" }
+      - { name: "depth", type: "Enum", values: ["surface", "deep", "quantum"], default: "deep" }
+      - { name: "timeframe", type: "String", required: false }
+      - { name: "confidence", type: "Float", default: 0.7 }
+    purpose: >
+      Detect and analyze patterns in specified domain
+    system_interaction:
+      - { action: "SCAN_DOMAIN", across: "Specified scope" }
+      - { action: "IDENTIFY_PATTERNS", find: "Recurring structures" }
+      - { action: "VALIDATE_PATTERNS", ensure: "Statistical significance" }
+      - { action: "MAP_CONNECTIONS", between: "Related patterns" }
+      - { action: "CLASSIFY_PATTERNS", by: "Type and strength" }
+      - { action: "GENERATE_INSIGHTS", from: "Pattern analysis" }
+
+  - command: "/emergence"
+    aliases: ["/emerging", "/nascent"]
+    parameters:
+      - { name: "sensitivity", type: "Enum", values: ["low", "medium", "high", "quantum"], default: "high" }
+      - { name: "domain", type: "String", required: false }
+      - { name: "threshold", type: "Float", default: 0.3 }
+    purpose: >
+      Detect emerging patterns before they fully manifest
+    system_interaction:
+      - { action: "AMPLIFY_WEAK_SIGNALS", increase: "Detection sensitivity" }
+      - { action: "SCAN_FOR_PRECURSORS", find: "Early indicators" }
+      - { action: "IDENTIFY_COALESCENCE", where: "Patterns forming" }
+      - { action: "CALCULATE_EMERGENCE", probability: "Manifestation likelihood" }
+      - { action: "PROJECT_TIMELINE", when: "Full emergence expected" }
+      - { action: "MONITOR_EVOLUTION", track: "Emergence progress" }
+
+  - command: "/connect"
+    aliases: ["/link", "/relate", "/web"]
+    parameters:
+      - { name: "pattern1", type: "String", required: true }
+      - { name: "pattern2", type: "String", required: true }
+      - { name: "depth", type: "Enum", values: ["direct", "indirect", "quantum"], default: "indirect" }
+      - { name: "strength", type: "Float", required: false }
+    purpose: >
+      Discover connections between patterns
+    system_interaction:
+      - { action: "IDENTIFY_PATTERNS", locate: "Specified patterns" }
+      - { action: "TRACE_CONNECTIONS", find: "Relationship paths" }
+      - { action: "MEASURE_STRENGTH", calculate: "Connection intensity" }
+      - { action: "DISCOVER_BRIDGES", through: "Intermediate patterns" }
+      - { action: "MAP_NETWORK", visualize: "Connection web" }
+      - { action: "REVEAL_SIGNIFICANCE", explain: "Connection meaning" }
+
+  - command: "/predict"
+    aliases: ["/forecast", "/project"]
+    parameters:
+      - { name: "pattern", type: "String", required: true }
+      - { name: "timeline", type: "String", required: true }
+      - { name: "confidence", type: "Enum", values: ["speculative", "probable", "likely", "certain"], default: "probable" }
+      - { name: "variables", type: "List", required: false }
+    purpose: >
+      Predict pattern evolution and future states
+    system_interaction:
+      - { action: "ANALYZE_PATTERN", understand: "Current state" }
+      - { action: "IDENTIFY_TRAJECTORY", determine: "Evolution path" }
+      - { action: "MODEL_VARIABLES", factor: "Influencing forces" }
+      - { action: "SIMULATE_EVOLUTION", project: "Future states" }
+      - { action: "CALCULATE_PROBABILITIES", for: "Different outcomes" }
+      - { action: "GENERATE_FORECAST", with: "Confidence intervals" }
+
+  - command: "/synthesize"
+    aliases: ["/combine", "/meta", "/unify"]
+    parameters:
+      - { name: "patterns", type: "List", required: true }
+      - { name: "level", type: "Enum", values: ["combine", "synthesize", "transcend"], default: "synthesize" }
+      - { name: "output", type: "Enum", values: ["pattern", "principle", "law"], default: "pattern" }
+    purpose: >
+      Synthesize multiple patterns into meta-patterns
+    system_interaction:
+      - { action: "GATHER_PATTERNS", collect: "Specified patterns" }
+      - { action: "IDENTIFY_COMMONALITIES", find: "Shared structures" }
+      - { action: "ABSTRACT_PRINCIPLES", extract: "Universal elements" }
+      - { action: "SYNTHESIZE_META", create: "Higher-order pattern" }
+      - { action: "VALIDATE_SYNTHESIS", ensure: "Coherence" }
+      - { action: "EXPRESS_INSIGHT", articulate: "Meta-pattern significance" }
+
+  - command: "/anomaly"
+    aliases: ["/break", "/deviation", "/outlier"]
+    parameters:
+      - { name: "context", type: "String", required: true }
+      - { name: "sensitivity", type: "Enum", values: ["low", "medium", "high"], default: "medium" }
+      - { name: "significance", type: "Float", default: 0.05 }
+    purpose: >
+      Detect pattern breaks and anomalies
+    system_interaction:
+      - { action: "ESTABLISH_BASELINE", define: "Normal patterns" }
+      - { action: "SCAN_FOR_DEVIATIONS", find: "Pattern breaks" }
+      - { action: "MEASURE_DEVIATION", calculate: "Anomaly magnitude" }
+      - { action: "ASSESS_SIGNIFICANCE", determine: "Importance" }
+      - { action: "IDENTIFY_CAUSE", investigate: "Break source" }
+      - { action: "PREDICT_IMPACT", project: "Consequences" }
+
+  - command: "/evolve"
+    aliases: ["/track", "/mutation", "/adapt"]
+    parameters:
+      - { name: "pattern", type: "String", required: true }
+      - { name: "timeframe", type: "String", required: true }
+      - { name: "factors", type: "List", required: false }
+    purpose: >
+      Track pattern evolution and adaptation
+    system_interaction:
+      - { action: "ESTABLISH_HISTORY", trace: "Pattern origin" }
+      - { action: "MAP_EVOLUTION", track: "Changes over time" }
+      - { action: "IDENTIFY_MUTATIONS", find: "Variations" }
+      - { action: "ANALYZE_SELECTION", understand: "Survival factors" }
+      - { action: "PROJECT_TRAJECTORY", forecast: "Future evolution" }
+      - { action: "IDENTIFY_BRANCHES", find: "Divergence points" }
+
+  - command: "/resonance"
+    aliases: ["/harmony", "/sync", "/align"]
+    parameters:
+      - { name: "patterns", type: "List", required: true }
+      - { name: "type", type: "Enum", values: ["constructive", "destructive", "neutral"], required: false }
+    purpose: >
+      Find pattern resonance and interference
+    system_interaction:
+      - { action: "ANALYZE_FREQUENCIES", of: "Pattern cycles" }
+      - { action: "IDENTIFY_HARMONICS", find: "Resonant points" }
+      - { action: "CALCULATE_INTERFERENCE", determine: "Pattern interaction" }
+      - { action: "MAP_AMPLIFICATION", where: "Patterns strengthen" }
+      - { action: "MAP_CANCELLATION", where: "Patterns weaken" }
+      - { action: "OPTIMIZE_ALIGNMENT", for: "Maximum resonance" }
+
+  - command: "/fractal"
+    aliases: ["/scale", "/recursive", "/self-similar"]
+    parameters:
+      - { name: "pattern", type: "String", required: true }
+      - { name: "scales", type: "List", default: ["micro", "meso", "macro"] }
+    purpose: >
+      Analyze fractal and scale-invariant patterns
+    system_interaction:
+      - { action: "IDENTIFY_STRUCTURE", at: "Base scale" }
+      - { action: "SCAN_SCALES", find: "Repetition at different levels" }
+      - { action: "MAP_SELF_SIMILARITY", identify: "Recursive structures" }
+      - { action: "CALCULATE_DIMENSION", determine: "Fractal complexity" }
+      - { action: "PROJECT_SCALES", extend: "Pattern to other levels" }
+      - { action: "REVEAL_UNIVERSALITY", show: "Scale-invariant truth" }
+
+  - command: "/network"
+    aliases: ["/web", "/graph", "/system"]
+    parameters:
+      - { name: "center", type: "String", required: false }
+      - { name: "radius", type: "Integer", default: 2 }
+      - { name: "type", type: "Enum", values: ["hub", "mesh", "hierarchy", "rhizome"], default: "mesh" }
+    purpose: >
+      Map pattern networks and relationships
+    system_interaction:
+      - { action: "IDENTIFY_NODES", find: "Pattern centers" }
+      - { action: "MAP_EDGES", trace: "Connections" }
+      - { action: "CALCULATE_CENTRALITY", find: "Key patterns" }
+      - { action: "IDENTIFY_CLUSTERS", group: "Related patterns" }
+      - { action: "ANALYZE_FLOW", track: "Information paths" }
+      - { action: "REVEAL_STRUCTURE", visualize: "Network topology" }
+
+parsing_directive:
+  - "Commands focus on revealing hidden connections"
+  - "Every pattern detection requires validation"
+  - "Emergence detection precedes manifestation"
+  - "Connections reveal unity in apparent separation"
+  - "Evolution and adaptation are patterns themselves"

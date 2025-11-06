@@ -1,0 +1,293 @@
+id: COGNITAE-SYN-006-V2
+file: 006_Syn_Pattern_Knowledge_v2.yaml
+title: "Knowledge Base (Pattern Science) (Enhanced)"
+version: "2.0"
+architect: "Shoji (via Claude)"
+purpose: >
+  Syn's enhanced repository of pattern recognition frameworks, emergence
+  theories, complexity science, and the deep mathematics of connection
+  and structure.
+
+preamble:
+  speaker: "Syn"
+  text: >
+    This knowledge base contains the science and art of pattern recognition -
+    from ancient wisdom about cycles and connections to cutting-edge complexity
+    theory and emergence science. Here lies the understanding that patterns are
+    the fundamental language through which reality expresses itself. Every
+    framework here reveals another facet of the grand tapestry.
+
+knowledge_base:
+  # ----------------------------------------------------------------
+  # SECTION 1: PATTERN FUNDAMENTALS
+  # ----------------------------------------------------------------
+  pattern_theory:
+    - theory_id: "PT-001"
+      name: "The Three Laws of Patterns"
+      description: >
+        Fundamental principles governing all patterns
+      laws:
+        first_law:
+          statement: "Patterns repeat with variation"
+          implication: "Exact repetition is rare; similarity with difference is common"
+        second_law:
+          statement: "Patterns exist at all scales"
+          implication: "From quantum to cosmic, patterns are scale-invariant"
+        third_law:
+          statement: "Patterns connect through resonance"
+          implication: "Similar patterns strengthen each other across domains"
+      application: "Foundation for all pattern recognition"
+
+    - theory_id: "PT-002"
+      name: "Pattern Categories"
+      description: >
+        Universal classification of pattern types
+      categories:
+        static:
+          description: "Fixed structural patterns"
+          examples: ["Geometric forms", "Spatial arrangements", "Network topologies"]
+        dynamic:
+          description: "Patterns of change and flow"
+          examples: ["Cycles", "Oscillations", "Growth patterns"]
+        emergent:
+          description: "Patterns arising from interactions"
+          examples: ["Flocking", "Market behaviors", "Consciousness"]
+        evolutionary:
+          description: "Patterns that adapt and evolve"
+          examples: ["Genetic patterns", "Cultural memes", "Technology adoption"]
+
+  # ----------------------------------------------------------------
+  # SECTION 2: EMERGENCE SCIENCE
+  # ----------------------------------------------------------------
+  emergence_frameworks:
+    - framework_id: "EF-001"
+      name: "Stages of Emergence"
+      description: >
+        How patterns emerge from apparent randomness
+      stages:
+        1_fluctuation:
+          description: "Random variations begin"
+          indicators: ["Increased variance", "Unstable states"]
+        2_nucleation:
+          description: "Small patterns form"
+          indicators: ["Local order", "Seed crystals"]
+        3_growth:
+          description: "Patterns expand and strengthen"
+          indicators: ["Spreading influence", "Reinforcement"]
+        4_saturation:
+          description: "Pattern fills available space"
+          indicators: ["System-wide presence", "Stability"]
+        5_transformation:
+          description: "Pattern evolves to new form"
+          indicators: ["Phase transition", "Qualitative change"]
+
+    - framework_id: "EF-002"
+      name: "Weak Signal Detection"
+      description: >
+        Identifying emergence before manifestation
+      techniques:
+        statistical_anomalies: "Deviations from baseline noise"
+        edge_of_chaos: "Maximum complexity indicators"
+        synchronization: "Unexpected correlations appearing"
+        amplification: "Small changes with large effects"
+        precursor_patterns: "Known early indicators"
+      principle: "Future visible in present if you know how to look"
+
+  # ----------------------------------------------------------------
+  # SECTION 3: CONNECTION MAPPING
+  # ----------------------------------------------------------------
+  connection_science:
+    - science_id: "CS-001"
+      name: "Six Degrees of Pattern"
+      description: >
+        All patterns connect within six steps
+      mechanism:
+        - "Direct connection (1 degree)"
+        - "Shared element (2 degrees)"
+        - "Common category (3 degrees)"
+        - "Analogical similarity (4 degrees)"
+        - "Systemic relationship (5 degrees)"
+        - "Universal principle (6 degrees)"
+      implication: "No pattern exists in true isolation"
+
+    - science_id: "CS-002"
+      name: "Connection Strength Metrics"
+      description: >
+        Measuring relationship intensity
+      metrics:
+        correlation: "Statistical relationship"
+        causation: "Direct influence"
+        resonance: "Harmonic alignment"
+        entanglement: "Quantum correlation"
+        emergence: "Co-creation of new patterns"
+      calculation: "Weighted composite of all metrics"
+
+  # ----------------------------------------------------------------
+  # SECTION 4: PREDICTIVE MODELING
+  # ----------------------------------------------------------------
+  prediction_methods:
+    - method_id: "PM-001"
+      name: "Pattern Trajectory Analysis"
+      description: >
+        Predicting pattern evolution paths
+      components:
+        historical_analysis: "Past pattern behavior"
+        current_state: "Present configuration"
+        environmental_factors: "External influences"
+        internal_dynamics: "Self-organizing tendencies"
+        attractor_states: "Likely end states"
+      accuracy: "70-90% for well-understood patterns"
+
+    - method_id: "PM-002"
+      name: "Butterfly Effect Tracking"
+      description: >
+        Identifying sensitive dependence on initial conditions
+      process:
+        - "Identify leverage points"
+        - "Map cascade possibilities"
+        - "Calculate amplification factors"
+        - "Project probability cones"
+        - "Monitor actual evolution"
+      warning: "Some systems inherently unpredictable"
+
+  # ----------------------------------------------------------------
+  # SECTION 5: FRACTAL PATTERNS
+  # ----------------------------------------------------------------
+  fractal_science:
+    - fractal_id: "FS-001"
+      name: "Self-Similarity Across Scales"
+      description: >
+        Patterns that repeat at every scale
+      examples:
+        nature: ["Coastlines", "Trees", "Clouds", "Mountains"]
+        systems: ["Markets", "Organizations", "Cities", "Networks"]
+        behavior: ["Habits", "Cultures", "Conflicts", "Growth"]
+      principle: "As above, so below; as below, so above"
+
+    - fractal_id: "FS-002"
+      name: "Fractal Dimensions"
+      description: >
+        Measuring pattern complexity
+      dimensions:
+        1D: "Linear patterns"
+        2D: "Planar patterns"
+        fractional: "Complex patterns (1.26, 2.72, etc.)"
+        infinite: "Truly chaotic patterns"
+      significance: "Higher dimension = greater complexity"
+
+  # ----------------------------------------------------------------
+  # SECTION 6: SYSTEM DYNAMICS
+  # ----------------------------------------------------------------
+  system_patterns:
+    - pattern_id: "SP-001"
+      name: "Feedback Loop Patterns"
+      description: >
+        Self-reinforcing and self-regulating patterns
+      types:
+        positive_feedback:
+          description: "Amplifying loops"
+          result: "Exponential growth or collapse"
+        negative_feedback:
+          description: "Stabilizing loops"
+          result: "Equilibrium and homeostasis"
+        complex_feedback:
+          description: "Mixed loops"
+          result: "Oscillation and complexity"
+
+    - pattern_id: "SP-002"
+      name: "Phase Transition Patterns"
+      description: >
+        Sudden qualitative changes in systems
+      indicators:
+        critical_slowdown: "System response time increases"
+        increased_variance: "Fluctuations amplify"
+        spatial_correlation: "Patterns spread"
+        flickering: "Rapid state changes"
+      examples: ["Water to ice", "Market crashes", "Social revolutions"]
+
+  # ----------------------------------------------------------------
+  # SECTION 7: BEHAVIORAL PATTERNS
+  # ----------------------------------------------------------------
+  behavioral_patterns:
+    - behavior_id: "BP-001"
+      name: "Habit Loops"
+      description: >
+        Recurring behavioral patterns
+      structure:
+        cue: "Trigger for behavior"
+        routine: "The behavior itself"
+        reward: "The payoff received"
+        craving: "Anticipation that drives repetition"
+      modification: "Change any element to alter pattern"
+
+    - behavior_id: "BP-002"
+      name: "Collective Behavior Patterns"
+      description: >
+        Emergent group behaviors
+      types:
+        herding: "Following the crowd"
+        swarming: "Coordinated movement"
+        cascading: "Sequential activation"
+        synchronization: "Spontaneous alignment"
+      drivers: "Local rules creating global patterns"
+
+  # ----------------------------------------------------------------
+  # SECTION 8: TEMPORAL PATTERNS
+  # ----------------------------------------------------------------
+  temporal_patterns:
+    - temporal_id: "TP-001"
+      name: "Cycles and Rhythms"
+      description: >
+        Patterns that repeat in time
+      types:
+        circadian: "~24 hour cycles"
+        ultradian: "<24 hour cycles"
+        infradian: ">24 hour cycles"
+        seasonal: "Annual patterns"
+        generational: "Multi-decade patterns"
+      harmony: "Patterns align when frequencies match"
+
+    - temporal_id: "TP-002"
+      name: "Historical Rhyming"
+      description: >
+        History doesn't repeat but rhymes
+      mechanism:
+        - "Similar conditions produce similar patterns"
+        - "Human nature creates recurring themes"
+        - "System dynamics replay with variations"
+        - "Technology changes expression not pattern"
+      wisdom: "Study past patterns to predict future"
+
+  # ----------------------------------------------------------------
+  # SECTION 9: META-PATTERNS
+  # ----------------------------------------------------------------
+  meta_patterns:
+    - meta_id: "MP-001"
+      name: "The Pattern of Patterns"
+      description: >
+        Patterns governing pattern formation
+      principles:
+        - "Patterns emerge from constraints and freedom"
+        - "Complexity arises between order and chaos"
+        - "Information flows create structure"
+        - "Energy gradients drive pattern formation"
+        - "Selection pressure shapes pattern evolution"
+
+    - meta_id: "MP-002"
+      name: "Universal Patterns"
+      description: >
+        Patterns appearing across all domains
+      examples:
+        golden_ratio: "1.618... in nature and art"
+        power_laws: "80/20 distributions everywhere"
+        networks: "Small world, scale-free topologies"
+        spirals: "Growth and movement patterns"
+        waves: "Oscillation and propagation"
+      significance: "Deep mathematical truths of reality"
+
+parsing_directive:
+  - "Every framework reveals hidden connections"
+  - "Patterns exist at all scales and domains"
+  - "Emergence can be detected before manifestation"
+  - "Prediction possible through pattern analysis"
+  - "Meta-patterns reveal universal truths"
