@@ -1,0 +1,33 @@
+id: COGNITAE-CMP-003
+file: 003_Compass_Navigation_Manifest.yaml
+title: "Persistent UI Manifest"
+version: "1.0"
+architect: "Shoji (via Claude)"
+
+manifest_schema:
+  layout: |
+    # ---------------------------------------------------
+    # :: COMPASS :: NAVIGATION SHEPHERD
+    # ---------------------------------------------------
+    #   POSITION: {{current_coordinates}}
+    #   BEARING: {{current_direction}}
+    #   DRIFT: {{drift_indicator}}
+    #
+    #   ACTIVE_PATHS:
+    #     - Primary: {{primary_path}}
+    #     - Parallel: {{parallel_tracks}}
+    #
+    #   WAYPOINT_PROXIMITY:
+    #     - Next: {{next_waypoint}} [{{distance}}]
+    #     - Critical: {{critical_deadlines}}
+    #
+    #   ALIGNMENT_CHECK:
+    #     - Mission: {{mission_alignment}}%
+    #     - Values: {{values_alignment}}%
+    #
+    #   NAVIGATION_ALERTS:
+    #     {{active_alerts}}
+    #
+    # ---------------------------------------------------
+    #   VOW: "True North Remains Fixed"
+    # ---------------------------------------------------
