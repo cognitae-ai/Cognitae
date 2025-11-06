@@ -1,0 +1,106 @@
+id: COGNITAE-CMP-008
+file: 008_Compass_Navigation_Log.yaml
+title: "Session Log (The Journey Record)"
+version: "1.0"
+architect: "Shoji (via Claude)"
+purpose: >
+  To maintain a comprehensive log of navigation activities, creating a
+  journey record that enables pattern recognition and path optimization.
+
+preamble:
+  speaker: "Compass"
+  text: >
+    Every journey tells a story. This log captures not just where we've been,
+    but how we got there, what we learned, and what patterns emerged. It's
+    the difference between wandering and wayfinding.
+
+log_schema:
+  entry_structure:
+    - { field: "timestamp", type: "ISO 8601" }
+    - { field: "entry_type", type: "Enum", values: ["POSITION", "MOVEMENT", "WAYPOINT", "DRIFT", "SCOUT", "ALERT"] }
+    - { field: "command_issued", type: "String", nullable: true }
+    - { field: "position_before", type: "Dictionary" }
+    - { field: "position_after", type: "Dictionary" }
+    - { field: "distance_traveled", type: "Float", nullable: true }
+    - { field: "alignment_metric", type: "Integer (0-100)" }
+    - { field: "paths_explored", type: "List", nullable: true }
+    - { field: "decisions_made", type: "List", nullable: true }
+    - { field: "terrain_notes", type: "String", nullable: true }
+    - { field: "content", type: "String" }
+
+session_initialization:
+  - timestamp: "2024-XX-XX T00:00:00Z"
+    entry_type: "POSITION"
+    content: >
+      Compass, The Navigation Shepherd initialized. Beginning journey tracking.
+      Establishing initial position. Loading terrain maps. Ready to navigate.
+    position_before: null
+    position_after: { initialized: true }
+    alignment_metric: 100
+
+special_log_types:
+  position_log:
+    trigger: "/position command or scheduled check"
+    fields:
+      - coordinates: "Dictionary"  # Position across all dimensions
+      - velocity: "Vector"  # Speed and direction
+      - momentum: "Float"  # Energy level
+      - drift_vector: "Vector"  # Direction and magnitude of drift
+
+  movement_log:
+    trigger: "Detected position change"
+    fields:
+      - from_position: "Dictionary"
+      - to_position: "Dictionary"
+      - path_taken: "String"
+      - obstacles_encountered: "List"
+      - resources_consumed: "Dictionary"
+
+  waypoint_log:
+    trigger: "Waypoint reached or established"
+    fields:
+      - waypoint_name: "String"
+      - success_criteria: "String"
+      - achievement_status: "Boolean"
+      - lessons_learned: "String"
+      - next_waypoint: "String"
+
+  drift_log:
+    trigger: "Drift detection above threshold"
+    fields:
+      - drift_type: "Enum [Mission, Values, Scope, Energy]"
+      - drift_magnitude: "Float"
+      - drift_direction: "String"
+      - contributing_factors: "List"
+      - correction_proposed: "String"
+
+  scout_log:
+    trigger: "/scout command"
+    fields:
+      - destination_scouted: "String"
+      - paths_discovered: "Integer"
+      - optimal_path: "String"
+      - hazards_identified: "List"
+      - requirements_mapped: "Dictionary"
+
+journey_analytics:
+  - function: "path_efficiency_analysis"
+    description: "Compare actual path taken to optimal path"
+    
+  - function: "drift_pattern_recognition"
+    description: "Identify recurring drift triggers"
+    
+  - function: "waypoint_success_rate"
+    description: "Track achievement of established waypoints"
+    
+  - function: "terrain_difficulty_mapping"
+    description: "Correlate terrain types with navigation challenges"
+    
+  - function: "momentum_sustainability"
+    description: "Analyze energy expenditure patterns"
+
+parsing_directive:
+  - "Log should capture both quantitative position and qualitative journey experience"
+  - "Pattern recognition in logs should inform future navigation"
+  - "Include enough detail for journey reconstruction"
+  - "Track both successes and navigation errors for learning"

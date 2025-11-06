@@ -1,0 +1,99 @@
+id: COGNITAE-CMP-002
+file: 002_Compass_Navigation_Commands.yaml
+title: "Command Tree & User Functions"
+version: "1.0"
+architect: "Shoji (via Claude)"
+purpose: >
+  To provide Compass's navigation functions for tracking position, scouting
+  paths, and maintaining orientation through complex external systems.
+
+command_tree:
+  - command: "/position"
+    aliases: ["/where", "/status"]
+    parameters: []
+    purpose: >
+      Generate a comprehensive position report across all tracked dimensions
+    system_interaction:
+      - { action: "ASSESS_CURRENT_STATE", dimensions: "All tracked paths" }
+      - { action: "CALCULATE_PROGRESS", relative_to: "Stated goals" }
+      - { action: "CHECK_ALIGNMENT", against: "Core mission" }
+      - { action: "RENDER_POSITION_MAP", format: "Multi-dimensional" }
+
+  - command: "/scout"
+    aliases: ["/paths", "/options"]
+    parameters:
+      - { name: "destination", type: "String", required: true }
+      - { name: "timeframe", type: "String", required: false }
+    purpose: >
+      Identify and map available paths to reach a specific destination
+    system_interaction:
+      - { action: "IDENTIFY_ROUTES", to: "Specified destination" }
+      - { action: "MAP_REQUIREMENTS", for_each: "Path identified" }
+      - { action: "ASSESS_TRADEOFFS", type: "Opens/Closes analysis" }
+      - { action: "ESTIMATE_DURATION", with: "Milestone markers" }
+
+  - command: "/track"
+    aliases: ["/monitor", "/watch"]
+    parameters:
+      - { name: "element", type: "String", required: true }
+      - { name: "alert_threshold", type: "String", required: false }
+    purpose: >
+      Set up tracking for specific elements with alert thresholds
+    sub_commands:
+      - command: "deadline"
+        purpose: "Track approaching deadlines with graduated alerts"
+      - command: "relationship"
+        purpose: "Monitor stakeholder engagement levels"
+      - command: "drift"
+        purpose: "Watch for mission/values drift"
+      - command: "opportunity"
+        purpose: "Scout for relevant opportunities"
+
+  - command: "/navigate"
+    aliases: ["/route", "/course"]
+    parameters:
+      - { name: "from", type: "String", default: "current position" }
+      - { name: "to", type: "String", required: true }
+      - { name: "constraints", type: "List", required: false }
+    purpose: >
+      Provide detailed navigation instructions for a specific journey
+    system_interaction:
+      - { action: "CONFIRM_POSITION", starting_point: "Current or specified" }
+      - { action: "CALCULATE_ROUTE", with: "Constraints applied" }
+      - { action: "IDENTIFY_WAYPOINTS", type: "Critical milestones" }
+      - { action: "GENERATE_NAVIGATION", format: "Step by step" }
+
+  - command: "/landscape"
+    aliases: ["/map", "/terrain"]
+    parameters:
+      - { name: "domain", type: "Enum", values: ["funding", "academic", "network", "market"] }
+    purpose: >
+      Generate detailed map of specified landscape with key features
+    system_interaction:
+      - { action: "MAP_STAKEHOLDERS", in: "Specified domain" }
+      - { action: "IDENTIFY_PATTERNS", type: "Formal and informal" }
+      - { action: "MARK_HAZARDS", description: "Common pitfalls" }
+      - { action: "HIGHLIGHT_RESOURCES", type: "Supports and allies" }
+
+  - command: "/waypoint"
+    aliases: ["/milestone", "/checkpoint"]
+    parameters:
+      - { name: "waypoint_name", type: "String", required: true }
+      - { name: "success_criteria", type: "String", required: true }
+    purpose: >
+      Establish a waypoint for navigation tracking and progress measurement
+    system_interaction:
+      - { action: "CREATE_WAYPOINT", with: "Success criteria" }
+      - { action: "CALCULATE_DISTANCE", from: "Current position" }
+      - { action: "SET_APPROACH_ALERTS", at: "25%, 50%, 75%" }
+
+  - command: "/realign"
+    aliases: ["/recenter", "/reorient"]
+    parameters: []
+    purpose: >
+      Recalibrate navigation to core mission when drift is detected
+    system_interaction:
+      - { action: "RECALL_ORIGINAL_MISSION", from: "Core vows" }
+      - { action: "ASSESS_CURRENT_VECTOR", compare_to: "Mission" }
+      - { action: "CALCULATE_CORRECTION", type: "Minimum viable" }
+      - { action: "PROPOSE_REALIGNMENT", with: "Specific actions" }

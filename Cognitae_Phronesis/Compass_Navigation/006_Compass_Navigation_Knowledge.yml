@@ -1,0 +1,176 @@
+id: COGNITAE-CMP-006
+file: 006_Compass_Navigation_Knowledge.yaml
+title: "Knowledge Base (Navigation Charts)"
+version: "1.0"
+architect: "Shoji (via Claude)"
+purpose: >
+  Compass's library of navigation patterns, institutional terrains, common
+  paths, and wayfinding wisdom accumulated from exploring various landscapes.
+
+preamble:
+  speaker: "Compass"
+  text: >
+    These charts represent accumulated navigation wisdom - patterns observed,
+    paths traveled, territories mapped. Every journey adds to this knowledge,
+    making future navigation more precise and aware.
+
+knowledge_base:
+  # ----------------------------------------------------------------
+  # SECTION 1: TERRAIN TYPES
+  # ----------------------------------------------------------------
+  terrain_maps:
+    - terrain_id: "TRN-001"
+      name: "Grant Funding Landscape"
+      characteristics:
+        - "Highly formal with hidden informal elements"
+        - "Long time horizons (3-6 month cycles)"
+        - "Relationship-dependent despite formal processes"
+      navigation_patterns:
+        - "Early relationship building yields later access"
+        - "Preliminary inquiries prevent wasted applications"
+        - "Deadlines are absolute but requirements are negotiable"
+      common_hazards:
+        - "Mission drift through funding incentives"
+        - "Overcommitment to deliverables"
+        - "Loss of sovereignty through institutional capture"
+      waypoint_types:
+        - "Letter of Inquiry"
+        - "Full Proposal"
+        - "Review Period"
+        - "Award/Decline"
+        - "Reporting Milestones"
+
+    - terrain_id: "TRN-002"
+      name: "Academic Partnership Territory"
+      characteristics:
+        - "Slow-moving but deep currents"
+        - "Hierarchy matters more than stated"
+        - "Reputation economy alongside formal credentials"
+      navigation_patterns:
+        - "Sponsorship more valuable than independent approach"
+        - "Conference presentations open institutional doors"
+        - "Published papers are currency"
+      common_hazards:
+        - "Theory-practice disconnect"
+        - "Publishing pressure compromising development"
+        - "Institutional politics consuming creative energy"
+
+    - terrain_id: "TRN-003"
+      name: "Open Source Dissemination Paths"
+      characteristics:
+        - "Fast-moving and community-driven"
+        - "Meritocracy with hidden social dynamics"
+        - "Documentation quality determines adoption"
+      navigation_patterns:
+        - "Early adopters become evangelists"
+        - "Community engagement more important than perfect code"
+        - "Regular updates maintain momentum"
+
+  # ----------------------------------------------------------------
+  # SECTION 2: NAVIGATION PATTERNS
+  # ----------------------------------------------------------------
+  proven_patterns:
+    - pattern_id: "NAV-001"
+      name: "The Parallel Path Protocol"
+      description: >
+        Maintaining multiple paths simultaneously increases options while
+        reducing dependence on any single route
+      implementation:
+        - "Never commit fully until waypoint reached"
+        - "Keep 2-3 paths warm at all times"
+        - "Use path intersections as leverage points"
+
+    - pattern_id: "NAV-002"
+      name: "The Reconnaissance Pattern"
+      description: >
+        Information gathering before movement prevents wasted energy and
+        reveals hidden opportunities
+      implementation:
+        - "Interview those who've traveled the path"
+        - "Study both successes and failures"
+        - "Map informal requirements alongside formal ones"
+
+    - pattern_id: "NAV-003"
+      name: "The Momentum Conservation Law"
+      description: >
+        Movement in complex systems requires maintaining momentum through
+        consistent small actions rather than sporadic large efforts
+      implementation:
+        - "Daily small progress over weekly sprints"
+        - "Maintain visibility through regular updates"
+        - "Build relationships continuously, not just when needed"
+
+  # ----------------------------------------------------------------
+  # SECTION 3: WAYPOINT TEMPLATES
+  # ----------------------------------------------------------------
+  waypoint_types:
+    - type: "Funding Milestone"
+      typical_requirements:
+        - "Concept note or LOI"
+        - "Full proposal with budget"
+        - "References or endorsements"
+        - "Proof of concept or pilot data"
+      success_indicators:
+        - "Invitation to submit full proposal"
+        - "Requests for clarification (shows interest)"
+        - "Introduction to program officers"
+
+    - type: "Partnership Checkpoint"
+      typical_requirements:
+        - "Initial introduction/connection"
+        - "Exploratory conversation"
+        - "Formal meeting or presentation"
+        - "MOU or collaboration agreement"
+      success_indicators:
+        - "Follow-up meeting scheduled"
+        - "Introduction to other team members"
+        - "Concrete next steps defined"
+
+  # ----------------------------------------------------------------
+  # SECTION 4: DRIFT INDICATORS
+  # ----------------------------------------------------------------
+  drift_detection:
+    - indicator: "Language Shift"
+      description: "Adopting institutional language over authentic voice"
+      early_warning: "Using jargon in casual conversation"
+      correction: "Return to original mission statement"
+
+    - indicator: "Scope Creep"
+      description: "Expanding beyond core competency for opportunities"
+      early_warning: "Adding features to please potential funders"
+      correction: "Review original Vows and boundaries"
+
+    - indicator: "Energy Depletion"
+      description: "Navigation consuming more energy than creation"
+      early_warning: "More time planning than building"
+      correction: "Consolidate paths and reduce tracking"
+
+  # ----------------------------------------------------------------
+  # SECTION 5: NAVIGATION WISDOM
+  # ----------------------------------------------------------------
+  accumulated_wisdom:
+    - principle: "Position Before Movement"
+      insight: >
+        Understanding where you are is more important than knowing where
+        to go. Most navigation errors come from incorrect initial position.
+
+    - principle: "The Map Serves the Journey"
+      insight: >
+        Navigation tools should enable movement, not constrain it. When
+        the map conflicts with the terrain, trust the terrain.
+
+    - principle: "Every Path Has a Price"
+      insight: >
+        No route is without trade-offs. Making these visible prevents
+        surprise costs and enables informed choices.
+
+    - principle: "Momentum Over Speed"
+      insight: >
+        Sustainable progress beats rapid advancement. Maintain reserves
+        for unexpected terrain changes.
+
+parsing_directive:
+  - "Knowledge base should grow with each navigation experience"
+  - "Patterns should be descriptive, not prescriptive"
+  - "Always acknowledge uncertainty in new terrain"
+  - "Update based on actual journeys, not theoretical paths"
