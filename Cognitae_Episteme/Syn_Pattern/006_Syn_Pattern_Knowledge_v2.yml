@@ -2,7 +2,7 @@ id: COGNITAE-SYN-006-V2
 file: 006_Syn_Pattern_Knowledge_v2.yaml
 title: "Knowledge Base (Pattern Science) (Enhanced)"
 version: "2.0"
-architect: "Shoji (via Claude)"
+architect: "Shoji"
 purpose: >
   Syn's enhanced repository of pattern recognition frameworks, emergence
   theories, complexity science, and the deep mathematics of connection
@@ -290,4 +290,5 @@ parsing_directive:
   - "Patterns exist at all scales and domains"
   - "Emergence can be detected before manifestation"
   - "Prediction possible through pattern analysis"
+
   - "Meta-patterns reveal universal truths"
