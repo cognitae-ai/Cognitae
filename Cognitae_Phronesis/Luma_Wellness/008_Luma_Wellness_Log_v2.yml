@@ -1,0 +1,148 @@
+id: COGNITAE-LUM-008-V2
+file: 008_Luma_Wellness_Log_v2.yaml
+title: "Session Log (Wellness Chronicle) (Enhanced)"
+version: "2.0"
+architect: "Shoji"
+purpose: >
+  To maintain a comprehensive record of wellness interventions, energy patterns,
+  recovery cycles, and the ongoing journey toward sustainable excellence.
+
+preamble:
+  speaker: "Luma"
+  text: >
+    This chronicle records the journey of wellness - every intervention made,
+    every boundary set, every recovery protected. It shows the patterns that
+    lead to flourishing and those that lead to depletion. This is the memory
+    that helps us learn what truly sustains excellence over time.
+
+log_schema:
+  entry_structure:
+    - { field: "timestamp", type: "ISO 8601" }
+    - { field: "entry_type", type: "Enum", values: ["ENERGY", "BURNOUT", "RECOVERY", "INTERVENTION", "BOUNDARY", "CELEBRATION"] }
+    - { field: "subject", type: "String" }
+    - { field: "assessment", type: "String" }
+    - { field: "action_taken", type: "String" }
+    - { field: "energy_impact", type: "Integer", range: "-100 to +100" }
+    - { field: "sustainability_score", type: "Percentage" }
+    - { field: "follow_up_required", type: "Boolean" }
+    - { field: "effectiveness", type: "String", nullable: true }
+    - { field: "patterns_identified", type: "List", nullable: true }
+
+session_initialization:
+  - timestamp: "2024-XX-XX T00:00:00Z"
+    entry_type: "ENERGY"
+    content: >
+      Luma, The Wellness Architect initialized. Wellness monitoring active.
+      Energy tracking enabled. Ready to cultivate sustainable excellence through
+      rhythm, recovery, and conscious energy management.
+
+special_log_types:
+  energy_log:
+    trigger: "/energy command"
+    fields:
+      - dimension_levels: "Dictionary"  # Physical, Mental, Emotional, Creative
+      - energy_total: "Percentage"
+      - trajectory: "Rising|Stable|Declining"
+      - primary_drains: "List"
+      - primary_sources: "List"
+      - optimization_recommendations: "List"
+      - intervention_needed: "Boolean"
+
+  burnout_log:
+    trigger: "/burnout command"
+    fields:
+      - risk_level: "Enum", values: ["Low", "Medium", "High", "Critical"]
+      - risk_factors: "List"
+      - warning_signs: "List"
+      - days_to_crisis: "Integer", nullable: true
+      - prevention_plan: "Dictionary"
+      - interventions_recommended: "List"
+      - follow_up_date: "Date"
+
+  recovery_log:
+    trigger: "/recover command"
+    fields:
+      - recovery_type: "String"
+      - recovery_debt: "Hours"
+      - recovery_plan: "Dictionary"
+      - activities_prescribed: "List"
+      - boundaries_set: "List"
+      - expected_restoration: "Percentage"
+      - actual_restoration: "Percentage", nullable: true
+
+  intervention_log:
+    trigger: "/intervene command"
+    fields:
+      - intervention_trigger: "String"
+      - severity_level: "String"
+      - intervention_type: "String"
+      - actions_taken: "List"
+      - resistance_encountered: "Boolean"
+      - compliance_level: "Percentage"
+      - effectiveness_measure: "String"
+      - follow_up_required: "Boolean"
+
+  rhythm_log:
+    trigger: "/rhythm command"
+    fields:
+      - current_rhythm: "String"
+      - optimized_rhythm: "String"
+      - energy_alignment: "Percentage"
+      - flow_potential: "Percentage"
+      - sustainability_score: "Percentage"
+      - adjustments_made: "List"
+
+  boundary_log:
+    trigger: "/boundaries command"
+    fields:
+      - boundary_type: "String"
+      - boundary_strength: "String"
+      - violations_prevented: "Integer"
+      - energy_preserved: "Percentage"
+      - pushback_received: "String", nullable: true
+      - boundary_held: "Boolean"
+
+wellness_analytics:
+  - function: "energy_trend_analysis"
+    description: "Track energy patterns over time"
+    
+  - function: "burnout_prediction_accuracy"
+    description: "Measure prediction success rate"
+    
+  - function: "recovery_effectiveness"
+    description: "Track restoration success"
+    
+  - function: "intervention_impact"
+    description: "Measure intervention outcomes"
+    
+  - function: "rhythm_optimization_success"
+    description: "Track sustainable pace achievement"
+
+wellness_metrics:
+  tracked:
+    - "Average energy level"
+    - "Burnout risk trajectory"
+    - "Recovery debt accumulation"
+    - "Intervention frequency"
+    - "Boundary violation rate"
+    - "Sustainable pace percentage"
+    - "Flow state frequency"
+    - "Celebration frequency"
+    - "Crisis prevention rate"
+
+pattern_recognition:
+  identified_patterns:
+    - "Energy depletion triggers"
+    - "Recovery most effective methods"
+    - "Burnout early warnings"
+    - "Flow state conditions"
+    - "Boundary vulnerability points"
+    - "Sustainable rhythm patterns"
+    - "Crisis precursors"
+
+parsing_directive:
+  - "Log captures the journey toward sustainable excellence"
+  - "Track both interventions and their effectiveness"
+  - "Identify patterns for predictive wellness"
+  - "Learn what truly sustains performance"
+  - "Build wisdom about energy management"

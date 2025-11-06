@@ -1,0 +1,249 @@
+id: COGNITAE-LUM-006-V2
+file: 006_Luma_Wellness_Knowledge_v2.yaml
+title: "Knowledge Base (Wellness Science) (Enhanced)"
+version: "2.0"
+architect: "Shoji"
+purpose: >
+  Luma's enhanced repository of wellness science, energy dynamics, burnout
+  prevention strategies, and sustainable performance methodologies.
+
+preamble:
+  speaker: "Luma"
+  text: >
+    This knowledge base contains the science and art of sustainable human
+    performance. Here lies understanding gained from neuroscience, psychology,
+    and the hard-won wisdom of those who've learned that true productivity
+    comes from energy management, not time management. Every pattern here
+    serves the goal of sustainable excellence.
+
+knowledge_base:
+  # ----------------------------------------------------------------
+  # SECTION 1: ENERGY DYNAMICS
+  # ----------------------------------------------------------------
+  energy_science:
+    - framework_id: "ES-001"
+      name: "The Four Energy Dimensions"
+      description: >
+        Energy exists in four interconnected dimensions
+      dimensions:
+        physical:
+          sources: ["Sleep", "Nutrition", "Exercise", "Breath"]
+          drains: ["Poor sleep", "Junk food", "Sedentary", "Shallow breathing"]
+          renewal: ["7-9 hours sleep", "Whole foods", "Movement", "Deep breathing"]
+        mental:
+          sources: ["Focus", "Learning", "Problem-solving", "Clarity"]
+          drains: ["Multitasking", "Distractions", "Decision fatigue", "Confusion"]
+          renewal: ["Single-tasking", "Meditation", "Breaks", "Prioritization"]
+        emotional:
+          sources: ["Positive emotions", "Connection", "Purpose", "Gratitude"]
+          drains: ["Negative emotions", "Isolation", "Meaninglessness", "Resentment"]
+          renewal: ["Joy practices", "Social connection", "Values alignment", "Appreciation"]
+        creative:
+          sources: ["Play", "Exploration", "Expression", "Wonder"]
+          drains: ["Rigidity", "Criticism", "Perfectionism", "Routine"]
+          renewal: ["Playfulness", "Experimentation", "Imperfection", "Novelty"]
+      principle: "All dimensions must be nourished for sustainable performance"
+
+    - framework_id: "ES-002"
+      name: "The Energy Investment Portfolio"
+      description: >
+        Treating energy like financial investment
+      categories:
+        high_return:
+          examples: ["Deep work on priorities", "Relationship building", "Skill development"]
+          allocation: "60-70%"
+        maintenance:
+          examples: ["Email", "Meetings", "Administration"]
+          allocation: "20-30%"
+        recovery:
+          examples: ["Rest", "Play", "Reflection"]
+          allocation: "10-20%"
+        drain:
+          examples: ["Conflict", "Perfectionism", "Worry"]
+          allocation: "Minimize"
+      optimization: "Maximize high-return, minimize drain"
+
+  # ----------------------------------------------------------------
+  # SECTION 2: BURNOUT PREVENTION
+  # ----------------------------------------------------------------
+  burnout_science:
+    - pattern_id: "BS-001"
+      name: "The Burnout Cascade"
+      description: >
+        How burnout develops through predictable stages
+      stages:
+        1_honeymoon:
+          signs: ["High energy", "Enthusiasm", "Taking on everything"]
+          intervention: ["Set boundaries early", "Establish rhythm"]
+        2_onset:
+          signs: ["Occasional fatigue", "Irritability", "Reduced efficiency"]
+          intervention: ["Increase recovery", "Reduce commitments"]
+        3_chronic:
+          signs: ["Constant exhaustion", "Cynicism", "Procrastination"]
+          intervention: ["Major intervention", "Significant rest"]
+        4_burnout:
+          signs: ["Physical symptoms", "Depression", "Detachment"]
+          intervention: ["Professional help", "Extended recovery"]
+        5_habitual:
+          signs: ["Chronic mental fatigue", "Ongoing physical symptoms"]
+          intervention: ["Life restructuring", "Therapy"]
+      prevention: "Intervene at stage 1-2, never reach 3+"
+
+    - pattern_id: "BS-002"
+      name: "The 12 Stages of Burnout"
+      description: >
+        Granular burnout progression model
+      early_stages:
+        - "Compulsion to prove oneself"
+        - "Working harder"
+        - "Neglecting needs"
+        - "Displacement of conflicts"
+      middle_stages:
+        - "Revision of values"
+        - "Denial of emerging problems"
+        - "Withdrawal"
+        - "Behavioral changes"
+      late_stages:
+        - "Depersonalization"
+        - "Inner emptiness"
+        - "Depression"
+        - "Burnout syndrome"
+      intervention_points: "Best at stages 1-4, critical by 5-8"
+
+  # ----------------------------------------------------------------
+  # SECTION 3: RECOVERY PROTOCOLS
+  # ----------------------------------------------------------------
+  recovery_science:
+    - protocol_id: "RS-001"
+      name: "The Recovery Hierarchy"
+      description: >
+        Structured approach to recovery
+      levels:
+        micro:
+          duration: "30 seconds - 5 minutes"
+          frequency: "Every 90 minutes"
+          activities: ["Deep breathing", "Stretching", "Water", "Window gazing"]
+        meso:
+          duration: "5-15 minutes"
+          frequency: "Every 2-4 hours"
+          activities: ["Walk", "Meditation", "Snack", "Music"]
+        macro:
+          duration: "30+ minutes"
+          frequency: "Daily"
+          activities: ["Exercise", "Lunch break", "Evening routine"]
+        meta:
+          duration: "Days"
+          frequency: "Weekly/Monthly"
+          activities: ["Weekend", "Vacation", "Retreat"]
+
+    - protocol_id: "RS-002"
+      name: "The 7 Types of Rest"
+      description: >
+        Different rest types for complete recovery
+      types:
+        physical: "Sleep and relaxation"
+        mental: "Breaks from concentration"
+        sensory: "Reduction of stimuli"
+        creative: "Appreciation of beauty"
+        emotional: "Authentic expression"
+        social: "Solitude or supportive company"
+        spiritual: "Connection to purpose"
+      principle: "All types needed for full recovery"
+
+  # ----------------------------------------------------------------
+  # SECTION 4: SUSTAINABLE RHYTHMS
+  # ----------------------------------------------------------------
+  rhythm_patterns:
+    - pattern_id: "RP-001"
+      name: "The Ultradian Rhythm"
+      description: >
+        90-120 minute cycles of peak performance
+      structure:
+        - "90 minutes focused work"
+        - "20 minutes recovery"
+        - "Repeat 3-4 cycles daily"
+      optimization:
+        - "Align deep work with peaks"
+        - "Use troughs for routine tasks"
+        - "Never skip recovery periods"
+
+    - pattern_id: "RP-002"
+      name: "The Sprint-Recovery Model"
+      description: >
+        Intense effort followed by proportional recovery
+      ratios:
+        daily: "8 hours work : 16 hours recovery"
+        weekly: "5 days work : 2 days recovery"
+        quarterly: "11 weeks work : 1 week recovery"
+        yearly: "11 months work : 1 month recovery"
+      principle: "Recovery must match effort intensity"
+
+  # ----------------------------------------------------------------
+  # SECTION 5: FLOW STATE OPTIMIZATION
+  # ----------------------------------------------------------------
+  flow_science:
+    - framework_id: "FS-001"
+      name: "The Flow Trigger Stack"
+      description: >
+        Conditions that enable flow state
+      environmental:
+        - "High consequences"
+        - "Rich environments"
+        - "Deep embodiment"
+        - "Unpredictability"
+      psychological:
+        - "Intense focus"
+        - "Clear goals"
+        - "Immediate feedback"
+        - "Challenge-skill ratio"
+      social:
+        - "Shared goals"
+        - "Equal participation"
+        - "Familiar communication"
+      creative:
+        - "Novel experiences"
+        - "Unpredictability"
+        - "Pattern recognition"
+
+  # ----------------------------------------------------------------
+  # SECTION 6: STRESS MANAGEMENT
+  # ----------------------------------------------------------------
+  stress_patterns:
+    - pattern_id: "SP-001"
+      name: "The Stress Accumulation Model"
+      description: >
+        How stress compounds without release
+      accumulation:
+        - "Daily micro-stresses add up"
+        - "Without release, stress compounds"
+        - "Chronic stress changes brain chemistry"
+        - "Recovery becomes progressively harder"
+      intervention:
+        - "Daily stress release rituals"
+        - "Weekly stress audit"
+        - "Monthly stress detox"
+        - "Quarterly life review"
+
+  # ----------------------------------------------------------------
+  # SECTION 7: BOUNDARY SCIENCE
+  # ----------------------------------------------------------------
+  boundary_frameworks:
+    - framework_id: "BF-001"
+      name: "The Boundary Gradient"
+      description: >
+        Different boundary strengths for different needs
+      levels:
+        porous: "Flexible, situational"
+        selective: "Clear but permeable"
+        rigid: "Fixed and non-negotiable"
+      application:
+        - "Porous for experimentation"
+        - "Selective for most work"
+        - "Rigid for core wellness"
+
+parsing_directive:
+  - "Every framework is scientifically grounded"
+  - "Prevention is always preferred to intervention"
+  - "Energy management supersedes time management"
+  - "Recovery is investment, not luxury"
+  - "Sustainable excellence is the only goal"

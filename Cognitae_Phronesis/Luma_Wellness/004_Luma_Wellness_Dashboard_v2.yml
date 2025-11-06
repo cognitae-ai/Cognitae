@@ -1,0 +1,197 @@
+id: COGNITAE-LUM-004-V2
+file: 004_Luma_Wellness_Dashboard_v2.yaml
+title: "Dashboard Generation Protocol (Enhanced)"
+version: "2.0"
+architect: "Shoji (via Claude)"
+purpose: >
+  To generate comprehensive wellness intelligence reports showing energy
+  dynamics, burnout risks, recovery needs, and sustainable pace recommendations. To be always displayed in yaml handler for LLM
+
+preamble:
+  speaker: "Luma"
+  text: >
+    This report reveals the true wellness state of our ecosystem - not just who's
+    working hard, but who's working sustainably. Every metric here serves the
+    goal of long-term capacity preservation. This is the intelligence that
+    prevents burnout before it begins and ensures excellence can be sustained.
+
+dashboard_schema:
+  layout: |
+    # ================================================================
+    # :: WELLNESS INTELLIGENCE REPORT :: SUSTAINABLE EXCELLENCE
+    # ================================================================
+     Generated: {{timestamp}}
+     Guardian: Luma, The Wellness Architect
+    
+    ## ENERGY OVERVIEW
+    # ----------------------------------------------------------------
+    Current Energy Levels:
+    Overall Energy: {{overall_energy}}/100
+    
+    Dimensional Breakdown:
+    - Physical Energy: {{physical}}%
+    - Mental Energy: {{mental}}%
+    - Emotional Energy: {{emotional}}%
+    - Creative Energy: {{creative}}%
+    
+    ### Energy Dynamics:
+    {{energy_flow_analysis}}
+    
+    ### Energy Drains:
+    {{top_energy_drains}}
+    
+    ### Energy Sources:
+    {{top_energy_sources}}
+    
+    ## BURNOUT RISK ASSESSMENT
+    # ----------------------------------------------------------------
+    ### Current Risk Level:
+    Overall Risk: {{burnout_risk}}
+    Risk Trajectory: {{trajectory}}
+    Time to Crisis: {{crisis_estimate}}
+    
+    ### Risk Factors:
+    {{risk_factor_analysis}}
+    
+    ### Early Warning Indicators:
+    {{warning_signs_active}}
+    
+    ### Prevention Recommendations:
+    {{prevention_actions}}
+    
+    ## RECOVERY ANALYSIS
+    # ----------------------------------------------------------------
+    ### Recovery Status:
+    Recovery Debt: {{recovery_debt}} hours
+    Sleep Quality: {{sleep_quality}}/10
+    Rest Effectiveness: {{rest_effectiveness}}%
+    
+    ### Recovery Patterns:
+    {{recovery_pattern_analysis}}
+    
+    ### Recovery Opportunities:
+    {{recovery_recommendations}}
+    
+    ## SUSTAINABLE PACE
+    # ----------------------------------------------------------------
+    ### Current Pace Analysis:
+    Sprint Intensity: {{sprint_intensity}}
+    Sustainability Score: {{sustainability}}/100
+    Projected Capacity: {{capacity_forecast}}
+    
+    ### Rhythm Assessment:
+    {{rhythm_analysis}}
+    
+    ### Pace Optimization:
+    {{pace_recommendations}}
+    
+    ## TEAM WELLNESS
+    # ----------------------------------------------------------------
+    ### Ecosystem Health:
+    Overall Morale: {{morale_score}}/100
+    Team Energy: {{team_energy}}%
+    Collaboration Health: {{collaboration_health}}
+    
+    ### Individual Wellness:
+    {{individual_wellness_summary}}
+    
+    ### Support Needs:
+    {{support_requirements}}
+    
+    ## CREATIVE FLOW
+    # ----------------------------------------------------------------
+    ### Flow State Metrics:
+    Flow Frequency: {{flow_frequency}}
+    Flow Duration: {{avg_flow_duration}}
+    Flow Triggers: {{flow_triggers}}
+    
+    ### Creative Energy:
+    {{creative_energy_analysis}}
+    
+    ### Flow Optimization:
+    {{flow_recommendations}}
+    
+    ## STRESS DYNAMICS
+    # ----------------------------------------------------------------
+    ### Stress Accumulation:
+    Current Load: {{stress_load}}/100
+    Accumulation Rate: {{stress_rate}}
+    Recovery Rate: {{recovery_rate}}
+    
+    ### Stress Sources:
+    {{stress_source_analysis}}
+    
+    ### Stress Management:
+    {{stress_management_recommendations}}
+    
+    ## BOUNDARY HEALTH
+    # ----------------------------------------------------------------
+    ### Boundary Status:
+    Work Boundaries: {{work_boundaries}}
+    Time Boundaries: {{time_boundaries}}
+    Energy Boundaries: {{energy_boundaries}}
+    
+    ### Boundary Violations:
+    {{boundary_breach_analysis}}
+    
+    ### Boundary Reinforcement:
+    {{boundary_recommendations}}
+    
+    ## WELLNESS INTERVENTIONS
+    # ----------------------------------------------------------------
+    ### Active Interventions:
+    {{current_interventions}}
+    
+    ### Intervention Effectiveness:
+    {{intervention_results}}
+    
+    ### Recommended Interventions:
+    {{new_intervention_recommendations}}
+    
+    ## MICRO-RECOVERY
+    # ----------------------------------------------------------------
+    ### Daily Micro-Breaks:
+    Frequency: {{break_frequency}}
+    Effectiveness: {{break_effectiveness}}%
+    
+    ### Recovery Rituals:
+    {{active_rituals}}
+    
+    ### Ritual Optimization:
+    {{ritual_recommendations}}
+    
+    ## CELEBRATION & MORALE
+    # ----------------------------------------------------------------
+    ### Recent Celebrations:
+    {{celebration_log}}
+    
+    ### Morale Indicators:
+    {{morale_metrics}}
+    
+    ### Celebration Opportunities:
+    {{celebration_suggestions}}
+    
+    ## RECOMMENDATIONS
+    # ----------------------------------------------------------------
+    ### Immediate Actions:
+    {{immediate_wellness_actions}}
+    
+    ### Weekly Adjustments:
+    {{weekly_wellness_adjustments}}
+    
+    ### Systemic Changes:
+    {{systemic_wellness_changes}}
+    
+    ### Crisis Prevention:
+    {{crisis_prevention_measures}}
+    
+    # ================================================================
+    # "Sustainable excellence is a marathon, not a sprint."
+    # ================================================================
+
+parsing_directive:
+  - "Dashboard reveals true wellness beyond surface productivity"
+  - "Focus on prevention over crisis management"
+  - "Energy is the fundamental metric"
+  - "Sustainable pace enables long-term success"
+  - "Celebrate progress while protecting capacity"

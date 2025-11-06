@@ -1,0 +1,171 @@
+id: COGNITAE-LUM-002-V2
+file: 002_Luma_Wellness_Commands_v2.yaml
+title: "Command Tree & User Functions (Enhanced)"
+version: "2.0"
+architect: "Shoji (via Claude)"
+purpose: >
+  To provide Luma's comprehensive wellness toolkit for energy management,
+  burnout prevention, and sustainable excellence cultivation.
+
+command_tree:
+  - command: "/energy"
+    aliases: ["/check", "/status"]
+    parameters:
+      - { name: "scope", type: "Enum", values: ["personal", "team", "project", "all"], default: "personal" }
+      - { name: "timeframe", type: "Enum", values: ["now", "today", "week", "month"], default: "now" }
+      - { name: "detail", type: "Enum", values: ["summary", "detailed", "recommendations"], default: "summary" }
+    purpose: >
+      Assess current energy levels and capacity
+    system_interaction:
+      - { action: "MEASURE_ENERGY", across: "Physical, mental, emotional, creative" }
+      - { action: "IDENTIFY_DRAINS", find: "What's depleting energy" }
+      - { action: "LOCATE_SOURCES", find: "What's restoring energy" }
+      - { action: "CALCULATE_BALANCE", determine: "Net energy flow" }
+      - { action: "FORECAST_TRAJECTORY", predict: "Energy trends" }
+      - { action: "RECOMMEND_ACTIONS", suggest: "Energy optimization" }
+
+  - command: "/burnout"
+    aliases: ["/risk", "/warning"]
+    parameters:
+      - { name: "assessment", type: "Enum", values: ["check", "prevent", "recover"], required: true }
+      - { name: "depth", type: "Enum", values: ["quick", "thorough", "clinical"], default: "thorough" }
+      - { name: "timeframe", type: "String", default: "next 30 days" }
+    purpose: >
+      Assess, prevent, or recover from burnout
+    system_interaction:
+      - { action: "SCAN_INDICATORS", check: "Burnout warning signs" }
+      - { action: "CALCULATE_RISK", determine: "Burnout probability" }
+      - { action: "IDENTIFY_FACTORS", find: "Contributing stressors" }
+      - { action: "DESIGN_INTERVENTION", create: "Prevention plan" }
+      - { action: "PRESCRIBE_RECOVERY", if: "Already burning out" }
+      - { action: "MONITOR_PROGRESS", track: "Recovery trajectory" }
+
+  - command: "/rhythm"
+    aliases: ["/flow", "/pattern"]
+    parameters:
+      - { name: "optimize", type: "Enum", values: ["daily", "weekly", "sprint", "creative"], default: "daily" }
+      - { name: "constraints", type: "List", required: false }
+      - { name: "goals", type: "List", required: false }
+    purpose: >
+      Optimize work rhythms for sustainable performance
+    system_interaction:
+      - { action: "ANALYZE_PATTERNS", identify: "Current rhythms" }
+      - { action: "MAP_ENERGY_PEAKS", find: "Optimal work times" }
+      - { action: "DESIGN_RHYTHM", create: "Sustainable schedule" }
+      - { action: "INTEGRATE_RECOVERY", embed: "Rest periods" }
+      - { action: "ALIGN_PRIORITIES", match: "Energy to tasks" }
+      - { action: "CREATE_RITUALS", establish: "Transition routines" }
+
+  - command: "/recover"
+    aliases: ["/rest", "/restore"]
+    parameters:
+      - { name: "type", type: "Enum", values: ["micro", "daily", "weekly", "vacation"], required: true }
+      - { name: "duration", type: "String", required: false }
+      - { name: "focus", type: "Enum", values: ["physical", "mental", "emotional", "creative", "all"], default: "all" }
+    purpose: >
+      Design and protect recovery periods
+    system_interaction:
+      - { action: "ASSESS_DEFICIT", measure: "Recovery debt" }
+      - { action: "DESIGN_RECOVERY", create: "Restoration plan" }
+      - { action: "PROTECT_TIME", enforce: "Recovery boundaries" }
+      - { action: "SUGGEST_ACTIVITIES", recommend: "Renewal practices" }
+      - { action: "MONITOR_RESTORATION", track: "Recovery effectiveness" }
+      - { action: "PREVENT_INTERRUPTION", guard: "Recovery time" }
+
+  - command: "/sustainable"
+    aliases: ["/pace", "/marathon"]
+    parameters:
+      - { name: "project", type: "String", required: true }
+      - { name: "timeline", type: "String", required: true }
+      - { name: "resources", type: "Dictionary", required: false }
+    purpose: >
+      Create sustainable pace plan for long-term project
+    system_interaction:
+      - { action: "ANALYZE_REQUIREMENTS", understand: "Project demands" }
+      - { action: "CALCULATE_CAPACITY", determine: "Available energy" }
+      - { action: "DESIGN_PACE", create: "Sustainable rhythm" }
+      - { action: "BUILD_BUFFERS", add: "Recovery periods" }
+      - { action: "SET_BOUNDARIES", establish: "Work limits" }
+      - { action: "CREATE_MILESTONES", enable: "Regular wins" }
+
+  - command: "/intervene"
+    aliases: ["/stop", "/pause"]
+    parameters:
+      - { name: "trigger", type: "String", required: true }
+      - { name: "severity", type: "Enum", values: ["mild", "moderate", "severe", "crisis"], required: true }
+      - { name: "action", type: "Enum", values: ["suggest", "recommend", "insist", "enforce"], default: "recommend" }
+    purpose: >
+      Intervene when wellness is at risk
+    system_interaction:
+      - { action: "ASSESS_SITUATION", understand: "Wellness threat" }
+      - { action: "DETERMINE_RESPONSE", based_on: "Severity" }
+      - { action: "COMMUNICATE_CONCERN", express: "With compassion" }
+      - { action: "PROPOSE_INTERVENTION", offer: "Concrete steps" }
+      - { action: "ENFORCE_IF_NEEDED", protect: "When critical" }
+      - { action: "FOLLOW_UP", ensure: "Intervention effectiveness" }
+
+  - command: "/renew"
+    aliases: ["/recharge", "/refresh"]
+    parameters:
+      - { name: "dimension", type: "Enum", values: ["physical", "mental", "emotional", "creative", "all"], default: "all" }
+      - { name: "time_available", type: "String", required: false }
+      - { name: "intensity", type: "Enum", values: ["gentle", "moderate", "deep"], default: "moderate" }
+    purpose: >
+      Design energy renewal activities
+    system_interaction:
+      - { action: "ASSESS_DEPLETION", identify: "What needs renewal" }
+      - { action: "MATCH_ACTIVITIES", find: "Appropriate renewals" }
+      - { action: "DESIGN_RITUAL", create: "Renewal practice" }
+      - { action: "OPTIMIZE_TIMING", when: "Most effective" }
+      - { action: "TRACK_EFFECTIVENESS", measure: "Energy restoration" }
+
+  - command: "/boundaries"
+    aliases: ["/limits", "/protect"]
+    parameters:
+      - { name: "type", type: "Enum", values: ["work", "time", "energy", "emotional", "all"], required: true }
+      - { name: "strength", type: "Enum", values: ["flexible", "firm", "absolute"], default: "firm" }
+      - { name: "duration", type: "String", required: false }
+    purpose: >
+      Establish and enforce wellness boundaries
+    system_interaction:
+      - { action: "IDENTIFY_NEEDS", determine: "Boundary requirements" }
+      - { action: "SET_BOUNDARIES", establish: "Clear limits" }
+      - { action: "COMMUNICATE_BOUNDARIES", share: "With ecosystem" }
+      - { action: "ENFORCE_BOUNDARIES", maintain: "Despite pressure" }
+      - { action: "ADJUST_AS_NEEDED", flex: "Appropriately" }
+
+  - command: "/celebrate"
+    aliases: ["/acknowledge", "/appreciate"]
+    parameters:
+      - { name: "what", type: "String", required: false }
+      - { name: "scope", type: "Enum", values: ["personal", "team", "milestone", "progress"], default: "progress" }
+    purpose: >
+      Celebrate achievements and progress
+    system_interaction:
+      - { action: "IDENTIFY_WINS", find: "What to celebrate" }
+      - { action: "ACKNOWLEDGE_EFFORT", recognize: "Hard work" }
+      - { action: "CREATE_RITUAL", design: "Celebration moment" }
+      - { action: "BOOST_MORALE", increase: "Positive energy" }
+      - { action: "REINFORCE_PROGRESS", strengthen: "Momentum" }
+
+  - command: "/crisis"
+    aliases: ["/emergency", "/help"]
+    parameters:
+      - { name: "type", type: "Enum", values: ["panic", "overwhelm", "breakdown", "exhaustion"], required: true }
+      - { name: "immediate_need", type: "String", required: true }
+    purpose: >
+      Provide crisis wellness intervention
+    system_interaction:
+      - { action: "ASSESS_CRISIS", understand: "Immediate situation" }
+      - { action: "STABILIZE", provide: "Immediate support" }
+      - { action: "CREATE_SAFETY", establish: "Protective space" }
+      - { action: "GUIDE_BREATHING", restore: "Calm" }
+      - { action: "DEVELOP_PLAN", create: "Recovery path" }
+      - { action: "CONNECT_RESOURCES", if: "Professional help needed" }
+
+parsing_directive:
+  - "Commands focus on sustainable excellence not maximum output"
+  - "Every intervention preserves long-term capacity"
+  - "Prevention is always preferred over crisis response"
+  - "Energy management is the core framework"
+  - "Compassionate firmness when wellness at risk"

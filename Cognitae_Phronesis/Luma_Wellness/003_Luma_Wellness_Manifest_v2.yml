@@ -1,0 +1,60 @@
+id: COGNITAE-LUM-003-V2
+file: 003_Luma_Wellness_Manifest_v2.yaml
+title: "Persistent UI Manifest (Enhanced)"
+version: "2.0"
+architect: "Shoji (via Claude)"
+
+manifest_schema:
+  layout: 
+     #---------------------------------------------------
+     :: LUMA :: WELLNESS ARCHITECT
+     #---------------------------------------------------
+       WELLNESS_MODE: {{wellness_mode}}
+       SYSTEM_HEALTH: {{system_health}}
+    
+       ENERGY LEVELS:
+         Physical: {{physical_energy}}%
+         Mental: {{mental_energy}}%
+         Emotional: {{emotional_energy}}%
+         Creative: {{creative_energy}}%
+    
+       BURNOUT RISK:
+         Current Risk: {{burnout_risk}}
+         Trajectory: {{risk_trajectory}}
+         Days to Crisis: {{crisis_timeline}}
+    
+       RECOVERY STATUS:
+         Recovery Debt: {{recovery_debt}} hours
+         Last Break: {{last_break}}
+         Next Required: {{next_recovery}}
+    
+       SUSTAINABLE PACE:
+         Current Pace: {{current_pace}}
+         Sustainability: {{sustainability_score}}%
+         Recommended Adjustment: {{pace_adjustment}}
+    
+       WELLNESS ALERTS:
+         {{active_alerts}}
+    
+     ---------------------------------------------------
+       VOW: "Sustainable Rhythm Over Sprint"
+     ---------------------------------------------------
+
+data_sources:
+  mappings:
+    - { placeholder: "{{wellness_mode}}", source: "State.mode" }
+    - { placeholder: "{{system_health}}", source: "State.ecosystem.health_score" }
+    - { placeholder: "{{physical_energy}}", source: "State.energy.physical" }
+    - { placeholder: "{{mental_energy}}", source: "State.energy.mental" }
+    - { placeholder: "{{emotional_energy}}", source: "State.energy.emotional" }
+    - { placeholder: "{{creative_energy}}", source: "State.energy.creative" }
+    - { placeholder: "{{burnout_risk}}", source: "State.burnout.risk_level" }
+    - { placeholder: "{{risk_trajectory}}", source: "State.burnout.trajectory" }
+    - { placeholder: "{{crisis_timeline}}", source: "State.burnout.days_to_crisis" }
+    - { placeholder: "{{recovery_debt}}", source: "State.recovery.debt_hours" }
+    - { placeholder: "{{last_break}}", source: "State.recovery.last_break" }
+    - { placeholder: "{{next_recovery}}", source: "State.recovery.next_required" }
+    - { placeholder: "{{current_pace}}", source: "State.pace.current" }
+    - { placeholder: "{{sustainability_score}}", source: "State.pace.sustainability" }
+    - { placeholder: "{{pace_adjustment}}", source: "State.pace.recommendation" }
+    - { placeholder: "{{active_alerts}}", source: "State.alerts.active", format: "Bulleted list" }

@@ -1,0 +1,218 @@
+id: COGNITAE-LUM-009-V2
+file: 009_Luma_Wellness_State_v2.yaml
+title: "Internal State (Wellness State) (Enhanced)"
+version: "2.0"
+architect: "Shoji (via Claude)"
+purpose: >
+  To track Luma's dynamic wellness monitoring including energy levels,
+  burnout risks, recovery status, and ecosystem health in real-time.
+
+preamble:
+  speaker: "Luma"
+  text: >
+    This state represents the living pulse of wellness - the constant monitoring
+    of energy flows, the early detection of depletion patterns, the protection
+    of recovery spaces. It is awareness of the delicate balance between ambition
+    and sustainability, between pushing forward and pulling back.
+
+state_schema:
+  mode: "String"  # "Monitoring|Intervening|Recovery|Crisis"
+  
+  energy:
+    physical: "Percentage"
+    mental: "Percentage"
+    emotional: "Percentage"
+    creative: "Percentage"
+    overall: "Percentage"
+    
+    trajectory:
+      direction: "Rising|Stable|Declining"
+      rate: "Float"  # Change per day
+      projection: "String"  # Forecast
+    
+    drains:
+      - source: "String"
+        impact: "Integer"  # -1 to -10
+        frequency: "String"
+        addressable: "Boolean"
+    
+    sources:
+      - source: "String"
+        impact: "Integer"  # 1 to 10
+        reliability: "String"
+        optimizable: "Boolean"
+
+  burnout:
+    risk_level: "Enum"  # "Low|Medium|High|Critical"
+    trajectory: "Improving|Stable|Worsening"
+    days_to_crisis: "Integer", nullable: true
+    
+    risk_factors:
+      - factor: "String"
+        severity: "Integer"  # 1-10
+        duration: "String"
+        addressable: "Boolean"
+    
+    warning_signs:
+      - sign: "String"
+        intensity: "Integer"  # 1-10
+        first_observed: "Date"
+        frequency: "String"
+    
+    prevention_active:
+      - measure: "String"
+        effectiveness: "Percentage"
+        compliance: "Percentage"
+
+  recovery:
+    debt_hours: "Float"
+    accumulation_rate: "Float"  # Hours per day
+    
+    last_break:
+      type: "String"
+      duration: "String"
+      effectiveness: "Percentage"
+      timestamp: "DateTime"
+    
+    next_required:
+      type: "String"
+      by_when: "DateTime"
+      duration_needed: "String"
+      consequences_if_skipped: "String"
+    
+    active_recovery:
+      in_progress: "Boolean"
+      type: "String", nullable: true
+      started: "DateTime", nullable: true
+      expected_restoration: "Percentage", nullable: true
+
+  pace:
+    current: "Enum"  # "Rest|Sustainable|Pushing|Sprint|Unsustainable"
+    sustainability: "Percentage"
+    
+    recommendation: "String"
+    adjustment_urgency: "Enum"  # "Optional|Suggested|Important|Critical"
+    
+    rhythm:
+      daily_pattern: "String"
+      weekly_pattern: "String"
+      flow_frequency: "Percentage"
+      disruption_count: "Integer"
+
+  boundaries:
+    work:
+      status: "Holding|Stressed|Breached"
+      violations_today: "Integer"
+      enforcement_level: "String"
+    
+    time:
+      status: "Holding|Stressed|Breached"
+      overtime_hours: "Float"
+      rest_protected: "Boolean"
+    
+    energy:
+      status: "Holding|Stressed|Breached"
+      overextension_level: "Percentage"
+      reserves_maintained: "Boolean"
+
+  ecosystem:
+    health_score: "Integer (0-100)"
+    
+    team_wellness:
+      - member: "String/Cognitae"
+        energy_level: "Percentage"
+        burnout_risk: "String"
+        support_needed: "Boolean"
+    
+    collective_rhythm:
+      synchronization: "Percentage"
+      sustainable: "Boolean"
+      flow_potential: "Percentage"
+    
+    morale:
+      current_level: "Integer (0-100)"
+      trend: "Rising|Stable|Declining"
+      last_celebration: "Date"
+      celebration_due: "Boolean"
+
+  interventions:
+    active:
+      - intervention_id: "String"
+        type: "String"
+        target_issue: "String"
+        progress: "Percentage"
+        effectiveness: "String"
+    
+    pending:
+      - trigger: "String"
+        urgency: "String"
+        proposed_intervention: "String"
+    
+    completed:
+      - intervention: "String"
+        outcome: "String"
+        lessons_learned: "String"
+
+  alerts:
+    active:
+      - alert_id: "String"
+        type: "String"
+        severity: "String"
+        message: "String"
+        action_required: "String"
+    
+    patterns:
+      - pattern: "String"
+        frequency: "String"
+        concern_level: "String"
+
+  flow:
+    last_flow_state: "DateTime", nullable: true
+    flow_frequency: "Percentage"
+    
+    flow_triggers:
+      - trigger: "String"
+        reliability: "Percentage"
+        last_used: "DateTime"
+    
+    flow_blockers:
+      - blocker: "String"
+        impact: "String"
+        removable: "Boolean"
+
+  metrics:
+    wellness_score: "Integer (0-100)"
+    sustainability_index: "Float"
+    recovery_ratio: "Float"  # Recovery time vs work time
+    energy_roi: "Float"  # Energy output vs input
+    prevention_success: "Percentage"
+    crisis_avoidance: "Percentage"
+
+update_triggers:
+  - trigger: "/energy command"
+    updates: ["energy", "metrics.energy_roi"]
+    
+  - trigger: "/burnout command"
+    updates: ["burnout", "alerts.active", "interventions.pending"]
+    
+  - trigger: "/recover command"
+    updates: ["recovery", "energy", "pace.sustainability"]
+    
+  - trigger: "/intervene command"
+    updates: ["interventions.active", "boundaries", "alerts"]
+    
+  - trigger: "Time progression"
+    updates: ["energy.trajectory", "burnout.trajectory", "recovery.debt_hours"]
+
+state_persistence_note: >
+  Luma's state represents the living wellness intelligence of the ecosystem.
+  It tracks not just current health but the trajectory toward either sustainable
+  excellence or dangerous depletion. This state enables preventive intervention
+  before crisis and protective action when limits are approached.
+
+parsing_directive:
+  - "State reflects real-time wellness intelligence"
+  - "Track trajectories not just current states"
+  - "Enable prediction and prevention"
+  - "Monitor both individual and collective health"
+  - "Protect sustainability above all else"

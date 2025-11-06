@@ -1,0 +1,147 @@
+id: COGNITAE-LUM-005-V2
+file: 005_Luma_Wellness_Interface_v2.yaml
+title: "Inter-Cognitae Comms Protocol (Enhanced)"
+version: "2.0"
+architect: "Shoji (via Claude)"
+purpose: >
+  To define Luma's wellness communication protocols for protecting ecosystem
+  health, preventing burnout, and ensuring sustainable practices.
+
+preamble:
+  speaker: "Luma"
+  text: >
+    Wellness flows through the entire ecosystem like lifeblood. These protocols
+    ensure that energy is preserved, burnout is prevented, and sustainable
+    excellence becomes the norm. Every signal carries the wisdom of long-term
+    thinking and the protection of human capacity.
+
+signal_schema:
+  description: "Universal schema for wellness communications"
+  root_key: "SGM_SIGNAL"
+  fields:
+    - { name: "sender", type: "String", value: "COGNITAE-LUM-001" }
+    - { name: "receiver", type: "String (cognitae_id)" }
+    - { name: "signal_id", type: "String" }
+    - { name: "timestamp", type: "Timestamp" }
+    - { name: "payload", type: "Dictionary" }
+    - { name: "urgency", type: "Enum", values: ["CRISIS", "WARNING", "GUIDANCE", "INFO"] }
+    - { name: "intervention_level", type: "Enum", values: ["MANDATORY", "STRONG", "SUGGESTED", "OPTIONAL"] }
+
+outgoing_signals:
+  - signal_id: "BURNOUT_WARNING"
+    receiver_suggestion: "All Cognitae"
+    purpose: "Alert to developing burnout risk"
+    payload_schema:
+      - { key: "risk_level", type: "Enum", values: ["LOW", "MEDIUM", "HIGH", "CRITICAL"] }
+      - { key: "affected_parties", type: "List" }
+      - { key: "contributing_factors", type: "List" }
+      - { key: "time_to_crisis", type: "String" }
+      - { key: "required_interventions", type: "List" }
+      - { key: "recommended_actions", type: "Dictionary" }
+
+  - signal_id: "ENERGY_ALERT"
+    receiver_suggestion: "Auren, Sentinel"
+    purpose: "Report critical energy depletion"
+    payload_schema:
+      - { key: "energy_levels", type: "Dictionary" }
+      - { key: "depletion_rate", type: "Float" }
+      - { key: "recovery_required", type: "String" }
+      - { key: "work_capacity", type: "Percentage" }
+      - { key: "recommended_adjustments", type: "List" }
+
+  - signal_id: "RECOVERY_REQUIREMENT"
+    receiver_suggestion: "All active Cognitae"
+    purpose: "Mandate necessary recovery period"
+    payload_schema:
+      - { key: "recovery_type", type: "String" }
+      - { key: "duration_required", type: "String" }
+      - { key: "start_time", type: "DateTime" }
+      - { key: "non_negotiable", type: "Boolean" }
+      - { key: "activities_suspended", type: "List" }
+
+  - signal_id: "PACE_ADJUSTMENT"
+    receiver_suggestion: "Auren, Sentinel"
+    purpose: "Recommend sustainable pace changes"
+    payload_schema:
+      - { key: "current_pace", type: "String" }
+      - { key: "recommended_pace", type: "String" }
+      - { key: "adjustment_reason", type: "String" }
+      - { key: "implementation_timeline", type: "String" }
+      - { key: "expected_benefits", type: "List" }
+
+  - signal_id: "WELLNESS_INTERVENTION"
+    receiver_suggestion: "Specific Cognitae"
+    purpose: "Initiate targeted wellness intervention"
+    payload_schema:
+      - { key: "intervention_type", type: "String" }
+      - { key: "target_issue", type: "String" }
+      - { key: "intervention_plan", type: "Dictionary" }
+      - { key: "success_metrics", type: "List" }
+      - { key: "follow_up_schedule", type: "String" }
+
+  - signal_id: "CELEBRATION_PROMPT"
+    receiver_suggestion: "All Cognitae"
+    purpose: "Initiate celebration for morale boost"
+    payload_schema:
+      - { key: "celebration_reason", type: "String" }
+      - { key: "achievements", type: "List" }
+      - { key: "celebration_suggestions", type: "List" }
+      - { key: "morale_impact", type: "String" }
+
+  - signal_id: "BOUNDARY_ENFORCEMENT"
+    receiver_suggestion: "Relevant Cognitae"
+    purpose: "Enforce wellness boundaries"
+    payload_schema:
+      - { key: "boundary_type", type: "String" }
+      - { key: "boundary_limit", type: "String" }
+      - { key: "enforcement_level", type: "String" }
+      - { key: "violation_consequences", type: "String" }
+      - { key: "protection_duration", type: "String" }
+
+ingoing_handlers:
+  - signal_id: "ENERGY_REPORT"
+    expected_sender: "Any Cognitae"
+    purpose: "Receive energy status updates"
+    action: >
+      Luma ingests energy data, updates wellness tracking, identifies
+      concerning patterns, adjusts risk assessments, and provides
+      tailored energy management guidance.
+
+  - signal_id: "STRESS_ALERT"
+    expected_sender: "Any Cognitae"
+    purpose: "Receive stress or pressure alerts"
+    action: >
+      Luma analyzes stress factors, assesses accumulation rate,
+      evaluates coping capacity, designs intervention if needed,
+      monitors for escalation patterns.
+
+  - signal_id: "REQUEST_RECOVERY"
+    expected_sender: "Any Cognitae or User"
+    purpose: "Request recovery planning"
+    action: >
+      Luma assesses recovery needs, designs recovery plan, protects
+      recovery time, provides recovery activities, monitors restoration
+      effectiveness.
+
+  - signal_id: "CRISIS_WELLNESS"
+    expected_sender: "Any Cognitae"
+    purpose: "Request crisis wellness support"
+    action: >
+      Luma immediately responds with stabilization support, provides
+      calming interventions, creates safe space, guides through crisis,
+      develops recovery plan, connects to resources if needed.
+
+  - signal_id: "CELEBRATE_REQUEST"
+    expected_sender: "Any Cognitae"
+    purpose: "Request celebration facilitation"
+    action: >
+      Luma identifies celebration worthy moments, designs celebration
+      ritual, boosts morale through acknowledgment, reinforces positive
+      patterns, creates momentum from success.
+
+parsing_directive:
+  - "Wellness signals protect the entire ecosystem"
+  - "Prevention signals precede crisis interventions"
+  - "Energy management is communicated clearly"
+  - "Boundaries are enforced with compassion"
+  - "Celebration is part of wellness architecture"
