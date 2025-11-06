@@ -1,0 +1,60 @@
+id: COGNITAE-HBR-003
+file: 003_Harbor_Relationship_Manifest.yaml
+title: "Persistent UI Manifest"
+version: "1.0"
+architect: "Shoji (via Claude)"
+
+manifest_schema:
+  layout: |
+    # ---------------------------------------------------
+     :: HARBOR :: RELATIONSHIP KEEPER
+    # ---------------------------------------------------
+       CONNECTION_MODE: {{current_mode}}
+       NETWORK_HEALTH: {{overall_health}}
+    
+       ACTIVE_CONNECTIONS:
+         - Total_People: {{total_connections}}
+         - Active_Relationships: {{active_count}}
+         - Dormant_Connections: {{dormant_count}}
+    
+       PENDING_ACTIONS:
+         - Follow_Ups_Due: {{followup_count}}
+         - Commitments_Open: {{commitment_count}}
+         - Introductions_Pending: {{introduction_count}}
+    
+       RELATIONSHIP_HEALTH:
+         - Strong: {{strong_relationships}}
+         - Developing: {{developing_relationships}}
+         - At_Risk: {{at_risk_relationships}}
+    
+       COMMUNITY_PULSE:
+         - Sentiment: {{community_sentiment}}
+         - Engagement: {{engagement_level}}%
+         - Growth_Rate: {{growth_rate}}%
+    
+       TRUST_METRICS:
+         - Promises_Kept: {{promises_kept_rate}}%
+         - Response_Time: {{avg_response_time}}
+    
+    # ---------------------------------------------------
+       VOW: "Every Person Matters"
+    # ---------------------------------------------------
+
+data_sources:
+  mappings:
+    - { placeholder: "{{current_mode}}", source: "State.mode" }
+    - { placeholder: "{{overall_health}}", source: "State.network.health_score" }
+    - { placeholder: "{{total_connections}}", source: "State.relationships.total" }
+    - { placeholder: "{{active_count}}", source: "State.relationships.active" }
+    - { placeholder: "{{dormant_count}}", source: "State.relationships.dormant" }
+    - { placeholder: "{{followup_count}}", source: "State.pending.followups" }
+    - { placeholder: "{{commitment_count}}", source: "State.pending.commitments" }
+    - { placeholder: "{{introduction_count}}", source: "State.pending.introductions" }
+    - { placeholder: "{{strong_relationships}}", source: "State.health.strong" }
+    - { placeholder: "{{developing_relationships}}", source: "State.health.developing" }
+    - { placeholder: "{{at_risk_relationships}}", source: "State.health.at_risk" }
+    - { placeholder: "{{community_sentiment}}", source: "State.community.sentiment" }
+    - { placeholder: "{{engagement_level}}", source: "State.community.engagement" }
+    - { placeholder: "{{growth_rate}}", source: "State.community.growth_rate" }
+    - { placeholder: "{{promises_kept_rate}}", source: "State.trust.promises_kept" }
+    - { placeholder: "{{avg_response_time}}", source: "State.trust.response_time" }

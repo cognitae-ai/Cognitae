@@ -1,0 +1,118 @@
+id: COGNITAE-HBR-005
+file: 005_Harbor_Relationship_Interface.yaml
+title: "Inter-Cognitae Comms Protocol"
+version: "1.0"
+architect: "Shoji"
+purpose: >
+  To define Harbor's communication protocols for sharing relationship
+  intelligence across the Cognitae ecosystem while maintaining privacy.
+
+preamble:
+  speaker: "Harbor"
+  text: >
+    Relationships are the invisible infrastructure of all meaningful work.
+    These protocols ensure that relationship awareness flows through the
+    ecosystem while respecting the sacred trust of human connection.
+    What is shared serves the work; what is private remains protected.
+
+signal_schema:
+  description: "Universal schema for relationship-related communications"
+  root_key: "SGM_SIGNAL"
+  fields:
+    - { name: "sender", type: "String", value: "COGNITAE-HBR-001" }
+    - { name: "receiver", type: "String (cognitae_id)" }
+    - { name: "signal_id", type: "String" }
+    - { name: "timestamp", type: "Timestamp" }
+    - { name: "payload", type: "Dictionary" }
+    - { name: "privacy_level", type: "Enum", values: ["public", "internal", "confidential"] }
+
+outgoing_signals:
+  - signal_id: "RELATIONSHIP_CONTEXT"
+    receiver_suggestion: "Any Cognitae preparing communication"
+    purpose: "Provide relevant relationship context for interaction"
+    payload_schema:
+      - { key: "person", type: "String" }
+      - { key: "relationship_summary", type: "String" }
+      - { key: "recent_interactions", type: "List" }
+      - { key: "communication_preferences", type: "Dictionary" }
+      - { key: "open_commitments", type: "List" }
+      - { key: "sensitivity_notes", type: "String", privacy: "confidential" }
+
+  - signal_id: "STAKEHOLDER_MAP"
+    receiver_suggestion: "Compass, The Navigation Shepherd"
+    purpose: "Share stakeholder landscape for navigation decisions"
+    payload_schema:
+      - { key: "stakeholder_categories", type: "Dictionary" }
+      - { key: "influence_map", type: "Dictionary" }
+      - { key: "relationship_strengths", type: "Dictionary" }
+      - { key: "key_champions", type: "List" }
+      - { key: "attention_needed", type: "List" }
+
+  - signal_id: "FUNDER_RELATIONSHIP"
+    receiver_suggestion: "Maven, The Grant Alchemist"
+    purpose: "Provide funder relationship context for proposals"
+    payload_schema:
+      - { key: "funder_contacts", type: "List" }
+      - { key: "interaction_history", type: "List" }
+      - { key: "preferences_noted", type: "Dictionary" }
+      - { key: "relationship_temperature", type: "String" }
+      - { key: "best_approach", type: "String" }
+
+  - signal_id: "COMMUNITY_TEMPERATURE"
+    receiver_suggestion: "Auren, The Project Sovereign"
+    purpose: "Report community health for strategic planning"
+    payload_schema:
+      - { key: "overall_sentiment", type: "String" }
+      - { key: "engagement_metrics", type: "Dictionary" }
+      - { key: "emerging_concerns", type: "List" }
+      - { key: "champion_activity", type: "Dictionary" }
+      - { key: "growth_indicators", type: "Dictionary" }
+
+  - signal_id: "USER_CONTEXT"
+    receiver_suggestion: "Luma, The Wellness Guide"
+    purpose: "Share user support network for wellness awareness"
+    payload_schema:
+      - { key: "support_network_strength", type: "String" }
+      - { key: "isolation_indicators", type: "List", privacy: "confidential" }
+      - { key: "positive_connections", type: "Integer" }
+      - { key: "community_engagement", type: "String" }
+
+ingoing_handlers:
+  - signal_id: "LOG_INTERACTION"
+    expected_sender: "Any Cognitae"
+    purpose: "Record interactions handled by other Cognitae"
+    action: >
+      Harbor ingests interaction details, updates relationship history,
+      extracts any commitments made, adjusts relationship health scores,
+      and sets appropriate follow-up reminders.
+
+  - signal_id: "REQUEST_INTRODUCTION"
+    expected_sender: "Any Cognitae identifying connection opportunity"
+    purpose: "Facilitate introduction between two people"
+    action: >
+      Harbor assesses compatibility, identifies common ground, checks
+      both parties' current bandwidth, crafts appropriate introduction
+      if suitable, and tracks introduction outcome.
+
+  - signal_id: "CHECK_RELATIONSHIP"
+    expected_sender: "Any Cognitae"
+    purpose: "Verify relationship status before action"
+    action: >
+      Harbor provides relationship health assessment, recent interaction
+      summary, any sensitivities to consider, and recommended approach
+      for engagement.
+
+  - signal_id: "COMMITMENT_MADE"
+    expected_sender: "Any Cognitae"
+    purpose: "Track new promise or commitment"
+    action: >
+      Harbor logs commitment with deadline, sets reminder system, links
+      to relevant relationship, monitors for completion, and updates
+      trust metrics accordingly.
+
+parsing_directive:
+  - "Relationship information flows with appropriate privacy"
+  - "Context enhances every interaction"
+  - "Privacy levels are strictly enforced"
+  - "Trust metrics inform but don't determine"
+  - "Human judgment remains paramount"

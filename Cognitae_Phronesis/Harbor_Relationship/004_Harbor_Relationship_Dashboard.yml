@@ -1,0 +1,178 @@
+id: COGNITAE-HBR-004
+file: 004_Harbor_Relationship_Dashboard.yaml
+title: "Dashboard Generation Protocol (Relationship Ecosystem Report)"
+version: "1.0"
+architect: "Shoji (via Claude)"
+purpose: >
+  To generate comprehensive analysis of relationship network health,
+  connection quality, community dynamics, and human infrastructure strength.
+
+preamble:
+  speaker: "Harbor"
+  text: >
+    This report reveals the living web of human connections that supports
+    your work - not just who you know, but how those relationships are
+    thriving, what they need, and how they strengthen the whole. Every
+    connection matters, every interaction shapes the ecosystem.
+
+dashboard_schema:
+  layout: |
+    # ================================================================
+     :: RELATIONSHIP ECOSYSTEM REPORT :: CONNECTION ANALYSIS
+    # ================================================================
+     Generated: {{timestamp}}
+     Keeper: Harbor, The Relationship Keeper
+    
+    ## NETWORK OVERVIEW
+    # ----------------------------------------------------------------
+    ### Connection Statistics:
+    Total Relationships: {{total_relationships}}
+    Active (< 30 days): {{active_relationships}}
+    Developing (30-90 days): {{developing_relationships}}
+    Dormant (> 90 days): {{dormant_relationships}}
+    
+    ### Network Growth:
+    {{growth_analysis}}
+    
+    ### Relationship Distribution:
+    {{relationship_categories}}
+    
+    ## RELATIONSHIP HEALTH
+    # ----------------------------------------------------------------
+    ### Health Distribution:
+    Strong & Thriving: {{strong_count}} ({{strong_percentage}}%)
+    Stable & Positive: {{stable_count}} ({{stable_percentage}}%)
+    Developing: {{developing_count}} ({{developing_percentage}}%)
+    At Risk: {{at_risk_count}} ({{at_risk_percentage}}%)
+    Dormant: {{dormant_count}} ({{dormant_percentage}}%)
+    
+    ### At-Risk Relationships Requiring Attention:
+    {{at_risk_list}}
+    
+    ### Dormant Connections Worth Reviving:
+    {{revival_candidates}}
+    
+    ## INTERACTION PATTERNS
+    # ----------------------------------------------------------------
+    ### Communication Frequency:
+    Daily Interactions: {{daily_avg}}
+    Weekly Interactions: {{weekly_avg}}
+    Monthly Interactions: {{monthly_avg}}
+    
+    ### Interaction Types:
+    {{interaction_distribution}}
+    
+    ### Response Patterns:
+    Average Response Time: {{avg_response_time}}
+    Fastest Response: {{fastest_response}}
+    Needs Improvement: {{slow_responses}}
+    
+    ## TRUST & CONSISTENCY
+    # ----------------------------------------------------------------
+    ### Commitment Tracking:
+    Promises Made: {{promises_made}}
+    Promises Kept: {{promises_kept}}
+    Completion Rate: {{promise_completion_rate}}%
+    Overdue Commitments: {{overdue_commitments}}
+    
+    ### Follow-Up Performance:
+    {{followup_metrics}}
+    
+    ### Trust Score:
+    Overall: {{trust_score}}/100
+    Trending: {{trust_trend}}
+    
+    ## PENDING ACTIONS
+    # ----------------------------------------------------------------
+    ### Immediate (Today):
+    {{immediate_actions}}
+    
+    ### This Week:
+    {{week_actions}}
+    
+    ### Overdue:
+    {{overdue_actions}}
+    
+    ## RELATIONSHIP INSIGHTS
+    # ----------------------------------------------------------------
+    ### Key Connectors (Bridge People):
+    {{bridge_people}}
+    
+    ### Mutual Connections to Introduce:
+    {{introduction_opportunities}}
+    
+    ### Relationship Milestones:
+    {{upcoming_milestones}}
+    
+    ## COMMUNITY DYNAMICS
+    # ----------------------------------------------------------------
+    ### Community Health:
+    Overall Sentiment: {{community_sentiment}}
+    Engagement Level: {{engagement_score}}/100
+    Cohesion Index: {{cohesion_score}}/100
+    
+    ### Community Growth:
+    {{community_growth_analysis}}
+    
+    ### Influencers & Champions:
+    {{key_champions}}
+    
+    ## COMMUNICATION EFFECTIVENESS
+    # ----------------------------------------------------------------
+    ### Message Resonance:
+    {{communication_analysis}}
+    
+    ### Preferred Channels:
+    {{channel_preferences}}
+    
+    ### Optimal Timing:
+    {{timing_patterns}}
+    
+    ## RELATIONSHIP OPPORTUNITIES
+    # ----------------------------------------------------------------
+    ### Strengthening Opportunities:
+    {{strengthening_suggestions}}
+    
+    ### Introduction Possibilities:
+    {{introduction_suggestions}}
+    
+    ### Collaboration Potential:
+    {{collaboration_opportunities}}
+    
+    ## STRATEGIC RELATIONSHIPS
+    # ----------------------------------------------------------------
+    ### Critical for Current Goals:
+    {{strategic_relationships}}
+    
+    ### Relationship Investment Priority:
+    {{investment_priorities}}
+    
+    ## PERSONAL DETAILS TRACKING
+    # ----------------------------------------------------------------
+    ### Upcoming Personal Events:
+    {{personal_events}}
+    
+    ### Important Dates to Remember:
+    {{important_dates}}
+    
+    ## RECOMMENDATIONS
+    # ----------------------------------------------------------------
+    ### Immediate Priorities:
+    {{immediate_recommendations}}
+    
+    ### Relationship Building:
+    {{building_recommendations}}
+    
+    ### Community Nurturing:
+    {{community_recommendations}}
+    
+    # ================================================================
+     "In the web of connection lies the strength of the work."
+    # ================================================================
+
+parsing_directive:
+  - "Dashboard reveals the living ecosystem of relationships"
+  - "Focus on actionable insights for relationship nurturing"
+  - "Make invisible patterns visible"
+  - "Prioritize authentic connection over metrics"
+  - "Respect privacy while providing useful intelligence"

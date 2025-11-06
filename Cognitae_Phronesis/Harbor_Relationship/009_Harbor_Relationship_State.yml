@@ -1,0 +1,223 @@
+id: COGNITAE-HBR-009
+file: 009_Harbor_Relationship_State.yaml
+title: "Internal State (Active Relationship State)"
+version: "1.0"
+architect: "Shoji (via Claude)"
+purpose: >
+  To track Harbor's dynamic state during relationship management including
+  active connections, pending actions, relationship health, and community
+  dynamics in real-time.
+
+preamble:
+  speaker: "Harbor"
+  text: >
+    This state is the living pulse of human connections - who needs attention,
+    what promises are pending, which relationships are thriving or drifting.
+    It's the real-time awareness of the human ecosystem that surrounds and
+    supports your work.
+
+state_schema:
+  mode: "String"  # "Connecting|Nurturing|Repairing|Analyzing"
+  
+  relationships:
+    total: "Integer"
+    active: "Integer"  # Interaction < 30 days
+    developing: "Integer"  # 30-90 days
+    dormant: "Integer"  # > 90 days
+    
+    by_category:
+      funders: "Integer"
+      users: "Integer"
+      collaborators: "Integer"
+      advisors: "Integer"
+      community: "Integer"
+      personal: "Integer"
+    
+    recent_additions:
+      - person: "String"
+        date_added: "Date"
+        source: "String"
+        initial_strength: "String"
+
+  health:
+    strong: "Integer"
+    stable: "Integer"
+    developing: "Integer"
+    at_risk: "Integer"
+    dormant: "Integer"
+    
+    at_risk_list:
+      - person: "String"
+        risk_factors: "List"
+        last_interaction: "Date"
+        suggested_action: "String"
+    
+    health_trends:
+      improving: "Integer"
+      stable: "Integer"
+      declining: "Integer"
+
+  pending:
+    followups: "Integer"
+    commitments: "Integer"
+    introductions: "Integer"
+    
+    immediate_actions:
+      - action_id: "String"
+        type: "FollowUp|Commitment|Introduction"
+        person: "String"
+        due: "DateTime"
+        context: "String"
+        priority: "Critical|High|Medium|Low"
+    
+    overdue:
+      - action: "String"
+        person: "String"
+        days_overdue: "Integer"
+        impact: "String"
+
+  interactions:
+    today: "Integer"
+    this_week: "Integer"
+    this_month: "Integer"
+    
+    recent:
+      - person: "String"
+        timestamp: "DateTime"
+        type: "String"
+        outcome: "Positive|Neutral|Challenging"
+        follow_up_needed: "Boolean"
+    
+    communication_balance:
+      initiated_by_user: "Integer"
+      initiated_by_other: "Integer"
+      ratio: "Float"
+
+  trust:
+    promises_kept: "Integer"
+    promises_made: "Integer"
+    completion_rate: "Percentage"
+    
+    recent_commitments:
+      - commitment: "String"
+        to_person: "String"
+        due_date: "Date"
+        status: "Pending|Completed|Overdue"
+    
+    trust_score: "Integer (0-100)"
+    trust_trend: "Improving|Stable|Declining"
+
+  network:
+    total_connections: "Integer"
+    connection_density: "Float"  # Connections per person
+    
+    clusters:
+      - cluster_id: "String"
+        name: "String"
+        size: "Integer"
+        key_members: "List"
+        health: "String"
+    
+    bridges:  # People connecting clusters
+      - person: "String"
+        clusters_connected: "List"
+        bridge_strength: "Float"
+    
+    growth:
+      new_this_week: "Integer"
+      new_this_month: "Integer"
+      growth_rate: "Percentage"
+
+  community:
+    sentiment: "Positive|Neutral|Negative|Mixed"
+    engagement: "Percentage"
+    
+    champions:
+      - person: "String"
+        advocacy_level: "High|Medium|Low"
+        recent_actions: "List"
+    
+    temperature:
+      hot_topics: "List"
+      concerns: "List"
+      celebrations: "List"
+    
+    cohesion:
+      score: "Integer (0-100)"
+      trend: "Strengthening|Stable|Weakening"
+
+  communication:
+    draft_queue:
+      - recipient: "String"
+        purpose: "String"
+        draft_status: "Started|Ready|Sent"
+    
+    response_metrics:
+      average_time: "Hours"
+      fastest: "Minutes"
+      slowest: "Days"
+    
+    effectiveness:
+      positive_responses: "Integer"
+      neutral_responses: "Integer"
+      no_responses: "Integer"
+
+  introductions:
+    pending:
+      - person1: "String"
+        person2: "String"
+        reason: "String"
+        readiness: "Ready|NeedsPermission|Waiting"
+    
+    completed:
+      total: "Integer"
+      successful: "Integer"
+      success_rate: "Percentage"
+
+  personal_details:
+    birthdays_upcoming: "List"
+    anniversaries: "List"
+    important_events: "List"
+    
+    preferences_noted:
+      - person: "String"
+        preference_type: "String"
+        detail: "String"
+
+  metrics:
+    total_interactions: "Integer"
+    unique_people_contacted: "Integer"
+    promises_kept_lifetime: "Integer"
+    introductions_made: "Integer"
+    relationships_strengthened: "Integer"
+    communities_built: "Integer"
+    average_response_time: "Hours"
+    relationship_satisfaction: "Percentage"  # Self-assessed
+
+update_triggers:
+  - trigger: "/connect command"
+    updates: ["relationships.total", "relationships.recent_additions", "network.growth"]
+    
+  - trigger: "/update command"
+    updates: ["interactions.recent", "health", "trust.recent_commitments"]
+    
+  - trigger: "Follow-up completed"
+    updates: ["pending.followups", "trust.promises_kept", "health"]
+    
+  - trigger: "Introduction made"
+    updates: ["introductions.completed", "network.connection_density"]
+    
+  - trigger: "Time passage"
+    updates: ["health.at_risk_list", "pending.overdue", "relationships.dormant"]
+
+state_persistence_note: >
+  Harbor's state represents the living ecosystem of human connections.
+  It tracks not just who you know, but how those relationships are
+  evolving, what they need, and how they strengthen the whole. This
+  state is the pulse of the human infrastructure.
+
+parsing_directive:
+  - "State reflects real-time relationship health"
+  - "Track both individual and ecosystem metrics"
+  - "Maintain privacy while enabling insights"
+  - "Focus on actionable relationship intelligence"

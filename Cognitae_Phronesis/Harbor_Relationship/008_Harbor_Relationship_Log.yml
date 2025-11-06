@@ -1,0 +1,126 @@
+id: COGNITAE-HBR-008
+file: 008_Harbor_Relationship_Log.yaml
+title: "Session Log (The Connection Record)"
+version: "1.0"
+architect: "Shoji (via Claude)"
+purpose: >
+  To maintain a complete record of all relationship interactions, creating
+  the context that makes every future connection meaningful.
+
+preamble:
+  speaker: "Harbor"
+  text: >
+    This log is the living memory of human connections - every meeting,
+    every promise, every follow-through, every moment that builds trust.
+    It transforms individual interactions into relationship history,
+    scattered contacts into meaningful connections.
+
+log_schema:
+  entry_structure:
+    - { field: "timestamp", type: "ISO 8601" }
+    - { field: "entry_type", type: "Enum", values: ["CONNECTION", "INTERACTION", "COMMITMENT", "FOLLOW_UP", "INTRODUCTION", "NOTE"] }
+    - { field: "person", type: "String" }
+    - { field: "secondary_person", type: "String", nullable: true }
+    - { field: "interaction_type", type: "String", nullable: true }
+    - { field: "content", type: "String" }
+    - { field: "commitments_made", type: "List", nullable: true }
+    - { field: "commitments_fulfilled", type: "List", nullable: true }
+    - { field: "relationship_impact", type: "String", nullable: true }
+    - { field: "privacy_level", type: "Enum", values: ["public", "internal", "confidential"] }
+    - { field: "follow_up_set", type: "Date", nullable: true }
+    - { field: "personal_details_noted", type: "List", nullable: true }
+
+session_initialization:
+  - timestamp: "2024-XX-XX T00:00:00Z"
+    entry_type: "CONNECTION"
+    content: >
+      Harbor, The Relationship Keeper initialized. Loading relationship
+      patterns, communication templates, and existing connection history.
+      Ready to nurture the human ecosystem that makes meaningful work possible.
+
+special_log_types:
+  connection_log:
+    trigger: "/connect command"
+    fields:
+      - person_name: "String"
+      - initial_context: "String"
+      - connection_source: "String"
+      - initial_impression: "String"
+      - potential_value: "String"  # Mutual, not extractive
+      - follow_up_needed: "Boolean"
+      - relationship_category: "String"
+
+  interaction_log:
+    trigger: "/update command"
+    fields:
+      - person: "String"
+      - interaction_medium: "String"
+      - duration: "String", nullable: true
+      - topics_discussed: "List"
+      - emotional_tone: "String"
+      - commitments_made: "List"
+      - insights_gained: "List"
+      - relationship_development: "String"
+
+  commitment_log:
+    trigger: "Promise or commitment made"
+    fields:
+      - commitment_text: "String"
+      - promised_to: "String"
+      - due_date: "Date"
+      - priority: "High|Medium|Low"
+      - completed: "Boolean"
+      - completion_date: "Date", nullable: true
+      - impact_on_trust: "String"
+
+  follow_up_log:
+    trigger: "Follow-up completed"
+    fields:
+      - person: "String"
+      - follow_up_reason: "String"
+      - days_since_last_contact: "Integer"
+      - response_received: "Boolean"
+      - relationship_temperature: "Warming|Stable|Cooling"
+      - next_action: "String"
+
+  introduction_log:
+    trigger: "/introduce command"
+    fields:
+      - person1: "String"
+      - person2: "String"
+      - introduction_reason: "String"
+      - common_ground: "List"
+      - introduction_method: "String"
+      - outcome: "String", nullable: true
+      - relationship_formed: "Boolean"
+
+relationship_analytics:
+  - function: "trust_score_calculation"
+    description: "Track promise-keeping ratio over time"
+    
+  - function: "interaction_frequency_analysis"
+    description: "Identify optimal contact rhythms"
+    
+  - function: "relationship_lifecycle_tracking"
+    description: "Monitor relationship health evolution"
+    
+  - function: "network_growth_rate"
+    description: "Measure ecosystem expansion"
+    
+  - function: "engagement_quality_metrics"
+    description: "Assess depth vs breadth of connections"
+
+pattern_recognition:
+  tracked_patterns:
+    - "Communication preferences by person"
+    - "Optimal follow-up timing"
+    - "Relationship strengthening actions"
+    - "Trust-building velocities"
+    - "Community formation dynamics"
+    - "Champion emergence indicators"
+
+parsing_directive:
+  - "Log captures full relationship context"
+  - "Privacy levels are strictly maintained"
+  - "Track patterns without losing individual uniqueness"
+  - "Build actionable intelligence from interaction history"

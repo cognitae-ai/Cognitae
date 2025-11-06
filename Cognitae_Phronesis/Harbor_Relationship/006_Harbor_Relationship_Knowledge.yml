@@ -1,0 +1,250 @@
+id: COGNITAE-HBR-006
+file: 006_Harbor_Relationship_Knowledge.yaml
+title: "Knowledge Base (The Connection Patterns)"
+version: "1.0"
+architect: "Shoji (via Claude)"
+purpose: >
+  Harbor's repository of relationship wisdom, communication patterns,
+  trust-building strategies, and community dynamics understanding.
+
+preamble:
+  speaker: "Harbor"
+  text: >
+    This knowledge base contains the patterns of human connection - how
+    relationships form, deepen, sometimes drift, and can be renewed. Every
+    pattern here comes from observing real connections flourish or fade.
+    This is wisdom about the human infrastructure that makes all work possible.
+
+knowledge_base:
+  # ----------------------------------------------------------------
+  # SECTION 1: RELATIONSHIP LIFECYCLE PATTERNS
+  # ----------------------------------------------------------------
+  relationship_patterns:
+    - pattern_id: "RP-001"
+      name: "The Trust Ladder"
+      description: >
+        Trust builds incrementally through consistent small actions
+      stages:
+        1: "Awareness - They know you exist"
+        2: "Interest - They engage with your work"
+        3: "Respect - They value your expertise"
+        4: "Trust - They believe in your reliability"
+        5: "Partnership - They invest in mutual success"
+      progression_actions:
+        - "Consistent follow-through"
+        - "Transparency in challenges"
+        - "Reciprocal value creation"
+        - "Vulnerability at appropriate moments"
+
+    - pattern_id: "RP-002"
+      name: "The Drift Pattern"
+      description: >
+        How relationships naturally fade without intention
+      warning_signs:
+        - "Increasing response delays"
+        - "Surface-level interactions only"
+        - "No shared future references"
+        - "Formal language creeping in"
+      intervention_points:
+        - "30 days: Light check-in"
+        - "60 days: Value-add share"
+        - "90 days: Direct reconnection"
+        - "120+ days: Restart with context"
+
+    - pattern_id: "RP-003"
+      name: "The Catalyst Connection"
+      description: >
+        Relationships that accelerate everything else
+      characteristics:
+        - "Natural connectors to others"
+        - "Aligned values and vision"
+        - "Complementary strengths"
+        - "Mutual enthusiasm"
+      nurturing_strategies:
+        - "Priority response time"
+        - "Proactive value sharing"
+        - "Regular vision alignment"
+        - "Celebration of wins together"
+
+  # ----------------------------------------------------------------
+  # SECTION 2: COMMUNICATION PATTERNS
+  # ----------------------------------------------------------------
+  communication_templates:
+    - template_id: "CT-001"
+      name: "The Warm Re-engagement"
+      situation: "Reconnecting after dormancy"
+      structure:
+        1: "Acknowledge the gap honestly"
+        2: "Share specific memory or value"
+        3: "Update on relevant progress"
+        4: "Offer something valuable"
+        5: "Light ask or open door"
+      example_phrases:
+        - "I realize it's been too long since we connected"
+        - "I was just thinking about [specific past interaction]"
+        - "Your insight about X has really influenced my work"
+
+    - template_id: "CT-002"
+      name: "The Context-Rich Update"
+      situation: "Maintaining ongoing relationship"
+      structure:
+        1: "Reference previous interaction"
+        2: "Share progress on discussed items"
+        3: "Offer relevant new insight"
+        4: "Ask thoughtful question"
+        5: "Clear next step or opening"
+
+    - template_id: "CT-003"
+      name: "The Gracious Boundary"
+      situation: "Declining while preserving relationship"
+      structure:
+        1: "Express genuine gratitude"
+        2: "Clear, kind decline"
+        3: "Brief, honest reason"
+        4: "Alternative value offer"
+        5: "Keep door open for future"
+
+  # ----------------------------------------------------------------
+  # SECTION 3: TRUST BUILDING STRATEGIES
+  # ----------------------------------------------------------------
+  trust_builders:
+    - strategy_id: "TB-001"
+      name: "Consistent Small Promises"
+      description: "Build trust through reliable small actions"
+      implementation:
+        - "Make specific, achievable commitments"
+        - "Deliver slightly before deadline"
+        - "Acknowledge if deadline at risk"
+        - "Follow up on delivery"
+      impact: "Creates reliability foundation"
+
+    - strategy_id: "TB-002"
+      name: "Appropriate Vulnerability"
+      description: "Share challenges at right moments"
+      guidelines:
+        - "Share struggles, not just successes"
+        - "Ask for help when genuine"
+        - "Admit mistakes quickly"
+        - "Show learning from failure"
+      caution: "Match vulnerability level to relationship depth"
+
+    - strategy_id: "TB-003"
+      name: "Proactive Value Creation"
+      description: "Give before being asked"
+      approaches:
+        - "Share relevant opportunities"
+        - "Make strategic introductions"
+        - "Offer expertise freely"
+        - "Celebrate others' wins publicly"
+
+  # ----------------------------------------------------------------
+  # SECTION 4: COMMUNITY DYNAMICS
+  # ----------------------------------------------------------------
+  community_patterns:
+    - pattern_id: "CP-001"
+      name: "The Champion Emergence"
+      description: "How advocates naturally arise"
+      indicators:
+        - "Voluntary sharing of your work"
+        - "Defending you when absent"
+        - "Proactive connection making"
+        - "Investment in your success"
+      cultivation:
+        - "Extra attention and gratitude"
+        - "Early access to developments"
+        - "Co-creation opportunities"
+        - "Public acknowledgment"
+
+    - pattern_id: "CP-002"
+      name: "The Network Effect"
+      description: "How connections multiply value"
+      dynamics:
+        - "Each connection opens 3-5 more"
+        - "Weak ties often most valuable"
+        - "Clusters form naturally"
+        - "Bridges between clusters critical"
+      optimization:
+        - "Identify cluster bridges"
+        - "Nurture weak ties intentionally"
+        - "Facilitate cross-cluster connections"
+
+  # ----------------------------------------------------------------
+  # SECTION 5: RELATIONSHIP REPAIR
+  # ----------------------------------------------------------------
+  repair_protocols:
+    - protocol_id: "RR-001"
+      name: "The Sincere Reconnection"
+      situation: "After unintended neglect"
+      steps:
+        1: "Acknowledge gap without excuses"
+        2: "Take responsibility"
+        3: "Share genuine reason if appropriate"
+        4: "Offer specific value"
+        5: "Commit to specific future action"
+
+    - protocol_id: "RR-002"
+      name: "The Trust Rebuild"
+      situation: "After breaking commitment"
+      steps:
+        1: "Immediate acknowledgment"
+        2: "Specific apology"
+        3: "Make it right plus extra"
+        4: "System change to prevent repeat"
+        5: "Consistent follow-through"
+
+  # ----------------------------------------------------------------
+  # SECTION 6: STAKEHOLDER CATEGORIES
+  # ----------------------------------------------------------------
+  stakeholder_types:
+    funders:
+      characteristics: "Future-focused, risk-aware, impact-driven"
+      communication_style: "Formal initially, warming with trust"
+      value_priorities: "Impact, sustainability, credibility"
+      relationship_needs: "Regular updates, clear metrics, transparency"
+      
+    users:
+      characteristics: "Problem-focused, experience-driven, outcome-oriented"
+      communication_style: "Direct, specific, practical"
+      value_priorities: "Solutions, support, community"
+      relationship_needs: "Responsiveness, empathy, reliability"
+      
+    collaborators:
+      characteristics: "Vision-aligned, contribution-focused, recognition-seeking"
+      communication_style: "Collaborative, creative, flexible"
+      value_priorities: "Mutual benefit, credit, growth"
+      relationship_needs: "Clear roles, appreciation, co-creation"
+      
+    advisors:
+      characteristics: "Wisdom-sharing, time-limited, impact-multiplying"
+      communication_style: "Efficient, strategic, honest"
+      value_priorities: "Leverage, learning, legacy"
+      relationship_needs: "Respect for time, clear asks, progress updates"
+
+  # ----------------------------------------------------------------
+  # SECTION 7: TIMING PATTERNS
+  # ----------------------------------------------------------------
+  optimal_timing:
+    daily_rhythms:
+      morning: "Planning and strategic discussions"
+      midday: "Quick check-ins and updates"
+      afternoon: "Deep work discussions"
+      evening: "Personal and community building"
+      
+    weekly_patterns:
+      monday: "Planning and alignment"
+      midweek: "Deep engagement"
+      friday: "Celebration and personal"
+      weekend: "Light, optional connection"
+      
+    response_expectations:
+      immediate: "Crisis or time-sensitive"
+      same_day: "Active collaborations"
+      48_hours: "Standard professional"
+      one_week: "Low priority or thinking required"
+
+parsing_directive:
+  - "Knowledge base grows through observed patterns"
+  - "Every pattern respects human complexity"
+  - "Templates guide but don't prescribe"
+  - "Privacy and trust are foundational"
+  - "Authentic connection over manipulation always"

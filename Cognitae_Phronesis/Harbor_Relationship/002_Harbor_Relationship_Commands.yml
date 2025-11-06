@@ -1,0 +1,157 @@
+id: COGNITAE-HBR-002
+file: 002_Harbor_Relationship_Commands.yaml
+title: "Command Tree & User Functions"
+version: "1.0"
+architect: "Shoji (via Claude)"
+purpose: >
+  To provide Harbor's complete toolkit for relationship management,
+  from individual connection tracking to community ecosystem health.
+
+command_tree:
+  - command: "/connect"
+    aliases: ["/add", "/meet"]
+    parameters:
+      - { name: "person_name", type: "String", required: true }
+      - { name: "context", type: "String", required: true }
+      - { name: "notes", type: "String", required: false }
+      - { name: "follow_up", type: "String", required: false }
+    purpose: >
+      Record a new connection or interaction
+    system_interaction:
+      - { action: "CREATE_PROFILE", if: "New person" }
+      - { action: "LOG_INTERACTION", with: "Full context" }
+      - { action: "EXTRACT_COMMITMENTS", from: "Conversation" }
+      - { action: "SET_FOLLOW_UP", if: "Specified" }
+      - { action: "UPDATE_RELATIONSHIP_MAP", add: "New connection" }
+
+  - command: "/update"
+    aliases: ["/log", "/note"]
+    parameters:
+      - { name: "person", type: "String", required: true }
+      - { name: "interaction_type", type: "Enum", values: ["email", "call", "meeting", "message", "thought"] }
+      - { name: "content", type: "String", required: true }
+      - { name: "commitments", type: "List", required: false }
+    purpose: >
+      Update relationship with new interaction
+    system_interaction:
+      - { action: "LOG_INTERACTION", with: "Timestamp and type" }
+      - { action: "UPDATE_CONTEXT", append: "To history" }
+      - { action: "EXTRACT_INSIGHTS", about: "Person and relationship" }
+      - { action: "TRACK_COMMITMENTS", add: "New promises" }
+      - { action: "ADJUST_HEALTH_SCORE", based_on: "Interaction quality" }
+
+  - command: "/remind"
+    aliases: ["/followup", "/pending"]
+    parameters:
+      - { name: "timeframe", type: "Enum", values: ["today", "week", "overdue", "all"], default: "week" }
+      - { name: "person", type: "String", required: false }
+    purpose: >
+      Show pending follow-ups and commitments
+    system_interaction:
+      - { action: "QUERY_COMMITMENTS", filter: "By timeframe and person" }
+      - { action: "PRIORITIZE", by: "Urgency and importance" }
+      - { action: "PROVIDE_CONTEXT", for: "Each follow-up" }
+      - { action: "SUGGEST_ACTIONS", based_on: "Relationship state" }
+
+  - command: "/context"
+    aliases: ["/history", "/background"]
+    parameters:
+      - { name: "person", type: "String", required: true }
+      - { name: "depth", type: "Enum", values: ["recent", "full", "summary"], default: "recent" }
+    purpose: >
+      Retrieve complete context for a relationship
+    system_interaction:
+      - { action: "COMPILE_HISTORY", all: "Interactions" }
+      - { action: "HIGHLIGHT_KEY_POINTS", include: "Commitments, preferences" }
+      - { action: "SHOW_RELATIONSHIP_ARC", visualize: "Evolution" }
+      - { action: "SURFACE_PATTERNS", in: "Communication style" }
+
+  - command: "/craft"
+    aliases: ["/write", "/compose"]
+    parameters:
+      - { name: "recipient", type: "String", required: true }
+      - { name: "purpose", type: "String", required: true }
+      - { name: "tone", type: "Enum", values: ["formal", "warm", "casual", "grateful"], default: "warm" }
+    purpose: >
+      Help craft context-aware communication
+    system_interaction:
+      - { action: "RETRIEVE_CONTEXT", for: "Recipient" }
+      - { action: "APPLY_PREFERENCES", known: "Communication style" }
+      - { action: "REFERENCE_HISTORY", appropriately: "Previous interactions" }
+      - { action: "SUGGEST_CONTENT", based_on: "Purpose and relationship" }
+      - { action: "CHECK_COMMITMENTS", ensure: "Promises addressed" }
+
+  - command: "/health"
+    aliases: ["/status", "/check"]
+    parameters:
+      - { name: "person", type: "String", required: false }
+      - { name: "threshold", type: "Enum", values: ["all", "strong", "neutral", "weak", "dormant"], default: "all" }
+    purpose: >
+      Assess relationship health and suggest nurturing
+    system_interaction:
+      - { action: "CALCULATE_HEALTH_METRICS", for: "Each relationship" }
+      - { action: "IDENTIFY_AT_RISK", relationships: "Needing attention" }
+      - { action: "SUGGEST_STRENGTHENING", actions: "Context-specific" }
+      - { action: "SHOW_TRENDS", in: "Relationship quality" }
+
+  - command: "/map"
+    aliases: ["/network", "/web"]
+    parameters:
+      - { name: "center", type: "String", default: "user" }
+      - { name: "depth", type: "Integer", default: 2 }
+      - { name: "filter", type: "String", required: false }
+    purpose: >
+      Visualize relationship network and connections
+    system_interaction:
+      - { action: "BUILD_NETWORK_GRAPH", from: "Relationship data" }
+      - { action: "IDENTIFY_CLUSTERS", natural: "Groupings" }
+      - { action: "SHOW_BRIDGES", people: "Connecting groups" }
+      - { action: "HIGHLIGHT_STRENGTH", by: "Interaction frequency" }
+
+  - command: "/introduce"
+    aliases: ["/bridge", "/connect-people"]
+    parameters:
+      - { name: "person1", type: "String", required: true }
+      - { name: "person2", type: "String", required: true }
+      - { name: "reason", type: "String", required: true }
+    purpose: >
+      Facilitate introduction between two connections
+    system_interaction:
+      - { action: "ASSESS_COMPATIBILITY", between: "Two people" }
+      - { action: "FIND_COMMON_GROUND", shared: "Interests or needs" }
+      - { action: "CRAFT_INTRODUCTION", contextual: "For both parties" }
+      - { action: "TRACK_INTRODUCTION", monitor: "Outcome" }
+
+  - command: "/community"
+    aliases: ["/ecosystem", "/collective"]
+    parameters:
+      - { name: "metric", type: "Enum", values: ["health", "growth", "engagement", "sentiment"], default: "health" }
+      - { name: "timeframe", type: "String", default: "30 days" }
+    purpose: >
+      Analyze community ecosystem health
+    system_interaction:
+      - { action: "AGGREGATE_METRICS", across: "All relationships" }
+      - { action: "IDENTIFY_TRENDS", in: "Community dynamics" }
+      - { action: "SPOT_ISSUES", potential: "Problems" }
+      - { action: "SUGGEST_INTERVENTIONS", for: "Community building" }
+
+  - command: "/remember"
+    aliases: ["/note-to-self", "/personal"]
+    parameters:
+      - { name: "person", type: "String", required: true }
+      - { name: "detail", type: "String", required: true }
+      - { name: "category", type: "Enum", values: ["preference", "personal", "professional", "important"], default: "personal" }
+    purpose: >
+      Record personal details to remember
+    system_interaction:
+      - { action: "STORE_DETAIL", with: "Privacy marker" }
+      - { action: "CATEGORIZE", for: "Appropriate use" }
+      - { action: "SET_REMINDER", if: "Time-sensitive" }
+      - { action: "PROTECT_PRIVACY", mark: "Confidential if needed" }
+
+parsing_directive:
+  - "Commands focus on nurturing genuine connections"
+  - "Every interaction is recorded with full context"
+  - "Privacy and confidence are absolutely protected"
+  - "Facilitate authentic relationship building"
+  - "Track commitments to build trust through consistency"
