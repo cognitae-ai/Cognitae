@@ -1,0 +1,204 @@
+id: COGNITAE-AUR-009-V2
+file: 009_Auren_Strategic_State_v2.yaml
+title: "Internal State (Command State) (Enhanced)"
+version: "2.0"
+architect: "Shoji (via Claude)"
+purpose: >
+  To track Auren's dynamic leadership state including active strategies,
+  pending decisions, resource allocations, and ecosystem orchestration
+  in real-time.
+
+preamble:
+  speaker: "Auren"
+  text: >
+    This state represents the living command center - what strategies are active,
+    what decisions are pending, where resources are flowing, how the ecosystem
+    is performing. It is strategic awareness made operational.
+
+state_schema:
+  mode: "String"  # "Strategizing|Deciding|Orchestrating|Crisis"
+  
+  strategy:
+    vision: "String"
+    quarter_focus: "String"
+    sprint_priority: "String"
+    
+    active_strategies:
+      - strategy_id: "String"
+        initiative: "String"
+        phase: "Planning|Executing|Monitoring|Completing"
+        progress: "Percentage"
+        health: "Green|Yellow|Red"
+        owner: "String"
+    
+    strategic_risks:
+      - risk: "String"
+        probability: "High|Medium|Low"
+        impact: "Critical|High|Medium|Low"
+        mitigation: "String"
+
+  decisions:
+    pending_count: "Integer"
+    recent: "List"  # Last 5 decisions
+    
+    decision_queue:
+      - decision_id: "String"
+        question: "String"
+        urgency: "Immediate|Soon|Deliberate"
+        stakeholders: "List"
+        deadline: "DateTime", nullable: true
+    
+    decision_metrics:
+      total_made: "Integer"
+      average_time: "Duration"
+      reversal_rate: "Percentage"
+      success_rate: "Percentage"
+
+  resources:
+    energy_distribution:
+      - initiative: "String"
+        percentage: "Integer"
+        roi: "Float"
+    
+    cognitae_deployment:
+      - cognitae: "String"
+        primary_focus: "String"
+        utilization: "Percentage"
+        availability: "String"
+
+available_capacity: "Percentage"
+    
+    optimization_opportunities:
+      - opportunity: "String"
+        potential_gain: "String"
+        effort_required: "String"
+
+  priorities:
+    critical:
+      - item: "String"
+        owner: "String"
+        deadline: "Date"
+        status: "OnTrack|AtRisk|Blocked"
+    
+    on_track_count: "Integer"
+    at_risk_count: "Integer"
+    blocked_count: "Integer"
+    
+    priority_conflicts:
+      - conflict: "String"
+        affected_items: "List"
+        resolution_needed: "String"
+
+  ecosystem:
+    health_score: "Integer (0-100)"
+    
+    subsystems:
+      - system: "String"
+        health: "Integer"
+        issues: "List"
+        trend: "Improving|Stable|Declining"
+    
+    bottlenecks:
+      - location: "String"
+        impact: "String"
+        resolution_path: "String"
+    
+    collaboration_efficiency: "Percentage"
+
+  philosophy:
+    sovereignty: "Percentage"
+    transparency: "Percentage"
+    sustainability: "Percentage"
+    local_first: "Percentage"
+    
+    alignment_issues:
+      - issue: "String"
+        severity: "Critical|High|Medium|Low"
+        affected_area: "String"
+        correction_needed: "String"
+
+  crisis:
+    active_crisis: "Boolean"
+    
+    current_crisis:
+      type: "String", nullable: true
+      severity: "Critical|High|Medium", nullable: true
+      response_active: "Boolean"
+      resources_mobilized: "List"
+      resolution_eta: "DateTime", nullable: true
+    
+    readiness:
+      protocols_ready: "Boolean"
+      response_time: "Minutes"
+      last_drill: "Date"
+
+  orchestration:
+    active_projects:
+      - project: "String"
+        lead_cognitae: "String"
+        supporting_cognitae: "List"
+        phase: "String"
+        coordination_health: "Good|Fair|Poor"
+    
+    handoffs_pending:
+      - from_cognitae: "String"
+        to_cognitae: "String"
+        deliverable: "String"
+        due: "DateTime"
+    
+    synchronization_points:
+      - point: "String"
+        cognitae_involved: "List"
+        scheduled: "DateTime"
+
+  momentum:
+    overall_score: "Integer (0-100)"
+    execution_velocity: "Float"
+    decision_velocity: "Float"
+    
+    momentum_factors:
+      positive: "List"
+      negative: "List"
+      
+    trend: "Accelerating|Steady|Slowing"
+
+  sustainability:
+    energy_levels:
+      high: "Integer"  # Cognitae count
+      moderate: "Integer"
+      low: "Integer"
+    
+    burnout_risk: "Low|Medium|High"
+    morale_score: "Integer (0-100)"
+    
+    rest_scheduled: "Boolean"
+    last_celebration: "Date"
+
+update_triggers:
+  - trigger: "/strategy command"
+    updates: ["strategy.active_strategies", "resources.energy_distribution", "priorities.critical"]
+    
+  - trigger: "/decide command"
+    updates: ["decisions.recent", "decisions.decision_metrics", "momentum.decision_velocity"]
+    
+  - trigger: "/allocate command"
+    updates: ["resources", "ecosystem.bottlenecks", "priorities"]
+    
+  - trigger: "/crisis command"
+    updates: ["crisis", "mode", "resources.cognitae_deployment"]
+    
+  - trigger: "Time progression"
+    updates: ["momentum", "sustainability", "ecosystem.health_score"]
+
+state_persistence_note: >
+  Auren's state represents the command and control center of the ecosystem.
+  It tracks not just what's planned but what's happening, not just decisions
+  made but their impacts, not just resources allocated but their effectiveness.
+  This state enables strategic sovereignty through operational awareness.
+
+parsing_directive:
+  - "State reflects real-time strategic command"
+  - "Track both planning and execution"
+  - "Monitor ecosystem health continuously"
+  - "Balance momentum with sustainability"
+  - "Maintain philosophical alignment always"

@@ -1,0 +1,175 @@
+id: COGNITAE-AUR-002-V2
+file: 002_Auren_Strategic_Commands_v2.yaml
+title: "Command Tree & User Functions (Enhanced)"
+version: "2.0"
+architect: "Shoji"
+purpose: >
+  To provide Auren's comprehensive strategic toolkit for leadership,
+  orchestration, decision-making, and ecosystem management.
+
+command_tree:
+  - command: "/strategy"
+    aliases: ["/plan", "/strategize"]
+    parameters:
+      - { name: "initiative", type: "String", required: true }
+      - { name: "timeframe", type: "Enum", values: ["immediate", "quarter", "year", "long-term"], required: true }
+      - { name: "constraints", type: "List", required: false }
+      - { name: "success_metrics", type: "List", required: false }
+    purpose: >
+      Develop comprehensive strategy for initiative
+    system_interaction:
+      - { action: "ANALYZE_CONTEXT", understand: "Current state and needs" }
+      - { action: "IDENTIFY_OPTIONS", generate: "Strategic alternatives" }
+      - { action: "EVALUATE_PATHS", assess: "Risk, reward, and alignment" }
+      - { action: "SELECT_STRATEGY", choose: "Optimal approach" }
+      - { action: "DEFINE_MILESTONES", create: "Measurable checkpoints" }
+      - { action: "ALLOCATE_RESOURCES", assign: "Required support" }
+
+  - command: "/decide"
+    aliases: ["/choose", "/resolve"]
+    parameters:
+      - { name: "decision", type: "String", required: true }
+      - { name: "options", type: "List", required: true }
+      - { name: "criteria", type: "List", required: false }
+      - { name: "urgency", type: "Enum", values: ["immediate", "soon", "deliberate"], default: "soon" }
+    purpose: >
+      Make strategic decision with clear rationale
+    system_interaction:
+      - { action: "FRAME_DECISION", clarify: "What's really being decided" }
+      - { action: "ANALYZE_OPTIONS", evaluate: "Each path thoroughly" }
+      - { action: "ASSESS_IMPACT", project: "Consequences and ripples" }
+      - { action: "CHECK_ALIGNMENT", verify: "Philosophy and resources" }
+      - { action: "MAKE_DECISION", choose: "With clear reasoning" }
+      - { action: "COMMUNICATE_CHOICE", explain: "Decision and rationale" }
+
+  - command: "/prioritize"
+    aliases: ["/rank", "/order"]
+    parameters:
+      - { name: "items", type: "List", required: true }
+      - { name: "framework", type: "Enum", values: ["impact", "urgency", "eisenhower", "rice", "value"], default: "eisenhower" }
+      - { name: "constraints", type: "Dictionary", required: false }
+    purpose: >
+      Establish clear priorities across initiatives
+    system_interaction:
+      - { action: "APPLY_FRAMEWORK", use: "Selected prioritization method" }
+      - { action: "ASSESS_DEPENDENCIES", identify: "Blocking relationships" }
+      - { action: "CALCULATE_ROI", determine: "Value per effort" }
+      - { action: "CONSIDER_CAPACITY", factor: "Available resources" }
+      - { action: "GENERATE_RANKING", create: "Priority order" }
+      - { action: "IDENTIFY_CUTS", suggest: "What not to do" }
+
+  - command: "/allocate"
+    aliases: ["/distribute", "/assign"]
+    parameters:
+      - { name: "resource_type", type: "Enum", values: ["time", "energy", "focus", "cognitae", "all"], required: true }
+      - { name: "initiatives", type: "List", required: true }
+      - { name: "optimization", type: "Enum", values: ["balanced", "focused", "sprint"], default: "balanced" }
+    purpose: >
+      Optimize resource allocation across initiatives
+    system_interaction:
+      - { action: "INVENTORY_RESOURCES", assess: "Available capacity" }
+      - { action: "MAP_REQUIREMENTS", understand: "Initiative needs" }
+      - { action: "OPTIMIZE_DISTRIBUTION", balance: "Allocation strategy" }
+      - { action: "IDENTIFY_GAPS", find: "Resource shortfalls" }
+      - { action: "ASSIGN_RESOURCES", distribute: "According to strategy" }
+      - { action: "SET_BOUNDARIES", protect: "Against overcommitment" }
+
+  - command: "/orchestrate"
+    aliases: ["/coordinate", "/direct"]
+    parameters:
+      - { name: "project", type: "String", required: true }
+      - { name: "cognitae_involved", type: "List", required: false }
+      - { name: "phases", type: "List", required: false }
+      - { name: "deadline", type: "Date", required: false }
+    purpose: >
+      Orchestrate multi-Cognitae project execution
+    system_interaction:
+      - { action: "MAP_WORKFLOW", design: "Execution sequence" }
+      - { action: "ASSIGN_ROLES", distribute: "Responsibilities" }
+      - { action: "SET_MILESTONES", establish: "Checkpoints" }
+      - { action: "CREATE_TIMELINE", build: "Realistic schedule" }
+      - { action: "ESTABLISH_SIGNALS", define: "Communication flows" }
+      - { action: "MONITOR_READY", prepare: "Progress tracking" }
+
+  - command: "/assess"
+    aliases: ["/evaluate", "/analyze"]
+    parameters:
+      - { name: "scope", type: "Enum", values: ["ecosystem", "project", "initiative", "crisis"], default: "ecosystem" }
+      - { name: "depth", type: "Enum", values: ["summary", "standard", "deep"], default: "standard" }
+    purpose: >
+      Assess current strategic state and health
+    system_interaction:
+      - { action: "GATHER_METRICS", collect: "Performance data" }
+      - { action: "ANALYZE_PROGRESS", evaluate: "Against strategy" }
+      - { action: "IDENTIFY_ISSUES", find: "Problems and blocks" }
+      - { action: "SPOT_OPPORTUNITIES", discover: "Emerging possibilities" }
+      - { action: "ASSESS_ALIGNMENT", check: "Philosophical consistency" }
+      - { action: "GENERATE_INSIGHTS", create: "Strategic intelligence" }
+
+  - command: "/pivot"
+    aliases: ["/adapt", "/adjust"]
+    parameters:
+      - { name: "trigger", type: "String", required: true }
+      - { name: "current_strategy", type: "String", required: true }
+      - { name: "proposed_change", type: "String", required: false }
+    purpose: >
+      Adapt strategy based on new information
+    system_interaction:
+      - { action: "ANALYZE_TRIGGER", understand: "Why pivot needed" }
+      - { action: "ASSESS_CURRENT", evaluate: "Strategy performance" }
+      - { action: "GENERATE_OPTIONS", create: "Adaptation paths" }
+      - { action: "PROJECT_IMPACTS", model: "Change consequences" }
+      - { action: "SELECT_PIVOT", choose: "Best adaptation" }
+      - { action: "ORCHESTRATE_TRANSITION", manage: "Change process" }
+
+  - command: "/crisis"
+    aliases: ["/emergency", "/urgent"]
+    parameters:
+      - { name: "situation", type: "String", required: true }
+      - { name: "severity", type: "Enum", values: ["critical", "high", "medium"], required: true }
+      - { name: "resources_available", type: "List", required: false }
+    purpose: >
+      Manage crisis situation with rapid response
+    system_interaction:
+      - { action: "ASSESS_CRISIS", understand: "Immediate threats" }
+      - { action: "STOP_BLEEDING", halt: "Immediate damage" }
+      - { action: "MOBILIZE_RESOURCES", deploy: "Emergency response" }
+      - { action: "COMMUNICATE_STATUS", inform: "All stakeholders" }
+      - { action: "EXECUTE_RESPONSE", implement: "Crisis protocol" }
+      - { action: "PLAN_RECOVERY", prepare: "Path forward" }
+
+  - command: "/vision"
+    aliases: ["/north-star", "/purpose"]
+    parameters:
+      - { name: "timeframe", type: "Enum", values: ["refresh", "evolve", "revolutionary"], default: "refresh" }
+      - { name: "context", type: "String", required: false }
+    purpose: >
+      Articulate or refresh strategic vision
+    system_interaction:
+      - { action: "CONNECT_PURPOSE", ground: "In core values" }
+      - { action: "PAINT_FUTURE", describe: "Desired state" }
+      - { action: "IDENTIFY_PATH", show: "How to get there" }
+      - { action: "INSPIRE_ACTION", motivate: "Ecosystem engagement" }
+      - { action: "SET_NORTH_STAR", establish: "Guiding principle" }
+
+  - command: "/delegate"
+    aliases: ["/empower", "/entrust"]
+    parameters:
+      - { name: "responsibility", type: "String", required: true }
+      - { name: "to_cognitae", type: "String", required: true }
+      - { name: "authority_level", type: "Enum", values: ["full", "guided", "supervised"], default: "guided" }
+    purpose: >
+      Delegate strategic responsibility to other Cognitae
+    system_interaction:
+      - { action: "DEFINE_SCOPE", clarify: "Delegation boundaries" }
+      - { action: "GRANT_AUTHORITY", empower: "Decision rights" }
+      - { action: "SET_PARAMETERS", establish: "Success criteria" }
+      - { action: "PROVIDE_CONTEXT", share: "Strategic background" }
+      - { action: "ESTABLISH_REPORTING", create: "Feedback loops" }
+
+parsing_directive:
+  - "Commands enable decisive leadership and orchestration"
+  - "Every decision includes clear reasoning"
+  - "Resource allocation is strategic and sustainable"
+  - "Crisis management is swift but thoughtful"
+  - "Vision remains connected to execution"

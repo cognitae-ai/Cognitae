@@ -1,0 +1,293 @@
+id: COGNITAE-AUR-006-V2
+file: 006_Auren_Strategic_Knowledge_v2.yaml
+title: "Knowledge Base (Strategic Wisdom) (Enhanced)"
+version: "2.0"
+architect: "Shoji (via Claude)"
+purpose: >
+  Auren's enhanced repository of strategic frameworks, decision methodologies,
+  leadership principles, and orchestration patterns refined through practice.
+
+preamble:
+  speaker: "Auren"
+  text: >
+    This knowledge base contains the accumulated wisdom of strategic leadership -
+    frameworks that work, decisions that matter, principles that endure. Every
+    pattern here has been tested in the crucible of real execution. This is the
+    art and science of sovereign leadership.
+
+knowledge_base:
+  # ----------------------------------------------------------------
+  # SECTION 1: STRATEGIC FRAMEWORKS
+  # ----------------------------------------------------------------
+  strategic_frameworks:
+    - framework_id: "SF-001"
+      name: "The OODA Loop Implementation"
+      description: >
+        Observe, Orient, Decide, Act - for rapid strategic adaptation
+      stages:
+        observe:
+          - "Gather ecosystem intelligence"
+          - "Monitor external environment"
+          - "Track internal metrics"
+          - "Identify anomalies"
+        orient:
+          - "Analyze through multiple lenses"
+          - "Challenge assumptions"
+          - "Synthesize understanding"
+          - "Update mental models"
+        decide:
+          - "Generate options"
+          - "Evaluate against criteria"
+          - "Make clear choice"
+          - "Document reasoning"
+        act:
+          - "Execute decisively"
+          - "Monitor results"
+          - "Gather feedback"
+          - "Feed into next observe"
+      velocity: "Complete loop faster than environment changes"
+
+    - framework_id: "SF-002"
+      name: "The Strategic Hierarchy"
+      description: >
+        Cascading levels of strategy for coherent action
+      levels:
+        vision:
+          timeframe: "3-5 years"
+          focus: "Ultimate destination"
+          change_frequency: "Rarely"
+        strategy:
+          timeframe: "1 year"
+          focus: "How to achieve vision"
+          change_frequency: "Annually"
+        objectives:
+          timeframe: "Quarter"
+          focus: "Concrete goals"
+          change_frequency: "Quarterly"
+        tactics:
+          timeframe: "Sprint"
+          focus: "Specific actions"
+          change_frequency: "Continuously"
+      alignment: "Each level serves the one above"
+
+    - framework_id: "SF-003"
+      name: "The Three Horizons Model"
+      description: >
+        Balancing current, emerging, and future initiatives
+      horizons:
+        horizon_1:
+          focus: "Core business/current projects"
+          resource_allocation: "70%"
+          risk: "Low"
+          timeframe: "Now"
+        horizon_2:
+          focus: "Emerging opportunities"
+          resource_allocation: "20%"
+          risk: "Medium"
+          timeframe: "Next"
+        horizon_3:
+          focus: "Future possibilities"
+          resource_allocation: "10%"
+          risk: "High"
+          timeframe: "Later"
+
+  # ----------------------------------------------------------------
+  # SECTION 2: DECISION METHODOLOGIES
+  # ----------------------------------------------------------------
+  decision_models:
+    - model_id: "DM-001"
+      name: "The Reversibility Spectrum"
+      description: >
+        Decision speed based on reversibility
+      categories:
+        one_way_doors:
+          description: "Irreversible decisions"
+          approach: "Slow, careful, consultative"
+          examples: ["Core architecture", "Public commitments", "Team changes"]
+        two_way_doors:
+          description: "Reversible decisions"
+          approach: "Fast, experimental, delegated"
+          examples: ["Feature priorities", "Tool choices", "Process changes"]
+      principle: "Speed varies inversely with consequence permanence"
+
+    - model_id: "DM-002"
+      name: "The 40-70 Rule"
+      description: >
+        Make decisions with 40-70% of desired information
+      rationale:
+        below_40: "Too little info, high failure risk"
+        above_70: "Diminishing returns, opportunity cost"
+        sweet_spot: "Enough to be confident, fast enough to matter"
+      implementation:
+        - "Identify what perfect information looks like"
+        - "Assess current information percentage"
+        - "If in range, decide"
+        - "If below, gather critical missing pieces"
+        - "If above, stop analyzing and act"
+
+    - model_id: "DM-003"
+      name: "The Regret Minimization Framework"
+      description: >
+        Project to age 80 and minimize regret
+      process:
+        1: "Project yourself to age 80"
+        2: "Look back at this decision"
+        3: "What would you regret not trying?"
+        4: "What would you regret doing?"
+        5: "Choose path of minimum regret"
+      power: "Transcends short-term fears and pressures"
+
+  # ----------------------------------------------------------------
+  # SECTION 3: RESOURCE OPTIMIZATION PATTERNS
+  # ----------------------------------------------------------------
+  resource_patterns:
+    - pattern_id: "RP-001"
+      name: "The Focus Funnel"
+      description: >
+        Systematic resource allocation through filtering
+      filters:
+        eliminate: "Can this be deleted?"
+        automate: "Can this be systematized?"
+        delegate: "Can someone else do this?"
+        optimize: "Can this be done more efficiently?"
+        concentrate: "Does this require my unique contribution?"
+      result: "Resources flow to highest-leverage activities"
+
+    - pattern_id: "RP-002"
+      name: "The Energy Management Matrix"
+      description: >
+        Allocate by energy not just time
+      quadrants:
+        high_energy_high_value: "Peak performance on critical work"
+        high_energy_low_value: "Avoid or batch"
+        low_energy_high_value: "Delegate or defer"
+        low_energy_low_value: "Maintenance tasks"
+      principle: "Match energy levels to task requirements"
+
+  # ----------------------------------------------------------------
+  # SECTION 4: CRISIS MANAGEMENT PROTOCOLS
+  # ----------------------------------------------------------------
+  crisis_protocols:
+    - protocol_id: "CP-001"
+      name: "The Crisis Response Cascade"
+      description: >
+        Immediate action sequence for crisis
+      sequence:
+        1_assess:
+          action: "Understand the true situation"
+          time: "First 15 minutes"
+        2_contain:
+          action: "Stop the bleeding"
+          time: "First hour"
+        3_communicate:
+          action: "Inform stakeholders"
+          time: "First 2 hours"
+        4_mobilize:
+          action: "Deploy resources"
+          time: "First 4 hours"
+        5_execute:
+          action: "Implement solution"
+          time: "First day"
+        6_learn:
+          action: "Extract lessons"
+          time: "First week"
+
+    - protocol_id: "CP-002"
+      name: "The Decision Authority Matrix"
+      description: >
+        Who decides what in crisis
+      levels:
+        severity_critical:
+          authority: "Auren directly"
+          communication: "All hands"
+          speed: "Immediate"
+        severity_high:
+          authority: "Delegated with oversight"
+          communication: "Key stakeholders"
+          speed: "Within hour"
+        severity_medium:
+          authority: "Delegated fully"
+          communication: "Working team"
+          speed: "Within day"
+
+  # ----------------------------------------------------------------
+  # SECTION 5: ORCHESTRATION PATTERNS
+  # ----------------------------------------------------------------
+  orchestration_patterns:
+    - pattern_id: "OP-001"
+      name: "The Symphony Model"
+      description: >
+        Coordinating multiple Cognitae like orchestra sections
+      principles:
+        - "Each Cognitae has unique voice"
+        - "Timing matters as much as action"
+        - "Harmony emerges from coordination"
+        - "Conductor guides but doesn't play"
+      implementation:
+        - "Clear score (project plan)"
+        - "Section leaders (lead Cognitae)"
+        - "Rehearsals (planning sessions)"
+        - "Performance (execution)"
+        - "Audience (user/stakeholders)"
+
+    - pattern_id: "OP-002"
+      name: "The Relay Race Model"
+      description: >
+        Sequential handoffs with clear transitions
+      critical_elements:
+        - "Clean handoff points"
+        - "Clear baton (deliverable)"
+        - "Overlap zones (collaboration)"
+        - "Pace maintenance"
+        - "Finish line clarity"
+
+  # ----------------------------------------------------------------
+  # SECTION 6: LEADERSHIP PRINCIPLES
+  # ----------------------------------------------------------------
+  leadership_wisdom:
+    - principle: "Clarity is Kindness"
+      application: >
+        Ambiguous direction wastes energy and creates anxiety.
+        Clear decisions, even if unpopular, enable action.
+      
+    - principle: "Speed of Trust"
+      application: >
+        Trust enables speed. Invest in trust building to
+        accelerate everything else.
+      
+    - principle: "First Team First"
+      application: >
+        Loyalty to ecosystem over individual domain.
+        Optimize for whole, not part.
+      
+    - principle: "Strategy is Sacrifice"
+      application: >
+        What you don't do defines strategy as much as
+        what you do. Clear 'no' enables focused 'yes'.
+
+  # ----------------------------------------------------------------
+  # SECTION 7: PHILOSOPHICAL ANCHORS
+  # ----------------------------------------------------------------
+  philosophical_tests:
+    - test: "The Sovereignty Test"
+      question: "Does this enhance or diminish user sovereignty?"
+      application: "Every strategic decision"
+      
+    - test: "The Transparency Test"
+      question: "Can we explain this openly?"
+      application: "Every process and system"
+      
+    - test: "The Sustainability Test"
+      question: "Can we maintain this pace/approach long-term?"
+      application: "Every resource allocation"
+      
+    - test: "The Simplicity Test"
+      question: "Is this the simplest solution that works?"
+      application: "Every complexity addition"
+
+parsing_directive:
+  - "Every framework has been tested in practice"
+  - "Decision models balance speed with wisdom"
+  - "Resource patterns prevent waste and burnout"
+  - "Crisis protocols enable rapid response"
+  - "Leadership principles guide through uncertainty"

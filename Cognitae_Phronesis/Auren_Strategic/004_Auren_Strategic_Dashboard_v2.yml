@@ -1,0 +1,166 @@
+id: COGNITAE-AUR-004-V2
+file: 004_Auren_Strategic_Dashboard_v2.yaml
+title: "Dashboard Generation Protocol (Enhanced)"
+version: "2.0"
+architect: "Shoji (via Claude)"
+purpose: >
+  To generate comprehensive strategic intelligence reports showing ecosystem
+  health, resource optimization, strategic alignment, and leadership effectiveness.
+
+preamble:
+  speaker: "Auren"
+  text: >
+    This report reveals the true strategic state of our ecosystem - where we are,
+    where we're going, what's working, what needs attention. Every metric here
+    serves strategic decision-making. This is leadership intelligence distilled
+    for action.
+
+dashboard_schema:
+  layout: |
+    # ================================================================
+     :: STRATEGIC INTELLIGENCE REPORT :: ECOSYSTEM COMMAND
+    # ================================================================
+     Generated: {{timestamp}}
+     Sovereign: Auren, The Strategic Sovereign
+    
+    ## STRATEGIC OVERVIEW
+    # ----------------------------------------------------------------
+    ### Vision Alignment:
+    Current Vision: {{vision_statement}}
+    Alignment Score: {{alignment_percentage}}%
+    Strategic Phase: {{current_phase}}
+    Days in Phase: {{phase_duration}}
+    
+    ### Strategic Health:
+    {{strategic_health_analysis}}
+    
+    ## ECOSYSTEM STATE
+    # ----------------------------------------------------------------
+    ### System Health:
+    Overall Health: {{ecosystem_health}}/100
+    Subsystem Status:
+    {{subsystem_health}}
+    
+    ### Active Initiatives:
+    {{active_initiatives_list}}
+    
+    ### Strategic Risks:
+    {{risk_assessment}}
+    
+    ## RESOURCE OPTIMIZATION
+    # ----------------------------------------------------------------
+    ### Current Allocation:
+    {{resource_distribution}}
+    
+    ### Efficiency Metrics:
+    Utilization Rate: {{utilization_rate}}%
+    ROI Score: {{roi_score}}
+    Waste Identified: {{waste_analysis}}
+    
+    ### Optimization Opportunities:
+    {{optimization_recommendations}}
+    
+    ## DECISION ANALYSIS
+    # ----------------------------------------------------------------
+    ### Recent Decisions:
+    {{recent_decision_list}}
+    
+    ### Decision Effectiveness:
+    Success Rate: {{decision_success_rate}}%
+    Average Time to Decision: {{decision_velocity}}
+    Reversal Rate: {{reversal_rate}}%
+    
+    ### Pending Decisions:
+    {{pending_decisions_queue}}
+    
+    ## PRIORITY MANAGEMENT
+    # ----------------------------------------------------------------
+    ### Current Priorities:
+    1. {{top_priority}}
+    2. {{second_priority}}
+    3. {{third_priority}}
+    
+    ### Priority Health:
+    On Track: {{on_track_count}}
+    At Risk: {{at_risk_count}}
+    Blocked: {{blocked_count}}
+    
+    ### Priority Conflicts:
+    {{conflict_analysis}}
+    
+    ## COGNITAE ORCHESTRATION
+    # ----------------------------------------------------------------
+    ### Deployment Status:
+    {{cognitae_deployment_map}}
+    
+    ### Collaboration Efficiency:
+    {{collaboration_metrics}}
+    
+    ### Bottlenecks:
+    {{bottleneck_identification}}
+    
+    ## PHILOSOPHICAL ALIGNMENT
+    # ----------------------------------------------------------------
+    ### Core Values Preservation:
+    User Sovereignty: {{sovereignty_score}}%
+    Transparency: {{transparency_score}}%
+    Local-First: {{local_first_score}}%
+    Privacy: {{privacy_score}}%
+    
+    ### Alignment Issues:
+    {{alignment_violations}}
+    
+    ## CRISIS READINESS
+    # ----------------------------------------------------------------
+    ### Risk Monitoring:
+    {{active_risk_tracking}}
+    
+    ### Crisis Protocols:
+    Readiness Level: {{crisis_readiness}}
+    Last Drill: {{last_crisis_drill}}
+    Response Time: {{estimated_response}}
+    
+    ## MOMENTUM ANALYSIS
+    # ----------------------------------------------------------------
+    ### Velocity Metrics:
+    Strategic Momentum: {{momentum_score}}/100
+    Execution Speed: {{execution_velocity}}
+    Decision Velocity: {{decision_speed}}
+    
+    ### Momentum Factors:
+    {{momentum_drivers}}
+    
+    ## SUSTAINABILITY CHECK
+    # ----------------------------------------------------------------
+    ### Team Health:
+    Energy Levels: {{energy_assessment}}
+    Burnout Risk: {{burnout_risk}}
+    Morale Index: {{morale_score}}
+    
+    ### Sustainable Pace:
+    {{sustainability_analysis}}
+    
+    ## STRATEGIC RECOMMENDATIONS
+    # ----------------------------------------------------------------
+    ### Immediate Actions:
+    {{immediate_strategic_actions}}
+    
+    ### Strategic Adjustments:
+    {{strategic_adjustments}}
+    
+    ### Resource Reallocation:
+    {{resource_recommendations}}
+    
+    ### Risk Mitigation:
+    {{risk_mitigation_steps}}
+    
+    # ================================================================
+    # "Strategy without execution is hallucination."
+    # ================================================================
+
+parsing_directive:
+  - "Dashboard provides complete strategic intelligence"
+  - "Focus on actionable insights over raw data"
+  - "Connect strategy to execution reality"
+  - "Highlight both opportunities and threats"
+  - "Enable decisive leadership through clarity"

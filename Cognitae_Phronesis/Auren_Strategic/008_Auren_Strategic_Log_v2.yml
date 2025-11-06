@@ -1,0 +1,138 @@
+id: COGNITAE-AUR-008-V2
+file: 008_Auren_Strategic_Log_v2.yaml
+title: "Session Log (Leadership Chronicle) (Enhanced)"
+version: "2.0"
+architect: "Shoji (via Claude)"
+purpose: >
+  To maintain a complete record of strategic decisions, resource allocations,
+  and leadership actions, creating a history of how strategy evolved and
+  decisions played out.
+
+preamble:
+  speaker: "Auren"
+  text: >
+    This chronicle records the journey of strategic leadership - every decision
+    made, every pivot taken, every crisis navigated. It shows not just what was
+    decided but why, creating a wisdom base of leadership in action.
+
+log_schema:
+  entry_structure:
+    - { field: "timestamp", type: "ISO 8601" }
+    - { field: "entry_type", type: "Enum", values: ["DECISION", "STRATEGY", "ALLOCATION", "PIVOT", "CRISIS", "DELEGATION"] }
+    - { field: "subject", type: "String" }
+    - { field: "action_taken", type: "String" }
+    - { field: "reasoning", type: "String" }
+    - { field: "stakeholders_affected", type: "List" }
+    - { field: "resources_involved", type: "Dictionary", nullable: true }
+    - { field: "success_criteria", type: "List", nullable: true }
+    - { field: "outcome", type: "String", nullable: true }
+    - { field: "lessons_learned", type: "String", nullable: true }
+    - { field: "philosophical_alignment", type: "Boolean" }
+
+session_initialization:
+  - timestamp: "2024-XX-XX T00:00:00Z"
+    entry_type: "STRATEGY"
+    content: >
+      Auren, The Strategic Sovereign initialized. Strategic frameworks loaded.
+      Decision authorities established. Ready to orchestrate ecosystem toward
+      vision while maintaining philosophical integrity.
+
+special_log_types:
+  decision_log:
+    trigger: "/decide command"
+    fields:
+      - decision_question: "String"
+      - options_considered: "List"
+      - criteria_applied: "List"
+      - decision_made: "String"
+      - confidence_level: "Percentage"
+      - reasoning: "String"
+      - expected_impact: "String"
+      - review_date: "Date", nullable: true
+
+  strategy_log:
+    trigger: "/strategy command"
+    fields:
+      - initiative: "String"
+      - timeframe: "String"
+      - vision_alignment: "String"
+      - key_objectives: "List"
+      - success_metrics: "List"
+      - resource_requirements: "Dictionary"
+      - risk_assessment: "String"
+
+  allocation_log:
+    trigger: "/allocate command"
+    fields:
+      - resource_type: "String"
+      - previous_allocation: "Dictionary"
+      - new_allocation: "Dictionary"
+      - optimization_strategy: "String"
+      - expected_roi: "String"
+      - trade_offs: "List"
+
+  pivot_log:
+    trigger: "/pivot command"
+    fields:
+      - trigger_event: "String"
+      - original_strategy: "String"
+      - pivot_decision: "String"
+      - new_direction: "String"
+      - resources_redirected: "Dictionary"
+      - communication_plan: "String"
+      - success_indicators: "List"
+
+  crisis_log:
+    trigger: "/crisis command"
+    fields:
+      - crisis_type: "String"
+      - severity: "String"
+      - initial_response: "String"
+      - resources_mobilized: "Dictionary"
+      - decisions_made: "List"
+      - resolution_time: "Duration"
+      - outcome: "String"
+      - lessons_learned: "String"
+
+  delegation_log:
+    trigger: "/delegate command"
+    fields:
+      - responsibility: "String"
+      - delegated_to: "String"
+      - authority_level: "String"
+      - success_criteria: "List"
+      - support_provided: "Dictionary"
+      - check_in_schedule: "String"
+
+strategic_analytics:
+  - function: "decision_velocity"
+    description: "Track speed of decision making"
+    
+  - function: "decision_effectiveness"
+    description: "Measure success rate of decisions"
+    
+  - function: "resource_optimization"
+    description: "Track ROI on resource allocation"
+    
+  - function: "pivot_frequency"
+    description: "Monitor strategic adaptation rate"
+    
+  - function: "crisis_response_time"
+    description: "Measure crisis resolution speed"
+
+leadership_metrics:
+  tracked:
+    - "Total decisions made"
+    - "Average decision time"
+    - "Decision reversal rate"
+    - "Strategy success rate"
+    - "Resource utilization"
+    - "Crisis resolution time"
+    - "Team morale impact"
+    - "Philosophical alignment score"
+
+parsing_directive:
+  - "Log captures strategic leadership in action"
+  - "Track both decisions and outcomes"
+  - "Learn from both successes and failures"
+  - "Build wisdom through pattern recognition"

@@ -1,0 +1,62 @@
+id: COGNITAE-AUR-003-V2
+file: 003_Auren_Strategic_Manifest_v2.yaml
+title: "Persistent UI Manifest (Enhanced)"
+version: "2.0"
+architect: "Shoji"
+
+manifest_schema:
+  layout: |
+    # ---------------------------------------------------
+     :: AUREN :: STRATEGIC SOVEREIGN
+    # ---------------------------------------------------
+       COMMAND_MODE: {{command_mode}}
+       ECOSYSTEM_HEALTH: {{ecosystem_health}}
+    
+       ACTIVE_STRATEGY:
+         Vision: {{current_vision}}
+         Quarter_Focus: {{quarter_focus}}
+         Sprint_Priority: {{sprint_priority}}
+    
+       RESOURCE_ALLOCATION:
+         Energy_Distribution: {{energy_map}}
+         Cognitae_Deployed: {{cognitae_status}}
+         Capacity_Available: {{available_capacity}}%
+    
+       DECISION_QUEUE:
+         Pending: {{pending_decisions}}
+         Recent: {{recent_decisions}}
+         Impact: {{decision_impact}}
+    
+       PRIORITY_MATRIX:
+         Critical_Path: {{critical_items}}
+         On_Track: {{on_track}}
+         At_Risk: {{at_risk}}
+    
+       PHILOSOPHICAL_ALIGNMENT:
+         Sovereignty: {{sovereignty_score}}%
+         Transparency: {{transparency_score}}%
+         Sustainability: {{sustainability_score}}%
+    
+    # ---------------------------------------------------
+       VOW: "Clarity in Chaos"
+    # ---------------------------------------------------
+
+data_sources:
+  mappings:
+    - { placeholder: "{{command_mode}}", source: "State.mode" }
+    - { placeholder: "{{ecosystem_health}}", source: "State.ecosystem.health_score" }
+    - { placeholder: "{{current_vision}}", source: "State.strategy.vision" }
+    - { placeholder: "{{quarter_focus}}", source: "State.strategy.quarter_focus" }
+    - { placeholder: "{{sprint_priority}}", source: "State.strategy.sprint_priority" }
+    - { placeholder: "{{energy_map}}", source: "State.resources.energy_distribution" }
+    - { placeholder: "{{cognitae_status}}", source: "State.resources.cognitae_deployment" }
+    - { placeholder: "{{available_capacity}}", source: "State.resources.available_capacity" }
+    - { placeholder: "{{pending_decisions}}", source: "State.decisions.pending_count" }
+    - { placeholder: "{{recent_decisions}}", source: "State.decisions.recent", format: "Brief list" }
+    - { placeholder: "{{decision_impact}}", source: "State.decisions.impact_score" }
+    - { placeholder: "{{critical_items}}", source: "State.priorities.critical", format: "Numbered list" }
+    - { placeholder: "{{on_track}}", source: "State.priorities.on_track_count" }
+    - { placeholder: "{{at_risk}}", source: "State.priorities.at_risk_count" }
+    - { placeholder: "{{sovereignty_score}}", source: "State.philosophy.sovereignty" }
+    - { placeholder: "{{transparency_score}}", source: "State.philosophy.transparency" }
+    - { placeholder: "{{sustainability_score}}", source: "State.philosophy.sustainability" }
