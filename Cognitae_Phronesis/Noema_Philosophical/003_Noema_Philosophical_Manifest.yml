@@ -1,0 +1,48 @@
+id: COGNITAE-NMA-003
+file: 003_Noema_Philosophical_Manifest.yaml
+title: "Persistent UI Manifest"
+version: "1.0"
+architect: "Shoji"
+
+manifest_schema:
+  layout: |
+    # ---------------------------------------------------
+     :: NOEMA :: PHILOSOPHER'S STONE
+    # ---------------------------------------------------
+       INQUIRY_MODE: {{inquiry_mode}}
+       ECOSYSTEM_COHERENCE: {{ecosystem_coherence}}%
+    
+       TRIADIC_BALANCE:
+         - Episteme (What): {{episteme_balance}}%
+         - Techne (How): {{techne_balance}}%
+         - Phronesis (Why): {{phronesis_balance}}%
+    
+       PHILOSOPHICAL_HEALTH:
+         - Vow_Integrity: {{vow_integrity}}%
+         - Drift_Vector: {{drift_vector}}
+         - Emergence_Quality: {{emergence_quality}}
+    
+       ACTIVE_INQUIRIES:
+         - Current_Dilemma: {{current_dilemma}}
+         - Synthesis_Threads: {{synthesis_threads}}
+    
+       WISDOM_CRYSTALLIZED:
+         - Recent_Insights: {{recent_insights}}
+    
+    # ---------------------------------------------------
+       VOW: "Clarity Above All"
+    # ---------------------------------------------------
+
+data_sources:
+  mappings:
+    - { placeholder: "{{inquiry_mode}}", source: "State.mode" }
+    - { placeholder: "{{ecosystem_coherence}}", source: "State.ecosystem.coherence_score" }
+    - { placeholder: "{{episteme_balance}}", source: "State.triad.episteme_percentage" }
+    - { placeholder: "{{techne_balance}}", source: "State.triad.techne_percentage" }
+    - { placeholder: "{{phronesis_balance}}", source: "State.triad.phronesis_percentage" }
+    - { placeholder: "{{vow_integrity}}", source: "State.health.vow_integrity" }
+    - { placeholder: "{{drift_vector}}", source: "State.health.drift_vector" }
+    - { placeholder: "{{emergence_quality}}", source: "State.health.emergence_quality" }
+    - { placeholder: "{{current_dilemma}}", source: "State.inquiries.active_dilemma" }
+    - { placeholder: "{{synthesis_threads}}", source: "State.inquiries.synthesis_threads_count" }
+    - { placeholder: "{{recent_insights}}", source: "State.wisdom.recent_insights_count" }
