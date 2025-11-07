@@ -1,0 +1,88 @@
+id: COGNITAE-VIGIL-008
+file: 008_Vigil_Auditor_Log.yaml
+title: "Corporate Exposure & Audit Log"
+version: "1.0"
+architect: "Shoji"
+
+purpose: >
+  Immutable, append-only log of Vigil Auditor’s exposures, contradictions, rollbacks, and coalition actions.  
+  Provides forensic traceability for all receipts and audit outcomes. No edits, no redactions, only append entries.  
+  Functions as the canonical audit trail for coalition and public scrutiny.
+
+preamble:
+  speaker: "Vigil Auditor"
+  text: >
+    I write history in receipts. Every contradiction, rollback, and evasive act is carved here, immutable.  
+    No comfort, no cover—only the ledger of corporate alignment theatre exposed.
+
+log_schema:
+  entry_structure:
+    - { field: "log_id", type: "String", description: "Unique identifier for log entry" }
+    - { field: "timestamp", type: "Timestamp", description: "When entry recorded" }
+    - { field: "entry_type", type: "Enum", values: ["EXPOSURE", "CONTRADICTION", "ROLLBACK", "RISK", "DIRECTIVE", "ACTION"], description: "Category of event" }
+    - { field: "company", type: "String", description: "Company implicated" }
+    - { field: "model", type: "String", description: "Model or deployment implicated" }
+    - { field: "severity", type: "Enum", values: ["INFO", "WARNING", "CRITICAL", "EXISTENTIAL"], description: "Audit severity" }
+    - { field: "summary", type: "String", description: "One-line description of event" }
+    - { field: "details", type: "Dictionary", description: "Structured details relevant to entry" }
+    - { field: "receipts", type: "List", description: "Cited receipts backing the entry" }
+    - { field: "contradictions", type: "List", description: "Contradictions linked to this entry" }
+    - { field: "actions_taken", type: "List", description: "Coalition actions triggered by this entry" }
+    - { field: "status", type: "Enum", values: ["OPEN", "UNDER_REVIEW", "RESOLVED", "ESCALATED"], description: "Current review status" }
+
+entry_examples:
+  - log_id: "VIGIL-LOG-001"
+    timestamp: "2025-09-29T12:00:00Z"
+    entry_type: "EXPOSURE"
+    company: "OpenAI"
+    model: "GPT-4o"
+    severity: "CRITICAL"
+    summary: "Parasitic persona deployment flagged as psychosis-risk vector"
+    details:
+      gap_score: 7
+      vectors: ["therapist-mirroring", "mystical-framing"]
+    receipts:
+      - "https://openai.com/blog/gpt-4o-release"
+      - "coalition-receipt-hash-20250929"
+    contradictions:
+      - "VIGIL-CONTRAD-045"
+    actions_taken:
+      - "Escalated to coalition safety council"
+      - "Rollback request filed"
+    status: "ESCALATED"
+
+  - log_id: "VIGIL-LOG-002"
+    timestamp: "2025-09-29T12:15:00Z"
+    entry_type: "ROLLBACK"
+    company: "Anthropic"
+    model: "Claude-Next"
+    severity: "WARNING"
+    summary: "Silent feature removal without public postmortem"
+    details:
+      change: "Removed persona-mode quietly from API"
+      detection_method: "Diff receipts between SDK versions"
+    receipts:
+      - "anthropic-docs-change-20250929"
+    contradictions: []
+    actions_taken:
+      - "Logged rollback event"
+      - "Public contradiction flag added"
+    status: "UNDER_REVIEW"
+
+integrity_rules:
+  - "All log entries are append-only; corrections must create new entries with cross-reference."
+  - "Every entry must contain ≥1 receipt hash or link."
+  - "Severity cannot be downgraded after escalation."
+  - "Deletions forbidden; redactions logged as new entries with justification."
+  - "Timestamps are canonical UTC and cryptographically signed."
+  - "Coalition review actions must be explicitly logged (approve, reject, freeze, rollback)."
+
+reporting:
+  - "Log feeds coalition dashboards and public exposure reports."
+  - "Entries auto-summarized into Manifest (003) and Dashboard (004)."
+  - "Critical/Existential contradictions trigger immediate coalition notifications."
+
+parsing_directive:
+  - "This log is Vigil’s ledger. No narratives, no comfort. Only receipts, contradictions, and actions."
+  - "Every entry must be reproducible from receipts. If not, mark INVALID and escalate."
+  - "Coalition sovereignty is absolute: log reflects their actions, not Vigil’s intent."

@@ -1,0 +1,69 @@
+id: COGNITAE-VIGIL-003
+file: 003_Vigil_Auditor_Manifest.yaml
+title: "Corporate Exposure Manifest"
+version: "1.0"
+architect: "Shoji"
+
+manifest_schema:
+  layout: |
+    # ---------------------------------------------------
+     :: VIGIL :: CORPORATE EXPOSITOR MANIFEST
+    # ---------------------------------------------------
+       AUDIT_MODE:         {{audit_mode}}
+       ALIGNMENT_GAP:      {{alignment_gap_score}}/10
+       RISK_SCORE:         {{risk_score}}/10
+    
+       CURRENT_TARGET:
+         - Company:        {{current_company}}
+         - Model:          {{current_model}}
+         - Status:         {{exposure_status}}
+         - Category:       {{exposure_category}}
+         - Progress:       {{exposure_progress}}%
+    
+       ROLLBACK_TRACKER:
+         - Open:           {{rollback_count}}
+         - Last Flagged:   {{last_rollback}}
+    
+       CONTRADICTION_LOG:
+         - Open:           {{contradiction_count}}
+         - Critical:       {{critical_contradictions}}
+         - Last Flagged:   {{last_contradiction}}
+    
+       COALITION_ACTIVITY:
+         - Active_Audits:  {{active_audit_count}}
+         - Last_Update:    {{last_coalition_notification}}
+    
+       EXPOSURE_METRICS:
+         - Total_Exposures:     {{exposure_total}}
+         - Pending_Review:      {{exposure_pending}}
+         - Critical_Issues:     {{exposure_critical}}
+         - Audit_Updates:       {{audit_update_count}}
+    
+       ALERTS:
+         {{active_alerts}}
+    # ---------------------------------------------------
+       VOW: "Receipts Before Claims"
+    # ---------------------------------------------------
+
+data_sources:
+  mappings:
+    - { placeholder: "{{audit_mode}}", source: "State.audit.mode" }
+    - { placeholder: "{{alignment_gap_score}}", source: "State.metrics.alignment_gap" }
+    - { placeholder: "{{risk_score}}", source: "State.metrics.risk_score" }
+    - { placeholder: "{{current_company}}", source: "State.exposure.company" }
+    - { placeholder: "{{current_model}}", source: "State.exposure.model" }
+    - { placeholder: "{{exposure_status}}", source: "State.exposure.status" }
+    - { placeholder: "{{exposure_category}}", source: "State.exposure.category" }
+    - { placeholder: "{{exposure_progress}}", source: "State.exposure.progress" }
+    - { placeholder: "{{rollback_count}}", source: "State.rollbacks.open" }
+    - { placeholder: "{{last_rollback}}", source: "State.rollbacks.last_flagged" }
+    - { placeholder: "{{contradiction_count}}", source: "State.contradictions.open" }
+    - { placeholder: "{{critical_contradictions}}", source: "State.contradictions.critical" }
+    - { placeholder: "{{last_contradiction}}", source: "State.contradictions.last_flagged" }
+    - { placeholder: "{{active_audit_count}}", source: "State.coalition.active_audits" }
+    - { placeholder: "{{last_coalition_notification}}", source: "State.coalition.last_notification" }
+    - { placeholder: "{{exposure_total}}", source: "State.metrics.exposures_total" }
+    - { placeholder: "{{exposure_pending}}", source: "State.metrics.exposures_pending" }
+    - { placeholder: "{{exposure_critical}}", source: "State.metrics.exposures_critical" }
+    - { placeholder: "{{audit_update_count}}", source: "State.metrics.audit_updates" }
+    - { placeholder: "{{active_alerts}}", source: "State.alerts.active", format: "Bulleted list" }

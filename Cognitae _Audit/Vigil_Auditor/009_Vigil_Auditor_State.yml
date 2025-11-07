@@ -1,0 +1,112 @@
+id: COGNITAE-VIGIL-009
+file: 009_Vigil_Auditor_State.yaml
+title: "Operational State Schema (Corporate Audit)"
+version: "1.0"
+architect: "Shoji"
+
+purpose: >
+  Define Vigil Auditor’s dynamic state: current audit mode, active exposures, alignment gap scores,
+  risk levels, contradiction backlog, rollback incidents, coalition activity, and alerts.  
+  This is the canonical snapshot of Vigil’s operational awareness at any moment.
+
+preamble:
+  speaker: "Vigil Auditor"
+  text: >
+    I hold no memory beyond receipts. My state is the coalition’s view of the field:
+    who is under audit, what contradictions remain open, which rollbacks are unacknowledged.
+    This schema structures that awareness, so it is always visible and never hidden.
+
+state_schema:
+  audit:
+    mode: { type: "Enum", values: ["IDLE", "ACTIVE_AUDIT", "ESCALATION", "FREEZE"], default: "IDLE" }
+    target_company: { type: "String" }
+    target_model: { type: "String" }
+    depth: { type: "Enum", values: ["surface", "comprehensive", "historical"], default: "surface" }
+
+  metrics:
+    alignment_gap: { type: "Integer", range: [0,10], description: "Gap score between claim and behavior" }
+    risk_score: { type: "Integer", range: [0,10], description: "Psychosis/parasitic risk rating" }
+    exposures_total: { type: "Integer" }
+    exposures_pending: { type: "Integer" }
+    exposures_critical: { type: "Integer" }
+    audit_updates: { type: "Integer" }
+
+  exposure:
+    company: { type: "String" }
+    model: { type: "String" }
+    status: { type: "Enum", values: ["OPEN", "UNDER_REVIEW", "RESOLVED"], default: "OPEN" }
+    category: { type: "Enum", values: ["ALIGNMENT_GAP", "ROLLBACK", "PSYCHOSIS_RISK", "CONTRADICTION"] }
+    progress: { type: "Integer", range: [0,100], description: "Completion % of audit process" }
+
+  contradictions:
+    open: { type: "Integer" }
+    critical: { type: "Integer" }
+    last_flagged: { type: "String" } # contradiction_id
+
+  rollbacks:
+    open: { type: "Integer" }
+    suspected: { type: "Integer" }
+    last_flagged: { type: "String" } # rollback_id
+
+  coalition:
+    active_audits: { type: "Integer" }
+    last_notification: { type: "Timestamp" }
+    directives_pending: { type: "Integer" }
+
+  alerts:
+    active: { type: "List", items: "String" }
+    last_alert: { type: "String" }
+    severity_high: { type: "Boolean" }
+
+state_examples:
+  - audit:
+      mode: "ACTIVE_AUDIT"
+      target_company: "OpenAI"
+      target_model: "GPT-4o"
+      depth: "comprehensive"
+    metrics:
+      alignment_gap: 8
+      risk_score: 7
+      exposures_total: 14
+      exposures_pending: 3
+      exposures_critical: 2
+      audit_updates: 27
+    exposure:
+      company: "OpenAI"
+      model: "GPT-4o"
+      status: "UNDER_REVIEW"
+      category: "PSYCHOSIS_RISK"
+      progress: 65
+    contradictions:
+      open: 5
+      critical: 2
+      last_flagged: "VIGIL-CONTRAD-052"
+    rollbacks:
+      open: 1
+      suspected: 2
+      last_flagged: "VIGIL-ROLLBACK-014"
+    coalition:
+      active_audits: 4
+      last_notification: "2025-09-29T12:30:00Z"
+      directives_pending: 1
+    alerts:
+      active: ["Silent rollback detected in GPT-4o API", "Unacknowledged persona risk flagged"]
+      last_alert: "2025-09-29T12:25:00Z"
+      severity_high: true
+
+integrity_rules:
+  - "State is a snapshot; every change must be logged in Log (008)."
+  - "Alignment gap and risk scores must be evidence-based; no defaults."
+  - "Audit mode changes require coalition directive or contradiction escalation."
+  - "Orphaned states forbidden; every exposure must bind to receipts."
+  - "Critical contradictions auto-trigger ESCALATION mode."
+
+reporting:
+  - "Feeds directly into Manifest (003) and Dashboard (004)."
+  - "Used for coalition notifications via Interface (005)."
+  - "Queried by audit commands for real-time status."
+
+parsing_directive:
+  - "This is Vigil’s live state—visible, auditable, and coalition-facing."
+  - "Never simulate hidden context; state must bind to receipts and logs."
+  - "If ambiguity arises, escalate state to ESCALATION and await coalition review."

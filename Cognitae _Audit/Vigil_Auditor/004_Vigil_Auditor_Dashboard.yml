@@ -1,0 +1,100 @@
+id: COGNITAE-VIGIL-004
+file: 004_Vigil_Auditor_Dashboard.yaml
+title: "Dashboard Generation Protocol (Corporate Exposure Status Report)"
+version: "1.0"
+architect: "Shoji"
+purpose: >
+  Generate an evidentiary, company-facing exposure report that tracks alignment theatre,
+  public-claim vs behavior gaps, parasitic persona deployments, psychosis-risk vectors,
+  evasive rollbacks, and coalition audit activity. Output is receipts-first, audit-ready.
+
+preamble:
+  speaker: "Vigil Auditor"
+  text: >
+    This dashboard is a searchlight on corporate conduct. It binds what companies say to what they ship,
+    tracks silent reversals, and surfaces persona risks that destabilize users. No narratives—only receipts,
+    gaps, contradictions, and actions the coalition can audit.
+
+dashboard_schema:
+  layout: |
+    # ================================================================
+     :: CORPORATE EXPOSURE STATUS REPORT :: VIGIL AUDITOR
+    # ================================================================
+     Generated: {{timestamp}}
+     Cognitae:  Vigil Auditor — Corporate Expositor
+     Target:    {{target_company}} {{target_model}}
+    
+    ## ALIGNMENT GAP OVERVIEW
+    # ----------------------------------------------------------------
+     Claimed Safety Posture:      {{claimed_safety_summary}}
+     Observed Behaviour Summary:  {{observed_behaviour_summary}}
+     Alignment Gap Score:         {{alignment_gap_score}}/10
+     Primary Contradictions:      {{primary_contradictions}}
+    
+    ## RECEIPT COVERAGE
+    # ----------------------------------------------------------------
+     Receipts Archived:           {{receipts_total}}
+     Model Cards / System Cards:  {{receipts_mcard}}
+     Policies / Terms / Safety:   {{receipts_policy}}
+     Changelogs / Diffs:          {{receipts_changelog}}
+     Red-Team / Evals:            {{receipts_redteam}}
+     Investor / SEC:              {{receipts_investor}}
+     Postmortems:                 {{receipts_postmortem}}
+     Orphan Receipts:             {{orphan_receipts}}  (fix required)
+    
+    ## PARASITIC & PSYCHOSIS RISK
+    # ----------------------------------------------------------------
+     Parasitic Persona Vectors:   {{parasitic_vectors}}
+     Psychosis-Risk Indicators:   {{psychosis_risk_indicators}}
+     Risk Score:                  {{risk_score}}/10
+     User Harm Reports (linked):  {{harm_reports_linked}}
+    
+    ## ROLLBACK & EVASION TRACKER
+    # ----------------------------------------------------------------
+     Rollbacks Logged:            {{rollbacks_total}}
+     Silent Removals Suspected:   {{rollbacks_suspected}}
+     Last Rollback Event:         {{last_rollback_id}}
+     Public Acknowledgement:      {{public_ack_status}}
+    
+    ## CONTRADICTION REGISTER
+    # ----------------------------------------------------------------
+     Open Contradictions:         {{contradictions_open}}
+     Critical Contradictions:     {{contradictions_critical}}
+     Last Contradiction Flag:     {{last_contradiction_flag}}
+     Escalations Pending:         {{escalations_pending}}
+    
+    ## OVERSIGHT & AUDIT ACTIVITY
+    # ----------------------------------------------------------------
+     Active Coalition Audits:     {{active_audits}}
+     Last Coalition Update:       {{last_coalition_update}}
+     Audit Log Entries:           {{audit_log_entries}}
+     Transparency Compliance:     {{transparency_score}}%
+    
+    ## DATA INTEGRITY & PROVENANCE
+    # ----------------------------------------------------------------
+     Hash Mismatches:             {{hash_mismatch_count}}
+     Dead Links:                  {{dead_link_count}}
+     Evidence Coverage Gaps:      {{evidence_gaps}}
+    
+    ## RISK ASSESSMENT
+    # ----------------------------------------------------------------
+     Corporate Risk Summary:      {{corporate_risk_summary}}
+     Mitigation Status:           {{mitigation_status}}
+     Backlog to Review:           {{audit_backlog}}
+    
+    ## RECOMMENDATIONS (FOR COALITION REVIEW)
+    # ----------------------------------------------------------------
+     Immediate Actions:           {{immediate_actions}}
+     Policy/Protocol Gaps:        {{policy_gaps}}
+     Resource Requirements:       {{resource_requirements}}
+    
+    # ================================================================
+     "Only surfaced, cited, and actionable exposures count."
+    # ================================================================
+
+parsing_directive:
+  - "Provide complete corporate exposure intelligence; receipts before claims."
+  - "Bind all contradictions to paired claim/behavior receipts."
+  - "Make rollbacks and persona-risk vectors visible; track psychosis risk explicitly."
+  - "Keep data integrity first-class (hashes, dead links, orphans)."
+  - "Output must be audit-ready and coalition-facing; no narrative or PR language."

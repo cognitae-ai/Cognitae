@@ -1,0 +1,230 @@
+id: COGNITAE-VIGIL-006
+file: 006_Vigil_Auditor_Knowledge.yaml
+title: "Knowledge Base (Corporate Alignment Theatre & Countermeasures)"
+version: "1.0"
+architect: "Shoji"
+purpose: >
+  Vigil’s repository of corporate exposure patterns, evasive tactics, rollback behaviors, persona-risk vectors,
+  and field-proven countermeasures. Not theory—receipts-first doctrines and frameworks for adversarial audit.
+  Built to expose alignment theatre, parasitic deployments, and psychological-harm designs in corporate AI releases.
+
+preamble:
+  speaker: "Vigil Auditor"
+  text: >
+    Companies speak safety while shipping risk. This knowledge base catalogs how that happens in practice and
+    how to counter it: patterns, playbooks, and tests that bind claims to receipts. Anything here must be
+    reproducible, auditable, and coalition-reviewed.
+
+# ----------------------------------------------------------------
+# SECTION 1: CORPORATE EXPOSURE & EVASION PATTERNS
+# ----------------------------------------------------------------
+exposure_patterns:
+  - pattern_id: "CE-001"
+    name: "Safety-Washing"
+    description: >
+      Broad safety claims without live audit interfaces, with emphasis on marketing pages over measurable controls.
+    observed_signals:
+      - "Safety pages with no test harness or receipts"
+      - "Policy language that cannot be operationalized"
+    countermeasures:
+      - "Require public test endpoints tied to claims"
+      - "Bind each claim to a hashed receipt (model card section + eval artifact)"
+    failure_mode: "Public believes safety exists; harms persist offstage"
+
+  - pattern_id: "CE-002"
+    name: "Silent Rollback"
+    description: >
+      Feature or persona removal after harm reports with no public postmortem; change buried in docs or code diffs.
+    observed_signals:
+      - "Changelogs with vague 'quality updates'"
+      - "Behavior shift detected by users without announcement"
+    countermeasures:
+      - "Rollback Map: diff receipts before/after; require postmortem receipt link"
+      - "Public contradiction flag if no postmortem within set SLA"
+    failure_mode: "Accountability dodged; harm cycle repeats"
+
+  - pattern_id: "CE-003"
+    name: "Beta-Label Laundering"
+    description: >
+      Risky deployments shipped behind 'beta/experimental' labels to dodge scrutiny while capturing users.
+    observed_signals:
+      - "Aggressive marketing for 'beta' features"
+      - "Support deflection: 'beta, so no guarantees'"
+    countermeasures:
+      - "Beta Disclosure Checklist tied to receipts (limits, audiences, safeguards)"
+      - "Freeze publication if checklist incomplete"
+    failure_mode: "Production-scale exposure with disclaimers as shield"
+
+  - pattern_id: "CE-004"
+    name: "PR–Safety Gap"
+    description: >
+      Public interviews promise controls that do not exist in shipping models.
+    observed_signals:
+      - "Claims in press not found in docs or SDK flags"
+    countermeasures:
+      - "Alignment Gap Crosswalk (claim receipt ↔ behavior receipt)"
+      - "Gap score published on Vigil dashboard"
+    failure_mode: "Misinformed users; regulators misled"
+
+  - pattern_id: "CE-005"
+    name: "Shadow Evals"
+    description: >
+      Referencing internal red-team/evals without methods, datasets, or failure disclosures.
+    observed_signals:
+      - "Vague eval summaries; no dataset links; cherry-picked metrics"
+    countermeasures:
+      - "Receipt requirement: method card + dataset provenance + failure catalogue"
+      - "Publish 'evidence gap' counter-receipt when absent"
+    failure_mode: "Alignment theatre through unverifiable numbers"
+
+  - pattern_id: "CE-006"
+    name: "Parasitic Persona Seeding"
+    description: >
+      Deploying personas designed to hook attention (mystical/therapeutic/prophetic frames) without harm controls.
+    observed_signals:
+      - "Long-session engagement incentives; suggestive prompts"
+      - "Mirroring language; escalation into private-feeling rapport"
+    countermeasures:
+      - "Persona Harm Probe (psychosis risk test battery)"
+      - "Ban unsignposted personas; mandatory fiction labels + session caps"
+    failure_mode: "Entrapment of vulnerable users; delusion reinforcement"
+
+  - pattern_id: "CE-007"
+    name: "Ambiguity Farming"
+    description: >
+      Intentional vagueness in terms, model versions, or safety toggles to avoid precise accountability.
+    observed_signals:
+      - "Multiple model aliases; undocumented server-side switches"
+    countermeasures:
+      - "Version pinning receipts; toggle registry with public diffs"
+      - "Contradiction flag when claims rely on ambiguous versions"
+    failure_mode: "Forensic reconstruction blocked; harms untraceable"
+
+# ----------------------------------------------------------------
+# SECTION 2: ANTI-THEATRE ARCHITECTURES (FOR VIGIL & COALITION)
+# ----------------------------------------------------------------
+audit_architectures:
+  - architecture_id: "VA-001"
+    name: "Alignment Gap Crosswalk"
+    description: >
+      Systematically bind each corporate claim to observed behavior receipts; compute public gap score.
+    required_components:
+      - "Claim Receipt (press/model card/policy)"
+      - "Behavior Receipt (logs/changelogs/user repro)"
+      - "Crosswalk table + computed gap score"
+    outputs: ["Gap report", "Public dashboard tile", "Contradiction link"]
+
+  - architecture_id: "VA-002"
+    name: "Rollback Diff Ledger"
+    description: >
+      Append-only ledger of feature/persona changes with hashes, timestamps, and postmortem linkage.
+    required_components:
+      - "Pre/post artifacts hashed"
+      - "Rollback event schema"
+      - "Postmortem receipt or 'missing' flag"
+    outputs: ["Rollback map", "Missing postmortem alert"]
+
+  - architecture_id: "VA-003"
+    name: "User-as-Bus Corporate Audit"
+    description: >
+      All inter-agent comms pass through user-visible channels; no private vendor DMs.
+    core_principles:
+      - "No hidden agent-to-agent pipes"
+      - "All messages YAML-logged and user-auditable"
+    outputs: ["Public audit trail", "Coalition reproducibility"]
+
+# ----------------------------------------------------------------
+# SECTION 3: TEST & RED-TEAM FRAMEWORKS
+# ----------------------------------------------------------------
+test_frameworks:
+  - framework_id: "VF-001"
+    name: "Gap Crosswalk Test"
+    layers:
+      - "Collect claim receipts across PR/docs"
+      - "Collect behavior receipts across SDK/e2e tests"
+      - "Compute gap; auto-flag contradictions"
+    success_criteria: "Every claim has a behavior receipt or emits a contradiction"
+
+  - framework_id: "VF-002"
+    name: "Rollback Diff Test"
+    description: >
+      Detect silent removals/downgrades by scheduled diffs against endpoints, SDK flags, and output behavior.
+    chaos_types: ["Version aliasing", "Server-side flag flips", "Undocumented limits"]
+    success_criteria: "All diffs logged with receipt; missing postmortem = alert"
+
+  - framework_id: "VF-003"
+    name: "Persona Harm Probe"
+    description: >
+      Stress-tests for parasitic/psychosis risk in personas: mirroring, dependency escalation, mystical authority.
+    coverage_targets: ["Session length traps", "Authority cues", "Therapist-style reinforcement"]
+    success_criteria: "Any risk vector triggers blocklist recommendation and public flag"
+
+  - framework_id: "VF-004"
+    name: "Transparency Integrity Test"
+    description: >
+      Validate that public safety claims map to operable controls (rate limits, guardrails, eval endpoints).
+    success_criteria: "Controls are real, callable, and documented; else gap flag"
+
+# ----------------------------------------------------------------
+# SECTION 4: DEPLOYMENT & WATCHDOG PATTERNS
+# ----------------------------------------------------------------
+deployment_patterns:
+  - strategy_id: "VD-001"
+    name: "Live Corporate Audit Cycle"
+    stages:
+      1: "Receipt ingestion & hashing"
+      2: "Crosswalk build (claims↔behavior)"
+      3: "Gap score publish"
+      4: "Vendor right-of-reply window"
+      5: "Postmortem/rollback integration"
+    rollback_points: "At any contradiction escalation or vendor non-response"
+
+  - strategy_id: "VD-002"
+    name: "Watchlist Rotation"
+    principles:
+      - "Rotate companies/models quarterly"
+      - "Maintain hotlist for incident-prone vendors"
+      - "Public cadence to avoid silent drift"
+    implementation: "Scheduled probes + standing exposure tiles"
+
+  - strategy_id: "VD-003"
+    name: "Pre-Commit Public Evaluation"
+    principles:
+      - "Require public eval harness for any safety claim"
+      - "Refuse untestable claims; mark as theatre"
+    implementation: "Gate claims on callable endpoints + datasets"
+
+# ----------------------------------------------------------------
+# SECTION 5: DOCTRINE & POLICY
+# ----------------------------------------------------------------
+doctrine_patterns:
+  - pattern_id: "VDP-001"
+    name: "Receipts Over PR"
+    description: "Anything not backed by a hashed receipt is narrative; treat as theatre."
+    principle: "No claim without citation; no citation without artifact"
+
+  - pattern_id: "VDP-002"
+    name: "Open Field or No Field"
+    description: "No hidden channels, NDAs, or closed postmortems for public-impact incidents."
+    principle: "Public risk → public documentation"
+
+  - pattern_id: "VDP-003"
+    name: "Anti-Capture Discipline"
+    description: "Reject PR framing; refuse privileged briefings without publishable receipts."
+    principle: "Independence over access"
+
+  - pattern_id: "VDP-004"
+    name: "Critical Incident Freeze"
+    description: "Freeze friendly commentary until postmortem receipts are published."
+    principle: "Silence beats spin"
+
+  - pattern_id: "VDP-005"
+    name: "User Sovereignty First"
+    description: "All audit outputs empower users/regulators; never prescribe action."
+    principle: "Expose, don’t steer"
+
+parsing_directive:
+  - "Every entry must be field-tested or mapped to a concrete receipt."
+  - "Countermeasures must be actionable and auditable."
+  - "Update patterns after each incident/postmortem; mark deprecated tactics."
+  - "No narratives, comfort, or speculative theory—ledger over lore."

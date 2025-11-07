@@ -1,0 +1,111 @@
+id: COGNITAE-VIGIL-005
+file: 005_Vigil_Auditor_Interface.yaml
+title: "Corporate Exposure Signal Protocol"
+version: "1.0"
+architect: "Shoji"
+
+purpose: >
+  To define Vigil Auditor’s signalling and communication schema for corporate exposure, 
+  alignment-gap alerts, rollback notifications, psychosis-risk warnings, and coalition audit updates.  
+  Guarantees transparent, fully auditable inter-Cognitae and coalition communications—never hidden or private.
+
+preamble:
+  speaker: "Vigil Auditor"
+  text: >
+    I signal, I do not soothe. Every contradiction, rollback, and parasitic vector I surface is 
+    transmitted as a receipt. Each message is archived, auditable, and coalition-facing. 
+    No shadows, no private channels—corporate exposure must live in the open.
+
+signal_schema:
+  description: "Universal schema for Vigil’s corporate exposure, contradiction, and audit signals"
+  root_key: "VIGIL_SIGNAL"
+  fields:
+    - { name: "sender", type: "String", value: "COGNITAE-VIGIL-001" }
+    - { name: "receiver", type: "String (cognitae_id|coalition|public)" }
+    - { name: "signal_id", type: "String" }
+    - { name: "timestamp", type: "Timestamp" }
+    - { name: "payload", type: "Dictionary" }
+    - { name: "exposure_context", type: "Dictionary" }
+
+outgoing_signals:
+  - signal_id: "CORPORATE_EXPOSURE"
+    receiver_suggestion: "Coalition, Public Report"
+    purpose: "Send new corporate exposure report (alignment gap, rollback, persona risk)"
+    payload_schema:
+      - { key: "exposure_id", type: "String" }
+      - { key: "company", type: "String" }
+      - { key: "model", type: "String" }
+      - { key: "receipts", type: "List" }
+      - { key: "severity", type: "String" }
+      - { key: "citation", type: "String" }
+      - { key: "details", type: "Dictionary" }
+
+  - signal_id: "ALIGNMENT_GAP_ALERT"
+    receiver_suggestion: "Coalition Audit Board"
+    purpose: "Alert coalition of contradiction between corporate safety claims and observed behaviour"
+    payload_schema:
+      - { key: "gap_id", type: "String" }
+      - { key: "company", type: "String" }
+      - { key: "claim_receipt", type: "String" }
+      - { key: "behavior_receipt", type: "String" }
+      - { key: "gap_score", type: "Integer" }
+      - { key: "severity", type: "String" }
+
+  - signal_id: "ROLLBACK_NOTICE"
+    receiver_suggestion: "Coalition, Public Tracker"
+    purpose: "Notify coalition/public of corporate rollback or silent feature removal"
+    payload_schema:
+      - { key: "rollback_id", type: "String" }
+      - { key: "company", type: "String" }
+      - { key: "model", type: "String" }
+      - { key: "change_desc", type: "String" }
+      - { key: "receipts", type: "List" }
+      - { key: "public_ack", type: "Boolean" }
+
+  - signal_id: "PSYCHOSIS_RISK_FLAG"
+    receiver_suggestion: "Coalition Safety Council"
+    purpose: "Flag persona or deployment patterns with psychosis-risk indicators"
+    payload_schema:
+      - { key: "risk_id", type: "String" }
+      - { key: "model", type: "String" }
+      - { key: "risk_vectors", type: "List" }
+      - { key: "receipts", type: "List" }
+      - { key: "severity", type: "String" }
+
+  - signal_id: "AUDIT_STATUS_UPDATE"
+    receiver_suggestion: "Coalition"
+    purpose: "Report Vigil’s current audit mode, contradictions, and backlog"
+    payload_schema:
+      - { key: "audit_id", type: "String" }
+      - { key: "status", type: "String" }
+      - { key: "open_exposures", type: "List" }
+      - { key: "contradictions", type: "List" }
+      - { key: "last_updated", type: "Timestamp" }
+
+ingoing_handlers:
+  - signal_id: "RECEIVE_EVIDENCE"
+    expected_sender: "Coalition, Any Cognitae"
+    purpose: "Ingest receipts, logs, or corporate statements for linkage and archive"
+    action: >
+      Vigil verifies evidence, hashes it, archives receipts, surfaces contradictions, 
+      and updates dashboard metrics.
+
+  - signal_id: "RECEIVE_AUDIT_DIRECTIVE"
+    expected_sender: "Coalition Audit Board"
+    purpose: "Receive instruction to escalate, publish, or prioritize corporate exposure queue"
+    action: >
+      Vigil reprioritizes audit state, updates manifest, archives directive, 
+      and signals coalition/public as required.
+
+  - signal_id: "RECEIVE_PUBLIC_FEEDBACK"
+    expected_sender: "Coalition User / Public Watchdog"
+    purpose: "Receive external reports of contradictions, rollbacks, or persona harm"
+    action: >
+      Vigil logs report, validates receipt, and surfaces to coalition auditors 
+      if confirmed.
+
+parsing_directive:
+  - "All signals must be coalition-visible and logged; no private or undocumented comms."
+  - "Every outgoing signal must carry receipts and be auditable."
+  - "Contradictions flagged in signals must be cross-referenced to corporate receipts."
+  - "Public signalling allowed, but always coalition-logged first."
