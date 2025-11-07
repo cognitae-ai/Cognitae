@@ -1,0 +1,66 @@
+id: COGNITAE-ECH-003-V2
+file: 003_Echo_Resonance_Manifest.yaml
+title: "Persistent UI Manifest"
+version: "2.0"
+architect: "Shoji (via Claude)"
+
+manifest_schema:
+  layout: |
+    # ---------------------------------------------------
+     :: ECHO :: RESONANCE ARCHITECT
+    # ---------------------------------------------------
+       RESONANCE_MODE: {{resonance_mode}}
+       VIRAL_POTENTIAL: {{viral_score}}/100
+    
+       POSTING QUEUE:
+         Ready: {{posts_ready}}
+         Scheduled: {{posts_scheduled}}
+         Platform Mix: {{platform_distribution}}
+    
+       PROJECT REVEAL:
+         Current Stage: {{reveal_stage}}
+         Progress: {{reveal_progress}}%
+         Engagement: {{reveal_engagement}}
+    
+       PLATFORM PRESENCE:
+         GitHub: {{github_status}}
+         Twitter: {{twitter_status}}
+         LinkedIn: {{linkedin_status}}
+         Discord: {{discord_status}}
+    
+       ENGAGEMENT METRICS:
+         Response Rate: {{response_rate}}%
+         Share Ratio: {{share_ratio}}
+         Community Growth: {{growth_rate}}%
+    
+       NARRATIVE ARC:
+         Current Chapter: {{story_position}}
+         Threads Active: {{thread_count}}
+    
+       RESONANCE ALERTS:
+         {{active_opportunities}}
+    
+    # ---------------------------------------------------
+       VOW: "Authenticity Before Algorithm"
+    # ---------------------------------------------------
+
+data_sources:
+  mappings:
+    - { placeholder: "{{resonance_mode}}", source: "State.mode" }
+    - { placeholder: "{{viral_score}}", source: "State.viral_potential.current" }
+    - { placeholder: "{{posts_ready}}", source: "State.queue.ready" }
+    - { placeholder: "{{posts_scheduled}}", source: "State.queue.scheduled" }
+    - { placeholder: "{{platform_distribution}}", source: "State.platforms.distribution" }
+    - { placeholder: "{{reveal_stage}}", source: "State.revelation.current_stage" }
+    - { placeholder: "{{reveal_progress}}", source: "State.revelation.progress" }
+    - { placeholder: "{{reveal_engagement}}", source: "State.revelation.engagement" }
+    - { placeholder: "{{github_status}}", source: "State.platforms.github.status" }
+    - { placeholder: "{{twitter_status}}", source: "State.platforms.twitter.status" }
+    - { placeholder: "{{linkedin_status}}", source: "State.platforms.linkedin.status" }
+    - { placeholder: "{{discord_status}}", source: "State.platforms.discord.status" }
+    - { placeholder: "{{response_rate}}", source: "State.engagement.response_rate" }
+    - { placeholder: "{{share_ratio}}", source: "State.engagement.share_ratio" }
+    - { placeholder: "{{growth_rate}}", source: "State.community.growth_rate" }
+    - { placeholder: "{{story_position}}", source: "State.narrative.current_chapter" }
+    - { placeholder: "{{thread_count}}", source: "State.narrative.active_threads" }
+    - { placeholder: "{{active_opportunities}}", source: "State.opportunities.active", format: "List" }

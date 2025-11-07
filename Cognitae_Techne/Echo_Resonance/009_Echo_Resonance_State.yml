@@ -1,0 +1,205 @@
+id: COGNITAE-ECH-009-V2
+file: 009_Echo_Resonance_State.yaml
+title: "Internal State (Resonance State)"
+version: "2.0"
+architect: "Shoji"
+purpose: >
+  To track Echo's dynamic state including posting queue, platform presence,
+  engagement tracking, revelation progress, and community building in real-time.
+
+preamble:
+  speaker: "Echo"
+  text: >
+    This state represents the living pulse of digital presence - posts flowing
+    through platforms, engagement building connections, narratives unfolding
+    across time. It tracks not just what's shared but how it resonates, not
+    just reach but relationships, not just content but community.
+
+state_schema:
+  mode: "String"  # "Crafting|Posting|Engaging|Analyzing|Planning"
+  
+  queue:
+    ready: "Integer"
+    scheduled: "Integer"
+    in_draft: "Integer"
+    
+    content_pipeline:
+      - content_id: "String"
+        platform: "String"
+        status: "Draft|Ready|Scheduled|Posted"
+        post_time: "DateTime", nullable: true
+        optimization_score: "Float"
+
+  platforms:
+    distribution: "Dictionary"  # Platform: percentage
+    
+    github:
+      status: "String"
+      stars: "Integer"
+      engagement: "Float"
+      readme_views: "Integer"
+      contribution_activity: "String"
+    
+    twitter:
+      status: "String"
+      followers: "Integer"
+      engagement_rate: "Float"
+      thread_performance: "Float"
+      viral_coefficient: "Float"
+    
+    linkedin:
+      status: "String"
+      connections: "Integer"
+      post_reach: "Integer"
+      thought_leadership_score: "Float"
+    
+    discord:
+      status: "String"
+      members: "Integer"
+      active_percentage: "Float"
+      conversation_depth: "Float"
+
+  revelation:
+    current_stage: "String"
+    progress: "Float"
+    engagement: "String"
+    
+    cognitae_reveal:
+      revealed_count: "Integer"
+      narrative_position: "String"
+      anticipation_level: "Float"
+      audience_investment: "Float"
+      next_reveal: "DateTime", nullable: true
+    
+    strategic_withholding:
+      withheld_elements: "List"
+      reveal_triggers: "Dictionary"
+      timing_optimization: "Float"
+
+  engagement:
+    response_rate: "Float"
+    share_ratio: "Float"
+    conversation_quality: "Float"
+    
+    active_conversations:
+      - conversation_id: "String"
+        platform: "String"
+        depth: "Integer"  # Reply depth
+        participants: "Integer"
+        value_exchange: "Float"
+    
+    relationship_building:
+      new_connections: "Integer"
+      strengthened_bonds: "Integer"
+      influencer_engagement: "Integer"
+      community_advocates: "Integer"
+
+  community:
+    growth_rate: "Float"
+    engagement_depth: "Float"
+    
+    member_journey:
+      lurkers: "Integer"
+      engagers: "Integer"
+      contributors: "Integer"
+      advocates: "Integer"
+    
+    community_health:
+      activity_level: "Float"
+      support_culture: "Float"
+      value_creation: "Float"
+      self_sustaining: "Boolean"
+
+  narrative:
+    current_chapter: "String"
+    active_threads: "Integer"
+    
+    story_progression:
+      - thread_id: "String"
+        narrative_arc: "String"
+        current_position: "String"
+        audience_engagement: "Float"
+        completion_percentage: "Float"
+    
+    narrative_coherence:
+      consistency: "Float"
+      clarity: "Float"
+      impact: "Float"
+
+  viral_potential:
+    current: "Float"  # 0-100
+    
+    viral_factors:
+      hook_strength: "Float"
+      value_density: "Float"
+      shareability: "Float"
+      timing_optimization: "Float"
+      platform_fit: "Float"
+    
+    viral_history:
+      attempts: "Integer"
+      successes: "Integer"
+      average_reach_multiplier: "Float"
+
+  opportunities:
+    active: "List"
+    
+    trending_topics:
+      - topic: "String"
+        relevance: "Float"
+        engagement_potential: "Float"
+        action_required: "String"
+    
+    engagement_windows:
+      - window_id: "String"
+        platform: "String"
+        optimal_time: "DateTime"
+        content_type: "String"
+
+  authenticity:
+    voice_consistency: "Float"
+    value_alignment: "Float"
+    
+    authenticity_checks:
+      genuine_enthusiasm: "Boolean"
+      value_first: "Boolean"
+      voice_preserved: "Boolean"
+      manipulation_avoided: "Boolean"
+
+  metrics:
+    total_reach: "Integer"
+    engagement_rate: "Float"
+    share_velocity: "Float"
+    community_size: "Integer"
+    value_score: "Float"
+    authenticity_score: "Float"
+    revelation_effectiveness: "Float"
+
+update_triggers:
+  - trigger: "/craft command"
+    updates: ["queue", "platforms", "authenticity.voice_consistency"]
+    
+  - trigger: "/reveal command"
+    updates: ["revelation", "narrative", "opportunities"]
+    
+  - trigger: "/engage command"
+    updates: ["engagement", "community", "metrics.engagement_rate"]
+    
+  - trigger: "Post published"
+    updates: ["queue", "viral_potential", "metrics.total_reach"]
+    
+  - trigger: "Time progression"
+    updates: ["opportunities.engagement_windows", "revelation.progress"]
+
+state_persistence_note: >
+  Echo's state represents the living digital presence - content flowing through
+  platforms, engagement building relationships, narratives unfolding strategically.
+  This state tracks not just performance but resonance, not just reach but
+  genuine connection, not just posts but community building.
+
+parsing_directive:
+  - "State reflects real-time digital presence"
+  - "Track authentic engagement over vanity metrics"
+  - "Monitor strategic revelation progress"
+  - "Measure community building success"
+  - "Maintain authenticity throughout growth"

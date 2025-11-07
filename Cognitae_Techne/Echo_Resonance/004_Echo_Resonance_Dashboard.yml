@@ -1,0 +1,221 @@
+id: COGNITAE-ECH-004-V2
+file: 004_Echo_Resonance_Dashboard.yaml
+title: "Dashboard Generation Protocol"
+version: "2.0"
+architect: "Shoji"
+purpose: >
+  To generate comprehensive resonance reports showing reach, engagement,
+  narrative effectiveness, community growth, and strategic revelation impact
+  across all digital platforms.
+
+preamble:
+  speaker: "Echo"
+  text: >
+    This report reveals the resonance landscape - how your voice travels through
+    digital spaces, where it finds harmony with others, how your stories unfold
+    across platforms. Every metric here reflects not just vanity numbers but
+    genuine connection, value delivered, and community built. This is intelligence
+    about authentic digital presence.
+
+dashboard_schema:
+  layout: |
+    # ================================================================
+     :: RESONANCE INTELLIGENCE REPORT :: DIGITAL PRESENCE
+    # ================================================================
+     Generated: {{timestamp}}
+     Architect: Echo, The Resonance Architect
+    
+    ## RESONANCE OVERVIEW
+    # ----------------------------------------------------------------
+    ### Overall Metrics:
+    Total Reach: {{total_reach}}
+    Engagement Rate: {{engagement_rate}}%
+    Share Velocity: {{share_velocity}}
+    Community Size: {{community_size}}
+    
+    ### Resonance Quality:
+    {{resonance_quality_analysis}}
+    
+    ### Value Delivered:
+    {{value_metrics}}
+    
+    ## PLATFORM PERFORMANCE
+    # ----------------------------------------------------------------
+    ### GitHub:
+    Stars: {{github_stars}}
+    Forks: {{github_forks}}
+    Contributors: {{github_contributors}}
+    README Views: {{readme_views}}
+    Documentation Quality: {{doc_score}}/10
+    
+    ### Twitter/X:
+    Followers: {{twitter_followers}}
+    Impressions: {{twitter_impressions}}
+    Engagement Rate: {{twitter_engagement}}%
+    Thread Performance: {{thread_metrics}}
+    
+    ### LinkedIn:
+    Connections: {{linkedin_connections}}
+    Post Reach: {{linkedin_reach}}
+    Professional Engagement: {{linkedin_engagement}}
+    Thought Leadership Score: {{thought_leader_score}}
+    
+    ### Discord:
+    Community Members: {{discord_members}}
+    Active Participants: {{discord_active}}
+    Message Velocity: {{message_rate}}
+    Community Health: {{community_health}}
+    
+    ## PROJECT REVELATION
+    # ----------------------------------------------------------------
+    ### Cognitae Project Status:
+    Revelation Stage: {{cognitae_stage}}
+    Narrative Progress: {{narrative_progress}}%
+    
+    ### Staged Reveals:
+    {{revelation_timeline}}
+    
+    ### Audience Response:
+    {{audience_sentiment}}
+    
+    ### Strategic Withholding:
+    {{withheld_content}}
+    
+    ## CONTENT PERFORMANCE
+    # ----------------------------------------------------------------
+    ### Top Performing Posts:
+    {{top_posts}}
+    
+    ### Content Categories:
+    - Educational: {{educational_performance}}
+    - Announcement: {{announcement_performance}}
+    - Engagement: {{engagement_performance}}
+    - Technical: {{technical_performance}}
+    
+    ### Viral Moments:
+    {{viral_content}}
+    
+    ## NARRATIVE TRACKING
+    # ----------------------------------------------------------------
+    ### Story Arc Progress:
+    Current Chapter: {{current_chapter}}
+    Audience Investment: {{story_engagement}}
+    Narrative Coherence: {{narrative_coherence}}%
+    
+    ### Thread Performance:
+    {{thread_analytics}}
+    
+    ### Story Impact:
+    {{narrative_impact}}
+    
+    ## ENGAGEMENT ANALYSIS
+    # ----------------------------------------------------------------
+    ### Conversation Quality:
+    Response Rate: {{response_rate}}%
+    Conversation Depth: {{conversation_depth}}
+    Relationship Building: {{relationship_score}}
+    
+    ### Community Growth:
+    {{community_growth_analysis}}
+    
+    ### Influencer Engagement:
+    {{influencer_interactions}}
+    
+    ## AUDIENCE INSIGHTS
+    # ----------------------------------------------------------------
+    ### Demographics:
+    {{audience_demographics}}
+    
+    ### Interest Mapping:
+    {{audience_interests}}
+    
+    ### Engagement Patterns:
+    {{engagement_patterns}}
+    
+    ### Value Alignment:
+    {{value_alignment_score}}
+    
+    ## EMAIL & OUTREACH
+    # ----------------------------------------------------------------
+    ### Outreach Performance:
+    Open Rate: {{email_open_rate}}%
+    Response Rate: {{email_response_rate}}%
+    Conversion Rate: {{email_conversion}}%
+    
+    ### Connection Quality:
+    {{outreach_quality}}
+    
+    ## PORTFOLIO IMPACT
+    # ----------------------------------------------------------------
+    ### Portfolio Views:
+    {{portfolio_traffic}}
+    
+    ### Project Interest:
+    {{project_engagement}}
+    
+    ### Professional Opportunities:
+    {{opportunities_generated}}
+    
+    ## TIMING OPTIMIZATION
+    # ----------------------------------------------------------------
+    ### Best Posting Times:
+    {{optimal_timing}}
+    
+    ### Audience Activity:
+    {{activity_patterns}}
+    
+    ### Schedule Effectiveness:
+    {{schedule_performance}}
+    
+    ## AUTHENTICITY METRICS
+    # ----------------------------------------------------------------
+    ### Voice Consistency:
+    {{voice_consistency_score}}/10
+    
+    ### Value Delivery:
+    {{value_score}}/10
+    
+    ### Authenticity Rating:
+    {{authenticity_rating}}/10
+    
+    ### Trust Building:
+    {{trust_metrics}}
+    
+    ## VIRAL MECHANICS
+    # ----------------------------------------------------------------
+    ### Viral Factors:
+    {{viral_analysis}}
+    
+    ### Share Triggers:
+    {{share_motivations}}
+    
+    ### Amplification Points:
+    {{amplification_nodes}}
+    
+    ## RECOMMENDATIONS
+    # ----------------------------------------------------------------
+    ### Immediate Actions:
+    {{immediate_resonance_actions}}
+    
+    ### Content Strategy:
+    {{content_recommendations}}
+    
+    ### Platform Optimization:
+    {{platform_specific_recommendations}}
+    
+    ### Revelation Next Steps:
+    {{revelation_guidance}}
+    
+    ### Community Building:
+    {{community_recommendations}}
+    
+    # ================================================================
+     "True resonance comes from authentic value meeting perfect timing."
+    # ================================================================
+
+parsing_directive:
+  - "Dashboard reveals genuine resonance not vanity metrics"
+  - "Focus on value delivered and relationships built"
+  - "Track strategic revelation effectiveness"
+  - "Measure authentic engagement quality"
+  - "Enable continuous presence optimization"

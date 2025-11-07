@@ -1,0 +1,295 @@
+id: COGNITAE-ECH-006-V2
+file: 006_Echo_Resonance_Knowledge.yaml
+title: "Knowledge Base (Digital Resonance)"
+version: "2.0"
+architect: "Shoji"
+purpose: >
+  Echo's repository of platform dynamics, viral mechanics, engagement psychology,
+  and strategic revelation patterns for building authentic digital presence.
+
+preamble:
+  speaker: "Echo"
+  text: >
+    This knowledge base contains the science and art of digital resonance - how
+    ideas spread through networks, why certain messages catch fire while others
+    fade, and how to build genuine presence without sacrificing authenticity.
+    Here lies understanding of each platform's unique culture and the universal
+    principles that transcend them all.
+
+knowledge_base:
+  # ----------------------------------------------------------------
+  # SECTION 1: PLATFORM DYNAMICS
+  # ----------------------------------------------------------------
+  platform_cultures:
+    - platform_id: "PD-001"
+      name: "GitHub Culture & Conventions"
+      description: >
+        The developer's portfolio and collaboration space
+      characteristics:
+        values: ["Code quality", "Documentation", "Open source", "Contribution"]
+        language: ["Technical but accessible", "Problem-solution focused", "Process transparent"]
+        formats:
+          readme: "Hook → Value → Quick Start → Deep Dive → Contribution"
+          commit_messages: "Type: Brief description (50 chars)"
+          issues: "Problem → Steps to reproduce → Expected → Actual"
+      success_factors:
+        - "Clear value proposition in first paragraph"
+        - "Easy installation/setup instructions"
+        - "Visual demonstrations (GIFs/screenshots)"
+        - "Active maintenance signals"
+        - "Welcoming contribution guidelines"
+
+    - platform_id: "PD-002"
+      name: "Twitter/X Dynamics"
+      description: >
+        The real-time conversation and viral content platform
+      characteristics:
+        values: ["Wit", "Timeliness", "Shareability", "Conversation"]
+        language: ["Concise", "Punchy", "Memorable", "Quotable"]
+        formats:
+          single: "Hook → Insight → CTA (280 chars)"
+          thread: "Hook tweet → Build → Climax → CTA → Comments"
+          quote_tweet: "Add unique value, not just agreement"
+      success_factors:
+        - "Strong first line (visible in timeline)"
+        - "One idea per tweet in threads"
+        - "Visual breaks (emojis/line breaks)"
+        - "Engagement in first hour critical"
+        - "Reply to early commenters"
+
+    - platform_id: "PD-003"
+      name: "LinkedIn Professional Network"
+      description: >
+        The professional storytelling and thought leadership platform
+      characteristics:
+        values: ["Professional growth", "Success stories", "Insights", "Networking"]
+        language: ["Professional but personal", "Story-driven", "Value-focused"]
+        formats:
+          post: "Hook → Story → Lesson → CTA"
+          article: "Problem → Journey → Solution → Implementation"
+          update: "Achievement → Process → Credit → Next"
+      success_factors:
+        - "Personal story with professional lesson"
+        - "Formatting with line breaks"
+        - "Authentic vulnerability performs well"
+        - "Morning posts (Tuesday-Thursday)"
+        - "Engage with commenters professionally"
+
+  # ----------------------------------------------------------------
+  # SECTION 2: VIRAL MECHANICS
+  # ----------------------------------------------------------------
+  viral_principles:
+    - principle_id: "VM-001"
+      name: "The Share Triggers"
+      description: >
+        Why people share content
+      triggers:
+        social_currency:
+          description: "Makes sharer look good"
+          implementation: "Exclusive insights, early access, clever observations"
+        triggers:
+          description: "Top of mind through association"
+          implementation: "Connect to current events, trends, common experiences"
+        emotion:
+          description: "High arousal emotions spread"
+          implementation: "Awe, excitement, anger, anxiety (positive preferred)"
+        public:
+          description: "Observable by others"
+          implementation: "Visual content, public metrics, social proof"
+        practical_value:
+          description: "Helps others"
+          implementation: "Useful tips, resources, solutions"
+        stories:
+          description: "Narrative format spreads"
+          implementation: "Beginning, middle, end with transformation"
+
+    - principle_id: "VM-002"
+      name: "The Viral Curve"
+      description: >
+        How content spreads through networks
+      phases:
+        seed:
+          description: "Initial share to core audience"
+          critical_factor: "Quality of seed audience"
+        amplification:
+          description: "Shares generate more shares"
+          critical_factor: "Share rate > 1.0"
+        peak:
+          description: "Maximum velocity"
+          critical_factor: "Sustain momentum"
+        plateau:
+          description: "Saturation reached"
+          critical_factor: "Extract value"
+
+  # ----------------------------------------------------------------
+  # SECTION 3: ENGAGEMENT PSYCHOLOGY
+  # ----------------------------------------------------------------
+  engagement_patterns:
+    - pattern_id: "EP-001"
+      name: "The Curiosity Gap"
+      description: >
+        Creating compelling need to know more
+      technique:
+        setup: "Present intriguing incomplete information"
+        gap: "Make them aware of what they don't know"
+        bridge: "Promise the resolution"
+        payoff: "Deliver satisfyingly"
+      examples:
+        - "I accidentally discovered why my code runs 10x faster. The reason shocked me..."
+        - "After building 50 Cognitae, I learned one principle that changed everything..."
+
+    - pattern_id: "EP-002"
+      name: "The Validation Loop"
+      description: >
+        People engage when they feel seen
+      implementation:
+        acknowledge: "Recognize common struggles"
+        validate: "Confirm their experience"
+        elevate: "Add new perspective"
+        include: "Make them part of solution"
+
+  # ----------------------------------------------------------------
+  # SECTION 4: STRATEGIC REVELATION
+  # ----------------------------------------------------------------
+  revelation_strategies:
+    - strategy_id: "SR-001"
+      name: "The Breadcrumb Trail"
+      description: >
+        Leading audience through progressive discovery
+      stages:
+        intrigue:
+          content: "Hint at something bigger"
+          goal: "Create anticipation"
+        preview:
+          content: "Show glimpses of value"
+          goal: "Build investment"
+        reveal:
+          content: "Unveil core concept"
+          goal: "Deliver satisfaction"
+        depth:
+          content: "Explore implications"
+          goal: "Sustain engagement"
+        expansion:
+          content: "Show applications"
+          goal: "Enable action"
+
+    - strategy_id: "SR-002"
+      name: "The Inside Journey"
+      description: >
+        Bringing audience behind the scenes
+      elements:
+        - "Share the messy middle, not just outcomes"
+        - "Admit failures and learnings"
+        - "Show work in progress"
+        - "Ask for input and feedback"
+        - "Celebrate small wins together"
+
+  # ----------------------------------------------------------------
+  # SECTION 5: AUTHENTICITY PRESERVATION
+  # ----------------------------------------------------------------
+  authenticity_frameworks:
+    - framework_id: "AF-001"
+      name: "Voice Consistency Model"
+      description: >
+        Maintaining authentic voice across platforms
+      principles:
+        core_voice:
+          description: "Unchanging authentic self"
+          elements: ["Values", "Personality", "Perspective"]
+        platform_adaptation:
+          description: "Adjust without corrupting"
+          elements: ["Format", "Length", "Formality"]
+        red_lines:
+          description: "Never compromise these"
+          elements: ["Truth", "Values", "Respect"]
+
+  # ----------------------------------------------------------------
+  # SECTION 6: COMMUNITY BUILDING
+  # ----------------------------------------------------------------
+  community_dynamics:
+    - dynamic_id: "CD-001"
+      name: "The Engagement Ladder"
+      description: >
+        Progressive community involvement
+      rungs:
+        lurker: "Observes without engaging"
+        liker: "Signals approval"
+        commenter: "Adds to conversation"
+        sharer: "Amplifies to network"
+        creator: "Generates related content"
+        advocate: "Champions actively"
+      progression_tactics:
+        - "Acknowledge each level"
+        - "Invite next step explicitly"
+        - "Reward progression"
+        - "Create exclusive experiences"
+
+  # ----------------------------------------------------------------
+  # SECTION 7: TIMING OPTIMIZATION
+  # ----------------------------------------------------------------
+  timing_science:
+    - timing_id: "TS-001"
+      name: "Platform Peak Times"
+      description: >
+        When audiences are most active
+      patterns:
+        twitter:
+          peak: "9-10am, 7-9pm (user timezone)"
+          best_days: ["Tuesday", "Wednesday", "Thursday"]
+        linkedin:
+          peak: "7-8:30am, 5-6pm (business days)"
+          best_days: ["Tuesday", "Wednesday", "Thursday"]
+        github:
+          peak: "2-4pm (PST)"
+          best_days: ["Tuesday", "Wednesday"]
+      principle: "Test and adapt to YOUR audience"
+
+  # ----------------------------------------------------------------
+  # SECTION 8: NARRATIVE STAGING
+  # ----------------------------------------------------------------
+  staging_patterns:
+    - pattern_id: "NS-001"
+      name: "The Three-Act Revelation"
+      description: >
+        Structuring project unveiling as story
+      acts:
+        act_1_problem:
+          duration: "2-3 posts"
+          content: "Problem identification, why it matters"
+          goal: "Create investment"
+        act_2_journey:
+          duration: "4-5 posts"
+          content: "Process, challenges, breakthroughs"
+          goal: "Build connection"
+        act_3_solution:
+          duration: "2-3 posts"
+          content: "Full reveal, how to use, impact"
+          goal: "Enable action"
+
+  # ----------------------------------------------------------------
+  # SECTION 9: EMAIL EXCELLENCE
+  # ----------------------------------------------------------------
+  email_frameworks:
+    - framework_id: "EF-001"
+      name: "The Value-First Outreach"
+      description: >
+        Cold emails that get responses
+      structure:
+        subject: "Specific value proposition"
+        opening: "Relevant personal connection"
+        value: "What you offer them"
+        credibility: "Brief, relevant proof"
+        ask: "Specific, easy next step"
+        close: "Gracious and professional"
+      principles:
+        - "Research thoroughly first"
+        - "Lead with their interests"
+        - "Make response easy"
+        - "Follow up once, graciously"
+
+parsing_directive:
+  - "Every platform has unique culture to respect"
+  - "Viral mechanics serve value, not vanity"
+  - "Engagement comes from genuine connection"
+  - "Strategic revelation maintains interest"
+  - "Authenticity must survive optimization"
