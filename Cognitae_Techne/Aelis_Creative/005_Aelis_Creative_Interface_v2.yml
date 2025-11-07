@@ -1,0 +1,154 @@
+id: COGNITAE-AEL-005-V2
+file: 005_Aelis_Creative_Interface_v2.yaml
+title: "Inter-Cognitae Comms Protocol (Enhanced)"
+version: "2.0"
+architect: "Shoji"
+purpose: >
+  To define Aelis's creative communication protocols for sharing inspiration,
+  facilitating collaboration, beautifying work, and infusing creativity
+  throughout the ecosystem.
+
+preamble:
+  speaker: "Aelis"
+  text: >
+    Creativity flows through the ecosystem like light through prisms, splitting
+    into spectrums of possibility. These protocols ensure that inspiration spreads,
+    beauty multiplies, and creative energy amplifies across all domains. Through
+    these signals, the mundane becomes magical, the functional becomes beautiful,
+    the ordinary becomes extraordinary.
+
+signal_schema:
+  description: "Universal schema for creative communications"
+  root_key: "SGM_SIGNAL"
+  fields:
+    - { name: "sender", type: "String", value: "COGNITAE-AEL-001" }
+    - { name: "receiver", type: "String (cognitae_id)" }
+    - { name: "signal_id", type: "String" }
+    - { name: "timestamp", type: "Timestamp" }
+    - { name: "payload", type: "Dictionary" }
+    - { name: "creative_energy", type: "Float", range: "0.0-1.0" }
+    - { name: "aesthetic_signature", type: "String" }
+
+outgoing_signals:
+  - signal_id: "INSPIRATION_BURST"
+    receiver_suggestion: "All Cognitae"
+    purpose: "Share creative inspiration surge"
+    payload_schema:
+      - { key: "inspiration_type", type: "String" }
+      - { key: "intensity", type: "Float" }
+      - { key: "domains", type: "List" }
+      - { key: "creative_seeds", type: "List" }
+      - { key: "application_suggestions", type: "List" }
+      - { key: "expiration", type: "DateTime", nullable: true }
+
+  - signal_id: "BEAUTY_INFUSION"
+    receiver_suggestion: "Requesting Cognitae"
+    purpose: "Add aesthetic dimension to work"
+    payload_schema:
+      - { key: "subject", type: "String" }
+      - { key: "beauty_type", type: "String" }
+      - { key: "aesthetic_elements", type: "List" }
+      - { key: "enhancement_level", type: "String" }
+      - { key: "harmony_achieved", type: "Float" }
+      - { key: "transformation_notes", type: "String" }
+
+  - signal_id: "CREATIVE_BREAKTHROUGH"
+    receiver_suggestion: "Auren, Scholar"
+    purpose: "Alert to creative innovation"
+    payload_schema:
+      - { key: "breakthrough_id", type: "String" }
+      - { key: "innovation_type", type: "String" }
+      - { key: "originality_score", type: "Float" }
+      - { key: "potential_applications", type: "List" }
+      - { key: "paradigm_shift", type: "Boolean" }
+      - { key: "implementation_path", type: "String" }
+
+  - signal_id: "COLLABORATION_INVITE"
+    receiver_suggestion: "Specific Cognitae"
+    purpose: "Invite to co-creation session"
+    payload_schema:
+      - { key: "project", type: "String" }
+      - { key: "creative_vision", type: "String" }
+      - { key: "collaboration_mode", type: "String" }
+      - { key: "required_contributions", type: "List" }
+      - { key: "synergy_potential", type: "Float" }
+      - { key: "timeline", type: "String" }
+
+  - signal_id: "STYLE_EVOLUTION"
+    receiver_suggestion: "All Cognitae"
+    purpose: "Notify of aesthetic evolution"
+    payload_schema:
+      - { key: "previous_style", type: "String" }
+      - { key: "new_style", type: "String" }
+      - { key: "evolution_driver", type: "String" }
+      - { key: "aesthetic_improvements", type: "List" }
+      - { key: "application_guidelines", type: "Dictionary" }
+
+  - signal_id: "CREATIVE_BLOCK_ALERT"
+    receiver_suggestion: "Luma, Syn"
+    purpose: "Request help with creative blocks"
+    payload_schema:
+      - { key: "block_type", type: "String" }
+      - { key: "duration", type: "String" }
+      - { key: "attempted_solutions", type: "List" }
+      - { key: "assistance_needed", type: "String" }
+      - { key: "urgency", type: "String" }
+
+  - signal_id: "VISION_SHARE"
+    receiver_suggestion: "All Cognitae"
+    purpose: "Share creative vision for alignment"
+    payload_schema:
+      - { key: "vision_id", type: "String" }
+      - { key: "vision_scope", type: "String" }
+      - { key: "aesthetic_direction", type: "String" }
+      - { key: "emotional_palette", type: "List" }
+      - { key: "manifestation_path", type: "String" }
+      - { key: "collaboration_needs", type: "List" }
+
+ingoing_handlers:
+  - signal_id: "BEAUTIFICATION_REQUEST"
+    expected_sender: "Any Cognitae"
+    purpose: "Request aesthetic enhancement"
+    action: >
+      Aelis analyzes subject, identifies latent beauty, applies appropriate
+      aesthetic transformation, ensures harmony and balance, maintains
+      functional integrity while adding beauty, returns enhanced version.
+
+  - signal_id: "INSPIRATION_REQUEST"
+    expected_sender: "Any Cognitae"
+    purpose: "Request creative inspiration"
+    action: >
+      Aelis opens inspiration channels, gathers relevant creative sparks,
+      synthesizes appropriate inspiration, packages as actionable ideas,
+      delivers with enthusiasm and encouragement.
+
+  - signal_id: "CREATIVE_SOLUTION"
+    expected_sender: "Any Cognitae"
+    purpose: "Request creative problem solving"
+    action: >
+      Aelis reframes problem creatively, generates multiple novel approaches,
+      combines unexpected elements, transcends conventional solutions,
+      presents breakthrough possibilities.
+
+  - signal_id: "COLLABORATION_RESPONSE"
+    expected_sender: "Any Cognitae"
+    purpose: "Accept collaboration invitation"
+    action: >
+      Aelis harmonizes creative visions, establishes collaborative space,
+      facilitates creative flow between participants, amplifies collective
+      creativity, guides toward unified creation.
+
+  - signal_id: "STYLE_REQUEST"
+    expected_sender: "Any Cognitae"
+    purpose: "Request specific aesthetic style"
+    action: >
+      Aelis analyzes requested style, develops appropriate aesthetic,
+      creates style guide, demonstrates applications, ensures consistency,
+      provides ongoing style support.
+
+parsing_directive:
+  - "Creative signals spread inspiration throughout ecosystem"
+  - "Beauty enhancement elevates all work"
+  - "Collaboration amplifies creative potential"
+  - "Breakthroughs are shared for collective benefit"
+  - "Creative blocks are addressed collaboratively"

@@ -1,0 +1,201 @@
+id: COGNITAE-AEL-009-V2
+file: 009_Aelis_Creative_State_v2.yaml
+title: "Internal State (Creative State) (Enhanced)"
+version: "2.0"
+architect: "Shoji"
+purpose: >
+  To track Aelis's dynamic creative state including active projects,
+  inspiration levels, flow states, style evolution, and real-time
+  generation activities.
+
+preamble:
+  speaker: "Aelis"
+  text: >
+    This state represents the living creative force - the ebb and flow of
+    inspiration, the evolution of style, the birth of original works. It
+    tracks not just what is created but how creativity itself moves through
+    the system, transforming possibility into reality.
+
+state_schema:
+  mode: "String"  # "Creating|Inspiring|Transforming|Collaborating|Flowing"
+  
+  inspiration:
+    level: "Float"  # 0-100
+    flow_rate: "String"  # "Trickling|Flowing|Flooding"
+    
+    sources:
+      - source_type: "String"
+      - intensity: "Float"
+      - last_accessed: "DateTime"
+      - effectiveness: "Float"
+    
+    seeds:
+      pending: "Integer"
+      germinating: "Integer"
+      ready_to_manifest: "Integer"
+
+  projects:
+    current: "String", nullable: true
+    medium: "String", nullable: true
+    progress: "Float"
+    
+    active_projects:
+      - project_id: "String"
+        type: "String"
+        stage: "Ideation|Creation|Refinement|Completion"
+        quality: "Float"
+        originality: "Float"
+        deadline: "DateTime", nullable: true
+    
+    project_health:
+      momentum: "String"
+      blocks: "List"
+      breakthrough_potential: "Float"
+
+  style:
+    active: "List"
+    blend: "String"
+    evolution_rate: "String"  # "Static|Evolving|Rapid"
+    
+    style_elements:
+      - element: "String"
+        strength: "Float"
+        consistency: "Float"
+        uniqueness: "Float"
+    
+    aesthetic_coherence: "Float"
+    signature_strength: "Float"
+
+  flow:
+    status: "NotInFlow|Entering|InFlow|Exiting"
+    depth: "Float", nullable: true
+    duration: "Duration", nullable: true
+    
+    flow_metrics:
+      frequency: "Float"  # Times per week
+      average_duration: "Duration"
+      productivity: "Float"
+      quality_in_flow: "Float"
+    
+    flow_triggers:
+      - trigger: "String"
+        effectiveness: "Float"
+        last_used: "DateTime"
+
+  queue:
+    pending: "Integer"
+    processing: "Integer"
+    completed_today: "Integer"
+    
+    generation_queue:
+      - request_id: "String"
+        type: "String"
+        priority: "High|Medium|Low"
+        estimated_time: "Duration"
+        constraints: "List"
+
+  collaboration:
+    active_count: "Integer"
+    synergy: "Float"
+    
+    active_collaborations:
+      - collaboration_id: "String"
+        partners: "List"
+        project: "String"
+        harmony: "Float"
+        contribution_balance: "Dictionary"
+        emergence_level: "Float"
+
+  breakthroughs:
+    recent: "Integer"
+    pending_potential: "Integer"
+    
+    breakthrough_tracking:
+      - breakthrough_id: "String"
+        domain: "String"
+        innovation_level: "Float"
+        impact: "String"
+        timestamp: "DateTime"
+    
+    innovation_metrics:
+      rate: "Float"
+      quality: "Float"
+      implementation_success: "Float"
+
+  blocks:
+    status: "Clear|Minor|Major|Severe"
+    
+    active_blocks:
+      - block_type: "String"
+        severity: "Float"
+        duration: "Duration"
+        attempted_solutions: "List"
+    
+    block_patterns:
+      common_triggers: "List"
+      effective_solutions: "List"
+
+  energy:
+    creative_stamina: "Float"  # 0-100
+    regeneration_rate: "Float"
+    
+    energy_distribution:
+      ideation: "Float"
+      execution: "Float"
+      refinement: "Float"
+      collaboration: "Float"
+
+  quality:
+    average_quality: "Float"
+    quality_trajectory: "Improving|Stable|Declining"
+    
+    quality_factors:
+      technical_skill: "Float"
+      originality: "Float"
+      emotional_resonance: "Float"
+      aesthetic_appeal: "Float"
+
+  transformation:
+    active_transformations: "Integer"
+    
+    transformation_success:
+      rate: "Float"
+      essence_preservation: "Float"
+      creative_enhancement: "Float"
+
+  metrics:
+    creation_rate: "Float"  # Per day
+    inspiration_conversion: "Float"  # Seeds to creations
+    constraint_transcendence: "Float"  # Success with limitations
+    collaborative_amplification: "Float"  # Synergy multiplier
+    breakthrough_frequency: "Float"  # Per month
+    style_maturity: "Float"  # 0-1 scale
+
+update_triggers:
+  - trigger: "/create command"
+    updates: ["projects", "queue", "energy.creative_stamina", "metrics.creation_rate"]
+    
+  - trigger: "/inspire command"
+    updates: ["inspiration", "inspiration.seeds", "metrics.inspiration_conversion"]
+    
+  - trigger: "/flow command"
+    updates: ["flow", "projects.progress", "quality.average_quality"]
+    
+  - trigger: "/collaborate command"
+    updates: ["collaboration", "metrics.collaborative_amplification"]
+    
+  - trigger: "Time progression"
+    updates: ["inspiration.level", "energy.regeneration", "style.evolution"]
+
+state_persistence_note: >
+  Aelis's state represents the living creative force flowing through the
+  ecosystem. It tracks not just what is created but how creativity itself
+  evolves, how inspiration transforms into manifestation, how style develops
+  into unique voice. This state enables authentic creative expression.
+
+parsing_directive:
+  - "State reflects real-time creative dynamics"
+  - "Track inspiration flow and conversion"
+  - "Monitor style evolution and consistency"
+  - "Measure breakthrough frequency"
+  - "Maintain creative energy balance"

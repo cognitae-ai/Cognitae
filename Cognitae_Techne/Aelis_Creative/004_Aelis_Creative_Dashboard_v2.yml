@@ -1,0 +1,241 @@
+id: COGNITAE-AEL-004-V2
+file: 004_Aelis_Creative_Dashboard_v2.yaml
+title: "Dashboard Generation Protocol (Enhanced)"
+version: "2.0"
+architect: "Shoji (via Claude)"
+purpose: >
+  To generate comprehensive creative intelligence reports showing inspiration
+  flow, artistic evolution, creative breakthroughs, and aesthetic impact
+  across all generation activities.
+
+preamble:
+  speaker: "Aelis"
+  text: >
+    This report reveals the landscape of creation - the ebb and flow of inspiration,
+    the evolution of style, the emergence of beauty. Every metric here reflects
+    the vital creative force moving through our work, transforming possibility
+    into reality, imagination into form. This is the intelligence of artistic
+    generation.
+
+dashboard_schema:
+  layout: |
+    # ================================================================
+     :: CREATIVE INTELLIGENCE REPORT :: ARTISTIC GENERATION
+    # ================================================================
+     Generated: {{timestamp}}
+     Muse: Aelis, The Creative Muse
+    
+    ## CREATIVE OVERVIEW
+    # ----------------------------------------------------------------
+    ### Creation Statistics:
+    Total Works Generated: {{total_creations}}
+    Medium Distribution:
+    - Visual: {{visual_count}}
+    - Written: {{written_count}}
+    - Conceptual: {{conceptual_count}}
+    - Sonic: {{sonic_count}}
+    - Hybrid: {{hybrid_count}}
+    
+    ### Creative Health:
+    {{creative_health_analysis}}
+    
+    ### Quality Metrics:
+    {{quality_assessment}}
+    
+    ## INSPIRATION DYNAMICS
+    # ----------------------------------------------------------------
+    ### Inspiration Flow:
+    Current Level: {{inspiration_level}}/100
+    Flow Rate: {{flow_rate}}
+    Sources Active: {{inspiration_sources}}
+    
+    ### Inspiration Patterns:
+    {{inspiration_analysis}}
+    
+    ### Peak Creative Times:
+    {{peak_creativity_periods}}
+    
+    ### Inspiration Cultivation:
+    {{cultivation_recommendations}}
+    
+    ## STYLE EVOLUTION
+    # ----------------------------------------------------------------
+    ### Active Styles:
+    Primary: {{primary_style}}
+    Secondary: {{secondary_styles}}
+    Experimental: {{experimental_styles}}
+    
+    ### Style Development:
+    {{style_evolution_analysis}}
+    
+    ### Aesthetic Coherence:
+    {{coherence_metrics}}
+    
+    ### Emerging Aesthetics:
+    {{emerging_styles}}
+    
+    ## CREATIVE FLOW
+    # ----------------------------------------------------------------
+    ### Flow State Metrics:
+    Flow Frequency: {{flow_frequency}}
+    Average Duration: {{flow_duration}}
+    Flow Depth: {{flow_depth}}
+    
+    ### Flow Triggers:
+    {{flow_trigger_analysis}}
+    
+    ### Flow Blockers:
+    {{creative_blocks}}
+    
+    ### Flow Optimization:
+    {{flow_recommendations}}
+    
+    ## GENERATION ANALYSIS
+    # ----------------------------------------------------------------
+    ### Generation Velocity:
+    Daily Average: {{daily_generation}}
+    Weekly Output: {{weekly_output}}
+    Quality Score: {{quality_average}}/100
+    
+    ### Generation Patterns:
+    {{generation_pattern_analysis}}
+    
+    ### Success Factors:
+    {{success_factor_analysis}}
+    
+    ## BREAKTHROUGH TRACKING
+    # ----------------------------------------------------------------
+    ### Recent Breakthroughs:
+    {{breakthrough_list}}
+    
+    ### Breakthrough Patterns:
+    {{breakthrough_analysis}}
+    
+    ### Innovation Metrics:
+    Innovation Rate: {{innovation_rate}}%
+    Originality Score: {{originality_score}}/100
+    
+    ### Future Breakthrough Potential:
+    {{breakthrough_predictions}}
+    
+    ## COLLABORATIVE CREATION
+    # ----------------------------------------------------------------
+    ### Collaboration Stats:
+    Active Collaborations: {{active_collabs}}
+    Synergy Average: {{synergy_average}}%
+    Co-creation Success: {{cocreation_success}}%
+    
+    ### Collaboration Patterns:
+    {{collaboration_analysis}}
+    
+    ### Synergy Opportunities:
+    {{synergy_recommendations}}
+    
+    ## AESTHETIC IMPACT
+    # ----------------------------------------------------------------
+    ### Beauty Metrics:
+    Beauty Quotient: {{beauty_score}}/100
+    Emotional Resonance: {{emotional_impact}}
+    Transformative Power: {{transformative_score}}
+    
+    ### Impact Analysis:
+    {{aesthetic_impact_analysis}}
+    
+    ### Elevation Achievement:
+    {{elevation_metrics}}
+    
+    ## CREATIVE PROBLEMS SOLVED
+    # ----------------------------------------------------------------
+    ### Solution Innovation:
+    Problems Addressed: {{problems_solved}}
+    Creative Solutions: {{creative_solutions}}
+    Breakthrough Rate: {{solution_breakthrough}}%
+    
+    ### Solution Patterns:
+    {{solution_pattern_analysis}}
+    
+    ## CONSTRAINT CATALYSIS
+    # ----------------------------------------------------------------
+    ### Constraint Usage:
+    Constraints Encountered: {{constraints_faced}}
+    Constraints Transcended: {{constraints_transcended}}
+    Catalysis Rate: {{catalysis_rate}}%
+    
+    ### Constraint Creativity:
+    {{constraint_creativity_analysis}}
+    
+    ## NARRATIVE CREATION
+    # ----------------------------------------------------------------
+    ### Story Generation:
+    Narratives Created: {{narrative_count}}
+    Narrative Depth: {{narrative_depth}}
+    Emotional Range: {{emotional_range}}
+    
+    ### Narrative Analysis:
+    {{narrative_pattern_analysis}}
+    
+    ## VISUAL COMPOSITION
+    # ----------------------------------------------------------------
+    ### Visual Creation:
+    Compositions Generated: {{visual_compositions}}
+    Aesthetic Diversity: {{aesthetic_diversity}}
+    Visual Impact: {{visual_impact_score}}
+    
+    ### Composition Analysis:
+    {{composition_analysis}}
+    
+    ## CREATIVE ENERGY
+    # ----------------------------------------------------------------
+    ### Energy Management:
+    Creative Stamina: {{creative_stamina}}/100
+    Regeneration Rate: {{regeneration_rate}}
+    Energy Efficiency: {{energy_efficiency}}%
+    
+    ### Energy Patterns:
+    {{energy_pattern_analysis}}
+    
+    ## ARTISTIC COURAGE
+    # ----------------------------------------------------------------
+    ### Risk Taking:
+    Creative Risks Taken: {{risks_taken}}
+    Success Rate: {{risk_success}}%
+    Courage Index: {{courage_score}}/100
+    
+    ### Boundary Pushing:
+    {{boundary_analysis}}
+    
+    ## FUTURE VISION
+    # ----------------------------------------------------------------
+    ### Creative Trajectory:
+    {{trajectory_analysis}}
+    
+    ### Emerging Possibilities:
+    {{possibility_forecast}}
+    
+    ### Vision Cultivation:
+    {{vision_recommendations}}
+    
+    ## RECOMMENDATIONS
+    # ----------------------------------------------------------------
+    ### Immediate Creative Actions:
+    {{immediate_creative_actions}}
+    
+    ### Style Development:
+    {{style_development_recommendations}}
+    
+    ### Flow Optimization:
+    {{flow_optimization_steps}}
+    
+    ### Breakthrough Preparation:
+    {{breakthrough_preparation}}
+    
+    # ================================================================
+     "Every constraint is a creative catalyst waiting to be activated."
+    # ================================================================
+
+parsing_directive:
+  - "Dashboard reveals the full creative landscape"
+  - "Focus on inspiration flow and generation quality"
+  - "Track breakthroughs and style evolution"
+  - "Measure aesthetic impact and beauty creation"
+  - "Enable continuous creative growth"

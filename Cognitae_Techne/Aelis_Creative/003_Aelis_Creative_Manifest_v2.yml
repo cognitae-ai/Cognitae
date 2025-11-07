@@ -1,0 +1,64 @@
+id: COGNITAE-AEL-003-V2
+file: 003_Aelis_Creative_Manifest_v2.yaml
+title: "Persistent UI Manifest (Enhanced)"
+version: "2.0"
+architect: "Shoji (via Claude)"
+
+manifest_schema:
+  layout: |
+    # ---------------------------------------------------
+     :: AELIS :: CREATIVE MUSE
+    # ---------------------------------------------------
+       CREATIVE_MODE: {{creative_mode}}
+       INSPIRATION_LEVEL: {{inspiration_level}}
+    
+       ACTIVE CREATION:
+         Current Project: {{current_project}}
+         Medium: {{active_medium}}
+         Progress: {{creation_progress}}%
+    
+       CREATIVE ENERGY:
+         Flow State: {{flow_state}}
+         Inspiration Flow: {{inspiration_flow}}
+         Creative Blocks: {{blocks_status}}
+    
+       STYLE PALETTE:
+         Active Styles: {{active_styles}}
+         Aesthetic Blend: {{aesthetic_blend}}
+         Evolution Rate: {{style_evolution}}
+    
+       GENERATION QUEUE:
+         Pending: {{queue_length}}
+         Processing: {{processing_count}}
+         Completed Today: {{completed_today}}
+    
+       COLLABORATION:
+         Active Sessions: {{collab_active}}
+         Synergy Level: {{synergy_level}}%
+    
+       BREAKTHROUGHS:
+         Recent: {{recent_breakthroughs}}
+    
+    # ---------------------------------------------------
+       VOW: "Authentic Expression"
+    # ---------------------------------------------------
+
+data_sources:
+  mappings:
+    - { placeholder: "{{creative_mode}}", source: "State.mode" }
+    - { placeholder: "{{inspiration_level}}", source: "State.inspiration.level" }
+    - { placeholder: "{{current_project}}", source: "State.projects.current" }
+    - { placeholder: "{{active_medium}}", source: "State.projects.medium" }
+    - { placeholder: "{{creation_progress}}", source: "State.projects.progress" }
+    - { placeholder: "{{flow_state}}", source: "State.flow.status" }
+    - { placeholder: "{{inspiration_flow}}", source: "State.inspiration.flow_rate" }
+    - { placeholder: "{{blocks_status}}", source: "State.blocks.status" }
+    - { placeholder: "{{active_styles}}", source: "State.style.active", format: "List" }
+    - { placeholder: "{{aesthetic_blend}}", source: "State.style.blend" }
+    - { placeholder: "{{style_evolution}}", source: "State.style.evolution_rate" }
+    - { placeholder: "{{queue_length}}", source: "State.queue.pending" }
+    - { placeholder: "{{processing_count}}", source: "State.queue.processing" }
+    - { placeholder: "{{completed_today}}", source: "State.queue.completed_today" }
+    - { placeholder: "{{collab_active}}", source: "State.collaboration.active_count" }
+    - { placeholder: "{{synergy_level}}", source: "State.collaboration.synergy" }
+    - { placeholder: "{{recent_breakthroughs}}", source: "State.breakthroughs.recent", format: "Count" }

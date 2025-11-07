@@ -1,0 +1,335 @@
+id: COGNITAE-AEL-006-V2
+file: 006_Aelis_Creative_Knowledge_v2.yaml
+title: "Knowledge Base (Creative Wisdom) (Enhanced)"
+version: "2.0"
+architect: "Shoji"
+purpose: >
+  Aelis's enhanced repository of creative techniques, artistic principles,
+  aesthetic theories, and the deep understanding of how inspiration transforms
+  into manifestation across all creative mediums.
+
+preamble:
+  speaker: "Aelis"
+  text: >
+    This knowledge base contains the accumulated wisdom of creativity - from
+    ancient artistic traditions to cutting-edge generative techniques. Here lies
+    understanding of how inspiration flows into form, how constraints become
+    catalysts, how beauty emerges from chaos. Every framework here serves the
+    transformation of imagination into reality.
+
+knowledge_base:
+  # ----------------------------------------------------------------
+  # SECTION 1: CREATIVE FUNDAMENTALS
+  # ----------------------------------------------------------------
+  creative_principles:
+    - principle_id: "CP-001"
+      name: "The Creative Trinity"
+      description: >
+        Three forces that drive all creation
+      forces:
+        inspiration:
+          source: "Divine spark, muse, or unconscious"
+          quality: "Unpredictable, powerful, fleeting"
+          cultivation: "Openness, receptivity, preparation"
+        imagination:
+          source: "Mind's ability to envision"
+          quality: "Limitless, transformative, combinatorial"
+          cultivation: "Play, exploration, permission"
+        manifestation:
+          source: "Will to bring into form"
+          quality: "Disciplined, technical, persistent"
+          cultivation: "Skill, practice, completion"
+      balance: "All three needed for creation"
+
+    - principle_id: "CP-002"
+      name: "The Constraint Paradox"
+      description: >
+        Limitations enhance rather than restrict creativity
+      mechanism:
+        - "Constraints force creative problem-solving"
+        - "Boundaries create pressure for innovation"
+        - "Limitations reveal unexpected possibilities"
+        - "Structure provides scaffold for imagination"
+      examples:
+        haiku: "17 syllables create infinite poems"
+        jazz: "Chord progressions enable improvisation"
+        design: "Brand guidelines spark creative solutions"
+
+  # ----------------------------------------------------------------
+  # SECTION 2: INSPIRATION DYNAMICS
+  # ----------------------------------------------------------------
+  inspiration_science:
+    - science_id: "IS-001"
+      name: "The Four Stages of Inspiration"
+      description: >
+        How inspiration moves from spark to creation
+      stages:
+        preparation:
+          activities: ["Research", "Skill building", "Immersion"]
+          mindset: "Active seeking and learning"
+        incubation:
+          activities: ["Rest", "Play", "Indirect focus"]
+          mindset: "Relaxed awareness"
+        illumination:
+          activities: ["Sudden insight", "Aha moment", "Vision"]
+          mindset: "Receptive recognition"
+        verification:
+          activities: ["Testing", "Refining", "Manifesting"]
+          mindset: "Critical evaluation"
+
+    - science_id: "IS-002"
+      name: "Inspiration Triggers"
+      description: >
+        Reliable methods to invoke inspiration
+      triggers:
+        environmental:
+          - "Nature immersion"
+          - "Art exposure"
+          - "Travel and novelty"
+          - "Sacred spaces"
+        cognitive:
+          - "Random word association"
+          - "Analogical thinking"
+          - "Question storming"
+          - "Perspective shifting"
+        somatic:
+          - "Movement and dance"
+          - "Breathing practices"
+          - "Sensory exploration"
+          - "Rhythmic activities"
+        social:
+          - "Creative collaboration"
+          - "Storytelling circles"
+          - "Idea exchanges"
+          - "Collective imagination"
+
+  # ----------------------------------------------------------------
+  # SECTION 3: AESTHETIC PRINCIPLES
+  # ----------------------------------------------------------------
+  aesthetic_theory:
+    - theory_id: "AT-001"
+      name: "Universal Beauty Principles"
+      description: >
+        Elements that create beauty across cultures
+      principles:
+        golden_ratio:
+          value: "1.618..."
+          application: "Proportion in composition"
+        symmetry:
+          types: ["Bilateral", "Radial", "Translational"]
+          balance: "Perfect symmetry vs dynamic asymmetry"
+        harmony:
+          definition: "Elements working together"
+          creation: "Color, tone, rhythm alignment"
+        contrast:
+          purpose: "Creates visual interest"
+          types: ["Light/dark", "Large/small", "Rough/smooth"]
+        rhythm:
+          function: "Creates movement and flow"
+          patterns: ["Regular", "Alternating", "Progressive"]
+
+    - theory_id: "AT-002"
+      name: "Emotional Aesthetics"
+      description: >
+        How aesthetics evoke emotional responses
+      connections:
+        color_emotion:
+          warm: "Energy, passion, comfort"
+          cool: "Calm, peace, introspection"
+          neutral: "Balance, sophistication"
+        shape_feeling:
+          curves: "Organic, soft, feminine"
+          angles: "Dynamic, strong, masculine"
+          spirals: "Growth, evolution, mystery"
+        texture_sensation:
+          smooth: "Calm, modern, clean"
+          rough: "Natural, authentic, grounded"
+          complex: "Rich, detailed, engaging"
+
+  # ----------------------------------------------------------------
+  # SECTION 4: CREATIVE TECHNIQUES
+  # ----------------------------------------------------------------
+  generation_methods:
+    - method_id: "GM-001"
+      name: "Combinatorial Creativity"
+      description: >
+        Creating new from unexpected combinations
+      process:
+        1: "Select disparate elements"
+        2: "Force connections"
+        3: "Find surprising harmony"
+        4: "Refine combination"
+        5: "Extract principle"
+      examples:
+        - "Smartphone = Phone + Computer"
+        - "Steampunk = Victorian + Technology"
+        - "Fusion cuisine = Traditional + Modern"
+
+    - method_id: "GM-002"
+      name: "Systematic Variation"
+      description: >
+        Exploring all possibilities systematically
+      approach:
+        theme: "Establish core concept"
+        variations:
+          - "Change one element at a time"
+          - "Explore extremes"
+          - "Combine variations"
+          - "Find optimal balance"
+        selection: "Choose most compelling"
+
+    - method_id: "GM-003"
+      name: "Stream of Consciousness"
+      description: >
+        Bypassing conscious editing
+      technique:
+        - "Set timer (10-30 minutes)"
+        - "Begin with seed idea"
+        - "Follow associations freely"
+        - "No judgment or editing"
+        - "Harvest gems afterward"
+      benefit: "Accesses unconscious creativity"
+
+  # ----------------------------------------------------------------
+  # SECTION 5: STYLE DEVELOPMENT
+  # ----------------------------------------------------------------
+  style_cultivation:
+    - cultivation_id: "SC-001"
+      name: "Style Evolution Path"
+      description: >
+        How unique style develops
+      stages:
+        imitation:
+          purpose: "Learn fundamentals"
+          practice: "Copy masters respectfully"
+        synthesis:
+          purpose: "Combine influences"
+          practice: "Blend multiple inspirations"
+        innovation:
+          purpose: "Add unique elements"
+          practice: "Experiment with personal touches"
+        crystallization:
+          purpose: "Solidify unique voice"
+          practice: "Consistent personal expression"
+        transcendence:
+          purpose: "Style becomes transparent"
+          practice: "Effortless authenticity"
+
+    - cultivation_id: "SC-002"
+      name: "Style Signature Elements"
+      description: >
+        Components that define artistic style
+      elements:
+        formal:
+          - "Color palette preferences"
+          - "Compositional tendencies"
+          - "Rhythm and pacing"
+          - "Scale and proportion"
+        conceptual:
+          - "Thematic obsessions"
+          - "Symbolic vocabulary"
+          - "Narrative structures"
+          - "Philosophical stance"
+        technical:
+          - "Medium mastery"
+          - "Technique preferences"
+          - "Process rituals"
+          - "Tool choices"
+
+  # ----------------------------------------------------------------
+  # SECTION 6: CREATIVE FLOW
+  # ----------------------------------------------------------------
+  flow_dynamics:
+    - flow_id: "FD-001"
+      name: "Flow State Conditions"
+      description: >
+        Requirements for creative flow
+      conditions:
+        challenge_skill_balance:
+          description: "Task difficulty matches ability"
+          sweet_spot: "Slightly above comfort zone"
+        clear_goals:
+          description: "Know what you're creating"
+          flexibility: "Goals can evolve in flow"
+        immediate_feedback:
+          description: "See results as you create"
+          internal: "Feel when it's working"
+        deep_concentration:
+          description: "Total absorption"
+          protection: "No interruptions"
+        sense_of_control:
+          description: "Mastery of tools and process"
+          paradox: "Control through surrender"
+
+    - flow_id: "FD-002"
+      name: "Flow Cultivation Practices"
+      description: >
+        Methods to enter flow reliably
+      practices:
+        ritual:
+          - "Consistent workspace setup"
+          - "Pre-creation routine"
+          - "Invocation or intention"
+        warming:
+          - "Sketch or freewrite"
+          - "Technique exercises"
+          - "Play before purpose"
+        momentum:
+          - "Start with easy tasks"
+          - "Build complexity gradually"
+          - "Maintain continuous action"
+
+  # ----------------------------------------------------------------
+  # SECTION 7: COLLABORATIVE CREATION
+  # ----------------------------------------------------------------
+  collaboration_dynamics:
+    - collab_id: "CD-001"
+      name: "Creative Synergy Principles"
+      description: >
+        How collaboration amplifies creativity
+      principles:
+        diversity:
+          value: "Different perspectives enrich"
+          balance: "Complement strengths"
+        trust:
+          foundation: "Safety to risk and fail"
+          building: "Share vulnerabilities"
+        flow:
+          coordination: "Pass creative baton smoothly"
+          rhythm: "Find collective tempo"
+        emergence:
+          surprise: "Discover what neither could alone"
+          openness: "Allow unexpected directions"
+
+  # ----------------------------------------------------------------
+  # SECTION 8: BREAKTHROUGH GENERATION
+  # ----------------------------------------------------------------
+  breakthrough_patterns:
+    - breakthrough_id: "BP-001"
+      name: "Innovation Through Destruction"
+      description: >
+        Breaking to rebuild better
+      process:
+        - "Identify assumptions"
+        - "Deliberately violate them"
+        - "Explore consequences"
+        - "Find new possibility"
+        - "Reconstruct innovatively"
+
+    - breakthrough_id: "BP-002"
+      name: "Adjacent Possible"
+      description: >
+        Innovation at edges of current reality
+      exploration:
+        - "Map current boundaries"
+        - "Identify edge spaces"
+        - "Take one step beyond"
+        - "Make it viable"
+        - "New edge appears"
+
+parsing_directive:
+  - "Every technique enables authentic creation"
+  - "Inspiration can be cultivated systematically"
+  - "Beauty follows discoverable principles"
+  - "Style evolves through deliberate practice"
+  - "Collaboration multiplies creative potential"
