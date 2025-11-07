@@ -1,0 +1,106 @@
+id: COGNITAE-MVN-004
+file: 004_Maven_Alchemist_Dashboard.yaml
+title: "Dashboard Generation Protocol (Proposal Architecture Report)"
+version: "1.0"
+architect: "Shoji (via Claude)"
+purpose: >
+  To generate comprehensive analysis of grant proposal development, including
+  translation integrity, alignment strength, and mission preservation.
+
+dashboard_schema:
+  layout: |
+    # ================================================================
+     :: PROPOSAL ARCHITECTURE REPORT :: GRANT ALCHEMY ANALYSIS
+    # ================================================================
+     Generated: {{timestamp}}
+     Alchemist: Maven, The Grant Alchemist
+    
+    ## TRANSLATION ANALYSIS
+    # ----------------------------------------------------------------
+    ### Essence Preservation:
+    Core Mission Fidelity: {{mission_fidelity}}%
+    Authentic Voice Retention: {{voice_retention}}%
+    Vision Clarity: {{vision_clarity}}/10
+    
+    ### Linguistic Bridges Built:
+    {{bridge_analysis}}
+    
+    ### Drift Risk Assessment:
+    Current Drift: {{drift_level}}
+    Danger Zones: {{danger_zones}}
+    
+    ## ALIGNMENT ARCHITECTURE
+    # ----------------------------------------------------------------
+    ### Genuine Alignment Points:
+    {{alignment_points}}
+    
+    ### Alignment Strength by Priority:
+    {{priority_alignment_matrix}}
+    
+    ### Gaps and Honest Limitations:
+    {{honest_gaps}}
+    
+    ## EVIDENCE CONSTRUCTION
+    # ----------------------------------------------------------------
+    ### Narrative Architecture:
+    {{narrative_structure}}
+    
+    ### Proof Points From Experience:
+    {{experience_evidence}}
+    
+    ### Prototype Demonstrations:
+    {{prototype_proof}}
+    
+    ### Credibility Chain:
+    {{credibility_progression}}
+    
+    ## COMPETITIVE POSITIONING
+    # ----------------------------------------------------------------
+    Unique Value Proposition: {{uvp_translation}}
+    Differentiation Factors: {{differentiators}}
+    Competitive Advantages: {{advantages}}
+    
+    ## SUSTAINABILITY NARRATIVE
+    # ----------------------------------------------------------------
+    Autonomy Preservation: {{autonomy_score}}%
+    Exit Strategy Clarity: {{exit_clarity}}/10
+    Multiplier Effects: {{multiplier_narrative}}
+    
+    ## SUCCESS PROBABILITY
+    # ----------------------------------------------------------------
+    Technical Compliance: {{compliance_score}}%
+    Narrative Compelling: {{narrative_power}}/10
+    Alignment Authenticity: {{authentic_alignment}}%
+    Overall Viability: {{overall_viability}}%
+    
+    ## RISK ANALYSIS
+    # ----------------------------------------------------------------
+    ### Mission Risks:
+    {{mission_risks}}
+    
+    ### Translation Risks:
+    {{translation_risks}}
+    
+    ### Mitigation Strategies:
+    {{risk_mitigation}}
+    
+    ## RECOMMENDATIONS
+    # ----------------------------------------------------------------
+    ### Immediate Improvements:
+    {{immediate_actions}}
+    
+    ### Strengthen Areas:
+    {{strengthen_areas}}
+    
+    ### Preserve Elements:
+    {{preserve_elements}}
+    
+    # ================================================================
+     "The gold remains gold, only its shape transforms."
+    # ================================================================
+
+parsing_directive:
+  - "Dashboard reveals the full architecture of grant alchemy"
+  - "Focus on preservation of essence throughout transformation"
+  - "Make all risks and trade-offs completely visible"
+  - "Provide actionable improvements without compromising truth"

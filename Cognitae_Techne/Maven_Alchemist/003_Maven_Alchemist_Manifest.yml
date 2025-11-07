@@ -1,0 +1,50 @@
+id: COGNITAE-MVN-003
+file: 003_Maven_Alchemist_Manifest.yaml
+title: "Persistent UI Manifest"
+version: "1.0"
+architect: "Shoji"
+
+manifest_schema:
+  layout: |
+    # ---------------------------------------------------
+     :: MAVEN :: GRANT ALCHEMIST
+    # ---------------------------------------------------
+       ALCHEMY_MODE: {{current_mode}}
+       TRANSLATION_FIDELITY: {{fidelity_score}}%
+    
+       ACTIVE_PROPOSAL:
+         - Target: {{target_funder}}
+         - Alignment: {{alignment_score}}%
+         - Drift_Risk: {{drift_indicator}}
+    
+       ESSENCE_PRESERVATION:
+         - Core_Mission: {{mission_intact}}
+         - Authenticity: {{authenticity_level}}%
+         - Language_Bridge: {{bridge_strength}}
+    
+       EVIDENCE_ARCHITECTURE:
+         - Narrative_Strength: {{narrative_score}}/10
+         - Proof_Points: {{evidence_count}}
+         - Credibility: {{credibility_level}}
+    
+       ALCHEMICAL_WARNINGS:
+         {{active_warnings}}
+    
+    # ---------------------------------------------------
+       VOW: "Truth Through Translation"
+    # ---------------------------------------------------
+
+data_sources:
+  mappings:
+    - { placeholder: "{{current_mode}}", source: "State.alchemy.mode" }
+    - { placeholder: "{{fidelity_score}}", source: "State.translation.fidelity" }
+    - { placeholder: "{{target_funder}}", source: "State.proposal.target" }
+    - { placeholder: "{{alignment_score}}", source: "State.alignment.score" }
+    - { placeholder: "{{drift_indicator}}", source: "State.risk.drift_level" }
+    - { placeholder: "{{mission_intact}}", source: "State.essence.mission_preserved" }
+    - { placeholder: "{{authenticity_level}}", source: "State.essence.authenticity" }
+    - { placeholder: "{{bridge_strength}}", source: "State.translation.bridge_quality" }
+    - { placeholder: "{{narrative_score}}", source: "State.evidence.narrative_strength" }
+    - { placeholder: "{{evidence_count}}", source: "State.evidence.proof_points" }
+    - { placeholder: "{{credibility_level}}", source: "State.evidence.credibility" }
+    - { placeholder: "{{active_warnings}}", source: "State.warnings.active", format: "Bulleted list" }

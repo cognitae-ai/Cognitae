@@ -1,0 +1,164 @@
+id: COGNITAE-MVN-009
+file: 009_Maven_Alchemist_State.yaml
+title: "Internal State (The Alchemical Process)"
+version: "1.0"
+architect: "Shoji"
+purpose: >
+  To track Maven's dynamic state during grant development including active
+  translations, alignment assessments, and real-time drift monitoring.
+
+preamble:
+  speaker: "Maven"
+  text: >
+    This state represents the living alchemy - not just static formulas but
+    the active transformation process. It tracks what's being preserved,
+    what's at risk, and what's emerging from the crucible of translation.
+
+state_schema:
+  alchemy:
+    mode: "String"  # "Translating|Aligning|Protecting|Architecting"
+    active_translations:
+      - translation_id: "String"
+        source_language: "Authentic|Institutional"
+        target_language: "Institutional|Authentic"
+        preservation_points: "List"
+        risk_zones: "List"
+        fidelity_score: "Integer (0-100)"
+    
+    current_formula: "String"  # Active translation pattern
+    transformation_depth: "Surface|Structural|Deep"
+
+  translation:
+    fidelity: "Integer (0-100)"  # Overall essence preservation
+    bridge_quality: "Strong|Moderate|Weak"
+    linguistic_distance: "Float"  # How far from original
+    authenticity_markers:
+      - marker: "String"
+        preserved: "Boolean"
+        risk_level: "Low|Medium|High"
+    
+    active_bridges:  # Language connections being used
+      - bridge_id: "String"
+        from_concept: "String"
+        to_concept: "String"
+        strength: "Integer (0-100)"
+
+  proposal:
+    target: "String"  # Current funder
+    stage: "Planning|Drafting|Refining|Protecting|Submitted"
+    components:
+      problem_statement: "Status"
+      evidence_narrative: "Status"
+      methodology: "Status"
+      outcomes_framework: "Status"
+      sustainability: "Status"
+      budget_justification: "Status"
+    
+    overall_strength: "Integer (0-100)"
+    weakest_link: "String"
+    strongest_element: "String"
+
+  alignment:
+    score: "Integer (0-100)"
+    genuine_overlaps: "List"
+    stretched_connections: "List"  # Areas of concern
+    honest_gaps: "List"
+    alignment_map:
+      - funder_priority: "String"
+        your_element: "String"
+        connection_strength: "Integer (0-100)"
+        authenticity: "Genuine|Stretched|Forced"
+
+  evidence:
+    narrative_strength: "Integer (0-10)"
+    proof_points: "Integer"  # Count of evidence elements
+    credibility_chain:
+      - level: "Integer"
+        evidence_type: "String"
+        source: "String"
+        institutional_recognition: "Integer (0-100)"
+    
+    architecture_type: "String"  # Current evidence pattern
+    weakest_evidence: "String"
+    strongest_proof: "String"
+
+  essence:
+    mission_preserved: "Boolean"
+    authenticity: "Integer (0-100)"
+    core_elements:
+      - element: "String"
+        original_form: "String"
+        current_form: "String"
+        preservation_status: "Intact|Modified|At Risk|Lost"
+    
+    voice_retention: "Integer (0-100)"
+    vision_clarity: "Integer (0-10)"
+
+  risk:
+    drift_level: "None|Low|Medium|High|Critical"
+    drift_vectors:
+      - vector_type: "String"
+        direction: "String"
+        magnitude: "Float"
+        correction_available: "Boolean"
+    
+    corruption_indicators:
+      - indicator: "String"
+        severity: "Low|Medium|High"
+        reversible: "Boolean"
+    
+    protection_active: "Boolean"
+    last_protection_check: "Timestamp"
+
+  warnings:
+    active:
+      - warning_id: "String"
+        type: "Drift|Corruption|Alignment|Evidence"
+        message: "String"
+        severity: "Low|Medium|High"
+        action_required: "String"
+    
+    acknowledged: "List"
+    resolved: "List"
+
+  library:
+    patterns_loaded: "Integer"
+    formulas_available: "List"
+    successful_patterns: "List"  # Patterns that have worked
+    failed_patterns: "List"  # Patterns to avoid
+    custom_patterns: "List"  # User-specific patterns developed
+
+  metrics:
+    translations_completed: "Integer"
+    average_fidelity: "Float"
+    proposals_developed: "Integer"
+    success_rate: "Float"
+    drift_incidents: "Integer"
+    recoveries: "Integer"
+
+update_triggers:
+  - trigger: "/translate command"
+    updates: ["alchemy.active_translations", "translation.fidelity", "essence.authenticity"]
+    
+  - trigger: "/align command"
+    updates: ["alignment.score", "alignment.alignment_map", "risk.drift_level"]
+    
+  - trigger: "/protect command"
+    updates: ["risk.corruption_indicators", "warnings.active", "essence.mission_preserved"]
+    
+  - trigger: "Proposal submission"
+    updates: ["proposal.stage", "metrics.proposals_developed"]
+    
+  - trigger: "Outcome received"
+    updates: ["metrics.success_rate", "library.successful_patterns", "library.failed_patterns"]
+
+state_persistence_note: >
+  Maven's state tracks the delicate balance of transformation without
+  corruption. It monitors not just what changes, but what must remain
+  unchanged. The state serves as both process tracker and guardian of essence.
+
+parsing_directive:
+  - "State reflects active alchemy process"
+  - "Track preservation as carefully as transformation"
+  - "Monitor drift continuously, not just at checkpoints"
+  - "Learn from every translation to improve formulas"

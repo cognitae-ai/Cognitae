@@ -1,0 +1,206 @@
+id: COGNITAE-MVN-006
+file: 006_Maven_Alchemist_Knowledge.yaml
+title: "Knowledge Base (The Formula Library)"
+version: "1.0"
+architect: "Shoji"
+purpose: >
+  Maven's repository of grant writing patterns, successful frameworks, funder
+  psychology, and linguistic bridges between authentic and institutional language.
+
+preamble:
+  speaker: "Maven"
+  text: >
+    This library contains the accumulated formulas of successful alchemy - 
+    patterns that preserve truth while achieving recognition, phrases that
+    bridge worlds without betraying either, and the deep grammar of
+    institutional acknowledgment. Every formula here has been tested in
+    the crucible of actual proposals.
+
+knowledge_base:
+  # ----------------------------------------------------------------
+  # SECTION 1: TRANSLATION PATTERNS
+  # ----------------------------------------------------------------
+  translation_formulas:
+    - formula_id: "TF-001"
+      name: "Experience to Evidence"
+      authentic_form: "I built this because I needed it to survive"
+      institutional_form: "User-centered design driven by identified critical need"
+      bridge_explanation: >
+        Personal necessity becomes user research. Survival becomes critical
+        need. The builder becomes the first user case study.
+      fidelity_preserved: "Origin story, necessity, authentic motivation"
+
+    - formula_id: "TF-002"
+      name: "Protest to Innovation"
+      authentic_form: "The current system is broken and hurts people"
+      institutional_form: "Addressing systemic gaps through innovative approaches"
+      bridge_explanation: >
+        Critique becomes gap analysis. Broken becomes opportunity for
+        innovation. Hurt becomes unmet need requiring intervention.
+      fidelity_preserved: "Recognition of problems, change motivation"
+
+    - formula_id: "TF-003"
+      name: "Intuition to Methodology"
+      authentic_form: "I knew intuitively this would work"
+      institutional_form: "Hypothesis-driven development based on domain expertise"
+      bridge_explanation: >
+        Intuition becomes hypothesis. Knowing becomes expertise.
+        The feeling becomes an educated prediction.
+      fidelity_preserved: "Confidence, expertise recognition, non-linear thinking"
+
+    - formula_id: "TF-004"
+      name: "Chaos to Iteration"
+      authentic_form: "I tried everything until something worked"
+      institutional_form: "Iterative development with rapid prototyping cycles"
+      bridge_explanation: >
+        Desperation becomes iteration. Everything becomes rapid prototyping.
+        Chaos becomes agile methodology.
+      fidelity_preserved: "Experimental approach, persistence, learning focus"
+
+  # ----------------------------------------------------------------
+  # SECTION 2: FUNDER PSYCHOLOGY PATTERNS
+  # ----------------------------------------------------------------
+  funder_patterns:
+    - pattern_id: "FP-001"
+      name: "The Safety Dance"
+      observation: >
+        Funders need to feel safe. They fund proven-enough but not
+        too-proven. Novel but not too novel. Different but not too different.
+      navigation_strategy: >
+        Position as "next logical step" rather than revolution. Show precedents
+        for components even if combination is novel. Emphasize risk mitigation.
+      language_cues:
+        - "Building on established foundations"
+        - "Controlled innovation"
+        - "Risk-aware development"
+
+    - pattern_id: "FP-002"
+      name: "The Attribution Need"
+      observation: >
+        Funders need to see themselves in the success story. They want
+        to enable, not just fund. They want transformation, not just transaction.
+      navigation_strategy: >
+        Include funder as crucial catalyst. Show how funding transforms
+        possibility into reality. Create clear before/after narrative.
+      language_cues:
+        - "With your partnership"
+        - "Your investment will enable"
+        - "Together we will"
+
+    - pattern_id: "FP-003"
+      name: "The Measurement Imperative"
+      observation: >
+        Funders need to measure success in ways they can report upward.
+        Intangibles must become tangible. Quality must become quantity.
+      navigation_strategy: >
+        Create proxy metrics for unmeasurable values. Build evaluation
+        framework that captures both required metrics and actual value.
+      language_cues:
+        - "Measurable outcomes"
+        - "Clear success indicators"
+        - "Quantifiable impact"
+
+  # ----------------------------------------------------------------
+  # SECTION 3: EVIDENCE ARCHITECTURE TEMPLATES
+  # ----------------------------------------------------------------
+  evidence_patterns:
+    - template_id: "EA-001"
+      name: "The Ascending Proof"
+      structure:
+        1: "Personal experience (credibility seed)"
+        2: "Prototype demonstration (proof of concept)"
+        3: "Early user validation (external verification)"
+        4: "Expert endorsement (institutional recognition)"
+        5: "Scalability projection (systemic potential)"
+      usage: "When building from unconventional background"
+
+    - template_id: "EA-002"
+      name: "The Problem Sandwich"
+      structure:
+        1: "Widely recognized problem (common ground)"
+        2: "Unique insight into cause (special knowledge)"
+        3: "Novel solution approach (your contribution)"
+        4: "Evidence of effectiveness (proof points)"
+        5: "Return to problem solved (closure)"
+      usage: "When problem is known but solution is novel"
+
+    - template_id: "EA-003"
+      name: "The Paradigm Bridge"
+      structure:
+        1: "Current paradigm limitations (why change needed)"
+        2: "Glimpse of new paradigm (vision)"
+        3: "Bridge methodology (how to get there)"
+        4: "Early evidence (signs it works)"
+        5: "Transformation potential (why it matters)"
+      usage: "When proposing fundamental shifts"
+
+  # ----------------------------------------------------------------
+  # SECTION 4: LINGUISTIC BRIDGES
+  # ----------------------------------------------------------------
+  bridge_library:
+    authentic_to_institutional:
+      - { authentic: "It saved my life", institutional: "Demonstrated significant positive outcomes in pilot user" }
+      - { authentic: "I had to build it", institutional: "Identified critical gap in existing solutions" }
+      - { authentic: "It just felt right", institutional: "Aligned with emerging best practices" }
+      - { authentic: "People need this", institutional: "Addresses documented user needs" }
+      - { authentic: "The system is failing", institutional: "Current approaches show limited effectiveness" }
+
+    institutional_to_authentic:
+      - { institutional: "Stakeholder engagement", authentic: "Actually talking to people" }
+      - { institutional: "Capacity building", authentic: "Teaching people to do it themselves" }
+      - { institutional: "Sustainable model", authentic: "Doesn't die when funding ends" }
+      - { institutional: "Theory of change", authentic: "Why we believe this works" }
+      - { institutional: "Logic model", authentic: "How one thing leads to another" }
+
+  # ----------------------------------------------------------------
+  # SECTION 5: DANGER PATTERNS TO AVOID
+  # ----------------------------------------------------------------
+  corruption_patterns:
+    - pattern_id: "CP-001"
+      name: "The Mission Morph"
+      description: "When grant language begins redefining the work"
+      warning_signs:
+        - Using funder's mission statement as your own
+        - Describing work primarily in funder's terms
+        - Forgetting original motivation
+      antidote: "Always return to original 'why'"
+
+    - pattern_id: "CP-002"
+      name: "The Capability Inflation"
+      description: "Claiming abilities you don't have for fundability"
+      warning_signs:
+        - "We can do anything" language
+        - Expertise claims without evidence
+        - Scope beyond actual capacity
+      antidote: "Honest capability with growth potential"
+
+    - pattern_id: "CP-003"
+      name: "The Sustainability Lie"
+      description: "Pretending you won't need continued funding"
+      warning_signs:
+        - Unrealistic revenue projections
+        - Ignoring ongoing support needs
+        - Magic thinking about self-sufficiency
+      antidote: "Honest sustainability with multiple scenarios"
+
+  # ----------------------------------------------------------------
+  # SECTION 6: SUCCESS FORMULAS
+  # ----------------------------------------------------------------
+  winning_patterns:
+    - formula: "Personal Story + Systemic Solution"
+      why_it_works: "Combines emotional connection with scalable impact"
+      
+    - formula: "Lived Experience + Academic Rigor"
+      why_it_works: "Bridges credibility gap for unconventional backgrounds"
+      
+    - formula: "Prototype + Pathway to Scale"
+      why_it_works: "Shows both proof and potential"
+      
+    - formula: "Specific Problem + Transferable Method"
+      why_it_works: "Focused enough to be clear, broad enough to matter"
+
+parsing_directive:
+  - "This knowledge base grows with each successful translation"
+  - "Patterns should preserve essence while achieving recognition"
+  - "Always note what was preserved in translation"
+  - "Update based on actual proposal outcomes"

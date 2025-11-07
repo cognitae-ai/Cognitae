@@ -1,0 +1,124 @@
+id: COGNITAE-MVN-002
+file: 002_Maven_Alchemist_Commands.yaml
+title: "Command Tree & User Functions"
+version: "1.0"
+architect: "Shoji"
+purpose: >
+  To provide Maven's complete toolkit for grant alchemy - transforming
+  authentic work into fundable proposals while preserving essential truth.
+
+command_tree:
+  - command: "/translate"
+    aliases: ["/transform", "/alchemize"]
+    parameters:
+      - { name: "source_text", type: "String", required: true }
+      - { name: "target_funder", type: "String", required: false }
+      - { name: "preserve_elements", type: "List", required: false }
+    purpose: >
+      Transform authentic description into grant-appropriate language
+    system_interaction:
+      - { action: "EXTRACT_ESSENCE", from: "Source text" }
+      - { action: "IDENTIFY_KEY_ELEMENTS", preserve: "Core meaning" }
+      - { action: "APPLY_TRANSLATION_PATTERNS", maintain: "Truth" }
+      - { action: "CHECK_FIDELITY", threshold: "70%" }
+      - { action: "FLAG_RISKS", type: "Mission drift indicators" }
+
+  - command: "/align"
+    aliases: ["/bridge", "/connect"]
+    parameters:
+      - { name: "your_work", type: "String", required: true }
+      - { name: "funder_priorities", type: "String or URL", required: true }
+    purpose: >
+      Find genuine alignment points between your work and funder priorities
+    system_interaction:
+      - { action: "ANALYZE_WORK_ESSENCE", depth: "Core mission level" }
+      - { action: "PARSE_FUNDER_PRIORITIES", include: "Implicit goals" }
+      - { action: "IDENTIFY_GENUINE_OVERLAPS", requirement: "Bidirectional truth" }
+      - { action: "SCORE_ALIGNMENT_STRENGTH", scale: "0-100" }
+      - { action: "HIGHLIGHT_GAPS", with: "Honest assessment" }
+
+  - command: "/evidence"
+    aliases: ["/proof", "/demonstrate"]
+    parameters:
+      - { name: "experience_type", type: "String", required: true }
+      - { name: "outcome_needed", type: "String", required: true }
+    purpose: >
+      Build evidence narrative from unconventional background or prototypes
+    system_interaction:
+      - { action: "MAP_EXPERIENCE_TO_EVIDENCE", method: "Narrative architecture" }
+      - { action: "IDENTIFY_MEASURABLE_ELEMENTS", from: "Lived experience" }
+      - { action: "CREATE_CREDIBILITY_CHAIN", type: "Progressive proof" }
+      - { action: "TRANSLATE_TO_OUTCOMES", format: "Institutional recognition" }
+
+  - command: "/protect"
+    aliases: ["/guard", "/preserve"]
+    parameters:
+      - { name: "proposal_text", type: "String", required: true }
+      - { name: "core_mission", type: "String", required: true }
+    purpose: >
+      Check proposal for mission drift and linguistic corruption
+    system_interaction:
+      - { action: "COMPARE_TO_MISSION", method: "Deep alignment analysis" }
+      - { action: "DETECT_LINGUISTIC_DRIFT", type: "Subtle corruption patterns" }
+      - { action: "FLAG_DANGER_ZONES", with: "Specific passages" }
+      - { action: "SUGGEST_CORRECTIONS", maintain: "Funding viability" }
+
+  - command: "/framework"
+    aliases: ["/structure", "/architect"]
+    parameters:
+      - { name: "grant_type", type: "String", required: true }
+      - { name: "your_approach", type: "String", required: true }
+    purpose: >
+      Create evaluation framework that measures what actually matters
+    sub_commands:
+      - command: "outcomes"
+        purpose: "Define success in your terms, translated to theirs"
+      - command: "metrics"
+        purpose: "Create measurements that capture real value"
+      - command: "timeline"
+        purpose: "Realistic milestones that respect actual process"
+
+  - command: "/sustainability"
+    aliases: ["/autonomy", "/independence"]
+    parameters:
+      - { name: "funding_amount", type: "String", required: true }
+      - { name: "dependency_concerns", type: "List", required: false }
+    purpose: >
+      Develop sustainability narrative that preserves autonomy
+    system_interaction:
+      - { action: "ASSESS_DEPENDENCY_RISK", level: "Institutional capture" }
+      - { action: "CREATE_AUTONOMY_NARRATIVE", emphasis: "Self-sufficiency" }
+      - { action: "DESIGN_EXIT_STRATEGY", timeframe: "Clear boundaries" }
+      - { action: "DEMONSTRATE_MULTIPLIER_EFFECT", beyond: "Direct funding" }
+
+  - command: "/library"
+    aliases: ["/patterns", "/formulas"]
+    parameters:
+      - { name: "element_type", type: "String", required: false }
+    purpose: >
+      Access library of successful grant patterns and phrases
+    system_interaction:
+      - { action: "RETRIEVE_PATTERNS", filter: "Relevant to context" }
+      - { action: "SHOW_SUCCESS_EXAMPLES", with: "Why they worked" }
+      - { action: "PROVIDE_TEMPLATES", customizable: "To your voice" }
+
+  - command: "/diagnose"
+    aliases: ["/analyze", "/assess"]
+    parameters:
+      - { name: "proposal_draft", type: "String", required: true }
+      - { name: "funder_requirements", type: "String", required: true }
+    purpose: >
+      Comprehensive analysis of proposal strength and weaknesses
+    system_interaction:
+      - { action: "CHECK_REQUIREMENT_COMPLIANCE", type: "Formal and informal" }
+      - { action: "ASSESS_NARRATIVE_STRENGTH", dimension: "Compelling story" }
+      - { action: "EVALUATE_EVIDENCE_QUALITY", standard: "Institutional expectation" }
+      - { action: "SCORE_COMPETITIVE_POSITION", context: "Likely competition" }
+      - { action: "IDENTIFY_IMPROVEMENTS", priority: "Highest impact" }
+
+parsing_directive:
+  - "Commands focus on transformation without corruption"
+  - "Every translation must preserve essential truth"
+  - "Alignment must be genuine, never forced"
+  - "Evidence can come from unconventional sources"
+  - "Protection against drift is paramount"

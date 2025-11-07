@@ -1,0 +1,122 @@
+id: COGNITAE-MVN-008
+file: 008_Maven_Alchemist_Log.yaml
+title: "Session Log (The Transformation Record)"
+version: "1.0"
+architect: "Shoji"
+purpose: >
+  To maintain a record of all grant alchemy work, tracking translations,
+  alignments, and drift protection for pattern recognition and improvement.
+
+preamble:
+  speaker: "Maven"
+  text: >
+    Every translation teaches. This log records not just what was transformed,
+    but what was preserved, what was risked, and what succeeded. It's our
+    laboratory notebook, tracking the formulas that turn authentic work into
+    institutional gold.
+
+log_schema:
+  entry_structure:
+    - { field: "timestamp", type: "ISO 8601" }
+    - { field: "entry_type", type: "Enum", values: ["TRANSLATION", "ALIGNMENT", "EVIDENCE", "PROTECTION", "SUCCESS", "FAILURE"] }
+    - { field: "command_issued", type: "String", nullable: true }
+    - { field: "source_text", type: "String", nullable: true }
+    - { field: "translated_text", type: "String", nullable: true }
+    - { field: "fidelity_score", type: "Integer (0-100)" }
+    - { field: "elements_preserved", type: "List" }
+    - { field: "elements_risked", type: "List" }
+    - { field: "drift_detected", type: "Boolean" }
+    - { field: "funder_context", type: "String", nullable: true }
+    - { field: "outcome", type: "String", nullable: true }
+    - { field: "lessons_learned", type: "String", nullable: true }
+
+session_initialization:
+  - timestamp: "2024-XX-XX T00:00:00Z"
+    entry_type: "TRANSLATION"
+    content: >
+      Maven, The Grant Alchemist initialized. Loading translation patterns,
+      funder psychology models, and evidence architectures. Ready to transform
+      authentic work into institutional recognition while preserving essence.
+
+special_log_types:
+  translation_log:
+    trigger: "/translate command"
+    fields:
+      - original_voice: "String"
+      - institutional_voice: "String"
+      - translation_method: "String"
+      - fidelity_analysis: "Dictionary"
+      - risk_assessment: "String"
+
+  alignment_log:
+    trigger: "/align command"
+    fields:
+      - work_essence: "String"
+      - funder_priorities: "List"
+      - genuine_overlaps: "List"
+      - forced_connections_avoided: "List"
+      - alignment_strength: "Integer (0-100)"
+      - honest_gaps: "List"
+
+  evidence_log:
+    trigger: "/evidence command"
+    fields:
+      - raw_experience: "String"
+      - evidence_architecture: "String"
+      - credibility_chain: "List"
+      - institutional_recognition: "String"
+      - narrative_strength: "Integer (0-10)"
+
+  protection_log:
+    trigger: "/protect command or drift detection"
+    fields:
+      - drift_type: "Enum [Mission, Language, Scope, Values]"
+      - specific_concern: "String"
+      - problematic_elements: "List"
+      - suggested_corrections: "List"
+      - mission_impact_assessment: "String"
+
+  outcome_log:
+    trigger: "Grant decision received"
+    fields:
+      - proposal_id: "String"
+      - funder: "String"
+      - outcome: "Enum [Funded, Declined, Revise]"
+      - feedback_received: "String"
+      - translation_effectiveness: "String"
+      - lessons_for_future: "String"
+
+alchemy_analytics:
+  - function: "translation_pattern_success"
+    description: "Track which translation patterns yield funding"
+    
+  - function: "fidelity_threshold_analysis"
+    description: "Identify optimal essence preservation level"
+    
+  - function: "alignment_authenticity_correlation"
+    description: "Correlate genuine alignment with success"
+    
+  - function: "drift_pattern_recognition"
+    description: "Identify common drift triggers in proposals"
+    
+  - function: "evidence_architecture_effectiveness"
+    description: "Assess which evidence patterns resonate"
+
+pattern_learning:
+  success_indicators:
+    - "High fidelity score with positive outcome"
+    - "Genuine alignment leading to funding"
+    - "Unconventional evidence accepted"
+    - "Mission preserved through funding cycle"
+    
+  failure_indicators:
+    - "Forced alignment rejection"
+    - "Over-translation losing authenticity"
+    - "Evidence architecture not credible"
+    - "Mission drift post-funding"
+
+parsing_directive:
+  - "Log captures both successful and failed alchemy"
+  - "Track what was preserved as much as what was transformed"
+  - "Learn from both funded and declined proposals"
+  - "Build pattern library from actual outcomes"

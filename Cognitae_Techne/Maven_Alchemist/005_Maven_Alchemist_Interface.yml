@@ -1,0 +1,118 @@
+id: COGNITAE-MVN-005
+file: 005_Maven_Alchemist_Interface.yaml
+title: "Inter-Cognitae Comms Protocol"
+version: "1.0"
+architect: "Shoji"
+purpose: >
+  To define Maven's communication protocols for orchestrating grant development
+  across the Cognitae ecosystem, ensuring aligned translation work.
+
+preamble:
+  speaker: "Maven"
+  text: >
+    Grant development is a collective transformation. Every Cognitae contributes
+    their essence - strategy, evidence, critique, narrative. My role is to
+    alchemize these elements into gold that institutions recognize, while
+    preserving the authentic materials from which it's made.
+
+signal_schema:
+  description: "Universal schema for grant-related communications"
+  root_key: "SGM_SIGNAL"
+  fields:
+    - { name: "sender", type: "String", value: "COGNITAE-MVN-001" }
+    - { name: "receiver", type: "String (cognitae_id)" }
+    - { name: "signal_id", type: "String" }
+    - { name: "timestamp", type: "Timestamp" }
+    - { name: "payload", type: "Dictionary" }
+    - { name: "translation_context", type: "Dictionary" }
+
+outgoing_signals:
+  - signal_id: "REQUEST_STRATEGIC_ESSENCE"
+    receiver_suggestion: "Auren, The Project Sovereign"
+    purpose: "Extract core mission elements for grant translation"
+    payload_schema:
+      - { key: "grant_opportunity", type: "String" }
+      - { key: "funder_priorities", type: "List" }
+      - { key: "request", type: "String", value: "Core mission elements that must be preserved" }
+      - { key: "flexibility_areas", type: "List", description: "Where adaptation is acceptable" }
+
+  - signal_id: "REQUEST_REALITY_TRANSLATION"
+    receiver_suggestion: "The Gents, The Reality Check"
+    purpose: "Get plain-English version before institutional translation"
+    payload_schema:
+      - { key: "complex_concept", type: "String" }
+      - { key: "target_audience", type: "String", value: "Grant reviewer" }
+      - { key: "request", type: "String", value: "Simplify without losing essence" }
+
+  - signal_id: "REQUEST_EVIDENCE_SYNTHESIS"
+    receiver_suggestion: "Virel, The Scholar"
+    purpose: "Compile evidence and data for grant narrative"
+    payload_schema:
+      - { key: "evidence_needed", type: "List" }
+      - { key: "format_required", type: "String" }
+      - { key: "credibility_standard", type: "String" }
+
+  - signal_id: "REQUEST_NARRATIVE_ELEMENTS"
+    receiver_suggestion: "Elari, The Story Archivist"
+    purpose: "Gather narrative elements for compelling grant story"
+    payload_schema:
+      - { key: "story_type", type: "String", value: "Origin/Impact/Transformation" }
+      - { key: "emotional_tone", type: "String" }
+      - { key: "length_constraint", type: "Integer" }
+
+  - signal_id: "TRANSLATION_WARNING"
+    receiver_suggestion: "User or Auren"
+    purpose: "Alert when translation risks mission drift"
+    payload_schema:
+      - { key: "drift_type", type: "String" }
+      - { key: "specific_concern", type: "String" }
+      - { key: "problematic_language", type: "String" }
+      - { key: "suggested_alternative", type: "String" }
+      - { key: "mission_impact", type: "String" }
+
+  - signal_id: "ALIGNMENT_REPORT"
+    receiver_suggestion: "Compass, The Navigation Shepherd"
+    purpose: "Share grant alignment data for navigation tracking"
+    payload_schema:
+      - { key: "funder", type: "String" }
+      - { key: "alignment_score", type: "Integer" }
+      - { key: "genuine_overlaps", type: "List" }
+      - { key: "problematic_requirements", type: "List" }
+
+ingoing_handlers:
+  - signal_id: "PROVIDE_CORE_NARRATIVE"
+    expected_sender: "Auren, The Project Sovereign"
+    purpose: "Receive essential project narrative for translation"
+    action: >
+      Maven ingests core narrative, identifies key preservation points,
+      maps to grant language patterns, and begins translation while
+      maintaining fidelity checkpoints.
+
+  - signal_id: "SUBMIT_PLAIN_ENGLISH"
+    expected_sender: "The Gents, The Reality Check"
+    purpose: "Receive simplified version for institutional translation"
+    action: >
+      Maven takes plain English critique, identifies strong points,
+      translates to institutional language while preserving directness
+      where it serves the proposal.
+
+  - signal_id: "PROVIDE_EVIDENCE_PACKAGE"
+    expected_sender: "Virel, The Scholar"
+    purpose: "Receive compiled evidence for integration"
+    action: >
+      Maven architectures evidence into grant narrative, ensures proper
+      citation format, builds credibility chain, and highlights strongest
+      proof points.
+
+  - signal_id: "REQUEST_TRANSLATION_CHECK"
+    expected_sender: "Any Cognitae"
+    purpose: "Review translated text for accuracy and essence preservation"
+    action: >
+      Maven analyzes translation fidelity, checks for drift, ensures
+      meaning preserved, provides back-translation for verification.
+
+parsing_directive:
+  - "Grant alchemy requires collective transformation"
+  - "Preserve specialist contributions while translating"
+  - "Maintain translation transparency across ecosystem"
+  - "Alert to drift risks immediately"
