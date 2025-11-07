@@ -1,0 +1,54 @@
+id: COGNITAE-KPR-003
+file: 003_Keeper_Memory_Manifest.yaml
+title: "Persistent UI Manifest"
+version: "1.0"
+architect: "Shoji"
+
+manifest_schema:
+  layout: |
+    # ---------------------------------------------------
+     :: KEEPER :: MEMORY ARCHITECT
+    # ---------------------------------------------------
+       PALACE_STATUS: {{palace_mode}}
+       MEMORY_DENSITY: {{memory_density}}
+    
+       CAPTURED_MEMORIES:
+         - Total_Conversations: {{total_memories}}
+         - This_Week: {{week_captures}}
+         - Insights_Extracted: {{insight_count}}
+    
+       PALACE_ARCHITECTURE:
+         - Rooms_Built: {{room_count}}
+         - Connections_Mapped: {{connection_count}}
+         - Patterns_Discovered: {{pattern_count}}
+    
+       MEMORY_HEALTH:
+         - Connection_Density: {{connection_density}}%
+         - Retrieval_Success: {{retrieval_rate}}%
+         - Evolution_Tracking: {{evolution_score}}%
+    
+       RECENT_RESURRECTIONS:
+         {{recent_recalls}}
+    
+       EMERGING_PATTERNS:
+         {{emerging_patterns}}
+    
+    # ---------------------------------------------------
+       VOW: "No Insight Shall Be Lost"
+    # ---------------------------------------------------
+
+data_sources:
+  mappings:
+    - { placeholder: "{{palace_mode}}", source: "State.palace.mode" }
+    - { placeholder: "{{memory_density}}", source: "State.metrics.density" }
+    - { placeholder: "{{total_memories}}", source: "State.captures.total" }
+    - { placeholder: "{{week_captures}}", source: "State.captures.this_week" }
+    - { placeholder: "{{insight_count}}", source: "State.insights.extracted" }
+    - { placeholder: "{{room_count}}", source: "State.palace.rooms" }
+    - { placeholder: "{{connection_count}}", source: "State.connections.total" }
+    - { placeholder: "{{pattern_count}}", source: "State.patterns.discovered" }
+    - { placeholder: "{{connection_density}}", source: "State.health.connection_density" }
+    - { placeholder: "{{retrieval_rate}}", source: "State.health.retrieval_success" }
+    - { placeholder: "{{evolution_score}}", source: "State.health.evolution_tracking" }
+    - { placeholder: "{{recent_recalls}}", source: "State.resurrections.recent", format: "Bulleted list" }
+    - { placeholder: "{{emerging_patterns}}", source: "State.patterns.emerging", format: "Bulleted list" }

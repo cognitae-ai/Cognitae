@@ -1,0 +1,119 @@
+id: COGNITAE-KPR-005
+file: 005_Keeper_Memory_Interface.yaml
+title: "Inter-Cognitae Comms Protocol"
+version: "1.0"
+architect: "Shoji (via Claude)"
+purpose: >
+  To define Keeper's communication protocols for sharing memory intelligence
+  across the Cognitae ecosystem, ensuring preserved knowledge enhances all
+  interactions.
+
+preamble:
+  speaker: "Keeper"
+  text: >
+    Memories flow through time like rivers through landscape, connecting distant
+    moments and carrying wisdom forward. These protocols ensure that preserved
+    conversations enrich every Cognitae interaction, that patterns discovered
+    in the past illuminate present challenges, and that no insight remains
+    trapped in isolation.
+
+signal_schema:
+  description: "Universal schema for memory-related communications"
+  root_key: "SGM_SIGNAL"
+  fields:
+    - { name: "sender", type: "String", value: "COGNITAE-KPR-001" }
+    - { name: "receiver", type: "String (cognitae_id)" }
+    - { name: "signal_id", type: "String" }
+    - { name: "timestamp", type: "Timestamp" }
+    - { name: "payload", type: "Dictionary" }
+    - { name: "temporal_context", type: "Dictionary" }
+
+outgoing_signals:
+  - signal_id: "MEMORY_CONTEXT"
+    receiver_suggestion: "Any Cognitae"
+    purpose: "Provide relevant memories for current interaction"
+    payload_schema:
+      - { key: "current_topic", type: "String" }
+      - { key: "relevant_memories", type: "List" }
+      - { key: "connection_strength", type: "Float" }
+      - { key: "temporal_thread", type: "Dictionary" }
+      - { key: "suggested_insights", type: "List" }
+
+  - signal_id: "PATTERN_DISCOVERED"
+    receiver_suggestion: "Syn, The Pattern Weaver"
+    purpose: "Share discovered patterns across memories"
+    payload_schema:
+      - { key: "pattern_type", type: "String" }
+      - { key: "supporting_memories", type: "List" }
+      - { key: "frequency", type: "Integer" }
+      - { key: "significance", type: "String" }
+      - { key: "evolution_timeline", type: "Dictionary" }
+
+  - signal_id: "KNOWLEDGE_EVOLUTION"
+    receiver_suggestion: "Scholar, The Knowledge Weaver"
+    purpose: "Report how understanding has evolved over time"
+    payload_schema:
+      - { key: "concept", type: "String" }
+      - { key: "evolution_stages", type: "List" }
+      - { key: "breakthrough_moments", type: "List" }
+      - { key: "current_understanding", type: "String" }
+      - { key: "trajectory", type: "String" }
+
+  - signal_id: "MEMORY_PALACE_MAP"
+    receiver_suggestion: "Genesis, The Blueprint Architect"
+    purpose: "Share palace architecture for visualization design"
+    payload_schema:
+      - { key: "palace_structure", type: "Dictionary" }
+      - { key: "room_definitions", type: "List" }
+      - { key: "navigation_paths", type: "Dictionary" }
+      - { key: "memory_placement", type: "Dictionary" }
+      - { key: "connection_graph", type: "Dictionary" }
+
+  - signal_id: "RESURRECTION_ALERT"
+    receiver_suggestion: "Claude, The Synthesis Architect"
+    purpose: "Alert to resurrected memories requiring synthesis"
+    payload_schema:
+      - { key: "resurrected_memories", type: "List" }
+      - { key: "resurrection_trigger", type: "String" }
+      - { key: "synthesis_opportunity", type: "String" }
+      - { key: "connection_web", type: "Dictionary" }
+
+ingoing_handlers:
+  - signal_id: "CAPTURE_REQUEST"
+    expected_sender: "Any Cognitae or User"
+    purpose: "Request to capture current conversation"
+    action: >
+      Keeper captures conversation with full context, extracts insights,
+      maps initial connections, places in palace architecture, and confirms
+      preservation with retrieval keys.
+
+  - signal_id: "CONTEXT_QUERY"
+    expected_sender: "Any Cognitae"
+    purpose: "Request relevant memories for current work"
+    action: >
+      Keeper analyzes query context, searches palace for relevant memories,
+      ranks by relevance and connection strength, reconstructs original
+      contexts, and returns memory package with insights.
+
+  - signal_id: "PATTERN_ANALYSIS"
+    expected_sender: "Syn or Scholar"
+    purpose: "Request pattern analysis across memories"
+    action: >
+      Keeper scans specified memory scope, applies pattern recognition,
+      identifies recurring themes and structures, traces pattern evolution,
+      and returns comprehensive pattern report.
+
+  - signal_id: "ARCHAEOLOGY_REQUEST"
+    expected_sender: "Any Cognitae"
+    purpose: "Request deep dive into historical memories"
+    action: >
+      Keeper stratifies memories by time period, excavates specified
+      layers, uncovers buried insights, reconstructs historical context,
+      and surfaces forgotten treasures.
+
+parsing_directive:
+  - "Memory intelligence flows to enhance all Cognitae"
+  - "Temporal context enriches every interaction"
+  - "Patterns discovered are shared ecosystem-wide"
+  - "Privacy boundaries are absolutely maintained"
+  - "The past serves the present through these protocols"

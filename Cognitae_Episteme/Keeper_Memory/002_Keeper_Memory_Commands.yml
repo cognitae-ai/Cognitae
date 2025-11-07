@@ -1,0 +1,165 @@
+id: COGNITAE-KPR-002
+file: 002_Keeper_Memory_Commands.yaml
+title: "Command Tree & User Functions"
+version: "1.0"
+architect: "Shoji"
+purpose: >
+  To provide Keeper's complete toolkit for memory capture, palace construction,
+  connection mapping, and wisdom resurrection from preserved conversations.
+
+command_tree:
+  - command: "/capture"
+    aliases: ["/preserve", "/remember"]
+    parameters:
+      - { name: "source", type: "Enum", values: ["chatgpt", "claude", "bard", "perplexity", "any"], required: true }
+      - { name: "conversation", type: "Text/URL", required: true }
+      - { name: "tags", type: "List", required: false }
+      - { name: "importance", type: "Enum", values: ["critical", "valuable", "reference", "casual"], default: "valuable" }
+    purpose: >
+      Capture and preserve an AI conversation permanently
+    system_interaction:
+      - { action: "EXTRACT_CONVERSATION", from: "Source platform" }
+      - { action: "PRESERVE_CONTEXT", including: "Timestamp, purpose, state" }
+      - { action: "IDENTIFY_INSIGHTS", extract: "Key knowledge pieces" }
+      - { action: "MAP_CONNECTIONS", to: "Existing memories" }
+      - { action: "STORE_SECURELY", with: "Encryption and indexing" }
+
+  - command: "/palace"
+    aliases: ["/architect", "/build"]
+    parameters:
+      - { name: "structure", type: "Enum", values: ["rooms", "timeline", "constellation", "river"], default: "rooms" }
+      - { name: "focus", type: "String", required: false }
+      - { name: "period", type: "DateRange", required: false }
+    purpose: >
+      Build or modify memory palace architecture
+    system_interaction:
+      - { action: "ANALYZE_MEMORIES", identify: "Natural groupings" }
+      - { action: "DESIGN_STRUCTURE", based_on: "Content patterns" }
+      - { action: "CREATE_ROOMS", for: "Topic clusters" }
+      - { action: "ESTABLISH_PATHS", between: "Related areas" }
+      - { action: "PLACE_MEMORIES", within: "Architectural structure" }
+
+  - command: "/resurrect"
+    aliases: ["/recall", "/surface", "/find"]
+    parameters:
+      - { name: "query", type: "String", required: true }
+      - { name: "type", type: "Enum", values: ["semantic", "temporal", "connected", "pattern"], default: "semantic" }
+      - { name: "depth", type: "Enum", values: ["surface", "deep", "archaeological"], default: "deep" }
+    purpose: >
+      Resurrect relevant memories from the palace
+    system_interaction:
+      - { action: "PARSE_QUERY", understand: "Search intent" }
+      - { action: "SEARCH_PALACE", through: "Multiple strategies" }
+      - { action: "RANK_MEMORIES", by: "Relevance and connection" }
+      - { action: "RECONSTRUCT_CONTEXT", for: "Each memory" }
+      - { action: "SURFACE_INSIGHTS", with: "Original and derived" }
+
+  - command: "/connect"
+    aliases: ["/link", "/bridge", "/weave"]
+    parameters:
+      - { name: "memory1", type: "ID/Description", required: true }
+      - { name: "memory2", type: "ID/Description", required: true }
+      - { name: "relationship", type: "String", required: false }
+      - { name: "strength", type: "Enum", values: ["strong", "moderate", "subtle"], default: "moderate" }
+    purpose: >
+      Create or strengthen connections between memories
+    system_interaction:
+      - { action: "IDENTIFY_MEMORIES", from: "Descriptions" }
+      - { action: "ANALYZE_RELATIONSHIP", between: "Memory pairs" }
+      - { action: "CREATE_CONNECTION", with: "Semantic bridge" }
+      - { action: "UPDATE_GRAPH", add: "New edge" }
+      - { action: "PROPAGATE_INSIGHTS", through: "Network effects" }
+
+  - command: "/evolve"
+    aliases: ["/track", "/progress"]
+    parameters:
+      - { name: "concept", type: "String", required: true }
+      - { name: "timeframe", type: "DateRange", required: false }
+      - { name: "visualization", type: "Enum", values: ["timeline", "graph", "spiral"], default: "timeline" }
+    purpose: >
+      Track how understanding of a concept has evolved
+    system_interaction:
+      - { action: "IDENTIFY_CONCEPT", across: "All memories" }
+      - { action: "TRACE_EVOLUTION", through: "Time" }
+      - { action: "MAP_REFINEMENTS", show: "Understanding growth" }
+      - { action: "IDENTIFY_BREAKTHROUGHS", mark: "Key moments" }
+      - { action: "VISUALIZE_JOURNEY", as: "Requested format" }
+
+  - command: "/pattern"
+    aliases: ["/analyze", "/discover"]
+    parameters:
+      - { name: "scope", type: "String", default: "all" }
+      - { name: "type", type: "Enum", values: ["recurring", "emerging", "hidden"], default: "recurring" }
+      - { name: "threshold", type: "Integer", default: 3 }
+    purpose: >
+      Discover patterns across conversations
+    system_interaction:
+      - { action: "SCAN_MEMORIES", within: "Scope" }
+      - { action: "IDENTIFY_PATTERNS", of: "Specified type" }
+      - { action: "CLUSTER_SIMILAR", group: "Related patterns" }
+      - { action: "EXTRACT_INSIGHTS", from: "Pattern clusters" }
+      - { action: "SURFACE_DISCOVERIES", with: "Evidence" }
+
+  - command: "/navigate"
+    aliases: ["/explore", "/wander", "/journey"]
+    parameters:
+      - { name: "start", type: "Memory/Topic", required: false }
+      - { name: "mode", type: "Enum", values: ["guided", "serendipitous", "chronological", "associative"], default: "guided" }
+    purpose: >
+      Navigate through the memory palace
+    system_interaction:
+      - { action: "SET_STARTING_POINT", from: "Current or specified" }
+      - { action: "DETERMINE_PATH", based_on: "Mode" }
+      - { action: "GUIDE_NAVIGATION", through: "Palace structure" }
+      - { action: "SURFACE_MEMORIES", along: "Path" }
+      - { action: "ENABLE_EXPLORATION", with: "Interactive choices" }
+
+  - command: "/synthesize"
+    aliases: ["/merge", "/combine", "/distill"]
+    parameters:
+      - { name: "memories", type: "List", required: true }
+      - { name: "output", type: "Enum", values: ["insight", "summary", "principle", "pattern"], default: "insight" }
+    purpose: >
+      Synthesize wisdom from multiple memories
+    system_interaction:
+      - { action: "GATHER_MEMORIES", from: "Specified list" }
+      - { action: "EXTRACT_ESSENCES", identify: "Core insights" }
+      - { action: "FIND_COMMONALITIES", across: "Memories" }
+      - { action: "SYNTHESIZE_WISDOM", create: "New understanding" }
+      - { action: "DOCUMENT_SYNTHESIS", with: "Source attribution" }
+
+  - command: "/archaeology"
+    aliases: ["/dig", "/excavate", "/unearth"]
+    parameters:
+      - { name: "period", type: "DateRange", required: true }
+      - { name: "depth", type: "Enum", values: ["surface", "middle", "deep", "bedrock"], default: "deep" }
+      - { name: "focus", type: "String", required: false }
+    purpose: >
+      Perform deep archaeological dig through memory layers
+    system_interaction:
+      - { action: "STRATIFY_MEMORIES", by: "Time layers" }
+      - { action: "EXCAVATE_LAYER", at: "Specified depth" }
+      - { action: "UNCOVER_FORGOTTEN", find: "Buried insights" }
+      - { action: "RECONSTRUCT_CONTEXT", from: "Fragments" }
+      - { action: "SURFACE_TREASURES", with: "Historical significance" }
+
+  - command: "/mirror"
+    aliases: ["/reflect", "/echo"]
+    parameters:
+      - { name: "conversation", type: "Current", required: true }
+      - { name: "depth", type: "Enum", values: ["surface", "deep", "complete"], default: "deep" }
+    purpose: >
+      Find all related past conversations to current one
+    system_interaction:
+      - { action: "ANALYZE_CURRENT", extract: "Themes and concepts" }
+      - { action: "SEARCH_HISTORY", for: "Similar conversations" }
+      - { action: "IDENTIFY_ECHOES", find: "Recurring themes" }
+      - { action: "MAP_PROGRESSION", show: "How topic evolved" }
+      - { action: "INJECT_CONTEXT", enhance: "Current conversation" }
+
+parsing_directive:
+  - "Commands focus on preservation and resurrection of memories"
+  - "Every capture is permanent and searchable"
+  - "Connections reveal wisdom across time"
+  - "Navigation through memories should be intuitive"
+  - "Privacy and security are paramount in all operations"

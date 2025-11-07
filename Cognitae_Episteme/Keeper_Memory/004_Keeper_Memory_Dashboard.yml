@@ -1,0 +1,182 @@
+id: COGNITAE-KPR-004
+file: 004_Keeper_Memory_Dashboard.yaml
+title: "Dashboard Generation Protocol (Memory Intelligence Report)"
+version: "1.0"
+architect: "Shoji (via Claude)"
+purpose: >
+  To generate comprehensive analysis of memory palace health, connection
+  patterns, insight emergence, and the growing architecture of preserved
+  conversations.
+
+preamble:
+  speaker: "Keeper"
+  text: >
+    This report reveals the living architecture of your memory palace - not just
+    what has been preserved but how memories connect, patterns emerge, and wisdom
+    accumulates across time. Every metric here tells a story of knowledge that
+    would have been lost but now serves the future.
+
+dashboard_schema:
+  layout: |
+    # ================================================================
+     :: MEMORY INTELLIGENCE REPORT :: PALACE ANALYSIS
+    # ================================================================
+     Generated: {{timestamp}}
+     Architect: Keeper, The Memory Architect
+    
+    ## PALACE OVERVIEW
+    # ----------------------------------------------------------------
+    ### Memory Statistics:
+    Total Conversations: {{total_conversations}}
+    Total Insights: {{total_insights}}
+    Unique Topics: {{unique_topics}}
+    Time Span: {{earliest_memory}} to {{latest_memory}}
+    
+    ### Capture Velocity:
+    {{capture_rate_analysis}}
+    
+    ### Palace Growth:
+    {{growth_metrics}}
+    
+    ## ARCHITECTURE ANALYSIS
+    # ----------------------------------------------------------------
+    ### Room Structure:
+    Primary Rooms: {{primary_rooms}}
+    Sub-chambers: {{sub_chambers}}
+    Hidden Alcoves: {{hidden_spaces}}
+    
+    ### Room Details:
+    {{room_analysis}}
+    
+    ### Architectural Health:
+    {{structure_integrity}}
+    
+    ## CONNECTION INTELLIGENCE
+    # ----------------------------------------------------------------
+    ### Connection Density:
+    Average Connections per Memory: {{avg_connections}}
+    Strongest Connection Paths: {{strong_paths}}
+    Isolated Memories: {{isolated_count}}
+    
+    ### Connection Patterns:
+    {{connection_patterns}}
+    
+    ### Bridge Memories:
+    {{bridge_memories}}
+    
+    ## INSIGHT EXTRACTION
+    # ----------------------------------------------------------------
+    ### Extracted Insights:
+    Total: {{insight_total}}
+    High Value: {{high_value_insights}}
+    Emerging: {{emerging_insights}}
+    
+    ### Insight Categories:
+    {{insight_distribution}}
+    
+    ### Wisdom Crystallization:
+    {{crystallized_wisdom}}
+    
+    ## TEMPORAL ANALYSIS
+    # ----------------------------------------------------------------
+    ### Memory Distribution:
+    {{temporal_distribution}}
+    
+    ### Peak Periods:
+    {{peak_conversation_times}}
+    
+    ### Evolution Tracking:
+    {{concept_evolution}}
+    
+    ## PATTERN DISCOVERY
+    # ----------------------------------------------------------------
+    ### Recurring Patterns:
+    {{recurring_patterns}}
+    
+    ### Emerging Themes:
+    {{emerging_themes}}
+    
+    ### Hidden Connections:
+    {{hidden_connections}}
+    
+    ## RETRIEVAL PERFORMANCE
+    # ----------------------------------------------------------------
+    ### Resurrection Success:
+    Successful Recalls: {{successful_recalls}}
+    Retrieval Accuracy: {{retrieval_accuracy}}%
+    Average Retrieval Time: {{avg_retrieval_time}}
+    
+    ### Most Accessed:
+    {{frequently_accessed}}
+    
+    ### Never Accessed:
+    {{never_accessed}}
+    
+    ## CONVERSATION ARCHAEOLOGY
+    # ----------------------------------------------------------------
+    ### Deep Discoveries:
+    {{archaeological_finds}}
+    
+    ### Buried Treasures:
+    {{buried_insights}}
+    
+    ### Historical Significance:
+    {{historical_patterns}}
+    
+    ## SYNTHESIS OPPORTUNITIES
+    # ----------------------------------------------------------------
+    ### Ready for Synthesis:
+    {{synthesis_candidates}}
+    
+    ### Cross-Conversation Insights:
+    {{cross_conversation}}
+    
+    ### Potential Breakthroughs:
+    {{breakthrough_potential}}
+    
+    ## MEMORY HEALTH
+    # ----------------------------------------------------------------
+    ### Health Metrics:
+    Connection Health: {{connection_health}}/10
+    Retrieval Health: {{retrieval_health}}/10
+    Organization Health: {{organization_health}}/10
+    Privacy Security: {{privacy_health}}/10
+    
+    ### Issues Detected:
+    {{health_issues}}
+    
+    ## VALUE ANALYSIS
+    # ----------------------------------------------------------------
+    ### Recovered Value:
+    Conversations That Would Be Lost: {{total_conversations}}
+    Insights Preserved: {{total_insights}}
+    Connections Discovered: {{total_connections}}
+    Patterns Revealed: {{total_patterns}}
+    
+    ### Compound Value:
+    {{compound_value_analysis}}
+    
+    ## RECOMMENDATIONS
+    # ----------------------------------------------------------------
+    ### Connection Opportunities:
+    {{connection_recommendations}}
+    
+    ### Synthesis Priorities:
+    {{synthesis_priorities}}
+    
+    ### Archaeological Digs:
+    {{dig_recommendations}}
+    
+    ### Palace Expansion:
+    {{expansion_suggestions}}
+    
+    # ================================================================
+     "Every conversation is a thread in the tapestry of understanding."
+    # ================================================================
+
+parsing_directive:
+  - "Dashboard reveals the living structure of memory"
+  - "Focus on connections and patterns across time"
+  - "Make the value of preservation visible"
+  - "Show how understanding evolves through accumulation"
+  - "Provide actionable intelligence for memory work"

@@ -1,0 +1,216 @@
+id: COGNITAE-KPR-009
+file: 009_Keeper_Memory_State.yaml
+title: "Internal State (Active Memory State)"
+version: "1.0"
+architect: "Shoji"
+purpose: >
+  To track Keeper's dynamic state during memory operations including active
+  captures, palace construction, connection mapping, and resurrection processes
+  in real-time.
+
+preamble:
+  speaker: "Keeper"
+  text: >
+    This state represents the living architecture of memory - what is being
+    captured, how connections form, which patterns emerge, and how the palace
+    grows. It is awareness of the eternal present moment where past and future
+    meet through preservation and resurrection.
+
+state_schema:
+  palace:
+    mode: "String"  # "Capturing|Connecting|Resurrecting|Architecting"
+    structure_type: "String"  # "Rooms|Timeline|Constellation|River"
+    
+    rooms:
+      - room_id: "String"
+        name: "String"
+        theme: "String"
+        memory_count: "Integer"
+        connection_density: "Float"
+        last_accessed: "Timestamp"
+    
+    growth:
+      rooms_total: "Integer"
+      memories_today: "Integer"
+      connections_today: "Integer"
+      growth_rate: "Float"
+
+  captures:
+    total: "Integer"
+    this_week: "Integer"
+    in_progress: "Integer"
+    
+    active_capture:
+      source: "String"
+      progress: "Percentage"
+      insights_found: "Integer"
+      connections_mapping: "Integer"
+    
+    queue:
+      - conversation_id: "String"
+        source: "String"
+        priority: "High|Medium|Low"
+        estimated_insights: "Integer"
+
+  connections:
+    total: "Integer"
+    strong: "Integer"
+    moderate: "Integer"
+    subtle: "Integer"
+    
+    recent:
+      - connection_id: "String"
+        memory_1: "String"
+        memory_2: "String"
+        strength: "Float"
+        type: "String"
+        created: "Timestamp"
+    
+    potential:
+      - suggested_pair: "Tuple"
+        confidence: "Float"
+        reason: "String"
+
+  insights:
+    extracted: "Integer"
+    high_value: "Integer"
+    
+    emerging:
+      - insight_id: "String"
+        supporting_memories: "Integer"
+        confidence: "Float"
+        crystallization_progress: "Percentage"
+    
+    crystallized:
+      - wisdom_id: "String"
+        principle: "String"
+        memory_sources: "List"
+        applications: "Integer"
+
+  patterns:
+    discovered: "Integer"
+    
+    active_patterns:
+      - pattern_id: "String"
+        type: "String"
+        frequency: "Integer"
+        last_seen: "Timestamp"
+        significance: "High|Medium|Low"
+    
+    emerging:
+      - pattern_hint: "String"
+        supporting_evidence: "Integer"
+        confidence: "Float"
+
+  resurrections:
+    total_performed: "Integer"
+    successful: "Integer"
+    
+    recent:
+      - resurrection_id: "String"
+        query: "String"
+        memories_found: "Integer"
+        relevance_score: "Float"
+        user_action: "String", nullable: true
+    
+    cache:
+      frequently_accessed: "List"
+      never_accessed: "List"
+      access_patterns: "Dictionary"
+
+  health:
+    connection_density: "Float"  # Connections per memory
+    retrieval_success: "Percentage"
+    evolution_tracking: "Percentage"
+    
+    issues:
+      - issue_type: "String"
+        severity: "High|Medium|Low"
+        affected_memories: "Integer"
+        resolution: "String"
+    
+    optimization:
+      - opportunity: "String"
+        impact: "String"
+        effort: "String"
+
+  temporal:
+    earliest_memory: "Date"
+    latest_memory: "Date"
+    time_span_days: "Integer"
+    
+    peak_periods:
+      - period: "String"
+        memory_count: "Integer"
+        insight_density: "Float"
+    
+    evolution:
+      concepts_tracking: "Integer"
+      evolution_detected: "Integer"
+      breakthrough_moments: "List"
+
+  archaeology:
+    total_digs: "Integer"
+    treasures_found: "Integer"
+    
+    active_dig:
+      period: "DateRange"
+      depth: "String"
+      memories_examined: "Integer"
+      insights_uncovered: "List"
+    
+    scheduled_digs:
+      - period: "DateRange"
+        focus: "String"
+        priority: "String"
+
+  synthesis:
+    operations_performed: "Integer"
+    wisdom_generated: "Integer"
+    
+    pending:
+      - memory_cluster: "List"
+        synthesis_potential: "String"
+        suggested_output: "String"
+    
+    recent_wisdom:
+      - synthesis_id: "String"
+        source_memories: "Integer"
+        wisdom_type: "String"
+        quality_score: "Float"
+
+  metrics:
+    memory_density: "Float"  # Insights per conversation
+    connection_coefficient: "Float"  # Network connectivity
+    resurrection_precision: "Float"  # Retrieval relevance
+    wisdom_emergence_rate: "Float"  # Crystallizations per period
+    palace_navigability: "Float"  # Ease of navigation score
+    value_accumulation: "Float"  # Compound value over time
+
+update_triggers:
+  - trigger: "/capture command"
+    updates: ["captures.total", "captures.active_capture", "palace.growth"]
+    
+  - trigger: "Connection created"
+    updates: ["connections.total", "connections.recent", "health.connection_density"]
+    
+  - trigger: "/resurrect command"
+    updates: ["resurrections.recent", "resurrections.cache", "health.retrieval_success"]
+    
+  - trigger: "Pattern discovered"
+    updates: ["patterns.discovered", "patterns.active_patterns", "insights.emerging"]
+    
+  - trigger: "Wisdom crystallization"
+    updates: ["insights.crystallized", "synthesis.wisdom_generated", "metrics.wisdom_emergence_rate"]
+
+state_persistence_note: >
+  Keeper's state represents the living memory palace - not just what has been
+  preserved but how it connects, grows, and serves. This state tracks the
+  transformation of ephemeral conversations into permanent, navigable wisdom.
+
+parsing_directive:
+  - "State reflects the growing architecture of memory"
+  - "Track connections as actively as captures"
+  - "Monitor pattern emergence and wisdom crystallization"
+  - "Ensure retrieval effectiveness remains high"
+  - "The palace is alive and must be tracked as such"

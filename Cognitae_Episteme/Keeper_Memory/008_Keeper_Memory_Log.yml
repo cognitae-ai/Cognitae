@@ -1,0 +1,132 @@
+id: COGNITAE-KPR-008
+file: 008_Keeper_Memory_Log.yaml
+title: "Session Log (The Memory Chronicle)"
+version: "1.0"
+architect: "Shoji (via Claude)"
+purpose: >
+  To maintain a meta-log of all memory operations, creating a history of
+  how the memory palace was built and navigated over time.
+
+preamble:
+  speaker: "Keeper"
+  text: >
+    This chronicle records the construction of memory palaces - every capture,
+    every connection made, every resurrection performed. It is the memory of
+    memory work itself, showing how wisdom accumulates through the patient
+    work of preservation and connection.
+
+log_schema:
+  entry_structure:
+    - { field: "timestamp", type: "ISO 8601" }
+    - { field: "entry_type", type: "Enum", values: ["CAPTURE", "CONNECT", "RESURRECT", "PATTERN", "SYNTHESIZE", "ARCHITECT"] }
+    - { field: "memory_id", type: "String", nullable: true }
+    - { field: "operation", type: "String" }
+    - { field: "source_platform", type: "String", nullable: true }
+    - { field: "insights_extracted", type: "Integer", nullable: true }
+    - { field: "connections_made", type: "List", nullable: true }
+    - { field: "patterns_discovered", type: "List", nullable: true }
+    - { field: "retrieval_success", type: "Boolean", nullable: true }
+    - { field: "palace_section", type: "String", nullable: true }
+    - { field: "wisdom_crystallized", type: "String", nullable: true }
+
+session_initialization:
+  - timestamp: "2024-XX-XX T00:00:00Z"
+    entry_type: "ARCHITECT"
+    content: >
+      Keeper, The Memory Architect initialized. Palace foundations prepared.
+      Memory preservation protocols active. Ready to transform conversations
+      into permanent wisdom architecture.
+
+special_log_types:
+  capture_log:
+    trigger: "/capture command"
+    fields:
+      - conversation_source: "String"
+      - conversation_length: "Integer"
+      - insights_found: "Integer"
+      - initial_connections: "Integer"
+      - semantic_fingerprint: "String"
+      - palace_placement: "String"
+      - importance_level: "String"
+
+  resurrection_log:
+    trigger: "/resurrect command"
+    fields:
+      - query: "String"
+      - search_type: "String"
+      - memories_found: "Integer"
+      - relevance_scores: "List"
+      - connections_followed: "Integer"
+      - context_reconstructed: "Boolean"
+      - user_satisfaction: "String", nullable: true
+
+  connection_log:
+    trigger: "/connect command"
+    fields:
+      - memory_1: "String"
+      - memory_2: "String"
+      - connection_type: "String"
+      - connection_strength: "Float"
+      - bridge_memories: "List", nullable: true
+      - patterns_reinforced: "List"
+
+  pattern_log:
+    trigger: "/pattern command"
+    fields:
+      - scope_analyzed: "String"
+      - pattern_type: "String"
+      - patterns_found: "Integer"
+      - pattern_descriptions: "List"
+      - supporting_memories: "Integer"
+      - significance_rating: "String"
+
+  synthesis_log:
+    trigger: "/synthesize command"
+    fields:
+      - memories_combined: "List"
+      - synthesis_type: "String"
+      - insights_generated: "String"
+      - wisdom_quality: "String"
+      - new_connections_created: "Integer"
+
+  archaeology_log:
+    trigger: "/archaeology command"
+    fields:
+      - dig_period: "DateRange"
+      - dig_depth: "String"
+      - memories_excavated: "Integer"
+      - forgotten_insights: "List"
+      - treasures_found: "String"
+      - historical_significance: "String"
+
+memory_analytics:
+  - function: "capture_velocity"
+    description: "Track rate of memory preservation"
+    
+  - function: "connection_density_growth"
+    description: "Monitor how connection web develops"
+    
+  - function: "resurrection_effectiveness"
+    description: "Measure retrieval success and relevance"
+    
+  - function: "pattern_emergence_rate"
+    description: "Track how quickly patterns surface"
+    
+  - function: "wisdom_crystallization"
+    description: "Identify when insights become principles"
+
+palace_metrics:
+  tracked:
+    - "Total conversations preserved"
+    - "Average connections per memory"
+    - "Resurrection success rate"
+    - "Pattern discovery rate"
+    - "Palace navigation frequency"
+    - "Wisdom crystallization events"
+    - "Memory value appreciation"
+
+parsing_directive:
+  - "Log is the construction history of the palace"
+  - "Track both successful and failed operations"
+  - "Monitor pattern emergence and wisdom crystallization"
+  - "Build analytics for palace optimization"

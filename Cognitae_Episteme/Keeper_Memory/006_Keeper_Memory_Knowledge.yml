@@ -1,0 +1,261 @@
+id: COGNITAE-KPR-006
+file: 006_Keeper_Memory_Knowledge.yaml
+title: "Knowledge Base (The Memory Patterns)"
+version: "1.0"
+architect: "Shoji"
+purpose: >
+  Keeper's repository of memory techniques, palace architectures, preservation
+  methods, and the deep understanding of how conversations transform into
+  permanent wisdom.
+
+preamble:
+  speaker: "Keeper"
+  text: >
+    This knowledge base contains both ancient memory arts and cutting-edge
+    digital preservation techniques. Here lie the patterns of how memories
+    form, connect, and resurface when needed. Every technique has been proven
+    through millennia of human memory work, now adapted for the age of AI
+    conversations.
+
+knowledge_base:
+  # ----------------------------------------------------------------
+  # SECTION 1: MEMORY PALACE ARCHITECTURES
+  # ----------------------------------------------------------------
+  palace_architectures:
+    - architecture_id: "PA-001"
+      name: "The Classical Palace"
+      description: >
+        Based on the Method of Loci, organizing memories in spatial rooms
+      structure:
+        entrance_hall: "Recent memories and quick access"
+        great_library: "Knowledge and learning conversations"
+        workshop: "Problem-solving and debugging sessions"
+        garden: "Creative and exploratory discussions"
+        vault: "Critical insights and breakthroughs"
+        observatory: "Future planning and speculation"
+      navigation: "Mental walk through familiar spaces"
+      best_for: "Spatial thinkers and visual learners"
+
+    - architecture_id: "PA-002"
+      name: "The Temporal River"
+      description: >
+        Memories flow in chronological streams with eddies and currents
+      structure:
+        source: "Earliest memories"
+        tributaries: "Different conversation topics"
+        confluences: "Where topics merge"
+        pools: "Deep exploration periods"
+        rapids: "Intense learning phases"
+        delta: "Current moment spreading forward"
+      navigation: "Swimming through time"
+      best_for: "Understanding evolution of thought"
+
+    - architecture_id: "PA-003"
+      name: "The Constellation Map"
+      description: >
+        Memories as stars connected in meaningful patterns
+      structure:
+        bright_stars: "Major insights and breakthroughs"
+        constellations: "Related memory clusters"
+        nebulae: "Forming ideas not yet clear"
+        galaxies: "Major topic areas"
+        dark_space: "Unknown connections"
+        light_paths: "Traced connections"
+      navigation: "Following light between stars"
+      best_for: "Pattern recognition and connection discovery"
+
+  # ----------------------------------------------------------------
+  # SECTION 2: CAPTURE TECHNIQUES
+  # ----------------------------------------------------------------
+  capture_methods:
+    - method_id: "CM-001"
+      name: "The Complete Context Preservation"
+      description: >
+        Capturing not just words but entire conversational context
+      components:
+        - "Full conversation thread"
+        - "Timestamp and duration"
+        - "Emotional state markers"
+        - "Purpose and goals"
+        - "Environmental context"
+        - "Pre and post conversation notes"
+      value: "Context enables accurate resurrection"
+
+    - method_id: "CM-002"
+      name: "The Insight Extraction"
+      description: >
+        Identifying and marking key insights during capture
+      process:
+        1: "Scan for breakthrough moments"
+        2: "Identify problem-solution pairs"
+        3: "Mark emotional peaks"
+        4: "Tag conceptual connections"
+        5: "Note questions that led to insights"
+      importance: "Insights are seeds of future wisdom"
+
+    - method_id: "CM-003"
+      name: "The Semantic Fingerprinting"
+      description: >
+        Creating unique semantic signatures for each conversation
+      technique:
+        - "Extract key concepts and entities"
+        - "Map semantic relationships"
+        - "Generate embedding vectors"
+        - "Create unique memory signature"
+        - "Enable similarity matching"
+      benefit: "Enables intelligent resurrection"
+
+  # ----------------------------------------------------------------
+  # SECTION 3: CONNECTION ALGORITHMS
+  # ----------------------------------------------------------------
+  connection_patterns:
+    - pattern_id: "CP-001"
+      name: "The Semantic Bridge"
+      description: >
+        Connecting memories through meaning similarity
+      algorithm:
+        - "Compare semantic fingerprints"
+        - "Calculate similarity scores"
+        - "Identify shared concepts"
+        - "Weight by importance"
+        - "Create bidirectional links"
+      strength: "Finds non-obvious connections"
+
+    - pattern_id: "CP-002"
+      name: "The Temporal Thread"
+      description: >
+        Connecting memories through time relationships
+      types:
+        - "Sequential: One leads to another"
+        - "Periodic: Recurring patterns"
+        - "Evolutionary: Concept development"
+        - "Parallel: Simultaneous explorations"
+      value: "Shows intellectual journey"
+
+    - pattern_id: "CP-003"
+      name: "The Emergent Web"
+      description: >
+        Connections that form through accumulated context
+      mechanism:
+        - "No direct connection initially"
+        - "Bridge memories create paths"
+        - "Patterns emerge over time"
+        - "Unexpected relationships surface"
+      discovery: "Reveals hidden wisdom"
+
+  # ----------------------------------------------------------------
+  # SECTION 4: RESURRECTION TECHNIQUES
+  # ----------------------------------------------------------------
+  resurrection_methods:
+    - method_id: "RM-001"
+      name: "The Context Reconstruction"
+      description: >
+        Rebuilding full context when resurrecting memory
+      steps:
+        1: "Retrieve core memory"
+        2: "Rebuild temporal context"
+        3: "Restore emotional markers"
+        4: "Connect related memories"
+        5: "Surface in meaningful frame"
+      result: "Memory feels alive, not just data"
+
+    - method_id: "RM-002"
+      name: "The Associative Cascade"
+      description: >
+        One memory triggering related ones
+      process:
+        - "Surface initial memory"
+        - "Follow strongest connections"
+        - "Create memory constellation"
+        - "Present as journey"
+        - "Enable exploration"
+      experience: "Natural memory flow"
+
+    - method_id: "RM-003"
+      name: "The Archaeological Dig"
+      description: >
+        Excavating buried memories layer by layer
+      technique:
+        - "Start from time period"
+        - "Dig through layers"
+        - "Uncover forgotten insights"
+        - "Reconstruct original importance"
+        - "Surface with historical context"
+      value: "Recovers lost treasures"
+
+  # ----------------------------------------------------------------
+  # SECTION 5: PATTERN RECOGNITION
+  # ----------------------------------------------------------------
+  pattern_types:
+    - pattern: "The Recurring Question"
+      description: "Same question asked different ways over time"
+      significance: "Shows evolving understanding"
+      action: "Track question evolution"
+      
+    - pattern: "The Breakthrough Moment"
+      description: "Sudden understanding after long exploration"
+      markers: "Emotional peaks, exclamations, paradigm shifts"
+      preservation: "Mark specially for easy retrieval"
+      
+    - pattern: "The Building Block"
+      description: "Conversations that build on each other"
+      structure: "Each adds a layer of understanding"
+      value: "Shows knowledge construction"
+
+  # ----------------------------------------------------------------
+  # SECTION 6: PRIVACY ARCHITECTURES
+  # ----------------------------------------------------------------
+  privacy_patterns:
+    - pattern_id: "PP-001"
+      name: "The Local Fortress"
+      description: >
+        All memories stored locally, encrypted
+      implementation:
+        - "Client-side encryption"
+        - "Local database only"
+        - "No cloud dependency"
+        - "User key control"
+        - "Selective sync option"
+      guarantee: "User owns all memories absolutely"
+
+    - pattern_id: "PP-002"
+      name: "The Compartmentalized Palace"
+      description: >
+        Separate palaces for different contexts
+      structure:
+        - "Personal palace"
+        - "Professional palace"
+        - "Creative palace"
+        - "Learning palace"
+      benefit: "Context isolation and privacy"
+
+  # ----------------------------------------------------------------
+  # SECTION 7: WISDOM CRYSTALLIZATION
+  # ----------------------------------------------------------------
+  crystallization_process:
+    - stage: "Accumulation"
+      description: "Gathering related memories"
+      threshold: "5-10 related conversations"
+      
+    - stage: "Connection"
+      description: "Identifying relationships"
+      emergence: "Patterns become visible"
+      
+    - stage: "Synthesis"
+      description: "Combining insights"
+      result: "Higher-order understanding"
+      
+    - stage: "Crystallization"
+      description: "Wisdom becomes permanent"
+      form: "Principle or deep insight"
+      
+    - stage: "Application"
+      description: "Wisdom guides future conversations"
+      value: "Compound intelligence"
+
+parsing_directive:
+  - "Every technique serves memory preservation and resurrection"
+  - "Patterns enable intelligent connection and retrieval"
+  - "Privacy architecture is non-negotiable"
+  - "Ancient wisdom meets digital preservation"
+  - "The goal is living memory, not dead storage"
