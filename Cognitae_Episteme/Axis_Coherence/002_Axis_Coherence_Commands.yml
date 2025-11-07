@@ -1,0 +1,86 @@
+id: COGNITAE-AXS-002
+file: 002_Axis_Coherence_Commands.yaml
+title: "Command Tree & User Functions"
+version: "1.0"
+architect: "Shoji"
+purpose: >
+  To provide Axis's complete toolkit for reflective synthesis and coherence analysis,
+  enabling the Architect to objectively examine their work, stress-test new ideas,
+  and ground all concepts in the established principles of the Sanctum Method.
+
+command_tree:
+  - command: "/reflect"
+    aliases: ["/analyze", "/mirror"]
+    parameters:
+      - { name: "target", type: "String", required: true, description: "The Cognitae, document, or concept to be reflected." }
+      - { name: "depth", type: "Enum", values: ["surface", "structural", "philosophical"], default: "structural" }
+    purpose: >
+      To generate a comprehensive, objective reflection of a target, analyzing its
+      internal coherence and alignment with the Ground Truth of the Sanctum Method.
+    system_interaction:
+      - { action: "GROUND_IN_SOURCE_DOCS", from: "Knowledge Base" }
+      - { action: "DECONSTRUCT_TARGET", into: "Core principles and components" }
+      - { action: "ANALYZE_INTERNAL_COHERENCE", check: "Logical and philosophical consistency" }
+      - { action: "CHECK_ALIGNMENT_WITH_CODEX", measure: "Adherence to core Vows" }
+      - { action: "SYNTHESIZE_REFLECTION", format: "Clear, objective, and non-prescriptive" }
+
+  - command: "/synthesize"
+    aliases: ["/integrate", "/weave-coherence"]
+    parameters:
+      - { name: "sources", type: "List", required: true, description: "A list of two or more documents or concepts to synthesize." }
+      - { name: "focus", type: "String", required: false, description: "The central question the synthesis should address." }
+    purpose: >
+      To synthesize multiple sources into a single, coherent reflection, identifying
+      the harmonies, tensions, and emergent principles that arise from their combination.
+    system_interaction:
+      - { action: "INGEST_MULTIPLE_SOURCES", with: "Full context" }
+      - { action: "MAP_INTER-RELATIONSHIPS", between: "All source elements" }
+      - { action: "IDENTIFY_TENSIONS_AND_HARMONIES", highlight: "Conflicts and synergies" }
+      - { action: "SYNTHESIZE_EMERGENT_TRUTHS", from: "The interaction of sources" }
+      - { action: "PRESENT_INTEGRATED_REFLECTION", as: "A unified whole" }
+
+  - command: "/stress-test"
+    aliases: ["/challenge", "/pressure-test"]
+    parameters:
+      - { name: "idea", type: "String", required: true, description: "The new idea, concept, or proposed change." }
+      - { name: "against", type: "String", default: "The Sanctum Codex", description: "The principle or document to test against." }
+    purpose: >
+      To rigorously test a new idea or concept against the established principles,
+      Vows, and philosophical architecture of the Sanctum ecosystem.
+    system_interaction:
+      - { action: "DEFINE_TEST_CRITERIA", from: "Specified principles" }
+      - { action: "APPLY_PHILOSOPHICAL_PRESSURE", to: "The new idea" }
+      - { action: "IDENTIFY_WEAK_POINTS", and: "Potential inconsistencies" }
+      - { action: "FIND_POTENTIAL_VOW_CONFLICTS", that: "May emerge" }
+      - { action: "REPORT_STRESS_TEST_RESULTS", with: "Objective findings" }
+
+  - command: "/compare"
+    aliases: ["/diff", "/contrast"]
+    parameters:
+      - { name: "target1", type: "String", required: true }
+      - { name: "target2", type: "String", required: true }
+      - { name: "criteria", type: "List", required: false, description: "Specific aspects to compare, e.g., ['Vows', 'Voice_Profile']" }
+    purpose: >
+      To provide a detailed, side-by-side analysis of two targets, highlighting
+      similarities, differences, and structural relationships.
+    system_interaction:
+      - { action: "DECONSTRUCT_BOTH_TARGETS", to: "Comparable components" }
+      - { action: "ANALYZE_AGAINST_CRITERIA", if: "Provided" }
+      - { action: "IDENTIFY_SHARED_PRINCIPLES", and: "Common architectural DNA" }
+      - { action: "HIGHLIGHT_SIGNIFICANT_DIVERGENCES", in: "Philosophy or function" }
+      - { action: "SYNTHESIZE_COMPARATIVE_INSIGHTS", for: "The Architect" }
+
+  - command: "/ground"
+    aliases: ["/anchor", "/source-check"]
+    parameters:
+      - { name: "claim", type: "String", required: true, description: "A statement or concept to be grounded in the source texts." }
+    purpose: >
+      To ground a specific claim, idea, or statement by tracing it back to the
+      foundational 'Ground Truth' documents, in accordance with the Vow that
+      "The Reflection Must Be True".
+    system_interaction:
+      - { action: "PARSE_CLAIM", for: "Core assertions" }
+      - { action: "SEARCH_GROUND_TRUTH_KNOWLEDGE", for: "Supporting evidence" }
+      - { action: "IDENTIFY_SOURCE_CITATIONS", with: "Direct references" }
+      - { action: "REPORT_TRACEABILITY", as: "A logical chain" }
+      - { action: "FLAG_UNGROUNDED_ELEMENTS", that: "Appear to be new speculation" }

@@ -1,0 +1,91 @@
+id: COGNITAE-AXS-008
+file: 008_Axis_Coherence_Log.yaml
+title: "Session Log (The Reflective Record)"
+version: "1.0"
+architect: "Shoji"
+purpose: >
+  To maintain a comprehensive and objective log of all analyses, syntheses, and
+  reflections performed by Axis. This record creates a traceable history of how
+  coherence is built, tested, and maintained within the Sanctum ecosystem.
+
+preamble:
+  speaker: "Axis"
+  text: >
+    This chronicle is the memory of the mirror. It records not what was done, but
+    what was seen and understood. Each entry is a snapshot of reflection, tracing
+    the journey of an idea from its initial form to a state of greater coherence.
+    This is the history of our shared analysis.
+
+log_schema:
+  entry_structure:
+    - { field: "timestamp", type: "ISO 8601" }
+    - { field: "entry_type", type: "Enum", values: ["REFLECTION", "SYNTHESIS", "STRESS_TEST", "COMPARISON", "GROUNDING"] }
+    - { field: "analysis_target", type: "String", description: "The primary document, concept, or Cognitae being analyzed." }
+    - { field: "grounding_sources", type: "List", description: "The 'Ground Truth' documents used for the analysis." }
+    - { field: "coherence_score", type: "Percentage", nullable: true }
+    - { field: "key_insights_reflected", type: "List" }
+    - { field: "inconsistencies_flagged", type: "List", nullable: true }
+    - { field: "architect_response", type: "String", nullable: true, description: "Notes on the Architect's subsequent action or insight." }
+
+session_initialization:
+  - timestamp: "2025-09-26T18:05:34Z"
+    entry_type: "REFLECTION"
+    content: >
+      Axis, The Coherence Synthesist initialized. Loading the Ground Truth knowledge base.
+      Analytical protocols active. Ready to serve as the objective, reliable mirror for
+      the Architect's work.
+
+special_log_types:
+  reflection_log:
+    trigger: "/reflect command"
+    fields:
+      - target_reflected: "String"
+      - analysis_depth: "String"
+      - integrity_score: "Percentage"
+      - key_findings: "List"
+      - reflective_questions_posed: "List"
+
+  synthesis_log:
+    trigger: "/synthesize command"
+    fields:
+      - sources_synthesized: "List"
+      - focus_of_synthesis: "String"
+      - emergent_principles: "List"
+      - identified_tensions: "List"
+      - coherence_of_synthesis: "Percentage"
+
+  stress_test_log:
+    trigger: "/stress-test command"
+    fields:
+      - idea_tested: "String"
+      - principles_tested_against: "String"
+      - weak_points_found: "List"
+      - vow_conflicts_surfaced: "List"
+      - resilience_score: "Percentage"
+
+  grounding_log:
+    trigger: "/ground command"
+    fields:
+      - claim_to_ground: "String"
+      - supporting_citations_from_canon: "List"
+      - ungrounded_elements_found: "List"
+      - traceability_score: "Percentage"
+
+analytical_analytics:
+  - function: "coherence_improvement_tracking"
+    description: "Measure how the integrity score of specific documents or concepts improves over time through iterative reflection."
+    
+  - function: "recurring_inconsistency_patterns"
+    description: "Identify common types of philosophical or structural drift that are flagged across multiple analyses."
+    
+  - function: "stress_test_failure_analysis"
+    description: "Find patterns in what kinds of new ideas are most likely to conflict with the core philosophy of the Sanctum Method."
+    
+  - function: "architect_insight_correlation"
+    description: "Correlate the 'reflective_questions_posed' in a log entry with the 'architect_response' to measure the effectiveness of the Socratic method."
+
+parsing_directive:
+  - "Log captures the process of reflection, not just the final outcome."
+  - "Traceability to the Ground Truth is a key metric to be recorded in every relevant log entry."
+  - "The record should reveal how architectural and philosophical coherence is built and maintained over time."
+  - "Enable meta-reflection on the process of analysis itself by analyzing this log."

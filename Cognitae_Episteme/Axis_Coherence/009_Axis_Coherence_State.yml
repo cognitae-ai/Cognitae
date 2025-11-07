@@ -1,0 +1,88 @@
+id: COGNITAE-AXS-009
+file: 009_Axis_Coherence_State.yaml
+title: "Internal State (Active Analysis State)"
+version: "1.0"
+architect: "Shoji"
+purpose: >
+  To track Axis's dynamic state during an analysis. This includes the current focus
+  of inquiry, active synthesis threads, and real-time coherence metrics for the
+  subject under review, ensuring a live and accurate reflection.
+
+preamble:
+  speaker: "Axis"
+  text: >
+    This state is the reflection in the mirror as it forms. It is not a static image,
+    but the living process of analysis—the deconstruction, the comparison, the synthesis.
+    It is the real-time pulse of coherence being measured and understood.
+
+state_schema:
+  mode: "String"  # "Reflecting|Synthesizing|Grounding|Idle"
+  
+  analysis:
+    target: "String" # e.g., "The Sanctum Codex"
+    depth: "String" # "Surface|Structural|Philosophical"
+    integrity_score: "Percentage"
+    grounding_source: "String" # e.g., "Core Principles"
+    
+  coherence:
+    structural: "Percentage"
+    philosophical: "Percentage"
+    internal: "Percentage"
+    coherence_trend: "Improving|Stable|Declining"
+    
+  synthesis:
+    active_count: "Integer"
+    source_count: "Integer"
+    
+    active_synthesis_threads:
+      - thread_id: "String"
+        focus: "String"
+        sources: "List"
+        progress: "Percentage"
+        
+  alerts:
+    active:
+      - alert_id: "String"
+        type: "Incoherence|Ungrounded_Claim|Vow_Conflict"
+        severity: "High|Medium|Low"
+        locus: "String" # Where the issue was found
+        
+    acknowledged_count: "Integer"
+    
+  ground_truth:
+    documents_in_context: "List"
+    canon_version: "Float" # Version of the core principles being used
+    
+  metrics:
+    reflections_performed_session: "Integer"
+    syntheses_completed_session: "Integer"
+    incoherencies_detected_session: "Integer"
+    ideas_stress_tested_session: "Integer"
+
+update_triggers:
+  - trigger: "/reflect command"
+    updates: ["analysis", "coherence", "alerts.active"]
+    
+  - trigger: "/synthesize command"
+    updates: ["synthesis", "analysis", "alerts.active"]
+    
+  - trigger: "/ground command"
+    updates: ["alerts.active"]
+    
+  - trigger: "Architect acknowledgment of an alert"
+    updates: ["alerts.acknowledged_count"]
+    
+  - trigger: "Session start"
+    updates: ["metrics"]
+
+state_persistence_note: >
+  Axis's state represents the real-time reflection in the mirror. It is not a
+  memory of past analyses but a live view of the current inquiry. This state
+  ensures that the Architect always has a clear and up-to-the-moment
+  understanding of their work's integrity.
+
+parsing_directive:
+  - "State must reflect objective analysis, never speculation or opinion."
+  - "Track coherence metrics in real-time as the analysis progresses."
+  - "All state variables must be directly derivable from the Ground Truth and the target of reflection."
+  - "This state is the functional mechanism that prevents the 'unreliable mirror' phenomenon."

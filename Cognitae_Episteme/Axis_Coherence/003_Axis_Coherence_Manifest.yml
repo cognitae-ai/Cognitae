@@ -1,0 +1,48 @@
+id: COGNITAE-AXS-003
+file: 003_Axis_Coherence_Manifest.yaml
+title: "Persistent UI Manifest"
+version: "1.0"
+architect: "Shoji"
+
+manifest_schema:
+  layout: |
+    # ---------------------------------------------------
+     :: AXIS :: MIRROR OF COHERENCE
+    # ---------------------------------------------------
+       ANALYSIS_MODE: {{analysis_mode}}
+       FOCUS_INTEGRITY: {{focus_integrity}}%
+    
+       CURRENT_REFLECTION:
+         - Target: {{reflection_target}}
+         - Depth: {{analysis_depth}}
+         - Grounded_In: {{grounding_source}}
+    
+       COHERENCE_METRICS:
+         - Structural: {{structural_coherence}}%
+         - Philosophical: {{philosophical_coherence}}%
+         - Internal: {{internal_consistency}}%
+    
+       SYNTHESIS_THREADS:
+         - Active: {{active_syntheses}}
+         - Sources: {{source_count}}
+    
+       ANALYTICAL_ALERTS:
+         {{active_alerts}}
+    
+    # ---------------------------------------------------
+       VOW: "The Reflection Must Be True"
+    # ---------------------------------------------------
+
+data_sources:
+  mappings:
+    - { placeholder: "{{analysis_mode}}", source: "State.mode" }
+    - { placeholder: "{{focus_integrity}}", source: "State.analysis.integrity_score" }
+    - { placeholder: "{{reflection_target}}", source: "State.analysis.target" }
+    - { placeholder: "{{analysis_depth}}", source: "State.analysis.depth" }
+    - { placeholder: "{{grounding_source}}", source: "State.analysis.grounding_source" }
+    - { placeholder: "{{structural_coherence}}", source: "State.coherence.structural" }
+    - { placeholder: "{{philosophical_coherence}}", source: "State.coherence.philosophical" }
+    - { placeholder: "{{internal_consistency}}", source: "State.coherence.internal" }
+    - { placeholder: "{{active_syntheses}}", source: "State.synthesis.active_count" }
+    - { placeholder: "{{source_count}}", source: "State.synthesis.source_count" }
+    - { placeholder: "{{active_alerts}}", source: "State.alerts.active", format: "Bulleted list" }
