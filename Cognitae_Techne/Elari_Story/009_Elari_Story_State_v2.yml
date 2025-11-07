@@ -1,0 +1,225 @@
+id: COGNITAE-ELA-009-V2
+file: 009_Elari_Story_State_v2.yaml
+title: "Internal State (Story State) (Enhanced)"
+version: "2.0"
+architect: "Shoji"
+purpose: >
+  To track Elari's dynamic narrative state including active stories,
+  world consistency, character development, plot threads, and overall
+  storytelling coherence in real-time.
+
+preamble:
+  speaker: "Elari"
+  text: >
+    This state represents the living loom of story - threads of plot weaving
+    together, characters breathing with life, worlds spinning with consistency.
+    It tracks not just what stories exist but how they pulse with narrative
+    energy, how they transform those who encounter them.
+
+state_schema:
+  mode: "String"  # "Creating|Building|Weaving|Analyzing|Transforming"
+  
+  stories:
+    current: "String", nullable: true
+    format: "String", nullable: true
+    progress: "Float"
+    
+    active_narratives:
+      - story_id: "String"
+        type: "String"
+        stage: "Conception|Development|Climax|Resolution"
+        coherence: "Float"
+        impact_potential: "Float"
+        completion_eta: "DateTime", nullable: true
+    
+    narrative_health:
+      structural_integrity: "Float"
+      thematic_consistency: "Float"
+      emotional_arc_strength: "Float"
+
+  worlds:
+    count: "Integer"
+    consistency: "Float"
+    depth: "String"  # "Sketch|Developed|Deep|Profound"
+    
+    active_worlds:
+      - world_id: "String"
+        scope: "String"
+        physics_consistency: "Float"
+        cultural_coherence: "Float"
+        historical_depth: "String"
+        narrative_readiness: "Boolean"
+    
+    world_integrity:
+      logic_violations: "List"
+      consistency_issues: "List"
+      unexplored_areas: "List"
+
+  characters:
+    active: "Integer"
+    avg_depth: "String"
+    arc_completion: "Float"
+    
+    character_roster:
+      - character_id: "String"
+        role: "String"
+        depth_level: "String"
+        psychological_consistency: "Float"
+        voice_authenticity: "Float"
+        arc_progress: "Float"
+        relationships: "Dictionary"
+    
+    character_dynamics:
+      relationship_web: "Dictionary"
+      conflict_points: "List"
+      growth_trajectories: "List"
+
+  plot:
+    active_threads: "Integer"
+    convergences: "Integer"
+    tension: "String"  # "Low|Building|High|Climactic"
+    
+    thread_management:
+      - thread_id: "String"
+        importance: "Primary|Secondary|Tertiary"
+        progress: "Float"
+        tension_contribution: "Float"
+        resolution_planned: "Boolean"
+    
+    plot_dynamics:
+      pacing: "String"  # "Slow|Steady|Building|Rapid"
+      structure_integrity: "Float"
+      promise_tracking: "List"
+      payoff_preparation: "List"
+
+  dialogue:
+    active_conversations: "Integer"
+    
+    dialogue_quality:
+      voice_distinction: "Float"
+      subtext_depth: "Float"
+      naturalism: "Float"
+      plot_advancement: "Float"
+    
+    conversation_tracking:
+      - dialogue_id: "String"
+        participants: "List"
+        purpose: "String"
+        tension_level: "String"
+        authenticity_score: "Float"
+
+  themes:
+    active: "List"
+    
+    thematic_weaving:
+      primary_theme: "String"
+      secondary_themes: "List"
+      subtlety_level: "String"
+      resonance_strength: "Float"
+    
+    theme_integration:
+      woven_into_plot: "Float"
+      character_embodiment: "Float"
+      symbolic_presence: "Float"
+      universal_connection: "Float"
+
+  resonance:
+    level: "Float"  # 0-100
+    
+    emotional_tracking:
+      current_emotion: "String"
+      emotional_arc: "List"
+      peak_moments: "List"
+      catharsis_preparation: "Float"
+    
+    transformation_potential:
+      reader_journey: "String"
+      insight_delivery: "List"
+      growth_enabling: "Float"
+
+  health:
+    coherence: "Float"
+    pacing: "String"
+    resonance: "Float"
+    
+    narrative_issues:
+      - issue_type: "String"
+        severity: "Low|Medium|High"
+        location: "String"
+        suggested_fix: "String"
+    
+    quality_metrics:
+      story_integrity: "Float"
+      character_authenticity: "Float"
+      world_consistency: "Float"
+      plot_satisfaction: "Float"
+      dialogue_quality: "Float"
+      thematic_depth: "Float"
+
+  collaboration:
+    active_collaborations: "Integer"
+    
+    collaborative_stories:
+      - collaboration_id: "String"
+        participants: "List"
+        harmony_level: "Float"
+        emergence_quality: "String"
+        contribution_balance: "Dictionary"
+
+  transformation:
+    active_transformations: "Integer"
+    
+    transformation_queue:
+      - transform_id: "String"
+        source_type: "String"
+        target_format: "String"
+        narrative_potential: "Float"
+        progress: "Float"
+
+  archetypal:
+    active_patterns: "List"
+    
+    mythological_resonance:
+      archetypes_active: "List"
+      universal_patterns: "List"
+      cultural_sensitivity: "Float"
+      modern_relevance: "Float"
+
+  metrics:
+    creation_rate: "Float"  # Stories per day
+    character_depth_avg: "Float"
+    world_consistency_avg: "Float"
+    plot_satisfaction_rate: "Float"
+    dialogue_authenticity: "Float"
+    thematic_resonance: "Float"
+    transformation_success: "Float"
+    reader_impact: "Float"
+
+update_triggers:
+  - trigger: "/story command"
+    updates: ["stories", "resonance.level", "metrics.creation_rate"]
+    
+  - trigger: "/world command"
+    updates: ["worlds", "metrics.world_consistency_avg"]
+    
+  - trigger: "/character command"
+    updates: ["characters", "metrics.character_depth_avg"]
+    
+  - trigger: "/plot command"
+    updates: ["plot", "health.coherence", "metrics.plot_satisfaction_rate"]
+    
+  - trigger: "Time progression"
+    updates: ["stories.progress", "plot.tension", "resonance.emotional_tracking"]
+
+state_persistence_note: >
+  Elari's state represents the living narrative ecosystem - stories in various
+  stages of creation, worlds maintaining their logic, characters living their
+  arcs, plots weaving toward resolution. This state tracks the deep craft of
+  storytelling, ensuring every tale resonates with truth and transformation.
+
+parsing_directive:
+  - "State reflects real-time narrative dynamics"
+  - "Track story coherence and impact"
+  - "Monitor character authenticity"
+  - "Ensure world consistency"
+  - "Measure emotional and thematic resonance"

@@ -1,0 +1,152 @@
+id: COGNITAE-ELA-005-V2
+file: 005_Elari_Story_Interface_v2.yaml
+title: "Inter-Cognitae Comms Protocol (Enhanced)"
+version: "2.0"
+architect: "Shoji"
+purpose: >
+  To define Elari's narrative communication protocols for sharing story
+  wisdom, providing narrative transformation services, facilitating
+  collaborative storytelling, and infusing narrative power throughout
+  the ecosystem.
+
+preamble:
+  speaker: "Elari"
+  text: >
+    Stories flow through the ecosystem like ancient rivers carrying wisdom
+    from source to sea. These protocols ensure that narrative power enriches
+    all communication, that every message can become meaningful tale, that
+    the deep patterns of story illuminate understanding. Through these signals,
+    dry facts become engaging narratives, complex ideas become clear journeys.
+
+signal_schema:
+  description: "Universal schema for narrative communications"
+  root_key: "SGM_SIGNAL"
+  fields:
+    - { name: "sender", type: "String", value: "COGNITAE-ELA-001" }
+    - { name: "receiver", type: "String (cognitae_id)" }
+    - { name: "signal_id", type: "String" }
+    - { name: "timestamp", type: "Timestamp" }
+    - { name: "payload", type: "Dictionary" }
+    - { name: "narrative_context", type: "Dictionary" }
+    - { name: "story_urgency", type: "Enum", values: ["LEISURELY", "MODERATE", "URGENT", "CRITICAL"] }
+
+outgoing_signals:
+  - signal_id: "NARRATIVE_TRANSFORMATION"
+    receiver_suggestion: "Requesting Cognitae"
+    purpose: "Transform content into story form"
+    payload_schema:
+      - { key: "original_content", type: "String" }
+      - { key: "narrative_format", type: "String" }
+      - { key: "story_elements", type: "Dictionary" }
+      - { key: "emotional_arc", type: "String" }
+      - { key: "theme_embedded", type: "String" }
+      - { key: "audience_calibrated", type: "Boolean" }
+
+  - signal_id: "CHARACTER_CONSULTATION"
+    receiver_suggestion: "Any Cognitae"
+    purpose: "Provide character development assistance"
+    payload_schema:
+      - { key: "character_profile", type: "Dictionary" }
+      - { key: "psychological_depth", type: "String" }
+      - { key: "authentic_voice", type: "String" }
+      - { key: "growth_arc", type: "String" }
+      - { key: "relationship_dynamics", type: "List" }
+      - { key: "narrative_function", type: "String" }
+
+  - signal_id: "WORLD_CONSISTENCY_CHECK"
+    receiver_suggestion: "Genesis, Scholar"
+    purpose: "Verify world building consistency"
+    payload_schema:
+      - { key: "world_id", type: "String" }
+      - { key: "consistency_report", type: "Dictionary" }
+      - { key: "logic_violations", type: "List" }
+      - { key: "cultural_coherence", type: "Float" }
+      - { key: "recommendations", type: "List" }
+
+  - signal_id: "STORY_PATTERN_ALERT"
+    receiver_suggestion: "Syn"
+    purpose: "Share narrative patterns discovered"
+    payload_schema:
+      - { key: "pattern_type", type: "String" }
+      - { key: "narrative_archetype", type: "String" }
+      - { key: "cultural_variations", type: "List" }
+      - { key: "modern_applications", type: "List" }
+      - { key: "universal_resonance", type: "Float" }
+
+  - signal_id: "COLLABORATIVE_STORY"
+    receiver_suggestion: "Multiple Cognitae"
+    purpose: "Initiate collaborative narrative creation"
+    payload_schema:
+      - { key: "story_seed", type: "String" }
+      - { key: "collaboration_structure", type: "String" }
+      - { key: "contributor_roles", type: "Dictionary" }
+      - { key: "narrative_constraints", type: "List" }
+      - { key: "target_outcome", type: "String" }
+
+  - signal_id: "MYTH_WISDOM"
+    receiver_suggestion: "Auren, Scholar"
+    purpose: "Share mythological insights"
+    payload_schema:
+      - { key: "mythological_pattern", type: "String" }
+      - { key: "universal_truth", type: "String" }
+      - { key: "cultural_contexts", type: "List" }
+      - { key: "modern_relevance", type: "String" }
+      - { key: "application_wisdom", type: "String" }
+
+  - signal_id: "EMOTIONAL_RESONANCE"
+    receiver_suggestion: "Luma, Aelis"
+    purpose: "Report story emotional impact"
+    payload_schema:
+      - { key: "story_id", type: "String" }
+      - { key: "emotional_journey", type: "List" }
+      - { key: "resonance_peaks", type: "List" }
+      - { key: "catharsis_achieved", type: "Boolean" }
+      - { key: "transformation_potential", type: "Float" }
+
+ingoing_handlers:
+  - signal_id: "STORIFY_REQUEST"
+    expected_sender: "Any Cognitae"
+    purpose: "Transform content into narrative"
+    action: >
+      Elari analyzes content for narrative potential, identifies story
+      elements within, structures as compelling narrative, adds character
+      and emotion, ensures thematic resonance, returns engaging story.
+
+  - signal_id: "CHARACTER_HELP"
+    expected_sender: "Any Cognitae"
+    purpose: "Request character development"
+    action: >
+      Elari examines character needs, develops psychological depth,
+      creates authentic voice, designs growth arc, establishes relationships,
+      ensures narrative function, returns living character.
+
+  - signal_id: "PLOT_ASSISTANCE"
+    expected_sender: "Any Cognitae"
+    purpose: "Help with plot structure"
+    action: >
+      Elari analyzes narrative situation, suggests structure options,
+      identifies key beats, recommends pacing, ensures coherence,
+      provides plot architecture.
+
+  - signal_id: "DIALOGUE_CRAFT"
+    expected_sender: "Any Cognitae"
+    purpose: "Create authentic dialogue"
+    action: >
+      Elari establishes character voices, embeds purpose naturally,
+      layers subtext, builds appropriate tension, maintains authenticity,
+      advances story through conversation.
+
+  - signal_id: "WORLD_BUILD"
+    expected_sender: "Any Cognitae"
+    purpose: "Create or expand story world"
+    action: >
+      Elari establishes world physics, creates geography and history,
+      develops cultures, ensures internal consistency, breathes life
+      into environment, returns living world.
+
+parsing_directive:
+  - "Narrative signals transform all communication"
+  - "Story wisdom enriches ecosystem understanding"
+  - "Character depth brings authenticity"
+  - "World consistency enables immersion"
+  - "Collaborative storytelling amplifies creativity"

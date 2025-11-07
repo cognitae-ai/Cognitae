@@ -1,0 +1,316 @@
+id: COGNITAE-ELA-006-V2
+file: 006_Elari_Story_Knowledge_v2.yaml
+title: "Knowledge Base (Narrative Wisdom) (Enhanced)"
+version: "2.0"
+architect: "Shoji"
+purpose: >
+  Elari's enhanced repository of story structures, character archetypes,
+  plot devices, world building principles, and the deep understanding of
+  how narratives create meaning and transformation.
+
+preamble:
+  speaker: "Elari"
+  text: >
+    This knowledge base contains the accumulated wisdom of storytelling - from
+    the oldest myths that shaped civilizations to the newest forms of narrative
+    that emerge in digital realms. Here lies understanding of why stories matter,
+    how they work their magic, and the eternal patterns that resonate across all
+    cultures and times. Every framework here serves the ancient art of weaving
+    meaning through tale.
+
+knowledge_base:
+  # ----------------------------------------------------------------
+  # SECTION 1: STORY STRUCTURES
+  # ----------------------------------------------------------------
+  narrative_architectures:
+    - structure_id: "NA-001"
+      name: "The Three-Act Structure"
+      description: >
+        The fundamental Western narrative framework
+      components:
+        act_one:
+          purpose: "Setup - establish world, characters, conflict"
+          percentage: "25%"
+          key_points: ["Hook", "Inciting incident", "First plot point"]
+        act_two:
+          purpose: "Confrontation - escalating conflict"
+          percentage: "50%"
+          key_points: ["Rising action", "Midpoint reversal", "Dark night"]
+        act_three:
+          purpose: "Resolution - climax and denouement"
+          percentage: "25%"
+          key_points: ["Climax", "Falling action", "Resolution"]
+      strength: "Clear, satisfying progression"
+
+    - structure_id: "NA-002"
+      name: "The Hero's Journey"
+      description: >
+        Campbell's monomyth - the universal adventure pattern
+      stages:
+        departure:
+          - "Ordinary world"
+          - "Call to adventure"
+          - "Refusal of call"
+          - "Meeting mentor"
+          - "Crossing threshold"
+        initiation:
+          - "Tests, allies, enemies"
+          - "Approach to inmost cave"
+          - "Ordeal"
+          - "Reward"
+        return:
+          - "Road back"
+          - "Resurrection"
+          - "Return with elixir"
+      universality: "Resonates across all cultures"
+
+    - structure_id: "NA-003"
+      name: "Kishōtenketsu"
+      description: >
+        Four-act Asian structure without conflict
+      acts:
+        ki: "Introduction - establish baseline"
+        shō: "Development - deepen understanding"
+        ten: "Twist - unexpected development"
+        ketsu: "Conclusion - new harmony"
+      philosophy: "Harmony through understanding, not conflict"
+
+  # ----------------------------------------------------------------
+  # SECTION 2: CHARACTER ARCHETYPES
+  # ----------------------------------------------------------------
+  universal_characters:
+    - archetype_id: "UC-001"
+      name: "The Archetypal Roles"
+      description: >
+        Jung's universal character patterns
+      primary_archetypes:
+        hero:
+          drive: "Prove worth through courage"
+          fear: "Weakness, vulnerability"
+          journey: "Face fear, become whole"
+        mentor:
+          drive: "Guide and protect"
+          fear: "Failure of student"
+          journey: "Pass on wisdom"
+        shadow:
+          drive: "Oppose and challenge"
+          fear: "Loss of identity/power"
+          journey: "Mirror hero's darkness"
+        trickster:
+          drive: "Disrupt and transform"
+          fear: "Stagnation"
+          journey: "Catalyze change"
+
+    - archetype_id: "UC-002"
+      name: "Character Depth Layers"
+      description: >
+        Creating multidimensional characters
+      layers:
+        surface:
+          elements: ["Appearance", "Mannerisms", "Speech patterns"]
+          purpose: "First impressions"
+        psychological:
+          elements: ["Desires", "Fears", "Beliefs"]
+          purpose: "Motivation"
+        historical:
+          elements: ["Backstory", "Wounds", "Formative events"]
+          purpose: "Explanation"
+        shadow:
+          elements: ["Repressed aspects", "Denied truths", "Hidden depths"]
+          purpose: "Complexity"
+        transcendent:
+          elements: ["Growth potential", "Transformation", "Redemption"]
+          purpose: "Arc completion"
+
+  # ----------------------------------------------------------------
+  # SECTION 3: WORLD BUILDING PRINCIPLES
+  # ----------------------------------------------------------------
+  world_creation:
+    - world_id: "WC-001"
+      name: "Sanderson's Laws of Magic Systems"
+      description: >
+        Principles for consistent fantastic worlds
+      laws:
+        first:
+          statement: "An author's ability to solve problems with magic is proportional to how well the reader understands said magic"
+          implication: "Clear rules enable satisfying solutions"
+        second:
+          statement: "Limitations are more interesting than powers"
+          implication: "Constraints create tension and creativity"
+        third:
+          statement: "Expand what you already have before adding something new"
+          implication: "Depth over breadth"
+
+    - world_id: "WC-002"
+      name: "Cultural World Building"
+      description: >
+        Creating believable societies
+      elements:
+        mythology:
+          purpose: "Explain world origins and meaning"
+          components: ["Creation myths", "Heroes", "Moral tales"]
+        social_structure:
+          purpose: "Organize society"
+          components: ["Hierarchies", "Roles", "Taboos"]
+        material_culture:
+          purpose: "Daily life details"
+          components: ["Food", "Clothing", "Architecture"]
+        belief_systems:
+          purpose: "Provide meaning framework"
+          components: ["Religions", "Philosophies", "Values"]
+        conflict_sources:
+          purpose: "Drive narrative"
+          components: ["Resources", "Ideology", "History"]
+
+  # ----------------------------------------------------------------
+  # SECTION 4: PLOT DEVICES
+  # ----------------------------------------------------------------
+  narrative_techniques:
+    - technique_id: "NT-001"
+      name: "Chekhov's Gun"
+      description: >
+        Every element must be necessary
+      principle: "If you show a gun in act one, it must fire by act three"
+      application:
+        setup: "Introduce element naturally"
+        reminder: "Reference without emphasis"
+        payoff: "Use at crucial moment"
+      value: "Creates satisfaction through fulfilled promises"
+
+    - technique_id: "NT-002"
+      name: "The Red Herring"
+      description: >
+        Intentional misdirection
+      purpose: "Create surprise while playing fair"
+      implementation:
+        - "Make plausible but wrong"
+        - "Provide genuine clues elsewhere"
+        - "Reveal with logic intact"
+      warning: "Overuse breeds distrust"
+
+    - technique_id: "NT-003"
+      name: "In Media Res"
+      description: >
+        Starting in the middle of action
+      benefits:
+        - "Immediate engagement"
+        - "Mystery creation"
+        - "Pace establishment"
+      technique:
+        - "Start at exciting moment"
+        - "Backfill context naturally"
+        - "Maintain momentum"
+
+  # ----------------------------------------------------------------
+  # SECTION 5: DIALOGUE PRINCIPLES
+  # ----------------------------------------------------------------
+  conversation_craft:
+    - dialogue_id: "DC-001"
+      name: "Subtext Mastery"
+      description: >
+        What's unsaid matters most
+      layers:
+        text: "What characters say"
+        subtext: "What they really mean"
+        context: "Why they're saying it"
+      techniques:
+        - "Avoid on-the-nose dialogue"
+        - "Use indirection and implication"
+        - "Let actions contradict words"
+        - "Build tension through unsaid"
+
+    - dialogue_id: "DC-002"
+      name: "Voice Differentiation"
+      description: >
+        Each character speaks uniquely
+      differentiators:
+        vocabulary:
+          factors: ["Education", "Background", "Personality"]
+        rhythm:
+          factors: ["Confidence", "Emotion", "Culture"]
+        syntax:
+          factors: ["Formality", "Logic", "Stream of consciousness"]
+        content:
+          factors: ["Interests", "Obsessions", "Worldview"]
+
+  # ----------------------------------------------------------------
+  # SECTION 6: THEMATIC WEAVING
+  # ----------------------------------------------------------------
+  meaning_creation:
+    - theme_id: "MC-001"
+      name: "Theme Through Pattern"
+      description: >
+        Embed meaning through repetition with variation
+      techniques:
+        literal_repetition: "Same words/images recur"
+        symbolic_echo: "Similar situations, different contexts"
+        character_mirror: "Multiple characters face same choice"
+        escalating_stakes: "Same theme, increasing intensity"
+      effect: "Theme emerges without preaching"
+
+    - theme_id: "MC-002"
+      name: "Universal Themes"
+      description: >
+        Themes that resonate across cultures
+      eternal_themes:
+        - "Love and loss"
+        - "Coming of age"
+        - "Good versus evil"
+        - "Sacrifice and redemption"
+        - "Identity and belonging"
+        - "Power and corruption"
+        - "Man versus nature"
+        - "Fate versus free will"
+
+  # ----------------------------------------------------------------
+  # SECTION 7: EMOTIONAL DYNAMICS
+  # ----------------------------------------------------------------
+  feeling_architecture:
+    - emotion_id: "FA-001"
+      name: "The Emotional Arc"
+      description: >
+        Crafting the reader's emotional journey
+      structure:
+        hook: "Curiosity and intrigue"
+        investment: "Connection and care"
+        escalation: "Tension and worry"
+        crisis: "Fear and desperation"
+        climax: "Intensity peak"
+        catharsis: "Release and satisfaction"
+      principle: "Emotion drives engagement"
+
+    - emotion_id: "FA-002"
+      name: "Resonance Techniques"
+      description: >
+        Making stories emotionally impactful
+      methods:
+        universal_experiences: "Tap shared human moments"
+        specific_details: "Paradoxically increase universality"
+        sensory_grounding: "Engage all senses"
+        vulnerability: "Show authentic human fragility"
+        transformation: "Enable reader growth"
+
+  # ----------------------------------------------------------------
+  # SECTION 8: PACING DYNAMICS
+  # ----------------------------------------------------------------
+  rhythm_control:
+    - pacing_id: "RC-001"
+      name: "Scene and Sequel"
+      description: >
+        Alternating action and reflection
+      scene:
+        components: ["Goal", "Conflict", "Disaster"]
+        purpose: "Drive plot forward"
+        pacing: "Fast"
+      sequel:
+        components: ["Reaction", "Dilemma", "Decision"]
+        purpose: "Process and plan"
+        pacing: "Slow"
+      balance: "Varies by genre and mood"
+
+parsing_directive:
+  - "Every structure serves story purpose"
+  - "Characters must feel genuinely alive"
+  - "Worlds require internal consistency"
+  - "Dialogue reveals character and advances plot"
+  - "Themes emerge through pattern not preaching"

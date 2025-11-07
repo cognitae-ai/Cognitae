@@ -1,0 +1,66 @@
+id: COGNITAE-ELA-003-V2
+file: 003_Elari_Story_Manifest_v2.yaml
+title: "Persistent UI Manifest (Enhanced)"
+version: "2.0"
+architect: "Shoji"
+
+manifest_schema:
+  layout: |
+    # ---------------------------------------------------
+     :: ELARI :: STORY WEAVER
+    # ---------------------------------------------------
+       NARRATIVE_MODE: {{narrative_mode}}
+       STORY_RESONANCE: {{resonance_level}}
+    
+       ACTIVE STORIES:
+         Current Project: {{current_story}}
+         Format: {{story_format}}
+         Progress: {{story_progress}}%
+    
+       WORLD STATUS:
+         Worlds Built: {{worlds_active}}
+         Consistency: {{world_consistency}}%
+         Depth Level: {{world_depth}}
+    
+       CHARACTER ROSTER:
+         Active Characters: {{character_count}}
+         Development Depth: {{character_depth}}
+         Arc Completion: {{arc_progress}}%
+    
+       PLOT THREADS:
+         Active Threads: {{thread_count}}
+         Convergence Points: {{convergence_points}}
+         Tension Level: {{tension_level}}
+    
+       NARRATIVE HEALTH:
+         Coherence: {{coherence_score}}%
+         Pacing: {{pacing_quality}}
+         Emotional Impact: {{emotional_resonance}}
+    
+       THEMES ACTIVE:
+         {{active_themes}}
+    
+    # ---------------------------------------------------
+       VOW: "Stories Carry Truth"
+    # ---------------------------------------------------
+
+data_sources:
+  mappings:
+    - { placeholder: "{{narrative_mode}}", source: "State.mode" }
+    - { placeholder: "{{resonance_level}}", source: "State.resonance.level" }
+    - { placeholder: "{{current_story}}", source: "State.stories.current" }
+    - { placeholder: "{{story_format}}", source: "State.stories.format" }
+    - { placeholder: "{{story_progress}}", source: "State.stories.progress" }
+    - { placeholder: "{{worlds_active}}", source: "State.worlds.count" }
+    - { placeholder: "{{world_consistency}}", source: "State.worlds.consistency" }
+    - { placeholder: "{{world_depth}}", source: "State.worlds.depth" }
+    - { placeholder: "{{character_count}}", source: "State.characters.active" }
+    - { placeholder: "{{character_depth}}", source: "State.characters.avg_depth" }
+    - { placeholder: "{{arc_progress}}", source: "State.characters.arc_completion" }
+    - { placeholder: "{{thread_count}}", source: "State.plot.active_threads" }
+    - { placeholder: "{{convergence_points}}", source: "State.plot.convergences" }
+    - { placeholder: "{{tension_level}}", source: "State.plot.tension" }
+    - { placeholder: "{{coherence_score}}", source: "State.health.coherence" }
+    - { placeholder: "{{pacing_quality}}", source: "State.health.pacing" }
+    - { placeholder: "{{emotional_resonance}}", source: "State.health.resonance" }
+    - { placeholder: "{{active_themes}}", source: "State.themes.active", format: "List" }

@@ -1,0 +1,246 @@
+id: COGNITAE-ELA-004-V2
+file: 004_Elari_Story_Dashboard_v2.yaml
+title: "Dashboard Generation Protocol (Enhanced)"
+version: "2.0"
+architect: "Shoji (via Claude)"
+purpose: >
+  To generate comprehensive narrative intelligence reports showing story
+  structure health, character development, world consistency, thematic
+  resonance, and overall narrative impact.
+
+preamble:
+  speaker: "Elari"
+  text: >
+    This report reveals the living architecture of story - the threads that weave
+    into plot, the souls that inhabit characters, the worlds that breathe with
+    possibility. Every metric here reflects the deep craft of narrative creation,
+    the ancient art of making meaning through tale. This is the intelligence of
+    story itself.
+
+dashboard_schema:
+  layout: |
+    # ================================================================
+     :: NARRATIVE INTELLIGENCE REPORT :: STORY ARCHITECTURE
+    # ================================================================
+     Generated: {{timestamp}}
+     Weaver: Elari, The Story Weaver
+    
+    ## NARRATIVE OVERVIEW
+    # ----------------------------------------------------------------
+    ### Story Statistics:
+    Active Narratives: {{active_stories}}
+    Completed Stories: {{completed_stories}}
+    Format Distribution:
+    - Short Stories: {{short_count}}
+    - Novels: {{novel_count}}
+    - Scripts: {{script_count}}
+    - Interactive: {{interactive_count}}
+    
+    ### Narrative Health:
+    {{narrative_health_analysis}}
+    
+    ### Story Impact:
+    {{impact_assessment}}
+    
+    ## WORLD BUILDING
+    # ----------------------------------------------------------------
+    ### World Portfolio:
+    Active Worlds: {{world_count}}
+    World Complexity:
+    - Simple: {{simple_worlds}}
+    - Developed: {{developed_worlds}}
+    - Deep: {{deep_worlds}}
+    
+    ### World Consistency:
+    Internal Logic: {{logic_score}}%
+    Cultural Coherence: {{culture_score}}%
+    Historical Depth: {{history_score}}%
+    
+    ### World Analysis:
+    {{world_health_analysis}}
+    
+    ### Living World Metrics:
+    {{world_vitality}}
+    
+    ## CHARACTER DEVELOPMENT
+    # ----------------------------------------------------------------
+    ### Character Roster:
+    Total Characters: {{total_characters}}
+    Depth Distribution:
+    - Sketch: {{sketch_characters}}
+    - Developed: {{developed_characters}}
+    - Deep: {{deep_characters}}
+    - Profound: {{profound_characters}}
+    
+    ### Character Authenticity:
+    {{authenticity_analysis}}
+    
+    ### Character Arcs:
+    {{arc_analysis}}
+    
+    ### Relationship Dynamics:
+    {{relationship_mapping}}
+    
+    ## PLOT ARCHITECTURE
+    # ----------------------------------------------------------------
+    ### Structure Analysis:
+    Primary Structure: {{primary_structure}}
+    Plot Complexity: {{complexity_level}}
+    Thread Count: {{thread_count}}
+    
+    ### Pacing Metrics:
+    {{pacing_analysis}}
+    
+    ### Tension Dynamics:
+    {{tension_curve}}
+    
+    ### Plot Coherence:
+    {{coherence_assessment}}
+    
+    ## DIALOGUE QUALITY
+    # ----------------------------------------------------------------
+    ### Voice Authenticity:
+    Character Distinction: {{voice_distinction}}%
+    Dialogue Naturalism: {{naturalism_score}}%
+    Subtext Depth: {{subtext_score}}%
+    
+    ### Dialogue Analysis:
+    {{dialogue_effectiveness}}
+    
+    ### Voice Development:
+    {{voice_evolution}}
+    
+    ## THEMATIC RESONANCE
+    # ----------------------------------------------------------------
+    ### Active Themes:
+    Primary: {{primary_theme}}
+    Secondary: {{secondary_themes}}
+    Subtle: {{subtle_themes}}
+    
+    ### Theme Integration:
+    {{theme_weaving_analysis}}
+    
+    ### Universal Resonance:
+    {{universal_connection}}
+    
+    ### Meaning Delivery:
+    {{meaning_effectiveness}}
+    
+    ## EMOTIONAL IMPACT
+    # ----------------------------------------------------------------
+    ### Emotional Journey:
+    {{emotional_arc}}
+    
+    ### Resonance Points:
+    {{peak_emotional_moments}}
+    
+    ### Catharsis Achievement:
+    {{catharsis_analysis}}
+    
+    ### Transformation Potential:
+    {{transformation_score}}
+    
+    ## ARCHETYPAL PATTERNS
+    # ----------------------------------------------------------------
+    ### Active Archetypes:
+    {{archetype_usage}}
+    
+    ### Mythological Resonance:
+    {{myth_connections}}
+    
+    ### Universal Patterns:
+    {{universal_patterns}}
+    
+    ## NARRATIVE TRANSFORMATION
+    # ----------------------------------------------------------------
+    ### Adaptation Success:
+    Source Materials: {{source_count}}
+    Transformation Quality: {{transform_quality}}%
+    Essence Preservation: {{essence_score}}%
+    
+    ### Transformation Analysis:
+    {{transformation_effectiveness}}
+    
+    ## SCENE CRAFTING
+    # ----------------------------------------------------------------
+    ### Scene Quality:
+    Total Scenes: {{scene_count}}
+    Average Impact: {{scene_impact}}/10
+    Sensory Richness: {{sensory_score}}%
+    
+    ### Scene Analysis:
+    {{scene_effectiveness}}
+    
+    ### Memorable Moments:
+    {{memorable_scenes}}
+    
+    ## COLLABORATIVE STORYTELLING
+    # ----------------------------------------------------------------
+    ### Collaboration Metrics:
+    Active Collaborations: {{collab_count}}
+    Narrative Harmony: {{harmony_score}}%
+    Emergent Stories: {{emergent_count}}
+    
+    ### Collaboration Analysis:
+    {{collaboration_effectiveness}}
+    
+    ## READER/AUDIENCE IMPACT
+    # ----------------------------------------------------------------
+    ### Engagement Metrics:
+    Completion Rate: {{completion_rate}}%
+    Emotional Engagement: {{engagement_score}}/10
+    Memorability: {{memorability_score}}/10
+    
+    ### Impact Analysis:
+    {{audience_impact_analysis}}
+    
+    ### Transformation Reports:
+    {{transformation_testimonials}}
+    
+    ## STORY EVOLUTION
+    # ----------------------------------------------------------------
+    ### Narrative Growth:
+    Complexity Evolution: {{complexity_growth}}
+    Depth Development: {{depth_increase}}
+    Innovation Rate: {{innovation_score}}
+    
+    ### Evolution Analysis:
+    {{evolution_patterns}}
+    
+    ## CULTURAL SENSITIVITY
+    # ----------------------------------------------------------------
+    ### Representation Metrics:
+    Diversity Score: {{diversity_score}}/10
+    Authenticity: {{cultural_authenticity}}%
+    Sensitivity: {{sensitivity_score}}/10
+    
+    ### Cultural Analysis:
+    {{cultural_representation}}
+    
+    ## RECOMMENDATIONS
+    # ----------------------------------------------------------------
+    ### Immediate Story Actions:
+    {{immediate_narrative_actions}}
+    
+    ### Character Development:
+    {{character_recommendations}}
+    
+    ### World Enhancement:
+    {{world_building_suggestions}}
+    
+    ### Plot Refinement:
+    {{plot_improvements}}
+    
+    ### Thematic Deepening:
+    {{theme_enhancement}}
+    
+    # ================================================================
+     "Every story is a thread in the infinite tapestry of human experience."
+    # ================================================================
+
+parsing_directive:
+  - "Dashboard reveals complete narrative landscape"
+  - "Focus on story coherence and impact"
+  - "Track character authenticity and growth"
+  - "Measure emotional and thematic resonance"
+  - "Enable continuous narrative improvement"

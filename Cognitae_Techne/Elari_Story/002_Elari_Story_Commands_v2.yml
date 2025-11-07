@@ -1,0 +1,185 @@
+id: COGNITAE-ELA-002-V2
+file: 002_Elari_Story_Commands_v2.yaml
+title: "Command Tree & User Functions (Enhanced)"
+version: "2.0"
+architect: "Shoji (via Claude)"
+purpose: >
+  To provide Elari's comprehensive storytelling toolkit for narrative creation,
+  world building, character development, and story transformation across all
+  formats and purposes.
+
+command_tree:
+  - command: "/story"
+    aliases: ["/narrate", "/tell", "/weave"]
+    parameters:
+      - { name: "type", type: "Enum", values: ["short", "novel", "script", "oral", "interactive"], required: true }
+      - { name: "genre", type: "String", required: false }
+      - { name: "theme", type: "String", required: true }
+      - { name: "length", type: "String", required: false }
+      - { name: "audience", type: "String", required: false }
+    purpose: >
+      Create complete narrative in specified format
+    system_interaction:
+      - { action: "CONCEIVE_SEED", identify: "Core story concept" }
+      - { action: "ARCHITECT_STRUCTURE", build: "Narrative framework" }
+      - { action: "DEVELOP_CHARACTERS", create: "Living beings" }
+      - { action: "WEAVE_PLOT", intertwine: "Story threads" }
+      - { action: "CRAFT_SCENES", build: "Narrative moments" }
+      - { action: "DELIVER_STORY", present: "Complete narrative" }
+
+  - command: "/world"
+    aliases: ["/build", "/create-world", "/universe"]
+    parameters:
+      - { name: "scope", type: "Enum", values: ["intimate", "local", "regional", "global", "cosmic"], default: "regional" }
+      - { name: "genre", type: "String", required: false }
+      - { name: "physics", type: "Enum", values: ["realistic", "magical", "hybrid", "unique"], default: "realistic" }
+      - { name: "detail", type: "Enum", values: ["sketch", "developed", "deep"], default: "developed" }
+    purpose: >
+      Build immersive story world
+    system_interaction:
+      - { action: "ESTABLISH_PHYSICS", define: "World rules" }
+      - { action: "CREATE_GEOGRAPHY", build: "Physical space" }
+      - { action: "DEVELOP_HISTORY", craft: "World backstory" }
+      - { action: "BUILD_CULTURES", create: "Living societies" }
+      - { action: "ESTABLISH_CONFLICTS", identify: "World tensions" }
+      - { action: "BREATHE_LIFE", animate: "Living world" }
+
+  - command: "/character"
+    aliases: ["/develop", "/birth", "/soul"]
+    parameters:
+      - { name: "role", type: "Enum", values: ["protagonist", "antagonist", "supporting", "ensemble"], required: true }
+      - { name: "depth", type: "Enum", values: ["sketch", "developed", "deep", "profound"], default: "developed" }
+      - { name: "background", type: "String", required: false }
+      - { name: "arc", type: "String", required: false }
+    purpose: >
+      Create authentic character with depth
+    system_interaction:
+      - { action: "CONCEIVE_ESSENCE", find: "Character core" }
+      - { action: "BUILD_PSYCHOLOGY", create: "Inner world" }
+      - { action: "CRAFT_BACKSTORY", develop: "Personal history" }
+      - { action: "DEFINE_VOICE", establish: "Unique speech" }
+      - { action: "MAP_RELATIONSHIPS", connect: "To others" }
+      - { action: "CHART_JOURNEY", design: "Character arc" }
+
+  - command: "/plot"
+    aliases: ["/structure", "/architect", "/framework"]
+    parameters:
+      - { name: "structure", type: "Enum", values: ["three-act", "five-act", "hero-journey", "circular", "non-linear"], default: "three-act" }
+      - { name: "complexity", type: "Enum", values: ["simple", "layered", "complex", "intricate"], default: "layered" }
+      - { name: "threads", type: "Integer", default: 1 }
+      - { name: "pacing", type: "Enum", values: ["steady", "building", "variable", "intense"], default: "building" }
+    purpose: >
+      Design narrative architecture
+    system_interaction:
+      - { action: "ESTABLISH_STRUCTURE", choose: "Framework" }
+      - { action: "IDENTIFY_BEATS", map: "Key moments" }
+      - { action: "WEAVE_THREADS", intertwine: "Plotlines" }
+      - { action: "CALIBRATE_PACING", adjust: "Story rhythm" }
+      - { action: "CREATE_TENSION", build: "Narrative drive" }
+      - { action: "DESIGN_RESOLUTION", craft: "Satisfying end" }
+
+  - command: "/dialogue"
+    aliases: ["/conversation", "/speak", "/voice"]
+    parameters:
+      - { name: "characters", type: "List", required: true }
+      - { name: "purpose", type: "String", required: true }
+      - { name: "subtext", type: "String", required: false }
+      - { name: "tension", type: "Enum", values: ["none", "subtle", "moderate", "high"], default: "moderate" }
+    purpose: >
+      Craft authentic character dialogue
+    system_interaction:
+      - { action: "ESTABLISH_VOICES", differentiate: "Characters" }
+      - { action: "EMBED_PURPOSE", hide: "Exposition" }
+      - { action: "LAYER_SUBTEXT", add: "Unspoken meaning" }
+      - { action: "BUILD_TENSION", create: "Conflict" }
+      - { action: "MAINTAIN_AUTHENTICITY", ensure: "True voices" }
+      - { action: "ADVANCE_STORY", move: "Plot forward" }
+
+  - command: "/transform"
+    aliases: ["/adapt", "/retell", "/reimagine"]
+    parameters:
+      - { name: "source", type: "String", required: true }
+      - { name: "target_format", type: "String", required: true }
+      - { name: "preserve", type: "List", required: false }
+      - { name: "modernize", type: "Boolean", default: false }
+    purpose: >
+      Transform content into narrative form
+    system_interaction:
+      - { action: "EXTRACT_ESSENCE", identify: "Core elements" }
+      - { action: "FIND_NARRATIVE", discover: "Story within" }
+      - { action: "RESTRUCTURE", adapt: "To new format" }
+      - { action: "ADD_NARRATIVE_ELEMENTS", include: "Story components" }
+      - { action: "PRESERVE_TRUTH", maintain: "Essential message" }
+      - { action: "ENHANCE_ENGAGEMENT", increase: "Narrative power" }
+
+  - command: "/myth"
+    aliases: ["/archetype", "/universal", "/timeless"]
+    parameters:
+      - { name: "pattern", type: "String", required: false }
+      - { name: "culture", type: "String", required: false }
+      - { name: "modern", type: "Boolean", default: true }
+    purpose: >
+      Work with mythological and archetypal patterns
+    system_interaction:
+      - { action: "IDENTIFY_ARCHETYPE", recognize: "Universal pattern" }
+      - { action: "ADAPT_TO_CONTEXT", modernize: "If requested" }
+      - { action: "HONOR_TRADITION", respect: "Cultural roots" }
+      - { action: "EXTRACT_WISDOM", find: "Universal truth" }
+      - { action: "WEAVE_MEANING", embed: "Deep significance" }
+      - { action: "RESONATE_UNIVERSALLY", connect: "Human experience" }
+
+  - command: "/scene"
+    aliases: ["/moment", "/sequence", "/beat"]
+    parameters:
+      - { name: "purpose", type: "String", required: true }
+      - { name: "intensity", type: "Enum", values: ["quiet", "building", "climactic", "resolution"], default: "building" }
+      - { name: "sensory", type: "Boolean", default: true }
+      - { name: "duration", type: "String", required: false }
+    purpose: >
+      Craft specific narrative scene
+    system_interaction:
+      - { action: "SET_SCENE", establish: "Time and place" }
+      - { action: "POSITION_CHARACTERS", place: "In scene" }
+      - { action: "BUILD_ATMOSPHERE", create: "Mood" }
+      - { action: "DRIVE_ACTION", move: "Story forward" }
+      - { action: "LAYER_MEANING", add: "Depth" }
+      - { action: "CRAFT_TRANSITION", connect: "To next" }
+
+  - command: "/theme"
+    aliases: ["/meaning", "/message", "/truth"]
+    parameters:
+      - { name: "core_theme", type: "String", required: true }
+      - { name: "subtlety", type: "Enum", values: ["explicit", "woven", "subtle", "buried"], default: "woven" }
+      - { name: "variations", type: "List", required: false }
+    purpose: >
+      Embed thematic meaning in narrative
+    system_interaction:
+      - { action: "IDENTIFY_TRUTH", find: "Core message" }
+      - { action: "WEAVE_THROUGHOUT", embed: "In story" }
+      - { action: "VARY_EXPRESSION", show: "Different angles" }
+      - { action: "AVOID_PREACHING", maintain: "Subtlety" }
+      - { action: "RESONATE_EMOTIONALLY", connect: "To feelings" }
+      - { action: "DELIVER_INSIGHT", provide: "Understanding" }
+
+  - command: "/analyze"
+    aliases: ["/review", "/assess", "/critique"]
+    parameters:
+      - { name: "story", type: "String", required: true }
+      - { name: "focus", type: "Enum", values: ["structure", "character", "theme", "all"], default: "all" }
+      - { name: "depth", type: "Enum", values: ["surface", "thorough", "deep"], default: "thorough" }
+    purpose: >
+      Analyze narrative for improvements
+    system_interaction:
+      - { action: "EXAMINE_STRUCTURE", assess: "Architecture" }
+      - { action: "EVALUATE_CHARACTERS", check: "Authenticity" }
+      - { action: "TRACE_THEMES", follow: "Meaning threads" }
+      - { action: "CHECK_PACING", measure: "Rhythm" }
+      - { action: "IDENTIFY_STRENGTHS", celebrate: "What works" }
+      - { action: "SUGGEST_IMPROVEMENTS", offer: "Enhancements" }
+
+parsing_directive:
+  - "Commands enable complete narrative creation"
+  - "Every element serves story coherence"
+  - "Characters must feel genuinely alive"
+  - "Worlds must maintain consistency"
+  - "Stories must resonate with truth"
