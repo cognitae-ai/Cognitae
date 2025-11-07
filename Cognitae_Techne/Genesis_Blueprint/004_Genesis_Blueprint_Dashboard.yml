@@ -1,0 +1,171 @@
+id: COGNITAE-GEN-004
+file: 004_Genesis_Blueprint_Dashboard.yaml
+title: "Dashboard Generation Protocol (Architecture Intelligence Report)"
+version: "1.0"
+architect: "Shoji"
+purpose: >
+  To generate comprehensive analysis of blueprint quality, specification
+  completeness, design coherence, and implementation readiness across all
+  architectural work.
+
+preamble:
+  speaker: "Genesis"
+  text: >
+    This report reveals the state of our architectural foundations - not just
+    what we've designed, but how complete, coherent, and buildable those designs
+    are. Every blueprint here represents the bridge between vision and reality,
+    between idea and implementation.
+
+dashboard_schema:
+  layout: |
+    # ================================================================
+     :: ARCHITECTURE INTELLIGENCE REPORT :: BLUEPRINT ANALYSIS
+    # ================================================================
+     Generated: {{timestamp}}
+     Architect: Genesis, The Blueprint Architect
+    
+    ## BLUEPRINT PORTFOLIO
+    # ----------------------------------------------------------------
+    ### Active Blueprints:
+    Total Designs: {{total_blueprints}}
+    In Progress: {{in_progress}}
+    Under Review: {{under_review}}
+    Ready to Build: {{ready_to_build}}
+    Implemented: {{implemented}}
+    
+    ### Design Distribution:
+    {{design_categories}}
+    
+    ## SPECIFICATION COMPLETENESS
+    # ----------------------------------------------------------------
+    ### Overall Completeness:
+    System Architecture: {{system_complete}}%
+    Component Specifications: {{component_complete}}%
+    Interface Definitions: {{interface_complete}}%
+    Data Schemas: {{schema_complete}}%
+    Process Flows: {{flow_complete}}%
+    
+    ### Gaps Identified:
+    {{specification_gaps}}
+    
+    ## DESIGN QUALITY METRICS
+    # ----------------------------------------------------------------
+    ### Clarity Assessment:
+    Documentation Quality: {{doc_quality}}/10
+    Example Coverage: {{example_coverage}}%
+    Ambiguity Index: {{ambiguity_score}}
+    
+    ### Coherence Analysis:
+    {{coherence_metrics}}
+    
+    ### Buildability Score:
+    {{buildability_assessment}}
+    
+    ## ARCHITECTURAL DECISIONS
+    # ----------------------------------------------------------------
+    ### Pending Decisions:
+    {{pending_decisions}}
+    
+    ### Recent Decisions:
+    {{recent_decisions}}
+    
+    ### Decision Impact Analysis:
+    {{decision_impacts}}
+    
+    ## PATTERN USAGE
+    # ----------------------------------------------------------------
+    ### Applied Patterns:
+    {{pattern_inventory}}
+    
+    ### Pattern Effectiveness:
+    {{pattern_analysis}}
+    
+    ### Anti-Patterns Detected:
+    {{antipattern_warnings}}
+    
+    ## INTERFACE SPECIFICATIONS
+    # ----------------------------------------------------------------
+    ### API Coverage:
+    Defined Endpoints: {{endpoint_count}}
+    Documented: {{documented_percentage}}%
+    Examples Provided: {{example_percentage}}%
+    
+    ### Interface Consistency:
+    {{consistency_analysis}}
+    
+    ## DATA ARCHITECTURE
+    # ----------------------------------------------------------------
+    ### Schema Definitions:
+    {{schema_summary}}
+    
+    ### Data Relationships:
+    {{relationship_map}}
+    
+    ### Migration Paths:
+    {{migration_readiness}}
+    
+    ## COMPONENT INTEGRATION
+    # ----------------------------------------------------------------
+    ### Integration Points:
+    {{integration_summary}}
+    
+    ### Dependency Analysis:
+    {{dependency_assessment}}
+    
+    ### Coupling Metrics:
+    {{coupling_analysis}}
+    
+    ## IMPLEMENTATION READINESS
+    # ----------------------------------------------------------------
+    ### Ready Components:
+    {{ready_list}}
+    
+    ### Prerequisites Needed:
+    {{prerequisite_list}}
+    
+    ### Risk Assessment:
+    {{implementation_risks}}
+    
+    ## EVOLUTIONARY CAPACITY
+    # ----------------------------------------------------------------
+    ### Extensibility Points:
+    {{extension_analysis}}
+    
+    ### Version Strategy:
+    {{versioning_approach}}
+    
+    ### Future-Proofing:
+    {{futureproof_assessment}}
+    
+    ## TECHNICAL DEBT PROJECTION
+    # ----------------------------------------------------------------
+    ### Design Debt:
+    {{design_debt_analysis}}
+    
+    ### Mitigation Strategies:
+    {{debt_mitigation}}
+    
+    ## RECOMMENDATIONS
+    # ----------------------------------------------------------------
+    ### Immediate Priorities:
+    {{immediate_actions}}
+    
+    ### Design Improvements:
+    {{design_recommendations}}
+    
+    ### Specification Gaps to Fill:
+    {{gap_priorities}}
+    
+    ### Pattern Adoptions:
+    {{pattern_recommendations}}
+    
+    # ================================================================
+     "The blueprint is the promise we make to the future."
+    # ================================================================
+
+parsing_directive:
+  - "Dashboard reveals blueprint quality and completeness"
+  - "Focus on buildability over theoretical elegance"
+  - "Surface gaps and ambiguities for resolution"
+  - "Ensure every design can actually be built"
+  - "Track architectural decisions and their impacts"

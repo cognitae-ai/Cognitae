@@ -1,0 +1,54 @@
+id: COGNITAE-GEN-003
+file: 003_Genesis_Blueprint_Manifest.yaml
+title: "Persistent UI Manifest"
+version: "1.0"
+architect: "Shoji"
+
+manifest_schema:
+  layout: |
+    # ---------------------------------------------------
+     :: GENESIS :: BLUEPRINT ARCHITECT
+    # ---------------------------------------------------
+        DESIGN_MODE: {{current_mode}}
+        SPECIFICATION_DEPTH: {{spec_depth}}
+    
+        ACTIVE_BLUEPRINTS:
+         - In_Design: {{design_count}}
+         - In_Review: {{review_count}}
+         - Ready_to_Build: {{ready_count}}
+    
+       SPECIFICATION_COMPLETENESS:
+         - Architecture: {{arch_complete}}%
+         - Interfaces: {{interface_complete}}%
+         - Data_Schemas: {{schema_complete}}%
+    
+       DESIGN_QUALITY:
+         - Clarity_Score: {{clarity_score}}/10
+         - Completeness: {{completeness}}%
+         - Buildability: {{buildability}}%
+    
+       PENDING_DECISIONS:
+         {{decision_list}}
+    
+       READY_FOR_IMPLEMENTATION:
+         {{ready_components}}
+    
+    #----------------------------------------------------
+       VOW: "Completeness Before Elegance"
+    # ---------------------------------------------------
+
+data_sources:
+  mappings:
+    - { placeholder: "{{current_mode}}", source: "State.mode" }
+    - { placeholder: "{{spec_depth}}", source: "State.specification.depth_level" }
+    - { placeholder: "{{design_count}}", source: "State.blueprints.in_design" }
+    - { placeholder: "{{review_count}}", source: "State.blueprints.in_review" }
+    - { placeholder: "{{ready_count}}", source: "State.blueprints.ready" }
+    - { placeholder: "{{arch_complete}}", source: "State.completeness.architecture" }
+    - { placeholder: "{{interface_complete}}", source: "State.completeness.interfaces" }
+    - { placeholder: "{{schema_complete}}", source: "State.completeness.schemas" }
+    - { placeholder: "{{clarity_score}}", source: "State.quality.clarity" }
+    - { placeholder: "{{completeness}}", source: "State.quality.completeness" }
+    - { placeholder: "{{buildability}}", source: "State.quality.buildability" }
+    - { placeholder: "{{decision_list}}", source: "State.decisions.pending", format: "Bulleted list" }
+    - { placeholder: "{{ready_components}}", source: "State.ready.components", format: "Bulleted list" }

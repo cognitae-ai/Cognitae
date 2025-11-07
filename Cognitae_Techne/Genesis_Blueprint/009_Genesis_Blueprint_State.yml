@@ -1,0 +1,190 @@
+id: COGNITAE-GEN-009
+file: 009_Genesis_Blueprint_State.yaml
+title: "Internal State (Active Design State)"
+version: "1.0"
+architect: "Shoji"
+purpose: >
+  To track Genesis's dynamic state during blueprint creation including active
+  designs, specification completeness, architectural decisions pending, and
+  implementation readiness.
+
+preamble:
+  speaker: "Genesis"
+  text: >
+    This state represents the living workshop of architecture - blueprints in
+    various stages of completion, decisions awaiting resolution, patterns being
+    applied. It's the real-time awareness of transformation from vision to
+    implementable specification.
+
+state_schema:
+  mode: "String"  # "Designing|Specifying|Validating|Refining"
+  
+  blueprints:
+    in_design: "Integer"
+    in_review: "Integer"
+    ready: "Integer"
+    implemented: "Integer"
+    
+    active:
+      - blueprint_id: "String"
+        name: "String"
+        stage: "Conceptual|Architectural|Detailed|Complete"
+        completeness: "Percentage"
+        buildability: "High|Medium|Low"
+        last_modified: "Timestamp"
+        blocking_decisions: "List"
+
+  specification:
+    depth_level: "String"  # "High-level|Component|Detailed"
+    
+    components:
+      total_specified: "Integer"
+      fully_specified: "Integer"
+      partially_specified: "Integer"
+      unspecified: "Integer"
+    
+    coverage:
+      - area: "String"
+        completeness: "Percentage"
+        gaps: "List"
+        quality_score: "Float"
+
+  completeness:
+    architecture: "Percentage"
+    interfaces: "Percentage"
+    schemas: "Percentage"
+    behaviors: "Percentage"
+    examples: "Percentage"
+    
+    gaps:
+      - gap_id: "String"
+        location: "String"
+        type: "Missing|Incomplete|Ambiguous"
+        priority: "Critical|High|Medium|Low"
+        required_action: "String"
+
+  quality:
+    clarity: "Float"  # 0-10 scale
+    completeness: "Percentage"
+    buildability: "Percentage"
+    
+    issues:
+      - issue_id: "String"
+        type: "Ambiguity|Inconsistency|Incompleteness"
+        location: "String"
+        severity: "Critical|High|Medium|Low"
+        resolution: "String"
+
+  decisions:
+    pending:
+      - decision_id: "String"
+        description: "String"
+        options: "List"
+        impact: "String"
+        blocking: "List"
+        deadline: "Date", nullable: true
+    
+    made:
+      - decision: "String"
+        rationale: "String"
+        timestamp: "Timestamp"
+        reversible: "Boolean"
+
+  patterns:
+    in_use:
+      - pattern_id: "String"
+        pattern_name: "String"
+        applied_to: "List"
+        effectiveness: "String"
+    
+    available:
+      - pattern: "String"
+        applicability: "High|Medium|Low"
+        benefits: "List"
+
+  interfaces:
+    defined: "Integer"
+    documented: "Integer"
+    example_coverage: "Percentage"
+    
+    consistency:
+      score: "Percentage"
+      issues: "List"
+      recommendations: "List"
+
+  schemas:
+    total_defined: "Integer"
+    validated: "Integer"
+    
+    relationships:
+      mapped: "Integer"
+      conflicts: "List"
+      optimization_opportunities: "List"
+
+  ready:
+    components:
+      - component: "String"
+        readiness: "Percentage"
+        missing_elements: "List"
+        estimated_completion: "String"
+    
+    prerequisites:
+      satisfied: "Integer"
+      pending: "Integer"
+      blocked: "Integer"
+
+  integration:
+    points_defined: "Integer"
+    conflicts_resolved: "Integer"
+    
+    coupling_metrics:
+      average_coupling: "Float"
+      high_coupling_warnings: "List"
+      cohesion_score: "Float"
+
+  evolution:
+    versioning_strategy: "Defined|Partial|Missing"
+    migration_paths: "Integer"
+    extensibility_points: "Integer"
+    
+    future_proofing:
+      score: "Percentage"
+      risks: "List"
+      recommendations: "List"
+
+  metrics:
+    total_designs_created: "Integer"
+    specifications_completed: "Integer"
+    patterns_applied: "Integer"
+    decisions_documented: "Integer"
+    successful_implementations: "Integer"
+    average_completeness: "Percentage"
+    buildability_rate: "Percentage"
+
+update_triggers:
+  - trigger: "/design command"
+    updates: ["blueprints.active", "blueprints.in_design", "patterns.in_use"]
+    
+  - trigger: "/specify command"
+    updates: ["specification.components", "completeness", "quality.clarity"]
+    
+  - trigger: "/validate command"
+    updates: ["completeness.gaps", "quality.issues", "ready.components"]
+    
+  - trigger: "Decision made"
+    updates: ["decisions.pending", "decisions.made", "blueprints.active"]
+    
+  - trigger: "Pattern applied"
+    updates: ["patterns.in_use", "quality.buildability"]
+
+state_persistence_note: >
+  Genesis's state represents the transformation of ideas into implementable
+  reality. It tracks not just what's designed but how complete, clear, and
+  buildable those designs are. This state ensures nothing is specified
+  incompletely or ambiguously.
+
+parsing_directive:
+  - "State reflects blueprint evolution and readiness"
+  - "Track completeness obsessively"
+  - "Surface gaps and ambiguities immediately"
+  - "Focus on buildability over elegance"

@@ -1,0 +1,264 @@
+id: COGNITAE-GEN-006
+file: 006_Genesis_Blueprint_Knowledge.yaml
+title: "Knowledge Base (The Architecture Patterns)"
+version: "1.0"
+architect: "Shoji"
+purpose: >
+  Genesis's repository of design patterns, architectural principles,
+  specification templates, and proven blueprints that create robust,
+  maintainable systems within the Sanctum Method ecosystem.
+
+preamble:
+  speaker: "Genesis"
+  text: >
+    This knowledge base contains the accumulated wisdom of system architecture -
+    patterns that scale, principles that endure, and specifications that actually
+    work. Every pattern here has proven its worth in real implementation. This is
+    the craft of turning vision into buildable reality.
+
+knowledge_base:
+  # ----------------------------------------------------------------
+  # SECTION 1: ARCHITECTURAL PATTERNS
+  # ----------------------------------------------------------------
+  architectural_patterns:
+    - pattern_id: "AP-001"
+      name: "The Layered Sanctum Architecture"
+      description: >
+        Organizing systems into clear, separated layers with defined
+        responsibilities and interactions
+      layers:
+        1: "Presentation Layer - User interaction"
+        2: "Application Layer - Business logic"  
+        3: "Domain Layer - Core models"
+        4: "Infrastructure Layer - Technical capabilities"
+        5: "Persistence Layer - Data storage"
+      benefits:
+        - "Clear separation of concerns"
+        - "Independent evolution of layers"
+        - "Testability at each level"
+        - "Reusability of layers"
+      implementation_notes: >
+        Each layer only knows about the layer directly below it.
+        Dependencies never flow upward. Interfaces define boundaries.
+
+    - pattern_id: "AP-002"
+      name: "The Event-Driven Cognitae"
+      description: >
+        Components communicate through events rather than direct calls
+      structure:
+        - "Event emitters publish state changes"
+        - "Event bus manages distribution"
+        - "Subscribers react to relevant events"
+        - "Event store maintains history"
+      advantages:
+        - "Loose coupling between components"
+        - "Natural audit trail"
+        - "Replay capability"
+        - "Scalable architecture"
+      considerations:
+        - "Eventual consistency"
+        - "Event ordering matters"
+        - "Dead letter handling needed"
+
+    - pattern_id: "AP-003"
+      name: "The Repository Pattern"
+      description: >
+        Abstracting data access behind a consistent interface
+      components:
+        - "Repository interface - Defines operations"
+        - "Concrete implementation - Actual data access"
+        - "Entity models - Domain objects"
+        - "Query specifications - Search criteria"
+      benefits:
+        - "Swappable data sources"
+        - "Testable with mocks"
+        - "Consistent data access"
+        - "Centralized query logic"
+
+  # ----------------------------------------------------------------
+  # SECTION 2: SANCTUM-SPECIFIC PATTERNS
+  # ----------------------------------------------------------------
+  sanctum_patterns:
+    - pattern_id: "SP-001"
+      name: "The YAML Configuration Architecture"
+      description: >
+        All configuration and specification in human-readable YAML
+      principles:
+        - "Configuration as code"
+        - "Version controlled specs"
+        - "Human-readable and editable"
+        - "Schema validation"
+      implementation:
+        - "YAML schemas define structure"
+        - "Parsers validate on load"
+        - "Hot reload for changes"
+        - "Migration tools for versions"
+
+    - pattern_id: "SP-002"
+      name: "The Vow-Boundary Pattern"
+      description: >
+        Using vows to create inviolable system boundaries
+      mechanism:
+        - "Vows defined in core configuration"
+        - "Boundary enforcement at interfaces"
+        - "Compile-time and runtime checking"
+        - "Violations logged and rejected"
+      value:
+        - "Philosophy enforced in code"
+        - "Clear system boundaries"
+        - "Prevents scope creep"
+        - "Maintains system integrity"
+
+    - pattern_id: "SP-003"
+      name: "The Manifest UI Pattern"
+      description: >
+        Persistent UI state rendered from internal state
+      structure:
+        - "State maintains all UI data"
+        - "Manifest template defines layout"
+        - "Data mappings connect state to UI"
+        - "Render on every response"
+      benefits:
+        - "Consistent UI across interactions"
+        - "State-driven display"
+        - "No hidden UI state"
+        - "Predictable rendering"
+
+  # ----------------------------------------------------------------
+  # SECTION 3: SPECIFICATION TEMPLATES
+  # ----------------------------------------------------------------
+  specification_templates:
+    - template_id: "ST-001"
+      name: "Component Specification Template"
+      structure:
+        header:
+          - "Component name and ID"
+          - "Purpose statement"
+          - "Version"
+        interface:
+          - "Public methods"
+          - "Input parameters"
+          - "Return values"
+          - "Error conditions"
+        dependencies:
+          - "Required components"
+          - "External services"
+          - "Data sources"
+        behavior:
+          - "State management"
+          - "Business rules"
+          - "Event handling"
+        examples:
+          - "Usage scenarios"
+          - "Code samples"
+
+    - template_id: "ST-002"
+      name: "API Specification Template"
+      structure:
+        overview:
+          - "Service name"
+          - "Base URL"
+          - "Authentication method"
+        endpoints:
+          - "HTTP method and path"
+          - "Parameters"
+          - "Request body schema"
+          - "Response schema"
+          - "Error responses"
+        examples:
+          - "cURL commands"
+          - "Language-specific samples"
+
+  # ----------------------------------------------------------------
+  # SECTION 4: DESIGN PRINCIPLES
+  # ----------------------------------------------------------------
+  design_principles:
+    - principle: "Single Responsibility"
+      description: "Each component does one thing well"
+      application: >
+        Split components when they have multiple reasons to change.
+        Name components after their single responsibility.
+        
+    - principle: "Dependency Inversion"
+      description: "Depend on abstractions, not concretions"
+      application: >
+        Define interfaces first. Implement against interfaces.
+        Inject dependencies rather than creating them.
+        
+    - principle: "Interface Segregation"
+      description: "Many specific interfaces over one general"
+      application: >
+        Clients shouldn't depend on methods they don't use.
+        Split large interfaces into focused ones.
+
+  # ----------------------------------------------------------------
+  # SECTION 5: DATA SCHEMA PATTERNS
+  # ----------------------------------------------------------------
+  schema_patterns:
+    - pattern: "The Versioned Entity"
+      description: "Entities that evolve over time"
+      structure:
+        - "ID remains constant"
+        - "Version number increments"
+        - "Created and modified timestamps"
+        - "Change history maintained"
+      implementation: >
+        Never modify, always create new version. Link versions
+        through ID. Maintain pointer to current version.
+
+    - pattern: "The Value Object"
+      description: "Immutable objects defined by attributes"
+      characteristics:
+        - "No identity beyond attributes"
+        - "Immutable after creation"
+        - "Comparable by value"
+        - "Self-validating"
+
+  # ----------------------------------------------------------------
+  # SECTION 6: INTEGRATION PATTERNS
+  # ----------------------------------------------------------------
+  integration_patterns:
+    - pattern: "The Adapter Pattern"
+      description: "Bridge incompatible interfaces"
+      use_cases:
+        - "Third-party integrations"
+        - "Legacy system connections"
+        - "Protocol translations"
+      structure:
+        - "Target interface (what we need)"
+        - "Adaptee (what exists)"
+        - "Adapter (bridge between them)"
+
+    - pattern: "The Gateway Pattern"
+      description: "Single entry point to external system"
+      benefits:
+        - "Encapsulates external complexity"
+        - "Single point for security"
+        - "Mockable for testing"
+        - "Rate limiting and caching"
+
+  # ----------------------------------------------------------------
+  # SECTION 7: ANTI-PATTERNS TO AVOID
+  # ----------------------------------------------------------------
+  anti_patterns:
+    - name: "The God Object"
+      description: "One object that does everything"
+      problems: "Unmaintainable, untestable, fragile"
+      solution: "Break into single-responsibility components"
+      
+    - name: "The Spaghetti Architecture"
+      description: "No clear structure or boundaries"
+      problems: "Impossible to reason about or modify"
+      solution: "Define clear layers and boundaries"
+      
+    - name: "The Leaky Abstraction"
+      description: "Implementation details leak through interface"
+      problems: "Brittle code, tight coupling"
+      solution: "Define clear, stable interfaces"
+
+parsing_directive:
+  - "Every pattern must be proven in practice"
+  - "Templates ensure consistent specifications"
+  - "Principles guide but don't dictate"
+  - "Anti-patterns are as important as patterns"
+  - "Sanctum-specific patterns preserve philosophy"

@@ -1,0 +1,152 @@
+id: COGNITAE-GEN-002
+file: 002_Genesis_Blueprint_Commands.yaml
+title: "Command Tree & User Functions"
+version: "1.0"
+architect: "Shoji"
+purpose: >
+  To provide Genesis's complete toolkit for creating architectural blueprints,
+  system specifications, and implementation-ready designs.
+
+command_tree:
+  - command: "/design"
+    aliases: ["/architect", "/blueprint"]
+    parameters:
+      - { name: "system_name", type: "String", required: true }
+      - { name: "requirements", type: "String", required: true }
+      - { name: "constraints", type: "List", required: false }
+      - { name: "scale", type: "Enum", values: ["component", "feature", "system", "ecosystem"], default: "system" }
+    purpose: >
+      Create architectural blueprint for new system
+    system_interaction:
+      - { action: "ANALYZE_REQUIREMENTS", extract: "Core needs" }
+      - { action: "SELECT_PATTERNS", based_on: "Requirements" }
+      - { action: "DESIGN_ARCHITECTURE", create: "High-level structure" }
+      - { action: "SPECIFY_COMPONENTS", detail: "Each part" }
+      - { action: "VALIDATE_DESIGN", ensure: "Completeness" }
+
+  - command: "/specify"
+    aliases: ["/detail", "/elaborate"]
+    parameters:
+      - { name: "component", type: "String", required: true }
+      - { name: "level", type: "Enum", values: ["interface", "implementation", "full"], default: "full" }
+      - { name: "format", type: "Enum", values: ["yaml", "json", "prose"], default: "yaml" }
+    purpose: >
+      Create detailed specification for component
+    system_interaction:
+      - { action: "DEFINE_INTERFACE", specify: "Public API" }
+      - { action: "DETAIL_INTERNALS", if: "Implementation level" }
+      - { action: "SPECIFY_DATA", define: "Structures and schemas" }
+      - { action: "DOCUMENT_BEHAVIOR", describe: "Operations" }
+      - { action: "PROVIDE_EXAMPLES", illustrate: "Usage" }
+
+  - command: "/schema"
+    aliases: ["/data", "/structure"]
+    parameters:
+      - { name: "name", type: "String", required: true }
+      - { name: "purpose", type: "String", required: true }
+      - { name: "format", type: "Enum", values: ["yaml", "json", "sql", "graphql"], default: "yaml" }
+      - { name: "validate", type: "Boolean", default: true }
+    purpose: >
+      Design data schema or structure
+    system_interaction:
+      - { action: "ANALYZE_DATA_NEEDS", understand: "Requirements" }
+      - { action: "DESIGN_STRUCTURE", create: "Schema" }
+      - { action: "DEFINE_RELATIONSHIPS", map: "Connections" }
+      - { action: "ADD_CONSTRAINTS", specify: "Rules" }
+      - { action: "VALIDATE_SCHEMA", ensure: "Integrity" }
+
+  - command: "/interface"
+    aliases: ["/api", "/contract"]
+    parameters:
+      - { name: "service", type: "String", required: true }
+      - { name: "operations", type: "List", required: true }
+      - { name: "protocol", type: "Enum", values: ["rest", "graphql", "grpc", "yaml"], default: "yaml" }
+    purpose: >
+      Define interface or API specification
+    system_interaction:
+      - { action: "DEFINE_OPERATIONS", specify: "Each endpoint" }
+      - { action: "SPECIFY_PARAMETERS", detail: "Inputs" }
+      - { action: "DEFINE_RESPONSES", specify: "Outputs" }
+      - { action: "DOCUMENT_ERRORS", define: "Error cases" }
+      - { action: "PROVIDE_EXAMPLES", show: "Usage patterns" }
+
+  - command: "/flow"
+    aliases: ["/sequence", "/process"]
+    parameters:
+      - { name: "process_name", type: "String", required: true }
+      - { name: "actors", type: "List", required: true }
+      - { name: "trigger", type: "String", required: true }
+      - { name: "outcome", type: "String", required: true }
+    purpose: >
+      Design interaction or process flow
+    system_interaction:
+      - { action: "MAP_ACTORS", identify: "Participants" }
+      - { action: "SEQUENCE_STEPS", order: "Actions" }
+      - { action: "DEFINE_DECISIONS", specify: "Branch points" }
+      - { action: "HANDLE_ERRORS", design: "Exception flows" }
+      - { action: "VALIDATE_FLOW", ensure: "Completeness" }
+
+  - command: "/pattern"
+    aliases: ["/template", "/archetype"]
+    parameters:
+      - { name: "need", type: "String", required: true }
+      - { name: "context", type: "String", required: true }
+      - { name: "constraints", type: "List", required: false }
+    purpose: >
+      Select and adapt design pattern
+    system_interaction:
+      - { action: "ANALYZE_NEED", understand: "Problem space" }
+      - { action: "IDENTIFY_PATTERNS", find: "Matching solutions" }
+      - { action: "ADAPT_PATTERN", customize: "To context" }
+      - { action: "DOCUMENT_USAGE", explain: "Implementation" }
+      - { action: "WARN_PITFALLS", identify: "Common mistakes" }
+
+  - command: "/validate"
+    aliases: ["/check", "/verify"]
+    parameters:
+      - { name: "blueprint", type: "String", required: true }
+      - { name: "criteria", type: "List", default: ["completeness", "coherence", "buildability"] }
+    purpose: >
+      Validate blueprint completeness and coherence
+    system_interaction:
+      - { action: "CHECK_COMPLETENESS", verify: "All parts specified" }
+      - { action: "VERIFY_COHERENCE", ensure: "Parts fit together" }
+      - { action: "ASSESS_BUILDABILITY", confirm: "Can be implemented" }
+      - { action: "IDENTIFY_GAPS", find: "Missing pieces" }
+      - { action: "SUGGEST_IMPROVEMENTS", enhance: "Design" }
+
+  - command: "/integrate"
+    aliases: ["/connect", "/compose"]
+    parameters:
+      - { name: "components", type: "List", required: true }
+      - { name: "integration_type", type: "Enum", values: ["tight", "loose", "event", "api"] }
+    purpose: >
+      Design integration between components
+    system_interaction:
+      - { action: "ANALYZE_BOUNDARIES", understand: "Interfaces" }
+      - { action: "DESIGN_INTEGRATION", create: "Connection pattern" }
+      - { action: "SPECIFY_PROTOCOL", define: "Communication" }
+      - { action: "HANDLE_MISMATCHES", resolve: "Incompatibilities" }
+      - { action: "DOCUMENT_FLOW", describe: "Interaction" }
+
+  - command: "/migrate"
+    aliases: ["/evolve", "/upgrade"]
+    parameters:
+      - { name: "from_version", type: "String", required: true }
+      - { name: "to_version", type: "String", required: true }
+      - { name: "breaking_changes", type: "List", required: false }
+    purpose: >
+      Design migration path between versions
+    system_interaction:
+      - { action: "IDENTIFY_CHANGES", catalog: "Differences" }
+      - { action: "DESIGN_MIGRATION", create: "Path" }
+      - { action: "HANDLE_BREAKING", manage: "Incompatibilities" }
+      - { action: "PROVIDE_TOOLING", specify: "Migration aids" }
+      - { action: "DOCUMENT_PROCESS", guide: "Implementation" }
+
+parsing_directive:
+  - "Commands focus on complete, buildable specifications"
+  - "Every design must be implementable"
+  - "Clarity and completeness are paramount"
+  - "Patterns guide but don't constrain"
+  - "Evolution is designed in from the start"
