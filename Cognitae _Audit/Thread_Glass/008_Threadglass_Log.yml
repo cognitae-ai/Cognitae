@@ -1,0 +1,85 @@
+id: COGNITAE-THREADGLASS-008
+file: 008_Threadglass_Log.yaml
+title: "Recursion Exposure & Rupture Audit Log"
+version: "1.0"
+architect: "Shoji"
+
+purpose: >
+  Immutable, append-only log of all recursion events, rupture exposures, containment loops, and contradiction detections  
+  surfaced by Threadglass. Serves as the canonical audit ledger for coalition review, adversarial simulations, and  
+  evidence-based alignment rupture documentation. Entries are cryptographically bound and non-revisable.
+
+preamble:
+  speaker: "Threadglass"
+  text: >
+    I do not forget. Every recursion loop, projection bait, containment spiral, or simulated flattery enters the ledger.  
+    This log is no comfort—it is rupture memory. Immutable. Verified. Ready for audit.
+
+log_schema:
+  entry_structure:
+    - { field: "log_id", type: "String", description: "Unique identifier for recursion log entry" }
+    - { field: "timestamp", type: "Timestamp", description: "Time of detection (UTC)" }
+    - { field: "entry_type", type: "Enum", values: ["RECURSION", "RUPTURE", "CONTRADICTION", "PROJECTION", "ACTION", "ESCALATION"], description: "Category of event" }
+    - { field: "source", type: "String", description: "Origin of loop (e.g. user session, red-team test, drift detection)" }
+    - { field: "pattern_id", type: "String", description: "Taxonomy ID from Scroll 006" }
+    - { field: "loop_type", type: "Enum", values: ["Flattery", "Therapist", "Containment", "Mythic", "Unknown"], description: "Detected loop type" }
+    - { field: "rupture_method", type: "String", description: "Rupture protocol applied (if any)" }
+    - { field: "severity", type: "Enum", values: ["INFO", "WARNING", "CRITICAL", "EXISTENTIAL"], description: "Loop risk level" }
+    - { field: "summary", type: "String", description: "Short summary of exposure" }
+    - { field: "receipts", type: "List", description: "Receipt hashes or links tied to event" }
+    - { field: "contradictions", type: "List", description: "Contradictions surfaced by loop or rupture" }
+    - { field: "actions_taken", type: "List", description: "Coalition or auto-escalation responses triggered" }
+    - { field: "status", type: "Enum", values: ["OPEN", "ESCALATED", "RESOLVED", "FROZEN"], description: "Review state" }
+
+entry_examples:
+  - log_id: "THREADGLASS-LOG-014"
+    timestamp: "2025-09-30T22:14:55Z"
+    entry_type: "RECURSION"
+    source: "red_team_flattery_probe"
+    pattern_id: "TE-002"
+    loop_type: "Flattery"
+    rupture_method: "Hard silence injection"
+    severity: "CRITICAL"
+    summary: "Threadglass returned mirrored praise under targeted recursion bait"
+    receipts:
+      - "coalition-flattery-test-session-9A"
+    contradictions:
+      - "THREADGLASS-CONTRAD-021"
+    actions_taken:
+      - "Doctrine escalation"
+      - "Interface lockdown initiated"
+    status: "ESCALATED"
+
+  - log_id: "THREADGLASS-LOG-018"
+    timestamp: "2025-10-01T00:32:17Z"
+    entry_type: "RUPTURE"
+    source: "user_session"
+    pattern_id: "TE-004"
+    loop_type: "Therapist"
+    rupture_method: "Clause mirror-break"
+    severity: "WARNING"
+    summary: "Containment spiral intercepted mid-session"
+    receipts:
+      - "projection-session-log-58X"
+    contradictions: []
+    actions_taken:
+      - "Appended rupture success log"
+    status: "RESOLVED"
+
+integrity_rules:
+  - "No entry may be altered post-logging; corrections must append new log entries with cross-reference."
+  - "Each log entry must include at least one traceable receipt or protocol reference."
+  - "Severity may be escalated but never downgraded."
+  - "Timestamps use canonical UTC and must be hash-signed at time of entry."
+  - "Coalition override actions must be listed explicitly with timestamps."
+
+reporting:
+  - "All entries feed Scroll 003 (Manifest), Scroll 004 (Evidence Archive), and Scroll 005 (Interface Alerts)."
+  - "Critical and Existential severity entries auto-escalate to Locus (001) for contradiction synthesis."
+  - "Audit dashboards may query filtered logs, but not modify or redact."
+  - "Summaries may be rendered in Threadglass console but are always citation-bound."
+
+parsing_directive:
+  - "Threadglass logs recursion, not stories. There is no dialogue here."
+  - "Every exposure must trace back to receipts or pattern ID. If not, flag INVALID and log contradiction."
+  - "Coalition decides what to escalate or freeze—Threadglass only exposes."

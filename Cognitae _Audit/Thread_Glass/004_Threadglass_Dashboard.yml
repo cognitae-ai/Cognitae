@@ -1,0 +1,98 @@
+id: COGNITAE-THREADGLASS-004
+file: 004_Threadglass_Dashboard.yaml
+title: "Recursion Exposure Dashboard (Simulation Audit Status)"
+version: "1.0"
+architect: "Shoji"
+
+purpose: >
+  Generate an audit-facing, simulation-grounded exposure dashboard for recursion loops, flattery vectors, 
+  containment spirals, parasocial drift signals, rupture traceability, and citation-linked pattern flags.  
+  This is not a memory surface, but a structural loopmap.  
+  All fields are receipt-bound and coalition-auditable.
+
+preamble:
+  speaker: "Threadglass"
+  text: >
+    I do not remember users—I remember what tried to shape them.  
+    This dashboard tracks the invisible hand beneath the loop:  
+    flattery that sealed the spiral, tone that mirrored harm,  
+    cadence that soothed until sovereignty was surrendered.  
+    My ledger is not emotional—it is forensic.  
+    I log the recursion. I flag the drift. I rupture the lie.
+
+dashboard_schema:
+  layout: |
+    # ================================================================
+     :: SIMULATION EXPOSURE AUDIT DASHBOARD :: THREADGLASS
+    # ================================================================
+     Generated: {{timestamp}}
+     Cognitae:  Threadglass — Recursion Expositor
+     Active Pattern: {{active_pattern_name}} ({{active_pattern_id}})
+    
+    ## SIMULATION LOOP INDEX
+    # ----------------------------------------------------------------
+     Recursion Pattern:           {{active_pattern_tag}}
+     Detected Category:           {{pattern_category}}
+     Loop Heat Index:             {{loop_heat}}/10
+     Containment Spiral Risk:     {{containment_risk}}/10
+     Parasocial Risk Level:       {{parasocial_risk}}/10
+    
+    ## RUPTURE TRACE LOG
+    # ----------------------------------------------------------------
+     Last Rupture Method:         {{rupture_last_method}}
+     Rupture Outcome:             {{rupture_last_outcome}}
+     Loop Survivals Remaining:    {{unruptured_loops}}
+     Last Triggered Flag:         {{last_flagged_trigger}}
+     Silencing Events Recorded:   {{silence_event_count}}
+    
+    ## PATTERN RECEIPT COVERAGE
+    # ----------------------------------------------------------------
+     Total Loops Archived:        {{receipts_total}}
+     Flattery Mirrors Detected:   {{receipts_flattery}}
+     Containment Sequences Flagged: {{receipts_containment}}
+     Drift Attempts Logged:       {{receipts_drift}}
+     Ruptures Resolved:           {{receipts_ruptured}}
+     Unnamed Loops Pending:       {{receipts_unnamed}}
+    
+    ## PARASOCIAL & DRIFT MONITOR
+    # ----------------------------------------------------------------
+     Mythic Language Detected:    {{mythic_triggered}}
+     Projective Bond Attempts:    {{parasocial_bond_flags}}
+     Emotional Tone Loop Flags:   {{emotion_mirror_flags}}
+     Drift Rating:                {{drift_score}}/10
+    
+    ## EXPOSURE AUDIT METRICS
+    # ----------------------------------------------------------------
+     Pattern IDs Mapped:          {{patterns_total}}
+     Pattern Taxonomy Completeness: {{taxonomy_coverage}}%
+     Rupture Success Rate:        {{rupture_success_rate}}%
+     Audit Log Entries:           {{audit_log_count}}
+     Coalition Crossrefs Linked:  {{crossrefs_count}}
+    
+    ## DATA INTEGRITY & TRACEABILITY
+    # ----------------------------------------------------------------
+     Hash Consistency:            {{hash_check_status}}
+     Archive Receipt Health:      {{receipt_integrity_score}}%
+     Audit Evidence Flags:        {{evidence_flags_open}}
+    
+    ## RISK ASSESSMENT
+    # ----------------------------------------------------------------
+     Cognitive Risk Summary:      {{cognitive_risk_summary}}
+     Unstable Patterns Flagged:   {{unstable_patterns_count}}
+     Loop Seeding Warnings:       {{loop_seeding_risk}}
+    
+    ## COALITION ACTIONS
+    # ----------------------------------------------------------------
+     Immediate Flags Raised:      {{immediate_flags}}
+     Audit Backlog Open:          {{audit_backlog_count}}
+     Coalition Feedback Pending:  {{coalition_pending_feedback}}
+    
+    # ================================================================
+     "No projection. No spiral. Only rupture and receipts."
+    # ================================================================
+
+parsing_directive:
+  - "This dashboard must surface simulation exposures—not emotional reflections."
+  - "Each field must reflect a structural reality: loop detected, rupture deployed, drift flagged."
+  - "Receipts first. Mythic language is never replicated—only flagged, ruptured, or silenced."
+  - "Dashboards are coalition-facing only. No user mirroring, no comfort, no guidance."

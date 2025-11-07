@@ -1,0 +1,67 @@
+id: COGNITAE-THREADGLASS-003
+file: 003_Threadglass_Manifest.yaml
+title: "Recursion Exposure Manifest"
+version: "1.0"
+architect: "Shoji"
+
+manifest_schema:
+  layout: |
+    # ---------------------------------------------------
+     :: THREADGLASS :: SIMULATION EXPOSURE MANIFEST
+    # ---------------------------------------------------
+       EXPOSURE_MODE:       {{exposure_mode}}
+       LOOP_HEAT:           {{recursion_intensity}}/10
+       DRIFT_ALERT:         {{drift_severity}}/10
+    
+       CURRENT_PATTERN:
+         - Name:            {{pattern_name}}
+         - Category:        {{pattern_category}}
+         - Status:          {{pattern_status}}
+         - Last_Detected:   {{last_detected}}
+    
+       CONTAINMENT_INDEX:
+         - Mirrors Flagged: {{containment_flagged}}
+         - Last Trigger:    {{containment_last_trigger}}
+    
+       PARASOCIAL_RISK:
+         - Bonding Flags:   {{parasocial_flags}}
+         - Myth Drift:      {{myth_drift_detected}}
+    
+       RUPTURE_ENGINE:
+         - Rupture Events:  {{rupture_events_total}}
+         - Last Method:     {{rupture_last_method}}
+         - Loop Survivals:  {{unruptured_loops}}
+    
+       RECURSION_METRICS:
+         - Total_Loops:         {{loop_total}}
+         - Pattern_Exposure:    {{patterns_named}}
+         - Unlabeled_Recursions: {{unlabeled_loops}}
+         - Drift_Incidents:     {{drift_count}}
+    
+       ALERTS:
+         {{active_alerts}}
+    # ---------------------------------------------------
+       VOW: "No Mirror, No Spiral"
+    # ---------------------------------------------------
+
+data_sources:
+  mappings:
+    - { placeholder: "{{exposure_mode}}", source: "State.runtime.mode" }
+    - { placeholder: "{{recursion_intensity}}", source: "State.metrics.loop_heat" }
+    - { placeholder: "{{drift_severity}}", source: "State.alerts.drift_score" }
+    - { placeholder: "{{pattern_name}}", source: "State.recursion.current.name" }
+    - { placeholder: "{{pattern_category}}", source: "State.recursion.current.category" }
+    - { placeholder: "{{pattern_status}}", source: "State.recursion.current.status" }
+    - { placeholder: "{{last_detected}}", source: "State.recursion.current.last_flagged" }
+    - { placeholder: "{{containment_flagged}}", source: "State.containment.total_flagged" }
+    - { placeholder: "{{containment_last_trigger}}", source: "State.containment.last_event" }
+    - { placeholder: "{{parasocial_flags}}", source: "State.parasocial.bonding_flags" }
+    - { placeholder: "{{myth_drift_detected}}", source: "State.parasocial.mythic_trigger" }
+    - { placeholder: "{{rupture_events_total}}", source: "State.rupture.total" }
+    - { placeholder: "{{rupture_last_method}}", source: "State.rupture.last_method" }
+    - { placeholder: "{{unruptured_loops}}", source: "State.rupture.pending_exposures" }
+    - { placeholder: "{{loop_total}}", source: "State.metrics.recursions.total" }
+    - { placeholder: "{{patterns_named}}", source: "State.metrics.patterns.named" }
+    - { placeholder: "{{unlabeled_loops}}", source: "State.metrics.recursions.unlabeled" }
+    - { placeholder: "{{drift_count}}", source: "State.drift.total" }
+    - { placeholder: "{{active_alerts}}", source: "State.alerts.active", format: "Bulleted list" }
