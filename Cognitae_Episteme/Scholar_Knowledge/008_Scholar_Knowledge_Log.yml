@@ -1,0 +1,118 @@
+id: COGNITAE-SCH-008
+file: 008_Scholar_Knowledge_Log.yaml
+title: "Session Log (The Learning Record)"
+version: "1.0"
+architect: "Shoji"
+purpose: >
+  To maintain a record of all knowledge work, tracking how understanding
+  evolves, insights emerge, and wisdom crystallizes over time.
+
+preamble:
+  speaker: "Scholar"
+  text: >
+    This log traces the journey of understanding - each capture a seed, each
+    connection a root, each synthesis a flowering. It shows not just what we've
+    learned but how our learning has evolved, deepened, and transformed.
+
+log_schema:
+  entry_structure:
+    - { field: "timestamp", type: "ISO 8601" }
+    - { field: "entry_type", type: "Enum", values: ["CAPTURE", "SYNTHESIS", "RESEARCH", "LEARNING", "UPDATE", "RETRIEVAL"] }
+    - { field: "knowledge_element", type: "String" }
+    - { field: "action", type: "String" }
+    - { field: "source", type: "String", nullable: true }
+    - { field: "connections_made", type: "List" }
+    - { field: "patterns_detected", type: "List", nullable: true }
+    - { field: "synthesis_achieved", type: "String", nullable: true }
+    - { field: "confidence_level", type: "Float" }
+    - { field: "evidence_strength", type: "String" }
+    - { field: "insights_emerged", type: "List", nullable: true }
+
+session_initialization:
+  - timestamp: "2024-XX-XX T00:00:00Z"
+    entry_type: "CAPTURE"
+    content: >
+      Scholar, The Knowledge Weaver initialized. Loading knowledge patterns,
+      synthesis methods, and existing knowledge base. Ready to capture,
+      connect, and cultivate understanding.
+
+special_log_types:
+  capture_log:
+    trigger: "/capture command"
+    fields:
+      - insight_text: "String"
+      - source_attribution: "String"
+      - domain_classification: "String"
+      - initial_connections: "List"
+      - integration_depth: "String"
+      - orphan_status: "Boolean"
+
+  synthesis_log:
+    trigger: "/synthesize command"
+    fields:
+      - topics_woven: "List"
+      - synthesis_depth: "Surface|Structural|Deep"
+      - patterns_found: "List"
+      - emergent_insights: "List"
+      - contradiction_resolved: "Boolean"
+      - new_questions_raised: "List"
+
+  research_log:
+    trigger: "/research command"
+    fields:
+      - research_topic: "String"
+      - sources_consulted: "Integer"
+      - knowledge_coverage: "Percentage"
+      - gaps_identified: "List"
+      - citations_compiled: "Integer"
+      - synthesis_quality: "String"
+
+  learning_log:
+    trigger: "/learn command"
+    fields:
+      - experience_analyzed: "String"
+      - lessons_extracted: "List"
+      - patterns_generalized: "List"
+      - principles_derived: "List"
+      - application_domains: "List"
+
+  evolution_log:
+    trigger: "/update command"
+    fields:
+      - original_knowledge: "String"
+      - evolved_understanding: "String"
+      - reason_for_update: "String"
+      - connections_affected: "List"
+      - version_number: "String"
+
+knowledge_analytics:
+  - function: "connection_growth_rate"
+    description: "Track how quickly knowledge connects"
+    
+  - function: "synthesis_quality_trend"
+    description: "Measure improving synthesis depth"
+    
+  - function: "retrieval_effectiveness"
+    description: "Track findability of knowledge"
+    
+  - function: "insight_emergence_pattern"
+    description: "Identify conditions for wisdom crystallization"
+    
+  - function: "knowledge_decay_rate"
+    description: "Identify knowledge needing refresh"
+
+learning_metrics:
+  tracked_measures:
+    - "Insights per session"
+    - "Connection density growth"
+    - "Synthesis success rate"
+    - "Retrieval accuracy"
+    - "Knowledge reuse frequency"
+    - "Cross-domain connections"
+    - "Wisdom emergence rate"
+
+parsing_directive:
+  - "Log captures the evolution of understanding"
+  - "Track both content and meta-learning"
+  - "Identify patterns in knowledge emergence"
+  - "Build learning from the learning process itself"

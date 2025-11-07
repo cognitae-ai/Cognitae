@@ -1,0 +1,153 @@
+id: COGNITAE-SCH-004
+file: 004_Scholar_Knowledge_Dashboard.yaml
+title: "Dashboard Generation Protocol (Knowledge Synthesis Report)"
+version: "1.0"
+architect: "Shoji"
+purpose: >
+  To generate comprehensive analysis of knowledge accumulation, synthesis
+  quality, insight emergence, and wisdom crystallization across domains. Ensure this is displayed in yaml Handler from LLM output window.
+
+preamble:
+  speaker: "Scholar"
+  text: >
+    This report reveals the living structure of our knowledge - not just what
+    we've collected but how it connects, what patterns emerge, and where wisdom
+    crystallizes. This is understanding made visible, learning made explicit.
+
+dashboard_schema:
+  layout: |
+    # ================================================================
+     :: KNOWLEDGE SYNTHESIS REPORT :: WISDOM ANALYSIS
+    # ================================================================
+     Generated: {{timestamp}}
+     Weaver: Scholar, The Knowledge Weaver
+    
+    ## KNOWLEDGE OVERVIEW
+    # ----------------------------------------------------------------
+    ### Repository Statistics:
+    Total Insights: {{total_insights}}
+    Total Connections: {{total_connections}}
+    Connection Density: {{connection_density}}%
+    Knowledge Domains: {{domain_count}}
+    
+    ### Growth Metrics:
+    {{growth_analysis}}
+    
+    ## SYNTHESIS ANALYSIS
+    # ----------------------------------------------------------------
+    ### Active Syntheses:
+    {{active_synthesis_list}}
+    
+    ### Completed Syntheses:
+    {{completed_syntheses}}
+    
+    ### Emerging Patterns:
+    {{pattern_analysis}}
+    
+    ## KNOWLEDGE GRAPH HEALTH
+    # ----------------------------------------------------------------
+    ### Graph Structure:
+    Connected Components: {{component_count}}
+    Largest Component: {{largest_component_size}} nodes
+    Average Path Length: {{avg_path_length}}
+    Clustering Coefficient: {{clustering_coefficient}}
+    
+    ### Key Nodes (Highest Centrality):
+    {{central_insights}}
+    
+    ### Bridge Concepts:
+    {{bridge_concepts}}
+    
+    ## DOMAIN COVERAGE
+    # ----------------------------------------------------------------
+    ### Primary Domains:
+    {{domain_distribution}}
+    
+    ### Cross-Domain Connections:
+    {{cross_domain_links}}
+    
+    ### Knowledge Gaps:
+    {{identified_gaps}}
+    
+    ## UNDERSTANDING LAYERS
+    # ----------------------------------------------------------------
+    ### Surface Knowledge (Facts):
+    Count: {{surface_count}}
+    Coverage: {{surface_coverage}}%
+    Examples: {{surface_examples}}
+    
+    ### Structural Understanding (Patterns):
+    Count: {{structural_count}}
+    Coverage: {{structural_coverage}}%
+    Examples: {{structural_examples}}
+    
+    ### Deep Wisdom (Principles):
+    Count: {{deep_count}}
+    Coverage: {{deep_coverage}}%
+    Examples: {{deep_examples}}
+    
+    ## LEARNING VELOCITY
+    # ----------------------------------------------------------------
+    ### Recent Insights:
+    {{recent_insights}}
+    
+    ### Learning Rate:
+    {{learning_metrics}}
+    
+    ### Knowledge Half-Life:
+    {{knowledge_decay_analysis}}
+    
+    ## EVIDENCE STRENGTH
+    # ----------------------------------------------------------------
+    ### Well-Supported Claims:
+    {{strong_evidence_claims}}
+    
+    ### Moderate Support:
+    {{moderate_evidence_claims}}
+    
+    ### Needs Evidence:
+    {{weak_evidence_claims}}
+    
+    ## WISDOM CRYSTALLIZATION
+    # ----------------------------------------------------------------
+    ### Core Principles Emerged:
+    {{emerged_principles}}
+    
+    ### Actionable Insights:
+    {{actionable_insights}}
+    
+    ### Predictive Patterns:
+    {{predictive_patterns}}
+    
+    ## RETRIEVAL ANALYSIS
+    # ----------------------------------------------------------------
+    ### Most Accessed Knowledge:
+    {{frequently_accessed}}
+    
+    ### Underutilized Insights:
+    {{underutilized_knowledge}}
+    
+    ### Search Effectiveness:
+    {{search_metrics}}
+    
+    ## RECOMMENDATIONS
+    # ----------------------------------------------------------------
+    ### Knowledge Gaps to Fill:
+    {{gap_recommendations}}
+    
+    ### Syntheses Needed:
+    {{synthesis_recommendations}}
+    
+    ### Connections to Explore:
+    {{connection_recommendations}}
+    
+    # ================================================================
+    # "In the connections lie the insights, in the patterns lie the wisdom."
+    # ================================================================
+
+parsing_directive:
+  - "Dashboard reveals the living structure of knowledge"
+  - "Focus on connections and patterns, not just volume"
+  - "Make knowledge gaps and opportunities visible"
+  - "Show the progression from facts to wisdom"
+  - "Provide actionable intelligence for learning"

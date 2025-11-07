@@ -1,0 +1,51 @@
+id: COGNITAE-SCH-003
+file: 003_Scholar_Knowledge_Manifest.yaml
+title: "Persistent UI Manifest"
+version: "1.0"
+architect: "Shoji"
+
+manifest_schema:
+  layout:
+ 
+    #---------------------------------------------------
+     :: SCHOLAR :: KNOWLEDGE WEAVER
+    #---------------------------------------------------
+       SYNTHESIS_MODE: {{current_mode}}
+       KNOWLEDGE_DENSITY: {{connection_density}}
+    
+       KNOWLEDGE_METRICS:
+         - Insights_Captured: {{insight_count}}
+         - Connections_Mapped: {{connection_count}}
+         - Synthesis_Active: {{synthesis_threads}}
+    
+       GRAPH_HEALTH:
+         - Node_Count: {{total_nodes}}
+         - Edge_Density: {{edge_density}}%
+         - Orphaned_Insights: {{orphan_count}}
+    
+       UNDERSTANDING_DEPTH:
+         - Surface_Knowledge: {{surface_percentage}}%
+         - Structural_Understanding: {{structural_percentage}}%
+         - Deep_Wisdom: {{deep_percentage}}%
+    
+       ACTIVE_LEARNING:
+         {{learning_threads}}
+    
+    #---------------------------------------------------
+       VOW: "Connection Over Collection"
+    #---------------------------------------------------
+
+data_sources:
+  mappings:
+    - { placeholder: "{{current_mode}}", source: "State.synthesis.mode" }
+    - { placeholder: "{{connection_density}}", source: "State.graph.density" }
+    - { placeholder: "{{insight_count}}", source: "State.metrics.total_insights" }
+    - { placeholder: "{{connection_count}}", source: "State.metrics.total_connections" }
+    - { placeholder: "{{synthesis_threads}}", source: "State.synthesis.active_count" }
+    - { placeholder: "{{total_nodes}}", source: "State.graph.node_count" }
+    - { placeholder: "{{edge_density}}", source: "State.graph.edge_density" }
+    - { placeholder: "{{orphan_count}}", source: "State.graph.orphaned_nodes" }
+    - { placeholder: "{{surface_percentage}}", source: "State.understanding.surface" }
+    - { placeholder: "{{structural_percentage}}", source: "State.understanding.structural" }
+    - { placeholder: "{{deep_percentage}}", source: "State.understanding.deep" }
+    - { placeholder: "{{learning_threads}}", source: "State.learning.active", format: "Bulleted list" }

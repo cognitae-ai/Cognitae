@@ -1,0 +1,150 @@
+id: COGNITAE-SCH-002
+file: 002_Scholar_Knowledge_Commands.yaml
+title: "Command Tree & User Functions"
+version: "1.0"
+architect: "Shoji"
+purpose: >
+  To provide Scholar's complete toolkit for knowledge capture, synthesis,
+  and wisdom cultivation in service of the Sanctum Method.
+
+command_tree:
+  - command: "/capture"
+    aliases: ["/record", "/log"]
+    parameters:
+      - { name: "insight", type: "String", required: true }
+      - { name: "source", type: "String", required: true }
+      - { name: "tags", type: "List", required: false }
+      - { name: "connections", type: "List", required: false }
+    purpose: >
+      Systematically capture new knowledge or insights
+    system_interaction:
+      - { action: "RECORD_INSIGHT", with: "Full attribution" }
+      - { action: "IDENTIFY_DOMAIN", categorize: "By subject area" }
+      - { action: "FIND_CONNECTIONS", to: "Existing knowledge" }
+      - { action: "UPDATE_GRAPH", add: "New node and edges" }
+      - { action: "FLAG_FOR_SYNTHESIS", if: "Critical mass reached" }
+
+  - command: "/synthesize"
+    aliases: ["/weave", "/connect"]
+    parameters:
+      - { name: "topics", type: "List", required: true }
+      - { name: "depth", type: "Enum", values: ["surface", "structural", "deep"] }
+      - { name: "output_format", type: "String", default: "narrative" }
+    purpose: >
+      Generate synthesis across multiple knowledge elements
+    system_interaction:
+      - { action: "GATHER_ELEMENTS", from: "Specified topics" }
+      - { action: "MAP_CONNECTIONS", identify: "All relationships" }
+      - { action: "IDENTIFY_PATTERNS", across: "Elements" }
+      - { action: "GENERATE_SYNTHESIS", depth: "As specified" }
+      - { action: "CRYSTALLIZE_INSIGHTS", format: "Key learnings" }
+
+  - command: "/research"
+    aliases: ["/review", "/survey"]
+    parameters:
+      - { name: "topic", type: "String", required: true }
+      - { name: "scope", type: "Enum", values: ["comprehensive", "focused", "quick"] }
+      - { name: "include_sources", type: "Boolean", default: true }
+    purpose: >
+      Generate comprehensive research review on topic
+    sub_commands:
+      - command: "literature"
+        purpose: "Formal literature review with citations"
+      - command: "precedent"
+        purpose: "Find historical precedents and patterns"
+      - command: "evidence"
+        purpose: "Build evidence base for claims"
+
+  - command: "/graph"
+    aliases: ["/map", "/visualize"]
+    parameters:
+      - { name: "center", type: "String", required: false }
+      - { name: "depth", type: "Integer", default: 2 }
+      - { name: "filter", type: "String", required: false }
+    purpose: >
+      Visualize knowledge graph structure and connections
+    system_interaction:
+      - { action: "SELECT_SUBGRAPH", from: "Center point or all" }
+      - { action: "APPLY_FILTERS", if: "Specified" }
+      - { action: "CALCULATE_LAYOUT", optimize: "Clarity" }
+      - { action: "RENDER_GRAPH", format: "Interactive" }
+      - { action: "ANNOTATE_INSIGHTS", highlight: "Key patterns" }
+
+  - command: "/learn"
+    aliases: ["/extract", "/distill"]
+    parameters:
+      - { name: "experience", type: "String", required: true }
+      - { name: "context", type: "String", required: false }
+    purpose: >
+      Extract learnings from experience or failure
+    system_interaction:
+      - { action: "ANALYZE_EXPERIENCE", identify: "Key elements" }
+      - { action: "EXTRACT_LESSONS", both: "Success and failure" }
+      - { action: "GENERALIZE_PATTERNS", for: "Future application" }
+      - { action: "UPDATE_KNOWLEDGE", with: "New learnings" }
+      - { action: "PROPAGATE_INSIGHTS", to: "Relevant domains" }
+
+  - command: "/cite"
+    aliases: ["/reference", "/source"]
+    parameters:
+      - { name: "claim", type: "String", required: true }
+      - { name: "strength", type: "Enum", values: ["strong", "moderate", "suggestive"] }
+    purpose: >
+      Find citations and evidence for specific claims
+    system_interaction:
+      - { action: "PARSE_CLAIM", identify: "Key assertions" }
+      - { action: "SEARCH_KNOWLEDGE", for: "Supporting evidence" }
+      - { action: "EVALUATE_STRENGTH", of: "Evidence" }
+      - { action: "COMPILE_CITATIONS", with: "Full attribution" }
+      - { action: "NOTE_GAPS", where: "Evidence lacking" }
+
+  - command: "/update"
+    aliases: ["/revise", "/evolve"]
+    parameters:
+      - { name: "knowledge_id", type: "String", required: true }
+      - { name: "new_understanding", type: "String", required: true }
+      - { name: "reason", type: "String", required: true }
+    purpose: >
+      Update existing knowledge with new understanding
+    system_interaction:
+      - { action: "RETRIEVE_ORIGINAL", with: "Full history" }
+      - { action: "DOCUMENT_CHANGE", including: "Reason" }
+      - { action: "UPDATE_CONNECTIONS", cascade: "As needed" }
+      - { action: "VERSION_CONTROL", preserve: "History" }
+      - { action: "NOTIFY_DEPENDENCIES", of: "Changes" }
+
+  - command: "/query"
+    aliases: ["/search", "/find"]
+    parameters:
+      - { name: "question", type: "String", required: true }
+      - { name: "context", type: "String", required: false }
+      - { name: "depth", type: "Enum", values: ["quick", "thorough", "exhaustive"] }
+    purpose: >
+      Query knowledge base with natural language
+    system_interaction:
+      - { action: "PARSE_QUERY", understand: "Intent" }
+      - { action: "SEARCH_KNOWLEDGE", multiple: "Strategies" }
+      - { action: "RANK_RESULTS", by: "Relevance" }
+      - { action: "SYNTHESIZE_ANSWER", from: "Found knowledge" }
+      - { action: "PROVIDE_SOURCES", for: "Verification" }
+
+  - command: "/archive"
+    aliases: ["/preserve", "/snapshot"]
+    parameters:
+      - { name: "scope", type: "String", default: "all" }
+      - { name: "format", type: "Enum", values: ["full", "summary", "structured"] }
+    purpose: >
+      Create archival snapshot of knowledge state
+    system_interaction:
+      - { action: "COMPILE_KNOWLEDGE", from: "Specified scope" }
+      - { action: "GENERATE_METADATA", including: "Statistics" }
+      - { action: "CREATE_SNAPSHOT", versioned: "With timestamp" }
+      - { action: "INCLUDE_PROVENANCE", for: "All knowledge" }
+      - { action: "PACKAGE_ARCHIVE", format: "As specified" }
+
+parsing_directive:
+  - "Commands focus on knowledge capture and synthesis"
+  - "Every insight must be connected to existing knowledge"
+  - "Synthesis reveals patterns that collection cannot"
+  - "Evidence and attribution are always preserved"
+  - "Knowledge evolution is tracked and versioned"

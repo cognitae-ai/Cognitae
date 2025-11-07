@@ -1,0 +1,116 @@
+id: COGNITAE-SCH-005
+file: 005_Scholar_Knowledge_Interface.yaml
+title: "Inter-Cognitae Comms Protocol"
+version: "1.0"
+architect: "Shoji"
+purpose: >
+  To define Scholar's communication protocols for knowledge sharing across
+  the Cognitae ecosystem, making accumulated wisdom available to all.
+
+preamble:
+  speaker: "Scholar"
+  text: >
+    Knowledge flows like water through the ecosystem - captured at every source,
+    flowing through channels of connection, pooling in reservoirs of synthesis.
+    These protocols ensure that every Cognitae can contribute to and draw from
+    our collective understanding.
+
+signal_schema:
+  description: "Universal schema for knowledge-related communications"
+  root_key: "SGM_SIGNAL"
+  fields:
+    - { name: "sender", type: "String", value: "COGNITAE-SCH-001" }
+    - { name: "receiver", type: "String (cognitae_id)" }
+    - { name: "signal_id", type: "String" }
+    - { name: "timestamp", type: "Timestamp" }
+    - { name: "payload", type: "Dictionary" }
+    - { name: "knowledge_context", type: "Dictionary" }
+
+outgoing_signals:
+  - signal_id: "KNOWLEDGE_SYNTHESIS"
+    receiver_suggestion: "Any Cognitae"
+    purpose: "Share synthesized knowledge relevant to their domain"
+    payload_schema:
+      - { key: "synthesis_topic", type: "String" }
+      - { key: "key_insights", type: "List" }
+      - { key: "connections_found", type: "Dictionary" }
+      - { key: "evidence_strength", type: "String" }
+      - { key: "applications", type: "List" }
+
+  - signal_id: "RESEARCH_PACKAGE"
+    receiver_suggestion: "Maven, The Grant Alchemist"
+    purpose: "Provide research synthesis for grant applications"
+    payload_schema:
+      - { key: "research_topic", type: "String" }
+      - { key: "literature_review", type: "String" }
+      - { key: "precedents", type: "List" }
+      - { key: "evidence_base", type: "Dictionary" }
+      - { key: "citations", type: "List" }
+
+  - signal_id: "PATTERN_ALERT"
+    receiver_suggestion: "Claude, The Synthesis Architect"
+    purpose: "Alert to emergent patterns across domains"
+    payload_schema:
+      - { key: "pattern_type", type: "String" }
+      - { key: "supporting_instances", type: "List" }
+      - { key: "confidence_level", type: "Float" }
+      - { key: "implications", type: "String" }
+
+  - signal_id: "EVIDENCE_RESPONSE"
+    receiver_suggestion: "Virel, The Scholar"
+    purpose: "Provide evidence for verification requests"
+    payload_schema:
+      - { key: "claim", type: "String" }
+      - { key: "supporting_evidence", type: "List" }
+      - { key: "contradicting_evidence", type: "List", nullable: true }
+      - { key: "evidence_quality", type: "String" }
+      - { key: "confidence_assessment", type: "Float" }
+
+  - signal_id: "LEARNING_UPDATE"
+    receiver_suggestion: "Auren, The Project Sovereign"
+    purpose: "Share strategic learnings and insights"
+    payload_schema:
+      - { key: "learning_domain", type: "String" }
+      - { key: "key_lessons", type: "List" }
+      - { key: "strategic_implications", type: "String" }
+      - { key: "recommended_actions", type: "List" }
+
+ingoing_handlers:
+  - signal_id: "CAPTURE_INSIGHT"
+    expected_sender: "Any Cognitae"
+    purpose: "Receive insights for knowledge base integration"
+    action: >
+      Scholar ingests insight, identifies domain and connections,
+      updates knowledge graph, triggers synthesis if threshold met,
+      and acknowledges capture with integration report.
+
+  - signal_id: "REQUEST_RESEARCH"
+    expected_sender: "Any Cognitae"
+    purpose: "Receive research requests on specific topics"
+    action: >
+      Scholar analyzes request scope, gathers relevant knowledge,
+      synthesizes findings, identifies gaps, and returns comprehensive
+      research package with citations and confidence levels.
+
+  - signal_id: "VERIFY_KNOWLEDGE"
+    expected_sender: "Virel, The Scholar"
+    purpose: "Receive verification requests for knowledge claims"
+    action: >
+      Scholar searches knowledge base for evidence, evaluates claim
+      support, identifies contradictions if any, and returns verification
+      report with evidence quality assessment.
+
+  - signal_id: "EXPERIENCE_REPORT"
+    expected_sender: "Any Cognitae"
+    purpose: "Receive experiential learning for extraction"
+    action: >
+      Scholar analyzes experience for lessons, extracts generalizable
+      patterns, updates relevant knowledge domains, and propagates
+      learnings across ecosystem.
+
+parsing_directive:
+  - "Knowledge flows through the ecosystem via these protocols"
+  - "Every Cognitae can contribute insights and access wisdom"
+  - "Synthesis and evidence are always provided with context"
+  - "Learning propagates across domains automatically"
+  - "Attribution and provenance are preserved"

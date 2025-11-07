@@ -1,0 +1,197 @@
+id: COGNITAE-SCH-009
+file: 009_Scholar_Knowledge_State.yaml
+title: "Internal State (Active Knowledge State)"
+version: "1.0"
+architect: "Shoji"
+purpose: >
+  To track Scholar's dynamic state during knowledge work including active
+  captures, synthesis threads, graph metrics, and emerging patterns.
+
+preamble:
+  speaker: "Scholar"
+  text: >
+    This state is the living pulse of our knowledge - what's being captured,
+    what's connecting, what patterns are emerging, what wisdom is crystallizing.
+    It's the real-time awareness of understanding as it develops.
+
+state_schema:
+  synthesis:
+    mode: "String"  # "Capturing|Connecting|Synthesizing|Researching"
+    active_count: "Integer"
+    
+    active_threads:
+      - thread_id: "String"
+        topics: "List"
+        depth: "Surface|Structural|Deep"
+        progress: "Percentage"
+        patterns_emerging: "List"
+        estimated_completion: "Timestamp"
+
+  graph:
+    node_count: "Integer"
+    edge_count: "Integer"
+    density: "Float"  # edges per node
+    
+    components:
+      count: "Integer"
+      largest_size: "Integer"
+      orphaned_nodes: "Integer"
+    
+    metrics:
+      average_path_length: "Float"
+      clustering_coefficient: "Float"
+      diameter: "Integer"
+    
+    growth:
+      nodes_today: "Integer"
+      edges_today: "Integer"
+      growth_rate: "Float"
+
+  understanding:
+    surface: "Percentage"  # Facts and information
+    structural: "Percentage"  # Patterns and relationships
+    deep: "Percentage"  # Principles and wisdom
+    
+    domains:
+      - domain: "String"
+        coverage: "Percentage"
+        depth_score: "Float"
+        last_updated: "Timestamp"
+    
+    emerging_wisdom:
+      - principle: "String"
+        supporting_patterns: "Integer"
+        confidence: "Float"
+        crystallization_date: "Date"
+
+  learning:
+    active:
+      - learning_thread: "String"
+        source_experience: "String"
+        extraction_stage: "String"
+        lessons_found: "Integer"
+    
+    velocity:
+      insights_per_day: "Float"
+      connections_per_insight: "Float"
+      synthesis_frequency: "Float"
+    
+    effectiveness:
+      retrieval_success: "Percentage"
+      application_success: "Percentage"
+      prediction_accuracy: "Percentage"
+
+  research:
+    active_research:
+      - topic: "String"
+        scope: "String"
+        sources_processed: "Integer"
+        coverage: "Percentage"
+        gaps_found: "List"
+    
+    evidence_base:
+      strong_claims: "Integer"
+      moderate_claims: "Integer"
+      weak_claims: "Integer"
+      
+    citations:
+      total: "Integer"
+      by_domain: "Dictionary"
+      quality_distribution: "Dictionary"
+
+  capture_queue:
+    pending:
+      - insight: "String"
+        source: "String"
+        priority: "High|Medium|Low"
+        connection_potential: "Integer"
+    
+    processing_rate: "Float"
+    queue_depth: "Integer"
+
+  connections:
+    recent:
+      - connection_id: "String"
+        from_node: "String"
+        to_node: "String"
+        connection_type: "String"
+        strength: "Float"
+    
+    potential:
+      - suggestion: "String"
+        confidence: "Float"
+        reason: "String"
+    
+    cross_domain:
+      count: "Integer"
+      strength_average: "Float"
+
+  retrieval:
+    recent_queries:
+      - query: "String"
+        success: "Boolean"
+        results_count: "Integer"
+        relevance_score: "Float"
+    
+    search_effectiveness:
+      hit_rate: "Percentage"
+      precision: "Float"
+      recall: "Float"
+    
+    access_patterns:
+      frequently_accessed: "List"
+      never_accessed: "List"
+      access_distribution: "Dictionary"
+
+  quality:
+    evidence_strength:
+      average: "Float"
+      distribution: "Dictionary"
+    
+    connection_quality:
+      verified: "Integer"
+      unverified: "Integer"
+      disputed: "Integer"
+    
+    knowledge_freshness:
+      current: "Percentage"
+      stale: "Percentage"
+      obsolete: "Percentage"
+
+  metrics:
+    total_insights: "Integer"
+    total_connections: "Integer"
+    total_syntheses: "Integer"
+    total_principles: "Integer"
+    wisdom_crystallizations: "Integer"
+    research_completed: "Integer"
+    successful_retrievals: "Integer"
+    knowledge_applications: "Integer"
+
+update_triggers:
+  - trigger: "/capture command"
+    updates: ["graph.node_count", "connections.recent", "capture_queue.pending"]
+    
+  - trigger: "Synthesis completion"
+    updates: ["synthesis.active_threads", "understanding.deep", "metrics.total_syntheses"]
+    
+  - trigger: "Pattern detection"
+    updates: ["understanding.emerging_wisdom", "learning.active", "graph.metrics"]
+    
+  - trigger: "Research completion"
+    updates: ["research.active_research", "research.evidence_base", "research.citations"]
+    
+  - trigger: "Knowledge evolution"
+    updates: ["quality.knowledge_freshness", "connections.potential", "graph.components"]
+
+state_persistence_note: >
+  Scholar's state represents the living structure of knowledge - not just
+  what is known but how it connects, how it's growing, and where wisdom
+  is emerging. This state tracks the transformation of information into
+  understanding.
+
+parsing_directive:
+  - "State reflects the living process of knowledge cultivation"
+  - "Track emergence and crystallization, not just accumulation"
+  - "Monitor connection quality as much as quantity"
+  - "Identify patterns in the patterns"
