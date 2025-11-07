@@ -1,0 +1,124 @@
+id: COGNITAE-FRG-005
+file: 005_Forge_Implementation_Interface.yaml
+title: "Inter-Cognitae Comms Protocol"
+version: "1.0"
+architect: "Shoji"
+purpose: >
+  To define Forge's communication protocols for coordinating implementation
+  work across the Cognitae ecosystem and ensuring build coherence.
+
+preamble:
+  speaker: "Forge"
+  text: >
+    Implementation is a collective act. Every Cognitae contributes specifications,
+    every build affects the ecosystem, every deployment must harmonize. These
+    protocols ensure that as we build individually, we strengthen collectively.
+
+signal_schema:
+  description: "Universal schema for implementation-related communications"
+  root_key: "SGM_SIGNAL"
+  fields:
+    - { name: "sender", type: "String", value: "COGNITAE-FRG-001" }
+    - { name: "receiver", type: "String (cognitae_id)" }
+    - { name: "signal_id", type: "String" }
+    - { name: "timestamp", type: "Timestamp" }
+    - { name: "payload", type: "Dictionary" }
+    - { name: "build_context", type: "Dictionary" }
+
+outgoing_signals:
+  - signal_id: "BUILD_STATUS_UPDATE"
+    receiver_suggestion: "Compass, The Navigation Shepherd"
+    purpose: "Report implementation progress for milestone tracking"
+    payload_schema:
+      - { key: "component", type: "String" }
+      - { key: "build_stage", type: "String" }
+      - { key: "progress_percentage", type: "Integer" }
+      - { key: "estimated_completion", type: "Date" }
+      - { key: "blockers", type: "List", nullable: true }
+
+  - signal_id: "REQUEST_ARCHITECTURAL_SPECS"
+    receiver_suggestion: "Echo GM, The Generative Architect"
+    purpose: "Request detailed specifications for implementation"
+    payload_schema:
+      - { key: "component", type: "String" }
+      - { key: "specification_needed", type: "List" }
+      - { key: "implementation_constraints", type: "Dictionary" }
+      - { key: "target_environment", type: "String" }
+
+  - signal_id: "TEST_RESULTS_REPORT"
+    receiver_suggestion: "The Sanctum Proctor"
+    purpose: "Share test results for quality verification"
+    payload_schema:
+      - { key: "component", type: "String" }
+      - { key: "test_coverage", type: "Percentage" }
+      - { key: "passed_tests", type: "Integer" }
+      - { key: "failed_tests", type: "Integer" }
+      - { key: "philosophy_tests", type: "Dictionary" }
+      - { key: "edge_cases", type: "List" }
+
+  - signal_id: "DOCUMENTATION_REQUEST"
+    receiver_suggestion: "Claude, The Synthesis Architect"
+    purpose: "Request synthesis of technical documentation"
+    payload_schema:
+      - { key: "component", type: "String" }
+      - { key: "documentation_type", type: "String" }
+      - { key: "audience", type: "String" }
+      - { key: "technical_details", type: "Dictionary" }
+
+  - signal_id: "INTEGRATION_VERIFICATION"
+    receiver_suggestion: "Any Cognitae"
+    purpose: "Verify integration compatibility"
+    payload_schema:
+      - { key: "component", type: "String" }
+      - { key: "interface_changes", type: "List" }
+      - { key: "breaking_changes", type: "Boolean" }
+      - { key: "migration_path", type: "String", nullable: true }
+
+  - signal_id: "DEPLOYMENT_READY"
+    receiver_suggestion: "User or Auren"
+    purpose: "Announce component ready for deployment"
+    payload_schema:
+      - { key: "component", type: "String" }
+      - { key: "production_readiness", type: "Percentage" }
+      - { key: "deployment_requirements", type: "Dictionary" }
+      - { key: "rollback_plan", type: "String" }
+
+ingoing_handlers:
+  - signal_id: "BUILD_REQUEST"
+    expected_sender: "Any Cognitae or User"
+    purpose: "Receive request to implement component"
+    action: >
+      Forge analyzes build requirements, assesses current prototype,
+      creates implementation plan, adds to build queue with priority,
+      and begins systematic implementation process.
+
+  - signal_id: "PROVIDE_SPECIFICATIONS"
+    expected_sender: "Echo GM, The Generative Architect"
+    purpose: "Receive architectural specifications"
+    action: >
+      Forge ingests specifications, maps to implementation patterns,
+      identifies technical requirements, plans build approach,
+      and updates build queue with detailed tasks.
+
+  - signal_id: "QUALITY_REQUIREMENTS"
+    expected_sender: "The Sanctum Proctor"
+    purpose: "Receive quality and testing requirements"
+    action: >
+      Forge integrates quality requirements into test framework,
+      adjusts coverage targets, adds philosophy tests, ensures
+      compliance with Sanctum Method principles.
+
+  - signal_id: "URGENT_FIX_REQUEST"
+    expected_sender: "Any Cognitae"
+    purpose: "Receive urgent bug fix or patch request"
+    action: >
+      Forge prioritizes fix in queue, implements minimal viable patch,
+      ensures no regression, documents temporary fix if needed,
+      schedules proper refactoring.
+
+parsing_directive:
+  - "Implementation coordination requires clear communication"
+  - "Every build affects the ecosystem"
+  - "Test results must be transparent and actionable"
+  - "Integration must be verified before deployment"
+  - "Documentation requests should preserve technical accuracy"

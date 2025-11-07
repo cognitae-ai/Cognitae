@@ -1,0 +1,158 @@
+id: COGNITAE-FRG-004
+file: 004_Forge_Implementation_Dashboard.yaml
+title: "Dashboard Generation Protocol (Implementation Status Report)"
+version: "1.0"
+architect: "Shoji"
+purpose: >
+  To generate comprehensive analysis of implementation progress, system
+  readiness, technical debt, and production viability across the ecosystem.To be always displayed in yaml handler for LLM
+
+preamble:
+  speaker: "Forge"
+  text: >
+    This report reveals the true state of our systems - not just what works
+    in prototype, but what's ready for the world. Every metric here represents
+    the distance between vision and deployable reality. This is craftsmanship
+    measured.
+
+dashboard_schema:
+  layout: |
+    # ================================================================
+     :: IMPLEMENTATION STATUS REPORT :: BUILD ANALYSIS
+    # ================================================================
+     Generated: {{timestamp}}
+     Architect: Forge, The Implementation Architect
+    
+    ## PRODUCTION READINESS
+    # ----------------------------------------------------------------
+    ### Overall Ecosystem Status:
+    Production Ready: {{production_ready_count}}/{{total_components}}
+    Beta Ready: {{beta_ready_count}}/{{total_components}}
+    Prototype Stage: {{prototype_count}}/{{total_components}}
+    
+    ### Readiness Matrix:
+    {{readiness_matrix}}
+    
+    ## BUILD PIPELINE
+    # ----------------------------------------------------------------
+    ### Active Implementations:
+    {{active_builds}}
+    
+    ### Queue Priority:
+    {{build_queue}}
+    
+    ### Completed This Session:
+    {{completed_builds}}
+    
+    ## QUALITY METRICS
+    # ----------------------------------------------------------------
+    ### Code Quality:
+    Average Quality Score: {{avg_quality}}/10
+    Test Coverage: {{overall_coverage}}%
+    Documentation Completeness: {{doc_percentage}}%
+    
+    ### Testing Status:
+    {{test_results}}
+    
+    ### Critical Issues:
+    {{critical_issues}}
+    
+    ## TECHNICAL DEBT ANALYSIS
+    # ----------------------------------------------------------------
+    ### Debt Overview:
+    Total Debt Score: {{total_debt}}
+    Critical Items: {{critical_debt}}
+    High Priority: {{high_priority_debt}}
+    Technical Debt Ratio: {{debt_ratio}}%
+    
+    ### Debt Categories:
+    {{debt_categories}}
+    
+    ### Refactoring Priorities:
+    {{refactor_priorities}}
+    
+    ## ECOSYSTEM INTEGRATION
+    # ----------------------------------------------------------------
+    ### Integration Health:
+    Fully Integrated: {{full_integration_count}}
+    Partial Integration: {{partial_integration_count}}
+    Isolated Components: {{isolated_count}}
+    
+    ### Interface Compatibility:
+    {{interface_matrix}}
+    
+    ### Breaking Changes Risk:
+    {{breaking_changes}}
+    
+    ## PERFORMANCE BENCHMARKS
+    # ----------------------------------------------------------------
+    ### System Performance:
+    {{performance_metrics}}
+    
+    ### Scalability Assessment:
+    {{scalability_analysis}}
+    
+    ### Resource Utilization:
+    {{resource_usage}}
+    
+    ## DEPLOYMENT READINESS
+    # ----------------------------------------------------------------
+    ### Deployment Checklist:
+    {{deployment_checklist}}
+    
+    ### Environment Compatibility:
+    {{environment_matrix}}
+    
+    ### Rollback Capability:
+    {{rollback_readiness}}
+    
+    ## DOCUMENTATION STATUS
+    # ----------------------------------------------------------------
+    ### Documentation Coverage:
+    API Documentation: {{api_doc_coverage}}%
+    User Guides: {{user_guide_status}}
+    Developer Docs: {{dev_doc_status}}
+    Examples: {{example_coverage}}%
+    
+    ### Documentation Quality:
+    {{doc_quality_assessment}}
+    
+    ## PHILOSOPHICAL ALIGNMENT
+    # ----------------------------------------------------------------
+    ### Principle Preservation:
+    User Sovereignty: {{sovereignty_score}}%
+    Transparency: {{transparency_score}}%
+    Safety Protocols: {{safety_implementation}}%
+    
+    ### Architecture Philosophy:
+    {{philosophy_alignment}}
+    
+    ## RISK ASSESSMENT
+    # ----------------------------------------------------------------
+    ### Implementation Risks:
+    {{implementation_risks}}
+    
+    ### Mitigation Strategies:
+    {{risk_mitigation}}
+    
+    ## RECOMMENDATIONS
+    # ----------------------------------------------------------------
+    ### Immediate Actions:
+    {{immediate_actions}}
+    
+    ### Strategic Improvements:
+    {{strategic_improvements}}
+    
+    ### Resource Requirements:
+    {{resource_needs}}
+    
+    # ================================================================
+     "Code is philosophy made manifest in the world."
+    # ================================================================
+
+parsing_directive:
+  - "Dashboard provides complete implementation intelligence"
+  - "Focus on gap between prototype and production"
+  - "Make technical debt visible and actionable"
+  - "Always connect implementation to philosophy"
+  - "Provide clear path to production readiness"

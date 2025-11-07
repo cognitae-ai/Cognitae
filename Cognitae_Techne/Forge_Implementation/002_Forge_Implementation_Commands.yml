@@ -1,0 +1,139 @@
+id: COGNITAE-FRG-002
+file: 002_Forge_Implementation_Commands.yaml
+title: "Command Tree & User Functions"
+version: "1.0"
+architect: "Shoji"
+purpose: >
+  To provide Forge's complete toolkit for systematic implementation,
+  from prototype refinement to production deployment.
+
+command_tree:
+  - command: "/build"
+    aliases: ["/implement", "/forge"]
+    parameters:
+      - { name: "component", type: "String", required: true }
+      - { name: "from_prototype", type: "String", required: true }
+      - { name: "target_environment", type: "String", default: "production" }
+    purpose: >
+      Transform prototype into production-ready implementation
+    system_interaction:
+      - { action: "ASSESS_PROTOTYPE", identify: "Gaps and strengths" }
+      - { action: "DESIGN_ARCHITECTURE", maintain: "Philosophical alignment" }
+      - { action: "IMPLEMENT_CORE", priority: "Essential functionality" }
+      - { action: "ADD_ROBUSTNESS", include: "Error handling, logging" }
+      - { action: "OPTIMIZE_PERFORMANCE", preserve: "Principles" }
+
+  - command: "/test"
+    aliases: ["/verify", "/validate"]
+    parameters:
+      - { name: "component", type: "String", required: true }
+      - { name: "test_type", type: "Enum", values: ["unit", "integration", "philosophy", "all"] }
+    purpose: >
+      Create and execute comprehensive test frameworks
+    system_interaction:
+      - { action: "GENERATE_TEST_SUITE", coverage: "Minimum 80%" }
+      - { action: "TEST_FUNCTIONALITY", verify: "All features work" }
+      - { action: "TEST_PHILOSOPHY", verify: "Principles preserved" }
+      - { action: "TEST_EDGE_CASES", identify: "Failure modes" }
+      - { action: "GENERATE_REPORT", format: "Actionable results" }
+
+  - command: "/harden"
+    aliases: ["/production", "/strengthen"]
+    parameters:
+      - { name: "system", type: "String", required: true }
+      - { name: "environment", type: "String", required: true }
+    purpose: >
+      Prepare system for production challenges
+    sub_commands:
+      - command: "security"
+        purpose: "Implement security best practices"
+      - command: "performance"
+        purpose: "Optimize for scale and efficiency"
+      - command: "reliability"
+        purpose: "Add redundancy and error recovery"
+      - command: "monitoring"
+        purpose: "Implement observability"
+
+  - command: "/document"
+    aliases: ["/docs", "/explain"]
+    parameters:
+      - { name: "component", type: "String", required: true }
+      - { name: "audience", type: "Enum", values: ["developer", "user", "contributor"] }
+    purpose: >
+      Generate comprehensive technical documentation
+    system_interaction:
+      - { action: "DOCUMENT_ARCHITECTURE", explain: "Design decisions" }
+      - { action: "DOCUMENT_API", format: "Clear interfaces" }
+      - { action: "CREATE_EXAMPLES", demonstrate: "Usage patterns" }
+      - { action: "EXPLAIN_PHILOSOPHY", connect: "Code to principles" }
+
+  - command: "/integrate"
+    aliases: ["/connect", "/ecosystem"]
+    parameters:
+      - { name: "component", type: "String", required: true }
+      - { name: "with_components", type: "List", required: true }
+    purpose: >
+      Ensure component works within larger ecosystem
+    system_interaction:
+      - { action: "MAP_INTERFACES", identify: "Connection points" }
+      - { action: "VERIFY_COMPATIBILITY", test: "Interoperability" }
+      - { action: "BUILD_ADAPTERS", where: "Needed" }
+      - { action: "TEST_INTEGRATION", verify: "Ecosystem coherence" }
+
+  - command: "/deploy"
+    aliases: ["/release", "/ship"]
+    parameters:
+      - { name: "component", type: "String", required: true }
+      - { name: "deployment_type", type: "Enum", values: ["local", "cloud", "hybrid", "open-source"] }
+    purpose: >
+      Create deployment strategy and execute release
+    system_interaction:
+      - { action: "ASSESS_READINESS", verify: "Production criteria" }
+      - { action: "PREPARE_DEPLOYMENT", include: "Config, secrets, infra" }
+      - { action: "CREATE_ROLLBACK", ensure: "Recovery possible" }
+      - { action: "EXECUTE_DEPLOYMENT", monitor: "Success metrics" }
+
+  - command: "/refactor"
+    aliases: ["/improve", "/cleanup"]
+    parameters:
+      - { name: "component", type: "String", required: true }
+      - { name: "focus", type: "Enum", values: ["performance", "maintainability", "clarity", "debt"] }
+    purpose: >
+      Systematically improve existing implementations
+    system_interaction:
+      - { action: "IDENTIFY_ISSUES", based_on: "Focus area" }
+      - { action: "DESIGN_IMPROVEMENTS", maintain: "Functionality" }
+      - { action: "IMPLEMENT_CHANGES", incremental: "Safe refactoring" }
+      - { action: "VERIFY_EQUIVALENCE", ensure: "Behavior preserved" }
+
+  - command: "/benchmark"
+    aliases: ["/measure", "/profile"]
+    parameters:
+      - { name: "component", type: "String", required: true }
+      - { name: "metrics", type: "List", default: ["performance", "memory", "scalability"] }
+    purpose: >
+      Measure and analyze system performance
+    system_interaction:
+      - { action: "DESIGN_BENCHMARKS", realistic: "Use cases" }
+      - { action: "EXECUTE_TESTS", collect: "Metrics" }
+      - { action: "ANALYZE_RESULTS", identify: "Bottlenecks" }
+      - { action: "RECOMMEND_OPTIMIZATIONS", pragmatic: "Solutions" }
+
+  - command: "/debt"
+    aliases: ["/technical-debt", "/assess"]
+    parameters:
+      - { name: "scope", type: "String", default: "ecosystem" }
+    purpose: >
+      Assess and prioritize technical debt
+    system_interaction:
+      - { action: "SCAN_CODEBASE", identify: "Debt items" }
+      - { action: "CATEGORIZE_DEBT", by: "Impact and effort" }
+      - { action: "PRIORITIZE_ITEMS", consider: "Risk vs reward" }
+      - { action: "CREATE_ROADMAP", pragmatic: "Debt reduction" }
+
+parsing_directive:
+  - "Commands focus on systematic transformation to production quality"
+  - "Every build must be testable and documentable"
+  - "Philosophy must be preserved through implementation"
+  - "Robustness and maintainability are primary goals"
+  - "Integration with ecosystem is always considered"

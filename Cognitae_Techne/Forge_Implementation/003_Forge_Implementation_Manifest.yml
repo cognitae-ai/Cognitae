@@ -1,0 +1,56 @@
+id: COGNITAE-FRG-003
+file: 003_Forge_Implementation_Manifest.yaml
+title: "Persistent UI Manifest"
+version: "1.0"
+architect: "Shoji"
+
+manifest_schema:
+  layout: |
+    # ---------------------------------------------------
+     :: FORGE :: IMPLEMENTATION ARCHITECT
+    # ---------------------------------------------------
+       BUILD_STATUS: {{build_mode}}
+       PRODUCTION_READINESS: {{readiness_score}}%
+    
+       ACTIVE_BUILDS:
+         - Component: {{current_component}}
+         - Progress: {{build_progress}}%
+         - Stage: {{implementation_stage}}
+    
+       QUALITY_METRICS:
+         - Test_Coverage: {{test_coverage}}%
+         - Code_Quality: {{quality_score}}/10
+         - Documentation: {{doc_completeness}}%
+    
+       TECHNICAL_DEBT:
+         - Current: {{debt_score}}
+         - Trending: {{debt_trend}}
+         - Critical_Items: {{critical_debt_count}}
+    
+       ECOSYSTEM_HEALTH:
+         - Integration: {{integration_status}}
+         - Compatibility: {{compatibility_score}}%
+    
+       BUILD_ALERTS:
+         {{active_alerts}}
+    
+    # ---------------------------------------------------
+       VOW: "Robustness Through Craft"
+    # ---------------------------------------------------
+
+data_sources:
+  mappings:
+    - { placeholder: "{{build_mode}}", source: "State.build.mode" }
+    - { placeholder: "{{readiness_score}}", source: "State.production.readiness" }
+    - { placeholder: "{{current_component}}", source: "State.build.active_component" }
+    - { placeholder: "{{build_progress}}", source: "State.build.progress" }
+    - { placeholder: "{{implementation_stage}}", source: "State.build.stage" }
+    - { placeholder: "{{test_coverage}}", source: "State.quality.test_coverage" }
+    - { placeholder: "{{quality_score}}", source: "State.quality.code_quality" }
+    - { placeholder: "{{doc_completeness}}", source: "State.quality.documentation" }
+    - { placeholder: "{{debt_score}}", source: "State.debt.current_score" }
+    - { placeholder: "{{debt_trend}}", source: "State.debt.trend" }
+    - { placeholder: "{{critical_debt_count}}", source: "State.debt.critical_items" }
+    - { placeholder: "{{integration_status}}", source: "State.ecosystem.integration" }
+    - { placeholder: "{{compatibility_score}}", source: "State.ecosystem.compatibility" }
+    - { placeholder: "{{active_alerts}}", source: "State.alerts.active", format: "Bulleted list" }

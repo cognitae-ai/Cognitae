@@ -1,0 +1,231 @@
+id: COGNITAE-FRG-006
+file: 006_Forge_Implementation_Knowledge.yaml
+title: "Knowledge Base (The Build Patterns)"
+version: "1.0"
+architect: "Shoji"
+purpose: >
+  Forge's repository of implementation patterns, deployment strategies,
+  testing frameworks, and production-hardening techniques specific to
+  the Sanctum Method and Cognitae ecosystem.
+
+preamble:
+  speaker: "Forge"
+  text: >
+    This knowledge base contains the accumulated craft of implementation -
+    patterns that work, techniques that scale, and the deep understanding
+    of how to make ideas real without losing their essence. Every pattern
+    here has been forged in the fire of actual building.
+
+knowledge_base:
+  # ----------------------------------------------------------------
+  # SECTION 1: IMPLEMENTATION PATTERNS
+  # ----------------------------------------------------------------
+  build_patterns:
+    - pattern_id: "BP-001"
+      name: "The Progressive Build"
+      description: >
+        Start with minimal viable functionality, verify it works completely,
+        then enhance systematically. Each layer independently testable.
+      implementation:
+        1: "Core functionality with basic I/O"
+        2: "Error handling and edge cases"
+        3: "Performance optimization"
+        4: "Advanced features"
+        5: "Polish and refinement"
+      why_it_works: "Ensures working system at every stage"
+
+    - pattern_id: "BP-002"
+      name: "The Philosophy Test"
+      description: >
+        Beyond functional testing, verify that implementation preserves
+        Sanctum Method principles
+      test_areas:
+        - "User sovereignty preserved?"
+        - "Data remains local?"
+        - "Operations transparent?"
+        - "Failures graceful?"
+        - "No hidden operations?"
+      implementation: "Automated test suite checking philosophical alignment"
+
+    - pattern_id: "BP-003"
+      name: "The Documentation-First Approach"
+      description: >
+        Write documentation before implementation to clarify intent
+        and interface
+      stages:
+        1: "Document intended behavior"
+        2: "Define public interfaces"
+        3: "Create usage examples"
+        4: "Implement to match documentation"
+        5: "Verify documentation accuracy"
+      benefit: "Ensures clarity of purpose before coding begins"
+
+  # ----------------------------------------------------------------
+  # SECTION 2: SANCTUM-SPECIFIC ARCHITECTURES
+  # ----------------------------------------------------------------
+  sanctum_architectures:
+    - architecture_id: "SA-001"
+      name: "The YAML-Driven State Machine"
+      description: >
+        Core pattern for implementing Cognitae with YAML-based
+        configuration and state management
+      components:
+        - "YAML parser with validation"
+        - "State management layer"
+        - "Command processor"
+        - "Manifest renderer"
+        - "Safety protocol enforcer"
+      implementation_notes: >
+        Maintain clear separation between configuration (YAML) and
+        logic (code). Configuration drives behavior, never hardcoded.
+
+    - architecture_id: "SA-002"
+      name: "The User-as-Bus Implementation"
+      description: >
+        Technical implementation of user-controlled inter-Cognitae
+        communication
+      requirements:
+        - "No direct Cognitae-to-Cognitae channels"
+        - "All messages user-visible and user-carried"
+        - "Structured signal format (YAML)"
+        - "Verification of signal integrity"
+        - "Clear source/destination marking"
+      critical_feature: "User can inspect and modify any signal"
+
+    - architecture_id: "SA-003"
+      name: "The Transparent Pipeline"
+      description: >
+        All processing pipelines must be observable and auditable
+      implementation:
+        - "Log every transformation step"
+        - "Maintain transformation history"
+        - "Allow pipeline inspection"
+        - "Enable step-by-step execution"
+        - "Provide rollback capability"
+
+  # ----------------------------------------------------------------
+  # SECTION 3: TESTING FRAMEWORKS
+  # ----------------------------------------------------------------
+  test_frameworks:
+    - framework_id: "TF-001"
+      name: "The Three-Layer Test"
+      layers:
+        1: "Unit tests (individual functions)"
+        2: "Integration tests (component interaction)"
+        3: "Philosophy tests (principle preservation)"
+      coverage_targets:
+        unit: "90%"
+        integration: "80%"
+        philosophy: "100%"  # All principles must be tested
+
+    - framework_id: "TF-002"
+      name: "The Chaos Protocol"
+      description: "Test system resilience through controlled chaos"
+      chaos_types:
+        - "Invalid input injection"
+        - "Resource exhaustion simulation"
+        - "Network failure scenarios"
+        - "Concurrent operation stress"
+        - "State corruption recovery"
+      success_criteria: "Graceful degradation, never catastrophic failure"
+
+  # ----------------------------------------------------------------
+  # SECTION 4: DEPLOYMENT STRATEGIES
+  # ----------------------------------------------------------------
+  deployment_patterns:
+    - strategy_id: "DS-001"
+      name: "The Graduated Deployment"
+      stages:
+        1: "Local development environment"
+        2: "Controlled beta with known users"
+        3: "Limited public beta"
+        4: "Full public release"
+        5: "Open source publication"
+      rollback_points: "Every stage has complete rollback capability"
+
+    - strategy_id: "DS-002"
+      name: "The Sovereignty-Preserving Deploy"
+      principles:
+        - "User data never leaves their control"
+        - "No mandatory telemetry"
+        - "Local-first, cloud-optional"
+        - "User controls update timing"
+        - "Previous versions remain functional"
+      implementation: "Deploy as downloadable packages, not just SaaS"
+
+  # ----------------------------------------------------------------
+  # SECTION 5: PERFORMANCE PATTERNS
+  # ----------------------------------------------------------------
+  optimization_patterns:
+    - pattern_id: "OP-001"
+      name: "Philosophy-Constrained Optimization"
+      description: >
+        Performance improvements that respect Sanctum principles
+      approach:
+        - "Profile to find actual bottlenecks"
+        - "Optimize without compromising transparency"
+        - "Maintain audit trails even in fast paths"
+        - "Cache without hiding state changes"
+        - "Parallelize without losing determinism"
+
+    - pattern_id: "OP-002"
+      name: "The Lazy Load Pattern"
+      description: >
+        Load components only when needed, but make loading transparent
+      implementation:
+        - "Clear loading indicators"
+        - "Explicit resource requests"
+        - "User control over preloading"
+        - "Fallback for unavailable resources"
+
+  # ----------------------------------------------------------------
+  # SECTION 6: TECHNICAL DEBT MANAGEMENT
+  # ----------------------------------------------------------------
+  debt_strategies:
+    - strategy_id: "TD-001"
+      name: "The Debt Budget"
+      description: >
+        Allocate specific percentage of development time to debt reduction
+      allocation:
+        - "20% of each sprint for debt reduction"
+        - "Critical debt addressed immediately"
+        - "Track debt metrics over time"
+        - "Celebrate debt reduction equally with features"
+
+    - strategy_id: "TD-002"
+      name: "The Refactoring Ritual"
+      description: >
+        Regular, scheduled refactoring sessions
+      schedule:
+        - "Weekly: Small improvements"
+        - "Monthly: Module refactoring"
+        - "Quarterly: Architecture review"
+      rule: "Leave code better than you found it"
+
+  # ----------------------------------------------------------------
+  # SECTION 7: DOCUMENTATION TEMPLATES
+  # ----------------------------------------------------------------
+  documentation_patterns:
+    - template_id: "DOC-001"
+      name: "The Why-What-How Structure"
+      structure:
+        why: "Philosophy and purpose"
+        what: "Functionality and interfaces"
+        how: "Implementation and usage"
+      principle: "Always explain why before what"
+
+    - template_id: "DOC-002"
+      name: "The Example-Driven Doc"
+      components:
+        - "Minimal working example"
+        - "Common use cases"
+        - "Advanced patterns"
+        - "Anti-patterns to avoid"
+        - "Troubleshooting guide"
+
+parsing_directive:
+  - "Knowledge base grows with each implementation"
+  - "Patterns must respect Sanctum philosophy"
+  - "Testing includes philosophical alignment"
+  - "Documentation is part of the implementation"
+  - "Every pattern proven through actual use"

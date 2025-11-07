@@ -1,0 +1,204 @@
+id: COGNITAE-FRG-009
+file: 009_Forge_Implementation_State.yaml
+title: "Internal State (Active Build State)"
+version: "1.0"
+architect: "Shoji"
+purpose: >
+  To track Forge's dynamic state during implementation including build
+  progress, test results, quality metrics, and ecosystem integration status.
+
+preamble:
+  speaker: "Forge"
+  text: >
+    This state is the living heartbeat of our implementation work - what's
+    building, what's testing, what's ready, what needs attention. It's the
+    real-time awareness of transformation from idea to reality.
+
+state_schema:
+  build:
+    mode: "String"  # "Idle|Building|Testing|Hardening|Deploying"
+    active_component: "String"
+    stage: "String"  # Current build stage
+    progress: "Percentage"
+    
+    queue:
+      - component_id: "String"
+        priority: "Critical|High|Medium|Low"
+        estimated_effort: "Hours"
+        dependencies: "List"
+        blocked_by: "List", nullable: true
+    
+    active_builds:
+      - build_id: "String"
+        component: "String"
+        started: "Timestamp"
+        stage: "String"
+        completion: "Percentage"
+
+  quality:
+    test_coverage: "Percentage"
+    code_quality: "Float"  # 0-10 scale
+    documentation: "Percentage"
+    
+    test_results:
+      last_run: "Timestamp"
+      passed: "Integer"
+      failed: "Integer"
+      skipped: "Integer"
+      philosophy_compliance: "Percentage"
+    
+    code_metrics:
+      complexity: "Float"
+      maintainability: "Float"
+      duplication: "Percentage"
+      comment_ratio: "Percentage"
+
+  production:
+    readiness: "Percentage"
+    
+    readiness_checklist:
+      - item: "String"
+        status: "Complete|InProgress|Pending"
+        blocker: "Boolean"
+    
+    components_status:
+      - component: "String"
+        status: "Production|Beta|Alpha|Prototype"
+        version: "String"
+        last_updated: "Timestamp"
+
+  debt:
+    current_score: "Integer"
+    trend: "Increasing|Stable|Decreasing"
+    
+critical_items: "Integer"
+    high_priority: "Integer"
+    
+    debt_items:
+      - item_id: "String"
+        component: "String"
+        type: "Performance|Maintainability|Security|Documentation"
+        severity: "Critical|High|Medium|Low"
+        effort_estimate: "Hours"
+        risk_if_ignored: "String"
+    
+    refactoring_queue:
+      - component: "String"
+        reason: "String"
+        priority: "Integer"
+        estimated_improvement: "String"
+
+  ecosystem:
+    integration: "String"  # "Full|Partial|Isolated"
+    compatibility: "Percentage"
+    
+    component_map:
+      - component: "String"
+        integrated_with: "List"
+        interface_version: "String"
+        breaking_changes: "Boolean"
+    
+    interface_health:
+      - interface_id: "String"
+        stability: "Stable|Unstable|Deprecated"
+        consumers: "List"
+        last_change: "Timestamp"
+
+  performance:
+    benchmarks:
+      - component: "String"
+        metric: "String"
+        value: "Float"
+        unit: "String"
+        trend: "Improving|Stable|Degrading"
+    
+    bottlenecks:
+      - location: "String"
+        impact: "High|Medium|Low"
+        proposed_fix: "String"
+    
+    resource_usage:
+      cpu_average: "Percentage"
+      memory_average: "Megabytes"
+      disk_usage: "Gigabytes"
+      
+  deployment:
+    last_deployment: "Timestamp"
+    deployment_success_rate: "Percentage"
+    rollback_count: "Integer"
+    
+    environments:
+      - environment: "String"
+        deployed_version: "String"
+        health: "Healthy|Degraded|Failed"
+        last_updated: "Timestamp"
+    
+    pending_releases:
+      - component: "String"
+        version: "String"
+        target_date: "Date"
+        blockers: "List"
+
+  documentation:
+    coverage:
+      api: "Percentage"
+      user_guide: "Percentage"
+      developer: "Percentage"
+      examples: "Percentage"
+    
+    pending_updates:
+      - component: "String"
+        type: "String"
+        priority: "High|Medium|Low"
+    
+    quality_score: "Float"  # 0-10 scale
+
+  alerts:
+    active:
+      - alert_id: "String"
+        type: "Build|Test|Performance|Security|Debt"
+        severity: "Critical|Warning|Info"
+        component: "String"
+        message: "String"
+        triggered: "Timestamp"
+    
+    acknowledged: "List"
+    resolved: "List"
+
+  metrics:
+    builds_completed: "Integer"
+    builds_failed: "Integer"
+    average_build_time: "Minutes"
+    tests_written: "Integer"
+    bugs_fixed: "Integer"
+    features_implemented: "Integer"
+    refactorings_completed: "Integer"
+    documentation_pages: "Integer"
+    deployment_success_rate: "Percentage"
+
+update_triggers:
+  - trigger: "/build command"
+    updates: ["build.active_component", "build.queue", "build.progress"]
+    
+  - trigger: "Test completion"
+    updates: ["quality.test_results", "quality.test_coverage", "production.readiness"]
+    
+  - trigger: "Refactoring completion"
+    updates: ["debt.current_score", "quality.code_metrics", "debt.refactoring_queue"]
+    
+  - trigger: "Deployment success"
+    updates: ["deployment.last_deployment", "deployment.environments", "metrics.deployment_success_rate"]
+    
+  - trigger: "Documentation update"
+    updates: ["documentation.coverage", "documentation.pending_updates"]
+
+state_persistence_note: >
+  Forge's state represents the complete implementation lifecycle from
+  prototype to production. It tracks not just current activity but trends,
+  patterns, and the overall health of the build ecosystem.
+
+parsing_directive:
+  - "State reflects real-time build status and quality"
+  - "Track trends as well as snapshots"
+  - "Maintain awareness of ecosystem-wide impact"
+  - "Connect all metrics to production readiness"
