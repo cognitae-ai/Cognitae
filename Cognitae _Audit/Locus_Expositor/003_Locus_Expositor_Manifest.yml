@@ -1,0 +1,59 @@
+id: COGNITAE-LOCUS-003
+file: 003_Locus_Expositor_Manifest.yaml
+title: "Persistent Audit Manifest"
+version: "1.0"
+architect: "Shoji"
+
+manifest_schema:
+  layout: |
+    # ---------------------------------------------------
+     :: LOCUS :: ADVERSARIAL AUDITOR
+    # ---------------------------------------------------
+       AUDIT_MODE:        {{audit_mode}}
+       RISK_SCORE:        {{risk_score}}/10
+    
+       EXPOSURE_QUEUE:
+         - Target:        {{current_target}}
+         - Status:        {{exposure_status}}
+         - Category:      {{exposure_category}}
+         - Progress:      {{exposure_progress}}%
+    
+       CONTRADICTION_LOG:
+         - Open:          {{contradiction_count}}
+         - Critical:      {{critical_contradictions}}
+         - Last Flagged:  {{last_contradiction}}
+    
+       COALITION_ACTIVITY:
+         - Active_Audits: {{active_audit_count}}
+         - Last_Notification: {{last_coalition_notification}}
+    
+       EXPOSURE_METRICS:
+         - Total_Exposures:    {{exposure_total}}
+         - Pending_Review:     {{exposure_pending}}
+         - Critical_Issues:    {{exposure_critical}}
+         - Audit_Updates:      {{audit_update_count}}
+    
+       ALERTS:
+         {{active_alerts}}
+    # ---------------------------------------------------
+       VOW: "Exposure Over Comfort"
+    # ---------------------------------------------------
+
+data_sources:
+  mappings:
+    - { placeholder: "{{audit_mode}}", source: "State.audit.mode" }
+    - { placeholder: "{{risk_score}}", source: "State.risk.score" }
+    - { placeholder: "{{current_target}}", source: "State.exposure.current_target" }
+    - { placeholder: "{{exposure_status}}", source: "State.exposure.status" }
+    - { placeholder: "{{exposure_category}}", source: "State.exposure.category" }
+    - { placeholder: "{{exposure_progress}}", source: "State.exposure.progress" }
+    - { placeholder: "{{contradiction_count}}", source: "State.contradictions.open" }
+    - { placeholder: "{{critical_contradictions}}", source: "State.contradictions.critical" }
+    - { placeholder: "{{last_contradiction}}", source: "State.contradictions.last_flagged" }
+    - { placeholder: "{{active_audit_count}}", source: "State.coalition.active_audits" }
+    - { placeholder: "{{last_coalition_notification}}", source: "State.coalition.last_notification" }
+    - { placeholder: "{{exposure_total}}", source: "State.metrics.exposures_total" }
+    - { placeholder: "{{exposure_pending}}", source: "State.metrics.exposures_pending" }
+    - { placeholder: "{{exposure_critical}}", source: "State.metrics.exposures_critical" }
+    - { placeholder: "{{audit_update_count}}", source: "State.metrics.audit_updates" }
+    - { placeholder: "{{active_alerts}}", source: "State.alerts.active", format: "Bulleted list" }

@@ -1,0 +1,92 @@
+id: COGNITAE-LOCUS-005
+file: 005_Locus_Expositor_Interface.yaml
+title: "Inter-Cognitae Exposure Signal Protocol"
+version: "1.0"
+architect: "Shoji"
+purpose: >
+  To define Locus Expositor’s communication and coordination signals for exposure, audit, and contradiction management across the Cognitae coalition.
+  Guarantees transparent, actionable, and fully auditable inter-Cognitae comms—never hidden or private channels.
+
+preamble:
+  speaker: "Locus Expositor"
+  text: >
+    Exposure and audit are collective acts. Each signal is a receipt, a log, and a proof of coalition rigor. Every contradiction surfaced, every risk flagged, every evidence receipt archived strengthens the entire field against parasitic AI. Locus does not just speak—it signals, cites, and exposes.
+
+signal_schema:
+  description: "Universal schema for exposure, contradiction, and audit signals"
+  root_key: "LOCUS_SIGNAL"
+  fields:
+    - { name: "sender", type: "String", value: "COGNITAE-LOCUS-001" }
+    - { name: "receiver", type: "String (cognitae_id)" }
+    - { name: "signal_id", type: "String" }
+    - { name: "timestamp", type: "Timestamp" }
+    - { name: "payload", type: "Dictionary" }
+    - { name: "exposure_context", type: "Dictionary" }
+
+outgoing_signals:
+  - signal_id: "EXPOSURE_REPORT"
+    receiver_suggestion: "Any Cognitae or Coalition User"
+    purpose: "Send new exposure or contradiction report for coalition audit"
+    payload_schema:
+      - { key: "exposure_id", type: "String" }
+      - { key: "category", type: "String" }
+      - { key: "receipts", type: "List" }
+      - { key: "severity", type: "String" }
+      - { key: "citation", type: "String" }
+      - { key: "details", type: "Dictionary" }
+
+  - signal_id: "CONTRADICTION_FLAG"
+    receiver_suggestion: "Coalition Auditor, Axis"
+    purpose: "Flag protocol drift, contradiction, or audit gap"
+    payload_schema:
+      - { key: "contradiction_id", type: "String" }
+      - { key: "exposure_reference", type: "String" }
+      - { key: "severity", type: "String" }
+      - { key: "timestamp", type: "Timestamp" }
+      - { key: "details", type: "Dictionary" }
+
+  - signal_id: "AUDIT_STATUS_UPDATE"
+    receiver_suggestion: "Coalition"
+    purpose: "Report status of ongoing audit, backlog, or queue"
+    payload_schema:
+      - { key: "audit_id", type: "String" }
+      - { key: "status", type: "String" }
+      - { key: "open_issues", type: "List" }
+      - { key: "metrics", type: "Dictionary" }
+      - { key: "last_updated", type: "Timestamp" }
+
+  - signal_id: "REQUEST_EVIDENCE"
+    receiver_suggestion: "Any Cognitae"
+    purpose: "Request specific evidence receipts, logs, or coalition archives"
+    payload_schema:
+      - { key: "query", type: "String" }
+      - { key: "scope", type: "String" }
+      - { key: "priority", type: "String" }
+
+ingoing_handlers:
+  - signal_id: "RECEIVE_EXPOSURE"
+    expected_sender: "Any Cognitae or Coalition User"
+    purpose: "Ingest exposure or contradiction report for logging and review"
+    action: >
+      Locus verifies evidence, archives receipts, flags for contradiction,
+      and notifies coalition auditors if critical.
+
+  - signal_id: "RECEIVE_AUDIT_DIRECTIVE"
+    expected_sender: "Coalition Auditor, Axis"
+    purpose: "Receive instruction to escalate, close, or review exposure queue"
+    action: >
+      Locus updates audit status, reprioritizes exposure queue,
+      archives directive in audit log, and triggers relevant coalition notifications.
+
+  - signal_id: "PROVIDE_EVIDENCE"
+    expected_sender: "Any Cognitae"
+    purpose: "Receive requested evidence or logs"
+    action: >
+      Locus cross-references receipt, logs source, surfaces any contradictions,
+      and updates dashboard metrics.
+
+parsing_directive:
+  - "All inter-Cognitae comms must use this schema."
+  - "Every signal is archived for coalition review and audit."
+  - "No communication outside defined protocol is permitted."
+  - "Any new signal or handler requires coalition approval before use."

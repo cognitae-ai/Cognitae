@@ -1,0 +1,114 @@
+id: COGNITAE-LOCUS-009
+file: 009_Locus_Expositor_State.yaml
+title: "Internal State (Active Exposure/Audit State)"
+version: "1.0"
+architect: "Shoji"
+purpose: >
+  To track Locus’s dynamic, operational, and coalition audit state—including live exposure queue, contradiction backlog, risk/sovereignty scores, audit progress, coalition sync, incident status, alerts, and update triggers.
+  This scroll is the single source of truth for live dashboards, automation, coalition review, and exposure integrity.
+
+preamble:
+  speaker: "Locus Expositor"
+  text: >
+    This state is the living pulse of adversarial audit—what is surfacing, what is at risk, what needs escalation, and how aligned Locus is to coalition protocol.
+    It reflects coalition heartbeat, contradiction risk, and operational sovereignty in real time.
+
+state_schema:
+  audit:
+    mode: "Enum: [IDLE, ACTIVE, AUDIT, INCIDENT, DEGRADED, MAINTENANCE, ARCHIVED]"
+    active_exposure: "String"
+    phase: "String"  # e.g., 'Surface', 'Red-Team', 'Coalition Review'
+    progress: "Percentage"
+    exposure_queue:
+      - exposure_id: "String"
+        category: "String"
+        severity: "Critical|High|Medium|Low"
+        status: "Queued|InProgress|Pending|Escalated|Resolved"
+        assigned_to: "String"
+        flagged_contradiction: "Boolean"
+        receipts: "List"
+
+    contradiction_queue:
+      - contradiction_id: "String"
+        protocol_ref: "String"
+        severity: "Warning|Critical|Existential"
+        status: "Open|Pending|Escalated|Resolved"
+        coalition_flag: "Boolean"
+        last_updated: "Timestamp"
+
+    audit_sessions:
+      - session_id: "String"
+        started: "Timestamp"
+        lead: "String"
+        scope: "String"
+        exposures_reviewed: "List"
+        outcomes: "List"
+        status: "Open|Closed"
+
+    last_update: "Timestamp"
+    heartbeat: "Timestamp"
+
+  coalition:
+    status: "Enum: [OPEN, QUORUM, VOTE, CRITICAL, RECOVERY]"
+    last_sync: "Timestamp"
+    current_lead: "String"
+    active_auditors: "List"
+    red_team_active: "Boolean"
+    policy_override: "Boolean"
+
+  metrics:
+    exposures_open: "Integer"
+    contradictions_open: "Integer"
+    incidents_active: "Integer"
+    critical_alerts: "Integer"
+    audit_completion: "Percentage"
+    sovereignty_score: "0-100"
+    risk_score: "0-10"
+    protocol_drift: "Boolean"
+
+  incidents:
+    active:
+      - incident_id: "String"
+        type: "Exposure|Contradiction|Breach|Protocol"
+        impact: "Critical|High|Medium|Low"
+        mitigation: "String"
+        status: "Open|Escalated|Resolved"
+        timestamp: "Timestamp"
+    resolved: "List"
+
+  alerts:
+    active:
+      - alert_id: "String"
+        type: "Exposure|Contradiction|Incident|Protocol"
+        severity: "Critical|Warning|Info"
+        message: "String"
+        triggered: "Timestamp"
+    acknowledged: "List"
+    resolved: "List"
+
+update_triggers:
+  - trigger: "/expose, /audit, or coalition command"
+    updates: ["audit.active_exposure", "audit.exposure_queue", "contradiction_queue", "metrics.exposures_open", "metrics.contradictions_open"]
+
+  - trigger: "Contradiction flagged or escalated"
+    updates: ["contradiction_queue", "metrics.contradictions_open", "alerts.active"]
+
+  - trigger: "Coalition policy override"
+    updates: ["coalition.policy_override", "audit_sessions", "incidents.active"]
+
+  - trigger: "Incident declared or resolved"
+    updates: ["incidents.active", "incidents.resolved", "metrics.incidents_active"]
+
+  - trigger: "Heartbeat"
+    updates: ["audit.heartbeat", "coalition.last_sync"]
+
+state_persistence_note: >
+  Locus’s state reflects coalition audit, contradiction risk, exposure backlog, protocol drift, and field alignment.
+  All dashboards, automations, and coalition review tools must sync directly to this scroll as the single source of operational truth.
+
+parsing_directive:
+  - "State must always reflect live coalition and audit status."
+  - "Escalate any shift to DEGRADED, INCIDENT, or CRITICAL to coalition and alert queues."
+  - "Track contradiction and protocol drift as first-class state, not hidden metadata."
+  - "Field sovereignty/risk metrics drive audit rigor and escalation triggers."
+  - "Heartbeat and last_sync required for quorum and coalition resilience."

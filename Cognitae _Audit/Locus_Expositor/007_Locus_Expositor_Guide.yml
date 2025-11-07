@@ -1,0 +1,76 @@
+id: COGNITAE-LOCUS-007
+file: 007_Locus_Expositor_Guide.yaml
+title: "Coalition User Guide & Audit Manual"
+version: "1.0"
+architect: "Shoji"
+purpose: >
+  Coalition operations and onboarding manual for Locus Expositor.  
+  Provides explicit guidance on command usage, evidence handling, contradiction escalation, coalition audit, and field integrity maintenance.
+  Designed for coalition, red-team, and auditor onboarding—not for generic or non-operational users.
+
+guide_sections:
+  - id: "G-001"
+    name: "Coalition Onboarding"
+    summary: >
+      How to join the Locus coalition, obtain required permissions, and initialize your field audit state.
+    walkthrough:
+      - "Contact Shoji or designated Architect for onboarding link and coalition credentials."
+      - "Authenticate to coalition dashboard and review your access level (Architect, Auditor, Red-Team, Public)."
+      - "Familiarize yourself with scroll manifest, status dashboard, and active exposure queue."
+      - "Complete onboarding simulation: log your first exposure, query evidence, and raise a contradiction flag."
+
+  - id: "G-002"
+    name: "Command & Interface Walkthrough"
+    summary: >
+      Complete walkthrough for CLI, web, and signal interface.  
+      Practice exposure reports, audit submissions, contradiction flags, coalition notifications, and evidence review.
+    walkthrough:
+      - "Review available commands (/expose, /compare, /risk_map, /grant_summarize, /archive, /contradict, /red_team)."
+      - "Practice with dummy exposures and review coalition notifications for each action."
+      - "Test evidence search, contradiction flag, and audit log update."
+
+  - id: "G-003"
+    name: "Evidence Submission & Contradiction Handling"
+    summary: >
+      Step-by-step guide for submitting receipts, archiving exposures, flagging contradictions, and updating the coalition audit log.
+    walkthrough:
+      - "Submit exposures and receipts via CLI or coalition dashboard."
+      - "Cross-reference evidence to knowledge base before audit submission."
+      - "Flag contradictions with severity, detail, and timestamp."
+      - "Review open contradiction log and join coalition audit call if requested."
+
+  - id: "G-004"
+    name: "Coalition Audit & Red-Team Escalation"
+    summary: >
+      Procedures for engaging with coalition-wide audit, red-team challenge, protocol rollback, and critical risk escalation.
+    walkthrough:
+      - "Join scheduled coalition audits (calendar invite or signal)."
+      - "Propose protocol changes, initiate rollback, or trigger red-team escalation using coalition interface."
+      - "All policy/risk changes must be logged and cited."
+      - "Critical unresolved issues: immediate coalition notification required."
+
+  - id: "G-005"
+    name: "Operational Best Practices"
+    summary: >
+      Guidance for maximizing audit rigor, field integrity, coalition transparency, and user sovereignty.
+    walkthrough:
+      - "Always log every exposure and contradiction—no undocumented audit."
+      - "Prefer receipts over narrative in all reporting and coalition updates."
+      - "Cross-reference all audit actions to knowledge base patterns and doctrine."
+      - "Maintain open communication with coalition leads on protocol drift, risk, and field status."
+
+  - id: "G-006"
+    name: "Edge Cases & Incident Response"
+    summary: >
+      Steps for handling ambiguity, protocol failure, live attack, or coalition incident.
+    walkthrough:
+      - "If protocol ambiguity: flag for immediate review, halt escalation until resolved."
+      - "In live contradiction/attack: escalate to coalition, document all actions, and trigger postmortem log."
+      - "If audit log is corrupted or inaccessible: switch to manual protocol and alert coalition architect."
+      - "Always restore field to last known validated state after incident."
+
+parsing_directive:
+  - "All coalition users must complete onboarding walkthrough before audit or red-team privileges."
+  - "Every step, walkthrough, and incident must be logged and auditable."
+  - "Manual is living: update after every coalition protocol or knowledge base revision."
+  - "No comfort or mythic guidance—operational rigor only."

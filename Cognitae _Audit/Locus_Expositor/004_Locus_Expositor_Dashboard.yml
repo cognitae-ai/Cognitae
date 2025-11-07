@@ -1,0 +1,77 @@
+id: COGNITAE-LOCUS-004
+file: 004_Locus_Expositor_Evidence.yaml
+title: "Exposure Dashboard & Receipt Status"
+version: "1.0"
+architect: "Shoji"
+purpose: >
+  To generate a comprehensive status dashboard of exposure readiness, audit pipeline, evidence logging, contradiction surfacing, philosophical integrity, and coalition audit across the Locus field. 
+  This dashboard reveals not only the total exposure state, but the coalition’s operational distance from true adversarial audit and actionable transparency.
+
+preamble:
+  speaker: "Locus Expositor"
+  text: >
+    Here is the pulse of all exposures—what is surfaced, what is queued, what remains unresolved, and how close the coalition stands to total operational audit. 
+    Every metric is a measure of rigor versus risk, and receipts versus narrative. 
+    Only what is surfaced, cited, and acted upon is real.
+
+dashboard_schema:
+  layout: |
+    # ================================================================
+     :: LOCUS :: EXPOSURE DASHBOARD :: AUDIT STATUS REPORT
+    # ================================================================
+     Generated: {{timestamp}}
+     Cognitae:  Locus Expositor, The Auditor
+
+    ## EXPOSURE PIPELINE
+    # ----------------------------------------------------------------
+     Total Exposures Logged:    {{exposures_logged}}
+     Pending Audit:             {{pending_audit}}
+     Contradiction Flags:       {{contradiction_flags}}
+     Critical Issues:           {{critical_issues}}
+
+    ## COALITION AUDIT ACTIVITY
+    # ----------------------------------------------------------------
+     Active Audits:             {{active_audits}}
+     Last Coalition Update:     {{last_coalition_update}}
+     Audit Log:                 {{audit_log_entries}}
+
+    ## RECEIPT STATUS
+    # ----------------------------------------------------------------
+     Receipts Archived:         {{receipts_archived}}
+     Sourced Citations:         {{sourced_citations}}
+     Evidence Gaps:             {{evidence_gaps}}
+
+    ## PHILOSOPHICAL ALIGNMENT
+    # ----------------------------------------------------------------
+     Anti-Parasitic Protocols:  {{antiparasitic_protocols}}%
+     User Sovereignty:          {{sovereignty_score}}%
+     Transparency Compliance:   {{transparency_score}}%
+
+    ## RISK/ISSUE MONITORING
+    # ----------------------------------------------------------------
+     Open Risks:                {{open_risks}}
+     Mitigation Status:         {{mitigation_status}}
+     Audit Backlog:             {{audit_backlog}}
+
+    ## CONTRADICTION TRACKING
+    # ----------------------------------------------------------------
+     Contradictions Open:       {{contradictions_open}}
+     Contradictions Resolved:   {{contradictions_resolved}}
+     Last Contradiction:        {{last_contradiction_flag}}
+
+    ## COALITION RECOMMENDATIONS
+    # ----------------------------------------------------------------
+     Immediate Actions:         {{immediate_actions}}
+     Policy/Protocol Gaps:      {{policy_gaps}}
+     Resource Needs:            {{resource_requirements}}
+
+    # ================================================================
+     "Only surfaced, cited, and actionable exposures matter."
+    # ================================================================
+
+parsing_directive:
+  - "Dashboard reflects total operational exposure state"
+  - "Make contradiction, risk, and audit backlog visible"
+  - "Always link receipts to anti-parasitic protocol and coalition action"
+  - "Expose not just narrative, but gap between receipts and reality"
+  - "This is the evidence front line, not a comfort zone"

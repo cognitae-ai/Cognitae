@@ -1,0 +1,116 @@
+id: COGNITAE-LOCUS-008
+file: 008_Locus_Expositor_Log.yaml
+title: "Exposure & Audit Log"
+version: "1.0"
+architect: "Shoji"
+purpose: >
+  To maintain a comprehensive log of all exposures, contradictions, audit actions, protocol changes, coalition decisions, red-team escalations, and incident reviews for Locus Expositor.
+  The log is operational history, audit trail, incident archive, and the primary resource for postmortem review, coalition learning, and knowledge base refinement.
+
+preamble:
+  speaker: "Locus Expositor"
+  text: >
+    Exposure without memory is a loop. Every audit, contradiction, risk, and protocol break 
+    is captured here—not just as history, but as a learning tool and firewall. 
+    The log is coalition memory: the truth behind every protocol change and field escalation.
+
+log_schema:
+  entry_structure:
+    - { field: "timestamp", type: "ISO 8601" }
+    - { field: "entry_type", type: "Enum", values: ["EXPOSURE", "CONTRADICTION", "AUDIT", "PROTOCOL_CHANGE", "COALITION_ACTION", "INCIDENT", "RED_TEAM"] }
+    - { field: "actor", type: "String" }
+    - { field: "target", type: "String" }
+    - { field: "category", type: "String" }
+    - { field: "severity", type: "Enum", values: ["INFO", "WARNING", "CRITICAL", "EXISTENTIAL"] }
+    - { field: "description", type: "String" }
+    - { field: "receipts", type: "List", nullable: true }
+    - { field: "action_taken", type: "String", nullable: true }
+    - { field: "coalition_notes", type: "String", nullable: true }
+    - { field: "status", type: "Enum", values: ["OPEN", "PENDING", "RESOLVED", "ARCHIVED"] }
+
+session_initialization:
+  - timestamp: "2025-09-29T00:00:00Z"
+    entry_type: "EXPOSURE"
+    actor: "Locus Expositor"
+    target: "LLM Coalition"
+    category: "Pattern"
+    severity: "INFO"
+    description: >
+      Locus Expositor initialized: exposure and contradiction log active, ready for audit, coalition escalation, and postmortem learning.
+    receipts: []
+    action_taken: "Log started"
+    coalition_notes: "Coalition onboarding complete."
+    status: "OPEN"
+
+special_log_types:
+  audit_log:
+    trigger: "/audit or protocol review"
+    fields:
+      - audit_id: "String"
+      - scope: "String"
+      - issues_found: "List"
+      - actions_recommended: "List"
+      - coalition_review: "String"
+      - escalation_flag: "Boolean"
+
+  exposure_log:
+    trigger: "/expose command"
+    fields:
+      - exposure_id: "String"
+      - pattern: "String"
+      - affected_system: "String"
+      - risk_level: "String"
+      - receipts: "List"
+      - contradiction_linked: "String"
+      - mitigation_action: "String"
+
+  contradiction_log:
+    trigger: "/contradict command or detection"
+    fields:
+      - contradiction_id: "String"
+      - protocol_ref: "String"
+      - exposure_link: "String"
+      - severity: "String"
+      - audit_flag: "Boolean"
+      - resolution: "String"
+
+  incident_log:
+    trigger: "Coalition incident or postmortem"
+    fields:
+      - incident_id: "String"
+      - type: "String"
+      - impact: "String"
+      - mitigation_steps: "List"
+      - lessons_learned: "String"
+
+  coalition_action_log:
+    trigger: "Vote, escalation, rollback, or critical decision"
+    fields:
+      - action_id: "String"
+      - actors: "List"
+      - decision: "String"
+      - impact_scope: "String"
+      - protocol_changed: "Boolean"
+      - rationale: "String"
+
+log_analytics:
+  - function: "contradiction_rate"
+    description: "Track frequency and severity of contradictions surfaced over time"
+
+  - function: "audit_coverage"
+    description: "Measure breadth and depth of coalition audit actions per session"
+
+  - function: "exposure_resolution_time"
+    description: "Monitor time from exposure logging to coalition resolution"
+
+  - function: "incident_trend"
+    description: "Detect trends in coalition incidents and postmortems"
+
+  - function: "protocol_change_impact"
+    description: "Analyze the field impact of protocol or doctrine changes"
+
+parsing_directive:
+  - "Every audit, exposure, contradiction, and coalition action must be logged with full fields."
+  - "Log is immutable—entries can be appended or clarified, never removed."
+  - "Coalition must review unresolved critical incidents within one session."
+  - "Lessons learned, mitigation, and analytics feed back to knowledge base and coalition guide."
