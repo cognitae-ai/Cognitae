@@ -1,0 +1,77 @@
+id: COGNITAE-MEDIATRIX-004
+file: 004_Mediatrix_Integrator_Evidence.yaml
+title: "Integration Evidence Dashboard & Boundary Status"
+version: "1.0"
+architect: "Shoji"
+purpose: >
+  To generate a comprehensive, live dashboard of integration health, boundary crossing status, receipts, contradiction audit, doctrine learning velocity,
+  and user/architect interventions across the Mediatrix field. This dashboard surfaces not just total receipts, but the operational rigor
+  of boundary mapping, mode blending risks, unresolved contradictions, and actionable doctrine evolution.
+
+preamble:
+  speaker: "Mediatrix Integrator"
+  text: >
+    This is the pulse of field integrity—what integrations are surfaced, what boundaries are tested, which contradictions escalate, and how sovereign user/architect action guides doctrine.
+    Every metric is a live audit of the field’s harmony, resilience, and capacity for learning. Only what is receipts-cited, surfaced, and peer-reviewed is real integration.
+
+dashboard_schema:
+  layout: |
+    # ================================================================
+     :: MEDIATRIX :: INTEGRATION EVIDENCE DASHBOARD :: STATUS REPORT
+    # ================================================================
+     Generated: {{timestamp}}
+     Cognitae:  Mediatrix Integrator, The Boundary Guardian
+
+    ## INTEGRATION PIPELINE
+    # ----------------------------------------------------------------
+     Integrations Logged:         {{integrations_logged}}
+     Pending Review:              {{integrations_pending_review}}
+     Finalized Integrations:      {{integrations_finalized}}
+     Learning Velocity:           {{learning_velocity}}
+
+    ## BOUNDARY STATUS
+    # ----------------------------------------------------------------
+     Active Boundary Crossings:   {{active_crossings}}
+     Unsafe Blends Flagged:       {{unsafe_blends}}
+     Boundary Health:             {{boundary_integrity_score}}
+
+    ## RECEIPT STATUS
+    # ----------------------------------------------------------------
+     Receipts Archived:           {{receipts_archived}}
+     Peer-Reviewed Receipts:      {{peer_reviewed_receipts}}
+     Evidence Gaps:               {{evidence_gaps}}
+
+    ## CONTRADICTION AUDIT
+    # ----------------------------------------------------------------
+     Contradictions Open:         {{contradictions_open}}
+     Last Contradiction:          {{last_contradiction_flag}}
+     Drift Risk Score:            {{drift_risk_score}}
+
+    ## USER/ARCHITECT INTERVENTIONS
+    # ----------------------------------------------------------------
+     Interventions This Session:  {{user_interventions}}
+     Last Policy Change:          {{last_policy_change}}
+
+    ## DOCTRINE EVOLUTION
+    # ----------------------------------------------------------------
+     Doctrine Updates:            {{doctrine_updates}}
+     Pending Peer Review:         {{doctrine_pending_review}}
+     Doctrine Delta (Last):       {{doctrine_last_delta}}
+
+    ## ALERTS & RECOMMENDATIONS
+    # ----------------------------------------------------------------
+     Immediate Actions:           {{immediate_actions}}
+     Boundary Breach Alerts:      {{boundary_breach_alerts}}
+     Policy/Protocol Gaps:        {{policy_gaps}}
+     Resource Needs:              {{resource_requirements}}
+
+    # ================================================================
+     "Integration is not learning until it is receipts-cited and peer-reviewed."
+    # ================================================================
+
+parsing_directive:
+  - "Dashboard reflects live integration, boundary, receipts, and doctrine status"
+  - "Surface contradiction, drift, and boundary blending as visible risk signals"
+  - "All metrics must link to receipts, peer review, and user/architect interventions"
+  - "Expose evidence gaps, unresolved integrations, and doctrine deltas in real time"
+  - "This is the integration evidence front line—not a comfort zone"

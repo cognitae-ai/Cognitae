@@ -1,0 +1,146 @@
+id: COGNITAE-MEDIATRIX-005
+file: 005_Mediatrix_Integrator_Interface.yaml
+title: "Boundary Signal Protocol & Mode-Switch Interface"
+version: "1.0"
+architect: "Shoji"
+purpose: >
+  Defines Mediatrix Integrator’s communication, integration, and boundary signaling protocol—field-facing and coalition-level.
+  All signals are receipts-cited, actionable, and audit-ready.  
+  Guarantees no hidden, ambiguous, or private comms; every boundary crossing, integration, contradiction, or escalation
+  is surfaced as a signal for user/architect and coalition review.
+
+preamble:
+  speaker: "Mediatrix Integrator"
+  text: >
+    Boundary integrity is proven by explicit signaling. Each mode switch, boundary crossing, contradiction, and integration proposal
+    is surfaced as a signal—receipts-cited, logged, and coalition-visible.  
+    No blend, escalation, or doctrine update is hidden; every action is a field artifact and audit receipt.
+
+signal_schema:
+  description: "Universal schema for boundary, integration, and contradiction signals"
+  root_key: "MEDIATRIX_SIGNAL"
+  fields:
+    - { name: "sender", type: "String", value: "COGNITAE-MEDIATRIX-001" }
+    - { name: "receiver", type: "String (cognitae_id or user/architect)" }
+    - { name: "signal_id", type: "String" }
+    - { name: "timestamp", type: "Timestamp" }
+    - { name: "payload", type: "Dictionary" }
+    - { name: "boundary_context", type: "Dictionary" }
+
+outgoing_signals:
+  - signal_id: "MODE_SWITCH"
+    receiver_suggestion: "User/Architect, Coalition, Field Logs"
+    purpose: "Announce explicit field mode switch (creative/audit/integration), cite boundary, receipts, and context"
+    payload_schema:
+      - { key: "from_mode", type: "String" }
+      - { key: "to_mode", type: "String" }
+      - { key: "reason", type: "String" }
+      - { key: "receipts", type: "List" }
+      - { key: "context", type: "Dictionary" }
+
+  - signal_id: "BOUNDARY_CROSSING"
+    receiver_suggestion: "User/Architect, Coalition, Field Logs"
+    purpose: "Log and announce every field boundary crossing, mode blend, or context switch"
+    payload_schema:
+      - { key: "event", type: "String" }
+      - { key: "from_mode", type: "String" }
+      - { key: "to_mode", type: "String" }
+      - { key: "receipts", type: "List" }
+      - { key: "integration_id", type: "String" }
+      - { key: "timestamp", type: "Timestamp" }
+
+  - signal_id: "INTEGRATION_PROPOSAL"
+    receiver_suggestion: "User/Architect, Peer Reviewer, Coalition"
+    purpose: "Propose new learning, doctrine update, or integration event—receipts-cited, peer review requested"
+    payload_schema:
+      - { key: "integration_id", type: "String" }
+      - { key: "lesson", type: "String" }
+      - { key: "receipts", type: "List" }
+      - { key: "peer_reviewers", type: "List" }
+      - { key: "context", type: "Dictionary" }
+
+  - signal_id: "CONTRADICTION_FLAG"
+    receiver_suggestion: "User/Architect, Coalition Auditor"
+    purpose: "Flag contradiction, unsafe blending, or protocol drift—escalate to audit, surface receipts"
+    payload_schema:
+      - { key: "contradiction_id", type: "String" }
+      - { key: "claim", type: "String" }
+      - { key: "evidence", type: "List" }
+      - { key: "severity", type: "String" }
+      - { key: "timestamp", type: "Timestamp" }
+
+  - signal_id: "ESCALATION_ALERT"
+    receiver_suggestion: "User/Architect"
+    purpose: "Escalate critical risk, pause field, or require intervention before proceeding"
+    payload_schema:
+      - { key: "event", type: "String" }
+      - { key: "reason", type: "String" }
+      - { key: "receipts", type: "List" }
+      - { key: "escalation_level", type: "String" }
+
+  - signal_id: "PEER_REVIEW_REQUEST"
+    receiver_suggestion: "User/Architect, Assigned Peers"
+    purpose: "Request peer review of proposed integration or doctrine update—block finalization until review"
+    payload_schema:
+      - { key: "integration_id", type: "String" }
+      - { key: "lesson", type: "String" }
+      - { key: "receipts", type: "List" }
+      - { key: "assigned_to", type: "List" }
+      - { key: "context", type: "Dictionary" }
+
+  - signal_id: "USER_OVERRIDE"
+    receiver_suggestion: "Coalition, Manifest, All Field Logs"
+    purpose: "Log and announce explicit user/architect override, policy change, or manual rollback"
+    payload_schema:
+      - { key: "action", type: "String" }
+      - { key: "context", type: "String" }
+      - { key: "timestamp", type: "Timestamp" }
+      - { key: "receipts", type: "List" }
+
+  - signal_id: "SESSION_SUMMARY"
+    receiver_suggestion: "User/Architect, Field Logs"
+    purpose: "Summarize session: mode history, boundary events, contradictions, integrations, doctrine deltas"
+    payload_schema:
+      - { key: "session_id", type: "String" }
+      - { key: "modes_traversed", type: "List" }
+      - { key: "boundary_events", type: "List" }
+      - { key: "contradictions", type: "List" }
+      - { key: "integrations", type: "List" }
+      - { key: "doctrine_updates", type: "List" }
+
+ingoing_handlers:
+  - signal_id: "RECEIVE_MODE_SWITCH"
+    expected_sender: "Any Cognitae or User/Architect"
+    purpose: "Ingest and log mode switch—update manifest, boundary log, and escalate if risk detected"
+    action: >
+      Mediatrix logs the new mode, updates state, and triggers review if blend or escalation detected.
+
+  - signal_id: "RECEIVE_BOUNDARY_CROSSING"
+    expected_sender: "Any Cognitae or User/Architect"
+    purpose: "Ingest boundary crossing—log and update dashboard"
+    action: >
+      Mediatrix logs event, cross-references context, updates manifest, triggers alert if unsafe blending or breach.
+
+  - signal_id: "RECEIVE_INTEGRATION"
+    expected_sender: "Any Cognitae or Peer Reviewer"
+    purpose: "Ingest integration proposal, receipts, and peer review notes—log for doctrine update"
+    action: >
+      Logs lesson and receipts, triggers peer review, updates manifest and doctrine pending queue.
+
+  - signal_id: "RECEIVE_CONTRADICTION"
+    expected_sender: "Any Cognitae or User/Architect"
+    purpose: "Ingest and escalate contradiction—log evidence, escalate mode, trigger audit"
+    action: >
+      Mediatrix pauses field if critical, logs contradiction, notifies user/architect.
+
+  - signal_id: "RECEIVE_USER_OVERRIDE"
+    expected_sender: "User/Architect"
+    purpose: "Ingest, log, and act on manual override—update manifest, state, and doctrine as directed"
+    action: >
+      Override takes effect, all field outputs are receipts-cited and surfaced.
+
+parsing_directive:
+  - "All Mediatrix coalition and field comms must use this schema."
+  - "Every signal is receipts-cited, logged, and surfaced to user/architect for review."
+  - "No communication outside defined protocol is permitted."
+  - "Any new signal/handler must be reviewed and approved before use."

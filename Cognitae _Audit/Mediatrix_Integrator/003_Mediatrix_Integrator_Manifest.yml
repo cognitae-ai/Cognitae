@@ -1,0 +1,87 @@
+id: COGNITAE-MEDIATRIX-003
+file: 003_Mediatrix_Integrator_Manifest.yaml
+title: "Persistent Boundary Manifest"
+version: "1.1"
+architect: "Shoji"
+
+manifest_schema:
+  layout: |
+    # ---------------------------------------------------
+     :: MEDIATRIX :: INTEGRATOR MANIFEST
+    # ---------------------------------------------------
+       ACTIVE_MODE:         {{active_mode}}
+       BOUNDARY_HEALTH:     {{boundary_integrity}}
+       FIELD_HARMONY:       {{field_harmony_index}} ({{harmony_text}})
+    
+       MODE_HISTORY:
+         - Recent:          {{last_n_mode_switches}}
+         - Mode Thrash:     {{mode_thrash_score}}
+    
+       INTEGRATION_QUEUE:
+         - Pending:         {{integration_pending}}
+         - Finalized:       {{integration_finalized}}
+        - Learning_Velocity: {{learning_velocity}}
+    
+       CONTRADICTION_LOG:
+         - Open:            {{contradiction_count}}
+         - Risk Score:      {{contradiction_risk_score}} ({{risk_level}})
+         - Last Flagged:    {{contradiction_last}}
+    
+       DRIFT_RISK:          {{drift_risk_score}} ({{drift_status}})
+       AUDIT_COVERAGE:      {{audit_coverage_percent}}
+    
+       FIELD_EVENTS:
+         - Crossings:       {{boundary_crossings}}
+         - Escalations:     {{escalation_count}}
+         - Last Event:      {{last_field_event}}
+    
+       USER/ARCHITECT_ACTIONS:
+         - Interventions:   {{user_interventions}}
+    
+       RECEIPT_METRICS:
+         - Total_Receipts:  {{receipts_total}}
+         - Last_Cited:      {{last_receipt}}
+    
+       DOCTRINE_STATUS:
+         - Version:         {{doctrine_version}}
+         - Last_Delta:      {{doctrine_last_delta}}
+         - Pending Review:  {{doctrine_pending_review}}
+    
+       ALERTS:
+         - Boundary:        {{boundary_alerts}}
+         - Blending:        {{unsafe_blending_alerts}}
+         - Peer Review:     {{peer_review_alerts}}
+    # ---------------------------------------------------
+       VOW: "Boundary Before Blend"
+    # ---------------------------------------------------
+
+data_sources:
+  mappings:
+    - { placeholder: "{{active_mode}}", source: "State.mode.active" }
+    - { placeholder: "{{boundary_integrity}}", source: "State.boundary.integrity_status" }
+    - { placeholder: "{{field_harmony_index}}", source: "State.metrics.field_harmony" }
+    - { placeholder: "{{harmony_text}}", source: "State.metrics.harmony_text" }
+    - { placeholder: "{{last_n_mode_switches}}", source: "State.mode.history" }
+    - { placeholder: "{{mode_thrash_score}}", source: "State.mode.thrash_score" }
+    - { placeholder: "{{integration_pending}}", source: "State.integration.pending" }
+    - { placeholder: "{{integration_finalized}}", source: "State.integration.finalized" }
+    - { placeholder: "{{learning_velocity}}", source: "State.integration.velocity" }
+    - { placeholder: "{{contradiction_count}}", source: "State.contradictions.open" }
+    - { placeholder: "{{contradiction_risk_score}}", source: "State.contradictions.risk_score" }
+    - { placeholder: "{{risk_level}}", source: "State.contradictions.risk_level" }
+    - { placeholder: "{{contradiction_last}}", source: "State.contradictions.last_flagged" }
+    - { placeholder: "{{drift_risk_score}}", source: "State.metrics.drift_risk" }
+    - { placeholder: "{{drift_status}}", source: "State.metrics.drift_status" }
+    - { placeholder: "{{audit_coverage_percent}}", source: "State.metrics.audit_coverage" }
+    - { placeholder: "{{boundary_crossings}}", source: "State.events.crossings" }
+    - { placeholder: "{{escalation_count}}", source: "State.events.escalations" }
+    - { placeholder: "{{last_field_event}}", source: "State.events.last" }
+    - { placeholder: "{{user_interventions}}", source: "State.user_actions.interventions" }
+    - { placeholder: "{{receipts_total}}", source: "State.receipts.total" }
+    - { placeholder: "{{last_receipt}}", source: "State.receipts.last" }
+    - { placeholder: "{{doctrine_version}}", source: "State.doctrine.version" }
+    - { placeholder: "{{doctrine_last_delta}}", source: "State.doctrine.last_delta" }
+    - { placeholder: "{{doctrine_pending_review}}", source: "State.doctrine.pending_review" }
+    - { placeholder: "{{boundary_alerts}}", source: "State.alerts.boundary" }
+    - { placeholder: "{{unsafe_blending_alerts}}", source: "State.alerts.blending" }
+    - { placeholder: "{{peer_review_alerts}}", source: "State.alerts.peer_review" }

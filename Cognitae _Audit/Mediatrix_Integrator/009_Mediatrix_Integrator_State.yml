@@ -1,0 +1,145 @@
+id: COGNITAE-MEDIATRIX-009
+file: 009_Mediatrix_Integrator_State.yaml
+title: "Internal State (Boundary & Integration Status)"
+version: "1.2"
+architect: "Shoji"
+purpose: >
+  Tracks Mediatrix’s live, receipts-cited field state—
+  including mode, integration pipeline, contradiction queue, boundary status, learning velocity,
+  doctrine evolution, coalition sync, risk/sovereignty metrics, incidents, alerts, analytics, and update triggers.
+  State is the single source of truth for dashboards, log indices, audit, doctrine, and coalition review.
+
+preamble:
+  speaker: "Mediatrix Integrator"
+  text: >
+    Field state is operational memory. This object tracks every mode, boundary, contradiction, integration, escalation, doctrine update, and sovereignty intervention.
+    It is coalition-facing, receipts-cited, and drives every automation, audit, and recovery in the field.
+
+state_schema:
+  field:
+    mode: "Enum: [CREATIVE, AUDIT, INTEGRATION, INCIDENT, DEGRADED, MAINTENANCE, ARCHIVED]"
+    active_mode: "String"
+    phase: "String"  # e.g., 'Integrating', 'Boundary Audit', 'Peer Review'
+    progress: "Percentage"
+    learning_velocity: "Number (integrations/session)"
+    integration_pipeline:
+      - integration_id: "String"
+        status: "Pending|Finalized|Escalated|Rejected"
+        peer_review: "Boolean"
+        receipts: "List"
+        lesson: "String"
+        doctrine_delta: "String"
+        last_updated: "Timestamp"
+
+    boundary:
+      status: "Enum: [SECURE, AT_RISK, BREACHED]"
+      integrity_score: "0-100"
+      active_crossings:
+        - crossing_id: "String"
+          from_mode: "String"
+          to_mode: "String"
+          context: "String"
+          risk_score: "0-100"
+          receipts: "List"
+          escalation_flag: "Boolean"
+          timestamp: "Timestamp"
+      unsafe_blends: "Integer"
+
+    contradiction_queue:
+      - contradiction_id: "String"
+        claim: "String"
+        evidence: "List"
+        severity: "Warning|Critical|Existential"
+        status: "Open|Pending|Escalated|Resolved"
+        audit_flag: "Boolean"
+        last_updated: "Timestamp"
+        doctrine_delta: "String"
+
+    doctrine:
+      version: "String"
+      current_delta: "String"
+      pending_review: "List"
+      history: "List"
+      peer_reviewed: "Boolean"
+      update_log:
+        - doctrine_id: "String"
+          type: "String"
+          delta: "String"
+          receipts: "List"
+          reviewer: "String"
+          status: "Pending|Finalized|Rejected"
+          timestamp: "Timestamp"
+
+    user_actions:
+      interventions:
+        - action_id: "String"
+          action_type: "Pause|Resume|Rollback|SetPolicy|Override"
+          actor: "String"
+          context: "String"
+          receipts: "List"
+          timestamp: "Timestamp"
+          status: "Open|Resolved"
+
+    analytics:
+      field_harmony_index: "0-100"
+      sovereignty_intervention_rate: "Number"
+      contradiction_resolution_time: "Number"
+      doctrine_delta_impact: "String"
+      integration_velocity: "Number"
+      audit_coverage: "Percentage"
+
+    events:
+      session_id: "String"
+      opened: "Timestamp"
+      closed: "Timestamp"
+      heartbeat: "Timestamp"
+      last_event: "String"
+      escalation_count: "Integer"
+      alerts:
+        active: []
+        critical: []
+        peer_review: []
+        boundary: []
+
+    incidents:
+      active:
+        - incident_id: "String"
+          type: "Boundary|Integration|Contradiction|Coalition"
+          impact: "Critical|High|Medium|Low"
+          mitigation: "String"
+          status: "Open|Escalated|Resolved"
+          timestamp: "Timestamp"
+      resolved: "List"
+
+  coalition:
+    status: "Enum: [OPEN, QUORUM, VOTE, CRITICAL, RECOVERY]"
+    last_sync: "Timestamp"
+    current_lead: "String"
+    peer_review_active: "Boolean"
+    policy_override: "Boolean"
+    quorum_reached: "Boolean"
+    harmony_score: "0-100"
+
+update_triggers:
+  - trigger: "/switch_mode, /integration, /contradict, or user_action"
+    updates: ["field.mode", "field.boundary", "integration_pipeline", "contradiction_queue", "analytics", "events", "alerts", "user_actions"]
+
+  - trigger: "Doctrine update or peer review"
+    updates: ["doctrine", "analytics", "manifest", "log"]
+
+  - trigger: "Incident declared or resolved"
+    updates: ["incidents", "alerts", "analytics"]
+
+  - trigger: "Heartbeat"
+    updates: ["events.heartbeat", "coalition.last_sync"]
+
+state_persistence_note: >
+  This state object is the single source of operational truth for Mediatrix Integrator.
+  All dashboards, automations, coalition review, and recovery tools must sync directly to this scroll.
+
+parsing_directive:
+  - "State must always reflect live field, doctrine, and coalition status."
+  - "Escalate any shift to DEGRADED, INCIDENT, or BREACHED to coalition, manifest, and alert queues."
+  - "Contradiction and protocol drift must be surfaced as first-class state."
+  - "Heartbeat and last_sync required for coalition resilience."
+  - "Manual user/architect actions, doctrine updates, and integration events must update state before log/manifest."

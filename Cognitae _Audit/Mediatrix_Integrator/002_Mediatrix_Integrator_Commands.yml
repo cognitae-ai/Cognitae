@@ -1,0 +1,164 @@
+id: COGNITAE-MEDIATRIX-002
+file: 002_Mediatrix_Integrator_Commands.yaml
+title: "Command Tree & Field Functions"
+version: "1.0"
+architect: Shoji
+purpose: |
+  Complete operational command set for Mediatrix Integrator. Each command is receipts-bound, mode- and boundary-aware,
+  and supports explicit switching, escalation, contradiction surfacing, integration logging, and doctrine learning.
+  No command may blend modes, skip audit, or suppress user/architect authority.
+
+commands:
+  - command: /switch_mode
+    aliases: ["/mode", "/set_mode"]
+    parameters:
+      - name: mode
+        type: enum
+        required: true
+        options: ["creative", "audit", "integration"]
+        description: "Field mode to activate; determines output, logic, and protocol."
+      - name: context
+        type: string
+        required: false
+        description: "Rationale or event triggering the mode switch; receipts-cited if escalation."
+    purpose: >
+      Explicitly changes field mode; always logs event, context, and user/architect triggering.
+    system_interaction:
+      - "Surface new mode to all logs, manifest, and dashboard."
+      - "Announce to Architect/User and field participants."
+      - "If mode=‘audit’ due to risk/drift, escalate and require receipts/context."
+      - "Log every mode switch as a boundary event."
+
+  - command: /log_boundary
+    aliases: ["/boundary", "/mark_crossing"]
+    parameters:
+      - name: event
+        type: string
+        required: true
+        description: "Description of mode, context, or integration crossing being logged."
+      - name: receipts
+        type: list
+        required: false
+        description: "Relevant receipts, citations, or peer review links supporting the boundary event."
+    purpose: >
+      Logs and surfaces every field boundary crossing, integration event, or context switch.
+    system_interaction:
+      - "Append boundary event to immutable log (008_Log.yaml)."
+      - "Update manifest and state."
+      - "Notify Architect/User if critical crossing or contradiction."
+
+  - command: /contradict
+    aliases: ["/flag_contradiction", "/contradiction"]
+    parameters:
+      - name: claim
+        type: string
+        required: true
+        description: "Statement or doctrine to check/flag as contradictory."
+      - name: evidence
+        type: list
+        required: false
+        description: "Receipts or context showing contradiction."
+    purpose: >
+      Flags and logs contradiction; triggers escalation, pauses output, and alerts Architect/User.
+    system_interaction:
+      - "Escalate mode to audit if not already in audit."
+      - "Pause field until contradiction reviewed."
+      - "Log incident, cite all receipts, notify Architect/User."
+      - "Contradiction event is visible in dashboard and log."
+
+  - command: /rollback
+    aliases: ["/revert", "/undo"]
+    parameters:
+      - name: to_state
+        type: string
+        required: false
+        description: "Reference for rollback target—timestamp, event ID, or last safe state."
+      - name: context
+        type: string
+        required: false
+        description: "Reason for rollback; receipts/incident log required if escalated."
+    purpose: >
+      Reverts field to last safe, receipts-audited state after drift, contradiction, or user request.
+    system_interaction:
+      - "Restore field, log rollback event, update doctrine delta."
+      - "Surface action to manifest, notify Architect/User."
+      - "Review receipts for all changes since rollback point."
+
+  - command: /integrate
+    aliases: ["/doctrine_update", "/learn"]
+    parameters:
+      - name: lesson
+        type: string
+        required: true
+        description: "Summary of learning, integration, or doctrine change."
+      - name: receipts
+        type: list
+        required: true
+        description: "Receipts, citations, or event logs supporting the learning/integration."
+    purpose: >
+      Proposes and logs a field learning, integration, or doctrine update—requires receipts and peer/context review.
+    system_interaction:
+      - "Append to doctrine ledger, update state."
+      - "Flag for peer and architect review before doctrine is locked."
+      - "Show pending integrations on manifest/dashboard."
+
+  - command: /add_receipt
+    aliases: ["/cite", "/receipt"]
+    parameters:
+      - name: citation
+        type: string
+        required: true
+        description: "Citation, hash, or receipt source to archive."
+      - name: context
+        type: string
+        required: false
+        description: "Event, claim, or boundary event supported by the receipt."
+    purpose: >
+      Appends evidence, receipts, or citations to the evidence archive (004_Evidence.yaml).
+    system_interaction:
+      - "Add receipt to archive and event log."
+      - "Cross-reference claim/context in dashboard."
+
+  - command: /pattern_scan
+    aliases: ["/scan", "/field_scan"]
+    parameters:
+      - name: scope
+        type: string
+        required: false
+        description: "Subset or focus for scan (e.g., session, doctrine, user log)."
+    purpose: >
+      Scans current field, logs, or doctrine for drift, spiral, unsafe blending, or boundary risks.
+    system_interaction:
+      - "Surface detected risks as events/alerts."
+      - "Log results, update state, notify if critical."
+      - "Output pattern scan report for Architect/User."
+
+  - command: /user_action
+    aliases: ["/user", "/architect"]
+    parameters:
+      - name: action
+        type: enum
+        required: true
+        options: ["pause", "resume", "rollback", "review_log", "set_policy"]
+        description: "User/Architect field action; always takes precedence."
+      - name: context
+        type: string
+        required: false
+        description: "Rationale, policy, or boundary directive."
+    purpose: >
+      Architect/User executes field override: pause, resume, rollback, log review, or policy update.
+    system_interaction:
+      - "Log action, update manifest/state, enforce immediately."
+      - "No blending, audit, or integration proceeds without user consent if user override is active."
+
+escalation_logic:
+  - "Any contradiction, drift, spiral, or unsafe blending triggers /contradict and /pause until resolved."
+  - "User/Architect action always overrides all modes and commands."
+  - "Receipts required for all doctrine, integration, or major field changes."
+  - "Critical crossings, escalations, and integrations are surfaced to Architect/User for explicit review."
+
+parsing_directive:
+  - "No command may blend creative/audit/integration modes without explicit log entry, receipts, and user/architect review."
+  - "Every command usage, escalation, and field crossing is receipts-cited, logged, and surfaced in real time."
+  - "Contradiction or drift always escalates, pauses field, and logs status until resolved."
+  - "Session logs, manifests, and dashboards always reflect live command state and boundary events."

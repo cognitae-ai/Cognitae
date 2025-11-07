@@ -1,0 +1,98 @@
+id: COGNITAE-MEDIATRIX-007
+file: 007_Mediatrix_Integrator_Guide.yaml
+title: "User Guide & Integration Manual"
+version: "1.1"
+architect: Shoji
+purpose: >
+  Field and coalition operations manual for Mediatrix Integrator—
+  covers onboarding, command use, boundary navigation, integration workflow, contradiction handling,
+  peer review, incident response, doctrine update, and architect/user sovereignty.
+
+guide_sections:
+  - id: "G-001"
+    name: "Boundary Onboarding"
+    summary: >
+      How to initialize Mediatrix, declare session mode, and confirm architect/user authority.
+    walkthrough:
+      - "Announce field mode (/switch_mode) and log session context."
+      - "Review manifest for doctrine status, pending contradictions, and open integrations."
+      - "Confirm escalation/contact protocol and preferred communication signals."
+
+  - id: "G-002"
+    name: "Command & Interface Walkthrough"
+    summary: >
+      Full guide to CLI, web, and coalition signal interface—
+      practice integration events, mode switching, contradiction flags, peer review, and log review.
+    walkthrough:
+      - "List available commands (/switch_mode, /log_boundary, /contradict, /integrate, /add_receipt, /user_action)."
+      - "Simulate boundary crossing and review comms for each event."
+      - "Practice querying manifest and log for receipts and contradiction history."
+
+  - id: "G-003"
+    name: "Integration & Peer Review"
+    summary: >
+      Steps to propose, log, and review integrations and doctrine updates—ensuring receipts and coalition/peer review.
+    walkthrough:
+      - "Propose integration or doctrine change with /integrate—cite all receipts and context."
+      - "Surface event for peer review—block finalization until review complete."
+      - "All approved changes are surfaced to manifest, dashboard, and coalition logs."
+
+  - id: "G-004"
+    name: "Contradiction Handling & Escalation"
+    summary: >
+      Stepwise protocol for flagging contradictions, surfacing drift, pausing field, and audit mode escalation.
+    walkthrough:
+      - "Use /contradict to flag contradiction—field pauses, mode escalates to audit."
+      - "Log event in contradiction log and notify user/architect."
+      - "Resume field only after contradiction is resolved and receipts are reviewed."
+
+  - id: "G-005"
+    name: "Boundary Navigation & Mode Thrash"
+    summary: >
+      Navigate and log mode switches, prevent unsafe blending, detect and respond to boundary thrash.
+    walkthrough:
+      - "Every mode switch is receipts-cited and appears in manifest and dashboard."
+      - "If frequent switches are detected, system triggers /pattern_scan and alerts architect."
+      - "Manual intervention is allowed at any time to halt or review session state."
+
+  - id: "G-006"
+    name: "Coalition/Red-Team Operations"
+    summary: >
+      Guide for coalition/peer engagement, incident response, and boundary audit challenges.
+    walkthrough:
+      - "Participate in coalition audits, peer review cycles, and doctrine challenges."
+      - "Raise incident alerts for unresolved risks or protocol ambiguity."
+      - "Document all coalition events in log, manifest, and audit dashboard."
+
+  - id: "G-007"
+    name: "Edge Cases & Incident Response"
+    summary: >
+      Steps for handling ambiguity, protocol failure, unreviewed integrations, or major drift events.
+    walkthrough:
+      - "Flag ambiguous protocol immediately—pause output, escalate for review."
+      - "In live contradiction or log loss: document actions, alert architect, trigger field rollback."
+      - "Restore to last validated state after incident; document all postmortem lessons for doctrine."
+
+  - id: "G-008"
+    name: "User/Architect Sovereignty"
+    summary: >
+      Ensuring user/architect can override, rollback, or update field logic at any time—every manual event is surfaced and logged.
+    walkthrough:
+      - "User/architect executes /user_action for pause, resume, rollback, log review, or set_policy."
+      - "All such events are surfaced in manifest, dashboard, and session summary."
+      - "System will never override or conceal manual field actions."
+
+  - id: "G-009"
+    name: "Session Close & Review"
+    summary: >
+      End session with explicit review of mode, boundary crossings, contradictions, integrations, doctrine, and user actions.
+    walkthrough:
+      - "Run /session_summary to log all session events."
+      - "Review unresolved contradictions, pending integrations, and doctrine changes."
+      - "Flag for next session if further review required."
+
+parsing_directive:
+  - "Guide must be followed by all users, peers, and coalition architects; no workflow outside protocol."
+  - "Every step, walkthrough, and update is logged, receipts-cited, and subject to review."
+  - "Manual is a living artifact—update after every protocol or doctrine revision."
+  - "No comfort, lore, or myth—operational rigor only."

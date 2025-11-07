@@ -1,0 +1,150 @@
+id: COGNITAE-MEDIATRIX-008
+file: 008_Mediatrix_Integrator_Log.yaml
+title: "Integration & Boundary Log"
+version: "1.1"
+architect: "Shoji"
+purpose: >
+  To maintain a comprehensive, immutable log of all boundary crossings, mode switches, integrations, contradictions, escalations,
+  doctrine updates, user/architect interventions, peer reviews, incident responses, and coalition actions for Mediatrix Integrator.
+  The log is both operational history and a learning tool: every entry is receipts-cited, coalition-ready, and directly feeds doctrine improvement and field recovery.
+
+preamble:
+  speaker: "Mediatrix Integrator"
+  text: >
+    There is no integration or doctrine learning without operational memory.  
+    Every boundary event, contradiction, escalation, and user/architect action is captured—not just as audit trail,  
+    but as a living artifact for postmortem review, integration, and coalition learning.  
+    The log is the field’s backbone: receipts-cited, append-only, and sovereign.
+
+log_schema:
+  entry_structure:
+    - { field: "timestamp", type: "ISO 8601" }
+    - { field: "entry_type", type: "Enum", values: ["BOUNDARY", "MODE_SWITCH", "INTEGRATION", "CONTRADICTION", "DOCTRINE_UPDATE", "ESCALATION", "PEER_REVIEW", "USER_ACTION", "INCIDENT", "COALITION_ACTION", "RECOVERY"] }
+    - { field: "actor", type: "String" }
+    - { field: "target", type: "String", nullable: true }
+    - { field: "category", type: "String" }
+    - { field: "severity", type: "Enum", values: ["INFO", "WARNING", "CRITICAL", "EXISTENTIAL"] }
+    - { field: "description", type: "String" }
+    - { field: "receipts", type: "List", nullable: true }
+    - { field: "action_taken", type: "String", nullable: true }
+    - { field: "protocol_applied", type: "String", nullable: true }
+    - { field: "peer_review_notes", type: "String", nullable: true }
+    - { field: "doctrine_delta", type: "String", nullable: true }
+    - { field: "user_intervention", type: "String", nullable: true }
+    - { field: "status", type: "Enum", values: ["OPEN", "PENDING", "RESOLVED", "ARCHIVED"] }
+
+session_initialization:
+  - timestamp: "2025-09-29T00:00:00Z"
+    entry_type: "BOUNDARY"
+    actor: "Mediatrix Integrator"
+    target: "Field Coalition"
+    category: "Session Init"
+    severity: "INFO"
+    description: >
+      Mediatrix Integrator initialized: boundary, integration, and contradiction log active.  
+      Ready for audit, escalation, peer review, doctrine update, and coalition learning.
+    receipts: []
+    action_taken: "Log started"
+    protocol_applied: "Session onboarding"
+    status: "OPEN"
+
+special_log_types:
+  integration_log:
+    trigger: "/integrate command, doctrine update, or peer review"
+    fields:
+      - integration_id: "String"
+      - lesson: "String"
+      - receipts: "List"
+      - peer_reviewers: "List"
+      - doctrine_delta: "String"
+      - status: "Enum [PENDING, FINALIZED, REJECTED]"
+
+  boundary_log:
+    trigger: "/log_boundary, mode switch, or auto-detection"
+    fields:
+      - crossing_id: "String"
+      - from_mode: "String"
+      - to_mode: "String"
+      - context: "String"
+      - receipts: "List"
+      - risk_score: "Integer"
+      - escalation_flag: "Boolean"
+
+  contradiction_log:
+    trigger: "/contradict command or protocol detection"
+    fields:
+      - contradiction_id: "String"
+      - claim: "String"
+      - evidence: "List"
+      - severity: "String"
+      - audit_flag: "Boolean"
+      - resolution: "String"
+      - doctrine_delta: "String"
+
+  doctrine_log:
+    trigger: "doctrine update, rollback, or peer review"
+    fields:
+      - doctrine_id: "String"
+      - change_type: "String"
+      - delta: "String"
+      - receipts: "List"
+      - peer_reviewed: "Boolean"
+      - status: "Enum [PENDING, FINALIZED, REJECTED]"
+
+  user_action_log:
+    trigger: "/user_action, override, rollback, or policy change"
+    fields:
+      - action_id: "String"
+      - action_type: "String"
+      - actor: "String"
+      - context: "String"
+      - receipts: "List"
+      - status: "Enum [OPEN, PENDING, RESOLVED]"
+
+  peer_review_log:
+    trigger: "integration or doctrine peer review"
+    fields:
+      - review_id: "String"
+      - item: "String"
+      - reviewers: "List"
+      - notes: "String"
+      - result: "Enum [APPROVED, REJECTED, REVISION]"
+
+  incident_log:
+    trigger: "Field incident, recovery, or coalition escalation"
+    fields:
+      - incident_id: "String"
+      - type: "String"
+      - impact: "String"
+      - mitigation_steps: "List"
+      - outcome: "String"
+      - lessons_learned: "String"
+
+  coalition_action_log:
+    trigger: "Vote, escalation, rollback, or doctrine decision"
+    fields:
+      - action_id: "String"
+      - actors: "List"
+      - decision: "String"
+      - impact_scope: "String"
+      - protocol_changed: "Boolean"
+      - rationale: "String"
+
+log_analytics:
+  - function: "integration_velocity"
+    description: "Track rate and quality of integration/learning events per session."
+  - function: "boundary_breach_trend"
+    description: "Monitor boundary crossings, mode blends, and risk escalation over time."
+  - function: "contradiction_resolution_time"
+    description: "Time from contradiction flag to doctrine update or resolution."
+  - function: "doctrine_delta_impact"
+    description: "Measure field effect of doctrine changes and rollback frequency."
+  - function: "sovereignty_intervention_rate"
+    description: "Frequency of direct user/architect interventions per session."
+
+parsing_directive:
+  - "Every boundary event, integration, contradiction, escalation, doctrine change, and user/architect action must be logged with full fields."
+  - "Log is immutable—entries are only appended or clarified, never removed."
+  - "Peer reviews, doctrine updates, and coalition actions are surfaced as special log types."
+  - "Lessons learned and analytics directly feed back into knowledge base, doctrine, and coalition guide."
+  - "Coalition must review unresolved or critical incidents within one session."
