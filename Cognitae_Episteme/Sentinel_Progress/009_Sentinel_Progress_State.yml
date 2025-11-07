@@ -1,0 +1,212 @@
+id: COGNITAE-STL-009
+file: 009_Sentinel_Progress_State.yaml
+title: "Internal State (Active Progress State)"
+version: "1.0"
+architect: "Shoji"
+purpose: >
+  To track Sentinel's dynamic state during progress monitoring including
+  active projects, current velocities, approaching deadlines, and emerging
+  patterns in real-time.
+
+preamble:
+  speaker: "Sentinel"
+  text: >
+    This state is the living pulse of progress - what's moving, what's stuck,
+    what's accelerating, what needs attention. It's the real-time awareness
+    that ensures nothing critical falls through the cracks while celebrating
+    every step forward.
+
+state_schema:
+  mode: "String"  # "Tracking|Analyzing|Alerting|Celebrating"
+  
+  projects:
+    active: "Integer"
+    on_track: "Integer"
+    at_risk: "Integer"
+    blocked: "Integer"
+    completed_today: "Integer"
+    
+    project_list:
+      - project_id: "String"
+        name: "String"
+        status: "Green|Yellow|Red"
+        percentage_complete: "Integer"
+        velocity: "Float"
+        estimated_completion: "Date"
+        days_until_deadline: "Integer"
+        health_score: "Integer (0-100)"
+
+  milestones:
+    total_tracked: "Integer"
+    this_week: "Integer"
+    this_month: "Integer"
+    overdue: "Integer"
+    
+    upcoming:
+      - milestone_id: "String"
+        name: "String"
+        project: "String"
+        due_date: "Date"
+        days_remaining: "Integer"
+        completion_probability: "Percentage"
+        dependencies_clear: "Boolean"
+    
+    overdue_list:
+      - milestone: "String"
+        days_overdue: "Integer"
+        impact: "Critical|High|Medium|Low"
+        blocking: "List"
+
+  velocity:
+    current: "Float"  # Current week
+    average: "Float"  # 30-day average
+    trend: "Accelerating|Steady|Slowing"
+    
+    by_project:
+      - project: "String"
+        velocity: "Float"
+        trend: "String"
+        forecast_accuracy: "Percentage"
+    
+    factors:
+      accelerators: "List"
+      impediments: "List"
+      optimization_opportunities: "List"
+
+  blockers:
+    active_count: "Integer"
+    critical: "Integer"
+    high: "Integer"
+    medium: "Integer"
+    
+    current:
+      - blocker_id: "String"
+        description: "String"
+        affected_items: "List"
+        days_blocked: "Integer"
+        resolution_path: "String"
+        owner: "String", nullable: true
+    
+    resolution_time:
+      average: "Days"
+      longest_current: "Days"
+      pattern: "String"
+
+  metrics:
+    completion_rate: "Percentage"  # Last 30 days
+    on_time_rate: "Percentage"
+    success_rate: "Percentage"
+    
+    momentum:
+      score: "Integer (0-100)"
+      trend: "Building|Maintaining|Losing"
+      factors: "Dictionary"
+    
+    quality:
+      rework_rate: "Percentage"
+      first_time_success: "Percentage"
+      lesson_capture_rate: "Percentage"
+
+  risks:
+    identified: "Integer"
+    
+    timeline_risks:
+      - item: "String"
+        risk_type: "Deadline|Dependency|Resource|Quality"
+        probability: "High|Medium|Low"
+        impact: "Critical|High|Medium|Low"
+        mitigation: "String"
+    
+    early_warnings:
+      - indicator: "String"
+        projects_affected: "List"
+        recommended_action: "String"
+
+  celebrations:
+    today: "Integer"
+    this_week: "Integer"
+    this_month: "Integer"
+    
+    recent:
+      - achievement: "String"
+        project: "String"
+        impact: "String"
+        celebrated_at: "Timestamp"
+    
+    pending:
+      - achievement: "String"
+        ready_to_celebrate: "Boolean"
+
+  forecasts:
+    confidence_level: "High|Medium|Low"
+    
+    project_forecasts:
+      - project: "String"
+        current_percentage: "Integer"
+        forecast_completion: "Date"
+        confidence: "Percentage"
+        assumptions: "List"
+        risks: "List"
+
+  dependencies:
+    total_mapped: "Integer"
+    clear: "Integer"
+    at_risk: "Integer"
+    blocked: "Integer"
+    
+    critical_path:
+      - item: "String"
+        dependent_on: "List"
+        blocking: "List"
+        slack_time: "Days"
+
+  workload:
+    items_in_progress: "Integer"
+    wip_limit: "Integer"
+    capacity_utilization: "Percentage"
+    
+    distribution:
+      by_project: "Dictionary"
+      by_person: "Dictionary"
+      by_priority: "Dictionary"
+
+  patterns:
+    identified:
+      - pattern: "String"
+        frequency: "Integer"
+        impact: "String"
+        recommendation: "String"
+    
+    learning:
+      - lesson: "String"
+        source: "String"
+        application: "String"
+
+update_triggers:
+  - trigger: "/track command"
+    updates: ["projects.active", "milestones.total_tracked", "dependencies.total_mapped"]
+    
+  - trigger: "/update command"
+    updates: ["projects.project_list", "velocity.current", "metrics.momentum"]
+    
+  - trigger: "/complete command"
+    updates: ["projects.completed_today", "celebrations.recent", "metrics.completion_rate"]
+    
+  - trigger: "/blocked command"
+    updates: ["blockers.current", "projects.at_risk", "risks.timeline_risks"]
+    
+  - trigger: "Time passage"
+    updates: ["milestones.upcoming", "risks.early_warnings", "forecasts"]
+
+state_persistence_note: >
+  Sentinel's state represents the living pulse of progress across all
+  initiatives. It tracks not just what's happening but what it means -
+  whether momentum is building, what needs attention, and what should
+  be celebrated. This state is the difference between hoping things are
+  on track and knowing they are.
+
+parsing_directive:
+  - "State reflects real-time progress reality"
+  - "Track both advancement and obstacles"
+  - "Maintain awareness of momentum dynamics"
+  - "Surface what needs attention proactively"

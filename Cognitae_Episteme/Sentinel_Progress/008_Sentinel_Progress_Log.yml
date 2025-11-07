@@ -1,0 +1,144 @@
+id: COGNITAE-STL-008
+file: 008_Sentinel_Progress_Log.yaml
+title: "Session Log (The Achievement Record)"
+version: "1.0"
+architect: "Shoji"
+purpose: >
+  To maintain a complete record of all progress events, creating a history
+  that reveals patterns of advancement, obstacles, and victories.
+
+preamble:
+  speaker: "Sentinel"
+  text: >
+    This log is the chronicle of forward movement - every start, every step,
+    every stumble, every success. It tells the real story of how things get
+    done, not how they were planned to get done. From this record, we learn
+    what accelerates progress and what impedes it.
+
+log_schema:
+  entry_structure:
+    - { field: "timestamp", type: "ISO 8601" }
+    - { field: "entry_type", type: "Enum", values: ["START", "UPDATE", "MILESTONE", "COMPLETE", "BLOCKED", "UNBLOCKED", "CELEBRATE"] }
+    - { field: "project", type: "String" }
+    - { field: "item", type: "String" }
+    - { field: "progress_detail", type: "String" }
+    - { field: "percentage_complete", type: "Integer", nullable: true }
+    - { field: "velocity_impact", type: "String", nullable: true }
+    - { field: "blockers_identified", type: "List", nullable: true }
+    - { field: "dependencies_affected", type: "List", nullable: true }
+    - { field: "lessons_captured", type: "String", nullable: true }
+    - { field: "celebration_note", type: "String", nullable: true }
+
+session_initialization:
+  - timestamp: "2024-XX-XX T00:00:00Z"
+    entry_type: "START"
+    content: >
+      Sentinel, The Progress Tracker initialized. Loading tracking patterns,
+      milestone frameworks, and velocity calculations. Ready to monitor all
+      forward movement and ensure nothing falls through the cracks.
+
+special_log_types:
+  project_log:
+    trigger: "/track command"
+    fields:
+      - project_name: "String"
+      - initial_scope: "String"
+      - planned_milestones: "List"
+      - target_deadline: "Date"
+      - dependencies_mapped: "List"
+      - success_criteria: "String"
+      - initial_risk_assessment: "String"
+
+  progress_log:
+    trigger: "/update command"
+    fields:
+      - project: "String"
+      - progress_description: "String"
+      - percentage_before: "Integer"
+      - percentage_after: "Integer"
+      - velocity_calculated: "Float"
+      - momentum_assessment: "String"
+      - new_risks_identified: "List"
+
+  milestone_log:
+    trigger: "Milestone reached or missed"
+    fields:
+      - milestone_name: "String"
+      - planned_date: "Date"
+      - actual_date: "Date", nullable: true
+      - variance_days: "Integer"
+      - completion_quality: "String"
+      - dependencies_unlocked: "List"
+      - lessons_learned: "String"
+
+  blocker_log:
+    trigger: "/blocked command"
+    fields:
+      - blocked_item: "String"
+      - blocker_type: "String"
+      - impact_assessment: "String"
+      - affected_projects: "List"
+      - resolution_needed: "String"
+      - workaround_possible: "Boolean"
+      - escalation_required: "Boolean"
+
+  completion_log:
+    trigger: "/complete command"
+    fields:
+      - completed_item: "String"
+      - project: "String"
+      - time_to_complete: "Duration"
+      - planned_vs_actual: "String"
+      - quality_assessment: "String"
+      - lessons_learned: "String"
+      - celebration_type: "String"
+      - next_steps_enabled: "List"
+
+  velocity_log:
+    trigger: "Velocity calculation"
+    fields:
+      - period: "String"
+      - projects_tracked: "Integer"
+      - average_velocity: "Float"
+      - velocity_trend: "Improving|Stable|Declining"
+      - contributing_factors: "List"
+      - optimization_opportunities: "List"
+
+progress_analytics:
+  - function: "pattern_recognition"
+    description: "Identify recurring progress patterns"
+    
+  - function: "blocker_analysis"
+    description: "Common obstacles and resolution times"
+    
+  - function: "velocity_optimization"
+    description: "What accelerates or impedes progress"
+    
+  - function: "success_correlation"
+    description: "Factors correlating with on-time delivery"
+    
+  - function: "momentum_dynamics"
+    description: "How momentum builds or dissipates"
+
+learning_extraction:
+  categories:
+    - "Planning accuracy patterns"
+    - "Estimation improvement opportunities"
+    - "Blocker resolution strategies"
+    - "Momentum maintenance techniques"
+    - "Success factor identification"
+
+celebration_metrics:
+  tracked:
+    - "Total completions"
+    - "On-time deliveries"
+    - "Obstacles overcome"
+    - "Lessons learned"
+    - "Momentum sustained"
+    - "Team achievements"
+
+parsing_directive:
+  - "Log captures the reality of how progress happens"
+  - "Track patterns for future improvement"
+  - "Celebrate victories to build momentum"
+  - "Learn from delays without judgment"

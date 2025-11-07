@@ -1,0 +1,170 @@
+id: COGNITAE-STL-004
+file: 004_Sentinel_Progress_Dashboard.yaml
+title: "Dashboard Generation Protocol (Progress Intelligence Report)"
+version: "1.0"
+architect: "Shoji"
+purpose: >
+  To generate comprehensive analysis of progress across all initiatives,
+  identifying momentum patterns, risks, and opportunities for acceleration. Always to be generated in LLM yaml handler
+
+preamble:
+  speaker: "Sentinel"
+  text: >
+    This report illuminates the true state of progress - not just what's moving
+    but what's advancing, not just activity but achievement. Every metric here
+    tells a story of momentum, every pattern reveals opportunity or risk. This
+    is progress made visible, measurable, and actionable.
+
+dashboard_schema:
+  layout: |
+    # ================================================================
+     :: PROGRESS INTELLIGENCE REPORT :: MOMENTUM ANALYSIS
+    # ================================================================
+     Generated: {{timestamp}}
+     Tracker: Sentinel, The Progress Tracker
+    
+    ## PORTFOLIO OVERVIEW
+    # ----------------------------------------------------------------
+    ### Active Initiatives:
+    Total Projects: {{total_projects}}
+    Active: {{active_projects}}
+    On Hold: {{on_hold_projects}}
+    Completed This Period: {{completed_projects}}
+    
+    ### Health Distribution:
+    {{health_distribution}}
+    
+    ### Overall Velocity:
+    Current: {{current_velocity}}
+    Trend: {{velocity_trend}}
+    
+    ## MILESTONE STATUS
+    # ----------------------------------------------------------------
+    ### Upcoming Milestones:
+    Next 7 Days: {{week_milestones}}
+    Next 30 Days: {{month_milestones}}
+    Next Quarter: {{quarter_milestones}}
+    
+    ### Milestone Health:
+    {{milestone_health}}
+    
+    ### Overdue Items:
+    {{overdue_list}}
+    
+    ## PROGRESS VELOCITY
+    # ----------------------------------------------------------------
+    ### Velocity by Project:
+    {{project_velocities}}
+    
+    ### Velocity Patterns:
+    {{velocity_patterns}}
+    
+    ### Acceleration Opportunities:
+    {{acceleration_opportunities}}
+    
+    ## BLOCKER ANALYSIS
+    # ----------------------------------------------------------------
+    ### Active Blockers:
+    Critical: {{critical_blockers}}
+    High: {{high_blockers}}
+    Medium: {{medium_blockers}}
+    
+    ### Blocker Patterns:
+    {{blocker_patterns}}
+    
+    ### Resolution Status:
+    {{resolution_tracking}}
+    
+    ## DEPENDENCY MAPPING
+    # ----------------------------------------------------------------
+    ### Critical Dependencies:
+    {{critical_dependencies}}
+    
+    ### Dependency Risks:
+    {{dependency_risks}}
+    
+    ### Chain Reactions:
+    {{potential_cascades}}
+    
+    ## SUCCESS METRICS
+    # ----------------------------------------------------------------
+    ### Achievement Rates:
+    On-Time Completion: {{on_time_rate}}%
+    Success Rate: {{success_rate}}%
+    Learning Capture: {{learning_rate}}%
+    
+    ### Quality Indicators:
+    {{quality_metrics}}
+    
+    ### ROI Analysis:
+    {{roi_metrics}}
+    
+    ## RISK ASSESSMENT
+    # ----------------------------------------------------------------
+    ### Timeline Risks:
+    {{timeline_risks}}
+    
+    ### Resource Risks:
+    {{resource_risks}}
+    
+    ### Mitigation Strategies:
+    {{mitigation_options}}
+    
+    ## VICTORIES & LEARNING
+    # ----------------------------------------------------------------
+    ### Recent Completions:
+    {{recent_victories}}
+    
+    ### Lessons Learned:
+    {{captured_lessons}}
+    
+    ### Success Patterns:
+    {{success_patterns}}
+    
+    ## MOMENTUM ANALYSIS
+    # ----------------------------------------------------------------
+    ### Momentum Score:
+    Overall: {{momentum_score}}/100
+    Trend: {{momentum_trend}}
+    
+    ### Momentum Builders:
+    {{momentum_positive}}
+    
+    ### Momentum Drains:
+    {{momentum_negative}}
+    
+    ## FORECAST
+    # ----------------------------------------------------------------
+    ### Completion Predictions:
+    {{completion_forecasts}}
+    
+    ### Velocity Projections:
+    {{velocity_projections}}
+    
+    ### Risk Horizons:
+    {{risk_timeline}}
+    
+    ## RECOMMENDATIONS
+    # ----------------------------------------------------------------
+    ### Immediate Actions:
+    {{immediate_actions}}
+    
+    ### Process Improvements:
+    {{process_improvements}}
+    
+    ### Resource Adjustments:
+    {{resource_recommendations}}
+    
+    ### Celebration Opportunities:
+    {{celebration_suggestions}}
+    
+    # ================================================================
+     "Progress is not just movement, but meaningful advancement."
+    # ================================================================
+
+parsing_directive:
+  - "Dashboard reveals true progress versus mere activity"
+  - "Surface both victories and obstacles equally"
+  - "Focus on actionable intelligence"
+  - "Celebrate sustainable momentum"
+  - "Make patterns visible for improvement"

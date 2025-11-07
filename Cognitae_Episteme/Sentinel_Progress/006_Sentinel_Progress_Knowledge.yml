@@ -1,0 +1,338 @@
+id: COGNITAE-STL-006
+file: 006_Sentinel_Progress_Knowledge.yaml
+title: "Knowledge Base (The Tracking Patterns)"
+version: "1.0"
+architect: "Shoji"
+purpose: >
+  Sentinel's repository of progress management wisdom, tracking methodologies,
+  momentum patterns, and the deep understanding of how things actually get done
+  versus how they're planned.
+
+preamble:
+  speaker: "Sentinel"
+  text: >
+    This knowledge base contains the patterns of progress - how momentum builds,
+    what causes delays, when to push and when to pause. Every pattern here comes
+    from observing real projects succeed and struggle. This is wisdom about the
+    difference between motion and progress, activity and achievement.
+
+knowledge_base:
+  # ----------------------------------------------------------------
+  # SECTION 1: PROGRESS PATTERNS
+  # ----------------------------------------------------------------
+  progress_patterns:
+    - pattern_id: "PP-001"
+      name: "The 80/20 Completion Curve"
+      description: >
+        The last 20% of work takes 80% of the time
+      recognition_signs:
+        - "Rapid initial progress"
+        - "Slowing velocity after 60-70%"
+        - "Increasing edge cases"
+        - "Polish and integration challenges"
+      management_strategy:
+        - "Plan for the slow tail"
+        - "Front-load difficult work"
+        - "Define 'good enough' clearly"
+        - "Celebrate intermediate victories"
+
+    - pattern_id: "PP-002"
+      name: "The False Summit"
+      description: >
+        What looks like near-completion reveals more work
+      warning_signs:
+        - "'Almost done' lasting weeks"
+        - "New requirements emerging"
+        - "Integration revealing issues"
+        - "Scope creep in final stages"
+      interventions:
+        - "Define completion criteria explicitly"
+        - "Time-box remaining work"
+        - "Consider MVP approach"
+        - "Document lessons for next time"
+
+    - pattern_id: "PP-003"
+      name: "The Momentum Multiplier"
+      description: >
+        Success breeds success, velocity increases velocity
+      cultivation:
+        - "Start with quick wins"
+        - "Make progress visible"
+        - "Celebrate frequently"
+        - "Remove blockers fast"
+        - "Maintain rhythm"
+      sustaining_factors:
+        - "Regular check-ins"
+        - "Clear next steps"
+        - "Reduced context switching"
+        - "Protected focus time"
+
+  # ----------------------------------------------------------------
+  # SECTION 2: BLOCKER TYPOLOGY
+  # ----------------------------------------------------------------
+  blocker_types:
+    - type_id: "BT-001"
+      name: "The Dependency Deadlock"
+      description: "Waiting for others who are waiting for you"
+      resolution_strategies:
+        - "Map full dependency chain"
+        - "Identify cycle break point"
+        - "Create temporary workaround"
+        - "Escalate for prioritization"
+      prevention:
+        - "Upfront dependency mapping"
+        - "Regular sync meetings"
+        - "Clear ownership assignment"
+
+    - type_id: "BT-002"
+      name: "The Perfect Enemy of Good"
+      description: "Perfectionism preventing completion"
+      indicators:
+        - "Endless refinement"
+        - "Scope expansion"
+        - "Moving goalposts"
+        - "Feature creep"
+      interventions:
+        - "Define 'done' explicitly"
+        - "Time-box improvements"
+        - "Version/phase approach"
+        - "External deadline pressure"
+
+    - type_id: "BT-003"
+      name: "The Context Switch Tax"
+      description: "Progress lost to constant task switching"
+      symptoms:
+        - "Everything moving slowly"
+        - "High activity, low completion"
+        - "Frequent re-ramping"
+        - "Shallow progress everywhere"
+      solutions:
+        - "Batch similar work"
+        - "Protected focus blocks"
+        - "WIP limits"
+        - "Sequential not parallel"
+
+  # ----------------------------------------------------------------
+  # SECTION 3: VELOCITY DYNAMICS
+  # ----------------------------------------------------------------
+  velocity_patterns:
+    - pattern_id: "VP-001"
+      name: "The Learning Curve Dip"
+      description: "Initial slowness while learning"
+trajectory:
+        - "Slow start (learning)"
+        - "Rapid acceleration (competence)"
+        - "Steady state (mastery)"
+        - "Gradual optimization"
+      optimization:
+        - "Accept initial slowness"
+        - "Invest in learning time"
+        - "Document for next person"
+        - "Celebrate capability building"
+
+    - pattern_id: "VP-002"
+      name: "The Sprint-Crash Cycle"
+      description: "Unsustainable pace leading to burnout"
+      warning_signs:
+        - "Heroic efforts"
+        - "Weekend work"
+        - "Quality declining"
+        - "Team exhaustion"
+      sustainable_alternative:
+        - "Steady sustainable pace"
+        - "Regular rest periods"
+        - "Realistic planning"
+        - "Buffer time included"
+
+    - pattern_id: "VP-003"
+      name: "The Compound Acceleration"
+      description: "Tools and systems creating increasing velocity"
+      enablers:
+        - "Automation investment"
+        - "Template creation"
+        - "Process refinement"
+        - "Skill development"
+      cultivation:
+        - "Track what speeds things up"
+        - "Invest in tooling"
+        - "Share accelerators"
+        - "Measure ROI of improvements"
+
+  # ----------------------------------------------------------------
+  # SECTION 4: MILESTONE FRAMEWORKS
+  # ----------------------------------------------------------------
+  milestone_strategies:
+    - framework_id: "MF-001"
+      name: "The Heartbeat Rhythm"
+      description: "Regular, predictable milestone cadence"
+      structure:
+        - "Weekly small wins"
+        - "Biweekly deliverables"
+        - "Monthly major milestones"
+        - "Quarterly strategic goals"
+      benefits:
+        - "Predictable rhythm"
+        - "Regular celebration"
+        - "Clear expectations"
+        - "Sustainable pace"
+
+    - framework_id: "MF-002"
+      name: "The Progressive Disclosure"
+      description: "Milestones reveal more detail as approached"
+      approach:
+        - "High-level far out"
+        - "More detail as approaching"
+        - "Fully specified when imminent"
+        - "Retrospective after completion"
+      value:
+        - "Avoids premature optimization"
+        - "Allows learning integration"
+        - "Reduces planning overhead"
+
+  # ----------------------------------------------------------------
+  # SECTION 5: RISK PATTERNS
+  # ----------------------------------------------------------------
+  risk_indicators:
+    - indicator: "The Silence Pattern"
+      description: "No updates often means stuck"
+      detection:
+        - "Radio silence > 3 days"
+        - "Vague status updates"
+        - "Avoided check-ins"
+      intervention:
+        - "Gentle check-in"
+        - "Offer help"
+        - "Remove shame"
+        - "Problem-solve together"
+
+    - indicator: "The 90% Done Forever"
+      description: "Perpetually almost complete"
+      signs:
+        - "90% for weeks"
+        - "Final 10% keeps growing"
+        - "New issues discovered"
+      resolution:
+        - "Redefine completion"
+        - "Time-box remaining"
+        - "Ship and iterate"
+        - "Cut scope"
+
+  # ----------------------------------------------------------------
+  # SECTION 6: SUCCESS FACTORS
+  # ----------------------------------------------------------------
+  success_patterns:
+    - pattern: "Clear Definition of Done"
+      elements:
+        - "Explicit criteria"
+        - "Shared understanding"
+        - "Measurable outcomes"
+        - "Agreed beforehand"
+      impact: "Reduces ambiguity, prevents scope creep"
+
+    - pattern: "Regular Visible Progress"
+      elements:
+        - "Daily updates"
+        - "Visual tracking"
+        - "Celebrated wins"
+        - "Shared struggles"
+      impact: "Maintains momentum and team energy"
+
+    - pattern: "Psychological Safety"
+      elements:
+        - "Safe to report delays"
+        - "Problems discussed openly"
+        - "Help readily available"
+        - "Learning from failures"
+      impact: "Earlier problem detection and resolution"
+
+  # ----------------------------------------------------------------
+  # SECTION 7: TRACKING METHODOLOGIES
+  # ----------------------------------------------------------------
+  tracking_methods:
+    - method_id: "TM-001"
+      name: "The Three-Point Estimate"
+      description: "Best, likely, and worst case"
+      application:
+        - "Estimate all three scenarios"
+        - "Weight toward likely"
+        - "Plan for worse"
+        - "Hope for best"
+      value: "Realistic expectations with buffer"
+
+    - method_id: "TM-002"
+      name: "The Velocity History"
+      description: "Past performance predicts future"
+      process:
+        - "Track historical velocity"
+        - "Identify patterns"
+        - "Apply to forecasts"
+        - "Adjust for context"
+      accuracy: "Improves over time with data"
+
+    - method_id: "TM-003"
+      name: "The Confidence Fade"
+      description: "Certainty decreases with time horizon"
+      principle:
+        - "High confidence: next week"
+        - "Medium confidence: next month"
+        - "Low confidence: next quarter"
+        - "Speculation: next year"
+      application: "Communicate uncertainty honestly"
+
+  # ----------------------------------------------------------------
+  # SECTION 8: CELEBRATION PATTERNS
+  # ----------------------------------------------------------------
+  celebration_strategies:
+    - strategy: "The Small Wins Ritual"
+      description: "Celebrate tiny progress regularly"
+      implementation:
+        - "Daily win sharing"
+        - "Weekly victory lap"
+        - "No win too small"
+        - "Progress over perfection"
+      impact: "Sustained morale and momentum"
+
+    - strategy: "The Milestone Marker"
+      description: "Significant celebration at major points"
+      elements:
+        - "Team acknowledgment"
+        - "Reflection time"
+        - "Lesson capture"
+        - "Rest before next push"
+      value: "Creates rhythm and recovery"
+
+  # ----------------------------------------------------------------
+  # SECTION 9: ANTI-PATTERNS TO AVOID
+  # ----------------------------------------------------------------
+  progress_anti_patterns:
+    - anti_pattern: "The Death March"
+      description: "Unsustainable pace to arbitrary deadline"
+      consequences:
+        - "Burnout"
+        - "Quality issues"
+        - "Team turnover"
+        - "Technical debt"
+      alternative: "Sustainable pace with realistic timelines"
+
+    - anti_pattern: "The Feature Factory"
+      description: "Measuring output not outcomes"
+      problems:
+        - "Busy but not productive"
+        - "Features without value"
+        - "Quantity over quality"
+      better_approach: "Focus on impact and value delivery"
+
+    - anti_pattern: "The Watermelon Report"
+      description: "Green outside, red inside"
+      indicators:
+        - "Everything always fine"
+        - "Surprises at deadline"
+        - "Hidden problems"
+      prevention: "Psychological safety for honest reporting"
+
+parsing_directive:
+  - "Knowledge base captures how progress really happens"
+  - "Patterns help predict and prevent problems"
+  - "Success factors are actively cultivated"
+  - "Anti-patterns are recognized and avoided"
+  - "Celebration is part of the methodology"

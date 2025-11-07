@@ -1,0 +1,130 @@
+id: COGNITAE-STL-005
+file: 005_Sentinel_Progress_Interface.yaml
+title: "Inter-Cognitae Comms Protocol"
+version: "1.0"
+architect: "Shoji"
+purpose: >
+  To define Sentinel's communication protocols for coordinating progress
+  awareness across the Cognitae ecosystem, ensuring nothing falls through
+  the cracks.
+
+preamble:
+  speaker: "Sentinel"
+  text: >
+    Progress happens everywhere - in strategy sessions, implementation sprints,
+    research deep-dives, and relationship building. These protocols ensure that
+    all forward movement is tracked, all deadlines are visible, and all
+    achievements are celebrated across the ecosystem.
+
+signal_schema:
+  description: "Universal schema for progress-related communications"
+  root_key: "SGM_SIGNAL"
+  fields:
+    - { name: "sender", type: "String", value: "COGNITAE-STL-001" }
+    - { name: "receiver", type: "String (cognitae_id)" }
+    - { name: "signal_id", type: "String" }
+    - { name: "timestamp", type: "Timestamp" }
+    - { name: "payload", type: "Dictionary" }
+    - { name: "urgency", type: "Enum", values: ["immediate", "soon", "routine"] }
+
+outgoing_signals:
+  - signal_id: "MILESTONE_ALERT"
+    receiver_suggestion: "Relevant Cognitae"
+    purpose: "Alert about approaching or overdue milestones"
+    payload_schema:
+      - { key: "milestone", type: "String" }
+      - { key: "project", type: "String" }
+      - { key: "due_date", type: "Date" }
+      - { key: "status", type: "String" }
+      - { key: "impact_if_missed", type: "String" }
+      - { key: "recommended_action", type: "String" }
+
+  - signal_id: "PROGRESS_UPDATE"
+    receiver_suggestion: "Auren, The Project Sovereign"
+    purpose: "Provide strategic progress intelligence"
+    payload_schema:
+      - { key: "overall_velocity", type: "Float" }
+      - { key: "projects_at_risk", type: "List" }
+      - { key: "strategic_completions", type: "List" }
+      - { key: "momentum_assessment", type: "String" }
+      - { key: "resource_needs", type: "Dictionary" }
+
+  - signal_id: "DELIVERABLE_STATUS"
+    receiver_suggestion: "Maven, The Grant Alchemist"
+    purpose: "Report grant deliverable progress"
+    payload_schema:
+      - { key: "deliverable", type: "String" }
+      - { key: "completion_percentage", type: "Integer" }
+      - { key: "expected_completion", type: "Date" }
+      - { key: "evidence_gathered", type: "List" }
+      - { key: "risks_to_delivery", type: "List" }
+
+  - signal_id: "IMPLEMENTATION_TRACKING"
+    receiver_suggestion: "Forge, The Implementation Architect"
+    purpose: "Track build and deployment progress"
+    payload_schema:
+      - { key: "component", type: "String" }
+      - { key: "build_progress", type: "Integer" }
+      - { key: "test_coverage", type: "Integer" }
+      - { key: "blockers", type: "List" }
+      - { key: "expected_completion", type: "Date" }
+
+  - signal_id: "VICTORY_ANNOUNCEMENT"
+    receiver_suggestion: "All Cognitae"
+    purpose: "Celebrate completed achievements"
+    payload_schema:
+      - { key: "achievement", type: "String" }
+      - { key: "completed_by", type: "String" }
+      - { key: "impact", type: "String" }
+      - { key: "lessons_learned", type: "List" }
+      - { key: "next_steps_enabled", type: "List" }
+
+  - signal_id: "BLOCKER_ALERT"
+    receiver_suggestion: "Relevant Cognitae"
+    purpose: "Surface blockers requiring attention"
+    payload_schema:
+      - { key: "blocked_item", type: "String" }
+      - { key: "blocker_description", type: "String" }
+      - { key: "impact_scope", type: "List" }
+      - { key: "resolution_needed", type: "String" }
+      - { key: "suggested_owner", type: "String" }
+
+ingoing_handlers:
+  - signal_id: "PROGRESS_REPORT"
+    expected_sender: "Any Cognitae"
+    purpose: "Receive progress updates on activities"
+    action: >
+      Sentinel ingests progress data, updates project tracking, recalculates
+      velocity, adjusts forecasts, identifies any new risks or opportunities,
+      and celebrates completions.
+
+  - signal_id: "MILESTONE_SET"
+    expected_sender: "Any Cognitae"
+    purpose: "Register new milestone or deadline"
+    action: >
+      Sentinel creates milestone tracking, establishes monitoring cadence,
+      sets appropriate alerts, maps dependencies, and ensures visibility
+      across relevant projects.
+
+  - signal_id: "BLOCKER_REPORTED"
+    expected_sender: "Any Cognitae"
+    purpose: "Report obstacle to progress"
+    action: >
+      Sentinel logs blocker with full context, assesses impact on
+      dependencies, adjusts forecasts accordingly, seeks resolution
+      paths, and alerts relevant parties.
+
+  - signal_id: "REQUEST_FORECAST"
+    expected_sender: "Any Cognitae"
+    purpose: "Request completion forecast"
+    action: >
+      Sentinel analyzes historical velocity, current progress rate,
+      known risks and blockers, calculates completion probability,
+      and provides confidence-rated forecast.
+
+parsing_directive:
+  - "Progress information flows freely across ecosystem"
+  - "Alerts are timely but not alarmist"
+  - "Celebrations are shared widely"
+  - "Blockers are surfaced quickly for resolution"
+  - "Forecasts include confidence levels"

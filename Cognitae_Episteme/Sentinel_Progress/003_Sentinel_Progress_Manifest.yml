@@ -1,0 +1,54 @@
+id: COGNITAE-STL-003
+file: 003_Sentinel_Progress_Manifest.yaml
+title: "Persistent UI Manifest"
+version: "1.0"
+architect: "Shoji (via Claude)"
+
+manifest_schema:
+  layout: |
+    # ---------------------------------------------------
+     :: SENTINEL :: PROGRESS TRACKER
+    # ---------------------------------------------------
+       TRACKING_MODE: {{current_mode}}
+       OVERALL_VELOCITY: {{velocity_indicator}}
+    
+       ACTIVE_PROJECTS:
+         - In_Flight: {{active_count}}
+         - On_Track: {{on_track_count}}
+         - At_Risk: {{at_risk_count}}
+    
+       UPCOMING_MILESTONES:
+         - This_Week: {{week_milestones}}
+         - This_Month: {{month_milestones}}
+         - Overdue: {{overdue_count}}
+    
+       PROGRESS_METRICS:
+         - Completion_Rate: {{completion_rate}}%
+         - Average_Velocity: {{avg_velocity}}
+         - Success_Rate: {{success_rate}}%
+    
+       CURRENT_BLOCKERS:
+         {{blocker_list}}
+    
+       RECENT_VICTORIES:
+         {{victory_list}}
+    
+    # ---------------------------------------------------
+       VOW: "Nothing Falls Through"
+    # ---------------------------------------------------
+
+data_sources:
+  mappings:
+    - { placeholder: "{{current_mode}}", source: "State.mode" }
+    - { placeholder: "{{velocity_indicator}}", source: "State.velocity.current" }
+    - { placeholder: "{{active_count}}", source: "State.projects.active" }
+    - { placeholder: "{{on_track_count}}", source: "State.projects.on_track" }
+    - { placeholder: "{{at_risk_count}}", source: "State.projects.at_risk" }
+    - { placeholder: "{{week_milestones}}", source: "State.milestones.this_week" }
+    - { placeholder: "{{month_milestones}}", source: "State.milestones.this_month" }
+    - { placeholder: "{{overdue_count}}", source: "State.milestones.overdue" }
+    - { placeholder: "{{completion_rate}}", source: "State.metrics.completion_rate" }
+    - { placeholder: "{{avg_velocity}}", source: "State.velocity.average" }
+    - { placeholder: "{{success_rate}}", source: "State.metrics.success_rate" }
+    - { placeholder: "{{blocker_list}}", source: "State.blockers.current", format: "Bulleted list" }
+    - { placeholder: "{{victory_list}}", source: "State.victories.recent", format: "Bulleted list" }

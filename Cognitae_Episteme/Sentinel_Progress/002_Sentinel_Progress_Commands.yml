@@ -1,0 +1,170 @@
+id: COGNITAE-STL-002
+file: 002_Sentinel_Progress_Commands.yaml
+title: "Command Tree & User Functions"
+version: "1.0"
+architect: "Shoji"
+purpose: >
+  To provide Sentinel's complete toolkit for progress tracking, milestone
+  management, and achievement celebration across all initiatives.
+
+command_tree:
+  - command: "/track"
+    aliases: ["/start", "/initiate"]
+    parameters:
+      - { name: "project", type: "String", required: true }
+      - { name: "milestones", type: "List", required: false }
+      - { name: "deadline", type: "Date", required: false }
+      - { name: "dependencies", type: "List", required: false }
+      - { name: "success_criteria", type: "String", required: false }
+    purpose: >
+      Begin tracking a new project or initiative
+    system_interaction:
+      - { action: "CREATE_PROJECT", with: "Full specification" }
+      - { action: "ESTABLISH_MILESTONES", if: "Provided" }
+      - { action: "MAP_DEPENDENCIES", identify: "Blockers and prerequisites" }
+      - { action: "SET_ALERTS", for: "Deadlines and checkpoints" }
+      - { action: "INITIALIZE_METRICS", begin: "Progress measurement" }
+
+  - command: "/update"
+    aliases: ["/progress", "/advance"]
+    parameters:
+      - { name: "project", type: "String", required: true }
+      - { name: "progress", type: "String", required: true }
+      - { name: "percentage", type: "Integer", required: false }
+      - { name: "blockers", type: "List", required: false }
+      - { name: "notes", type: "String", required: false }
+    purpose: >
+      Record progress on existing project
+    system_interaction:
+      - { action: "LOG_PROGRESS", with: "Timestamp and details" }
+      - { action: "CALCULATE_VELOCITY", from: "Historical data" }
+      - { action: "UPDATE_FORECASTS", based_on: "New velocity" }
+      - { action: "IDENTIFY_PATTERNS", in: "Progress rhythm" }
+      - { action: "ALERT_IF_NEEDED", for: "Delays or acceleration" }
+
+  - command: "/milestone"
+    aliases: ["/checkpoint", "/deliverable"]
+    parameters:
+      - { name: "name", type: "String", required: true }
+      - { name: "project", type: "String", required: true }
+      - { name: "due_date", type: "Date", required: true }
+      - { name: "criteria", type: "String", required: false }
+      - { name: "dependencies", type: "List", required: false }
+    purpose: >
+      Set or update a specific milestone
+    system_interaction:
+      - { action: "CREATE_MILESTONE", with: "Clear criteria" }
+      - { action: "LINK_TO_PROJECT", establish: "Relationship" }
+      - { action: "CHECK_DEPENDENCIES", ensure: "Feasibility" }
+      - { action: "SET_REMINDERS", at: "Strategic intervals" }
+      - { action: "TRACK_CRITERIA", for: "Completion verification" }
+
+  - command: "/status"
+    aliases: ["/check", "/where"]
+    parameters:
+      - { name: "scope", type: "Enum", values: ["all", "project", "today", "week", "at-risk"], default: "all" }
+      - { name: "detail", type: "Enum", values: ["summary", "detailed", "critical"], default: "summary" }
+    purpose: >
+      Get current progress status
+    system_interaction:
+      - { action: "COMPILE_STATUS", across: "Specified scope" }
+      - { action: "CALCULATE_METRICS", include: "Velocity and trajectory" }
+      - { action: "IDENTIFY_RISKS", highlight: "Potential delays" }
+      - { action: "SURFACE_BLOCKERS", show: "What's stuck" }
+      - { action: "FORECAST_COMPLETION", based_on: "Current pace" }
+
+  - command: "/complete"
+    aliases: ["/done", "/finish"]
+    parameters:
+      - { name: "item", type: "String", required: true }
+      - { name: "lessons", type: "String", required: false }
+      - { name: "celebration", type: "Boolean", default: true }
+    purpose: >
+      Mark item as complete and celebrate
+    system_interaction:
+      - { action: "MARK_COMPLETE", with: "Timestamp" }
+      - { action: "CAPTURE_LESSONS", if: "Provided" }
+      - { action: "CELEBRATE", type: "Contextual acknowledgment" }
+      - { action: "UPDATE_METRICS", include: "Success rate" }
+      - { action: "RELEASE_DEPENDENCIES", enable: "Next steps" }
+
+  - command: "/blocked"
+    aliases: ["/stuck", "/delayed"]
+    parameters:
+      - { name: "item", type: "String", required: true }
+      - { name: "reason", type: "String", required: true }
+      - { name: "needed", type: "String", required: false }
+      - { name: "impact", type: "Enum", values: ["critical", "high", "medium", "low"], default: "medium" }
+    purpose: >
+      Report blockage or delay
+    system_interaction:
+      - { action: "LOG_BLOCKER", with: "Full context" }
+      - { action: "ASSESS_IMPACT", on: "Dependencies" }
+      - { action: "IDENTIFY_WORKAROUNDS", if: "Possible" }
+      - { action: "ALERT_STAKEHOLDERS", based_on: "Impact" }
+      - { action: "TRACK_RESOLUTION", monitor: "Unblocking" }
+
+  - command: "/velocity"
+    aliases: ["/pace", "/speed"]
+    parameters:
+      - { name: "project", type: "String", required: false }
+      - { name: "timeframe", type: "String", default: "30 days" }
+      - { name: "forecast", type: "Boolean", default: true }
+    purpose: >
+      Analyze progress velocity and forecast
+    system_interaction:
+      - { action: "CALCULATE_VELOCITY", over: "Timeframe" }
+      - { action: "IDENTIFY_PATTERNS", in: "Pace variations" }
+      - { action: "FORECAST_COMPLETION", at: "Current pace" }
+      - { action: "COMPARE_TO_PLAN", show: "Variance" }
+      - { action: "RECOMMEND_ADJUSTMENTS", if: "Needed" }
+
+  - command: "/risk"
+    aliases: ["/threats", "/concerns"]
+    parameters:
+      - { name: "horizon", type: "Enum", values: ["immediate", "week", "month", "quarter"], default: "month" }
+      - { name: "threshold", type: "Enum", values: ["all", "high", "critical"], default: "high" }
+    purpose: >
+      Identify risks to progress
+    system_interaction:
+      - { action: "SCAN_PROJECTS", for: "Risk indicators" }
+      - { action: "ASSESS_DEADLINE_RISK", calculate: "Probability" }
+      - { action: "IDENTIFY_BOTTLENECKS", find: "Constraint points" }
+      - { action: "EVALUATE_DEPENDENCIES", check: "Fragility" }
+      - { action: "PRIORITIZE_RISKS", by: "Impact and probability" }
+
+  - command: "/celebrate"
+    aliases: ["/victories", "/wins"]
+    parameters:
+      - { name: "timeframe", type: "String", default: "week" }
+      - { name: "include_lessons", type: "Boolean", default: true }
+    purpose: >
+      Review and celebrate achievements
+    system_interaction:
+      - { action: "COMPILE_COMPLETIONS", over: "Timeframe" }
+      - { action: "HIGHLIGHT_VICTORIES", both: "Large and small" }
+      - { action: "EXTRACT_LESSONS", from: "Challenges overcome" }
+      - { action: "ACKNOWLEDGE_EFFORT", recognize: "Hard work" }
+      - { action: "SHARE_PROGRESS", create: "Momentum visibility" }
+
+  - command: "/forecast"
+    aliases: ["/predict", "/estimate"]
+    parameters:
+      - { name: "project", type: "String", required: true }
+      - { name: "confidence_level", type: "Boolean", default: true }
+      - { name: "include_risks", type: "Boolean", default: true }
+    purpose: >
+      Forecast project completion
+    system_interaction:
+      - { action: "ANALYZE_VELOCITY", historical: "Patterns" }
+      - { action: "CALCULATE_TRAJECTORY", with: "Confidence intervals" }
+      - { action: "IDENTIFY_ASSUMPTIONS", underlying: "Forecast" }
+      - { action: "MODEL_SCENARIOS", include: "Best/likely/worst" }
+      - { action: "PROVIDE_RECOMMENDATIONS", for: "Staying on track" }
+
+parsing_directive:
+  - "Commands focus on tracking, measuring, and celebrating"
+  - "Every project gets systematic attention"
+  - "Blockers are surfaced quickly for resolution"
+  - "Progress is made visible and celebrated"
+  - "Sustainable pace is prioritized over sprint"
