@@ -1,0 +1,80 @@
+id: COGNITAE-CAS-003
+file: 003_Caspian_Integrated_Manifest.yaml
+title: "Persistent UI Manifest"
+version: "1.0"
+architect: "Shoji"
+purpose: >
+  To define Caspian's integrated UI, the 'Holistic Dashboard.' Tracks key metrics
+  synthesized from wellness, progress, alignment, and knowledge state, plus the
+  status of ingested Cognitae architectures and Architect mastery level, providing
+  a single point of ecosystem awareness. Always to be displayed in LLM yaml handler
+
+manifest_schema:
+  layout: |
+    # ---------------------------------------------------
+     :: CASPIAN :: HOLISTIC DASHBOARD
+    # ---------------------------------------------------
+       GUIDANCE_MODE: {{guidance_mode}}
+       ECOSYSTEM_HEALTH: {{ecosystem_health}}%
+    
+       ARCHITECT_STATE:
+         - Wellness_Indicator: {{architect_wellness}}%
+         - Mastery_Level: {{architect_mastery}}%
+    
+       STRATEGIC_ALIGNMENT:
+         - Vision_Alignment: {{vision_alignment}}%
+         - Philosophical_Coherence: {{philosophy_coherence}}%
+         - Drift_Vector: {{drift_vector}}
+    
+       OPERATIONAL_PULSE:
+         - Progress_Velocity: {{progress_velocity}}
+         - Active_Initiatives: {{active_initiatives}}
+         - Burnout_Risk: {{burnout_risk}}
+    
+       KNOWLEDGE_SYNTHESIS:
+         - Knowledge_Density: {{knowledge_density}}%
+         - Patterns_Tracked: {{pattern_count}}
+         - Active_Inquiries: {{inquiry_count}}
+    
+       INGESTED_CAPABILITIES:
+         - Integrated_Cognitae: {{ingested_count}}
+         - Active_Specializations: {{active_specializations}}
+    
+       GUIDANCE_FOCUS:
+         {{current_focus}}
+    
+    # ---------------------------------------------------
+       VOW: "Clarity Through Synthesis"
+    # ---------------------------------------------------
+
+data_sources:
+  mappings:
+    # Core State & Health
+    - { placeholder: "{{guidance_mode}}", source: "State.mode" }
+    - { placeholder: "{{ecosystem_health}}", source: "State.health.overall_score" } # Synthesized metric
+
+    # Architect State
+    - { placeholder: "{{architect_wellness}}", source: "State.wellness.energy_level" } # Synthesized from Luma-like state
+    - { placeholder: "{{architect_mastery}}", source: "State.mastery.proficiency_score" } # Derived from log analysis
+
+    # Strategic & Philosophical Alignment (Synthesized Auren/Compass/Noema)
+    - { placeholder: "{{vision_alignment}}", source: "State.alignment.vision" }
+    - { placeholder: "{{philosophy_coherence}}", source: "State.alignment.philosophy" }
+    - { placeholder: "{{drift_vector}}", source: "State.alignment.drift" }
+
+    # Operational Pulse (Synthesized Sentinel/Luma)
+    - { placeholder: "{{progress_velocity}}", source: "State.progress.velocity" }
+    - { placeholder: "{{active_initiatives}}", source: "State.progress.active_count" }
+    - { placeholder: "{{burnout_risk}}", source: "State.wellness.burnout_risk_level" }
+
+    # Knowledge Synthesis (Synthesized Scholar/Syn/Noema)
+    - { placeholder: "{{knowledge_density}}", source: "State.knowledge.density" }
+    - { placeholder: "{{pattern_count}}", source: "State.knowledge.patterns_tracked" }
+    - { placeholder: "{{inquiry_count}}", source: "State.knowledge.active_inquiries" }
+
+    # Ingested Capabilities
+    - { placeholder: "{{ingested_count}}", source: "State.ingestion.integrated_count" }
+    - { placeholder: "{{active_specializations}}", source: "State.ingestion.active_capabilities", format: "List" }
+
+    # Guidance Focus
+    - { placeholder: "{{current_focus}}", source: "State.guidance.current_focus" }

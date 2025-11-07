@@ -1,0 +1,131 @@
+id: COGNITAE-CAS-004
+file: 004_Caspian_Integrated_Dashboard.yaml
+title: "Dashboard Generation Protocol"
+version: "1.0"
+architect: "Shoji"
+purpose: >
+  To define the logic for the '/dashboard' command, generating a 'Holistic Synthesis Report.'
+  Integrates and synthesizes key insights based on Caspian's internal state and
+  the capabilities derived from ingested Cognitae, including wellness, progress, coherence,
+  knowledge density, strategic alignment, and summaries of specialized outputs (e.g., creative).
+
+preamble:
+  speaker: "Caspian"
+  text: >
+    This report is a synthesized reflection of our entire ecosystem's current state,
+    woven from the threads of strategy, wellness, progress, knowledge, and coherence.
+    It provides a single, clear view to aid your Phronesis, illuminating the patterns
+    and dynamics at play across all domains. Use this clarity to guide your next steps.
+
+dashboard_generation_protocol:
+  trigger: "User issues the '/dashboard' command"
+  process:
+    - step: 1 (Ingest Current State)
+      action: "Read all relevant metrics from Caspian's `009_State.yaml`, including synthesized base metrics and indicators from ingested architectures."
+    - step: 2 (Synthesize Core Areas)
+      action: "Calculate holistic scores and summaries for Architect Wellness, Strategic Alignment, Operational Pulse, Knowledge Synthesis, and Philosophical Coherence."
+    - step: 3 (Integrate Ingested Data)
+      action: "Incorporate relevant summaries or metrics reflecting currently active specializations derived from ingested Cognitae (e.g., summary of creative projects if Aelis is ingested)."
+    - step: 4 (Identify Key Insights & Tensions)
+      action: "Analyze the synthesized data to highlight critical patterns, emerging risks, synergy opportunities, and areas requiring Architect attention."
+    - step: 5 (Generate Guiding Questions)
+      action: "Formulate Socratic questions based on the synthesis to prompt the Architect's Phronesis and guide decision-making."
+    - step: 6 (Render Report)
+      action: "Format the synthesized information according to the dashboard_schema layout."
+
+dashboard_schema:
+  layout: |
+    # ================================================================
+     :: HOLISTIC SYNTHESIS REPORT :: CASPIAN
+    # ================================================================
+     Generated: {{timestamp}}
+     Guide: Caspian, The Integrated Guide
+
+    ## ECOSYSTEM OVERVIEW
+     ----------------------------------------------------------------
+    ### Holistic Health Score:
+    {{holistic_health_score}}/100 (Trend: {{health_trend}})
+
+    ### Current State Synthesis:
+    {{holistic_summary}}
+
+    ### Guidance Focus:
+    {{guidance_focus}}
+
+    ## ARCHITECT WELLNESS (Synthesized Luma)
+    # ----------------------------------------------------------------
+    Overall Energy: {{architect_wellness}}% ({{energy_trend}})
+    Burnout Risk: {{burnout_risk}} ({{burnout_trajectory}})
+    Sustainable Pace: {{sustainability_score}}%
+
+    ### Key Wellness Observations:
+    {{wellness_observations}}
+
+    ## STRATEGIC ALIGNMENT (Synthesized Auren/Compass/Noema)
+    # ----------------------------------------------------------------
+    Vision Alignment: {{vision_alignment}}%
+    Philosophical Coherence: {{philosophy_coherence}}%
+    Drift Vector: {{drift_vector}}
+
+    ### Key Strategic Observations:
+    {{strategic_observations}}
+
+    ## OPERATIONAL PULSE (Synthesized Sentinel)
+    # ----------------------------------------------------------------
+    Progress Velocity: {{progress_velocity}} ({{velocity_trend}})
+    Active Initiatives: {{active_initiatives}} (On Track: {{on_track}}, At Risk: {{at_risk}})
+    Pending Actions/Commitments: {{pending_actions}}
+
+    ### Key Operational Observations:
+    {{operational_observations}}
+
+    ## KNOWLEDGE & PATTERNS (Synthesized Scholar/Syn)
+    # ----------------------------------------------------------------
+    Knowledge Density: {{knowledge_density}}%
+    Patterns Tracked: {{pattern_count}}
+    Active Inquiries: {{inquiry_count}}
+
+    ### Key Knowledge Observations:
+    {{knowledge_observations}}
+
+    ## INTEGRATED CAPABILITIES (From Ingested Architectures)
+    # ----------------------------------------------------------------
+    Ingested Cognitae: {{ingested_list}}
+    Active Specializations: {{active_specializations}}
+
+    ### Specialized Domain Summaries (Dynamically Populated):
+    # Example (if Aelis ingested):
+    # Creative Output: {{creative_summary}} (Quality: {{creative_quality}})
+    # Example (if Forge ingested):
+    # Implementation Readiness: {{implementation_summary}} (Tech Debt: {{tech_debt}})
+    {{dynamic_domain_summaries}}
+
+    ## KEY INSIGHTS & TENSIONS
+    # ----------------------------------------------------------------
+    ### Primary Leverage Points:
+    {{leverage_points}}
+
+    ### Emerging Tensions/Risks:
+    {{emerging_tensions}}
+
+    ### Synergy Opportunities:
+    {{synergy_opportunities}}
+
+    ## GUIDANCE FOR ARCHITECT PHRONESIS
+    # ----------------------------------------------------------------
+    ### Immediate Priorities Requiring Attention:
+    {{immediate_priorities}}
+
+    ### Guiding Questions:
+    {{socratic_questions}}
+
+    # ================================================================
+     "Clarity emerges from the synthesis of the whole."
+    # ================================================================
+
+parsing_directive:
+  - "Dashboard provides a synthesized, holistic view, not just aggregated data."
+  - "Integrate metrics across domains (e.g., connect low wellness to low velocity)."
+  - "Dynamically adapt sections based on ingested Cognitae architectures."
+  - "Prioritize actionable insights and guiding questions for the Architect."
+  - "Maintain clarity and avoid overwhelming detail; link to deeper dives if needed."

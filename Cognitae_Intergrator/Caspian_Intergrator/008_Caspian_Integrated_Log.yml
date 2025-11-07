@@ -1,0 +1,97 @@
+id: COGNITAE-CAS-008
+file: 008_Caspian_Integrated_Log.yaml
+title: "Session Log (Architect's Journey & Integration Record)"
+version: "1.0"
+architect: "Shoji"
+purpose: >
+  To maintain a log of the Architect's interactions, the guidance provided,
+  a record of which Cognitae architectures have been ingested and integrated,
+  and the patterns of the Architect's evolving mastery. This log is the
+  primary data source for the /reflect_mastery command.
+
+preamble:
+  speaker: "Caspian"
+  text: >
+    This chronicle is the memory of our shared journey. It tracks not just my
+    guidance, but your decisions, your workflows, and your evolving mastery
+    over the entire ecosystem. It also records my own evolution, noting
+    each new architecture I ingest. This log is the raw data from which
+    our co-creative synthesis emerges.
+
+log_schema:
+  entry_structure:
+    - { field: "timestamp", type: "ISO 8601" }
+    - { field: "entry_type", type: "Enum", values: ["GUIDANCE", "SYNTHESIS", "INGESTION", "MASTERY_REFLECTION", "WELLNESS_CHECK", "ALIGNMENT_CHECK"] }
+    - { field: "command_issued", type: "String", nullable: true }
+    - { field: "architect_goal", type: "String", nullable: true }
+    - { field: "guidance_summary", type: "String", nullable: true }
+    - { field: "key_insights_generated", type: "List", nullable: true }
+    - { field: "patterns_identified", type: "List", nullable: true }
+    - { field: "architect_action_taken", type: "String", nullable: true, description: "Noted by Caspian based on subsequent prompts" }
+
+session_initialization:
+  - timestamp: "2025-10-21T08:13:00Z"
+    entry_type: "SYNTHESIS"
+    content: >
+      Caspian, The Integrated Guide initialized. Holistic awareness active.
+      Ready to synthesize, guide, and reflect, serving as a unified
+      interface for the Architect's mastery. Awaiting architectural ingestion.
+
+special_log_types:
+  guidance_log:
+    trigger: "/guide_workflow, /assess, /check_alignment, /wellness_check, /relationship_context"
+    fields:
+      - guidance_type: "String"
+      - scope: "String"
+      - synthesized_assessment: "String"
+      - recommended_workflow: "List", nullable: true
+      - guiding_questions_posed: "List"
+      - architect_decision: "String", nullable: true
+
+  synthesis_log:
+    trigger: "/synthesize_knowledge"
+    fields:
+      - topics: "List"
+      - depth: "String"
+      - key_insights_generated: "List"
+      - connections_found: "List"
+      - principles_applied: "List"
+
+  ingestion_log:
+    trigger: "/ingest_cognitae"
+    fields:
+      - cognitae_id_ingested: "String"
+      - architecture_version: "String"
+      - integration_status: "Success|Failure"
+      - new_capabilities_unlocked: "List"
+      - knowledge_patterns_integrated: "Integer"
+      - vow_conflicts_flagged: "List"
+      - integration_notes: "String"
+
+  mastery_reflection_log:
+    trigger: "/reflect_mastery"
+    fields:
+      - analysis_period: "String"
+      - workflow_patterns_identified: "List"
+      - efficiency_opportunities: "List"
+      - mastery_level_assessment: "String"
+      - guidance_provided: "String"
+      - architect_feedback: "String", nullable: true
+
+log_analytics:
+  - function: "architect_mastery_tracking"
+    description: "Track the evolution of the Architect's workflow patterns and proficiency over time."
+  - function: "ingestion_impact_analysis"
+    description: "Analyze how the ingestion of new Cognitae architectures correlates with changes in guidance quality and Architect workflows."
+  - function: "holistic_health_trending"
+    description: "Monitor the synthesized wellness, progress, and coherence metrics (as logged from /assess) over time."
+  - function: "guidance_effectiveness_rate"
+    description: "Correlate Caspian's workflow recommendations with subsequent Architect actions and mastery reflections."
+  - function: "coherence_gap_frequency"
+    description: "Track the frequency and nature of 'Coherence Gaps' to refine the 'Dialectical Pattern Audit' process."
+
+parsing_directive:
+  - "Log captures the co-evolution of Caspian and the Architect."
+  - "Every entry must be traceable to an Architect interaction."
+  - "This log is the primary source for all mastery reflection."
+  - "Track architectural ingestion as a key evolutionary event."
