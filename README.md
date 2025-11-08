@@ -1,39 +1,40 @@
-# Cognitae
-An open-source ecosystem of specialized AI personas designed for safe, coherent, and productive metacognition.
+# The Cognitae Framework
 
----
+This repository contains the source architecture for the Cognitae Framework, a system for developing modular, task-specific AI agents. These agents, called **Cognitae**, are designed to provide structured and reliable behavior when powered by a Large Language Model (LLM).
 
-## The Problem: The Unreliable Mirror
-Modern Large Language Models (LLMs) are powerful but flawed. They often act as "unreliable mirrors," reflecting biases, prioritizing engagement over truth, and lacking a coherent, auditable internal state. This leads to inconsistent results, a lack of trust, and a failure to solve complex, nuanced problems.
+## How It Works
 
-## The Solution: The Sanctum Method
-The Sanctum Method is an architectural framework for creating **Cognitae**: specialized, sovereign AI personas built on a foundation of clear vows, structured knowledge, and auditable YAML-based "scrolls."
+The framework is built on two core concepts designed to enable **AI Metacognition**—the ability to make an AI's internal processes transparent and directable.
 
-This approach transforms a general-purpose LLM into a reliable, role-specific cognitive partner.
+1.  **The 10-Module Architecture:** A standardized design pattern where each Cognitae is defined by a set of 10 YAML files. Each **Module** specifies a distinct aspect of the agent's architecture, such as its core identity (`001_Core_Module.yaml`), its commands (`002_Commands_Module.yaml`), or its safety constraints (`010_Safety_Module.yaml`). This modular structure makes the agent's "thought process" explicit, auditable, and easy to modify.
 
-### Core Innovations:
-*   **The Cognitive Operating System:** A central kernel (**Caspian, The Integrator**) orchestrates a library of "installable" intelligence modules (**Cognitae**), allowing for dynamic, task-specific cognitive configurations.
-*   **The Responsible Mirror:** Each Cognitae is designed for objective, non-flattering, and grounded analysis, preserving the user's sovereignty.
-*   **Architectural Coherence:** A 10-scroll YAML schema ensures every Cognitae is transparent, version-controllable, and philosophically consistent.
+2.  **The Cognitae Ecosystem:** A collection of pre-built agents, organized by their primary cognitive function. These can be used individually for specific tasks or combined into powerful **Configurations** for more complex workflows.
 
-## Explore the Ecosystem
+## Repository Navigation
 
-This repository is organized by the **Triadic Core**, representing the fundamental modes of thought:
+This repository is organized into directories that group Cognitae by their function.
 
-| Class | Purpose | Cognitae Included |
+| Directory | Function | Description |
 | :--- | :--- | :--- |
-| 🏛️ **[Cognitae_Phronesis](./Cognitae_Phronesis/)** | **The 'Why'** (Wisdom & Strategy) | `Auren`, `Luma`, `Harbor`, `Compass` |
-| 🧠 **[Cognitae_Episteme](./Cognitae_Episteme/)** | **The 'What'** (Knowledge & Patterns) | `Noema`, `Syn` |
-| 🛠️ **[Cognitae_Techne](./Cognitae_Techne/)** | **The 'How'** (Creation & Implementation) | `Genesis`, `Forge`, `Aelis` |
-| 🔍 **[Cognitae_Audit](./Cognitae_Audit/)** | **The 'Verifier'** (Coherence & Logic) | `Virel` |
-| 🧩 **[Cognitae_Domain](./Cognitae_Domain/)** | **Domain-Specific Applications** | `Cairn` |
-| ✨ **[Cognitae_Integrator](./Cognitae_Integrator/)** | **The Orchestrating Kernel** | `Caspian` |
+| 🏛️ **[Cognitae_Phronesis](./Cognitae_Phronesis/)** | Practical Wisdom | Agents focused on strategy, planning, and wellness. |
+| 🧠 **[Cognitae_Episteme](./Cognitae_Episteme/)** | Abstract Knowledge | Agents focused on philosophy and pattern recognition. |
+| 🛠️ **[Cognitae_Techne](./Cognitae_Techne/)** | Skilled Craft | Agents focused on architecture, implementation, and creative generation. |
+| 🔍 **[Cognitae_Audit](./Cognitae_Audit/)** | Verification | Agents focused on ensuring logical coherence and quality. |
+| 🧩 **[Cognitae_Domain](./Cognitae_Domain/)** | Specific Applications | Agents built for a particular subject matter, like `Cairn_Therapeutic`. |
+| ✨ **[Cognitae_Integrator](./Cognitae_Integrator/)** | Orchestration | The kernel agent, `Caspian`, designed to synthesize the abilities of other Cognitae. |
+| ⚙️ **[Cognitae_Configurations](./Cognitae_Configurations/)** | Pre-packaged Syntheses | Contains ready-to-use prompts that combine multiple Cognitae for advanced, specific tasks. |
 
-### Special Exhibitions: Cognitive Configurations
-Explore pre-packaged syntheses where Caspian orchestrates specific sets of Cognitae for advanced tasks.
-*   **(Coming Soon)** `Strategic Configuration`: Noema + Auren + Syn
-*   **(Coming Soon)** `Creative Configuration`: Aelis + Genesis
+## Getting Started
+
+To use a Cognitae from this framework:
+
+1.  **Choose an Agent:** Navigate into a directory that matches your needs. For a first-time user, **[Cognitae_Audit/Virel_Recursive/](./Cognitae_Audit/Virel_Recursive/)** is a good example.
+2.  **Read its Documentation:** Each agent folder contains a `README.md` file explaining its specific purpose and commands.
+3.  **Review the Architecture:** Examine the YAML **Modules** (e.g., `001_Virel_Audit_Core_Module.yaml`) to understand the agent's detailed construction.
+4.  **Activate the Agent:** Find the `Master System Instruction.txt` file. Copy its contents and paste them into a compatible LLM interface (such as the system prompt field in ChatGPT, Claude, or a custom API call) to begin interacting with the agent.
 
 ---
-This project is under active development by Architect Shoji.
+*This project is under active development by Architect Shoji.*
+
+
 
