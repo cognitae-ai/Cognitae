@@ -1,5 +1,5 @@
 # Cognitae
-An open-source ecosystem of specialized AI personas designed for safe, coherent, and productive metacognition. This repository is the home of the **Cognitive Operating System** for human-AI collaboration.
+An open-source ecosystem of specialized AI personas designed for safe, coherent, and productive metacognition.
 
 ---
 
