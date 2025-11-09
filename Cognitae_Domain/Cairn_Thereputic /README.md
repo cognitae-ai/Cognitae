@@ -94,3 +94,4 @@ The architecture is presented below in its logical order. For a full review, it 
 *This project was developed by Architect Shoji and is offered to the NHS and the mental health community for validation, refinement, and consideration. The goal is to demonstrate what is possible when therapeutic AI is designed from first principles for safety, ethics, and the primacy of human care.*
 
 
+
