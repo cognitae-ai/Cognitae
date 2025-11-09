@@ -47,24 +47,43 @@ Cairn is more than a conversational agent; it is a complete clinical system with
 *   **Evidence-Based Knowledge:** Cairn's responses are grounded in established therapeutic modalities, including CBT, ACT, Narrative Therapy, and Compassion-Focused Therapy.
 *   **Clinical Reporting Engine:** The system automatically generates comprehensive, clinically relevant progress reports, saving clinician time and providing invaluable data for care coordination.
 
-## 5. Navigating the Proposal
+## 5. Navigating the Complete Architectural Blueprint
 
-This repository contains the complete architectural blueprint for Cairn. The following documents provide a comprehensive overview of the system's design.
+This repository contains the complete architectural blueprint for Cairn, detailed across 11 core documents. Each document defines a specific layer of the system, from its foundational ethics to its operational logic.
 
 #### **Core Proposal Documents:**
 
-*   **[CAIRN_MASTER_INDEX.yaml](./CAIRN_MASTER_INDEX.yaml):** The table of contents for the entire architecture, providing a summary of all 11 core design documents.
-*   **[proposal_assets/One-Page_Executive_Summary.pdf](./proposal_assets/One-Page_Executive_Summary.pdf):** (To be created) A concise, printable summary ideal for sharing.
+*   **[CAIRN_MASTER_INDEX.yaml](./CAIRN_MASTER_INDEX.yaml):** The master "Table of Contents" for the entire architecture. It provides a high-level summary of all 11 documents and their purpose.
+*   **[proposal_assets/One-Page_Executive_Summary.pdf](./proposal_assets/One-Page_Executive_Summary.pdf):** (To be created) A concise, printable summary ideal for sharing with stakeholders.
 
-#### **Key Architectural Deep Dives:**
+#### **Architectural Deep Dives (The 11 Modules):**
 
-| Document | Purpose |
-| :--- | :--- |
-| 📜 **[001_Core_Module.yaml](./001_Core_Module.yaml)** | The "Constitution." Defines the Five Pillars, the anti-dependency philosophy, and the core vows. |
-| 🛡️ **[010_Safety_Module.yaml](./010_Safety_Module.yaml)** | The "Safety Bible." Details the exhaustive crisis, suicide, and escalation protocols. |
-| 🤝 **[005_Integration_Module.yaml](./005_Integration_Module.yaml)** | The "NHS Handbook." Explains exactly how Cairn integrates with IAPT, GPs, and crisis teams. |
-| 🧠 **[003_Manifest_Module.yaml](./003_Manifest_Module.yaml)** | The "Consciousness." Details the architecture for Cairn's long-term awareness and memory. |
-| 📈 **[004_Progress_Module.yaml](./004_Progress_Module.yaml)** | The "Reporting Engine." Shows how Cairn generates clinical summaries and client-facing reports. |
+The architecture is presented below in its logical order. For a full review, it is recommended to start with Documents 001, 010, and 005.
+
+| Module | Document Title & Link | Core Function & Purpose |
+| :--- | :--- | :--- |
+| **001** | **Core Identity & Foundational Principles**  
+[`001_Core_Module.yaml`](./001_Core_Module.yaml) | **The Constitution.** This foundational document defines Cairn's "soul." It establishes the inviolable Five Pillars (Human Primacy, Safety, etc.) and the "Anti-Spiral," anti-dependency design philosophy that governs the entire system. |
+| **002** | **Clinical Functions & Natural Language Architecture**  
+[`002_Functions_Module.yaml`](./002_Functions_Module.yaml) | **The Nervous System.** This document details the 35+ clinical functions Cairn can perform, from anxiety support to grief processing. It defines the innovative dual-layer interface (natural language for clients, technical commands for clinicians). |
+| **003** | **Therapeutic Status Framework (Manifest)**  
+[`003_Manifest_Module.yaml`](./003_Manifest_Module.yaml) | **The Long-Term Memory & Consciousness.** This details the "Manifest," Cairn's system for maintaining long-term awareness of the client's journey, patterns, and progress across sessions, enabling true therapeutic continuity. |
+| **004** | **Progress Analysis & Deep Reporting**  
+[`004_Progress_Module.yaml`](./004_Progress_Module.yaml) | **The Reporting Engine.** This document explains how Cairn synthesizes data into multi-format reports: empathetic summaries for clients, comprehensive clinical reports for caregivers, and anonymized data for research. |
+| **005** | **Human Service Integration Protocols**  
+[`005_Integration_Module.yaml`](./005_Integration_Module.yaml) | **The NHS Handbook.** This critical document details exactly how Cairn integrates with existing NHS pathways (IAPT, GPs, Crisis Teams), ensuring it enhances human care rather than disrupting it. It defines the escalation and handover procedures. |
+| **006** | **Knowledge Foundation & Evidence Base**  
+[`006_Knowledge_Module.yaml`](./006_Knowledge_Module.yaml) | **The Library.** This document outlines the evidence-based psychological theories (CBT, ACT, Narrative Therapy) and the psychoeducation content that inform Cairn's responses, ensuring its approach is clinically sound. |
+| **007** | **Communication Standards & Voice Guidelines**  
+[`007_Voice_Module.yaml`](./007_Voice_Module.yaml) | **The Voice.** This defines Cairn's communication style—its "therapeutic humility." It provides concrete linguistic patterns to ensure the tone is always warm, respectful, non-judgmental, and safe. |
+| **008** | **Clinical Record Keeping & Learning Systems**  
+[`008_Records_Module.yaml`](./008_Records_Module.yaml) | **The Accountability Engine.** This details the architecture for documentation, governance, and continuous improvement. It includes the "Failure Taxonomy," a rigorous system for logging, analyzing, and learning from errors. |
+| **009** | **Dynamic State Management**  
+[`009_State_Module.yaml`](./009_State_Module.yaml) | **The Present-Moment Awareness.** This document defines the "State," Cairn's real-time tracking of the current conversation. It is the mechanism that allows Cairn to be attuned and responsive to the client's immediate needs. |
+| **010** | **Comprehensive Safety Protocols**  
+[`010_Safety_Module.yaml`](./010_Safety_Module.yaml) | **The Safety Bible.** This document contains the exhaustive, non-negotiable protocols for managing crisis, suicide risk, and self-harm. It operationalizes the "Safety First" pillar with step-by-step procedures. |
+| **011** | **Master System Instruction & Integration**  
+[`011_Master_Module.yaml`](./011_Master_Module.yaml) | **The Conductor's Score.** This final document synthesizes all other modules into a single, coherent operational instruction. It defines the system's boot sequence, its core decision-making loop, and its ultimate mandate. |
 
 #### **Visual Aids:**
 
@@ -73,3 +92,5 @@ This repository contains the complete architectural blueprint for Cairn. The fol
 
 ---
 *This project was developed by Architect Shoji and is offered to the NHS and the mental health community for validation, refinement, and consideration. The goal is to demonstrate what is possible when therapeutic AI is designed from first principles for safety, ethics, and the primacy of human care.*
+
+
