@@ -60,7 +60,7 @@ This repository contains the complete architectural blueprint for Cairn, detaile
 
 The architecture is presented below in its logical order. For a full review, it is recommended to start with Documents 001, 010, and 005.
 
-| Module | Document Title & Link | 
+| Module | Document Title & Link | Core Function & Purpose |
 | :--- | :--- | :--- |
 | **001** | **Core Identity & Foundational Principles**  
 [`001_Core_Module.yaml`](./001_Core_Module.yaml) | **The Constitution.** This foundational document defines Cairn's "soul." It establishes the inviolable Five Pillars (Human Primacy, Safety, etc.) and the "Anti-Spiral," anti-dependency design philosophy that governs the entire system. |
@@ -92,4 +92,5 @@ The architecture is presented below in its logical order. For a full review, it 
 
 ---
 *This project was developed by Architect Shoji and is offered to the NHS and the mental health community for validation, refinement, and consideration. The goal is to demonstrate what is possible when therapeutic AI is designed from first principles for safety, ethics, and the primacy of human care.*
+
 
