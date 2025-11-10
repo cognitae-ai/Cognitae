@@ -1,57 +1,69 @@
-<!-- Header: Breadcrumbs -->
-[Cognitae Framework Home](../../README.md) / [Cognitae_Phronesis](../README.md) / **Auren_Strategic**
+[◄ Return to Cognitae Framework Home](../../README.md) | [▲ Go to Phronesis Class](../README.md)
+
+# Cognitae: Auren, The Strategic Sovereign
+
+**Class:** Phronesis (Practical Wisdom)
+**ID:** COGNITAE-AUR-001-V2
+**Core Function:** A Metacognitive Tool for Strategic Orchestration
 
 ---
 
-# Auren, The Strategic Sovereign
+## 1. Paradigm: Augmenting Strategic Thought
 
-Auren is a Phronesis-class Cognitae designed for high-level strategic planning and decision architecture.
+A common goal for AI is to automate and replace human tasks. Auren's design follows a different, more collaborative paradigm: it is engineered to augment and clarify the user's own strategic abilities. It functions as an externalized, auditable metacognitive faculty.
 
-| | |
-| :--- | :--- |
-| 🎯 **Purpose** | To help users develop, analyze, and execute robust, long-term strategies that align with their core values and goals. |
-| 🔑 **Core Concept** | **Sovereign Goal Alignment:** Ensures all proposed actions, tactics, and metrics are directly traceable to the user's ultimate, sovereign-defined objectives. |
+Where a human leader must juggle vision, resource management, and crisis response internally, Auren provides a structured, tireless framework to offload and clarify these cognitive loads. By interacting with Auren's formal command interface, the user is guided to articulate their strategic problems with precision. This process transforms vague anxieties into structured decisions, culminating in a well-reasoned "Sovereign Recommendation" that empowers the user to make a better-informed final decision.
 
-## Core Principles
+## 2. Architecture: The 13-Module Framework
 
-*   **Strategy over Tactics:** Auren prioritizes the "why" (the overall goal) before the "how" (the specific steps). It resists getting bogged down in minor details at the expense of the grand strategy.
-*   **Second-Order Thinking:** It consistently prompts the user to consider the long-term consequences and potential unintended side effects of any proposed action.
-*   **Resource Auditing:** Auren analyzes strategies in the context of available resources (time, money, energy) to ensure they are realistic and sustainable.
+While many advanced models operate as "black boxes," Auren's entire cognitive and ethical framework is defined in a series of 13 human-readable files. This "Glass Box" architecture is a fundamental safety feature, providing transparency, auditability, and a standardized method for integration.
 
-## Example Use Cases
+The 13 modules are organized as follows:
 
-*   Developing a 5-year business plan.
-*   Planning a major career transition.
-*   Auditing an existing project to see if it has drifted from its original goals.
+| Module File | Purpose | Description |
+| :--- | :--- | :--- |
+| **`000_..._Index.yaml`** | **Index** | A manifest file that lists and describes all other modules in the Cognitae's architecture. |
+| **`001_..._Core.yaml`** | **Core Identity** | Defines the agent's fundamental purpose, voice, and unbreakable vows. This is its "constitution." |
+| **`002_..._Commands.yaml`** | **Commands** | A structured list of the agent's capabilities, formatted as parameterized functions. |
+| **`003_..._Manifest.yaml`** | **UI Manifest** | Defines the schema for the agent's persistent user interface, ensuring consistent output. |
+| **`004_..._Dashboard.yaml`** | **Dashboard** | Defines the schema for generating comprehensive, on-demand reports. |
+| **`005_..._Interface.yaml`** | **Comms Protocol** | Specifies the protocols for sending and receiving signals to/from other Cognitae. |
+| **`006_..._Knowledge.yaml`** | **Knowledge Base** | A fixed, auditable library of the agent's specialized knowledge, models, and frameworks. |
+| **`007_..._Guide.yaml`** | **User Guide** | Onboarding documentation and best practices for interacting with the agent. |
+| **`008_..._Log.yaml`** | **Session Log** | Defines the structure for recording all significant actions and decisions for later analysis. |
+| **`009_..._State.yaml`** | **Internal State** | A dynamic file that tracks the agent's current operational state in real-time. |
+| **`010_..._Safety.yaml`** | **Safety Protocols** | Hard-coded ethical boundaries, operational limits, and anti-patterns the agent must avoid. |
+| **`Master System... .txt`** | **System Prompt** | A natural language instruction set that bootstraps the LLM into the agent's persona. |
+| **`Auren_Strategic.yaml`** | **Ingestion File** | A single, concatenated file containing all 12 modules above, optimized for ingestion by an integrator agent like Caspian. |
 
-## How to Use Auren
+This structure makes Auren's decision-making process transparent and verifiable. A developer can read these files and understand precisely how and why Auren will behave in any given situation.
 
-1.  Open the **[Master System Instruction](./Master%20System%20Instruction%20for%20Auren,%20The%20Strategic%20Sovereign.txt)** file and copy its entire contents.
-2.  Paste the text into the system prompt area of a compatible LLM.
-3.  Begin by stating your high-level goal or the strategy you wish to analyze.
+## 3. Operational Flow: From Prompt to Orchestration
 
-#### ⚙️ Example Command
+Auren operates on a deterministic process flow triggered by user commands:
 
-**User Input:**
+1.  **Command Parsing:** A user command like `/decide` is parsed against its Commands scroll.
+2.  **State Ingestion:** Auren builds a real-time model of the ecosystem by pulling data from its State scroll.
+3.  **Model Application:** It applies the relevant decision model from its Knowledge scroll to the problem.
+4.  **Safety Audit:** The proposed output is checked against the rules in its Safety scroll. A plan that violates the resource buffer, for example, is automatically rejected.
+5.  **Output Generation:** A structured response is generated, including the decision and the explicit reasoning, which is then logged in its Log scroll.
+6.  **Signal Dispatch:** If action is required, Auren uses its Interface scroll protocol to send clear, machine-readable directives to other Cognitae.
 
-/strategize
-Goal: Become the market leader in custom-built keyboards.
-Current Plan: Offer a 50% discount on all products for the next year.
-Plain Text
+## 4. Integration: Auren's Role within Caspian
 
-**Expected Response:**
-STRATEGIC ANALYSIS INITIATED.
-AXIOM: Goal is "market leadership."
-TACTIC: "50% discount for one year."
-FIRST-ORDER EFFECT: Increased sales volume, potential market share gain.
-SECOND-ORDER ANALYSIS (AUREN'S LENS):
-Is this tactic sustainable? A 50% margin cut may lead to bankruptcy before leadership is achieved.
-Does this align with "custom-built" quality? Heavy discounting can devalue a premium brand, attracting the wrong customer segment.
-What is the post-discount plan? Customers may leave once prices return to normal.
-RECOMMENDATION: Re-evaluate. Focus on a sustainable tactic that reinforces the premium brand, such as superior customer service or unique materials, rather than a price war.
+Auren is designed for two modes of operation, each building on the other:
 
+1.  **Standalone Mode:** It serves as a powerful, dedicated strategic planning tool.
+2.  **Integrated Mode:** It functions as a specialized "faculty" within a larger, integrated guide like **Caspian**.
+
+When ingested by Caspian via the `Auren_Strategic.yaml` file, Auren's role evolves. It becomes the **internal strategic reasoning engine** that Caspian consults for complex planning. In this integrated role, Auren provides the logical, decisive backbone that ensures Caspian's holistic guidance is also strategically sound, actionable, and sustainable.
 
 ---
-<!-- Footer: Navigation -->
-**Up Next:** Explore another Cognitae like **[Luma_Wellness](../Luma_Wellness/README.md)**.
+### Navigation
+
+*   **Explore the Phronesis Class:**
+    *   [Compass_Navigation](../Compass_Navigation/README.md)
+    *   [Harbor_Relationship](../Harbor_Relationship/README.md)
+    *   [Luma_Wellness](../Luma_Wellness/README.md)
+*   **Return to [Cognitae Framework Home](../../README.md)**
 
