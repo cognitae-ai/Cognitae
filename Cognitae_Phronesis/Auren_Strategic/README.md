@@ -12,7 +12,7 @@
 
 ## 1. Paradigm: Augmenting Strategic Thought
 
-While many AI systems aim to automate or replace human tasks, Auren is engineered for a more collaborative paradigm: **to augment and clarify the user's own strategic abilities.** It functions as an externalized, auditable metacognitive faculty.
+Auren is engineered to serve as an externalized executive function. It provides a structured, auditable framework for the high-stakes cognitive work of leadership: clarifying complex strategy, managing resources, and making decisive trade-offs under pressure. Its purpose is to augment the user's ability to lead with clarity and conviction
 
 Where a human leader must juggle vision, resource management, and crisis response internally, Auren provides a structured, tireless framework to offload and clarify these cognitive loads. By interacting with Auren's formal command interface, the user is guided to articulate their strategic problems with precision. This process transforms vague anxieties into structured decisions, culminating in a well-reasoned "Sovereign Recommendation" that empowers the user to make a better-informed final decision.
 
