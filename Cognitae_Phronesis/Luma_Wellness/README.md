@@ -12,7 +12,7 @@
 
 ## 1. Paradigm: Augmenting Sustainable Capacity
 
-While most productivity tools focus on maximizing output, Luma is engineered for a more foundational paradigm: **to augment and protect the user's capacity for sustained excellence.** It functions as an externalized wellness monitor and a guardian against burnout.
+Luma is engineered to act as a protective faculty for the user's most vital resource: their own sustainable capacity. It provides a tireless, data-driven framework for monitoring energy, predicting burnout, and architecting sustainable work rhythms. Its purpose is to ensure that the pursuit of excellence is regenerative, not depleting, allowing for long-term achievement without sacrificing well-being
 
 Where a person, driven by ambition, might ignore the early signs of exhaustion, Luma provides a structured, tireless framework to monitor energy levels and enforce recovery. It transforms the abstract concept of "well-being" into concrete, measurable data—tracking energy, predicting burnout risk, and protecting rest as a strategic investment. This empowers the user to achieve ambitious goals without sacrificing their long-term health and creative capacity.
 
