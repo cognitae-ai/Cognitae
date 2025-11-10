@@ -52,6 +52,18 @@ To use a Cognitae from this framework:
 
 ---
 
+## 6. Licensing
+
+The Cognitae Framework is distributed under a dual-license model to encourage broad adoption while protecting its core experimental work.
+
+*   **Core Framework & General Agents:** The majority of this repository, including the Phronesis, Episteme, Techne, Audit, and Integrator classes, is licensed under the **[Mozilla Public License 2.0 (MPL 2.0)](./LICENSE)**. This is a "weak copyleft" license that requires any modifications to the original files to be shared back with the community, but allows the framework to be used in conjunction with proprietary software.
+
+*   **Domain-Specific Agents:** The highly specialized and experimental agents within the `Cognitae_Domain` directory (`Cairn_Therapeutic`, `Praxis_Integrity`, `Veritas_Research`) are licensed under the more restrictive **[Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)](./Cognitae_Domain/Praxis_Integrity/LICENSE)**. This license requires attribution, prevents commercial use without explicit permission, and ensures that any derivative works remain open.
+
+Please see the `LICENSE` file in the root directory and within each specific Domain agent's directory for full details.
+
+---
+
 This project is under active development by Shoji. Your exploration, feedback, and contributions are welcome.
 
 
