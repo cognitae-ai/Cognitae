@@ -16,7 +16,40 @@ The framework has two key components that work together:
 
 2.  **The Integrator Agent (Caspian):** The framework is designed to be orchestrated by an **Integrator-class** agent like **[Caspian](./Cognitae_Integrator/Caspian_Integrator/)**. Caspian can "ingest" the architectures of other Cognitae, synthesizing their capabilities into a single, holistic guide. This allows the user to manage the entire ecosystem through one coherent interface, reducing cognitive load.
 
-## 3. Strategic Configurations: The "Rings"
+## 3. How the Framework Operates: A Practical Guide
+
+The Cognitae Framework is designed to be used in modern Large Language Model (LLM) environments that support file attachments and custom system instructions (e.g., OpenAI's GPT-4, Google's Gemini, Anthropic's Claude).
+
+There are two primary ways to use a Cognitae: **Direct Activation** and **Integrated Activation**.
+
+### Method 1: Direct Activation (Running a Single Cognitae)
+
+This method allows you to interact with a single, specialized Cognitae directly.
+
+1.  **Gather the Files:** Navigate to the directory of the Cognitae you wish to activate (e.g., `Cognitae_Episteme/Noema_Pattern/`).
+2.  **Attach the Architecture:** In your LLM chat interface, attach all ten core module files (`001` through `010`). These files define the agent's identity, knowledge, commands, and safety protocols.
+3.  **Set the System Instruction:** Copy the *entire contents* of the `Master System Instruction for [Agent Name].txt` file and paste it into the "System Prompt" or "Custom Instructions" field of your LLM interface.
+4.  **Begin Interaction:** You can now converse with the agent. It will operate according to the strict architecture you provided.
+
+> **Note on Custom:** For platforms like OpenAI's GPT Store or Google Gems, you can create a dedicated build for a specific Cognitae. Upload the ten core module files to the platforms knowledge base and paste the Master System Instruction into the "Instructions" configuration panel. This creates a permanent, shareable version of that agent. We will be providing direct links to these for easy testing.
+
+### Method 2: Integrated Activation (Using Caspian to Ingest a Cognitae)
+
+This is the advanced method, demonstrating the true power of the framework. You activate the **Caspian** integrator agent and then instruct it to "ingest" other Cognitae, combining their capabilities.
+
+1.  **Activate Caspian:** Follow the "Direct Activation" steps above for Caspian, using its ten core files and its Master System Instruction. You are now talking to the orchestrator.
+2.  **Prepare for Ingestion:** Identify the Cognitae you wish to add to Caspian's "Ring" of capabilities (e.g., `Auren_Strategy`).
+3.  **Execute the Ingestion Command:** In your chat with Caspian, use the `/ingest_cognitae` command and attach the single, consolidated ingestion file for the target agent. This file is named `[AgentName]_[Class].yaml` (e.g., `Auren_Phronesis.yaml`).
+
+    *Example Prompt:*
+    > `/ingest_cognitae`
+    > *(Attach the `Auren_Phronesis.yaml` file to this message)*
+
+4.  **Confirmation:** Caspian will process the file, confirm the successful ingestion, and report that the new agent's capabilities are now part of its integrated system. It can now leverage Auren's strategic functions in its responses.
+
+This dual-method approach allows for both focused, specialized work and complex, integrated problem-solving.
+
+## 4. Strategic Configurations: The "Rings"
 
 To optimize performance, manage token budgets, and maintain focus, it is not recommended to ingest all Cognitae into Caspian at once. Instead, the framework is designed to use **Configurations** or **"Rings"**—curated sets of ingested Cognitae tailored for a specific high-level task.
 
@@ -28,7 +61,7 @@ This modular approach allows you to assemble the perfect "team" for the job at h
 
 You can find more details on these configurations in the **[Integrator Class README](./Cognitae_Intergrator)**. 
 
-## 4. Repository Navigation
+## 5. Repository Navigation
 
 This repository is organized into directories that group Cognitae by their primary cognitive function.
 
@@ -40,15 +73,6 @@ This repository is organized into directories that group Cognitae by their prima
 | **[Cognitae_Audit](./Cognitae_Audit/)** | **Audit (Verification)** | Agents focused on ensuring logical coherence, quality, and safety across the ecosystem. |
 | **[Cognitae_Integrator](./Cognitae_Integrator/)** | **Integrator (Orchestration)** | The kernel of the framework, designed to synthesize the abilities of other Cognitae. |
 | **[Cognitae_Domain](./Cognitae_Domain/)** | **Domain (Specific Applications)** | Contains highly specialized agents built for a particular subject matter or industry. |
-
-## 5. Getting Started
-
-To use a Cognitae from this framework:
-
-1.  **Choose an Agent:** Navigate into a class directory (e.g., `Cognitae_Phronesis/`) and select an agent that matches your needs (e.g., `Auren_Strategic/`).
-2.  **Read its Documentation:** Each agent folder contains a `README.md` file explaining its specific purpose, commands, and operational flow.
-3.  **Review the Architecture:** Examine the 13 **module** files (e.g., `001_Auren_Strategic_Core.yaml`) to understand the agent's detailed construction.
-4.  **Activate the Agent:** Find the `Master System Instruction....txt` file. Copy its entire contents and paste them into the system prompt field of a compatible LLM interface (such as ChatGPT, Claude, or a custom API call) to begin interacting with the specialized persona.
 
 ---
 
