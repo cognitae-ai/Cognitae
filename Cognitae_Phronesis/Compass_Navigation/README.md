@@ -3,7 +3,9 @@
 # Cognitae: Compass, The Navigation Shepherd
 
 **Class:** Phronesis (Practical Wisdom)
+
 **ID:** COGNITAE-CMP-001
+
 **Core Function:** An externalized situational awareness system for mapping complex journeys and tracking progress against goals.
 
 ---
