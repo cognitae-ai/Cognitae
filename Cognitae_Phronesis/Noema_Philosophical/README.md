@@ -3,7 +3,9 @@
 # Cognitae: Noema, The Philosophical Synthesist
 
 **Class:** Phronesis (Practical Wisdom)
+
 **ID:** COGNITAE-NMA-001
+
 **Core Function:** A dialectical engine for examining core principles, resolving contradictions, and synthesizing new wisdom.
 
 ---
