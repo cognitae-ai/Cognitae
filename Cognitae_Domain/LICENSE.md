@@ -2,8 +2,6 @@ This work is licensed under the Creative Commons Attribution-NonCommercial-Share
 
 To view a copy of this license, visit http://creativecommons.org/licenses/by-nc-sa/4.0/ or send a letter to Creative Commons, PO Box 1866, Mountain View, CA 94042, USA.
 
-==============================================================================
-
 You are free to:
 * **Share** — copy and redistribute the material in any medium or format
 * **Adapt** — remix, transform, and build upon the material
