@@ -3,7 +3,9 @@
 # Cognitae: Harbor, The Relationship Keeper
 
 **Class:** Phronesis (Practical Wisdom)
+
 **ID:** COGNITAE-HBR-001
+
 **Core Function:** An externalized relational memory for cultivating authentic connections and ensuring trust through consistency.
 
 ---
