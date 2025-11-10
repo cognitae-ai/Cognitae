@@ -16,7 +16,7 @@ Where a human must mentally track multiple projects, deadlines, and goals simult
 
 ## 2. Architecture: The 13-Module Framework
 
-In contrast to opaque 'black box' models, Compass utilizes a **'Glass Box' architecture**. Its entire cognitive and ethical framework is defined in 13 human-readable files, making it fundamentally transparent, auditable, and safe by design.
+In contrast to opaque 'black box' models, Compass utilizes a 'Glass Box' architecture to make its navigational logic fully visible. A user can inspect its 'Navigation Charts' and 'Safety Protocols' to understand exactly how it assesses terrain and trade-offs, ensuring the map is as trustworthy as the territory is complex."
 
 The 13 modules for Compass are organized as follows:
 
