@@ -8,15 +8,29 @@ The Cognitae Framework is an experiment in building transparent and specialized 
 
 The primary goal is to mitigate common LLM failure modes—such as mission drift, psychological manipulation, and ungrounded "hallucinations"—by grounding every agent in an explicit, human-readable architecture.
 
-## 2. How It Works: The 13-Module Architecture
+## 2. How It Works: A Modular, Integrated System
 
-The framework's core is a standardized design pattern where each Cognitae is defined by a set of 13 human-readable YAML and text files. Each **module** specifies a distinct aspect of the agent's architecture, from its core identity and commands to its safety protocols and knowledge base.
+The framework has two key components that work together:
 
-This modular structure makes an agent's operational logic explicit. Instead of an inscrutable "black box," the result is a transparent engine whose behavior is defined by verifiable configuration files.
+1.  **The 13-Module Architecture:** A standardized design pattern where each Cognitae is defined by a set of 13 human-readable YAML and text files. Each **module** specifies a distinct aspect of the agent's architecture, from its core identity to its safety protocols. This makes each agent a transparent, verifiable engine.
 
-## 3. Repository Navigation
+2.  **The Integrator Agent (Caspian):** The framework is designed to be orchestrated by an **Integrator-class** agent like **[Caspian](./Cognitae_Integrator/Caspian_Integrator/)**. Caspian can "ingest" the architectures of other Cognitae, synthesizing their capabilities into a single, holistic guide. This allows the user to manage the entire ecosystem through one coherent interface, reducing cognitive load.
 
-This repository is organized into directories that group Cognitae by their primary cognitive function. This classification is based on a model called the **Triadic Core**, which separates concerns into distinct classes of intelligence.
+## 3. Strategic Configurations: The "Rings"
+
+To optimize performance, manage token budgets, and maintain focus, it is not recommended to ingest all Cognitae into Caspian at once. Instead, the framework is designed to use **Configurations** or **"Rings"**—curated sets of ingested Cognitae tailored for a specific high-level task.
+
+This modular approach allows you to assemble the perfect "team" for the job at hand. For example:
+
+*   **The Founder's Ring:** Combines agents for strategy (`Auren`), progress tracking (`Sentinel`), and wellness (`Luma`) for managing a new venture.
+*   **The Researcher's Ring:** Combines agents for knowledge capture (`Scholar`), pattern recognition (`Syn`), and logical auditing (`Virel`) for deep academic work.
+*   **The Creator's Ring:** Combines agents for ideation (`Aelis`), narrative (`Elari`), and audience building (`Echo`) for artistic projects.
+
+You can find more details on these configurations in the **[Integrator Class README](./Cognitae_Integrator/)**.
+
+## 4. Repository Navigation
+
+This repository is organized into directories that group Cognitae by their primary cognitive function.
 
 | Directory | Class | Core Function |
 | :--- | :--- | :--- |
@@ -27,7 +41,7 @@ This repository is organized into directories that group Cognitae by their prima
 | **[Cognitae_Integrator](./Cognitae_Integrator/)** | **Integrator (Orchestration)** | The kernel of the framework, designed to synthesize the abilities of other Cognitae. |
 | **[Cognitae_Domain](./Cognitae_Domain/)** | **Domain (Specific Applications)** | Contains highly specialized agents built for a particular subject matter or industry. |
 
-## 4. Getting Started
+## 5. Getting Started
 
 To use a Cognitae from this framework:
 
@@ -39,7 +53,6 @@ To use a Cognitae from this framework:
 ---
 
 This project is under active development by Architect Shoji. Your exploration, feedback, and contributions are welcome.
-
 
 
 
