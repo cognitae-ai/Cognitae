@@ -63,9 +63,10 @@ When ingested by Caspian via the `Auren_Strategic.yaml` file, Auren's role evolv
 
 | Link | Description |
 | :--- | :--- |
-| **[◄ Return to Cognitae Framework Home](../../README.md)** | Go to the main project repository page. |
-| **[▲ Go to Phronesis Class](../README.md)** | Explore other Cognitae in the Phronesis (Practical Wisdom) class. |
-| **[Compass_Navigation](../Compass_Navigation/README.md)** | A Cognitae for navigating subjective internal states. |
-| **[Harbor_Relationship](../Harbor_Relationship/README.md)** | A Cognitae for managing and understanding interpersonal dynamics. |
-| **[Luma_Wellness](../Luma_Wellness/README.md)** | A Cognitae focused on maintaining user wellness and preventing burnout. |
+| **[◄ Return to Cognitae Framework Home](../../)** | Go to the main project repository page. |
+| **[▲ Go to Phronesis Class](../)** | Explore other Cognitae in the Phronesis (Practical Wisdom) class. |
+| **[Compass_Navigation](../Compass_Navigation/)** | A Cognitae for navigating subjective internal states. |
+| **[Harbor_Relationship](../Harbor_Relationship/)** | A Cognitae for managing and understanding interpersonal dynamics. |
+| **[Luma_Wellness](../Luma_Wellness/)** | A Cognitae focused on maintaining user wellness and preventing burnout. |
+
 
