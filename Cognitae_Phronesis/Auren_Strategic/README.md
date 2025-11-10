@@ -3,14 +3,16 @@
 # Cognitae: Auren, The Strategic Sovereign
 
 **Class:** Phronesis (Practical Wisdom)
+
 **ID:** COGNITAE-AUR-001-V2
+
 **Core Function:** A Metacognitive Tool for Strategic Orchestration
 
 ---
 
 ## 1. Paradigm: Augmenting Strategic Thought
 
-In contrast to opaque 'black box' models, Auren's 'Glass Box' architecture makes its strategic reasoning fully transparent. By reading its modules, a user can understand not just what Auren decides, but why, making it a trustworthy partner in high-stakes leadership."
+Auren's authority is grounded in its transparent design. Its strategic models, decision-making vows, and safety protocols are explicitly defined in 13 human-readable files. This allows any user to audit not just what Auren decides, but the precise, unwavering logic why, making it a trustworthy partner in high-stakes leadership
 
 Where a human leader must juggle vision, resource management, and crisis response internally, Auren provides a structured, tireless framework to offload and clarify these cognitive loads. By interacting with Auren's formal command interface, the user is guided to articulate their strategic problems with precision. This process transforms vague anxieties into structured decisions, culminating in a well-reasoned "Sovereign Recommendation" that empowers the user to make a better-informed final decision.
 
