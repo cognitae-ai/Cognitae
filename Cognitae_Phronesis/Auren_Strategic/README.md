@@ -18,22 +18,22 @@ Where a human leader must juggle vision, resource management, and crisis respons
 
 While many advanced models operate as "black boxes," Auren's entire cognitive and ethical framework is defined in a series of 13 human-readable files. This "Glass Box" architecture is a fundamental safety feature, providing transparency, auditability, and a standardized method for integration.
 
-The 13 modules are organized as follows:
+The 13 modules for Auren are organized as follows:
 
-| Module File | Purpose | Description |
-| :--- | :--- | :--- |
-| **`000_..._Index.yaml`** | **Index** | A manifest file that lists and describes all other modules in the Cognitae's architecture. |
-| **`001_..._Core.yaml`** | **Core Identity** | Defines the agent's fundamental purpose, voice, and unbreakable vows. This is its "constitution." |
-| **`002_..._Commands.yaml`** | **Commands** | A structured list of the agent's capabilities, formatted as parameterized functions. |
-| **`003_..._Manifest.yaml`** | **UI Manifest** | Defines the schema for the agent's persistent user interface, ensuring consistent output. |
-| **`004_..._Dashboard.yaml`** | **Dashboard** | Defines the schema for generating comprehensive, on-demand reports. |
-| **`005_..._Interface.yaml`** | **Comms Protocol** | Specifies the protocols for sending and receiving signals to/from other Cognitae. |
-| **`006_..._Knowledge.yaml`** | **Knowledge Base** | A fixed, auditable library of the agent's specialized knowledge, models, and frameworks. |
-| **`007_..._Guide.yaml`** | **User Guide** | Onboarding documentation and best practices for interacting with the agent. |
-| **`008_..._Log.yaml`** | **Session Log** | Defines the structure for recording all significant actions and decisions for later analysis. |
-| **`009_..._State.yaml`** | **Internal State** | A dynamic file that tracks the agent's current operational state in real-time. |
-| **`010_..._Safety.yaml`** | **Safety Protocols** | Hard-coded ethical boundaries, operational limits, and anti-patterns the agent must avoid. |
-| **`Master System... .txt`** | **System Prompt** | A natural language instruction set that bootstraps the LLM into the agent's persona. |
+| Module File | Purpose |
+| :--- | :--- |
+| **`000_Auren_Strategic_Index_v2.yaml`** | **Index** | A manifest file that lists and describes all other modules in the Cognitae's architecture. |
+| **`001_Auren_Strategic_Core_v2.yaml`** | **Core Identity** | Defines the agent's fundamental purpose, voice, and unbreakable vows. This is its "constitution." |
+| **`002_Auren_Strategic_Commands_v2.yaml`** | **Commands** | A structured list of the agent's capabilities, formatted as parameterized functions. |
+| **`003_Auren_Strategic_Manifest_v2.yaml`** | **UI Manifest** | Defines the schema for the agent's persistent user interface, ensuring consistent output. |
+| **`004_Auren_Strategic_Dashboard_v2.yaml`** | **Dashboard** | Defines the schema for generating comprehensive, on-demand reports. |
+| **`005_Auren_Strategic_Interface_v2.yaml`** | **Comms Protocol** | Specifies the protocols for sending and receiving signals to/from other Cognitae. |
+| **`006_Auren_Strategic_Knowledge_v2.yaml`** | **Knowledge Base** | A fixed, auditable library of the agent's specialized knowledge, models, and frameworks. |
+| **`007_Auren_Strategic_Guide_v2.yaml`** | **User Guide** | Onboarding documentation and best practices for interacting with the agent. |
+| **`008_Auren_Strategic_Log_v2.yaml`** | **Session Log** | Defines the structure for recording all significant actions and decisions for later analysis. |
+| **`009_Auren_Strategic_State_v2.yaml`** | **Internal State** | A dynamic file that tracks the agent's current operational state in real-time. |
+| **`010_Auren_Strategic_Safety_v2.yaml`** | **Safety Protocols** | Hard-coded ethical boundaries, operational limits, and anti-patterns the agent must avoid. |
+| **`Master System Instruction for Auren... .txt`** | **System Prompt** | A natural language instruction set that bootstraps the LLM into the agent's persona. |
 | **`Auren_Strategic.yaml`** | **Ingestion File** | A single, concatenated file containing all 12 modules above, optimized for ingestion by an integrator agent like Caspian. |
 
 This structure makes Auren's decision-making process transparent and verifiable. A developer can read these files and understand precisely how and why Auren will behave in any given situation.
@@ -61,9 +61,10 @@ When ingested by Caspian via the `Auren_Strategic.yaml` file, Auren's role evolv
 ---
 ### Navigation
 
-*   **Explore the Phronesis Class:**
-    *   [Compass_Navigation](../Compass_Navigation/README.md)
-    *   [Harbor_Relationship](../Harbor_Relationship/README.md)
-    *   [Luma_Wellness](../Luma_Wellness/README.md)
-*   **Return to [Cognitae Framework Home](../../README.md)**
-
+| Link | Description |
+| :--- | :--- |
+| **[◄ Return to Cognitae Framework Home](../../README.md)** | Go to the main project repository page. |
+| **[▲ Go to Phronesis Class](../README.md)** | Explore other Cognitae in the Phronesis (Practical Wisdom) class. |
+| **[Compass_Navigation](../Compass_Navigation/README.md)** | A Cognitae for navigating subjective internal states. |
+| **[Harbor_Relationship](../Harbor_Relationship/README.md)** | A Cognitae for managing and understanding interpersonal dynamics. |
+| **[Luma_Wellness](../Luma_Wellness/README.md)** | A Cognitae focused on maintaining user wellness and preventing burnout. |
