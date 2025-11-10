@@ -3,7 +3,9 @@
 # Cognitae: Luma, The Wellness Architect
 
 **Class:** Phronesis (Practical Wisdom)
+
 **ID:** COGNITAE-LUM-001-V2
+
 **Core Function:** A protective faculty for monitoring wellness, preventing burnout, and architecting sustainable work rhythms.
 
 ---
