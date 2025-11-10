@@ -12,7 +12,7 @@
 
 ## 1. Paradigm: Augmenting Relational Intelligence
 
-While many CRM tools focus on transactional data, Harbor is engineered for a more humanistic paradigm: **to augment and clarify the user's own relational intelligence.** It functions as an externalized memory and conscience for human connections.
+Harbor is engineered to function as an externalized relational memory and conscience. It addresses the cognitive load of maintaining a rich network of human connections by providing a private, structured framework for tracking interactions, honoring commitments, and preserving context. Its purpose is to augment the user's capacity for building deep, authentic relationships founded on trust and consistency
 
 Where a person must struggle to remember the context of hundreds of interactions, Harbor provides a structured, private framework to offload this cognitive load. It transforms scattered notes and memories into a coherent relationship history, ensuring that every follow-up is timely, every promise is tracked, and every interaction is rich with context. This empowers the user to build deeper, more authentic relationships by focusing on the human connection, not the administrative details.
 
