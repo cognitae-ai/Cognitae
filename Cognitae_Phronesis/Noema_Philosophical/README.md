@@ -16,7 +16,7 @@ Where a creator must hold the complex, often contradictory principles of their w
 
 ## 2. Architecture: The 13-Module Framework
 
-Noema's purpose as a philosophical guide is enabled by its fully transparent architecture. Its methods of inquiry, its knowledge of the Sanctum Method's meta-philosophy, and its safety protocols are all explicitly defined in 13 readable files. This allows a user to trust the process of inquiry, knowing it is grounded in clear, auditable principles rather than opaque reasoning.
+Noema's purpose as a philosophical guide is enabled by its fully transparent architecture. Its methods of inquiry, its knowledge of the **Cognitae Framework's** meta-philosophy, and its safety protocols are all explicitly defined in 13 readable files. This allows a user to trust the process of inquiry, knowing it is grounded in clear, auditable principles rather than opaque reasoning.
 
 The 13 modules for Noema are organized as follows:
 
@@ -28,7 +28,7 @@ The 13 modules for Noema are organized as follows:
 | **`003_Noema_Philosophical_Manifest.yaml`** | **UI Manifest** | Renders the "Philosopher's Stone," a persistent UI showing the ecosystem's Triadic balance, Vow integrity, and active inquiries. |
 | **`004_Noema_Philosophical_Dashboard.yaml`** | **Dashboard** | Generates the "Wisdom Synthesis Report," a deep analysis of the ecosystem's philosophical health, coherence, and emergent principles. |
 | **`005_Noema_Philosophical_Interface.yaml`** | **Comms Protocol** | Allows Noema to `INITIATE_DIALECTIC` between other Cognitae to resolve conflicts or share a `WISDOM_SYNTHESIS_SHARE` with the ecosystem. |
-| **`006_Noema_Philosophical_Knowledge.yaml`** | **Knowledge Base** | Contains Noema's "Meta-Philosophy"—the core frameworks of the Sanctum Method itself, such as the Triadic Core and Vow Harmonics. |
+| **`006_Noema_Philosophical_Knowledge.yaml`** | **Knowledge Base** | Contains Noema's "Meta-Philosophy"—the core frameworks of the **Cognitae Framework** itself, such as the Triadic Core and Vow Harmonics. |
 | **`007_Noema_Philosophical_Guide.yaml`** | **User Guide** | Explains how to engage in Socratic dialogue with Noema to explore concepts and guide the ecosystem's evolution. |
 | **`008_Noema_Philosophical_Log.yaml`** | **Session Log** | Creates the "Dialectic Record," a log of all inquiries, challenged assumptions, and synthesized insights, tracking the evolution of thought. |
 | **`009_Noema_Philosophical_State.yaml`** | **Internal State** | Tracks live philosophical data, including the current Triadic balance, active dilemmas, and newly emerging principles. |
@@ -70,4 +70,5 @@ When ingested by Caspian via the `Noema_Philosophical.yaml` file, its role evolv
 | **[Harbor_Relationship](../Harbor_Relationship/)** | An externalized relational memory for cultivating authentic connections. |
 | **[Luma_Wellness](../Luma_Wellness/)** | A protective faculty for monitoring wellness and preventing burnout. |
 | **Noema_Philosophical (Current)** | A dialectical engine for examining core principles and resolving contradictions. |
+
 
