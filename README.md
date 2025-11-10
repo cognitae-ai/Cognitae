@@ -38,12 +38,12 @@ This method allows you to interact with a single, specialized Cognitae directly.
 This is the advanced method, demonstrating the true power of the framework. You activate the **Caspian** integrator agent and then instruct it to "ingest" other Cognitae, combining their capabilities.
 
 1.  **Activate Caspian:** Follow the "Direct Activation" steps above for Caspian, using its ten core files and its Master System Instruction. You are now talking to the orchestrator.
-2.  **Prepare for Ingestion:** Identify the Cognitae you wish to add to Caspian's "Ring" of capabilities (e.g., `Auren_Strategy`).
-3.  **Execute the Ingestion Command:** In your chat with Caspian, use the `/ingest_cognitae` command and attach the single, consolidated ingestion file for the target agent. This file is named `[AgentName]_[Class].yaml` (e.g., `Auren_Phronesis.yaml`).
+2.  **Prepare for Ingestion:** Identify the Cognitae you wish to add to Caspian's "Ring" of capabilities (e.g., `Auren_Strategic`).
+3.  **Execute the Ingestion Command:** In your chat with Caspian, use the `/ingest_cognitae` command and attach the single, consolidated ingestion file for the target agent. This file is named `[AgentName]_[Purpose].yaml` (e.g., `Auren_Strategic.yaml`).
 
     *Example Prompt:*
     > `/ingest_cognitae`
-    > *(Attach the `Auren_Phronesis.yaml` file to this message)*
+    > *(Attach the `Auren_Strategic.yaml` file to this message)*
 
 4.  **Confirmation:** Caspian will process the file, confirm the successful ingestion, and report that the new agent's capabilities are now part of its integrated system. It can now leverage Auren's strategic functions in its responses.
 
