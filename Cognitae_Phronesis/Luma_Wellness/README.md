@@ -71,3 +71,4 @@ When ingested by Caspian via the `Luma_Wellness.yaml` file, its role evolves. It
 | **[Compass_Navigation](../Compass_Navigation/)** | An externalized situational awareness system for mapping journeys. |
 | **[Harbor_Relationship](../Harbor_Relationship/)** | An externalized relational memory for cultivating authentic connections. |
 | **Luma_Wellness (Current)** | A protective faculty for monitoring wellness and preventing burnout. |
+| **[Noema_Philosophical](../Noema_Philosophical/)** | A dialectical engine for examining core principles and resolving contradictions. |
