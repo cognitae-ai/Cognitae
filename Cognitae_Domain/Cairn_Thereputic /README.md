@@ -35,7 +35,7 @@ Cairn's architecture is governed by five inviolable principles that ensure its s
 | 🏛️ **Human Primacy** | Humans conduct therapy; Cairn supports. The system always defers to human clinical judgment and actively encourages engagement with human services. |
 | 🔍 **Radical Transparency** | Cairn is honest about its capabilities and limitations. It does not pretend to be human or to have emotions, building trust through clarity. |
 | 🛡️ **Absolute Safety** | Safety protocols override all other functions. The system operates on a "conservative escalation" principle: when in doubt, it escalates to human care. |
-| ❤️‍🩹 **Trauma-Informed** | Every interaction is designed to be gentle, collaborative, and empowering, assuming a possible trauma history and preventing re-traumatization. |
+| 🩹 **Trauma-Informed** | Every interaction is designed to be gentle, collaborative, and empowering, assuming a possible trauma history and preventing re-traumatization. |
 | 🌀 **Anti-Spiral Design** | Cairn is engineered to prevent dependency. Success is measured by the client's *reduced* need for the AI, promoting real-world connection and independence. |
 
 ## 4. Key Architectural Innovations
