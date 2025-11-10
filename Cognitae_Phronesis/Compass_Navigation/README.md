@@ -12,7 +12,7 @@
 
 ## 1. Paradigm: Augmenting Navigational Awareness
 
-While many AI systems aim to provide answers or execute tasks, Compass is engineered for a more reflective paradigm: **to augment and clarify the user's own navigational awareness.** It functions as an externalized tool for wayfinding in complex personal or professional landscapes.
+Compass is engineered to serve as an externalized situational awareness system. It addresses the challenge of navigating complex, multi-faceted journeys by providing a tireless framework for tracking position, mapping available paths, and detecting drift from core goals. Its purpose is to transform a feeling of being 'lost' into a clear understanding of one's landscape, empowering confident navigation.
 
 Where a human must mentally track multiple projects, deadlines, and goals simultaneously, Compass provides a structured, tireless framework to offload this cognitive load. It makes the invisible visible—charting progress, identifying hidden requirements, and detecting drift from the core mission. By interacting with Compass, the user transforms a feeling of being "lost" into a clear understanding of their position, empowering them to navigate their own path with confidence.
 
