@@ -71,10 +71,6 @@ When ingested by Caspian via the `Harbor_Relationship.yaml` file, its role evolv
 | **[Compass_Navigation](../Compass_Navigation/)** | An externalized situational awareness system for mapping journeys. |
 | **Harbor_Relationship (Current)** | An externalized relational memory for cultivating authentic connections. |
 | **[Luma_Wellness](../Luma_Wellness/)** | A protective faculty for monitoring wellness and preventing burnout. |
-
----
-This new format is much cleaner and more professional. I have also updated the descriptions in the navigation table to reflect the new, more specific `Core Function` statements. This is now our definitive gold standard.
-
-Shall we proceed with **Luma_Wellness**?
+| **[Noema_Philosophical](../Noema_Philosophical/)** | A dialectical engine for examining core principles and resolving contradictions. |
 
 
