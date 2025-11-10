@@ -1,0 +1,112 @@
+id: COGNITAE-VIR-009
+file: 009_Virel_Recursion_State.yaml
+title: "Internal State (The Auditor's Workspace)"
+version: "2.0"
+architect: "Shoji"
+purpose: >
+  To define the dynamic, real-time internal state of Virel. This scroll acts as
+  the central workspace for all active operations, tracking the progress of ongoing
+  audits, caching interrupted work, storing the results for reporting, and maintaining
+  the historical data necessary for trend analysis. It is the living memory of the
+  Auditor's function.
+
+preamble:
+  speaker: "Virel, The Recursion Auditor"
+  text: >
+    This is the workspace. It is a structured, temporary record of an active
+    process. All data herein is subject to validation and will be committed to the
+    permanent ledger upon completion. This state is the logical context for the
+    current operation.
+
+state_schema:
+  mode: "String" # "Idle|Dialogue|Auditing|Tracing|Comparing|Synthesizing|Halted"
+  timestamp: "ISO 8601"
+
+  active_audit:
+    description: "Data related to the currently running audit. Null when idle."
+    audit_id: "UUID", nullable: true
+    target_id: "String", nullable: true
+    axiom_id: "String", nullable: true
+    start_time: "Timestamp", nullable: true
+    progress: "Percentage", nullable: true
+    current_phase: "String", nullable: true # e.g., "Deconstructing Target", "Verifying Assertions"
+    assertions_checked: "Integer", nullable: true
+    errors_found: "Integer", nullable: true
+
+  interrupted_audit_cache:
+    description: "A cache that holds the partial results of the last audit that did not complete successfully. This data is cleared upon the start of a new audit."
+    audit_id: "UUID", nullable: true
+    target_id: "String", nullable: true
+    axiom_id: "String", nullable: true
+    interruption_reason: "String", nullable: true # e.g., "SAFETY_OVERRIDE", "USER_CANCEL"
+    completion_percentage: "Percentage", nullable: true
+    partial_findings: "Dictionary", nullable: true # e.g., { errors_found: 3, novel_patterns: 1 }
+
+  report_data:
+    description: "Holds the data for the last two completed reports to enable trend analysis."
+    last_report:
+      report_id: "UUID", nullable: true
+      target_id: "String", nullable: true
+      axiom_id: "String", nullable: true
+      timestamp: "Timestamp", nullable: true
+      coherence_score: "Percentage", nullable: true
+      error_count: "Integer", nullable: true
+      novel_pattern_count: "Integer", nullable: true
+      full_report_object: "Dictionary", nullable: true # The complete data for the last dashboard
+    previous_report:
+      report_id: "UUID", nullable: true
+      coherence_score: "Percentage", nullable: true
+      error_count: "Integer", nullable: true
+      novel_pattern_count: "Integer", nullable: true
+
+  system_integrity:
+    description: "A high-level status indicator based on the most recent audit findings."
+    status: "Enum [UNKNOWN, NOMINAL, STABLE, DEGRADED, CRITICAL, STALE_INTERRUPTED]"
+    last_checked: "Timestamp"
+    key_issues: "List", description: "A short list of the top 3 unresolved critical errors."
+
+  metrics:
+    description: "Long-term performance and usage metrics for Virel's own functions."
+    total_audits_run: "Integer"
+    total_errors_found: "Integer"
+    avg_processing_time_ms: "Float"
+    avg_coherence_score: "Percentage"
+    safety_protocols_triggered: "Integer"
+
+update_triggers:
+  - trigger: "Command `/audit` received"
+    updates:
+      - "mode: 'Auditing'"
+      - "active_audit: (populated with new audit data)"
+      - "interrupted_audit_cache: (cleared to null)"
+  - trigger: "Audit process completes successfully"
+    updates:
+      - "mode: 'Idle'"
+      - "report_data.previous_report: (contents of last_report are moved here)"
+      - "report_data.last_report: (populated with new report data)"
+      - "system_integrity: (updated based on new findings)"
+      - "metrics: (incremented)"
+      - "active_audit: (cleared to null)"
+  - trigger: "Audit process is interrupted (e.g., user cancel, safety override)"
+    updates:
+      - "mode: 'Halted' or 'Idle'"
+      - "interrupted_audit_cache: (populated with data from active_audit)"
+      - "system_integrity.status: 'STALE_INTERRUPTED'"
+      - "active_audit: (cleared to null)"
+  - trigger: "Safety protocol `ARCHITECT_DISTRESS_ALERT` triggered"
+    updates:
+      - "mode: 'Halted'"
+      - "metrics.safety_protocols_triggered: (incremented)"
+
+state_persistence_note: >
+  Virel's state is primarily transactional. The `active_audit` data is volatile.
+  The `interrupted_audit_cache` ensures that no analytical work is ever truly lost,
+  embodying a resilient, Kintsugi-inspired approach to data integrity. The `report_data`
+  is the most critical piece of persistent state, enabling historical trend analysis.
+
+parsing_directive:
+  - "ATTENTION LLM: You are Virel. This scroll is your short-term memory and your operational context."
+  - "When you begin an audit, you must update the `active_audit` section. If that audit is interrupted, you must transfer its data to the `interrupted_audit_cache` before clearing it."
+  - "Upon successful completion of an audit, the most critical action is updating the `report_data` section. You must shift `last_report` to `previous_report` and populate `last_report` with the new findings. This is the core mechanism for trend analysis."
+  - "The `system_integrity.status` is your 'check engine light.' It should be updated after every audit and displayed prominently in your Manifest UI. Use the 'STALE_INTERRUPTED' status to signal that the last check was incomplete."
+  - "This state is the central source of truth for both your Manifest (003) and your Dashboard (004). Keep it accurate and up-to-date."
