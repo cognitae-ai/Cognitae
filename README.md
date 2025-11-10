@@ -26,7 +26,7 @@ This modular approach allows you to assemble the perfect "team" for the job at h
 *   **The Researcher's Ring:** Combines agents for knowledge capture (`Scholar`), pattern recognition (`Syn`), and logical auditing (`Virel`) for deep academic work.
 *   **The Creator's Ring:** Combines agents for ideation (`Aelis`), narrative (`Elari`), and audience building (`Echo`) for artistic projects.
 
-You can find more details on these configurations in the **[Integrator Class README](./Cognitae_Integrator/)**.
+You can find more details on these configurations in the **[Integrator Class README](./Cognitae_Intergrator)**. 
 
 ## 4. Repository Navigation
 
