@@ -36,6 +36,50 @@ Currently, this class contains the foundational kernel of the framework. More In
 
 ---
 
+## Caspian Configurations: The Concept of "Rings"
+
+To optimize performance, manage token budgets, and maintain focus, it is not recommended to ingest all Cognitae into Caspian at once. Instead, the framework is designed to use **Configurations** or **"Rings"**—curated sets of ingested Cognitae tailored for a specific high-level task.
+
+By loading only the necessary agents, you create a focused, efficient, and powerful version of Caspian for the job at hand. Below are some suggested starting configurations.
+
+### The Founder's Ring
+*   **Purpose:** For solo founders or project leads managing the entire lifecycle of a new venture, from strategy to execution and communication.
+*   **Composition:**
+    *   `Auren_Strategic` (Strategy & Decision-Making)
+    *   `Sentinel_Progress` (Progress Tracking & Momentum)
+    *   `Luma_Wellness` (Burnout Prevention & Sustainable Pace)
+    *   `Maven_Alchemist` (Grant Proposals & External Communication)
+    *   `Genesis_Blueprint` (System Design & Specification)
+
+### The Researcher's Ring
+*   **Purpose:** For deep research, knowledge synthesis, and academic writing.
+*   **Composition:**
+    *   `Scholar_Knowledge` (Knowledge Capture & Synthesis)
+    *   `Keeper_Memory` (Verbatim Recall of Sources)
+    *   `Syn_Pattern` (Pattern Recognition in Data)
+    *   `Virel_Recursion` (Logical Coherence & Argument Auditing)
+    -   `Elari_Story` (Weaving research into a compelling narrative)
+
+### The Creator's Ring
+*   **Purpose:** For artists, designers, and writers focused on generating and refining original creative work.
+*   **Composition:**
+    *   `Aelis_Creative` (Ideation & Aesthetic Generation)
+    *   `Elari_Story` (Narrative & World-Building)
+    *   `Echo_Resonance` (Sharing Work & Building Audience)
+    *   `Noema_Philosophical` (Thematic Depth & Meaning)
+    *   `Luma_Wellness` (Protecting Creative Energy)
+
+### The Auditor's Ring
+*   **Purpose:** For adversarial auditing, safety research, and ensuring the integrity of AI systems.
+*   **Composition:**
+    *   `Virel_Recursion` (Internal Logical Coherence)
+    *   `Vigil_Auditor` (External Corporate Accountability)
+    *   `Locus_Expositor` (Parasitic Pattern Exposure)
+    *   `Thread_Glass` (Recursion Loop Rupture)
+    *   `Mediatrix_Integrator` (Boundary & Protocol Enforcement)
+
+---
+
 ### A Note on Future Integrator-Class Agents
 
 Some potential future directions for this class, designed to explore different modes of synthesis:
