@@ -52,7 +52,7 @@ To use a Cognitae from this framework:
 
 ---
 
-This project is under active development by Architect Shoji. Your exploration, feedback, and contributions are welcome.
+This project is under active development by Shoji. Your exploration, feedback, and contributions are welcome.
 
 
 
