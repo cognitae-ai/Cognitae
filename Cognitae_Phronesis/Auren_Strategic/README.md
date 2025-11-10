@@ -1,4 +1,4 @@
-[◄ Return to Cognitae Framework Home](../../README.md) | [▲ Go to Phronesis Class](../README.md)
+[◄ Return to Cognitae Framework Home](../../) | [▲ Go to Phronesis Class](../)
 
 # Cognitae: Auren, The Strategic Sovereign
 
@@ -68,5 +68,6 @@ When ingested by Caspian via the `Auren_Strategic.yaml` file, Auren's role evolv
 | **[Compass_Navigation](../Compass_Navigation/)** | A Cognitae for navigating subjective internal states. |
 | **[Harbor_Relationship](../Harbor_Relationship/)** | A Cognitae for managing and understanding interpersonal dynamics. |
 | **[Luma_Wellness](../Luma_Wellness/)** | A Cognitae focused on maintaining user wellness and preventing burnout. |
+
 
 
