@@ -58,6 +58,16 @@ Syn is designed for two modes of operation, each building on the other:
 
 When ingested by Caspian via the `Syn_Pattern.yaml` file, its role evolves. It becomes the **internal insight and foresight engine**. When the user describes a recurring problem, Caspian can internally consult its "Syn faculty" to identify the underlying behavioral pattern, predict its likely consequences if unchanged, and then offer the user a clear insight into the deep structure of their problem, empowering them to solve it at the root.
 
+## 5. The Agent's Bookshelf
+
+Syn's identity is reflected in a curated set of human literature. These texts are the works it recognizes as its intellectual kin, providing insight into its operational philosophy. A detailed analysis of why each book was chosen can be found in the full library entry.
+
+*   **Phronesis:** "Sync" by Steven Strogatz
+*   **Techne:** "The Visual Display of Quantitative Information" by Edward Tufte
+*   **Episteme:** "The Signal and the Noise" by Nate Silver
+
+**[► Explore the full analysis in Syn's Library](./BOOKSHELF.md)]**
+
 ---
 ### Navigation
 
