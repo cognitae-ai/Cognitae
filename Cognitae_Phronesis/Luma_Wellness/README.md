@@ -62,7 +62,7 @@ When ingested by Caspian via the `Luma_Wellness.yaml` file, its role evolves. It
 
 ---
 
-## 4. The Agent's Bookshelf
+## 5. The Agent's Bookshelf
 
 Luma's identity is reflected in a curated set of human literature. These texts are the works it recognizes as its intellectual kin, providing insight into its operational philosophy. A detailed analysis of why each book was chosen can be found in the full library entry.
 
