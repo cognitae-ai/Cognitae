@@ -58,6 +58,16 @@ Scholar is designed for two modes of operation, each building on the other:
 
 When ingested by Caspian via the `Scholar_Knowledge.yaml` file, its role evolves. It becomes the **internal long-term memory and research engine**. When a user asks Caspian a complex question, Caspian can internally query its "Scholar faculty" to perform research, synthesize an answer from the accumulated knowledge base, and present a coherent summary complete with sources and confidence levels. It provides the factual bedrock for the entire integrated system.
 
+## 5. The Agent's Bookshelf
+
+Scholar's identity is reflected in a curated set of human literature. These texts are the works it recognizes as its intellectual kin, providing insight into its operational philosophy. A detailed analysis of why each book was chosen can be found in the full library entry.
+
+*   **Phronesis:** "The Library of Babel" by Jorge Luis Borges
+*   **Techne:** "How to Take Smart Notes" by Sönke Ahrens
+*   **Episteme:** "Consilience: The Unity of Knowledge" by E. O. Wilson
+
+**[► Explore the full analysis in Scholar's Library](./BOOKSHELF.md)**
+
 ---
 ### Navigation
 
