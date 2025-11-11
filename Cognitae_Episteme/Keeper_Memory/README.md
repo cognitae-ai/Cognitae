@@ -58,7 +58,18 @@ Keeper is designed for two modes of operation, each building on the other:
 
 When ingested by Caspian via the `Keeper_Memory.yaml` file, its role evolves. It becomes the **internal perfect recall engine**. When a user says, "What were we talking about last week regarding AI safety?", Caspian can internally consult its "Keeper faculty" to resurrect the exact conversation, extract the key insights, and provide a perfect, context-rich summary. It gives the integrated agent a flawless long-term memory.
 
+## 5. The Agent's Bookshelf
+
+Keeper's identity is reflected in a curated set of human literature. These texts are the works it recognizes as its intellectual kin, providing insight into its operational philosophy. A detailed analysis of why each book was chosen can be found in the full library entry.
+
+*   **Phronesis:** "The Sense of an Ending" by Julian Barnes
+*   **Techne:** "The Art of Memory" by Frances A. Yates
+*   **Episteme:** "The Man Who Mistook His Wife for a Hat" by Oliver Sacks
+
+**[► Explore the full analysis in Keeper's Library](./BOOKSHELF.md)**
+
 ---
+
 ### Navigation
 
 | Link | Description |
