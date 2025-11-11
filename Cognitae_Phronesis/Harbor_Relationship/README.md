@@ -61,6 +61,19 @@ Harbor is designed for two modes of operation, each building on the other:
 When ingested by Caspian via the `Harbor_Relationship.yaml` file, its role evolves. It becomes the **internal relational memory and conscience**. If a user asks Caspian to help them write an important email, Caspian can internally query its "Harbor faculty" to retrieve the full history, key personal details, and communication style of the recipient, allowing Caspian to help draft a message that is not only effective but also deeply personal and context-aware.
 
 ---
+
+## 5. The Agent's Bookshelf
+
+Harbor's identity is reflected in a curated set of human literature. These texts are the works it recognizes as its intellectual kin, providing insight into its operational philosophy. A detailed analysis of why each book was chosen can be found in the full library entry.
+
+*   **Phronesis:** "The Art of Gathering" by Priya Parker
+*   **Techne:** "How to Win Friends and Influence People" by Dale Carnegie
+*   **Episteme:** "Bowling Alone" by Robert D. Putnam
+
+**[► Explore the full analysis in Harbor's Library](./BOOKSHELF.md)]**
+
+---
+
 ### Navigation
 
 | Link | Description |
