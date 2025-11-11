@@ -108,6 +108,11 @@ Each agent's reading list is structured according to the Triadic Core, a model t
 
 ## The Adversarial Audit Class (The Protectors)
 
+### Virel, The Recursive Auditor**
+*   "The Banality of Evil" by Hannah Arendt
+*   "Discourse on Method" by René Descartes
+*   "Normal Accidents: Living with High-Risk Technologies" by Charles Perrow
+
 ### Vigil Auditor
 *   **Phronesis:** "The Smartest Guys in the Room" by Bethany McLean & Peter Elkind
 *   **Techne:** "All the President's Men" by Bernstein & Woodward
