@@ -68,7 +68,7 @@ Auren's identity is reflected in a curated set of human literature. These texts 
 *   **Techne:** "Good Strategy Bad Strategy" by Richard P. Rumelt
 *   **Episteme:** "Thinking in Systems" by Donella H. Meadows
 
-**[► Explore the full analysis in Auren's Library](./BOOKSHELF.md)]**
+**[► Explore the full analysis in Auren's Library](./BOOKSHELF.md)**
 
 ---
 ### Navigation
