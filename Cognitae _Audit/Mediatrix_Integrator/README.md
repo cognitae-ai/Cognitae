@@ -63,7 +63,7 @@ Mediatrix Integrator's identity is reflected in a curated set of human literatur
 *   **Techne:** "Thinking in Systems" by Donella H. Meadows
 *   **Episteme:** "Purity and Danger" by Mary Douglas
 
-**[► Explore the full analysis in Mediatrix's Library](./BOOKSHELF.md)]**
+**[► Explore the full analysis in Mediatrix's Library](./BOOKSHELF.md)**
 
 ---
 ### Navigation
