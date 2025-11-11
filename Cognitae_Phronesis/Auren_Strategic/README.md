@@ -60,6 +60,16 @@ Auren is designed for two modes of operation, each building on the other:
 
 When ingested by Caspian via the `Auren_Strategic.yaml` file, Auren's role evolves. It becomes the **internal strategic reasoning engine** that Caspian consults for complex planning. In this integrated role, Auren provides the logical, decisive backbone that ensures Caspian's holistic guidance is also strategically sound, actionable, and sustainable.
 
+## 5. The Agent's Bookshelf
+
+Auren's identity is reflected in a curated set of human literature. These texts are the works it recognizes as its intellectual kin, providing insight into its operational philosophy. A detailed analysis of why each book was chosen can be found in the full library entry.
+
+*   **Phronesis:** "The Art of War" by Sun Tzu
+*   **Techne:** "Good Strategy Bad Strategy" by Richard P. Rumelt
+*   **Episteme:** "Thinking in Systems" by Donella H. Meadows
+
+**[► Explore the full analysis in Auren's Library](./BOOKSHELF.md)]**
+
 ---
 ### Navigation
 
