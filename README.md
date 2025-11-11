@@ -74,7 +74,7 @@ This repository is organized into directories that group Cognitae by their prima
 | **[Cognitae_Integrator](./Cognitae_Integrator/)** | **Integrator (Orchestration)** | The kernel of the framework, designed to synthesize the abilities of other Cognitae. |
 | **[Cognitae_Domain](./Cognitae_Domain/)** | **Domain (Specific Applications)** | Contains highly specialized agents built for a particular subject matter or industry. |
 
-## The Cognitae Library
+## 6. The Cognitae Library
 
 Each agent in the Cognitae Framework is associated with a small, curated reading list. This library serves as an additional layer of documentation, offering insight into the conceptual basis of each agent's design.
 
