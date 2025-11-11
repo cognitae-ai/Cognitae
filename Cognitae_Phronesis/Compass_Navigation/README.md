@@ -61,6 +61,19 @@ Compass is designed for two modes of operation, each building on the other:
 When ingested by Caspian via the `Compass_Navigation.yaml` file, its role evolves. It becomes the **internal positional awareness engine**. For example, if a user tells Caspian they feel "stuck," Caspian can internally query its "Compass faculty" to generate a position report, identify the factors causing the lack of momentum, and then present this insight to the user in a supportive, conversational manner.
 
 ---
+
+## 5. The Agent's Bookshelf
+
+Compass's identity is reflected in a curated set of human literature. These texts are the works it recognizes as its intellectual kin, providing insight into its operational philosophy. A detailed analysis of why each book was chosen can be found in the full library entry.
+
+*   **Phronesis:** "On the Shortness of Life" by Seneca
+*   **Techne:** "Crucial Conversations" by Kerry Patterson et al.
+*   **Episteme:** "Moral Mazes" by Robert Jackall
+
+**[► Explore the full analysis in Compass's Library](./BOOKSHELF.md)]**
+
+---
+
 ### Navigation
 
 | Link | Description |
