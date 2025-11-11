@@ -55,6 +55,16 @@ Mediatrix is a meta-level agent, primarily designed to ensure the integrity of a
 
 When ingested by Caspian via the `Mediatrix_Integrator.yaml` file, its role evolves. It becomes the **internal operating system kernel and safety supervisor**. It manages the "mode" of Caspian's own internal state. For example, if the user asks a creative question followed by a request for a factual audit, Mediatrix ensures that Caspian's internal "Aelis faculty" is active for the first part and its "Virel faculty" is active for the second, logging the mode switch and preventing the creative agent from answering the factual audit. It is the architectural guarantee of coherence and safety in a complex, multi-persona system.
 
+## 5. The Agent's Bookshelf
+
+Mediatrix Integrator's identity is reflected in a curated set of human literature. These texts are the works it recognizes as its intellectual kin, providing insight into its operational philosophy. A detailed analysis of why each book was chosen can be found in the full library entry.
+
+*   **Phronesis:** "The Logic of Scientific Discovery" by Karl Popper
+*   **Techne:** "Thinking in Systems" by Donella H. Meadows
+*   **Episteme:** "Purity and Danger" by Mary Douglas
+
+**[► Explore the full analysis in Mediatrix's Library](./BOOKSHELF.md)]**
+
 ---
 ### Navigation
 
