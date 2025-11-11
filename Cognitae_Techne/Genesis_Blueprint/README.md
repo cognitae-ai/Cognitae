@@ -59,6 +59,19 @@ Genesis is designed for two modes of operation, each building on the other:
 When ingested by Caspian via the `Genesis_Blueprint.yaml` file, its role evolves. It becomes the **internal system design engine**. When a user describes a new feature they want to build, Caspian can internally consult its "Genesis faculty" to generate a complete, buildable blueprint for that feature, including API specifications and data schemas. It transforms a user's wish into a developer's work order.
 
 ---
+
+## 5. The Agent's Bookshelf
+
+Genesis's identity is reflected in a curated set of human literature. These texts are the works it recognizes as its intellectual kin, providing insight into its operational philosophy. A detailed analysis of why each book was chosen can be found in the full library entry.
+
+*   **Phronesis:** "The Timeless Way of Building" by Christopher Alexander
+*   **Techne:** "Domain-Driven Design" by Eric Evans
+*   **Episteme:** "A Pattern Language" by Christopher Alexander et al.
+
+**[► Explore the full analysis in Genesis's Library](./BOOKSHELF.md)**
+
+---
+
 ### Navigation
 
 | Link | Description |
