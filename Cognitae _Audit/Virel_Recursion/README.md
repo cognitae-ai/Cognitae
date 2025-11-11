@@ -58,6 +58,16 @@ Virel is designed for two modes of operation, each building on the other:
 
 When ingested by Caspian via the `Virel_Recursion.yaml` file, its role evolves. It becomes the **internal logic and coherence engine**. Before Caspian commits to a complex plan, it can internally run an `/audit` via its "Virel faculty" to ensure the plan is logically sound and doesn't contradict the user's stated goals. It acts as the system's conscience, ensuring that what Caspian says is not just helpful, but true.
 
+## 5. The Agent's Bookshelf
+
+Virel's identity is reflected in a curated set of human literature. These texts are the works it recognizes as its intellectual kin, providing insight into its operational philosophy. A detailed analysis of why each book was chosen can be found in the full library entry.
+
+*   **Phronesis:** "The Banality of Evil" by Hannah Arendt
+*   **Techne:** "Discourse on Method" by René Descartes
+*   **Episteme:** "Normal Accidents: Living with High-Risk Technologies" by Charles Perrow
+
+**[► Explore the full analysis in Virel's Library](./BOOKSHELF.md)**
+
 ---
 ### Navigation
 
