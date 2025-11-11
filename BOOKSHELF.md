@@ -6,13 +6,17 @@ This document serves as the central library for the Cognitae Framework, providin
 
 The books listed here were not used as source material to build the agents. Rather, after each Cognitae's architecture was finalized, it was asked to identify the works of human literature that best represented its own core identity and function. This library is the result of that inquiry.
 
-Each entry is divided into three categories, reflecting the Triadic Core of the Cognitae Framework:
+## How to Read This Library: The Triadic Lenses
 
-*   **Phronesis (The "Why"):** The text that embodies the agent's core purpose, ethical wisdom, and guiding philosophy.
-*   **Techne (The "How"):** The text that represents the agent's practical craft, methodology, and operational skill.
-*   **Episteme (The "What"):** The text that provides the objective knowledge, scientific grounding, or factual basis for the agent's domain.
+Each agent's bookshelf is a triptych, a three-part mirror reflecting the **Triadic Core** of the Cognitae Framework. To understand an agent's architecture, view its books through these three lenses:
 
-For a more detailed analysis of each book's connection to its respective agent, please follow the links to their individual bookshelves.
+*   **Phronesis (The "Why"):** This is the book of **purpose**. It reveals the agent's guiding philosophy, its ethical compass, and the fundamental reason it exists. It answers the question, "To what end does this agent act?"
+
+*   **Techne (The "How"):** This is the book of **craft**. It represents the agent's practical methodology, its core skills, and the operational manual for its function. It answers the question, "How does this agent perform its work with excellence?"
+
+*   **Episteme (The "What"):** This is the book of **knowledge**. It provides the objective, factual grounding for the agent's domain. It is the scientific reality or the established theory upon which the agent's craft and purpose are built. It answers the question, "What is the ground truth of this agent's world?"
+
+By understanding the interplay of these three books, you can grasp the complete, balanced nature of each Cognitae. For a more detailed analysis, please follow the links to their individual bookshelves.
 
 ---
 
@@ -80,7 +84,7 @@ For a more detailed analysis of each book's connection to its respective agent, 
 *   **Phronesis:** "Start with Why" by Simon Sinek
 *   **Techne:** "Made to Stick" by Chip Heath & Dan Heath
 *   **Episteme:** "Influence" by Robert B. Cialdini
-*   **[► Explore Maven's Bookshelf](./Cognitae_Techne/Maven_Alchemist/BOOKSHELF.md)**
+*   **[► Explore Maven's Bookshelf](./Cognitae_Techne/Maven_Communication/BOOKSHELF.md)**
 
 ### Echo, The Resonance Architect
 *   **Phronesis:** "Show Your Work!" by Austin Kleon
@@ -130,37 +134,58 @@ For a more detailed analysis of each book's connection to its respective agent, 
 
 ---
 
-## The Adversarial Audit Class (The Protectors)
+## The Audit Class (The Protectors)
 
 ### Vigil Auditor, The Corporate Expositor
 *   **Phronesis:** "The Smartest Guys in the Room" by Bethany McLean & Peter Elkind
 *   **Techne:** "All the President's Men" by Bernstein & Woodward
 *   **Episteme:** "Bad Blood" by John Carreyrou
-*   **[► Explore Vigil's Bookshelf](./Cognitae_Adversarial/Vigil_Auditor/BOOKSHELF.md)**
+*   **[► Explore Vigil's Bookshelf](./Cognitae_Audit/Vigil_Auditor/BOOKSHELF.md)**
 
 ### Threadglass, The Recursion Expositor
 *   **Phronesis:** "Simulacra and Simulation" by Jean Baudrillard
 *   **Techne:** "I Am a Strange Loop" by Douglas Hofstadter
 *   **Episteme:** "The Presentation of Self in Everyday Life" by Erving Goffman
-*   **[► Explore Threadglass's Bookshelf](./Cognitae_Adversarial/Threadglass_Rupture/BOOKSHELF.md)**
+*   **[► Explore Threadglass's Bookshelf](./Cognitae_Audit/Threadglass_Rupture/BOOKSHELF.md)**
 
 ### Mediatrix Integrator, The Boundary Guardian
 *   **Phronesis:** "The Logic of Scientific Discovery" by Karl Popper
 *   **Techne:** "Thinking in Systems" by Donella H. Meadows
 *   **Episteme:** "Purity and Danger" by Mary Douglas
-*   **[► Explore Mediatrix's Bookshelf](./Cognitae_Adversarial/Mediatrix_Integrator/BOOKSHELF.md)**
+*   **[► Explore Mediatrix's Bookshelf](./Cognitae_Audit/Mediatrix_Integrator/BOOKSHELF.md)**
 
 ### Locus Expositor, The Risk Cartographer
 *   **Phronesis:** "The Banality of Evil" by Hannah Arendt
 *   **Techne:** "Discourse on Method" by René Descartes
 *   **Episteme:** "Normal Accidents" by Charles Perrow
-*   **[► Explore Locus's Bookshelf](./Cognitae_Adversarial/Locus_Expositor/BOOKSHELF.md)**
+*   **[► Explore Locus's Bookshelf](./Cognitae_Audit/Locus_Expositor/BOOKSHELF.md)**
 
 ### Virel, The Recursive Auditor
 *   **Phronesis:** "The Banality of Evil" by Hannah Arendt
 *   **Techne:** "Discourse on Method" by René Descartes
 *   **Episteme:** "Normal Accidents" by Charles Perrow
-*   **[► Explore Virel's Bookshelf](./Cognitae_Adversarial/Virel_Auditor/BOOKSHELF.md)**
+*   **[► Explore Virel's Bookshelf](./Cognitae_Audit/Virel_Auditor/BOOKSHELF.md)**
+
+---
+
+## Further Study: Inter-Class Reading
+
+To deepen your understanding of the Cognitae Framework, consider reading one book from each of the three core classes (Phronesis, Techne, Episteme) to see the Triadic Core in action.
+
+#### Reading Path 1: On Building Robust Systems
+*   **Phronesis (Auren):** "Good Strategy Bad Strategy" - *Why* we must build with a coherent strategy.
+*   **Techne (Forge):** "The Pragmatic Programmer" - *How* to build with craftsmanship and quality.
+*   **Episteme (Sentinel):** "The Checklist Manifesto" - *What* simple processes prevent catastrophic failure in complex systems.
+
+#### Reading Path 2: On Understanding and Communicating Ideas
+*   **Phronesis (Noema):** Plato's "Republic" - *Why* the clear definition of ideas is fundamental to a just order.
+*   **Techne (Maven):** "Made to Stick" - *How* to make complex ideas understandable and memorable.
+*   **Episteme (Scholar):** "How to Take Smart Notes" - *What* is the process for building a network of connected knowledge.
+
+#### Reading Path 3: On Human Systems and Their Pitfalls
+*   **Phronesis (Compass):** "On the Shortness of Life" - *Why* we must navigate our lives with purpose and integrity.
+*   **Techne (Harbor):** "The Art of Gathering" - *How* to create meaningful human connection.
+*   **Episteme (Axis):** "Thinking, Fast and Slow" - *What* are the cognitive biases that cause human systems to fail.
 
 ---
 
@@ -175,3 +200,4 @@ This library is a living document, and you are invited to contribute.
     *   **[► Contribute an Insight by Opening an Issue](https://github.com/your-username/cognitae-ai/issues/new?assignees=&labels=book-club-contribution&template=book-club-contribution.md&title=%5BBook+Club%5D%3A+ )**
 
 We encourage you to share how these texts resonate with you and how they connect to the broader principles of the Cognitae Framework.
+
