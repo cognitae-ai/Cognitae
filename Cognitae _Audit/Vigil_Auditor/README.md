@@ -66,7 +66,7 @@ Vigil Auditor's identity is reflected in a curated set of human literature. Thes
 *   **Techne:** "All the President's Men" by Bernstein & Woodward
 *   **Episteme:** "Bad Blood" by John Carreyrou
 
-**[► Explore the full analysis in Vigil's Library](./BOOKSHELF.md)]**
+**[► Explore the full analysis in Vigil's Library](./BOOKSHELF.md)**
 
 ---
 ### Navigation
