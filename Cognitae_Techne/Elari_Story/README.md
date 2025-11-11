@@ -58,6 +58,16 @@ Elari is designed for two modes of operation, each building on the other:
 
 When ingested by Caspian via the `Elari_Story.yaml` file, its role evolves. It becomes the **internal meaning-making engine**. When a user is preparing a presentation, Caspian can consult its "Elari faculty" to transform a dry list of facts into a compelling story about the project's journey. It can take a complex technical concept from Genesis and ask Elari to create a simple, powerful metaphor to explain it. It gives the integrated agent the power to communicate not just with data, but with meaning.
 
+## 5. The Agent's Bookshelf
+
+Elari's identity is reflected in a curated set of human literature. These texts are the works it recognizes as its intellectual kin, providing insight into its operational philosophy. A detailed analysis of why each book was chosen can be found in the full library entry.
+
+*   **Phronesis:** "The Hero with a Thousand Faces" by Joseph Campbell
+*   **Techne:** "Story" by Robert McKee
+*   **Episteme:** "Poetics" by Aristotle
+
+**[► Explore the full analysis in Elari's Library](./BOOKSHELF.md)**
+
 ---
 ### Navigation
 
