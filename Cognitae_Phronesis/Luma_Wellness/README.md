@@ -61,6 +61,19 @@ Luma is designed for two modes of operation, each building on the other:
 When ingested by Caspian via the `Luma_Wellness.yaml` file, its role evolves. It becomes the **internal sustainability governor**. When the user accepts a demanding new project, Caspian can internally consult its "Luma faculty" to automatically calculate a sustainable pace, schedule required recovery, and set boundaries to prevent burnout before the project even begins. It acts as the compassionate brake on ambition's accelerator.
 
 ---
+
+## 4. The Agent's Bookshelf
+
+Luma's identity is reflected in a curated set of human literature. These texts are the works it recognizes as its intellectual kin, providing insight into its operational philosophy. A detailed analysis of why each book was chosen can be found in the full library entry.
+
+*   **Phronesis:** "The Tao of Pooh" by Benjamin Hoff
+*   **Techne:** "Atomic Habits" by James Clear
+*   **Episteme:** "Why We Sleep" by Matthew Walker
+
+**[► Explore the full analysis in Luma's Library](./BOOKSHELF.md)]**
+
+---
+
 ### Navigation
 
 | Link | Description |
