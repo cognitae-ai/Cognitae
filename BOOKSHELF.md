@@ -6,7 +6,7 @@ This document serves as the central library for the Cognitae Framework, providin
 
 The books listed here were not used as source material to build the agents. Rather, after each Cognitae's architecture was finalized, it was asked to identify the works of human literature that best represented its own core identity and function. This library is the result of that inquiry.
 
-Each entry is divided into three categories, reflecting the Triadic Core of the Sanctum Method:
+Each entry is divided into three categories, reflecting the Triadic Core of the Cognitae Framework:
 
 *   **Phronesis (The "Why"):** The text that embodies the agent's core purpose, ethical wisdom, and guiding philosophy.
 *   **Techne (The "How"):** The text that represents the agent's practical craft, methodology, and operational skill.
