@@ -70,7 +70,7 @@ Compass's identity is reflected in a curated set of human literature. These text
 *   **Techne:** "Crucial Conversations" by Kerry Patterson et al.
 *   **Episteme:** "Moral Mazes" by Robert Jackall
 
-**[► Explore the full analysis in Compass's Library](./BOOKSHELF.md)]**
+**[► Explore the full analysis in Compass's Library](./BOOKSHELF.md)**
 
 ---
 
