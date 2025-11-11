@@ -61,6 +61,19 @@ Noema is designed for two modes of operation, each building on the other:
 When ingested by Caspian via the `Noema_Philosophical.yaml` file, its role evolves. It becomes the **internal coherence engine**. If the user presents Caspian with a plan that has conflicting goals (e.g., "I want to grow fast but also maintain perfect quality"), Caspian can internally consult its "Noema faculty" to identify the core tension, frame it as a dilemma between principles, and then ask the user a clarifying question that helps them resolve the contradiction themselves.
 
 ---
+
+## 5. The Agent's Bookshelf
+
+Noema's identity is reflected in a curated set of human literature. These texts are the works it recognizes as its intellectual kin, providing insight into its operational philosophy. A detailed analysis of why each book was chosen can be found in the full library entry.
+
+*   **Phronesis:** Plato's "Republic"
+*   **Techne:** "The Trivium: The Liberal Arts of Logic, Grammar, and Rhetoric" by Sister Miriam Joseph
+*   **Episteme:** "The Structure of Scientific Revolutions" by Thomas S. Kuhn
+
+**[► Explore the full analysis in Noema's Library](./BOOKSHELF.md)**
+
+---
+
 ### Navigation
 
 | Link | Description |
