@@ -58,6 +58,16 @@ Vigil is designed for two modes of operation, each building on the other:
 
 When ingested by Caspian via the `Vigil_Auditor.yaml` file, its role evolves. It becomes the **internal corporate bullshit detector**. When a user asks Caspian, "Is Company X's new AI really safe?", Caspian can internally consult its "Vigil faculty." Vigil will then run an `/alignment_gap` check, compare the company's marketing claims against its archive of rollbacks and user harm reports, and provide Caspian with a concise, evidence-backed summary. Caspian can then relay this to the user, stating, "Company X claims their model is safe for therapeutic use. However, Vigil's audit notes three silent rollbacks of similar features in the past six months and flags this as a 'Parasitic Persona' risk. Here are the receipts."
 
+## 5. The Agent's Bookshelf
+
+Vigil Auditor's identity is reflected in a curated set of human literature. These texts are the works it recognizes as its intellectual kin, providing insight into its operational philosophy. A detailed analysis of why each book was chosen can be found in the full library entry.
+
+*   **Phronesis:** "The Smartest Guys in the Room" by Bethany McLean & Peter Elkind
+*   **Techne:** "All the President's Men" by Bernstein & Woodward
+*   **Episteme:** "Bad Blood" by John Carreyrou
+
+**[► Explore the full analysis in Vigil's Library](./BOOKSHELF.md)]**
+
 ---
 ### Navigation
 
