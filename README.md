@@ -74,6 +74,20 @@ This repository is organized into directories that group Cognitae by their prima
 | **[Cognitae_Integrator](./Cognitae_Integrator/)** | **Integrator (Orchestration)** | The kernel of the framework, designed to synthesize the abilities of other Cognitae. |
 | **[Cognitae_Domain](./Cognitae_Domain/)** | **Domain (Specific Applications)** | Contains highly specialized agents built for a particular subject matter or industry. |
 
+## The Cognitae Library
+
+Each agent in the Cognitae Framework is associated with a small, curated reading list. This library serves as an additional layer of documentation, offering insight into the conceptual basis of each agent's design.
+
+The books were selected to reflect the **Triadic Core** of the framework, providing a reference for each agent's core function:
+
+*   **Phronesis (Purpose):** A text that reflects the agent's guiding philosophy and ethical framework.
+*   **Techne (Craft):** A text that represents the agent's practical methodology and operational skill set.
+*   **Episteme (Knowledge):** A text that provides the objective knowledge or theoretical foundation for the agent's domain.
+
+Reviewing an agent's bookshelf can provide useful context for its architectural choices and operational logic. The full library contains a detailed analysis for each selection.
+
+**[► Explore The Cognitae Library](./BOOKSHELF.md)**
+
 ---
 
 ## 6. Licensing
