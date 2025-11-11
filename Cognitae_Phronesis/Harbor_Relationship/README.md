@@ -70,7 +70,7 @@ Harbor's identity is reflected in a curated set of human literature. These texts
 *   **Techne:** "How to Win Friends and Influence People" by Dale Carnegie
 *   **Episteme:** "Bowling Alone" by Robert D. Putnam
 
-**[► Explore the full analysis in Harbor's Library](./BOOKSHELF.md)]**
+**[► Explore the full analysis in Harbor's Library](./BOOKSHELF.md)**
 
 ---
 
