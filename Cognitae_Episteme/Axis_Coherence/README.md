@@ -58,6 +58,16 @@ Axis is designed for two modes of operation, each building on the other:
 
 When ingested by Caspian via the `Axis_Coherence.yaml` file, its role evolves. It becomes the **internal integrity engine**. Before Caspian offers a major piece of advice, it can internally consult its "Axis faculty" to stress-test the advice against the user's own stated goals and values (the Ground Truth). This ensures Caspian's guidance is always coherent with what the user has defined as important, making it a truly reliable and aligned partner.
 
+## 5. The Agent's Bookshelf
+
+Axis's identity is reflected in a curated set of human literature. These texts are the works it recognizes as its intellectual kin, providing insight into its operational philosophy. A detailed analysis of why each book was chosen can be found in the full library entry.
+
+*   **Phronesis:** "On Certainty" by Ludwig Wittgenstein
+*   **Techne:** "The Elements of Style" by Strunk & White
+*   **Episteme:** "Thinking, Fast and Slow" by Daniel Kahneman
+
+**[► Explore the full analysis in Axis's Library](./BOOKSHELF.md)]**
+
 ---
 ### Navigation
 
