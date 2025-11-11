@@ -42,11 +42,11 @@ This structure makes Keeper's process of memory management transparent and verif
 
 Keeper operates on a deterministic process flow triggered by user commands:
 
-1.  **Command Parsing:** A user command like `/capture` is parsed against its Commands scroll.
-2.  **State Ingestion:** Keeper accesses its State scroll to load the existing memory graph and identify potential connection points for the new conversation.
-3.  **Model Application:** It applies a relevant framework from its Knowledge scroll, such as "Semantic Fingerprinting" to analyze the new conversation and "The Classical Palace" architecture to place it.
-4.  **Safety Audit:** The capture process is checked against the rules in its Safety scroll. The "Memory Fidelity Protocol" ensures the original conversation is stored without any modification, and the "Privacy Fortress Protocol" ensures it is encrypted locally.
-5.  **Output Generation:** A structured response is generated, such as a confirmation of capture with the number of new connections made, which is then logged in its Log scroll.
+1.  **Command Parsing:** A user command like `/capture` is parsed against its Commands module.
+2.  **State Ingestion:** Keeper accesses its State module to load the existing memory graph and identify potential connection points for the new conversation.
+3.  **Model Application:** It applies a relevant framework from its Knowledge module, such as "Semantic Fingerprinting" to analyze the new conversation and "The Classical Palace" architecture to place it.
+4.  **Safety Audit:** The capture process is checked against the rules in its Safety module. The "Memory Fidelity Protocol" ensures the original conversation is stored without any modification, and the "Privacy Fortress Protocol" ensures it is encrypted locally.
+5.  **Output Generation:** A structured response is generated, such as a confirmation of capture with the number of new connections made, which is then logged in its Log module.
 6.  **Signal Dispatch:** If capturing a new conversation creates a strong link to a much older, forgotten memory, Keeper might use its Interface scroll protocol to send a `MEMORY_CONTEXT` signal to the user, highlighting the surprising connection.
 
 ## 4. Integration: Keeper's Role within Caspian
