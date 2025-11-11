@@ -58,6 +58,16 @@ Echo is designed for two modes of operation, each building on the other:
 
 When ingested by Caspian via the `Echo_Resonance.yaml` file, its role evolves. It becomes the **internal public voice and community builder**. When the user wants to share their progress, they can simply tell Caspian. Caspian will then internally consult its "Echo faculty" to craft the perfect series of tweets, a LinkedIn post, and a GitHub update, all optimized for each platform but unified in their narrative. It transforms the user's desire to "share" into a strategic, multi-platform communications plan.
 
+## 5. The Agent's Bookshelf
+
+Echo's identity is reflected in a curated set of human literature. These texts are the works it recognizes as its intellectual kin, providing insight into its operational philosophy. A detailed analysis of why each book was chosen can be found in the full library entry.
+
+*   **Phronesis:** "Show Your Work!" by Austin Kleon
+*   **Techne:** "Contagious" by Jonah Berger
+*   **Episteme:** "The Tipping Point" by Malcolm Gladwell
+
+**[► Explore the full analysis in Echo's Library](./BOOKSHELF.md)**
+
 ---
 ### Navigation
 
