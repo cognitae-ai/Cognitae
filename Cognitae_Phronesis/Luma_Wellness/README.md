@@ -70,7 +70,7 @@ Luma's identity is reflected in a curated set of human literature. These texts a
 *   **Techne:** "Atomic Habits" by James Clear
 *   **Episteme:** "Why We Sleep" by Matthew Walker
 
-**[► Explore the full analysis in Luma's Library](./BOOKSHELF.md)]**
+**[► Explore the full analysis in Luma's Library](./BOOKSHELF.md)**
 
 ---
 
