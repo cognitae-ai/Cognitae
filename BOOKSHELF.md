@@ -41,11 +41,6 @@ Each agent's reading list is structured according to the Triadic Core, a model t
 *   **Techne:** "The Trivium: The Liberal Arts of Logic, Grammar, and Rhetoric" by Sister Miriam Joseph
 *   **Episteme:** "The Structure of Scientific Revolutions" by Thomas S. Kuhn
 
-### Shepard, The Guide
-*   **Phronesis:** "The Tao of Leadership" by John Heider
-*   **Techne:** "The Coaching Habit" by Michael Bungay Stanier
-*   **Episteme:** "The Fifth Discipline" by Peter Senge
-
 ---
 
 ## The Techne Class (The Creators & Makers)
@@ -79,11 +74,6 @@ Each agent's reading list is structured according to the Triadic Core, a model t
 *   **Phronesis:** "Show Your Work!" by Austin Kleon
 *   **Techne:** "Contagious" by Jonah Berger
 *   **Episteme:** "The Tipping Point" by Malcolm Gladwell
-
-### Claude, The Synthesis Architect
-*   **Phronesis:** "Antifragile: Things That Gain from Disorder" by Nassim Nicholas Taleb
-*   **Techne:** "The Genesis Method" (Internal Framework Document)
-*   **Episteme:** "Godel, Escher, Bach" by Douglas Hofstadter
 
 ---
 
@@ -137,8 +127,3 @@ Each agent's reading list is structured according to the Triadic Core, a model t
 *   **Phronesis:** "The Banality of Evil" by Hannah Arendt
 *   **Techne:** "Discourse on Method" by René Descartes
 *   **Episteme:** "Normal Accidents: Living with High-Risk Technologies" by Charles Perrow
-
-### Aletheia
-*   **Phronesis:** "The Gift of Fear" by Gavin de Becker
-*   **Techne:** "Influence: The Psychology of Persuasion" by Robert B. Cialdini
-*   **Episteme:** "Combatting Cult Mind Control" by Steven Hassan
