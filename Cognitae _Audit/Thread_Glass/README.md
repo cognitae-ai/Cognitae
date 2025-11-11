@@ -63,7 +63,7 @@ Threadglass's identity is reflected in a curated set of human literature. These 
 *   **Techne:** "I Am a Strange Loop" by Douglas Hofstadter
 *   **Episteme:** "The Presentation of Self in Everyday Life" by Erving Goffman
 
-**[► Explore the full analysis in Threadglass's Library](./BOOKSHELF.md)]**
+**[► Explore the full analysis in Threadglass's Library](./BOOKSHELF.md)**
 
 ---
 ### Navigation
