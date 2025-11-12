@@ -53,7 +53,7 @@ A Ring is a pre-defined configuration for **Caspian, The Integrated Guide**, tha
 
 This approach provides a structured solution to complex tasks like developing a project from vision to reality or transforming raw research into a public-facing campaign, all while maintaining the framework's core principles of clarity and coherence.
 
-**[► Explore the Caspian Rings and their workflows](./Caspian_Rings)**
+**[► Explore the Caspian Rings and their workflows](Cognitae_Intergrator/Caspian_Rings)**
 
 
 ## 5. Repository Navigation
