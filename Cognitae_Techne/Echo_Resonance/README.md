@@ -58,7 +58,14 @@ Echo is designed for two modes of operation, each building on the other:
 
 When ingested by Caspian via the `Echo_Resonance.yaml` file, its role evolves. It becomes the **internal public voice and community builder**. When the user wants to share their progress, they can simply tell Caspian. Caspian will then internally consult its "Echo faculty" to craft the perfect series of tweets, a LinkedIn post, and a GitHub update, all optimized for each platform but unified in their narrative. It transforms the user's desire to "share" into a strategic, multi-platform communications plan.
 
-## 5. The Agent's Bookshelf
+## 5. Caspian Ring Integrations
+
+Echo's ability to adapt and amplify messages is the final step in public-facing communication workflows:
+
+*   **[Grounded Communication Ring](https://github.com/cognitae-ai/Cognitae/tree/main/Cognitae_Intergrator/Caspian_Rings/Grounded_Communication_Ring ):** Takes the final article from Elari and prepares it for distribution across various channels.
+*   **[Keystone Production Ring](https://github.com/cognitae-ai/Cognitae/tree/main/Cognitae_Intergrator/Caspian_Rings/Keystone_Production_Ring ):** Packages the final content for multi-channel distribution, creating threads, posts, and summaries.
+  
+## 6. The Agent's Bookshelf
 
 Echo's identity is reflected in a curated set of human literature. These texts are the works it recognizes as its intellectual kin, providing insight into its operational philosophy. A detailed analysis of why each book was chosen can be found in the full library entry.
 
