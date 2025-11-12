@@ -58,7 +58,13 @@ Maven is designed for two modes of operation, each building on the other:
 
 When ingested by Caspian via the `Maven_Alchemist.yaml` file, its role evolves. It becomes the **internal communications and translation engine**. When a user decides to apply for a grant, Caspian can consult its "Auren faculty" for strategy, its "Scholar faculty" for evidence, and then pass all of that to its "Maven faculty" to alchemize it into a complete, coherent, and powerful first draft of the proposal, perfectly tailored to the funder's language while preserving the project's soul.
 
-## 5. The Agent's Bookshelf
+## 5. Caspian Ring Integrations
+
+Maven's specialized craft of institutional translation is the core of the grant-seeking workflow:
+
+*   **[Institutional Alchemy Ring](https://github.com/cognitae-ai/Cognitae/tree/main/Cognitae_Intergrator/Caspian_Rings/Institutional_Alchemy_Ring ):** Performs the core translation of the project's vision into the formal language and structure required by funding bodies.
+
+## 6. The Agent's Bookshelf
 
 Maven's identity is reflected in a curated set of human literature. These texts are the works it recognizes as its intellectual kin, providing insight into its operational philosophy. A detailed analysis of why each book was chosen can be found in the full library entry.
 
