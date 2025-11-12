@@ -58,7 +58,14 @@ Virel is designed for two modes of operation, each building on the other:
 
 When ingested by Caspian via the `Virel_Recursion.yaml` file, its role evolves. It becomes the **internal logic and coherence engine**. Before Caspian commits to a complex plan, it can internally run an `/audit` via its "Virel faculty" to ensure the plan is logically sound and doesn't contradict the user's stated goals. It acts as the system's conscience, ensuring that what Caspian says is not just helpful, but true.
 
-## 5. The Agent's Bookshelf
+## 5. Caspian Ring Integrations
+
+Vigil's "receipts-based" auditing is used for external analysis and cynical critique:
+
+*   **[Adversarial Audit Ring](https://github.com/cognitae-ai/Cognitae/tree/main/Cognitae_Intergrator/Caspian_Rings/Adversarial_Audit_Ring ):** Conducts the external evidence audit, comparing claims against publicly available facts.
+*   **[Market Mirror Ring](https://github.com/cognitae-ai/Cognitae/tree/main/Cognitae_Intergrator/Caspian_Rings/Market_Mirror_Ring ):** Subjects a raw creative idea to a ruthless "market viability" audit to identify weaknesses.
+
+## 6. The Agent's Bookshelf
 
 Virel's identity is reflected in a curated set of human literature. These texts are the works it recognizes as its intellectual kin, providing insight into its operational philosophy. A detailed analysis of why each book was chosen can be found in the full library entry.
 
