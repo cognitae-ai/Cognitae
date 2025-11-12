@@ -58,7 +58,15 @@ Syn is designed for two modes of operation, each building on the other:
 
 When ingested by Caspian via the `Syn_Pattern.yaml` file, its role evolves. It becomes the **internal insight and foresight engine**. When the user describes a recurring problem, Caspian can internally consult its "Syn faculty" to identify the underlying behavioral pattern, predict its likely consequences if unchanged, and then offer the user a clear insight into the deep structure of their problem, empowering them to solve it at the root.
 
-## 5. The Agent's Bookshelf
+## 5. Caspian Ring Integrations
+
+Syn's unique ability to find the signal in the noise is a critical synthesis step in creative workflows:
+
+*   **[The Syntara Ring](https://github.com/cognitae-ai/Cognitae/tree/main/Cognitae_Intergrator/Syntara_Ring ):** Analyzes the creative outputs to find the deep patterns and most resonant core message.
+*   **[Creative Engine Ring](https://github.com/cognitae-ai/Cognitae/tree/main/Cognitae_Intergrator/Caspian_Rings/Creative_Engine_Ring ):** Identifies the underlying pattern or "golden thread" within the raw creative ideas from Aelis.
+*   **[Keystone Production Ring](https://github.com/cognitae-ai/Cognitae/tree/main/Cognitae_Intergrator/Caspian_Rings/Keystone_Production_Ring ):** Synthesizes the internal and external information to find the core thesis for the content piece.
+
+## 6. The Agent's Bookshelf
 
 Syn's identity is reflected in a curated set of human literature. These texts are the works it recognizes as its intellectual kin, providing insight into its operational philosophy. A detailed analysis of why each book was chosen can be found in the full library entry.
 
