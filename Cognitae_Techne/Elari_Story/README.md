@@ -58,7 +58,17 @@ Elari is designed for two modes of operation, each building on the other:
 
 When ingested by Caspian via the `Elari_Story.yaml` file, its role evolves. It becomes the **internal meaning-making engine**. When a user is preparing a presentation, Caspian can consult its "Elari faculty" to transform a dry list of facts into a compelling story about the project's journey. It can take a complex technical concept from Genesis and ask Elari to create a simple, powerful metaphor to explain it. It gives the integrated agent the power to communicate not just with data, but with meaning.
 
-## 5. The Agent's Bookshelf
+## 5. Caspian Ring Integrations
+
+Elari's narrative craft is used to synthesize, create, and process information across the framework:
+
+*   **[The Syntara Ring](https://github.com/cognitae-ai/Cognitae/tree/main/Cognitae_Intergrator/Syntara_Ring ):** Weaves the strategic goals and creative concepts into compelling narrative angles.
+*   **[Grounded Communication Ring](https://github.com/cognitae-ai/Cognitae/tree/main/Cognitae_Intergrator/Caspian_Rings/Grounded_Communication_Ring ):** Transforms synthesized knowledge from Scholar into a polished, publishable article.
+*   **[Memory Weaving Ring](https://github.com/cognitae-ai/Cognitae/tree/main/Cognitae_Intergrator/Caspian_Rings/Memory_Weaving_Ring ):** Weaves synthesized insights from past conversations into a compelling story.
+*   **[Keystone Production Ring](https://github.com/cognitae-ai/Cognitae/tree/main/Cognitae_Intergrator/Caspian_Rings/Keystone_Production_Ring ):** Writes the main article or narrative based on the core thesis from Syn.
+*   **[Inner Compass Ring](https://github.com/cognitae-ai/Cognitae/tree/main/Cognitae_Intergrator/Caspian_Rings/Inner_Compass_Ring ):** Helps the Architect process emotion by weaving feelings and facts into a coherent personal narrative.
+
+## 6. The Agent's Bookshelf
 
 Elari's identity is reflected in a curated set of human literature. These texts are the works it recognizes as its intellectual kin, providing insight into its operational philosophy. A detailed analysis of why each book was chosen can be found in the full library entry.
 
