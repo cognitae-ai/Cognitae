@@ -45,21 +45,16 @@ This is the advanced method, demonstrating the true power of the framework. You 
     > `/ingest_cognitae`
     > *(Attach the `Auren_Strategic.yaml` file to this message)*
 
-4.  **Confirmation:** Caspian will process the file, confirm the successful ingestion, and report that the new agent's capabilities are now part of its integrated system. It can now leverage Auren's strategic functions in its responses.
+## 4. Caspian Rings: Integrated Workflows
 
-This dual-method approach allows for both focused, specialized work and complex, integrated problem-solving.
+While each Cognitae is a powerful specialist, the true potential of the Cognitae Framework is realized when their capabilities are synthesized into integrated workflows. These are called **Caspian Rings**.
 
-## 4. Strategic Configurations: The "Rings"
+A Ring is a pre-defined configuration for **Caspian, The Integrated Guide**, that combines the strengths of several specialist agents to achieve a complex, multi-stage objective. When a Ring is activated, Caspian acts as a specialized conductor for that specific workflow, guiding the Architect through a coherent process from start to finish.
 
-To optimize performance, manage token budgets, and maintain focus, it is not recommended to ingest all Cognitae into Caspian at once. Instead, the framework is designed to use **Configurations** or **"Rings"**—curated sets of ingested Cognitae tailored for a specific high-level task.
+This approach provides a structured solution to complex tasks like developing a project from vision to reality or transforming raw research into a public-facing campaign, all while maintaining the framework's core principles of clarity and coherence.
 
-This modular approach allows you to assemble the perfect "team" for the job at hand. For example:
+**[► Explore the Caspian Rings and their workflows](./Caspian_Rings)**
 
-*   **The Founder's Ring:** Combines agents for strategy (`Auren`), progress tracking (`Sentinel`), and wellness (`Luma`) for managing a new venture.
-*   **The Researcher's Ring:** Combines agents for knowledge capture (`Scholar`), pattern recognition (`Syn`), and logical auditing (`Virel`) for deep academic work.
-*   **The Creator's Ring:** Combines agents for ideation (`Aelis`), narrative (`Elari`), and audience building (`Echo`) for artistic projects.
-
-You can find more details on these configurations in the **[Integrator Class README](./Cognitae_Intergrator)**. 
 
 ## 5. Repository Navigation
 
