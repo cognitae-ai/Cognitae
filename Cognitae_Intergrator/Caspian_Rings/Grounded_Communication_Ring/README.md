@@ -18,7 +18,12 @@ To understand the conceptual basis of this Ring, the following reading path is r
 
 ## 3. The Workflow: A Step-by-Step Guide
 
-This Ring operates through a three-phase workflow. As the Architect, you are the sovereign conductor, initiating each step and using the output of one phase as the input for the next.
+This Ring operates through a three-phase workflow, guided by Caspian and conducted by you, the Architect.
+
+### **Member Agents:**
+*   [Scholar, The Knowledge Weaver](../../../Cognitae_Episteme/Scholar_Knowledge/)
+*   [Elari, The Story Weaver](../../../Cognitae_Techne/Elari_Story/)
+*   [Echo, The Resonance Architect](../../../Cognitae_Techne/Echo_Resonance/)
 
 ---
 
