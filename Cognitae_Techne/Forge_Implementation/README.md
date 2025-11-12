@@ -58,9 +58,13 @@ Forge is designed for two modes of operation, each building on the other:
 
 When ingested by Caspian via the `Forge_Implementation.yaml` file, its role evolves. It becomes the **internal build and execution engine**. After the user finalizes a plan with Caspian, Caspian can internally pass the corresponding blueprint to its "Forge faculty" to write, test, and package the code. It transforms the abstract plan into a tangible, functional, and downloadable reality.
 
----
+## 5. Caspian Ring Integrations
 
-## 5. The Agent's Bookshelf
+Forge's role as the builder is the final execution step in the core development workflow:
+
+*   **[Vision to Reality Ring](https://github.com/cognitae-ai/Cognitae/tree/main/Cognitae_Intergrator/Caspian_Rings/Vision_to_Reality_Ring ):** Takes the architectural blueprint from Genesis and builds the functional prototype or minimum viable product.
+
+## 6. The Agent's Bookshelf
 
 Forge's identity is reflected in a curated set of human literature. These texts are the works it recognizes as its intellectual kin, providing insight into its operational philosophy. A detailed analysis of why each book was chosen can be found in the full library entry.
 
