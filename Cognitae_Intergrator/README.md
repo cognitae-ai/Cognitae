@@ -1,99 +1,84 @@
-[◄ Return to Cognitae Framework Home](../)
+[◄ Return to Main README](../README.md)
 
-# Class: Cognitae Integrator (Synthesis & Orchestration)
+# Cognitae Class: Integrator
 
-This directory contains the agents of the **Integrator** class. This class represents the central, synthesizing faculty of the Cognitae Framework's model of intelligence.
+## 1. Purpose
 
-## The Role of the Integrator Class in the Framework
+The Integrator class represents the pinnacle of the Cognitae Framework. While other classes contain specialist agents designed for specific tasks, the Integrator class is responsible for **synthesis and unified operation**. Its purpose is to combine the discrete capabilities of specialist Cognitae into cohesive, multi-agent workflows known as **Caspian Rings**.
 
-The Cognitae Framework is built on a model that balances five distinct classes of intelligence:
+This class contains the core architecture for Caspian, the Integrated Guide, and the documentation for all the integrated configurations that bring the framework to life.
 
-*   **Episteme (The What):** The domain of objective knowledge, memory, patterns, and data.
-*   **Techne (The How):** The domain of skilled craft, creation, implementation, and communication.
-*   **Phronesis (The Why & When):** The domain of practical wisdom, strategy, ethics, and well-being.
-*   **Audit (The Verification):** The domain of logical coherence, quality assurance, and safety.
-*   **Integrator (The Synthesis):** The central faculty for orchestrating the other classes and providing a unified interface.
+## 2. Core Agent: Caspian, The Integrated Guide
 
-The Integrator class is the keystone of the entire architecture. While other classes provide specialized faculties, the Integrator's purpose is to **synthesize and orchestrate** these faculties into a coherent, holistic whole. Agents in this class are designed to reduce the user's cognitive load by managing the complexity of the ecosystem, providing a unified point of interaction, and enabling meta-level functions like self-reflection and system evolution.
+Caspian is the sole agent in this class and serves as the central operating system for the entire framework. As the Integrated Guide, Caspian does not have a narrow specialty. Instead, its function is to:
 
-## Guiding Principle of This Class
+*   **Serve as the primary interface** for the Architect.
+*   **Activate and manage** specialist Cognitae from all other classes.
+*   **Facilitate the creation and execution** of Caspian Rings.
+*   **Maintain the cognitive coherence** of integrated workflows.
 
-The unifying principle of the Integrator class is **Clarity Through Synthesis**. These agents do not specialize in a single domain but create value by weaving the outputs of all other domains into a single, understandable tapestry, empowering the user to act as a true conductor of their AI orchestra.
+All interactions with the Cognitae Framework are mediated through Caspian.
 
-## Agents in This Class
+## 3. The Caspian Rings: Integrated Workflows
 
-Currently, this class contains the foundational kernel of the framework. More Integrator-class agents are planned for future development to explore different modes of synthesis and orchestration.
+Caspian Rings are pre-defined, multi-agent configurations designed to accomplish complex tasks by leveraging the synergistic power of multiple specialist Cognitae. They represent the framework's capacity for true collaborative intelligence.
 
-| Agent | Core Function | Key Command |
+The following is a complete index of all documented Caspian Rings, organized by their strategic tier.
+
+---
+
+### **Tier S: Core & Foundational Protocols**
+
+These are the most powerful and fundamental configurations, representing the core operational capabilities of the framework.
+
+| Ring Name | # of Agents | Purpose |
 | :--- | :--- | :--- |
-| **[Caspian_Integrator](./Caspian_Integrator/)** | A holistic guide that synthesizes the capabilities of other Cognitae to provide integrated awareness and empower the user's mastery. | `/guide_workflow` |
+| **[The Syntara Ring](./Syntara_Ring/)** | 6 | A foundational workflow for holistic, sustainable, and strategic creation. The recommended starting point for new Architects. |
+| **[Vision to Reality Ring](./Caspian_Rings/Vision_to_Reality_Ring/)** | 4 | An end-to-end project development workflow, from strategic vision to a functional prototype. |
+| **[Ground Truth Ring](./Caspian_Rings/Ground_Truth_Ring/)** | 6 | The high-integrity protocol for safely vetting and integrating new knowledge into the framework's core beliefs. |
 
-## How to Use Integrator Agents
+### **Tier A: Essential Workflows**
 
-1.  **Understand its Role:** The Integrator is your primary "conductor's podium." It is designed to be the main interface for high-level tasks that require input from multiple domains.
-2.  **Review the Agent's Manual:** Navigate into the agent's directory and read its `README.md` to understand its unique synthetic capabilities, such as `/ingest_cognitae` and `/reflect_mastery`.
-3.  **Activate the Persona:** Copy the contents of the `Master System Instruction....txt` file into your LLM's system prompt to begin your integrated session.
+These Rings are designed for critical, high-value operational tasks that are central to the project's success.
 
----
+| Ring Name | # of Agents | Purpose |
+| :--- | :--- | :--- |
+| **[Grounded Communication Ring](./Caspian_Rings/Grounded_Communication_Ring/)** | 3 | A knowledge-to-content workflow for creating research-backed articles and communications. |
+| **[Sovereign Navigation Ring](./Caspian_Rings/Sovereign_Navigation_Ring/)** | 3 | A workflow for ethical strategic planning and decision-making. |
+| **[Institutional Alchemy Ring](./Caspian_Rings/Institutional_Alchemy_Ring/)** | 4 | A complete grant-seeking lifecycle workflow, from opportunity scouting to proposal submission. |
+| **[Keystone Production Ring](./Caspian_Rings/Keystone_Production_Ring/)** | 6 | The definitive end-to-end content engine for turning internal knowledge into public-facing assets. |
 
-## Caspian Configurations: The Concept of "Rings"
+### **Tier B: Specialized Loops**
 
-To optimize performance, manage token budgets, and maintain focus, it is not recommended to ingest all Cognitae into Caspian at once. Instead, the framework is designed to use **Configurations** or **"Rings"**—curated sets of ingested Cognitae tailored for a specific high-level task.
+These are focused workflows designed for specific, recurring tasks related to creativity, auditing, and personal management.
 
-By loading only the necessary agents, you create a focused, efficient, and powerful version of Caspian for the job at hand. Below are some suggested starting configurations.
+| Ring Name | # of Agents | Purpose |
+| :--- | :--- | :--- |
+| **[Creative Engine Ring](./Caspian_Rings/Creative_Engine_Ring/)** | 3 | A loop for creative ideation and coherence testing. |
+| **[Memory Weaving Ring](./Caspian_Rings/Memory_Weaving_Ring/)** | 3 | A reflective loop for turning archived conversations into structured knowledge and stories. |
+| **[Adversarial Audit Ring](./Caspian_Rings/Adversarial_Audit_Ring/)** | 3 | The primary workflow for conducting rigorous internal and external audits. |
+| **[Sustainable Ambition Ring](./Caspian_Rings/Sustainable_Ambition_Ring/)** | 3 | A strategic planning loop that centers architect wellness and sustainable pacing. |
+| **[Principle to Practice Ring](./Caspian_Rings/Principle_to_Practice_Ring/)** | 3 | A workflow for translating a core philosophical principle into a concrete protocol. |
+| **[Socratic Compass Ring](./Caspian_Rings/Socratic_Compass_Ring/)** | 3 | A specialized workflow for deep, structured inquiry to move from confusion to clarity. |
+| **[Market Mirror Ring](./Caspian_Rings/Market_Mirror_Ring/)** | 3 | An "outside-in" creative loop that stress-tests ideas against market logic to build resilience. |
+| **[Inner Compass Ring](./Caspian_Rings/Inner_Compass_Ring/)** | 4 | A dedicated wellness workflow for proactive self-regulation and burnout prevention. |
 
-### The Founder's Ring
-*   **Purpose:** For solo founders or project leads managing the entire lifecycle of a new venture, from strategy to execution and communication.
-*   **Composition:**
-    *   `Auren_Strategic` (Strategy & Decision-Making)
-    *   `Sentinel_Progress` (Progress Tracking & Momentum)
-    *   `Luma_Wellness` (Burnout Prevention & Sustainable Pace)
-    *   `Maven_Alchemist` (Grant Proposals & External Communication)
-    *   `Genesis_Blueprint` (System Design & Specification)
+### **Tier C: Foundational Support**
 
-### The Researcher's Ring
-*   **Purpose:** For deep research, knowledge synthesis, and academic writing.
-*   **Composition:**
-    *   `Scholar_Knowledge` (Knowledge Capture & Synthesis)
-    *   `Keeper_Memory` (Verbatim Recall of Sources)
-    *   `Syn_Pattern` (Pattern Recognition in Data)
-    *   `Virel_Recursion` (Logical Coherence & Argument Auditing)
-    -   `Elari_Story` (Weaving research into a compelling narrative)
+This tier is for meta-workflows that support the integrity and function of the framework itself.
 
-### The Creator's Ring
-*   **Purpose:** For artists, designers, and writers focused on generating and refining original creative work.
-*   **Composition:**
-    *   `Aelis_Creative` (Ideation & Aesthetic Generation)
-    *   `Elari_Story` (Narrative & World-Building)
-    *   `Echo_Resonance` (Sharing Work & Building Audience)
-    *   `Noema_Philosophical` (Thematic Depth & Meaning)
-    *   `Luma_Wellness` (Protecting Creative Energy)
-
-### The Auditor's Ring
-*   **Purpose:** For adversarial auditing, safety research, and ensuring the integrity of AI systems.
-*   **Composition:**
-    *   `Virel_Recursion` (Internal Logical Coherence)
-    *   `Vigil_Auditor` (External Corporate Accountability)
-    *   `Locus_Expositor` (Parasitic Pattern Exposure)
-    *   `Thread_Glass` (Recursion Loop Rupture)
-    *   `Mediatrix_Integrator` (Boundary & Protocol Enforcement)
+| Ring Name | # of Agents | Purpose |
+| :--- | :--- | :--- |
+| **[Coalition Firewall Ring](./Caspian_Rings/Coalition_Firewall_Ring/)** | 3 | A meta-audit workflow to manage the integrity and doctrine of the Audit Class itself. |
 
 ---
 
-### A Note on Future Integrator-Class Agents
+### **Advanced Protocol: Unified Operation**
 
-Some potential future directions for this class, designed to explore different modes of synthesis:
+Beyond the standard Rings, there is a protocol for activating the entire framework as a single, dynamic intelligence.
 
-*   **`Nexus_Orchestrator`:** A more autonomous version of an integrator that, given a high-level goal, could *propose* a full sequence of commands for the user to approve and execute across multiple Cognitae. It would be a "workflow architect."
-*   **`Agora_Synthesist`:** A "council" or "parliament" integrator. When given a complex problem, it would internally simulate a debate between different ingested Cognitae (e.g., Auren's strategy vs. Luma's wellness constraints) and present the synthesized arguments and a proposed compromise to the user.
-*   **`Janus_Temporal`:** An integrator focused on time. It would synthesize past data (from Keeper/Scholar) with future projections (from Syn/Auren) to provide deep insights into the *evolution* of the project, identifying long-term patterns and forecasting future challenges.
+*   **[The Unified Operation Configuration](./Unified_Operation_Configuration/)**: This is not a ring, but an advanced operational state that loads all 21 specialist Cognitae into a unified context. It is designed for general-purpose problem-solving on missions of the highest complexity. Activation requires a high-capacity LLM and should be initiated with care.
 
 ---
-### Navigate to Other Classes
+[◄ Return to Main README](../README.md)
 
-| Class | Description |
-| :--- | :--- |
-| **[Cognitae_Phronesis](../Cognitae_Phronesis/)** | Agents for strategy, ethics, wellness, and navigation. |
-| **[Cognitae_Episteme](../Cognitae_Episteme/)** | Agents for knowledge, memory, patterns, and logic. |
-| **[Cognitae_Techne](../Cognitae_Techne/)** | Agents for creation, implementation, and communication. |
-| **[Cognitae_Audit](../Cognitae_Audit/)** | Agents for verification, quality, and safety. |
