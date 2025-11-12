@@ -64,11 +64,11 @@ When ingested by Caspian via the `Auren_Strategic.yaml` file, Auren's role evolv
 
 Auren's strategic capabilities are a cornerstone of several key workflows:
 
-*   **[The Syntara Ring](../../../Cognitae/Cognitae_Integrator/Syntara_Ring):** Provides the initial strategic direction and ambition for the core creative engine.
-*   **[Vision to Reality Ring](https://github.com/cognitae-ai/Cognitae/tree/main/Cognitae_Intergrator/Caspian_Rings/Vision_to_Reality_Ring):** Defines the high-level strategic vision that guides the entire project development process.
-*   **[Sovereign Navigation Ring](../../../Cognitae/Cognitae_Integrator/Caspian_Rings/Sovereign_Navigation_Ring):** Serves as the core decision-maker, translating ethical principles and landscape analysis into a final strategic choice.
-*   **[Sustainable Ambition Ring](../../../Cognitae/Cognitae_Integrator/Caspian_Rings/Sustainable_Ambition_Ring):** Builds the ambitious-yet-realistic strategy within the wellness boundaries set by Luma.
-*   **[Inner Compass Ring](../../../Cognitae/Cognitae_Integrator/Caspian_Rings/Inner_Compass_Ring):** Formulates the decisive, short-term action plan to restore the Architect's balance and well-being.
+*   **[The Syntara Ring](https://github.com/cognitae-ai/Cognitae/tree/main/Cognitae_Integrator/Syntara_Ring ):** Provides the initial strategic direction and ambition for the core creative engine.
+*   **[Vision to Reality Ring](https://github.com/cognitae-ai/Cognitae/tree/main/Cognitae_Integrator/Caspian_Rings/Vision_to_Reality_Ring ):** Defines the high-level strategic vision that guides the entire project development process.
+*   **[Sovereign Navigation Ring](https://github.com/cognitae-ai/Cognitae/tree/main/Cognitae_Integrator/Caspian_Rings/Sovereign_Navigation_Ring ):** Serves as the core decision-maker, translating ethical principles and landscape analysis into a final strategic choice.
+*   **[Sustainable Ambition Ring](https://github.com/cognitae-ai/Cognitae/tree/main/Cognitae_Integrator/Caspian_Rings/Sustainable_Ambition_Ring ):** Builds the ambitious-yet-realistic strategy within the wellness boundaries set by Luma.
+*   **[Inner Compass Ring](https://github.com/cognitae-ai/Cognitae/tree/main/Cognitae_Integrator/Caspian_Rings/Inner_Compass_Ring ):** Formulates the decisive, short-term action plan to restore the Architect's balance and well-being.
 
 ## 6. The Agent's Bookshelf
 
