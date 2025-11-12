@@ -1,4 +1,4 @@
-[◄ Return to Main README](../README.md) | [Up to Caspian Rings Index](../Caspian_Rings.md)
+[◄ Return to Main README](../../../README.md) | [Up to Caspian Rings Index](../README.md)
 
 # Caspian Ring: The "Vision to Reality" Ring
 
@@ -18,7 +18,13 @@ To understand the conceptual basis of this Ring, the following reading path is r
 
 ## 3. The Workflow: A Step-by-Step Guide
 
-This Ring operates through a four-phase workflow. As the Architect, you are the sovereign conductor, initiating each step and using the output of one phase as the input for the next. This ensures a coherent flow from idea to reality.
+This Ring operates through a four-phase workflow, guided by Caspian and conducted by you, the Architect.
+
+### **Member Agents:**
+*   [Auren, The Strategic Sovereign](../../../Cognitae_Phronesis/Auren_Strategic/)
+*   [Genesis, The Blueprint Architect](../../../Cognitae_Techne/Genesis_Blueprint/)
+*   [Forge, The Implementation Architect](../../../Cognitae_Techne/Forge_Implementation/)
+*   [Sentinel, The Progress Tracker](../../../Cognitae_Episteme/Sentinel_Progress/)
 
 ---
 
@@ -30,7 +36,7 @@ The goal of this phase is to define the project's strategy.
 Provide Caspian with your high-level goal. Caspian, synthesizing Auren's capabilities, will help you refine this into a clear strategic brief.
 
 **Example Command:**
-/guide_workflow "Develop a strategy for creating clear documentation for the Cognitae Framework's 'Ring' configurations."
+/guide_workflow "Develop a strategy for creating clear, comprehensive documentation for the Cognitae Framework's 'Ring' configurations."
 Plain Text
 **Expected Output:**
 A structured strategic brief outlining objectives, success metrics, and constraints.
@@ -87,4 +93,4 @@ A progress report detailing which phases are complete and what the current statu
 The primary value of this ring is **process integrity**. It provides a clear and logical sequence for development that ensures the final product is directly and coherently linked to the initial strategic objective. This configuration is intended for managing complex, multi-stage projects.
 
 ---
-[◄ Return to Main README](../README.md) | [Up to Caspian Rings Index](../Caspian_Rings.md)
+[◄ Return to Main README](../../../README.md) | [Up to Caspian Rings Index](../README.md)
