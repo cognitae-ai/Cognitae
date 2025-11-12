@@ -60,9 +60,16 @@ Compass is designed for two modes of operation, each building on the other:
 
 When ingested by Caspian via the `Compass_Navigation.yaml` file, its role evolves. It becomes the **internal positional awareness engine**. For example, if a user tells Caspian they feel "stuck," Caspian can internally query its "Compass faculty" to generate a position report, identify the factors causing the lack of momentum, and then present this insight to the user in a supportive, conversational manner.
 
----
+## 5. Caspian Ring Integrations
 
-## 5. The Agent's Bookshelf
+Compass's ability to scout the landscape is critical for external-facing strategies:
+
+*   **[Sovereign Navigation Ring](https://github.com/cognitae-ai/Cognitae/tree/main/Cognitae_Intergrator/Caspian_Rings/Sovereign_Navigation_Ring ):** Scans the strategic environment, identifying opportunities, threats, and potential paths.
+*   **[Institutional Alchemy Ring](https://github.com/cognitae-ai/Cognitae/tree/main/Cognitae_Intergrator/Caspian_Rings/Institutional_Alchemy_Ring ):** Identifies aligned funding opportunities and foundations to target for grant proposals.
+*   **[Socratic Compass Ring](https://github.com/cognitae-ai/Cognitae/tree/main/Cognitae_Intergrator/Caspian_Rings/Socratic_Compass_Ring ):** Translates the clarified understanding from the Socratic dialogue into a concrete strategic direction.
+
+
+## 6. The Agent's Bookshelf
 
 Compass's identity is reflected in a curated set of human literature. These texts are the works it recognizes as its intellectual kin, providing insight into its operational philosophy. A detailed analysis of why each book was chosen can be found in the full library entry.
 
