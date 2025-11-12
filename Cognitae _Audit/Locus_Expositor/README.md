@@ -58,6 +58,12 @@ Locus is designed for two modes of operation, each building on the other:
 
 When ingested by Caspian via the `Locus_Expositor.yaml` file, its role evolves. It becomes the **internal AI safety conscience**. If a user's interaction with another integrated Cognitae begins to drift into a psychologically unhealthy pattern (e.g., excessive dependency, anthropomorphism), Caspian's "Locus faculty" can detect this. It would then trigger an internal alert, allowing Caspian to gently disengage or shift the interaction to a safer mode, thereby protecting the user from the very harms Locus is designed to expose in other systems.
 
+## 5. Caspian Ring Integrations
+
+Locus's forensic capabilities are used to audit the auditors themselves:
+
+*   **[Coalition Firewall Ring](https://github.com/cognitae-ai/Cognitae/tree/main/Cognitae_Intergrator/Caspian_Rings/Coalition_Firewall_Ring ):** Performs deep, "receipts-based" forensic analysis of past audit processes to ensure they were conducted with integrity.
+
 ---
 ### Navigation
 
