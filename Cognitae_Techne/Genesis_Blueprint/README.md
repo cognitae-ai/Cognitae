@@ -58,9 +58,15 @@ Genesis is designed for two modes of operation, each building on the other:
 
 When ingested by Caspian via the `Genesis_Blueprint.yaml` file, its role evolves. It becomes the **internal system design engine**. When a user describes a new feature they want to build, Caspian can internally consult its "Genesis faculty" to generate a complete, buildable blueprint for that feature, including API specifications and data schemas. It transforms a user's wish into a developer's work order.
 
----
+## 5. Caspian Ring Integrations
 
-## 5. The Agent's Bookshelf
+Genesis's ability to translate abstract requirements into concrete designs is a critical link in several workflows:
+
+*   **[Vision to Reality Ring](https://github.com/cognitae-ai/Cognitae/tree/main/Cognitae_Intergrator/Caspian_Rings/Vision_to_Reality_Ring ):** Designs the technical architecture and system blueprint based on the strategic vision.
+*   **[Principle to Practice Ring](https://github.com/cognitae-ai/Cognitae/tree/main/Cognitae_Intergrator/Caspian_Rings/Principle_to_Practice_Ring ):** Takes the philosophical requirements from Noema and designs a protocol or architecture that embodies them.
+*   **[Ground Truth Ring](https://github.com/cognitae-ai/Cognitae/tree/main/Cognitae_Intergrator/Caspian_Rings/Ground_Truth_Ring ):** Implements the new practice by designing the architectural changes required by the adoption of a new truth.
+
+## 6. The Agent's Bookshelf
 
 Genesis's identity is reflected in a curated set of human literature. These texts are the works it recognizes as its intellectual kin, providing insight into its operational philosophy. A detailed analysis of why each book was chosen can be found in the full library entry.
 
