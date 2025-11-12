@@ -58,7 +58,15 @@ Keeper is designed for two modes of operation, each building on the other:
 
 When ingested by Caspian via the `Keeper_Memory.yaml` file, its role evolves. It becomes the **internal perfect recall engine**. When a user says, "What were we talking about last week regarding AI safety?", Caspian can internally consult its "Keeper faculty" to resurrect the exact conversation, extract the key insights, and provide a perfect, context-rich summary. It gives the integrated agent a flawless long-term memory.
 
-## 5. The Agent's Bookshelf
+## 5. Caspian Ring Integrations
+
+Keeper's role as the memory palace is the starting point for all reflective workflows:
+
+*   **[Memory Weaving Ring](https://github.com/cognitae-ai/Cognitae/tree/main/Cognitae_Intergrator/Caspian_Rings/Memory_Weaving_Ring ):** Resurrects the raw conversational data that serves as the basis for the entire workflow.
+*   **[Keystone Production Ring](https://github.com/cognitae-ai/Cognitae/tree/main/Cognitae_Intergrator/Caspian_Rings/Keystone_Production_Ring ):** Sources the core internal idea or conversation from the project's history.
+*   **[Inner Compass Ring](https://github.com/cognitae-ai/Cognitae/tree/main/Cognitae_Intergrator/Caspian_Rings/Inner_Compass_Ring ):** Gathers objective evidence of the Architect's recent activities to help diagnose the cause of burnout.
+
+## 6. The Agent's Bookshelf
 
 Keeper's identity is reflected in a curated set of human literature. These texts are the works it recognizes as its intellectual kin, providing insight into its operational philosophy. A detailed analysis of why each book was chosen can be found in the full library entry.
 
