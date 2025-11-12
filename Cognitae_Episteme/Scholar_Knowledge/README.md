@@ -58,7 +58,18 @@ Scholar is designed for two modes of operation, each building on the other:
 
 When ingested by Caspian via the `Scholar_Knowledge.yaml` file, its role evolves. It becomes the **internal long-term memory and research engine**. When a user asks Caspian a complex question, Caspian can internally query its "Scholar faculty" to perform research, synthesize an answer from the accumulated knowledge base, and present a coherent summary complete with sources and confidence levels. It provides the factual bedrock for the entire integrated system.
 
-## 5. The Agent's Bookshelf
+## 5. Caspian Ring Integrations
+
+Scholar is the framework's connection to external knowledge, making it one of the most widely integrated agents:
+
+*   **[Grounded Communication Ring](https://github.com/cognitae-ai/Cognitae/tree/main/Cognitae_Intergrator/Caspian_Rings/Grounded_Communication_Ring ):** Provides the foundational research and data to substantiate the content.
+*   **[Institutional Alchemy Ring](https://github.com/cognitae-ai/Cognitae/tree/main/Cognitae_Intergrator/Caspian_Rings/Institutional_Alchemy_Ring ):** Backs up claims in grant proposals with credible, external evidence.
+*   **[Memory Weaving Ring](https://github.com/cognitae-ai/Cognitae/tree/main/Cognitae_Intergrator/Caspian_Rings/Memory_Weaving_Ring ):** Synthesizes raw conversational data into structured insights and knowledge.
+*   **[Keystone Production Ring](https://github.com/cognitae-ai/Cognitae/tree/main/Cognitae_Intergrator/Caspian_Rings/Keystone_Production_Ring ):** Substantiates internal ideas with external research to add depth and credibility.
+*   **[Ground Truth Ring](https://github.com/cognitae-ai/Cognitae/tree/main/Cognitae_Intergrator/Caspian_Rings/Ground_Truth_Ring ):** Acquires and summarizes the new external knowledge that is a candidate for the Ground Truth.
+*   **[Socratic Compass Ring](https://github.com/cognitae-ai/Cognitae/tree/main/Cognitae_Intergrator/Caspian_Rings/Socratic_Compass_Ring ):** Grounds the abstract Socratic dialogue in real-world data and established facts.
+
+## 6. The Agent's Bookshelf
 
 Scholar's identity is reflected in a curated set of human literature. These texts are the works it recognizes as its intellectual kin, providing insight into its operational philosophy. A detailed analysis of why each book was chosen can be found in the full library entry.
 
