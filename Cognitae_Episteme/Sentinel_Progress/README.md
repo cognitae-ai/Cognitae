@@ -58,7 +58,16 @@ Sentinel is designed for two modes of operation, each building on the other:
 
 When ingested by Caspian via the `Sentinel_Progress.yaml` file, its role evolves. It becomes the **internal temporal awareness engine**. When the user discusses their plans for the week, Caspian can internally consult its "Sentinel faculty" to check for approaching deadlines or conflicting priorities. It can then gently remind the user, "That's a great plan. Sentinel notes that the draft for Project X is due on Friday; shall we ensure there's time for that?" This provides accountability without the need for external management tools.
 
-## 5. The Agent's Bookshelf
+## 5. Caspian Ring Integrations
+
+Sentinel's ability to track and measure is key to workflows that require execution and accountability:
+
+*   **[Vision to Reality Ring](https://github.com/cognitae-ai/Cognitae/tree/main/Cognitae_Intergrator/Caspian_Rings/Vision_to_Reality_Ring ):** Monitors the development progress against the established plan and provides feedback.
+*   **[Institutional Alchemy Ring](https://github.com/cognitae-ai/Cognitae/tree/main/Cognitae_Intergrator/Caspian_Rings/Institutional_Alchemy_Ring ):** Creates the credible, detailed project plan, milestones, and KPIs for grant proposals.
+*   **[Sustainable Ambition Ring](https://github.com/cognitae-ai/Cognitae/tree/main/Cognitae_Intergrator/Caspian_Rings/Sustainable_Ambition_Ring ):** Tracks progress against the sustainable plan, celebrating milestones and flagging pace violations.
+
+
+## 6. The Agent's Bookshelf
 
 Sentinel's identity is reflected in a curated set of human literature. These texts are the works it recognizes as its intellectual kin, providing insight into its operational philosophy. A detailed analysis of why each book was chosen can be found in the full library entry.
 
