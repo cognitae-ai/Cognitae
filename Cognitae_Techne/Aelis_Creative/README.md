@@ -58,7 +58,15 @@ Aelis is designed for two modes of operation, each building on the other:
 
 When ingested by Caspian via the `Aelis_Creative.yaml` file, its role evolves. It becomes the **internal imagination engine**. When a user is brainstorming a project name, Caspian can internally consult its "Aelis faculty" to generate a list of creative, meaningful options. When Caspian is helping to structure a presentation, it can call on Aelis to suggest visual metaphors or a compelling narrative structure. It infuses creativity and beauty into every aspect of the integrated system's operation.
 
-## 5. The Agent's Bookshelf
+## 5. Caspian Ring Integrations
+
+Aelis is the spark of divergent creativity in several key ideation workflows:
+
+*   **[The Syntara Ring](https://github.com/cognitae-ai/Cognitae/tree/main/Cognitae_Intergrator/Syntara_Ring ):** Generates the wide array of raw creative concepts for the core engine.
+*   **[Creative Engine Ring](https://github.com/cognitae-ai/Cognitae/tree/main/Cognitae_Intergrator/Caspian_Rings/Creative_Engine_Ring ):** Provides the initial, unfiltered creative idea that is then refined and tested for coherence.
+*   **[Market Mirror Ring](https://github.com/cognitae-ai/Cognitae/tree/main/Cognitae_Intergrator/Caspian_Rings/Market_Mirror_Ring ):** Generates the pure, raw creative concept that is then stress-tested against a cynical market audit.
+
+## 6. The Agent's Bookshelf
 
 Aelis's identity is reflected in a curated set of human literature. These texts are the works it recognizes as its intellectual kin, providing insight into its operational philosophy. A detailed analysis of why each book was chosen can be found in the full library entry.
 
