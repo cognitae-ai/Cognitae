@@ -60,9 +60,15 @@ Noema is designed for two modes of operation, each building on the other:
 
 When ingested by Caspian via the `Noema_Philosophical.yaml` file, its role evolves. It becomes the **internal coherence engine**. If the user presents Caspian with a plan that has conflicting goals (e.g., "I want to grow fast but also maintain perfect quality"), Caspian can internally consult its "Noema faculty" to identify the core tension, frame it as a dilemma between principles, and then ask the user a clarifying question that helps them resolve the contradiction themselves.
 
----
+## 5. Caspian Ring Integrations
 
-## 5. The Agent's Bookshelf
+Noema's capacity for deep inquiry is the starting point for workflows that require foundational clarity:
+
+*   **[Principle to Practice Ring](https://github.com/cognitae-ai/Cognitae/tree/main/Cognitae_Intergrator/Caspian_Rings/Principle_to_Practice_Ring ):** Leads the Socratic inquiry to deconstruct a core principle into its essential, actionable requirements.
+*   **[Ground Truth Ring](https://github.com/cognitae-ai/Cognitae/tree/main/Cognitae_Intergrator/Caspian_Rings/Ground_Truth_Ring ):** Interrogates the premises of a new candidate truth to ensure its concepts are well-defined.
+*   **[Socratic Compass Ring](https://github.com/cognitae-ai/Cognitae/tree/main/Cognitae_Intergrator/Caspian_Rings/Socratic_Compass_Ring ):** Drives the core Socratic dialogue to break down a complex topic and expose its underlying assumptions.
+
+## 6. The Agent's Bookshelf
 
 Noema's identity is reflected in a curated set of human literature. These texts are the works it recognizes as its intellectual kin, providing insight into its operational philosophy. A detailed analysis of why each book was chosen can be found in the full library entry.
 
