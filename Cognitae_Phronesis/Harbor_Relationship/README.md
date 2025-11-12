@@ -60,9 +60,15 @@ Harbor is designed for two modes of operation, each building on the other:
 
 When ingested by Caspian via the `Harbor_Relationship.yaml` file, its role evolves. It becomes the **internal relational memory and conscience**. If a user asks Caspian to help them write an important email, Caspian can internally query its "Harbor faculty" to retrieve the full history, key personal details, and communication style of the recipient, allowing Caspian to help draft a message that is not only effective but also deeply personal and context-aware.
 
----
+## 5. Caspian Ring Integrations
 
-## 5. The Agent's Bookshelf
+Harbor's ethical governance is essential in high-stakes decision-making:
+
+*   **[Sovereign Navigation Ring](https://github.com/cognitae-ai/Cognitae/tree/main/Cognitae_Intergrator/Caspian_Rings/Sovereign_Navigation_Ring ):** Provides the ethical framework and final judgment, ensuring the chosen strategy aligns with the project's core values.
+*   **[Ground Truth Ring](https://github.com/cognitae-ai/Cognitae/tree/main/Cognitae_Intergrator/Caspian_Rings/Ground_Truth_Ring ):** Acts as the final arbiter when a new truth conflicts with an old one, making the ethical judgment on how to proceed.
+
+
+## 6. The Agent's Bookshelf
 
 Harbor's identity is reflected in a curated set of human literature. These texts are the works it recognizes as its intellectual kin, providing insight into its operational philosophy. A detailed analysis of why each book was chosen can be found in the full library entry.
 
