@@ -41,7 +41,7 @@ Use Caspian to define a strategic goal, explicitly asking it to incorporate well
 
 **Example Command:**
 /guide_workflow "Develop a strategy for launching the Cognitae Framework publicly, ensuring the plan is sustainable and avoids burnout."
-Plain Text
+
 **Expected Output:**
 A strategic brief from Auren's capabilities, tempered by Luma's wellness principles, outlining a realistic timeline, resource allocation, and key milestones.
 
@@ -57,7 +57,7 @@ Provide the sustainable strategy from Phase 1 to Caspian, asking for creative an
 **Example Command:**
 /guide_workflow "Generate creative concepts and narrative angles for the sustainable launch strategy outlined below."
 [Paste the strategy from Phase 1 here]
-Plain Text
+
 **Expected Output:**
 A rich document containing multiple campaign ideas from Aelis (e.g., visual themes, slogans) and corresponding narrative structures from Elari (e.g., "The Journey of Creation," "A Tool for Sovereignty").
 
