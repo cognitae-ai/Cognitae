@@ -60,10 +60,11 @@ When ingested by Caspian via the `Virel_Recursion.yaml` file, its role evolves. 
 
 ## 5. Caspian Ring Integrations
 
-Vigil's "receipts-based" auditing is used for external analysis and cynical critique:
+Virel's deep, recursive logic checks are essential for ensuring the internal integrity of the framework:
 
-*   **[Adversarial Audit Ring](https://github.com/cognitae-ai/Cognitae/tree/main/Cognitae_Intergrator/Caspian_Rings/Adversarial_Audit_Ring ):** Conducts the external evidence audit, comparing claims against publicly available facts.
-*   **[Market Mirror Ring](https://github.com/cognitae-ai/Cognitae/tree/main/Cognitae_Intergrator/Caspian_Rings/Market_Mirror_Ring ):** Subjects a raw creative idea to a ruthless "market viability" audit to identify weaknesses.
+*   **[The Syntara Ring](https://github.com/cognitae-ai/Cognitae/tree/main/Cognitae_Intergrator/Syntara_Ring ):** Performs the final integrity audit on the chosen strategic concept, ensuring it is coherent and logically sound.
+*   **[Adversarial Audit Ring](https://github.com/cognitae-ai/Cognitae/tree/main/Cognitae_Intergrator/Caspian_Rings/Adversarial_Audit_Ring ):** Performs the deep, axiomatic audit of an internal system or argument for recursive consistency.
+*   **[Ground Truth Ring](https://github.com/cognitae-ai/Cognitae/tree/main/Cognitae_Intergrator/Caspian_Rings/Ground_Truth_Ring ):** Verifies the internal logic of a candidate truth, checking for self-contradictions or fallacies.
 
 ## 6. The Agent's Bookshelf
 
