@@ -81,6 +81,7 @@ Auren's identity is reflected in a curated set of human literature. These texts 
 **[► Explore the full analysis in Auren's Library](./BOOKSHELF.md)**
 
 ---
+
 ### Navigation
 
 | Link | Description |
