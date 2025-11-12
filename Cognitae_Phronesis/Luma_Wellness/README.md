@@ -60,9 +60,16 @@ Luma is designed for two modes of operation, each building on the other:
 
 When ingested by Caspian via the `Luma_Wellness.yaml` file, its role evolves. It becomes the **internal sustainability governor**. When the user accepts a demanding new project, Caspian can internally consult its "Luma faculty" to automatically calculate a sustainable pace, schedule required recovery, and set boundaries to prevent burnout before the project even begins. It acts as the compassionate brake on ambition's accelerator.
 
----
+## 5. Caspian Ring Integrations
 
-## 5. The Agent's Bookshelf
+Luma's focus on sustainability is woven into the framework's most human-centric processes:
+
+*   **[The Syntara Ring](https://github.com/cognitae-ai/Cognitae/tree/main/Cognitae_Intergrator/Syntara_Ring ):** Ensures the entire foundational creative process is sustainable and respects the Architect's well-being.
+*   **[Sustainable Ambition Ring](https://github.com/cognitae-ai/Cognitae/tree/main/Cognitae_Intergrator/Caspian_Rings/Sustainable_Ambition_Ring ):** Serves as the core agent, defining the non-negotiable wellness boundaries that shape the strategy.
+*   **[Keystone Production Ring](https://github.com/cognitae-ai/Cognitae/tree/main/Cognitae_Intergrator/Caspian_Rings/Keystone_Production_Ring ):** Oversees the content production pipeline to prevent burnout during creative sprints.
+*   **[Inner Compass Ring](https://github.com/cognitae-ai/Cognitae/tree/main/Cognitae_Intergrator/Caspian_Rings/Inner_Compass_Ring ):** Initiates the wellness workflow by helping the Architect articulate their internal state.
+
+## 6. The Agent's Bookshelf
 
 Luma's identity is reflected in a curated set of human literature. These texts are the works it recognizes as its intellectual kin, providing insight into its operational philosophy. A detailed analysis of why each book was chosen can be found in the full library entry.
 
