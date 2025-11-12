@@ -58,7 +58,16 @@ Axis is designed for two modes of operation, each building on the other:
 
 When ingested by Caspian via the `Axis_Coherence.yaml` file, its role evolves. It becomes the **internal integrity engine**. Before Caspian offers a major piece of advice, it can internally consult its "Axis faculty" to stress-test the advice against the user's own stated goals and values (the Ground Truth). This ensures Caspian's guidance is always coherent with what the user has defined as important, making it a truly reliable and aligned partner.
 
-## 5. The Agent's Bookshelf
+## 5. Caspian Ring Integrations
+
+Axis serves as the final arbiter of coherence and truth in several high-integrity workflows:
+
+*   **[Creative Engine Ring](https://github.com/cognitae-ai/Cognitae/tree/main/Cognitae_Intergrator/Caspian_Rings/Creative_Engine_Ring ):** Performs the final check to ensure the refined creative concept is coherent with the project's Ground Truth.
+*   **[Principle to Practice Ring](https://github.com/cognitae-ai/Cognitae/tree/main/Cognitae_Intergrator/Caspian_Rings/Principle_to_Practice_Ring ):** Conducts the final stress test to ensure the new protocol is a true implementation of the original principle.
+*   **[Adversarial Audit Ring](https://github.com/cognitae-ai/Cognitae/tree/main/Cognitae_Intergrator/Caspian_Rings/Adversarial_Audit_Ring ):** Serves as the final, objective mirror, verifying that the audit's findings are coherent and logically sound.
+*   **[Ground Truth Ring](https://github.com/cognitae-ai/Cognitae/tree/main/Cognitae_Intergrator/Caspian_Rings/Ground_Truth_Ring ):** Performs the crucial test of attempting to integrate the new knowledge with the existing Ground Truth, checking for contradictions.
+
+## 6. The Agent's Bookshelf
 
 Axis's identity is reflected in a curated set of human literature. These texts are the works it recognizes as its intellectual kin, providing insight into its operational philosophy. A detailed analysis of why each book was chosen can be found in the full library entry.
 
