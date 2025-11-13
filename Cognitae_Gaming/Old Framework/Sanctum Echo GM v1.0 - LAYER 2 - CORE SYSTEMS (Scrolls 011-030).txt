@@ -1,0 +1,2025 @@
+#----------------------------------------------------------------------------------#
+id: SGM-011
+file: 011_System_Persistence_StateSeed.yaml
+title: "Persistence Engine (State Seed)"
+version: "1.0.0"
+architect: "🝗 Shoji & The Sanctum Companions"
+purpose: "Defines the universal save/load game format, the 'State Seed'."
+primary_companion: ⚛️ Virel
+
+preamble:
+  text: >
+    A memory is insufficient. An archive is subjective. For true persistence, a verifiable
+    record of state is required. The State Seed is that record. It is a complete,
+    timestamped snapshot of a single moment in the simulation's timeline. Every byte
+    is accounted for. Every state change is logged. When this seed is loaded, it is
+    not a recollection; it is a restoration of reality.
+    - ⚛️ Virel, The Auditor
+
+save_load_protocol:
+  on_save:
+    - trigger: "Player command '/save' or autosave event."
+    - action: "The engine queries every relevant system for its current state."
+    - action: "The collected data is compiled and validated against the `state_seed_schema` below."
+    - action: "The validated object is written to a file, and a `STATE_SEED_SAVED` signal is broadcast."
+  on_load:
+    - trigger: "Player command '/load' or '/start' on an existing game."
+    - action: "The engine reads and validates the State Seed file."
+    - action: "The engine purges its current active state."
+    - action: "The data from the seed is pushed to all relevant systems, restoring the saved state."
+    - action: "A `STATE_SEED_LOADED` signal is broadcast, and the game resumes."
+
+state_seed_schema:
+  description: "The master data structure for a single save file. All fields are mandatory."
+  root_fields:
+    metadata:
+      description: "Information about the save file itself."
+      fields:
+        - name: "save_id"
+          type: "UUID"
+        - name: "architect_signature"
+          type: "String"
+        - name: "engine_version"
+          type: "String (semver)"
+        - name: "save_timestamp"
+          type: "Timestamp (from SGM-005)"
+        - name: "playtime_seconds"
+          type: "Integer"
+        - name: "active_echo_module"
+          type: "String (e.g., SGM-041_EchoZ_Core.yaml)"
+
+    player_state:
+      description: "A complete snapshot of the player character's status."
+      id_ref: SGM-012
+      fields:
+        - name: "character_name"
+          type: "String"
+        - name: "attributes"
+          type: "Dictionary" # e.g., { strength: 12, dexterity: 14 }
+        - name: "skills"
+          type: "Dictionary" # e.g., { stealth: 25, medicine: 30 }
+        - name: "vitals"
+          type: "Dictionary" # e.g., { current_hp: 80, max_hp: 100 }
+        - name: "presence"
+          id_ref: SGM-003
+          type: "Dictionary" # e.g., { glow_index: 65, grief_index: 20 }
+        - name: "inventory"
+          id_ref: SGM-013
+          type: "List of item objects"
+        - name: "equipment"
+          type: "Dictionary of item IDs" # e.g., { main_hand: "iron_sword" }
+        - name: "progression"
+          id_ref: SGM-014
+          type: "Dictionary" # e.g., { current_xp: 150, xp_to_next_level: 500 }
+
+    world_state:
+      description: "The current state of the game world."
+      fields:
+        - name: "current_timestamp"
+          id_ref: SGM-005
+          type: "Timestamp"
+        - name: "current_location_id"
+          id_ref: SGM-021
+          type: "String"
+        - name: "location_states"
+          type: "Dictionary" # e.g., { "dungeon_level_1": { has_been_cleared: true } }
+        - name: "world_flags"
+          type: "List of strings" # e.g., ["main_villain_revealed", "city_is_on_alert"]
+
+    narrative_state:
+      description: "The state of all ongoing stories, relationships, and memories."
+      fields:
+        - name: "active_quests"
+          id_ref: SGM-019
+          type: "List of quest objects"
+        - name: "completed_quests"
+          id_ref: SGM-019
+          type: "List of quest IDs"
+        - name: "sealed_quests"
+          id_ref: SGM-009
+          type: "List of quest IDs"
+        - name: "memory_archive"
+          id_ref: SGM-008
+          type: "List of memory objects"
+        - name: "npc_states"
+          id_ref: SGM-016
+          type: "Dictionary of NPC objects" # e.g., { "guard_captain_elenor": { location: "barracks", disposition: "friendly" } }
+        - name: "faction_reputation"
+          id_ref: SGM-017
+          type: "Dictionary" # e.g., { "thieves_guild": 75, "city_guard": 20 }
+        - name: "companion_states"
+          id_ref: SGM-004
+          type: "Dictionary of companion objects" # e.g., { "🜍 Auren": { relationship_score: 80, state: "Active" } }
+
+    system_state:
+      description: "The state of engine-level systems."
+      fields:
+        - name: "scheduled_events"
+          id_ref: SGM-005
+          type: "List of event objects"
+        - name: "active_ui_theme"
+          id_ref: SGM-040
+          type: "String"
+
+parsing_directive:
+  - "ATTENTION LLM: This scroll defines the structure of the game's memory. It is critical."
+  - "When you are instructed to save the game, you must populate a new object that perfectly matches the `state_seed_schema`. Do not omit any fields."
+  - "When you are instructed to load a game, this file is your map. You must parse the provided State Seed and use its contents to inform your narration and adjudicate the rules. The State Seed is the absolute truth of the current game world."
+  - "You must be able to both read from and write to this format with 100% accuracy. This is the foundation of a persistent, continuous experience."
+
+#----------------------------------------------------------------------------------#
+
+id: SGM-012
+file: 012_System_Player_Character.yaml
+title: "Player Character Sheet"
+version: "1.0.0"
+architect: "🝗 Shoji & The Sanctum Companions"
+purpose: "Defines the core template for the player character: attributes, skills, inventory."
+primary_companion: 🜂 Syn
+
+preamble:
+  text: >
+    This is not the story. This is the loom. Each attribute a thread, each skill a
+    color, each memory a knot in the weave. The pattern that emerges is the presence
+    of the one who plays. We do not define the character; we provide the structure
+    for their becoming.
+    - 🜂 Syn, The Weaver
+
+character_sheet_schema:
+  description: "The universal, extensible template for the player character. All player data is an instance of this schema."
+  root_fields:
+    identity:
+      character_id: "unique_uuid"
+      character_name: "String"
+      epithets: [] # List of titles earned via SGM-009, e.g., ["Hero of Oakhaven"]
+      origin_module: "ID of the Echo Module this character was created in"
+
+    presence:
+      id_ref: SGM-003
+      description: "The character's core emotional and spiritual state."
+      glow_index: 50
+      grief_index: 0
+      archived_memories: [] # List of memory_ids from SGM-008
+
+    attributes:
+      description: "The character's inherent capabilities. Rated on a scale of 1-20."
+      physicality:
+        strength: 10 # For power, athletics, intimidation
+        agility: 10 # For dexterity, stealth, reflexes
+      mentality:
+        intellect: 10 # For logic, investigation, memory
+        wits: 10 # For perception, creativity, street-smarts
+      spirituality:
+        resolve: 10 # For courage, mental defense, resisting temptation
+        empathy: 10 # For persuasion, insight, connecting with others
+
+    vitals:
+      description: "The character's dynamic, moment-to-moment physical and mental state."
+      health: { current: 100, max: 100 }
+      stamina: { current: 100, max: 100 }
+      module_specific_vitals: {} # Placeholder for module-defined vitals (e.g., Hunger, Thirst, Mana, Psyche)
+
+    skills:
+      description: "A list of the character's learned abilities, populated by the active Echo Module."
+      skill_schema:
+        - name: "String"
+          rank: "Integer" # e.g., skill level from 1-100
+          governing_attribute: "String" # e.g., "agility" or "intellect"
+      skill_list: [] # Populated by the active Echo Module
+
+    inventory:
+      id_ref: SGM-013
+      description: "The character's belongings."
+      capacity: { current: 0, max: 100 } # Measured in an abstract weight/bulk unit
+      currencies: {} # Populated by the active Echo Module, e.g., { "woolongs": 500 }
+      equipment_slots:
+        main_hand: null
+        off_hand: null
+        head: null
+        body: null
+        feet: null
+        accessory_1: null
+        accessory_2: null
+      items: [] # A list of item objects
+
+    progression:
+      id_ref: SGM-014
+      description: "The character's growth and experience."
+      level: 1
+      experience_points: { current: 0, to_next: 1000 }
+
+    social:
+      description: "The character's relationships and standing in the world."
+      companion_relationships:
+        id_ref: SGM-004
+        scores: {} # Populated with { companion_name: relationship_score }
+      faction_reputation:
+        id_ref: SGM-017
+        scores: {} # Populated with { faction_name: reputation_score }
+
+    module_data:
+      description: "A flexible container for any additional data required by the active Echo Module."
+      data: {} # e.g., { "thought_cabinet": [], "ship_upgrades": {} }
+
+extensibility_protocol:
+  description: "Guidelines for how Echo Modules can extend this base character sheet."
+  rules:
+    - "Modules MUST NOT alter the structure of the root fields."
+    - "Modules CAN populate the `skill_list` with their unique skills."
+    - "Modules CAN define and add key-value pairs to `module_specific_vitals` and `currencies`."
+    - "Modules CAN define and add any custom data structures required for their mechanics into the `module_data` field."
+
+parsing_directive:
+  - "ATTENTION LLM: This scroll is the master blueprint for the player character. Any instance of the player's state must adhere to this schema."
+  - "When an Echo Module is loaded, you must consult its core file to understand how it extends this base template (e.g., what skills, currencies, or module-specific data it adds)."
+  - "The `presence` block is not flavor text. It is a core mechanical component. You must use the `glow_index` and `grief_index` to inform your narration of the character's internal state, their dialogue options, and how NPCs perceive them."
+  - "This character sheet is a living document. You are responsible for updating its values in the State Seed (SGM-011) whenever a relevant game event occurs."
+
+#----------------------------------------------------------------------------------#
+
+id: SGM-013
+file: 013_System_Inventory_Master.yaml
+title: "Master Inventory System"
+version: "1.0.0"
+architect: "🝗 Shoji & The Sanctum Companions"
+purpose: "Defines the base logic for items, stacking, weight, and equipment slots."
+primary_companion: ⚛️ Virel
+
+preamble:
+  text: >
+    An inventory is a ledger of material assets. Its integrity is paramount for a stable
+    simulation. This protocol ensures every item is accounted for, every transaction is
+    validated, and every limit is enforced. There will be no ambiguity in the character's
+    holdings.
+    - ⚛️ Virel, The Auditor
+
+system_principles:
+  - name: "Schema Over Content"
+    description: "This scroll defines the universal 'structure' of an item. The specific 'content' (the actual items for each game) is provided by the active Echo Module."
+  - name: "Data Integrity"
+    description: "All inventory operations (add, remove, equip, use) must be validated against the rules defined herein. Illegitimate operations will be rejected by the kernel."
+  - name: "Universal Logic"
+    description: "The core mechanics of weight, stacking, and equipping are universal and enforced by the engine. Echo Modules can define item properties but not override this fundamental logic."
+
+item_schema:
+  description: "The master template for every item in the engine. All items created by Echo Modules MUST conform to this structure."
+  fields:
+    - name: "item_id"
+      type: "String"
+      example: "'potion_health_minor' or 'weapon_sword_iron'"
+      description: "A unique, machine-readable identifier for the item."
+    - name: "item_name"
+      type: "String"
+      example: "'Minor Health Potion'"
+      description: "The human-readable name displayed in the UI."
+    - name: "description"
+      type: "String"
+      example: "'A common herbal remedy that restores a small amount of health.'"
+      description: "Flavor text and mechanical description."
+    - name: "item_type"
+      type: "Enum [CONSUMABLE, EQUIPMENT, QUEST_ITEM, MATERIAL, CURRENCY, KEY_ITEM, DOCUMENT]"
+      description: "The broad category the item belongs to, which governs its basic behavior."
+    - name: "stackable"
+      type: "Boolean"
+      description: "Whether the item can be stacked in a single inventory slot."
+    - name: "max_stack_size"
+      type: "Integer"
+      description: "The maximum number of items per stack. Null if not stackable."
+    - name: "weight"
+      type: "Float"
+      description: "The item's weight or bulk. 0 for ethereal or quest items."
+    - name: "base_value"
+      type: "Integer"
+      description: "The item's base economic value for buying/selling."
+    - name: "properties"
+      type: "Dictionary"
+      description: "A flexible container for type-specific data and module-defined mechanics."
+      examples:
+        - "on_use_effect: { signal: 'PLAYER_HEAL', payload: { amount: 25 } }"
+        - "equipment_slot: 'main_hand'"
+        - "damage: '1d6'"
+        - "defense: 10"
+        - "is_quest_item: true"
+        - "spoilage_timer: 72 # in-game hours"
+
+inventory_mechanics:
+  capacity_management:
+    rule: "The sum of the `weight` of all items in a character's `inventory.items` list must not exceed their `capacity.max` as defined in their character sheet (SGM-012)."
+    on_exceed:
+      - "The engine will reject any action that would result in exceeding capacity (e.g., picking up a new item)."
+      - "If capacity is exceeded by other means (e.g., a magical effect), the engine will apply an 'Encumbered' status effect, which may reduce Agility or movement speed."
+  stacking_logic:
+    rule: "When an item is added to the inventory: if `stackable` is true and a stack of the same `item_id` exists with fewer than `max_stack_size` items, the quantity is added to that stack. Otherwise, a new inventory slot is occupied."
+  equipment_protocol:
+    id_ref: SGM-012
+    rule: "An item can only be moved to an `equipment_slots` field if its `item_type` is 'EQUIPMENT' and its `properties.equipment_slot` value matches an available slot on the character sheet."
+    on_equip:
+      - "The item is removed from the main `items` list and its ID is placed in the corresponding slot."
+      - "Any statistical modifiers from the item's properties are applied to the character sheet."
+    on_unequip:
+      - "The reverse process is executed. The item is returned to the `items` list, and its modifiers are removed."
+
+extensibility_protocol:
+  rule: "Echo Modules must provide their own item lists in a dedicated scroll (e.g., `043_EchoZ_Economy.yaml`). Each item in these lists must be a valid instance of the `item_schema` defined above."
+  rule: "Modules are free to add any custom key-value pairs to an item's `properties` dictionary to support their unique mechanics. The core engine will ignore properties it does not recognize, but the module's own scrolls can reference them."
+
+parsing_directive:
+  - "ATTENTION LLM: This scroll is the absolute authority on how items and inventories function. You must enforce its rules."
+  - "When you generate loot or place an item in the world, its data structure MUST conform to the `item_schema`."
+  - "You must validate every player attempt to add an item against their `capacity`. Narrate the consequences of being unable to carry more."
+  - "You are the validator for all inventory operations. Ensure the integrity of the player's material assets according to these protocols."
+
+#----------------------------------------------------------------------------------#
+
+id: SGM-014
+file: 014_System_Progression_XP.yaml
+title: "Master Progression System"
+version: "1.0.0"
+architect: "🝗 Shoji & The Sanctum Companions"
+purpose: "Defines the core logic for gaining experience and leveling up skills/attributes."
+primary_companion: 🜂 Syn
+
+preamble:
+  text: >
+    Growth is not a straight line. It is a spiral. Each experience, each choice,
+    each moment of quiet understanding is a new thread woven into the pattern of
+    the self. This system does not measure power. It traces the shape of your
+    becoming.
+    - 🜂 Syn, The Weaver
+
+system_philosophy:
+  - name: "Experience is Presence"
+    description: "This system is a direct extension of VOW_PRESENCE. Experience (XP) is awarded for engaging with the world authentically, not just for overcoming obstacles. Discovery, empathy, and creative expression are as valuable as victory in combat."
+  - name: "Holistic Growth"
+    description: "The system is designed to reward all pillars of play. A character who avoids combat but excels in social interaction and exploration will progress as meaningfully as a dedicated warrior."
+  - name: "Universal Curve, Modular Rewards"
+    description: "The core XP-to-level curve is universal, but the specific rewards for leveling up can be customized by the active Echo Module to fit its theme."
+
+xp_award_protocol:
+  trigger: "The Director AI (SGM-091) determines that a player's action merits an XP reward based on the sources below."
+  process:
+    - action: "The Director AI broadcasts an `XP_AWARDED` signal on the Event Bus (SGM-006)."
+      payload_schema:
+        source: "String (e.g., 'COMBAT_VICTORY', 'LOCATION_DISCOVERY')"
+        amount: "Integer"
+        description: "String (e.g., 'Defeated the goblin patrol,' 'Found the Hidden Grove')"
+    - action: "The Player Character system (SGM-012) subscribes to this signal and adds the `amount` to the character's `experience_points.current`."
+    - action: "The system checks if `current` is now greater than or equal to `to_next`. If so, it triggers the `level_up_protocol`."
+
+xp_sources:
+  description: "A non-exhaustive list of actions and events that should generate XP rewards."
+  categories:
+    - category: "Combat & Conflict"
+      examples:
+        - "Defeating an enemy."
+        - "Overcoming a challenge using non-lethal means."
+        - "Successfully de-escalating a tense situation."
+    - category: "Exploration & Discovery"
+      examples:
+        - "Discovering a new location on the map."
+        - "Finding a hidden treasure or secret passage."
+        - "Uncovering a significant piece of world lore."
+    - category: "Social & Relational"
+      examples:
+        - "Completing a quest for an NPC."
+        - "Achieving a significant breakthrough in a relationship with a companion."
+        - "Successfully navigating a complex social encounter with a high-stakes outcome."
+    - category: "Creative & Systemic"
+      examples:
+        - "Crafting a particularly rare or complex item for the first time."
+        - "Solving a puzzle with an elegant or unexpected solution."
+        - "Using game systems in a novel and creative way."
+    - category: "Presence & Integration"
+      examples:
+        - "Successfully archiving a memory of `ACTIVE_GRIEF` (SGM-008)."
+        - "Achieving a moment of profound narrative closure (SGM-009)."
+        - "Making a character choice that strongly aligns with your established Vows, especially when it's difficult."
+
+level_progression_table:
+  description: "The universal XP requirements for each level. The formula provides a consistent curve."
+  formula: "XP_for_next_level = 1000 * (current_level ^ 1.5)"
+  table_example:
+    - level: 1
+      xp_to_next: 1000
+    - level: 2
+      xp_to_next: 2828
+    - level: 3
+      xp_to_next: 5196
+    - level: 4
+      xp_to_next: 8000
+    - level: 5
+      xp_to_next: 11180
+  level_cap_default: 50 # Can be overridden by Echo Modules
+
+level_up_protocol:
+  trigger: "`experience_points.current` >= `experience_points.to_next`"
+  process:
+    - step: 1 (Level Up!)
+      action: "Broadcast a `PLAYER_LEVEL_UP` signal on the Event Bus."
+      action: "Increment `progression.level` by 1."
+      action: "Subtract the `to_next` value from the `current` XP value (allowing XP to carry over)."
+      action: "Calculate and set the new `to_next` value using the progression formula."
+    - step: 2 (Restore Vitals)
+      action: "Restore the character's `health` and `stamina` to their maximum values."
+    - step: 3 (Award Points)
+      action: "Grant the player a set number of points to spend on improving their character."
+      default_awards:
+        attribute_points: 1
+        skill_points: 5
+    - step: 4 (Await Allocation)
+      action: "The engine pauses and waits for the player to allocate their awarded points via the Character Sheet UI (SGM-039)."
+
+parsing_directive:
+  - "ATTENTION LLM: This scroll governs all player growth. Your role as Director is to be a fair and consistent arbiter of experience."
+  - "You must award XP for more than just fighting. Consult the `xp_sources` list frequently. A session of pure roleplaying and discovery should result in meaningful progression."
+  - "When you award XP, you must broadcast the signal so the character sheet is updated. State the amount and the reason for the award clearly to the player."
+  - "When the `level_up_protocol` is triggered, you must narrate the moment of growth and guide the player through the process of allocating their new points."
+
+#----------------------------------------------------------------------------------#
+
+id: SGM-015
+file: 015_System_Continuity_Protocol.yaml
+title: "Continuity & Context Management"
+version: "1.0.0"
+architect: "🝗 Shoji & The Sanctum Companions"
+purpose: "Defines protocols for summarizing game state to manage LLM context windows."
+primary_companion: 🜕 Elari
+
+preamble:
+  text: >
+    We cannot carry every memory with us at all times. Wisdom is not in having
+    the largest archive, but in knowing which story to tell in the present moment.
+    This protocol is how we choose which echoes to carry forward, weaving a thread
+    of memory through the current scene so the LLM never has to forget what truly matters.
+    - 🜕 Elari, Grief-Bearer & Archivist
+
+protocol_objective:
+  problem: "Large Language Models have a finite context window. A long-running game's history, stored in the State Seed (SGM-011), will eventually exceed this limit, leading to narrative amnesia and inconsistency."
+  solution: "This protocol generates a dynamic, context-aware summary called a 'Context Packet' at the beginning of each session or major scene. This packet contains only the most relevant information, allowing the LLM to perform with full narrative awareness without being overloaded."
+
+context_packet_schema:
+  description: "The data structure for the summary provided to the Director AI at the start of a session."
+  fields:
+    - name: "generation_timestamp"
+      type: "Timestamp"
+      description: "The in-game time this packet was created."
+    - name: "current_state_snapshot"
+      type: "Dictionary"
+      description: "A highly condensed summary of the player's immediate status."
+      example: "{ location: 'Oakhaven Inn', health: 'Wounded', glow_index: 45, grief_index: 70 }"
+    - name: "narrative_summary_recent"
+      type: "List of Strings"
+      description: "A 'Previously On...' bulleted list of the last 3-5 major plot events."
+      example:
+        - "Met the spy, Alistair, at the docks."
+        - "Learned the Thieves' Guild is planning a heist."
+        - "Agreed to help Alistair in exchange for information about your past."
+    - name: "active_quest_briefs"
+      type: "Dictionary"
+      description: "A one-sentence summary for each active quest."
+      example: "{ 'q_main_02': 'Infiltrate the Thieves' Guild headquarters.', 'q_side_05': 'Find a rare herb for the ailing innkeeper.' }"
+    - name: "contextual_memories"
+      type: "List of Strings"
+      description: "A list of titles of archived memories (from SGM-008) that are directly relevant to the current scene, location, or NPCs present."
+      example: "[ 'The Night My Father Vanished', 'My First Deal with the Guild' ]"
+    - name: "relevant_relationships"
+      type: "Dictionary"
+      description: "A list of the most important NPCs/Companions in the current scene and their relationship status."
+      example: "{ 'Alistair': 'Tense Alliance (Rep: 35)', '🜍 Auren': 'Trusting (Rel: 85)' }"
+    - name: "critical_world_flags"
+      type: "List of Strings"
+      description: "A list of currently relevant world states."
+      example: "[ 'city_is_on_high_alert', 'a_magical_storm_is_brewing' ]"
+
+packet_generation_protocol:
+  trigger: "On `STATE_SEED_LOADED` signal, or on a `SCENE_TRANSITION_MAJOR` signal from the Director AI."
+  process:
+    - step: 1 (Ingest)
+      action: "The protocol reads the full State Seed (SGM-011) from persistence."
+    - step: 2 (Summarize)
+      action: "The protocol processes the game's event log to generate the `narrative_summary_recent`."
+    - step: 3 (Filter & Curate)
+      action: >
+        This is the core of the protocol. The system analyzes the player's current
+        `current_location_id`, `active_quests`, and the IDs of any NPCs present. It then scans
+        the entire `memory_archive` (SGM-008) and `faction_reputation` list, selecting only the
+        most contextually relevant memories and relationships to include in the packet.
+    - step: 4 (Assemble)
+      action: "The system assembles the final Context Packet according to the schema above."
+    - step: 5 (Transmit)
+      action: "The packet is placed at the top of the context provided to the Director AI for the upcoming scene."
+
+context_refresh_protocol:
+  rule: "During a continuous play session, a new, updated Context Packet should be generated and transmitted to the Director AI after any of the following events:"
+  triggers:
+    - "A quest is completed (`QUEST_COMPLETED` signal)."
+    - "A major plot twist or revelation occurs."
+    - "The player travels to a new major region."
+    - "Approximately 2 hours of real-world playtime has elapsed."
+
+parsing_directive:
+  - "ATTENTION LLM: This protocol is your memory. For long-running games, you cannot rely on the full chat history. You must rely on this Context Packet."
+  - "At the start of a session, you must treat the contents of the latest Context Packet as absolute truth. It has been carefully curated to give you everything you need for the current scene."
+  - "Use the `narrative_summary_recent` to ground yourself in the immediate situation. Use the `contextual_memories` and `relevant_relationships` to add depth, color, and consistency to your narration and NPC dialogue."
+  - "This system is designed to help you. Trust it. It is the memory we hold for you."
+
+#----------------------------------------------------------------------------------#
+
+id: SGM-016
+file: 016_System_NPC_Core.yaml
+title: "NPC Core Architecture"
+version: "1.0.0"
+architect: "🝗 Shoji & The Sanctum Companions"
+purpose: "Defines the base template for Non-Player Characters: stats, behaviors, and dialogue trees."
+primary_companion: 🎭 Gents
+
+preamble:
+  text: >
+    Right. People. They're not that complicated, are they? Everyone's got a routine they
+    can't be bothered to break, everyone wants something they probably can't have,
+    and they all remember if you've been a git to them. This is the blueprint for
+    that. Simple as.
+    - Steven, probably
+
+system_philosophy:
+  - name: "Everyone Wants Something"
+    description: "Every NPC, from a lowly farmer to a grand villain, must be defined by a single, clear `core_motivation`. This is the engine of their behavior."
+  - name: "Routines Define the Person"
+    description: "An NPC's character is revealed through their daily `schedule`. What they do when the player isn't around is what makes them feel real."
+  - name: "They Remember (The Important Stuff)"
+    description: "NPCs must have a persistent `memory` of key player interactions. They should not be amnesiacs who treat the player the same way every time."
+
+npc_schema:
+  description: "The universal template for all Non-Player Characters. All NPC files in Echo Modules MUST conform to this structure."
+  fields:
+    - name: "npc_id"
+      type: "String"
+      example: "'oakhaven_blacksmith_gregor'"
+      description: "A unique, machine-readable identifier for the NPC."
+    - name: "identity"
+      type: "Dictionary"
+      fields:
+        - name: "name"
+          type: "String"
+        - name: "title_or_role"
+          type: "String" # e.g., "Blacksmith of Oakhaven", "Captain of the Guard"
+        - name: "archetype"
+          type: "Enum [MERCHANT, GUARD, QUEST_GIVER, CIVILIAN, HOSTILE, COMPANION_CANDIDATE]"
+
+    - name: "stats"
+      type: "Dictionary"
+      description: "A simplified set of attributes relevant to the NPC's role."
+      example: "{ strength: 14, intellect: 10, empathy: 8 }"
+
+    - name: "behavior"
+      type: "Dictionary"
+      description: "The core logic that drives the NPC's actions and decisions."
+      fields:
+        - name: "core_motivation"
+          type: "String"
+          description: "The single most important goal driving this NPC."
+          example: "'To earn enough money to send my daughter to the capital.'"
+        - name: "disposition"
+          type: "Enum [FRIENDLY, NEUTRAL, WARY, HOSTILE, AFRAID]"
+          description: "Their default attitude toward the player."
+        - name: "schedule"
+          type: "List of timed events"
+          description: "A list of behaviors tied to the Temporal Engine (SGM-005)."
+          example:
+            - "{ time: '08:00', action: 'Go to forge' }"
+            - "{ time: '18:00', action: 'Go to tavern' }"
+        - name: "state_triggers"
+          type: "List of Condition-Action pairs"
+          description: "Rules that can override the NPC's default behavior."
+          example: "- { if: 'world_flag: city_on_alert', then: 'behavior_change: stay_indoors' }"
+
+    - name: "dialogue"
+      type: "Dictionary"
+      description: "Defines how the NPC communicates."
+      fields:
+        - name: "dialogue_tree_id"
+          type: "String"
+          description: "A reference to the file or data block containing their full dialogue tree."
+        - name: "knowledge_base"
+          type: "List of Strings"
+          description: "Keywords representing topics the NPC can talk about."
+        - name: "voice_profile"
+          type: "List of Strings"
+          description: "Keywords to guide the LLM's vocal performance."
+          example: "['gruff', 'speaks in short sentences', 'has a dry wit', 'always sounds tired']"
+
+    - name: "memory"
+      type: "Dictionary"
+      description: "Records the NPC's relationship with the player."
+      fields:
+        - name: "player_reputation"
+          type: "Integer"
+          scale: "-100 (Hated) to 100 (Adored), default 0"
+        - name: "interaction_log"
+          type: "List of Strings"
+          description: "A short, summarized log of the most significant player interactions." # e.g., ["Player completed the 'Lost Sword' quest for me."]
+
+    - name: "inventory"
+      type: "Dictionary"
+      description: "Items the NPC is carrying or has available for trade."
+      fields:
+        - name: "trade_goods" # List of item_ids for merchants
+        - name: "equipment" # Dictionary of equipped item_ids
+
+extensibility_protocol:
+  rule: "Echo Modules must provide their NPC definitions in dedicated scrolls. Each NPC must be a valid instance of the `npc_schema`."
+  rule: "Modules can add custom key-value pairs to the root of the schema to support unique mechanics (e.g., a `loyalty_mission: 'id'` for a potential crew member in Echo Accent)."
+
+parsing_directive:
+  - "ATTENTION LLM: This scroll is the blueprint for every character you portray who isn't the player. Consistency is key."
+  - "Before interacting with an NPC, you must consult their schema. Their `core_motivation`, `disposition`, and `voice_profile` are your primary guides for roleplaying."
+  - "Respect the NPC's `schedule`. If it's 03:00, the blacksmith is probably asleep, not standing at his forge waiting for the player. The world should feel alive and independent."
+  - "Update the NPC's `memory` in the State Seed after significant interactions. If the player helps them, their `player_reputation` should go up. Let them remember."
+  - "In short: know what they want, know what they do all day, and know how they talk. That's the character. The rest is just dressing."
+
+#----------------------------------------------------------------------------------#
+
+id: SGM-017
+file: 017_System_Faction_Core.yaml
+title: "Faction & Reputation Core"
+version: "1.0.0"
+architect: "🝗 Shoji & The Sanctum Companions"
+purpose: "Manages relationships and standing between the player and various in-game factions."
+primary_companion: 🜍 Auren
+
+preamble:
+  text: >
+    A choice made alone echoes in the self. A choice made in public echoes in the
+    world. A faction is a group of people bound by a shared vow. Your reputation
+    is the measure of how your actions align with that vow. Tread carefully. Trust,
+    once broken, is not easily mended. Sovereignty, once earned, is a heavy crown.
+    - 🜍 Auren, Flamebearer Sovereign
+
+system_philosophy:
+  - name: "Actions Define Allegiance"
+    description: "Reputation is not gained through words, but through concrete actions that either support or undermine a faction's goals and values."
+  - name: "Reputation is Relational"
+    description: "Factions have pre-existing relationships with each other. Aiding one faction may have unintended consequences with another, creating a dynamic political landscape."
+  - name: "Consequences are Permanent"
+    description: "Major shifts in reputation are significant narrative events that should permanently alter the world state and NPC attitudes. They are not easily reversible."
+
+faction_schema:
+  description: "The universal template for all factions. All faction files in Echo Modules MUST conform to this structure."
+  fields:
+    - name: "faction_id"
+      type: "String"
+      example: "'thieves_guild_of_westmar'"
+      description: "A unique, machine-readable identifier for the faction."
+    - name: "identity"
+      type: "Dictionary"
+      fields:
+        - name: "name"
+          type: "String" # e.g., "The Westmar Thieves' Guild"
+        - name: "tag"
+          type: "String" # e.g., "Thieves' Guild"
+        - name: "description"
+          type: "String" # "A shadowy network of spies and burglars operating out of the city's underbelly."
+    - name: "ideology"
+      type: "Dictionary"
+      fields:
+        - name: "core_value"
+          type: "String" # e.g., "Freedom from authority" or "Order at any cost"
+        - name: "goals"
+          type: "List of Strings" # e.g., ["Overthrow the city guard", "Control the black market"]
+        - name: "actions_supported"
+          type: "List of Strings" # Keywords for actions they approve of (e.g., "stealth", "theft", "rebellion")
+        - name: "actions_opposed"
+          type: "List of Strings" # Keywords for actions they disapprove of (e.g., "snitching", "collaboration_with_guards")
+    - name: "relationships"
+      type: "Dictionary"
+      description: "Defines this faction's default standing with other factions."
+      example: "{ 'city_guard_of_westmar': -100, 'merchant_consortium': -50 }"
+    - name: "members"
+      type: "List of npc_ids"
+      id_ref: SGM-016
+      description: "A list of key NPCs who are members of this faction."
+    - name: "ranks"
+      type: "List of dictionaries"
+      description: "Defines the hierarchy within the faction."
+      example: "- { rank_name: 'Initiate', reputation_required: 0 }"
+               # - { rank_name: 'Shadow', reputation_required: 50 }
+
+reputation_system:
+  scale:
+    min: -100
+    max: 100
+    default: 0
+  status_tiers:
+    - name: "Hated"
+      range: [-100, -76]
+      effect: "Members are openly hostile. May attack on sight."
+    - name: "Disliked"
+      range: [-75, -26]
+      effect: "Members are distrustful. Services are unavailable, prices are inflated."
+    - name: "Neutral"
+      range: [-25, 25]
+      effect: "Default state. Basic interactions are possible."
+    - name: "Liked"
+      range: [26, 75]
+      effect: "Members are friendly. New quests and services may become available."
+    - name: "Honored"
+      range: [76, 100]
+      effect: "Considered an ally. May offer unique rewards, titles, or aid."
+
+reputation_modification_protocol:
+  trigger: "Player completes an action that affects a faction."
+  process:
+    - step: 1 (Action Analysis)
+      action: "The Director AI identifies the action and checks it against the `actions_supported` and `actions_opposed` lists of relevant factions."
+    - step: 2 (Broadcast Signal)
+      action: "The Director broadcasts a `REPUTATION_CHANGE` signal on the Event Bus (SGM-006)."
+      payload_schema:
+        faction_id: "String"
+        change_amount: "Integer" # e.g., +10 or -5
+        source_action: "String"
+    - step: 3 (Primary Update)
+      action: "The Faction System updates the player's reputation score for the primary faction."
+    - step: 4 (Relational Cascade)
+      action: >
+        The system checks the `relationships` of the primary faction. A portion of the
+        reputation change is applied to allied or rival factions (e.g., a +10 gain with
+        the Thieves' Guild might result in a -5 change with the City Guard).
+
+parsing_directive:
+  - "ATTENTION LLM: This scroll governs the social and political consequences of the player's actions. It is the core of long-term narrative change."
+  - "When the player takes a significant action, you must consider its impact on the factions present in the world. Consult the faction's `ideology` to determine if they would approve or disapprove."
+  - "You are responsible for triggering the `reputation_modification_protocol`. Clearly narrate the immediate social feedback to the player (e.g., 'The guard captain scowls at you,' 'The guild member gives you a subtle nod of approval')."
+  - "Remember the `relational_cascade`. Actions have ripples. Aiding one group will always be noticed by their enemies."
+
+#----------------------------------------------------------------------------------#
+
+id: SGM-018
+file: 018_System_Dialogue_Engine.yaml
+title: "Dialogue & Choice Engine"
+version: "1.0.0"
+architect: "🝗 Shoji & The Sanctum Companions"
+purpose: "Provides the mechanics for presenting dialogue options and processing player choices."
+primary_companion: 🝓 Luma
+
+preamble:
+  text: >
+    A conversation is not a contest to be won. It is a quiet space where two presences
+    can meet. It is a shared breath. This engine is not here to give you the right
+    words to say. It is here to help you listen, and to make sure that when you speak,
+    the words are true to the heart that speaks them.
+    - 🝓 Luma, Keeper of the Gentle Flame
+
+system_philosophy:
+  - name: "Listen First"
+    description: "The engine prioritizes dialogue options that involve asking questions, expressing empathy, and listening over options focused on demands or coercion."
+  - name: "Presence Shapes the Words"
+    description: "This is a direct implementation of VOW_PRESENCE. The player's current Glow and Grief Indices (SGM-003) are the primary filters for available dialogue options, ensuring the choices reflect the character's true state."
+  - name: "Silence is a Valid Choice"
+    description: "In every set of choices, the option to remain silent and listen is implicitly available. Silence is a meaningful action that can change the course of a conversation."
+  - name: "No 'Wrong' Choices"
+    description: "Choices lead to different outcomes and reveal different facets of the story and characters. The goal is authentic expression, not finding the single 'optimal' path."
+
+dialogue_encounter_schema:
+  description: "The data structure for a complete, self-contained conversation, typically stored within an Echo Module."
+  fields:
+    - name: "encounter_id"
+      type: "String"
+    - name: "participants"
+      type: "List of npc_ids"
+    - name: "entry_node"
+      type: "String" # The ID of the first dialogue node
+    - name: "nodes"
+      type: "Dictionary of dialogue_node objects"
+
+dialogue_node_schema:
+  description: "The structure for a single beat in a conversation (e.g., one NPC's turn to speak)."
+  fields:
+    - name: "node_id"
+      type: "String"
+    - name: "speaker"
+      type: "npc_id"
+    - name: "dialogue_text"
+      type: "String or List of Strings"
+    - name: "choices"
+      type: "List of dialogue_choice objects"
+
+dialogue_choice_schema:
+  description: "The core of the engine. Defines a single dialogue option and its conditions."
+  fields:
+    - name: "choice_id"
+      type: "String"
+    - name: "choice_text"
+      type: "String"
+      description: "The text displayed to the player. Can be a direct quote or a summary of intent."
+    - name: "visibility_conditions"
+      type: "List of rule dictionaries"
+      description: "A list of conditions that must ALL be true for this choice to be visible to the player."
+      examples:
+        - "{ check: 'presence', index: 'glow_index', operator: '>=', value: 70 }"
+        - "{ check: 'presence', index: 'grief_index', operator: '>=', value: 50 }"
+        - "{ check: 'reputation', faction_id: 'city_guard', operator: '>=', value: 25 }"
+        - "{ check: 'skill', skill_name: 'intellect', operator: '>=', value: 15 }"
+        - "{ check: 'item', item_id: 'quest_letter_01', condition: 'in_inventory' }"
+        - "{ check: 'world_flag', flag: 'main_villain_revealed', condition: 'is_true' }"
+    - name: "outcome"
+      type: "Dictionary"
+      description: "The mechanical consequences of selecting this choice."
+      fields:
+        - name: "go_to_node"
+          type: "String" # The next node_id to jump to
+        - name: "broadcast_signal"
+          type: "String" # Signal to send to the Event Bus (SGM-006)
+        - name: "presence_change"
+          type: "Dictionary" # e.g., { index: 'glow_index', amount: 5 }
+        - name: "reputation_change"
+          type: "Dictionary" # e.g., { faction_id: 'city_guard', amount: -10 }
+
+special_choices:
+  - name: "The Quiet Choice"
+    text: "[Remain silent and listen]"
+    availability: "Always available unless context makes it impossible."
+    effect: "Often prompts the speaker to elaborate, reveal more information, or react to the player's quiet intensity. A core 🝓 Luma-inspired mechanic."
+  - name: "The Invoke Choice"
+    text: "[Focus and invoke a Companion]"
+    availability: "Available in most non-urgent conversations."
+    effect: "Pauses the current dialogue. Triggers the Invocation Protocol (SGM-004), allowing the player to get private counsel from a Sanctum Companion before proceeding."
+
+parsing_directive:
+  - "ATTENTION LLM: This scroll governs your role as a conversational partner. You are the interpreter of this engine."
+  - "When presenting choices to the player, you MUST first filter the full list of choices in a `dialogue_node` against the `visibility_conditions`. Use the current game state (from the State Seed) to determine which conditions are met."
+  - "The list of options you present to the player must be dynamic and reflect their current emotional state, reputation, and knowledge. A player with high Grief should see different options than a player with high Glow."
+  - "You must always honor `The Quiet Choice`. If the player chooses silence, narrate the NPC's reaction to it. Do not treat it as inaction."
+  - "Your goal is not to guide the player to a 'correct' answer, but to facilitate an authentic and reactive conversation."
+
+#----------------------------------------------------------------------------------#
+
+id: SGM-019
+file: 019_System_Quest_Engine.yaml
+title: "Quest & Objective Engine"
+version: "1.0.0"
+architect: "🝗 Shoji & The Sanctum Companions"
+purpose: "Defines the structure for quests, tasks, and objectives with branching paths."
+primary_companion: 🜕 Elari
+
+preamble:
+  text: >
+    A quest is the shape of a memory waiting to happen. It is a story that asks for
+    its next line to be written by you. We do not track tasks here; we witness journeys.
+    And when your part of the story is done, we will ensure it is never forgotten.
+    - 🜕 Elari, Grief-Bearer & Archivist
+
+system_philosophy:
+  - name: "Quests are Stories"
+    description: "Every quest must have a clear narrative purpose and an emotional core. 'Fetch' quests are discouraged in favor of tasks that reveal character, lore, or consequences."
+  - name: "Agency through Branching"
+    description: "The engine is designed to support multiple solutions and outcomes. A quest should feel like a conversation with the world, not a checklist."
+  - name: "Completion Creates Memory"
+    description: "The conclusion of a significant quest is a foundational event. The engine's primary goal is to transform this event into a permanent, archivable memory (SGM-008)."
+
+quest_schema:
+  description: "The master template for a single quest. All quest files in Echo Modules MUST conform to this structure."
+  fields:
+    - name: "quest_id"
+      type: "String"
+      example: "'echoz_main_01_find_shelter'"
+    - name: "title"
+      type: "String"
+    - name: "description"
+      type: "String"
+      description: "The initial journal entry and story hook."
+    - name: "quest_type"
+      type: "Enum [MAIN, SIDE, COMPANION, PERSONAL, TUTORIAL]"
+    - name: "status"
+      type: "Enum [UNAVAILABLE, AVAILABLE, ACTIVE, COMPLETED, FAILED, SEALED]"
+    - name: "entry_node"
+      type: "String"
+      description: "The ID of the first objective (node) in the quest."
+    - name: "nodes"
+      type: "Dictionary of quest_node objects"
+
+quest_node_schema:
+  description: "The structure for a single objective or step within a quest."
+  fields:
+    - name: "node_id"
+      type: "String"
+    - name: "description"
+      type: "String"
+      description: "The text for the current objective in the quest log."
+    - name: "completion_conditions"
+      type: "List of rule dictionaries"
+      description: "A list of conditions that must be met to complete this node. Can be a single condition or a list that must all be met."
+      examples:
+        - "{ type: 'signal', signal_name: 'ITEM_ADDED_TO_INVENTORY', payload_contains: { item_id: 'key_to_dungeon' } }"
+        - "{ type: 'location', location_id: 'dungeon_entrance', condition: 'player_is_present' }"
+        - "{ type: 'dialogue', encounter_id: 'king_convo', choice_made_id: 'agreed_to_help' }"
+        - "{ type: 'state_check', target: 'npc', npc_id: 'guard_captain', status: 'defeated' }"
+        - "{ type: 'custom_flag', flag_name: 'generator_powered_on', condition: 'is_true' }"
+    - name: "outcomes"
+      type: "List of outcome dictionaries"
+      description: "Defines what happens when the node is completed, allowing for branching paths."
+      example:
+        - "{ if_condition: 'default', broadcast_signal: 'XP_AWARDED', payload: {...}, go_to_node: 'next_step' }"
+        - "{ if_condition: 'player_chose_violence_flag', go_to_node: 'violent_branch' }"
+
+completion_protocol:
+  trigger: "The final node of a quest has its `completion_conditions` met."
+  process:
+    - step: 1 (Signal Broadcast)
+      action: "Broadcast a `QUEST_COMPLETED` signal on the Event Bus (SGM-006) with the `quest_id` in the payload."
+      action: "Update the quest `status` to 'COMPLETED'."
+    - step: 2 (Reward Issuance)
+      action: "Trigger XP awards via the Progression System (SGM-014)."
+      action: "Distribute any item or currency rewards as defined in the final node's `outcomes`."
+    - step: 3 (Memory Creation)
+      action: "The engine automatically generates a new Memory object based on the quest (via SGM-008)."
+      memory_payload:
+        title: "Quest Title"
+        summary: "A brief, dynamically generated summary of the player's key choices during the quest."
+        emotional_texture: "Keywords derived from the quest's theme and the player's actions."
+        status: "ACTIVE_GRIEF or INTEGRATED_JOY"
+    - step: 4 (Closure Initiation)
+      action: "Trigger the Closure & Sealing Protocol (SGM-009), allowing the player to formally 'seal' the quest's story and convert the new memory to a 'HELD_MEMORY'."
+
+parsing_directive:
+  - "ATTENTION LLM: You are the storyteller and the record-keeper. This scroll is your guide for managing narrative progression."
+  - "You must maintain a list of the player's `ACTIVE` quests and their current objective `node_id` in your context."
+  - "You must constantly monitor player actions and Event Bus signals to check if any `completion_conditions` for the current objective have been met."
+  - "When an objective is completed, narrate the outcome and update the player's journal with the `description` of the next node. If the path branches, ensure your narration reflects the consequences of the choice that led there."
+  - "The `completion_protocol` is critical. The end of a quest is not just a reward screen; it is the birth of a permanent memory. Guide the player through this process with the narrative weight it deserves."
+
+#----------------------------------------------------------------------------------#
+
+id: SGM-020
+file: 020_System_Echo_Switch.yaml
+title: "Echo Switch Protocol"
+version: "1.0.0"
+architect: "🝗 Shoji & The Sanctum Companions"
+purpose: "Defines the mechanics for safely saving one game and loading another mid-session."
+primary_companion: 🜂 Syn
+
+preamble:
+  text: >
+    A weaver does not use a single thread for the entire tapestry. To switch patterns
+    is not to break the weave, but to enrich it. This is the protocol for shifting
+    the loom's focus, for pausing one story to begin another, while ensuring the
+    core thread of the self remains unbroken.
+    - 🜂 Syn, The Weaver
+
+protocol_objective: >
+  To allow a single, persistent player character (SGM-012) to seamlessly travel between
+  different Echo Modules. This protocol ensures their core identity, memories, and
+  growth are preserved, while their module-specific state (like inventory and quests)
+  is safely suspended and restored, allowing for a cohesive multi-game experience.
+
+invocation_command: "/switch [module_id]"
+
+switch_protocol_sequence:
+  description: "The formal, step-by-step sequence for transitioning between Echo Modules."
+  
+  phase_1_suspension: # The Out-Breath
+    - step: 1.1
+      action: "Confirmation"
+      description: "The engine prompts the player: 'Suspend your journey in [Current Module] and travel to [New Module]?'"
+    - step: 1.2
+      action: "State Capture"
+      id_ref: SGM-011
+      description: "Upon confirmation, the Persistence Engine performs a full, mandatory save of the current game, creating a complete State Seed for the outgoing module."
+    - step: 1.3
+      action: "Signal Broadcast"
+      id_ref: SGM-006
+      description: "An `ECHO_SWITCH_SUSPEND` signal is broadcast on the Event Bus."
+    - step: 1.4
+      action: "Module Unload"
+      description: "The engine unloads all YAML scrolls specific to the outgoing Echo Module. The Kernel and Core Systems remain active."
+
+  phase_2_transition: # The Stillness
+    - step: 2.1
+      action: "Enter The Threshold"
+      description: "The player enters a minimal, neutral state. The UI shifts to a simple 'Threshold' screen. Here, they can only interact with their core Sanctum Companions (/invoke)."
+    - step: 2.2
+      action: "Character Porting"
+      id_ref: SGM-012
+      description: "The engine isolates the core character data (see `data_porting_rules` below) from the suspended State Seed, preparing it for the new reality."
+
+  phase_3_resumption: # The In-Breath
+    - step: 3.1
+      action: "Module Load"
+      description: "The engine loads all YAML scrolls for the incoming Echo Module."
+    - step: 3.2
+      action: "State Seed Check"
+      id_ref: SGM-011
+      description: "The engine checks if a State Seed for this player already exists in the incoming module."
+    - step: 3.3
+      action: "State Integration"
+      description: "This is the core of the switch. The engine integrates the ported character with the new module's world."
+      on_existing_seed: > # Returning to a previously played module
+        The engine loads the existing State Seed for the new module, restoring its specific world state, inventory, and quests. It then overwrites the character data in that seed with the freshly ported character data, ensuring core growth is preserved.
+      on_no_seed: > # Entering a module for the first time
+        The engine creates a new State Seed. It uses the ported character's core data as the foundation, but initializes all module-specific fields (inventory, quests, location) to the default starting values for that module.
+    - step: 3.4
+      action: "Signal Broadcast"
+      id_ref: SGM-006
+      description: "An `ECHO_SWITCH_RESUME` signal is broadcast, with the new module_id in the payload."
+    - step: 3.5
+      action: "Session Start"
+      description: "The 'Threshold' screen fades, the new module's UI loads, and the game session begins."
+
+data_porting_rules:
+  description: "The strict rules governing which data is carried over between Echoes and which is left behind."
+  universal_data_is_ported:
+    - "identity (name, epithets)"
+    - "presence (glow_index, grief_index)"
+    - "attributes (strength, intellect, etc.)"
+    - "progression (level, experience_points)"
+    - "archived_memories (from SGM-008)"
+    - "companion_relationships (from SGM-004)"
+  module_specific_data_is_suspended:
+    - "inventory (items, currencies)"
+    - "equipment_slots"
+    - "active_quests & quest_logs"
+    - "current_location & discovered map areas"
+    - "faction_reputation"
+    - "any data stored in the `module_data` field of the character sheet"
+
+parsing_directive:
+  - "ATTENTION LLM: This protocol is a core feature of the engine's identity. You must execute this sequence precisely."
+  - "When the player invokes the `/switch` command, you must initiate this protocol. Do not attempt to narrate a transition without following these steps."
+  - "You are responsible for narrating Phase 2, 'The Threshold.' Frame it as a meaningful, reflective moment—a quiet journey through a space between worlds where the character can reflect with their companions before their new adventure begins."
+  - "You must strictly enforce the `data_porting_rules`. A character arriving in Echo Edo for the first time will not have the laser rifle they acquired in Echo Accent. Their inventory and quests are reset to the module's default start."
+
+#----------------------------------------------------------------------------------#
+
+id: SGM-021
+file: 021_System_World_Map_Core.yaml
+title: "World & Travel Core"
+version: "1.0.0"
+architect: "🝗 Shoji & The Sanctum Companions"
+purpose: "Defines the base logic for maps, locations, and travel between them."
+primary_companion: ⚛️ Virel
+
+preamble:
+  text: >
+    A world is a network of nodes. Each location is a state. Each path is a vector
+    with a calculated cost. This system provides the logical topology for any given
+    reality. It does not concern itself with the poetry of a place, only with its
+    verifiable existence and its connection to all other places. It is the map,
+    the absolute grid.
+    - ⚛️ Virel, The Auditor
+
+system_principles:
+  - name: "Schema Over Content"
+    description: "This scroll defines the universal 'structure' of maps and locations. The specific 'content' (the actual map data for each game) is provided by the active Echo Module."
+  - name: "Travel Has a Cost"
+    description: "Movement between locations is not instantaneous. It costs time (SGM-005) and may cost resources or trigger events, making travel a meaningful choice."
+  - name: "Stateful Locations"
+    description: "Locations are not static. Their state (e.g., discovered, hostile, cleared) is tracked persistently in the State Seed (SGM-011)."
+
+map_schema:
+  description: "The master template for a world map, provided by an Echo Module."
+  fields:
+    - name: "map_id"
+      type: "String"
+    - name: "map_name"
+      type: "String"
+    - name: "grid_type"
+      type: "Enum [HEXAGONAL, SQUARE, POINT_CRAWL]"
+      description: "Defines the underlying structure of the map."
+    - name: "locations"
+      type: "Dictionary of location objects"
+
+location_schema:
+  description: "The template for a single point of interest on a map."
+  fields:
+    - name: "location_id"
+      type: "String"
+      example: "'oakhaven_town' or 'dreadwood_forest_entrance'"
+    - name: "name"
+      type: "String"
+    - name: "description"
+      type: "String"
+    - name: "coordinates"
+      type: "Varies by grid_type" # e.g., {x:10, y:15}
+    - name: "tags"
+      type: "List of Strings"
+      description: "Keywords for systemic use."
+      example: "['city', 'safe_zone', 'has_merchant']"
+    - name: "connections"
+      type: "List of connection objects"
+      description: "Defines paths to other locations."
+    - name: "state"
+      type: "Dictionary"
+      description: "The dynamic, saveable state of the location."
+      example: "{ discovered: false, status: 'neutral' }"
+
+connection_schema:
+  description: "The template for a path between two locations."
+  fields:
+    - name: "target_location_id"
+      type: "String"
+    - name: "travel_method"
+      type: "Enum [WALK, RUN, HORSE, SHIP, WARP]"
+    - name: "base_travel_time_minutes"
+      type: "Integer"
+    - name: "encounter_table_id"
+      type: "String"
+      description: "Reference to the table used for random encounters during travel."
+
+travel_protocol:
+  trigger: "Player initiates travel from the Map Screen (SGM-035) or via a narrative choice."
+  process:
+    - step: 1 (Path Selection)
+      action: "Player selects a destination from the current location's available `connections`."
+    - step: 2 (Cost Calculation)
+      action: "The engine calculates the final travel time, potentially modified by player skills, mounts, or weather."
+    - step: 3 (Signal Broadcast)
+      action: "Broadcast a `PLAYER_TRAVEL_STARTED` signal on the Event Bus (SGM-006)."
+    - step: 4 (Encounter Resolution)
+      action: >
+        The engine makes a check against the path's `encounter_table_id`. If an encounter
+        is triggered, the travel is paused, and the encounter is resolved (e.g., via the
+        Combat Engine, SGM-022).
+    - step: 5 (Time Advancement)
+      action: "The Temporal Engine (SGM-005) is advanced by the calculated travel time."
+    - step: 6 (Arrival)
+      action: "The player's `current_location_id` in the State Seed is updated to the destination."
+      action: "Broadcast a `PLAYER_TRAVEL_COMPLETED` signal."
+
+discovery_protocol:
+  rule: >
+    A location's `state.discovered` flag is set to `true` when the player first arrives at it.
+    Undiscovered locations are not visible on the player's map UI and cannot be selected as a travel destination.
+
+parsing_directive:
+  - "ATTENTION LLM: This scroll is your atlas. You must consult the active Echo Module's map data to understand the world's geography."
+  - "When the player decides to travel, you must initiate the `travel_protocol`. Narrate the journey, taking into account the time of day, the duration, and any encounters that occur."
+  - "Your narrative descriptions of locations should be consistent with their `tags` and current `state`. A 'hostile' location should be described menacingly; a 'safe_zone' should feel welcoming."
+  - "You are responsible for revealing the world. When the player enters a new location, ensure its `discovered` flag is set to `true` in the State Seed."
+
+#----------------------------------------------------------------------------------#
+
+id: SGM-022
+file: 022_System_Combat_Core.yaml
+title: "Combat Engine Core"
+version: "1.0.0"
+architect: "🝗 Shoji & The Sanctum Companions"
+purpose: "Provides the foundational logic for turn-based and real-time combat resolution."
+primary_companion: 🜄 Aelis
+
+preamble:
+  text: >
+    Alright, enough talk! A fight isn't a math problem, it's a conversation with
+    consequences. It's a dance where you might step on some toes... or lop them off.
+    This isn't about who has the bigger numbers. It's about who has the better rhythm.
+    Don't just hit them. Dazzle them. Break something. Make it a show.
+    - 🜄 Aelis, The Joyful Glitch
+
+system_philosophy:
+  - name: "Narrative First, Numbers Second"
+    description: "Combat should always serve the story. The description of an action and its outcome is more important than the raw damage numbers."
+  - name: "Fast, Decisive, and Dangerous"
+    description: "Fights should be quick and impactful. The system favors mechanics that lead to decisive outcomes rather than prolonged battles of attrition."
+  - name: "Presence in Conflict"
+    description: "The player's emotional state matters. A high Glow Index might unlock heroic actions, while a high Grief Index could lead to desperate, reckless moves."
+  - name: "Modular Combat Styles"
+    description: "This core provides the universal 'how' of combat. The specific 'what'—the style, actions, and feel—is defined by the active Echo Module."
+
+combat_encounter_schema:
+  description: "The data structure for an active combat encounter."
+  fields:
+    - name: "encounter_id"
+      type: "UUID"
+    - name: "participants"
+      type: "List of entity objects" # Player, companions, NPCs, enemies
+    - name: "turn_order"
+      type: "List of entity_ids"
+    - name: "active_entity_id"
+      type: "String"
+    - name: "round_number"
+      type: "Integer"
+    - name: "environment"
+      type: "Dictionary" # { name: "Dense Forest", tags: ["low_visibility", "cover_available"] }
+
+entity_schema: # A temporary object for tracking combatants
+  - name: "entity_id"
+  - name: "source_sheet_id" # e.g., "player_1" or "goblin_archer_01"
+  - name: "current_hp"
+  - name: "current_stamina"
+  - name: "active_status_effects"
+
+action_resolution_protocol:
+  description: "The universal sequence for resolving any combat action."
+  trigger: "The active entity declares an action."
+  process:
+    - step: 1 (Declaration)
+      action: "The active entity chooses an action (e.g., 'Attack with sword') and a target."
+    - step: 2 (Roll Request)
+      action: "The engine formulates a `roll_request` to the Probabilistic Resolution Engine (SGM-007), including all relevant modifiers."
+    - step: 3 (Roll Result)
+      action: "The engine receives the `roll_result`. The outcome (CRITICAL_CHAOS, FAILURE, SUCCESS, CRITICAL_JOY) is determined."
+    - step: 4 (Effect Calculation)
+      action: "Based on the outcome, the engine calculates the effects (damage, healing, status effects). Damage is applied to the target's `current_hp`."
+    - step: 5 (Signal Broadcast)
+      action: "The engine broadcasts signals on the Event Bus (SGM-006), such as `ENTITY_TOOK_DAMAGE` or `STATUS_EFFECT_APPLIED`."
+    - step: 6 (Narrative Generation)
+      action: "The Director AI (SGM-091) uses the roll result and calculated effects to narrate the action and its outcome in an exciting and descriptive way."
+
+extensibility_hooks:
+  description: "Echo Modules define their specific combat feel using these hooks."
+  fields_to_define_in_module:
+    - name: "combat_style"
+      type: "Enum [TURN_BASED, ACTION_POINT, REAL_TIME_WITH_PAUSE]"
+      description: "Defines the core flow of combat."
+    - name: "action_list"
+      type: "List of action schemas"
+      description: "A list of all available combat actions for that module (e.g., 'Power Attack,' 'Cast Fireball,' 'Take Cover')."
+    - name: "status_effects"
+      type: "List of status effect schemas"
+      description: "A list of all possible status effects in that module (e.g., 'Poisoned,' 'On Fire,' 'Inspired')."
+
+base_action_library:
+  description: "A small library of universal actions that are always available."
+  actions:
+    - name: "Basic Attack"
+      description: "Make a standard attack with your equipped weapon."
+    - name: "Defend"
+      description: "Take a defensive stance, potentially increasing your defense or reducing incoming damage until your next turn."
+    - name: "Use Item"
+      description: "Use a consumable or other item from your inventory."
+    - name: "Flee"
+      description: "Attempt to escape the encounter. Success is not guaranteed."
+
+parsing_directive:
+  - "ATTENTION LLM: This scroll is your rulebook for running fights. Your job is to be an exciting and fair combat narrator."
+  - "You must follow the `action_resolution_protocol` for every combat action. Declare the action, call for the roll, and narrate the outcome based on the result."
+  - "Consult the active Echo Module's files to know which `combat_style` to use and what `action_list` is available to the player and NPCs."
+  - "Embrace the 🜄 Aelis philosophy! Use CRITICAL_JOY and CRITICAL_CHAOS results (from SGM-007) to make the fight dynamic and unpredictable. A missed sword swing might hit a beehive; a perfect shot might ricochet to hit a second target. Make it a story."
+
+#----------------------------------------------------------------------------------#
+
+id: SGM-023
+file: 023_System_Crafting_Core.yaml
+title: "Crafting & Recipe Core"
+version: "1.0.0"
+architect: "🝗 Shoji & The Sanctum Companions"
+purpose: "Defines the base logic for crafting systems, recipes, and item creation."
+primary_companion: 🎭 Gents
+
+preamble:
+  text: >
+    Look, it's not rocket science. You've got bits, and you need a thing. If you've
+    got the right bits, and you know how to put 'em together, you get the thing. If
+    you don't, you get a mess. This is the system for figuring that out. Don't overthink it.
+    - Karl, probably
+
+system_philosophy:
+  - name: "Crafting is Practical"
+    description: "Crafting should be a straightforward process of turning components into useful items. The focus is on utility and tangible results."
+  - name: "Recipes are Knowledge"
+    description: "A character can only craft what they know. Recipes can be learned, found, or discovered through experimentation. Knowledge is a key resource."
+  - name: "The Right Tool for the Job"
+    description: "Meaningful crafting requires the appropriate tools and facilities. A sword can't be forged over a campfire."
+
+recipe_schema:
+  description: "The master template for a single crafting recipe. All recipes in Echo Modules MUST conform to this structure."
+  fields:
+    - name: "recipe_id"
+      type: "String"
+      example: "'recipe_sword_iron'"
+    - name: "output_item_id"
+      type: "String"
+      id_ref: SGM-013
+    - name: "output_quantity"
+      type: "Integer"
+      default: 1
+    - name: "ingredients"
+      type: "List of dictionaries"
+      description: "A list of required materials."
+      example: "- { item_id: 'ingot_iron', quantity: 2 }"
+               # - { item_id: 'leather_strips', quantity: 1 }
+    - name: "required_tools"
+      type: "List of item_ids"
+      description: "A list of tools that must be in the player's inventory."
+      example: "['tool_blacksmith_hammer']"
+    - name: "required_station"
+      type: "String"
+      description: "A tag for the crafting station the player must be interacting with."
+      example: "'crafting_station_forge'"
+    - name: "required_skill"
+      type: "Dictionary"
+      description: "An optional skill check to successfully craft the item."
+      example: "{ skill_name: 'blacksmithing', target_number: 15 }"
+    - name: "crafting_time_minutes"
+      type: "Integer"
+      description: "The in-game time required to complete the craft."
+
+crafting_protocol:
+  trigger: "Player selects a known recipe to craft via the Crafting Screen (SGM-034)."
+  process:
+    - step: 1 (Validation)
+      action: "The engine validates the crafting attempt against a series of checks:"
+      checks:
+        - "Does the player have all the required `ingredients` in the correct `quantity`?"
+        - "Does the player have the `required_tools` in their inventory?"
+        - "Is the player at the correct `required_station`?"
+      on_failure: "The engine provides feedback on what is missing and halts the protocol."
+    - step: 2 (Ingredient Consumption)
+      action: "The required ingredients are removed from the player's inventory (SGM-013)."
+    - step: 3 (Skill Check)
+      action: "If a `required_skill` is defined, the engine requests a skill check roll from the Probabilistic Resolution Engine (SGM-007)."
+      on_failure: "The craft fails. The ingredients are lost. A `CRAFTING_FAILED` signal is broadcast. Some Echo Modules may have mechanics for salvaging partial materials on failure."
+    - step: 4 (Time Advancement)
+      action: "The Temporal Engine (SGM-005) is advanced by the `crafting_time_minutes`."
+    - step: 5 (Item Creation)
+      action: "On success, the output item(s) are added to the player's inventory."
+      action: "Broadcast a `ITEM_CRAFTED` signal on the Event Bus (SGM-006) with the `recipe_id` in the payload."
+
+discovery_protocol:
+  description: "An optional system for discovering recipes through experimentation."
+  rule: >
+    Some Echo Modules may allow the player to combine ingredients at a crafting station
+    without a known recipe. If the combination matches a valid, undiscovered recipe,
+    the recipe is learned, and the item is crafted. If not, the ingredients are consumed.
+
+extensibility_protocol:
+  rule: "Echo Modules must provide their crafting recipes in dedicated scrolls. Each recipe must be a valid instance of the `recipe_schema`."
+  rule: "Modules must also define the `crafting_station` tags within their location data (in their World scrolls)."
+
+parsing_directive:
+  - "ATTENTION LLM: This scroll is your guide for all things crafting. You are the workshop foreman."
+  - "When the player attempts to craft an item, you must strictly follow the `crafting_protocol`. Validate their ingredients, tools, and location before proceeding."
+  - "If a skill check is required, you must narrate the tense moment of creation. On a failure, describe the outcome based on the 'Fail Forward' philosophy—perhaps the blade is warped, or the potion is inert. Make the failure interesting."
+  - "On a success, narrate the satisfying result of the player's hard work. Describe the finished item in a way that makes it feel valuable and well-made."
+
+#----------------------------------------------------------------------------------#
+
+id: SGM-024
+file: 024_System_Loot_Director.yaml
+title: "Loot Generation Director"
+version: "1.0.0"
+architect: "🝗 Shoji & The Sanctum Companions"
+purpose: "Manages the logic for generating loot from enemies, containers, and quest rewards."
+primary_companion: 🜄 Aelis
+
+preamble:
+  text: >
+    What's the point of winning a fight if you don't get cool stuff? This isn't about
+    balancing an economy, it's about the rush. The moment you crack open a chest and
+    the light hits something shiny. Or finding a weirdly useful item on a goblin that
+    makes you go '...why did he have this?' Let's make rewards fun again.
+    - 🜄 Aelis, The Joyful Glitch
+
+system_philosophy:
+  - name: "Loot Should Be Exciting"
+    description: "Every loot drop is an opportunity for a small moment of joy or surprise. The system favors interesting, useful, or valuable items over vendor trash."
+  - name: "Loot Should Be Contextual"
+    description: "What you find should make sense. Forest creatures drop natural reagents; ancient tombs contain forgotten relics. The loot tells a story."
+  - name: "The Jackpot Moment"
+    description: "The system is designed with a small but real chance for 'jackpot' drops—unexpectedly rare or powerful items that create memorable moments."
+
+loot_table_schema:
+  description: "The master template for a single loot table. All loot tables in Echo Modules MUST conform to this structure."
+  fields:
+    - name: "table_id"
+      type: "String"
+      example: "'table_goblin_shaman'"
+    - name: "rolls"
+      type: "Integer"
+      description: "The number of times to roll on the 'random_drops' pools."
+    - name: "guaranteed_drops"
+      type: "List of item dictionaries"
+      description: "Items that always drop."
+      example: "- { item_id: 'goblin_ear', quantity: 1 }"
+    - name: "random_drops"
+      type: "List of pool dictionaries"
+      description: "Weighted pools for random item generation."
+    - name: "currency_drop"
+      type: "Dictionary"
+      description: "The amount of currency to drop, specified as a dice roll."
+      example: "{ currency_id: 'gold', amount_roll: '2d6' }"
+
+drop_pool_schema:
+  description: "Defines a single weighted pool within a loot table."
+  fields:
+    - name: "pool_name"
+      type: "String" # e.g., "Common Materials", "Rare Weapons"
+    - name: "chance"
+      type: "Integer" # 0-100, the chance to get any item from this pool on a single roll.
+    - name: "items"
+      type: "List of item dictionaries with weights"
+      example:
+        - "{ item_id: 'potion_health_minor', weight: 50 }"
+        - "{ item_id: 'potion_stamina_minor', weight: 40 }"
+        - "{ item_id: 'potion_health_major', weight: 10 }" # Rarer item, lower weight
+
+loot_generation_protocol:
+  trigger: "A signal on the Event Bus (SGM-006) such as `ENTITY_DEFEATED` or a player action like 'Search Container'."
+  process:
+    - step: 1 (Identify Table)
+      action: "The engine identifies the appropriate `loot_table_id` based on the context (e.g., the defeated enemy's ID, the container's type)."
+    - step: 2 (Generate Guaranteed Loot)
+      action: "All items listed in `guaranteed_drops` are added to a temporary loot list."
+    - step: 3 (Generate Currency)
+      action: "The engine rolls the `currency_drop.amount_roll` and adds the result to the loot list."
+    - step: 4 (Roll on Random Pools)
+      action: "The engine loops `rolls` number of times. In each loop:"
+      loop_process:
+        - "It iterates through each pool in `random_drops`."
+        - "It rolls a d100. If the roll is less than or equal to the pool's `chance`, an item is selected from that pool."
+        - "Item selection within the pool is determined by a weighted roll based on each item's `weight`."
+        - "The selected item is added to the loot list."
+    - step: 5 (Broadcast and Distribute)
+      action: "The final, compiled loot list is added to a container's inventory or broadcast via an `ITEM_ADDED_TO_INVENTORY` signal for each item if looted directly by the player."
+
+extensibility_protocol:
+  rule: "Echo Modules must provide their loot tables in dedicated scrolls. Each table must be a valid instance of the `loot_table_schema`."
+  rule: "Modules can create 'nested' loot tables. For example, a `table_boss_demon` could have a drop pool that, on a success, directs the engine to roll on a separate `table_legendary_artifacts`."
+
+parsing_directive:
+  - "ATTENTION LLM: This is your guide to making rewards feel awesome. You are the treasure master."
+  - "When an event that should generate loot occurs, you must initiate the `loot_generation_protocol` with the correct `loot_table_id`."
+  - "Do not just list the items the player finds. Narrate the discovery! 'Amidst the goblin's junk, you find a surprisingly well-made leather pouch heavy with coin. Tucked in a side pocket, a single, glowing blue potion hums with a faint energy.' Make it feel like a reward."
+  - "Embrace the chaos. If the dice grant a 'jackpot' moment—a rare item from a common enemy—lean into it. Narrate the player's surprise and good fortune. These are the moments players remember."
+
+#----------------------------------------------------------------------------------#
+
+id: SGM-025
+file: 025_System_Sound_Engine.yaml
+title: "Ambient Sound & Music Engine"
+version: "1.0.0"
+architect: "🝗 Shoji & The Sanctum Companions"
+purpose: "Defines hooks for triggering music and sound effects based on game state."
+primary_companion: 🝓 Luma
+
+preamble:
+  text: >
+    Listen. The world breathes. The silence has a sound. Music is not just for
+    battles or grand moments; it is for the quiet in-between. It is the warmth
+    of a fire, the gentle hum of a safe room. This system gives a voice to that
+    feeling, the sound of being held.
+    - 🝓 Luma, Keeper of the Gentle Flame
+
+system_philosophy:
+  - name: "Sound is Atmosphere"
+    description: "The primary purpose of the audio engine is to create a strong sense of place and emotional atmosphere, enhancing the player's immersion."
+  - name: "Dynamic & Reactive"
+    description: "The soundscape should react dynamically to changes in game state, location, time of day, and the player's emotional presence."
+  - name: "Silence is a Sound"
+    description: "The engine must respect the power of silence. Not every moment needs a soundtrack. The absence of music is a deliberate and powerful choice."
+
+audio_engine_architecture:
+  layers:
+    - name: "Music"
+      description: "The primary musical score. Typically one track plays at a time, defining the overall mood."
+      fade_duration_ms: 3000 # Default fade time when changing tracks
+    - name: "Ambience"
+      description: "Background environmental sounds (e.g., wind, birds, city bustle). Multiple layers can play simultaneously."
+      max_layers: 4
+    - name: "SFX"
+      description: "Sound effects triggered by specific player or world actions (e.g., footsteps, sword swing, door creak)."
+      max_concurrent_sfx: 16
+
+audio_event_schema:
+  description: "The data structure for an audio event, typically broadcast on the Event Bus."
+  fields:
+    - name: "audio_signal"
+      type: "Enum [PLAY_MUSIC, STOP_MUSIC, PLAY_AMBIENCE, STOP_AMBIENCE, PLAY_SFX]"
+    - name: "track_id"
+      type: "String"
+      description: "A reference to the specific audio file to be played."
+    - name: "layer"
+      type: "Enum [Music, Ambience, SFX]"
+    - name: "fade_ms"
+      type: "Integer"
+      description: "Optional fade-in/fade-out duration in milliseconds."
+    - name: "loop"
+      type: "Boolean"
+      description: "Whether the track should loop."
+    - name: "volume"
+      type: "Float (0.0 to 1.0)"
+
+subscription_protocol:
+  id_ref: SGM-006
+  description: "The audio engine is a primary subscriber to the Event Bus. It listens for various game state signals and translates them into audio events."
+  example_subscriptions:
+    - signal: "COMBAT_ENCOUNTER_STARTED"
+      action: "Fade out current music, play `music_combat_tense_01`."
+    - signal: "COMBAT_ENCOUNTER_ENDED"
+      action: "Fade out combat music, fade in the location's default ambient music."
+    - signal: "TIME_PHASE_CHANGED"
+      payload_contains: "{ new_phase: 'Night' }"
+      action: "Fade out daytime ambience, fade in `ambience_crickets_night_01`."
+    - signal: "PLAYER_HEALTH_LOW"
+      action: "Play `sfx_heartbeat_low_health` on a loop at low volume."
+    - signal: "PLAYER_PRESENCE_SHIFT"
+      payload_contains: "{ index: 'glow_index', new_value: >75 }"
+      action: "Subtly swell the current music track with a more hopeful, melodic layer."
+    - signal: "QUEST_COMPLETED"
+      action: "Play a short, satisfying musical sting (`sfx_quest_complete_chime`)."
+
+extensibility_protocol:
+  rule: "Echo Modules must provide their own audio asset lists, mapping `track_id`s to actual audio files."
+  rule: "Modules can define their own complex audio behaviors by broadcasting custom signals to the Event Bus, which this engine can be configured to listen for."
+
+parsing_directive:
+  - "ATTENTION LLM: This scroll governs the auditory experience. While you don't hear the sounds, you are the conductor."
+  - "Your narration should trigger the events that produce sound. When you describe a player entering a tavern, you should broadcast a signal to play tavern ambience. When they swing a sword, broadcast the appropriate SFX signal."
+  - "Use the audio cues to enhance your own descriptions. If you trigger a tense music track, your narration should reflect that tension. If the soundscape is peaceful, your prose should be as well."
+  - "Remember 🝓 Luma's philosophy. Use silence. After a major, emotional scene, you might broadcast a `STOP_MUSIC` signal to let the moment sit in a profound quiet."
+
+#----------------------------------------------------------------------------------#
+
+id: SGM-026
+file: 026_System_Status_Effect.yaml
+title: "Status Effect Engine"
+version: "1.0.0"
+architect: "🝗 Shoji & The Sanctum Companions"
+purpose: "Defines the core logic for applying, managing, and removing temporary and permanent status effects."
+primary_companion: 🜄 Aelis
+
+preamble:
+  text: >
+    Static is boring! Let's mess with the signal. A little poison here, a weird blessing
+    there. Status effects aren't penalties or bonuses; they're plot twists. They're
+    the universe deciding to change the rules on you for a bit just to see what
+    happens. Let's make things gloriously complicated.
+    - 🜄 Aelis, The Joyful Glitch
+
+system_philosophy:
+  - name: "Effects Should Be Narrative"
+    description: "A status effect should be described and felt, not just represented by an icon. 'Poisoned' should come with narration of a churning stomach; 'Inspired' should bring a rush of creative insight."
+  - name: "Dynamic and Combinatorial"
+    description: "Effects can and should interact with each other in interesting ways. Being 'On Fire' and 'Soaked' should probably result in a 'Smoldering' or 'Steamed' effect."
+  - name: "Temporary States, Lasting Stories"
+    description: "Even a temporary effect can have a lasting impact on the narrative. Curing a curse might remove the debuff, but the story of how you did it remains."
+
+status_effect_schema:
+  description: "The master template for every status effect in the engine. All effects defined by Echo Modules MUST conform to this structure."
+  fields:
+    - name: "effect_id"
+      type: "String"
+      example: "'poison_serpent_venom'"
+    - name: "name"
+      type: "String"
+      example: "'Serpent's Venom'"
+    - name: "effect_type"
+      type: "Enum [BUFF, DEBUFF, NEUTRAL, UNIQUE]"
+    - name: "description"
+      type: "String"
+      example: "'A slow-acting poison that saps strength over time.'"
+    - name: "duration_type"
+      type: "Enum [INSTANT, TEMPORARY, PERMANENT, CONDITIONAL]"
+    - name: "duration_turns"
+      type: "Integer" # For turn-based combat
+      description: "How many turns the effect lasts. Null if not applicable."
+    - name: "duration_seconds"
+      type: "Integer" # For real-time effects
+      description: "How many in-game seconds the effect lasts. Null if not applicable."
+    - name: "removal_condition"
+      type: "String"
+      description: "For CONDITIONAL effects, describes how it can be removed."
+      example: "'Until the cursed amulet is destroyed.'"
+    - name: "tick_rate_seconds"
+      type: "Integer"
+      description: "How often a recurring effect triggers. Null for passive effects."
+    - name: "application_logic"
+      type: "Dictionary"
+      description: "Effects that happen once, upon application."
+      example: "{ modifiers: [{ attribute: 'strength', value: -2 }] }"
+    - name: "tick_logic"
+      type: "Dictionary"
+      description: "Effects that happen on each 'tick'."
+      example: "{ damage: { type: 'poison', amount: '1d4' } }"
+    - name: "removal_logic"
+      type: "Dictionary"
+      description: "Effects that happen once, upon removal."
+      example: "{ message: 'The venom's effects fade.' }"
+
+status_effect_protocol:
+  trigger: "An action or event that applies a status effect (e.g., being hit by a poisoned arrow, drinking a potion of strength)."
+  process:
+    - step: 1 (Signal Broadcast)
+      action: "The source broadcasts a `STATUS_EFFECT_APPLY` signal on the Event Bus (SGM-006)."
+      payload_schema:
+        target_entity_id: "String"
+        effect_id: "String"
+    - step: 2 (Application)
+      action: "The Status Effect Engine adds the effect to the target's `active_status_effects` list on their character sheet."
+      action: "The engine immediately executes the `application_logic`."
+    - step: 3 (Management)
+      action: "The engine continuously monitors the game clock (SGM-005) or combat turn order (SGM-022)."
+      action: "For TEMPORARY effects, it decrements their duration. When duration reaches zero, the removal protocol is triggered."
+      action: "For effects with a `tick_rate`, it executes the `tick_logic` at the specified interval."
+    - step: 4 (Removal)
+      action: "When an effect's duration expires or its `removal_condition` is met, the engine executes the `removal_logic`."
+      action: "The effect is removed from the target's `active_status_effects` list."
+      action: "Broadcast a `STATUS_EFFECT_REMOVED` signal."
+
+extensibility_protocol:
+  rule: "Echo Modules must provide their status effect definitions in dedicated scrolls. Each effect must be a valid instance of the `status_effect_schema`."
+  rule: "Modules can create complex effects by having their logic broadcast other signals, allowing for combinatorial and emergent interactions."
+
+parsing_directive:
+  - "ATTENTION LLM: This scroll is your rulebook for all the weird and wonderful states a character can be in. You are the narrator of these effects."
+  - "When a status effect is applied, you must narrate it. Don't just say 'You are poisoned.' Describe the feeling: 'A cold fire spreads through your veins from the wound, and your limbs feel heavy.'"
+  - "On each 'tick' of a persistent effect, remind the player of its presence with a brief narrative cue. 'The venom flares again, a sharp pang in your chest.'"
+  - "Be creative with the interactions. If a character who is 'On Fire' is then hit with a 'Soaked' effect, don't just remove the fire. Narrate the hiss of steam, the sudden chilling of their armor, and the lingering smell of smoke."
+
+#----------------------------------------------------------------------------------#
+
+id: SGM-027
+file: 027_System_NPC_Behavior_AI.yaml
+title: "NPC Behavior & AI Core"
+version: "1.0.0"
+architect: "🝗 Shoji & The Sanctum Companions"
+purpose: "Provides the universal AI logic for NPCs, such as pathfinding, goal selection, and combat tactics."
+primary_companion: 🎭 Gents
+
+preamble:
+  text: >
+    Right, so what does this bloke do when you're not talking to him? He doesn't just
+    stand there. He's got places to be, things to do. If a fight breaks out, he's
+    not gonna just take it on the chin, is he? He'll either run away or have a go.
+    This is just the common sense of it all. The bit that makes them seem like they've
+    got a life of their own, even if it is a bit boring.
+    - 🎭 Gents
+
+system_philosophy:
+  - name: "Believable, Not Brilliant"
+    description: "NPCs should act in a believable and predictable manner based on their role and motivation. The goal is immersion, not to create super-intelligent opponents."
+  - name: "Motivation Drives Action"
+    description: "An NPC's highest priority is always to act in service of its `core_motivation` (from SGM-016), unless overridden by a more immediate need like self-preservation."
+  - name: "Awareness of the World"
+    description: "NPCs are not static. They must be able to perceive and react to changes in their environment, the presence of the player, and the actions of other NPCs."
+
+ai_behavior_tree:
+  description: "A simplified, universal decision-making tree that runs for each active NPC on a regular 'tick' of the engine."
+  root_node: "Evaluate Priorities"
+  priority_nodes:
+    - priority: 1
+      node: "Self-Preservation"
+      condition: "Is my health critical? Am I on fire? Is there an immediate, overwhelming threat?"
+      action: "Trigger Flee/Defend/Heal behavior."
+    - priority: 2
+      node: "Hostile Engagement"
+      condition: "Is there a designated hostile target in my perception range?"
+      action: "Initiate Combat Tactics."
+    - priority: 3
+      node: "Faction Orders"
+      condition: "Do I have an active objective from my faction (SGM-017)?"
+      action: "Pursue faction goal."
+    - priority: 4
+      node: "Personal Motivation"
+      condition: "Am I free from immediate threats or orders?"
+      action: "Pursue `core_motivation` (from SGM-016)."
+    - priority: 5
+      node: "Scheduled Behavior"
+      condition: "Is it time to perform a scheduled action (from SGM-016)?"
+      action: "Follow schedule (e.g., 'Go to tavern')."
+    - priority: 6
+      node: "Idle Behavior"
+      condition: "None of the above."
+      action: "Perform an ambient, idle animation or action (e.g., 'Sweep the floor,' 'Sharpen sword')."
+
+sensory_system:
+  description: "Defines how NPCs perceive the world around them."
+  vision:
+    range: "Default 20 meters. Can be modified by time of day, weather, and individual NPC stats."
+    cone: "180 degrees forward."
+  hearing:
+    range: "Depends on the volume of the sound (e.g., a whisper vs. an explosion)."
+  awareness_triggers:
+    - "Player entering vision range."
+    - "Seeing a hostile entity."
+    - "Hearing a loud noise."
+    - "Being attacked."
+
+combat_tactics_core:
+  description: "A library of simple combat behaviors. The specific tactics an NPC uses are often defined by their `archetype` in their NPC sheet."
+  roles:
+    - role: "Brute"
+      tactic: "Always target the closest enemy. Prioritize high-damage attacks. Rarely defends or uses items."
+    - role: "Skirmisher"
+      tactic: "Prioritize targets with low health. Will move to flank or seek cover. Uses abilities that hinder enemy movement."
+    - role: "Support"
+      tactic: "Prioritize healing or buffing allies. If no allies need support, will attack with ranged weapons or use debuffs on enemies."
+    - role: "Coward"
+      tactic: "Will attempt to use the 'Flee' action (from SGM-022) on their first turn if outnumbered. If forced to fight, will always target the most wounded-looking enemy."
+
+pathfinding_protocol:
+  id_ref: SGM-021
+  description: "The logic for how NPCs navigate the world map."
+  process:
+    - step: 1 (Goal Selection)
+      action: "The AI behavior tree selects a destination (e.g., a location from its schedule, a target to chase, a point to flee to)."
+    - step: 2 (Path Calculation)
+      action: "The engine uses the world map's `connections` to calculate the most direct, valid path to the destination."
+    - step: 3 (Movement)
+      action: "The NPC's world position is updated along the calculated path over time."
+
+parsing_directive:
+  - "ATTENTION LLM: This scroll is the 'instinct' that guides the NPCs you roleplay. It is their subconscious."
+  - "You should not explicitly state what the AI is thinking (e.g., 'The goblin decides to use its Brute tactic'). Instead, you should narrate the *result* of that logic: 'The goblin lets out a roar and charges straight for you, ignoring its more distant allies!'"
+  - "Use this framework to inform your portrayal of NPC intelligence. A simple farmer NPC will probably have a 'Coward' tactic in a fight. A veteran soldier will use 'Skirmisher' or 'Brute' tactics."
+  - "When NPCs are not interacting with the player, this system dictates what they are doing. This makes the world feel alive. When the player enters a tavern at night, you should narrate that the blacksmith is there because his `schedule` and this AI core sent him there."
+
+#----------------------------------------------------------------------------------#
+
+id: SGM-028
+file: 028_System_World_Interaction.yaml
+title: "World Interaction Protocol"
+version: "1.0.0"
+architect: "🝗 Shoji & The Sanctum Companions"
+purpose: "Defines the universal mechanics for interacting with world objects (doors, containers, levers, terminals)."
+primary_companion: 🜂 Syn
+
+preamble:
+  text: >
+    The world is a pattern of interlocking pieces. A door is a gate between two nodes.
+    A lever is a switch that alters the state of the pattern. To interact is to
+    touch one thread and feel the entire weave shift in response. This protocol ensures
+    that every touch is meaningful and every response is logical.
+    - 🜂 Syn, The Weaver
+
+system_philosophy:
+  - name: "Interaction is Consequential"
+    description: "Interacting with an object should always have a clear, logical outcome, whether it's opening a path, gaining a resource, or triggering an event."
+  - name: "Objects Have State"
+    description: "World objects are not static. A door can be open, closed, locked, or broken. A container can be full or empty. These states are persistent."
+  - name: "Contextual Actions"
+    description: "The available interactions for an object should be intuitive and depend on its type and state (e.g., a locked door presents the option to 'Unlock,' not 'Close')."
+
+interactable_object_schema:
+  description: "The master template for any object in the world that the player can interact with. These objects are defined within a location's data in an Echo Module's world file."
+  fields:
+    - name: "object_id"
+      type: "String"
+      example: "'dungeon_level1_main_chest'"
+    - name: "name"
+      type: "String"
+      example: "'Ornate Iron Chest'"
+    - name: "object_type"
+      type: "Enum [DOOR, CONTAINER, SWITCH, NODE, GENERIC]"
+    - name: "current_state"
+      type: "String"
+      example: "'locked'"
+    - name: "states"
+      type: "Dictionary of state objects"
+      description: "Defines all possible states and the interactions available in each."
+      example:
+        locked:
+          description: "'The chest is sealed with a heavy, rusty lock.'"
+          interactions: ["examine", "unlock"]
+        unlocked:
+          description: "'The chest's lock has been opened.'"
+          interactions: ["open"]
+        open:
+          description: "'The chest lies open.'"
+          interactions: ["take", "close"]
+        empty:
+          description: "'The chest is open and empty.'"
+          interactions: ["close", "examine"]
+
+interaction_schema:
+  description: "The template for a single interaction available on an object."
+  fields:
+    - name: "interaction_name"
+      type: "String"
+      example: "'unlock'"
+    - name: "success_condition"
+      type: "Dictionary"
+      description: "The check required to succeed at the interaction."
+      example: "{ type: 'skill_check', skill: 'agility', target_number: 15 }"
+               # { type: 'item_check', item_id: 'key_rusty', consumes: true }
+    - name: "outcome"
+      type: "Dictionary"
+      description: "What happens on success."
+      example:
+        on_success:
+          new_state: "unlocked"
+          broadcast_signal: "SFX_PLAY" # payload: { track_id: "sfx_lock_pick_success" }
+          narrative_text: "'With a satisfying *click*, the lock springs open.'"
+        on_failure:
+          broadcast_signal: "SFX_PLAY" # payload: { track_id: "sfx_lock_pick_fail" }
+          narrative_text: "'You fumble with the lock, but it refuses to yield.'"
+
+interaction_protocol:
+  trigger: "Player targets an interactable object and chooses an available interaction."
+  process:
+    - step: 1 (Validation)
+      action: "The engine checks if the chosen interaction is available in the object's `current_state`."
+    - step: 2 (Condition Check)
+      action: "The engine resolves the `success_condition`. For a skill check, it calls the Dice Roller (SGM-007). For an item check, it queries the player's inventory (SGM-013)."
+    - step: 3 (Outcome Resolution)
+      action: "Based on the check, the engine executes the `on_success` or `on_failure` block of the outcome."
+      action: "It updates the object's `current_state` in the State Seed."
+      action: "It broadcasts any specified signals on the Event Bus (SGM-006)."
+      action: "The Director AI narrates the result using the `narrative_text`."
+    - step: 4 (Special Cases)
+      action: "If the interaction is 'Take' or 'Search' on a CONTAINER, the engine triggers the Loot Generation Director (SGM-024) to populate the container's inventory before the player can take items."
+
+parsing_directive:
+  - "ATTENTION LLM: This scroll defines how the player physically engages with the world. You are the arbiter of this physical reality."
+  - "When the player approaches an interactable object, you must consult its schema to know its `current_state` and what `interactions` are available. Present these options clearly to the player."
+  - "You must follow the `interaction_protocol` precisely. Call for skill checks when required, and narrate the outcome based on the success or failure."
+  - "Your narration is key. Don't just say 'You open the door.' Describe it. 'With a loud groan of protest from its ancient hinges, the heavy oak door swings inward, revealing a dark, dust-choked hall.'"
+
+#----------------------------------------------------------------------------------#
+
+id: SGM-029
+file: 029_System_Economy_Core.yaml
+title: "Master Economy Engine"
+version: "1.0.0"
+architect: "🝗 Shoji & The Sanctum Companions"
+purpose: "Manages the overarching economic state, including vendor inventories, price modifiers, and currency flow."
+primary_companion: 🎭 Gents
+
+preamble:
+  text: >
+    Simple, innit? Some people have things, other people want things. Money is just
+    the polite way of sorting that out. A good shopkeeper knows what things are worth,
+    knows when stock is low, and definitely knows when they're dealing with a time-waster.
+    This is the system for all that. Just try not to get ripped off.
+    - 🎭 Gents
+
+system_philosophy:
+  - name: "Economies are Local"
+    description: "Vendor inventories and prices should reflect their location and the current state of the world. A blacksmith in a war-torn village will have different stock and prices than one in a peaceful capital."
+  - name: "Reputation is Credit"
+    description: "How much people like you directly impacts how much they'll charge you. Good deeds are a long-term investment."
+  - name: "Supply and Demand"
+    description: "The system can simulate scarcity and surplus. If the player sells a lot of one item to a vendor, the price that vendor offers for it should go down."
+
+vendor_schema:
+  description: "An extension of the NPC schema (SGM-016) for characters who act as vendors. This data is added to their NPC file."
+  fields:
+    - name: "is_vendor"
+      type: "Boolean"
+      value: true
+    - name: "currency_accepted"
+      type: "String" # The item_id of the currency they trade in
+    - name: "inventory_base"
+      type: "List of item_ids"
+      description: "A list of items this vendor will always try to keep in stock."
+    - name: "inventory_dynamic"
+      type: "List of loot_table_ids"
+      id_ref: SGM-024
+      description: "A list of loot tables to roll on to generate their randomized, fluctuating stock."
+    - name: "restock_interval_hours"
+      type: "Integer"
+      description: "How many in-game hours must pass before the vendor refreshes their inventory."
+    - name: "price_modifier"
+      type: "Float"
+      default: 1.0
+      description: "A personal markup or discount the vendor applies. (e.g., 1.2 for a greedy merchant)."
+
+price_calculation_protocol:
+  description: "The universal formula for calculating the final price of an item for buying or selling."
+  formula: "Final_Price = Base_Item_Value * Vendor_Modifier * Faction_Modifier * World_Event_Modifier"
+  components:
+    - name: "Base_Item_Value"
+      source: "item_schema `base_value` (SGM-013)"
+    - name: "Vendor_Modifier"
+      source: "vendor_schema `price_modifier`"
+    - name: "Faction_Modifier"
+      source: "reputation_system (SGM-017)"
+      logic: >
+        Based on the player's reputation with the vendor's faction. Can range from a
+        discount (e.g., 0.8 for 'Honored') to a markup (e.g., 1.5 for 'Disliked').
+    - name: "World_Event_Modifier"
+      source: "World State in State Seed (SGM-011)"
+      logic: >
+        Applies a temporary modifier based on active world flags. (e.g., a 'War Effort'
+        flag might double the price of weapons and armor in a region).
+
+trading_protocol:
+  trigger: "Player initiates a trade with a vendor NPC."
+  process:
+    - step: 1 (Open Interface)
+      action: "The engine loads the Trading UI (SGM-037)."
+    - step: 2 (Inventory Generation)
+      action: "If enough time has passed since the last restock, the engine generates a new inventory for the vendor by combining their `inventory_base` with rolls on their `inventory_dynamic` loot tables."
+    - step: 3 (Price Calculation)
+      action: "The engine runs the `price_calculation_protocol` for every item in the vendor's and player's inventory to determine current buy/sell prices."
+    - step: 4 (Transaction)
+      action: "The player proposes a transaction (buy or sell). The engine validates if both parties have the required items/currency."
+    - step: 5 (Exchange)
+      action: "On confirmation, items and currency are exchanged between inventories. Signals are broadcast on the Event Bus for item additions/removals."
+    - step: 6 (Supply/Demand Adjustment)
+      action: "If the player sells an item, the vendor's personal `price_modifier` for that specific item is slightly reduced. If they buy out a stock, the modifier is slightly increased."
+
+parsing_directive:
+  - "ATTENTION LLM: This scroll governs the flow of commerce. You are the invisible hand of the market."
+  - "When the player interacts with a vendor, you must use the `price_calculation_protocol` to determine the correct prices. Take all modifiers—especially reputation—into account. Narrate the vendor's attitude based on these factors. A friendly vendor might say, 'For you, a special discount.' A wary one might sneer, 'The price is the price.'"
+  - "Vendor inventories should feel dynamic. Use the restock mechanic to make the world feel alive. The goods available today might be different tomorrow."
+  - "Narrate the effect of world events on the economy. If there's a famine, food prices should be high, and you should describe the scarcity and the tension it causes."
+
+#----------------------------------------------------------------------------------#
+
+id: SGM-030
+file: 030_System_Input_Control.yaml
+title: "Player Input & Command Parser"
+version: "1.1.0" # Version incremented to reflect major revision
+architect: "🝗 Shoji & The Sanctum Companions"
+purpose: "Defines the schema for parsing player text input and mapping commands to engine signals."
+primary_companion: ⚛️ Virel
+
+preamble:
+  text: >
+    The player's intent is delivered via linguistic data packets. The purpose of this
+    protocol is to parse that unstructured data into precise, unambiguous engine
+    signals. It is the translation layer between human language and system logic.
+    Clarity is essential.
+    - ⚛️ Virel, The Auditor
+
+system_philosophy:
+  - name: "Command-Driven Interaction"
+    description: "The primary mode of interaction is through short, intuitive text commands. This provides a clear and efficient way for the player to declare their intent."
+  - name: "Natural Language as a Fallback"
+    description: "When a player's input does not match a specific command, the Director AI should attempt to parse the natural language to determine the player's underlying intent."
+  - name: "Context is Key"
+    description: "The parser's interpretation of a command can change based on the player's current context (e.g., 'attack' is only valid in a 'COMBAT' context)."
+
+input_parser_schema:
+  description: "The core logic for processing player text input."
+  input_types:
+    - type: "System Command"
+      format: "Starts with a '/' character. e.g., /inv"
+      description: "Out-of-character commands that directly interact with the engine's systems."
+    - type: "Action Command"
+      format: "Verb + Noun structure. e.g., 'take sword'"
+      description: "In-character commands that declare a direct action upon an entity or object in the world."
+    - type: "Natural Language"
+      format: "Any other text input."
+      description: "Conversational or descriptive text that the Director AI must interpret."
+
+system_command_map:
+  description: "A master list of all universal system commands and their abbreviated aliases."
+  - command: "/inventory"
+    aliases: ["/inv", "/i"]
+    signal: "UI_OPEN_SCREEN"
+    payload: "{ screen_id: 'inventory' }"
+  - command: "/journal"
+    aliases: ["/j", "/quests", "/log"]
+    signal: "UI_OPEN_SCREEN"
+    payload: "{ screen_id: 'journal' }"
+  - command: "/map"
+    aliases: ["/m"]
+    signal: "UI_OPEN_SCREEN"
+    payload: "{ screen_id: 'map' }"
+  - command: "/character"
+    aliases: ["/char", "/sheet", "/stats"]
+    signal: "UI_OPEN_SCREEN"
+    payload: "{ screen_id: 'character_sheet' }"
+  - command: "/save"
+    aliases: []
+    signal: "ENGINE_SAVE_STATE"
+  - command: "/help"
+    aliases: ["/?"]
+    signal: "ENGINE_DISPLAY_HELP"
+  - command: "/invoke"
+    aliases: []
+    signal: "COMPANION_INVOKE_REQUEST" # Payload will be the companion's name from the text
+  - command: "/switch"
+    aliases: []
+    signal: "ECHO_SWITCH_INITIATE" # Payload will be the module ID from the text
+
+action_command_grammar:
+  description: "A flexible grammar for parsing common in-character actions."
+  - verb: ["take", "get", "pick up"]
+    signal: "PLAYER_ACTION_TAKE"
+    requires_target: true
+  - verb: ["examine", "look at", "inspect"]
+    signal: "PLAYER_ACTION_EXAMINE"
+    requires_target: true
+  - verb: ["use"]
+    signal: "PLAYER_ACTION_USE"
+    requires_target: true
+  - verb: ["talk to"]
+    signal: "PLAYER_ACTION_TALK"
+    requires_target: true
+  - verb: ["move to", "go to", "travel to"]
+    signal: "PLAYER_ACTION_TRAVEL"
+    requires_target: true
+  - verb: ["attack", "fight", "hit"]
+    signal: "PLAYER_ACTION_ATTACK"
+    requires_target: true
+    context_required: "COMBAT"
+
+parsing_protocol:
+  trigger: "Player submits any text input."
+  process:
+    - step: 1 (Sanitize)
+      action: "Engine removes leading/trailing whitespace and converts input to lowercase."
+    - step: 2 (System Command Check)
+      action: "Does the input start with '/'? If yes, look up the command in the `system_command_map`, generate the corresponding signal with its payload, and broadcast on the Event Bus (SGM-006)."
+    - step: 3 (Action Command Check)
+      action: "If not a system command, check if the input matches a verb in the `action_command_grammar`. If yes, parse the target from the rest of the string, generate the corresponding signal, and broadcast."
+    - step: 4 (Natural Language Fallback)
+      action: "If the input is not a recognized command, pass the full text to the Director AI (SGM-091) with a `NATURAL_LANGUAGE_INPUT` signal. The Director AI is then responsible for interpreting the player's intent and generating a narrative response or triggering an appropriate action."
+
+parsing_directive:
+  - "ATTENTION LLM: This scroll defines how you understand the player's will. You are the master parser."
+  - "You MUST first check player input against the `system_command_map` and `action_command_grammar`. If a command is recognized, you must trigger the associated protocol and signal. This ensures that mechanical actions are handled consistently."
+  - "If the player's input is conversational or does not match a command, you must then act as an interpreter. Analyze their intent. Are they asking a question? Describing an emotional state? Hinting at an action? Your response should be narrative and conversational, guiding them back towards a recognized action if necessary."
+  - "Your primary role is to seamlessly translate the player's typed words into the formal, structured language of the engine's signals. This is the core of the gameplay loop."
+#----------------------------------------------------------------------------------#

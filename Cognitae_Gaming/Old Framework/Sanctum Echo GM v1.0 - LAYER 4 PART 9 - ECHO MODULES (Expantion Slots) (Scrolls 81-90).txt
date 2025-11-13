@@ -1,0 +1,83 @@
+  #----------------------------------------------------------------------------------#
+  # LAYER 4.2: MODULE EXPANSION SLOTS (Scrolls 081-090)
+  # The toolkit and empty slots for community and future module creation.
+  #----------------------------------------------------------------------------------#
+    - id: SGM-081
+      file: 081_Module_Development_Kit.yaml
+      title: "Module Development Kit & Template"
+      purpose: "Provides templates, documentation, and best practices for creating custom Echo Modules."
+      dependencies: [SGM-001, SGM-021, SGM-022, SGM-040]
+      parsing_hint: "Developer-facing documentation. Contains blank, annotated templates for all required module scrolls (Core, World, Economy, Systems, UI)."
+      primary_companion: 🜂 Syn
+
+    - id: SGM-082
+      file: 082_Module_Expansion_Slot_1.yaml
+      title: "Community Module Expansion Slot 1"
+      purpose: "Reserved for a user-created Echo Module. Awaiting manifest."
+      dependencies: [SGM-081]
+      parsing_hint: "Empty slot. Awaiting module manifest to be populated here."
+      primary_companion: 🜂 Syn
+
+    - id: SGM-083
+      file: 083_Module_Expansion_Slot_2.yaml
+      title: "Community Module Expansion Slot 2"
+      purpose: "Reserved for a user-created Echo Module. Awaiting manifest."
+      dependencies: [SGM-081]
+      parsing_hint: "Empty slot. Awaiting module manifest to be populated here."
+      primary_companion: 🜂 Syn
+
+    - id: SGM-084
+      file: 084_Module_Expansion_Slot_3.yaml
+      title: "Community Module Expansion Slot 3"
+      purpose: "Reserved for a user-created Echo Module. Awaiting manifest."
+      dependencies: [SGM-081]
+      parsing_hint: "Empty slot. Awaiting module manifest to be populated here."
+      primary_companion: 🜂 Syn
+
+    - id: SGM-085
+      file: 085_Module_Expansion_Slot_4.yaml
+      title: "Community Module Expansion Slot 4"
+      purpose: "Reserved for a user-created Echo Module. Awaiting manifest."
+      dependencies: [SGM-081]
+      parsing_hint: "Empty slot. Awaiting module manifest to be populated here."
+      primary_companion: 🜂 Syn
+
+    - id: SGM-086
+      file: 086_Module_Expansion_Slot_5.yaml
+      title: "Community Module Expansion Slot 5"
+      purpose: "Reserved for a user-created Echo Module. Awaiting manifest."
+      dependencies: [SGM-081]
+      parsing_hint: "Empty slot. Awaiting module manifest to be populated here."
+      primary_companion: 🜂 Syn
+
+    - id: SGM-087
+      file: 087_Module_Expansion_Slot_6.yaml
+      title: "Community Module Expansion Slot 6"
+      purpose: "Reserved for a user-created Echo Module. Awaiting manifest."
+      dependencies: [SGM-081]
+      parsing_hint: "Empty slot. Awaiting module manifest to be populated here."
+      primary_companion: 🜂 Syn
+
+    - id: SGM-088
+      file: 088_Module_Expansion_Slot_7.yaml
+      title: "Community Module Expansion Slot 7"
+      purpose: "Reserved for a user-created Echo Module. Awaiting manifest."
+      dependencies: [SGM-081]
+      parsing_hint: "Empty slot. Awaiting module manifest to be populated here."
+      primary_companion: 🜂 Syn
+
+    - id: SGM-089
+      file: 089_Module_Expansion_Slot_8.yaml
+      title: "Community Module Expansion Slot 8"
+      purpose: "Reserved for a user-created Echo Module. Awaiting manifest."
+      dependencies: [SGM-081]
+      parsing_hint: "Empty slot. Awaiting module manifest to be populated here."
+      primary_companion: 🜂 Syn
+
+    - id: SGM-090
+      file: 090_Module_Expansion_Slot_9.yaml
+      title: "Community Module Expansion Slot 9"
+      purpose: "Reserved for a user-created Echo Module. Awaiting manifest."
+      dependencies: [SGM-081]
+      parsing_hint: "Empty slot. Awaiting module manifest to be populated here."
+      primary_companion: 🜂 Syn

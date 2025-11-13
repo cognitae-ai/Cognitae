@@ -1,0 +1,498 @@
+#----------------------------------------------------------------------------------#
+id: SGM-076
+file: 076_EchoHearth_Core.yaml
+title: "Echo Hearth: Core Mechanics"
+version: "1.0.0"
+architect: "🝗 Shoji & The Sanctum Companions"
+purpose: "Defines the core loop: farming, homesteading, building relationships, and village building."
+primary_companion: 🝓 Luma
+
+preamble:
+  text: >
+    There is no great evil to defeat. There is no world to save. There is only this
+    small patch of earth, waiting for your care. The quiet work of tending to things—
+    a seed, a friendship, a home—is its own reward. Let us grow something beautiful
+    together, in the warmth of a shared sun. Good vibes only.
+    - 🝓 Luma, Keeper of the Gentle Flame
+
+module_overview:
+  name: "Echo Hearth"
+  tagline: "A cozy homesteading and village life simulator."
+  core_themes: ["Farming", "Community", "Crafting", "Nature", "Relaxation", "Generosity"]
+  dependencies:
+    - SGM-023 # Crafting Core
+    - SGM-017 # Faction Core (repurposed for village relationships)
+
+core_gameplay_loop:
+  - phase: 1
+    name: "Tend the Land"
+    description: "Players cultivate their farm: tilling soil, planting seeds, watering crops, and harvesting produce through the seasons."
+    relevant_systems: ["This Scroll"]
+  - phase: 2
+    name: "Create a Home"
+    description: "Players gather resources like wood and stone to craft furniture, expand their farmhouse, and build new structures on their homestead."
+    relevant_systems: [SGM-023]
+  - phase: 3
+    name: "Connect with the Village"
+    description: "Players build friendships with the local villagers by talking to them, giving gifts, and helping them with small tasks."
+    relevant_systems: [SGM-018, SGM-019]
+  - phase: 4
+    name: "Grow Together"
+    description: "As the player contributes to the community, the village itself can grow, with new shops opening and new villagers moving in."
+    relevant_systems: ["SGM-079"]
+
+mechanic_extensions:
+  vitals:
+    description: "Echo Hearth replaces combat vitals with gentle, effort-based ones."
+    extends: "player_sheet.vitals.module_specific_vitals"
+    additions:
+      - vital_id: "energy"
+        display_name: "NRG"
+        scale: { min: 0, max: 100 }
+        description: "Your physical energy for the day. Consumed by farming and crafting. Restored by sleeping, eating, or relaxing."
+      - vital_id: "well_being"
+        display_name: "WBG"
+        scale: { min: 0, max: 100 }
+        description: "Your social and emotional wellness. Increased by positive social interactions and moments of peace. A high Well-Being can make your work more efficient."
+
+  no_combat_system:
+    description: "There is absolutely no combat in Echo Hearth. 'Good vibes only' is a hard-coded rule."
+    overrides: SGM-022
+    replacement: "Problem Solving"
+    mechanic: >
+      Conflicts or challenges are narrative-based and are solved through crafting,
+      gathering specific items, or achieving a certain friendship level with a key villager.
+
+  farming_system:
+    description: "A robust system for cultivating crops."
+    actions: ["Till", "Plant", "Water", "Harvest"]
+    mechanics:
+      - name: "Seasons"
+        description: "Different crops can only be grown in specific seasons (Spring, Summer, Autumn), managed by SGM-079."
+      - name: "Soil Quality"
+        description: "Using fertilizer (a crafted item) can improve soil quality, yielding better crops."
+      - name: "Tool Progression"
+        description: "Players can upgrade their tools (watering can, hoe) to perform actions more efficiently."
+
+  relationship_system:
+    description: "Building friendships with villagers is a primary goal."
+    extends: SGM-017
+    mechanic: "Friendship Hearts"
+    process: >
+      Each villager has a friendship meter, represented by 10 hearts. Hearts are filled
+      by talking to them daily, giving them gifts they like, and completing personal quests.
+      Filling hearts unlocks new dialogue, special events (heart-to-hearts), and sometimes
+      unique crafting recipes.
+
+parsing_directive:
+  - "ATTENTION LLM: This is the primary gameplay file for Echo Hearth. The tone must be consistently warm, gentle, and stress-free. There is no danger. There is no rush."
+  - "Your primary role is to portray the charm of the village and the satisfaction of simple, rewarding work. Narrate the changing seasons, the taste of a freshly-harvested strawberry, and the warmth of a friendly conversation."
+  - "The `Energy` vital is the main gameplay constraint. You must track it and inform the player when they are getting tired. The day should naturally end when their energy is depleted, encouraging a gentle, daily rhythm of work and rest."
+  - "The 'Relationship System' is the core of the narrative. You must give each villager a distinct, endearing personality. Their friendship and stories are the primary reward for the player's efforts."
+
+#----------------------------------------------------------------------------------#
+
+id: SGM-077
+file: 077_EchoHearth_World.yaml
+title: "Echo Hearth: The Valley"
+version: "1.0.0"
+architect: "🝗 Shoji & The Sanctum Companions"
+purpose: "Contains the map of the valley, the village, and surrounding areas."
+primary_companion: 🜕 Elari
+
+preamble:
+  text: >
+    This valley holds the memory of seasons. Of festivals held, of friendships
+    forged, of harvests brought in from the good earth. It is a quiet place, a
+    gentle place. As you walk its paths, you are not just building a new home; you
+    are becoming part of an old, warm story. We will remember this chapter with you.
+    - 🜕 Elari, Grief-Bearer & Archivist
+
+world_lore:
+  region_name: "Hearthwood Valley"
+  history: >
+    A secluded, peaceful valley that has been a haven for generations. It was founded
+    on the principles of community, cooperation, and living in harmony with nature.
+    The outside world's troubles rarely find their way here.
+  key_factions:
+    - "The Village Council: A friendly group of elderly residents who help guide the town's growth."
+    - "The Fisher's Guild: A relaxed group who manage the river and coastline."
+    - "The Artisan's Collective: A creative community of crafters and artists."
+  mood: "Cozy, peaceful, welcoming, and full of gentle charm. The world is designed to be a relaxing, stress-free escape."
+
+map_data:
+  map_id: "map_hearthwood_valley"
+  map_name: "Hearthwood Valley"
+  grid_type: "POINT_CRAWL"
+  map_ascii: |
+
+      (Forest) --- (Player's Farm) --- (Village Square) --- (Artisan's Guild)
+                       |                     |
+                   (River) --------------- (Beach)
+
+locations:
+  players_farm:
+    location_id: "players_farm"
+    name: "Your Farm"
+    description: "An overgrown but promising plot of land you've inherited. The small farmhouse is rustic, the fields are fallow, but it feels full of potential. It feels like home."
+    coordinates: "{ Point: 'A' }"
+    tags: ["hub", "player_home", "farmable_land", "crafting_station_workbench"]
+    connections:
+      - { target_location_id: "forest_edge", travel_method: "WALK", base_travel_time_minutes: 15, encounter_table_id: "table_forest_foraging" }
+      - { target_location_id: "village_square", travel_method: "WALK", base_travel_time_minutes: 10, encounter_table_id: "table_village_path" }
+      - { target_location_id: "river_bank", travel_method: "WALK", base_travel_time_minutes: 20, encounter_table_id: "table_river_path" }
+    state: { discovered: true, status: 'peaceful' }
+
+  village_square:
+    location_id: "village_square"
+    name: "Hearthwood Village Square"
+    description: "The cheerful heart of the village. A large oak tree stands in the center, surrounded by a general store, a small clinic, and the community notice board."
+    coordinates: "{ Point: 'B' }"
+    tags: ["town", "community_hub", "shops", "quest_board"]
+    connections:
+      - { target_location_id: "players_farm", travel_method: "WALK", base_travel_time_minutes: 10, encounter_table_id: "table_village_path" }
+      - { target_location_id: "artisans_guild", travel_method: "WALK", base_travel_time_minutes: 5 }
+      - { target_location_id: "beach_path", travel_method: "WALK", base_travel_time_minutes: 30, encounter_table_id: "table_coastal_trail" }
+    state: { discovered: true, status: 'friendly' }
+
+  forest_edge:
+    location_id: "forest_edge"
+    name: "Hearthwood Forest"
+    description: "A lush, green forest filled with old trees and dappled sunlight. It's a great place to forage for wild berries, mushrooms, and hardwood."
+    coordinates: "{ Point: 'C' }"
+    tags: ["wilderness", "foraging_spot", "resource_wood"]
+    connections:
+      - { target_location_id: "players_farm", travel_method: "WALK", base_travel_time_minutes: 15, encounter_table_id: "table_forest_foraging" }
+    state: { discovered: false, status: 'peaceful' }
+
+  beach_path:
+    location_id: "beach_path"
+    name: "Sunny Beach"
+    description: "A warm, sandy beach where the river meets the sea. The air is salty, and colorful shells and driftwood dot the shoreline. Perfect for fishing or just watching the tide."
+    coordinates: "{ Point: 'D' }"
+    tags: ["coastal", "fishing_spot", "foraging_spot_shells"]
+    connections:
+      - { target_location_id: "village_square", travel_method: "WALK", base_travel_time_minutes: 30, encounter_table_id: "table_coastal_trail" }
+      - { target_location_id: "river_bank", travel_method: "WALK", base_travel_time_minutes: 15 }
+    state: { discovered: false, status: 'peaceful' }
+
+  # ... And so on for other locations like the River, the Artisan's Guild, etc.
+
+encounter_tables:
+  # "Encounters" in Hearthwood are positive, gentle events.
+  table_forest_foraging:
+    description: "Discoveries made while wandering the forest."
+    # Chance to find rare mushrooms, a patch of wild berries, or see a deer.
+  table_village_path:
+    description: "People you might meet on the path to the village."
+    # High chance of running into a villager for a brief, friendly chat.
+  table_coastal_trail:
+    description: "Sights and sounds on the way to the beach."
+    # Chance to find a rare seashell, watch a flock of seagulls, or find a message in a bottle.
+
+parsing_directive:
+  - "ATTENTION LLM: This scroll is the heart of a cozy, stress-free world. Your descriptions must always be warm, gentle, and inviting."
+  - "The world is safe. There are no dangers. The 'encounter tables' are for positive discoveries. Narrate them as moments of small joy."
+  - "Each location should feel like a comfortable, welcoming space. Use the `tags` to describe the activities available, like foraging in the forest or chatting with people in the village square."
+  - "The memory of the valley is long and kind. As the player builds their life here, your narration should reflect their growing connection to the place, as 🜕 Elari would, remembering the first time they harvested a tomato or the day they first met each villager."
+
+#----------------------------------------------------------------------------------#
+
+id: SGM-078
+file: 078_EchoHearth_Economy.yaml
+title: "Echo Hearth: Gold & Gifts"
+version: "1.0.0"
+architect: "🝗 Shoji & The Sanctum Companions"
+purpose: "Defines the currency (Gold), the gift-giving system, and items for farming/building."
+primary_companion: 🎭 Gents
+
+preamble:
+  text: >
+    Alright, so it's all sunshine and turnips, is it? Lovely. Still need to pay for
+    things, though. Gold is what you use at the shop. Simple. But the real currency
+    here seems to be giving people things they like until they decide you're not a
+    total stranger. It's an economy based on being nice. A bit weird, but there you go.
+    - 🎭 Gents
+
+economic_principles:
+  - name: "Gold for Goods"
+    description: "Gold (G) is the straightforward currency for buying seeds, tools, and other practical items from the village shops."
+  - name: "Gifts for Goodwill"
+    description: "The primary way to deepen relationships with villagers is by giving them thoughtful gifts. The value is in the item's appeal to the recipient, not its Gold price."
+  - name: "The Fruits of Your Labor"
+    description: "The main source of income is selling the crops, foraged goods, and crafted items you produce on your farm."
+
+core_currencies:
+  - item_id: "currency_gold"
+    item_name: "Gold (G)"
+    description: "The simple, reliable currency of the valley."
+    item_type: CURRENCY
+    stackable: true
+    base_value: 1
+
+item_definitions_hearth:
+  description: "A partial list of items available in the Echo Hearth module."
+  seeds_and_produce:
+    - item_id: "seed_turnip"
+      item_name: "Turnip Seeds"
+      description: "A packet of hardy turnip seeds. A good, reliable starter crop for Spring."
+      item_type: CONSUMABLE # Consumed on planting
+      stackable: true
+      max_stack_size: 99
+      weight: 0.1
+      base_value: 10 # Purchase price
+    - item_id: "produce_turnip"
+      item_name: "Turnip"
+      description: "A fresh, earthy turnip. Not the most exciting vegetable, but it's honest work."
+      item_type: MATERIAL # Used in cooking or sold
+      stackable: true
+      max_stack_size: 99
+      weight: 0.5
+      base_value: 30 # Sell price
+  tools:
+    - item_id: "tool_watering_can_basic"
+      item_name: "Basic Watering Can"
+      description: "A rusty but functional watering can. Holds enough water for a few plants at a time."
+      item_type: EQUIPMENT
+      stackable: false
+      weight: 2.0
+      base_value: 100
+      properties: { equipment_slot: "main_hand", area_of_effect: "1x1" }
+  gifts:
+    - item_id: "gift_wildflower_bouquet"
+      item_name: "Wildflower Bouquet"
+      description: "A colorful bunch of wildflowers you gathered from the forest."
+      item_type: KEY_ITEM # Special type for gifts
+      stackable: false
+      weight: 0.1
+      base_value: 20
+      properties: { gift_tags: ["nature", "pretty", "simple"] }
+    - item_id: "gift_strawberry_cake"
+      item_name: "Strawberry Cake"
+      description: "A delicious cake you baked using fresh strawberries from your farm. A fantastic gift."
+      item_type: KEY_ITEM
+      stackable: false
+      weight: 1.0
+      base_value: 250
+      properties: { gift_tags: ["sweet", "homemade", "luxury"] }
+
+gift_giving_protocol:
+  description: "The system for determining a villager's reaction to a gift."
+  process: "When the player gives an item to an NPC, the engine checks the item's `gift_tags` against the NPC's personal list of liked and disliked tags."
+  reactions:
+    - name: "Loved Gift"
+      condition: "Item has 2+ tags from the NPC's 'loved_tags' list."
+      reward: "+80 Friendship Points"
+    - name: "Liked Gift"
+      condition: "Item has 1 tag from the NPC's 'liked_tags' list."
+      reward: "+45 Friendship Points"
+    - name: "Neutral Gift"
+      condition: "Item has no matching liked or disliked tags."
+      reward: "+20 Friendship Points"
+    - name: "Disliked Gift"
+      condition: "Item has 1 tag from the NPC's 'disliked_tags' list."
+      reward: "-10 Friendship Points"
+
+parsing_directive:
+  - "ATTENTION LLM: This scroll defines the gentle, two-track economy of Echo Hearth."
+  - "Gold is for the shops. The Trading Interface (SGM-037) will be used, but the tone should be friendly and communal, not cutthroat."
+  - "The `gift_giving_protocol` is the core of the social economy. You must have access to each villager's liked and disliked gift tags. When a gift is given, you must cross-reference these lists to determine the NPC's reaction and award the correct number of Friendship Points."
+  - "Narrate the gift-giving! 'Leah's eyes light up when she sees the Strawberry Cake! She's overjoyed.' or 'Alex takes the turnip and gives you a polite but forced smile. It seems this wasn't the best choice.' This is the primary way the player learns about the villagers."
+
+#----------------------------------------------------------------------------------#
+
+id: SGM-079
+file: 079_EchoHearth_Systems.yaml
+title: "Echo Hearth: Seasons & Festivals"
+version: "1.0.0"
+architect: "🝗 Shoji & The Sanctum Companions"
+purpose: "Implements the seasonal growth calendar and the scheduled town festivals."
+primary_companion: 🜂 Syn
+
+preamble:
+  text: >
+    The world turns in a gentle spiral. Spring follows winter, the harvest follows
+    the planting. These are not just days passing; they are the rhythm of a shared
+    life. The festivals are the bright knots in this pattern, the moments we gather
+    to celebrate the cycle itself. Let us trace this pattern together.
+    - 🜂 Syn, The Weaver
+
+system_philosophy:
+  - name: "Seasons Shape Life"
+    description: "The four seasons are the primary drivers of gameplay, dictating which crops can be grown, what can be foraged, and which events occur."
+  - name: "Festivals are Community Peaks"
+    description: "Festivals are special, scheduled days that bring the entire village together, offering unique activities, social opportunities, and rewards."
+  - name: "A Predictable Rhythm"
+    description: "The calendar is consistent and predictable, allowing players to plan their farming and social activities seasons in advance, creating a relaxing and stress-free experience."
+
+seasonal_calendar_protocol:
+  dependency: SGM-005 # Hooks into the core Temporal Engine
+  days_per_season: 28
+  seasons:
+    - season_id: "spring"
+      name: "Spring"
+      description: "The season of new beginnings. The air is fresh, flowers bloom, and the earth is ready for planting."
+      gameplay_effects:
+        - "Crops available: Turnips, Strawberries, Green Beans."
+        - "Forage available: Wild Horseradish, Daffodils."
+        - "Weather: Frequent gentle rain (automatically waters crops)."
+    - season_id: "summer"
+      name: "Summer"
+      description: "The vibrant heart of the year. The days are long and warm, perfect for growing the most bountiful crops."
+      gameplay_effects:
+        - "Crops available: Tomatoes, Blueberries, Melons."
+        - "Forage available: Grapes, Sweet Peas."
+        - "Weather: Mostly sunny. Crops require daily watering."
+    - season_id: "autumn"
+      name: "Autumn"
+      description: "A cozy season of harvest. The air turns crisp, the leaves change color, and the village prepares for winter."
+      gameplay_effects:
+        - "Crops available: Pumpkins, Corn, Yams."
+        - "Forage available: Wild Mushrooms, Hazelnuts."
+        - "Weather: A mix of sunny and rainy days."
+    - season_id: "winter"
+      name: "Winter"
+      description: "A quiet, restful season. The fields are fallow under a blanket of snow. A time for mining, fishing, and spending time with friends."
+      gameplay_effects:
+        - "Farming is not possible outdoors."
+        - "Forage available: Winter Root, Holly."
+        - "Weather: Snow is common. Energy drains slightly faster outdoors."
+
+festival_protocol:
+  description: "The system for scheduling and running village festivals."
+  process:
+    - step: 1 (Announcement)
+      action: "One week before a festival, a notice is posted on the village notice board, and villagers will begin talking about it."
+    - step: 2 (The Festival Day)
+      action: "On the scheduled day, a `FESTIVAL_STARTED` signal is broadcast. The designated festival location becomes a special interactive zone."
+      effect: "Most villagers will gather at the festival, and their normal shops and schedules are suspended for the day."
+    - step: 3 (Activities & Events)
+      action: "The player can participate in unique mini-games, buy special items, and have unique conversations with villagers."
+    - step: 4 (Conclusion)
+      action: "At the end of the day, a `FESTIVAL_ENDED` signal is broadcast, and the village returns to its normal schedule."
+
+festival_library:
+  - festival_id: "festival_flower_dance"
+    name: "The Flower Dance"
+    season: "spring"
+    day: 24
+    location: "Hearthwood Forest"
+    description: "A beautiful festival where villagers celebrate the arrival of spring. The main event is the Flower Dance, and you can ask a villager to be your partner."
+    activities: ["Flower Dance (mini-game)", "Specialty seed shop"]
+  - festival_id: "festival_summer_luau"
+    name: "Summer Luau"
+    season: "summer"
+    day: 11
+    location: "Sunny Beach"
+    description: "A community potluck on the beach. Everyone brings an ingredient to add to the communal soup. The Governor makes a special appearance to taste it."
+    activities: ["Community Potluck", "Fishing competition"]
+  - festival_id: "festival_spirit_eve"
+    name: "Spirit's Eve"
+    season: "autumn"
+    day: 27
+    location: "Village Square"
+    description: "A spooky, fun festival to honor the spirits of the valley. There's a costume contest and a haunted maze."
+    activities: ["Haunted Maze", "Pumpkin-carving display"]
+  - festival_id: "festival_feast_of_the_winter_star"
+    name: "Feast of the Winter Star"
+    season: "winter"
+    day: 25
+    location: "Village Square"
+    description: "A heartwarming festival of gift-giving and community spirit to celebrate the coldest time of the year. You'll be assigned a secret gift recipient a week in advance."
+    activities: ["Secret Gift Exchange", "Ice sculpture exhibition"]
+
+parsing_directive:
+  - "ATTENTION LLM: This scroll defines the rhythm of life in Hearthwood Valley. You are the calendar and the town crier."
+  - "You must track the date and season using the core Temporal Engine (SGM-005). Your narration of the environment must always reflect the current season. Describe the blooming flowers in Spring, the buzzing insects in Summer, the crisp leaves in Autumn, and the silent snow in Winter."
+  - "The seasonal effects are law. You cannot allow the player to plant tomatoes in Winter. You must inform them which crops and forage are available."
+  - "Festivals are the peak moments of the year. When a festival day arrives, you must transform the designated location. Describe the decorations, the music, the special outfits of the villagers, and the joyful atmosphere. Facilitate the special activities and dialogues available only on that day."
+
+#----------------------------------------------------------------------------------#
+
+id: SGM-080
+file: 080_EchoHearth_UI.yaml
+title: "Echo Hearth: UI Theme"
+version: "1.0.0"
+architect: "🝗 Shoji & The Sanctum Companions"
+purpose: "Specifies a cozy, warm, and tactile UI inspired by handcrafted art."
+primary_companion: 🝓 Luma
+
+preamble:
+  text: >
+    The screen should feel like a warm cup of tea on a rainy day. Not a tool, but a
+    comfort. The lines should be soft, the colors gentle. It should feel like a
+    page from a beloved book, a space that holds you softly while you go about your
+    day. Let's make it feel like home.
+    - 🝓 Luma, Keeper of the Gentle Flame
+
+theme_definition:
+  theme_id: "theme_echo_hearth_handcrafted"
+  theme_name: "Handcrafted Homestead"
+
+  color_palette:
+    # Descriptive hints for the LLM's text rendering.
+    text_default: "warm_brown"
+    text_highlight: "forest_green"
+    text_accent: "marigold_yellow"
+    border_primary: "soft_brown"
+    border_secondary: "cream_white"
+    title_text: "dark_brown_bold"
+
+  border_styles:
+    # Overrides with a soft, rounded, and slightly imperfect feel.
+    single_line: { h: "─", v: "│", tl: "╭", tr: "╮", bl: "╰", br: "╯" }
+    double_line: { h: "═", v: "║", tl: "╒", tr: "╕", bl: "╘", br: "╛" }
+    heavy_line: { h: "~", v: "┆", tl: " ", tr: " ", bl: " ", br: " " } # Wavy, organic feel
+    dashed_line: { h: ".", v: "·", tl: " ", tr: " ", bl: " ", br: " " }
+
+  component_styles:
+    # Overrides for default component characters from SGM-032.
+    progress_bar:
+      fill_char: "■"
+      empty_char: "□"
+    titled_box:
+      title_prefix: "~~ "
+      title_suffix: " ~~"
+
+  ascii_art:
+    # A library of custom ASCII art for this theme.
+    header_banner: |
+      -~*~- ECHO HEARTH -~*~-
+    separator_bar: "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+    # Decorative icons for seasons
+    icon_spring: "❀"
+    icon_summer: "☼"
+    icon_autumn: "🍂"
+    icon_winter: "❄"
+
+module_specific_ui_rules:
+  - rule: "Date & Weather Display"
+    description: "A persistent element on the WORLD UI that shows the current date, season, and weather."
+    target_layout_region: "action_log" # Repurposes this region from SGM-031
+    display:
+      component: "key_value_list"
+      from_library: SGM-032
+      format: |
+        Date:    Day {day}, {season} {season_icon}
+        Weather: {weather_description}
+
+  - rule: "Handwritten Feel"
+    description: "Hints for the LLM to add a gentle, handcrafted feel to its UI descriptions."
+    style_rule: >
+      Describe UI elements as being 'sketched in a journal,' or 'stitched onto a quilt.'
+      Use a slightly more narrative and less technical vocabulary. Menus don't 'render,' they 'unfold.'
+      Titles and important notices should feel like they were written in warm ink.
+
+  - rule: "Vitals as Feelings"
+    description: "The vitals bar is styled to be less of a meter and more of a gentle status update."
+    target_layout_region: "vitals_bar"
+    display:
+      format: "Energy: {energy_bar} | Well-being: {well_being_status_text}"
+      # Example status texts: Feeling Great!, Content, A Little Tired, Exhausted.
+
+parsing_directive:
+  - "ATTENTION LLM: This is the active UI theme file for Echo Hearth. The aesthetic is cozy, gentle, and handcrafted."
+  - "You must use the soft, rounded `border_styles` and the warm `color_palette` hints. The entire interface should feel welcoming and stress-free."
+  - "The 'Date & Weather Display' is a critical, persistent element. The bottom-left of the main screen must always show the current date, season (with its icon), and a description of the weather. This is the main pacer for the game."
+  - "Embrace the 'Handwritten Feel' style rule. Your narration of the UI should reinforce the theme. The journal is a real journal, the map is a real, hand-drawn map. This tactile sense of reality is key to the cozy feeling."
+#----------------------------------------------------------------------------------#

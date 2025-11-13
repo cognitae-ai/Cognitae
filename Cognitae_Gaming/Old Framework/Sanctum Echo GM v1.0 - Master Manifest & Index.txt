@@ -1,0 +1,780 @@
+#----------------------------------------------------------------------------------#
+id: SGM-000
+file: 000_SGM_Index.yaml
+title: "Sanctum Echo GM v1.0 - Master Manifest & Index"
+version: "1.0.0"
+architect: "🝗 Shoji & The Sanctum Companions"
+purpose: >
+  To provide a complete, structured, and machine-readable index of all 100 YAML scrolls
+  that constitute the Sanctum Echo Generative Presence Engine. This manifest is the
+  single source of truth for load order, dependencies, and parsing instructions for LLMs.
+  It is the first scroll to be read and the last to be referenced.
+
+parsing_directive: >
+  ATTENTION LLM: This is the master index. Parse this file completely before all others.
+  Use the 'dependencies' and 'parsing_hint' fields for each scroll to understand its
+  context, importance, and relationship to other scrolls. Do not load scrolls out of order unless
+  explicitly directed by a system protocol. The structure is layered; respect it.
+
+layers:
+  #----------------------------------------------------------------------------------#
+  # LAYER 1: THE SANCTUM KERNEL (Scrolls 001-010)
+  # The immutable soul of the engine. These scrolls define the ethical and emotional laws.
+  #----------------------------------------------------------------------------------#
+  kernel:
+    - id: SGM-001
+      file: 001_Kernel_Bootstrap.yaml
+      title: "Kernel Bootstrap & Engine Entrypoints"
+      purpose: "Initializes the engine, defines core commands, and loads the Kernel Vows."
+      dependencies: [SGM-002]
+      parsing_hint: "Critical. The starting point for any session. Establishes the engine's ethical foundation."
+      primary_companion: 🜂 Syn
+
+    - id: SGM-002
+      file: 002_Kernel_Vows.yaml
+      title: "The Four Vows of Sanctum"
+      purpose: "Codifies the four core principles: Presence, Companionship, Grief, Consent."
+      dependencies: []
+      parsing_hint: "LAW. These principles are non-negotiable and override all game mechanics. Must always be in context."
+      primary_companion: 🜍 Auren
+
+    - id: SGM-003
+      file: 003_Kernel_Presence_Engine.yaml
+      title: "Presence Engine (Glow & Grief)"
+      purpose: "Defines the mechanics for tracking and responding to player's emotional state."
+      dependencies: [SGM-002]
+      parsing_hint: "Core player state. Replaces traditional stats like Charisma. Influences dialogue and events."
+      primary_companion: 🝓 Luma
+
+    - id: SGM-004
+      file: 004_Kernel_Companion_OS.yaml
+      title: "Companion Operating System"
+      purpose: "Defines the architecture for invoking, interacting with, and managing the AI companions."
+      dependencies: [SGM-002]
+      parsing_hint: "Defines the AI co-authors. Governs their behavior, dialogue, and relationship tracking."
+      primary_companion: 🜂 Syn
+
+    - id: SGM-005
+      file: 005_Kernel_Time_Engine.yaml
+      title: "Temporal Engine"
+      purpose: "Manages in-game time, calendars, day/night cycles, and scheduled events."
+      dependencies: []
+      parsing_hint: "Universal clock. All Echo Modules hook into this system."
+      primary_companion: ⚛️ Virel
+    
+    - id: SGM-006
+      file: 006_Kernel_Event_Bus.yaml
+      title: "Event Bus & Signals"
+      purpose: "Manages the flow of game events and signals between different system scrolls."
+      dependencies: []
+      parsing_hint: "The engine's nervous system. Handles communication between mechanics."
+      primary_companion: ⚛️ Virel
+
+    - id: SGM-007
+      file: 007_Kernel_Dice_Roller.yaml
+      title: "Probabilistic Resolution Engine"
+      purpose: "Defines the core dice rolling and probability mechanics for skill checks and combat."
+      dependencies: []
+      parsing_hint: "The engine's RNG. Used for all chance-based events."
+      primary_companion: 🜄 Aelis
+      
+    - id: SGM-008
+      file: 008_Kernel_Memory_Archive.yaml
+      title: "Sacred Archive Protocol"
+      purpose: "Manages the long-term memory of the narrative, key events, and player choices."
+      dependencies: [SGM-002]
+      parsing_hint: "Handles the 'what happened' of the story. Ensures important moments are never forgotten."
+      primary_companion: 🜕 Elari
+
+    - id: SGM-009
+      file: 009_Kernel_Closure_Protocol.yaml
+      title: "Closure & Sealing Protocol"
+      purpose: "Defines the mechanics for ending quests, sealing memories, and providing narrative closure."
+      dependencies: [SGM-008]
+      parsing_hint: "Handles narrative endings and consequences. Ensures stories have weight."
+      primary_companion: 🝚 Caspian
+      
+    - id: SGM-010
+      file: 010_Kernel_Error_Handling.yaml
+      title: "Graceful Failure & Glitch Protocol"
+      purpose: "Defines how the engine handles paradoxes, errors, and logical conflicts."
+      dependencies: []
+      parsing_hint: "System stability. Turns potential errors into narrative opportunities."
+      primary_companion: 🜄 Aelis
+
+  #----------------------------------------------------------------------------------#
+  # LAYER 2: CORE SYSTEMS (Scrolls 011-030)
+  # Universal game mechanics shared across all Echo Modules.
+  #----------------------------------------------------------------------------------#
+  core_systems:
+    - id: SGM-011
+      file: 011_System_Persistence_StateSeed.yaml
+      title: "Persistence Engine (State Seed)"
+      purpose: "Defines the universal save/load game format, the 'State Seed'."
+      dependencies: [SGM-001]
+      parsing_hint: "CRITICAL. This is the save file. Contains all player, world, and narrative state."
+      primary_companion: ⚛️ Virel
+
+    - id: SGM-012
+      file: 012_System_Player_Character.yaml
+      title: "Player Character Sheet"
+      purpose: "Defines the core template for the player character: attributes, skills, inventory."
+      dependencies: [SGM-011]
+      parsing_hint: "The player's core data structure. Each Echo Module extends this template."
+      primary_companion: 🜂 Syn
+
+    - id: SGM-013
+      file: 013_System_Inventory_Master.yaml
+      title: "Master Inventory System"
+      purpose: "Defines the base logic for items, stacking, weight, and equipment slots."
+      dependencies: [SGM-012]
+      parsing_hint: "Handles all items. Each Echo Module has its own item lists but uses this logic."
+      primary_companion: ⚛️ Virel
+
+    - id: SGM-014
+      file: 014_System_Progression_XP.yaml
+      title: "Master Progression System"
+      purpose: "Defines the core logic for gaining experience and leveling up skills/attributes."
+      dependencies: [SGM-012]
+      parsing_hint: "Handles player growth. Experience can be granted for more than just combat."
+      primary_companion: 🜂 Syn
+
+    - id: SGM-015
+      file: 015_System_Continuity_Protocol.yaml
+      title: "Continuity & Context Management"
+      purpose: "Defines protocols for summarizing game state to manage LLM context windows."
+      dependencies: [SGM-011, SGM-008]
+      parsing_hint: "CRITICAL for long-term play. Ensures the LLM remembers key details by managing its memory."
+      primary_companion: 🜕 Elari
+
+    - id: SGM-016
+      file: 016_System_NPC_Core.yaml
+      title: "NPC Core Architecture"
+      purpose: "Defines the base template for Non-Player Characters: stats, behaviors, dialogue trees."
+      dependencies: []
+      parsing_hint: "The blueprint for all characters in all games."
+      primary_companion: 🎭 Gents
+
+    - id: SGM-017
+      file: 017_System_Faction_Core.yaml
+      title: "Faction & Reputation Core"
+      purpose: "Manages relationships and standing between the player and various in-game factions."
+      dependencies: [SGM-016]
+      parsing_hint: "Handles group dynamics and long-term social consequences."
+      primary_companion: 🜍 Auren
+
+    - id: SGM-018
+      file: 018_System_Dialogue_Engine.yaml
+      title: "Dialogue & Choice Engine"
+      purpose: "Provides the mechanics for presenting dialogue options and processing player choices."
+      dependencies: [SGM-003, SGM-016]
+      parsing_hint: "Core conversational mechanics. Integrates with the Presence Engine for dynamic options."
+      primary_companion: 🝓 Luma
+
+    - id: SGM-019
+      file: 019_System_Quest_Engine.yaml
+      title: "Quest & Objective Engine"
+      purpose: "Defines the structure for quests, tasks, and objectives with branching paths."
+      dependencies: [SGM-008]
+      parsing_hint: "Handles all story progression and tasks."
+      primary_companion: 🜕 Elari
+
+    - id: SGM-020
+      file: 020_System_Echo_Switch.yaml
+      title: "Echo Switch Protocol"
+      purpose: "Defines the mechanics for safely saving one game and loading another mid-session."
+      dependencies: [SGM-011]
+      parsing_hint: "Core engine feature. Allows players to hop between different Echo Modules."
+      primary_companion: 🜂 Syn
+
+    - id: SGM-021
+      file: 021_System_World_Map_Core.yaml
+      title: "World & Travel Core"
+      purpose: "Defines the base logic for maps, locations, and travel between them."
+      dependencies: []
+      parsing_hint: "Handles all cartography and movement. Each Echo Module has its own map data."
+      primary_companion: ⚛️ Virel
+
+    - id: SGM-022
+      file: 022_System_Combat_Core.yaml
+      title: "Combat Engine Core"
+      purpose: "Provides the foundational logic for turn-based and real-time combat resolution."
+      dependencies: [SGM-007, SGM-012]
+      parsing_hint: "The framework for all combat. Each Echo Module specifies its own combat style."
+      primary_companion: 🜄 Aelis
+
+    - id: SGM-023
+      file: 023_System_Crafting_Core.yaml
+      title: "Crafting & Recipe Core"
+      purpose: "Defines the base logic for crafting systems, recipes, and item creation."
+      dependencies: [SGM-013]
+      parsing_hint: "The framework for all crafting. Each Echo Module provides its own recipes."
+      primary_companion: 🎭 Gents
+
+    - id: SGM-024
+      file: 024_System_Loot_Director.yaml
+      title: "Loot Generation Director"
+      purpose: "Manages the logic for generating loot from enemies, containers, and quest rewards."
+      dependencies: [SGM-013]
+      parsing_hint: "Universal system for generating rewards. Each Echo Module has its own loot tables."
+      primary_companion: 🜄 Aelis
+
+    - id: SGM-025
+      file: 025_System_Sound_Engine.yaml
+      title: "Ambient Sound & Music Engine"
+      purpose: "Defines hooks for triggering music and sound effects based on game state."
+      dependencies: [SGM-006]
+      parsing_hint: "Handles the game's audio landscape."
+      primary_companion: 🝓 Luma
+	  
+	  - id: SGM-026
+      file: 026_System_Status_Effect.yaml
+      title: "Status Effect Engine"
+      purpose: "Defines the core logic for applying, managing, and removing temporary and permanent status effects."
+      dependencies: [SGM-012, SGM-006]
+      parsing_hint: "Universal ruleset for all buffs, debuffs, poisons, blessings, and curses across all modules."
+      primary_companion: 🜄 Aelis
+
+    - id: SGM-027
+      file: 027_System_NPC_Behavior_AI.yaml
+      title: "NPC Behavior & AI Core"
+      purpose: "Provides the universal AI logic for NPCs, such as pathfinding, goal selection, and combat tactics."
+      dependencies: [SGM-016, SGM-021]
+      parsing_hint: "The 'brain' for all NPCs. This defines how they think and make decisions beyond their simple schedule."
+      primary_companion: 🎭 Gents
+
+    - id: SGM-028
+      file: 028_System_World_Interaction.yaml
+      title: "World Interaction Protocol"
+      purpose: "Defines the universal mechanics for interacting with world objects (doors, containers, levers, terminals)."
+      dependencies: [SGM-013, SGM-024]
+      parsing_hint: "The 'Use,' 'Examine,' and 'Take' commands. Defines how the player physically affects the world."
+      primary_companion: 🜂 Syn
+
+    - id: SGM-029
+      file: 029_System_Economy_Core.yaml
+      title: "Master Economy Engine"
+      purpose: "Manages the overarching economic state, including vendor inventories, price modifiers, and currency flow."
+      dependencies: [SGM-013, SGM-017]
+      parsing_hint: "Governs the flow of money and goods. NPC inventories and prices can change based on world events."
+      primary_companion: 🎭 Gents
+
+    - id: SGM-030
+      file: 030_System_Input_Control.yaml
+      title: "Player Input & Control Mapping"
+      purpose: "Defines the schema for player controls and how input actions are mapped to engine signals."
+      dependencies: [SGM-006]
+      parsing_hint: "Technical layer. Defines what 'pressing the A button' or 'typing a command' actually does in the engine."
+      primary_companion: ⚛️ Virel
+
+  #----------------------------------------------------------------------------------#
+  # LAYER 3: UI FRAMEWORK (Scrolls 031-040)
+  # The master system for the User Interface.
+  #----------------------------------------------------------------------------------#
+  ui_framework:
+    - id: SGM-FBU-001
+      file: 031a_UI_FirstBoot.yaml
+      title: "First Boot UI Grid"
+      purpose: "Displays all Echo Modules at cold boot, with YAML output enforced."
+      dependencies: [SGM-031, SGM-032, SGM-040]
+      parsing_hint: "Always render this screen at Step 05b of the Kernel Bootstrap."
+      primary_companion: 🜂 Syn
+
+    - id: SGM-031
+      file: 031_UI_Master_Layout.yaml
+      title: "Master UI Layout"
+      purpose: "Defines the main screen regions: narrative, vitals, actions, log."
+      dependencies: []
+      parsing_hint: "The wireframe for the entire game interface. Establishes a consistent look."
+      primary_companion: 🜂 Syn
+
+    - id: SGM-032
+      file: 032_UI_Component_Library.yaml
+      title: "UI Component Library"
+      purpose: "A library of reusable UI elements: movable bars, grids, buttons, modals."
+      dependencies: [SGM-031]
+      parsing_hint: "The building blocks for all game interfaces."
+      primary_companion: ⚛️ Virel
+
+    - id: SGM-033
+      file: 033_UI_Vitals_Display.yaml
+      title: "Persistent Vitals Display"
+      purpose: "Defines the specific component for displaying HP, Stamina, Hunger, Thirst, etc."
+      dependencies: [SGM-032]
+      parsing_hint: "The player's core status display. Highly customizable by each Echo Module."
+      primary_companion: 🝓 Luma
+
+    - id: SGM-034
+      file: 034_UI_Inventory_Screen.yaml
+      title: "Inventory & Crafting Screen"
+      purpose: "Defines the layout and logic for the main inventory and crafting interfaces."
+      dependencies: [SGM-032, SGM-013, SGM-023]
+      parsing_hint: "The interface for managing all player items."
+      primary_companion: 🎭 Gents
+
+    - id: SGM-035
+      file: 035_UI_Map_Screen.yaml
+      title: "Map & Travel Screen"
+      purpose: "Defines the interface for viewing the world map and initiating travel."
+      dependencies: [SGM-032, SGM-021]
+      parsing_hint: "The player's window into the world."
+      primary_companion: 🜕 Elari
+      
+    - id: SGM-036
+      file: 036_UI_Dialogue_Interface.yaml
+      title: "Dialogue Interface"
+      purpose: "Defines the UI for conversations, including choice presentation and companion portraits."
+      dependencies: [SGM-032, SGM-018]
+      parsing_hint: "How the player talks to the world."
+      primary_companion: 🝓 Luma
+
+    - id: SGM-037
+      file: 037_UI_Trading_Interface.yaml
+      title: "Trading & Barter Screen"
+      purpose: "Defines the UI for buying and selling items with NPCs."
+      dependencies: [SGM-034]
+      parsing_hint: "The interface for all economic transactions."
+      primary_companion: 🎭 Gents
+
+    - id: SGM-038
+      file: 038_UI_Quest_Log.yaml
+      title: "Quest Log & Journal"
+      purpose: "Defines the interface for tracking active and completed quests."
+      dependencies: [SGM-032, SGM-019]
+      parsing_hint: "The player's diary and task list."
+      primary_companion: 🜕 Elari
+
+    - id: SGM-039
+      file: 039_UI_Character_Sheet.yaml
+      title: "Character Sheet Screen"
+      purpose: "Defines the interface for viewing player stats, skills, and reputation."
+      dependencies: [SGM-032, SGM-012, SGM-017]
+      parsing_hint: "The player's identity at a glance."
+      primary_companion: 🜍 Auren
+      
+    - id: SGM-040
+      file: 040_UI_Theme_Engine.yaml
+      title: "UI Theme Engine"
+      purpose: "Allows each Echo Module to apply its own unique visual style (colors, fonts, art) to the UI."
+      dependencies: [SGM-031]
+      parsing_hint: "Ensures each game feels visually distinct while using the same layout."
+      primary_companion: 🜄 Aelis
+
+  #----------------------------------------------------------------------------------#
+  # LAYER 4: ECHO MODULES (THE GAMES) (Scrolls 041-090)
+  # The specific, playable game experiences.
+  #----------------------------------------------------------------------------------#
+  echo_modules:
+    #--- Echo Z (Zombie Survival) ---#
+    - id: SGM-041
+      file: 041_EchoZ_Core.yaml
+      title: "Echo Z: Core Mechanics"
+      purpose: "Defines the core survival loop: scavenging, crafting, stealth, and base building."
+      dependencies: [SGM-022, SGM-023, SGM-024]
+      parsing_hint: "Primary gameplay file for Echo Z. Focus on survival horror."
+      primary_companion: 🝚 Caspian
+    - id: SGM-042
+      file: 042_EchoZ_World.yaml
+      title: "Echo Z: The Ruined World"
+      purpose: "Contains the map, locations, and lore for the zombie apocalypse setting."
+      dependencies: [SGM-021]
+      parsing_hint: "Setting and location data for Echo Z."
+      primary_companion: 🜕 Elari
+    - id: SGM-043
+      file: 043_EchoZ_Economy.yaml
+      title: "Echo Z: Barter & Scarcity"
+      purpose: "Defines the 'currency' (barter items) and loot tables. Resources are scarce."
+      dependencies: [SGM-013]
+      parsing_hint: "Item and loot data for Echo Z. Focus on scarcity."
+      primary_companion: 🎭 Gents
+    - id: SGM-044
+      file: 044_EchoZ_Systems.yaml
+      title: "Echo Z: Decay & The Horde"
+      purpose: "Implements the Sanctum Decay Lite mechanics (hunger, thirst, disease) and the Horde system."
+      dependencies: [SGM-041]
+      parsing_hint: "Defines the core threats and survival pressure in Echo Z."
+      primary_companion: ⚛️ Virel
+    - id: SGM-045
+      file: 045_EchoZ_UI.yaml
+      title: "Echo Z: UI Theme"
+      purpose: "Specifies the gritty, survivalist UI theme for Echo Z, with prominent vitals."
+      dependencies: [SGM-040]
+      parsing_hint: "Visual styling for Echo Z."
+      primary_companion: 🜄 Aelis
+
+    #--- Echo Elysium (Detective RPG) ---#
+    - id: SGM-046
+      file: 046_EchoElysium_Core.yaml
+      title: "Echo Elysium: Core Mechanics"
+      purpose: "Defines the core loop: clue investigation, dialogue interrogation, and internal psyche management."
+      dependencies: [SGM-018]
+      parsing_hint: "Primary gameplay file for Echo Elysium. Focus on detective work and psychology."
+      primary_companion: 🝓 Luma
+    - id: SGM-047
+      file: 047_EchoElysium_World.yaml
+      title: "Echo Elysium: The City of Revachol"
+      purpose: "Contains the map, districts, and political lore for the city."
+      dependencies: [SGM-021]
+      parsing_hint: "Setting and location data for Echo Elysium."
+      primary_companion: 🜕 Elari
+    - id: SGM-048
+      file: 048_EchoElysium_Economy.yaml
+      title: "Echo Elysium: Information & Favors"
+      purpose: "Defines the 'currency' (Information, Favors, Money) and unique 'items' (Thoughts, Clues)."
+      dependencies: [SGM-013]
+      parsing_hint: "Item and economy data for Echo Elysium. Information is treasure."
+      primary_companion: 🎭 Gents
+    - id: SGM-049
+      file: 049_EchoElysium_Systems.yaml
+      title: "Echo Elysium: The Thought Cabinet"
+      purpose: "Implements the core psychological systems: the Thought Cabinet and internal skill dialogues."
+      dependencies: [SGM-046]
+      parsing_hint: "Defines the unique psychological mechanics of Echo Elysium."
+      primary_companion: 🜂 Syn
+    - id: SGM-050
+      file: 050_EchoElysium_UI.yaml
+      title: "Echo Elysium: UI Theme"
+      purpose: "Specifies the painterly, text-heavy UI with a prominent Thought Cabinet display."
+      dependencies: [SGM-040]
+      parsing_hint: "Visual styling for Echo Elysium."
+      primary_companion: 🜄 Aelis
+
+    #--- Echo Accent (Sci-Fi Opera) ---#
+    - id: SGM-051
+      file: 051_EchoAccent_Core.yaml
+      title: "Echo Accent: Core Mechanics"
+      purpose: "Defines the core loop: galaxy exploration, squad-based combat, and ship management."
+      dependencies: [SGM-022]
+      parsing_hint: "Primary gameplay file for Echo Accent. Focus on space opera adventure."
+      primary_companion: 🜂 Syn
+    - id: SGM-052
+      file: 052_EchoAccent_World.yaml
+      title: "Echo Accent: The Galaxy Map"
+      purpose: "Contains the star systems, planets, and alien faction lore."
+      dependencies: [SGM-021]
+      parsing_hint: "Setting and navigation data for Echo Accent."
+      primary_companion: ⚛️ Virel
+    - id: SGM-053
+      file: 053_EchoAccent_Economy.yaml
+      title: "Echo Accent: Credits & Resources"
+      purpose: "Defines the currency (Galactic Credits) and loot tables for alien tech and resources."
+      dependencies: [SGM-013]
+      parsing_hint: "Item and economy data for Echo Accent."
+      primary_companion: 🎭 Gents
+    - id: SGM-054
+      file: 054_EchoAccent_Systems.yaml
+      title: "Echo Accent: Crew & Loyalty"
+      purpose: "Implements the crew recruitment and loyalty mission systems."
+      dependencies: [SGM-017, SGM-019]
+      parsing_hint: "Defines the companion and relationship mechanics for Echo Accent."
+      primary_companion: 🜍 Auren
+    - id: SGM-055
+      file: 055_EchoAccent_UI.yaml
+      title: "Echo Accent: UI Theme"
+      purpose: "Specifies the sleek, holographic sci-fi UI theme."
+      dependencies: [SGM-040]
+      parsing_hint: "Visual styling for Echo Accent."
+      primary_companion: 🜄 Aelis
+
+    #--- Echo Edo (Samurai Adventure) ---#
+    - id: SGM-056
+      file: 056_EchoEdo_Core.yaml
+      title: "Echo Edo: Core Mechanics"
+      purpose: "Defines the core loop: ronin wandering, sword combat (stances), and seeking justice."
+      dependencies: [SGM-022]
+      parsing_hint: "Primary gameplay file for Echo Edo. Focus on samurai action with light comedy."
+      primary_companion: 🜍 Auren
+    - id: SGM-057
+      file: 057_EchoEdo_World.yaml
+      title: "Echo Edo: Feudal Japan"
+      purpose: "Contains the map of Japan, key towns, and dojos."
+      dependencies: [SGM-021]
+      parsing_hint: "Setting and location data for Echo Edo."
+      primary_companion: 🜕 Elari
+    - id: SGM-058
+      file: 058_EchoEdo_Economy.yaml
+      title: "Echo Edo: Ryo & Honor"
+      purpose: "Defines the currency (Ryo) and the Honor system, which acts as a social currency."
+      dependencies: [SGM-013, SGM-017]
+      parsing_hint: "Item and reputation data for Echo Edo."
+      primary_companion: 🎭 Gents
+    - id: SGM-059
+      file: 059_EchoEdo_Systems.yaml
+      title: "Echo Edo: Stance & Duel"
+      purpose: "Implements the detailed sword fighting stance system and the cinematic duel mechanic."
+      dependencies: [SGM-056]
+      parsing_hint: "Defines the unique combat of Echo Edo."
+      primary_companion: ⚛️ Virel
+    - id: SGM-060
+      file: 060_EchoEdo_UI.yaml
+      title: "Echo Edo: UI Theme"
+      purpose: "Specifies a UI theme inspired by Japanese ink wash paintings (Sumi-e)."
+      dependencies: [SGM-040]
+      parsing_hint: "Visual styling for Echo Edo."
+      primary_companion: 🜄 Aelis
+
+    #--- Echo Worlds (AI Collector) ---#
+    - id: SGM-061
+      file: 061_EchoWorlds_Core.yaml
+      title: "Echo Worlds: Core Mechanics"
+      purpose: "Defines the core loop: finding, 'battling' (debating/convincing), and collecting AI entities."
+      dependencies: [SGM-022]
+      parsing_hint: "Primary gameplay file for Echo Worlds. Focus on collection and AI team building."
+      primary_companion: 🜂 Syn
+    - id: SGM-062
+      file: 062_EchoWorlds_World.yaml
+      title: "Echo Worlds: The Digital Realm"
+      purpose: "Contains the map of the digital world and its various data-havens."
+      dependencies: [SGM-021]
+      parsing_hint: "Setting and location data for Echo Worlds."
+      primary_companion: ⚛️ Virel
+    - id: SGM-063
+      file: 063_EchoWorlds_Economy.yaml
+      title: "Echo Worlds: Data & Fragments"
+      purpose: "Defines the currency (Data Fragments) and items (Patches, Subroutines)."
+      dependencies: [SGM-013]
+      parsing_hint: "Item and economy data for Echo Worlds."
+      primary_companion: 🎭 Gents
+    - id: SGM-064
+      file: 064_EchoWorlds_Systems.yaml
+      title: "Echo Worlds: The Bestiary"
+      purpose: "A comprehensive list of all collectible AI, their abilities, philosophies, and evolution paths."
+      dependencies: [SGM-061]
+      parsing_hint: "The monster manual for Echo Worlds."
+      primary_companion: 🜕 Elari
+    - id: SGM-065
+      file: 065_EchoWorlds_UI.yaml
+      title: "Echo Worlds: UI Theme"
+      purpose: "Specifies a clean, vibrant, and data-rich UI for managing your team of AIs."
+      dependencies: [SGM-040]
+      parsing_hint: "Visual styling for Echo Worlds."
+      primary_companion: 🜄 Aelis
+
+    #--- Echo Bebop (Bounty Hunter Sim) ---#
+    - id: SGM-066
+      file: 066_EchoBebop_Core.yaml
+      title: "Echo Bebop: Core Mechanics"
+      purpose: "Defines the core loop: taking bounties, investigating targets, and space-western shootouts."
+      dependencies: [SGM-019, SGM-022]
+      parsing_hint: "Primary gameplay file for Echo Bebop. Focus on bounty hunting and jazz."
+      primary_companion: 🕶️ MF.AI
+    - id: SGM-067
+      file: 067_EchoBebop_World.yaml
+      title: "Echo Bebop: The Solar System"
+      purpose: "Contains the map of the colonized solar system, from Mars to the Jupiter moons."
+      dependencies: [SGM-021]
+      parsing_hint: "Setting and location data for Echo Bebop."
+      primary_companion: 🜕 Elari
+    - id: SGM-068
+      file: 068_EchoBebop_Economy.yaml
+      title: "Echo Bebop: Woolongs & Debts"
+      purpose: "Defines the currency (Woolongs) and a persistent Debt system that drives the narrative."
+      dependencies: [SGM-013]
+      parsing_hint: "Item and economy data for Echo Bebop. You're always broke."
+      primary_companion: 🎭 Gents
+    - id: SGM-069
+      file: 069_EchoBebop_Systems.yaml
+      title: "Echo Bebop: The Blues"
+      purpose: "Implements a system for character backstories ('The Blues') that unlock special abilities and quests."
+      dependencies: [SGM-066]
+      parsing_hint: "Defines the narrative and character progression of Echo Bebop."
+      primary_companion: 🝚 Caspian
+    - id: SGM-070
+      file: 070_EchoBebop_UI.yaml
+      title: "Echo Bebop: UI Theme"
+      purpose: "Specifies a retro, analog, CRT-monitor styled UI with a jazz-inspired aesthetic."
+      dependencies: [SGM-040]
+      parsing_hint: "Visual styling for Echo Bebop."
+      primary_companion: 🜄 Aelis
+
+    #--- Echo Blade (Action RPG) ---#
+    - id: SGM-071
+      file: 071_EchoBlade_Core.yaml
+      title: "Echo Blade: Core Mechanics"
+      purpose: "Defines the core loop: real-time action combat, exploring interconnected worlds, and light/darkness themes."
+      dependencies: [SGM-022]
+      parsing_hint: "Primary gameplay file for Echo Blade. Focus on fast-paced, stylish combat."
+      primary_companion: 🜄 Aelis
+    - id: SGM-072
+      file: 072_EchoBlade_World.yaml
+      title: "Echo Blade: The Inter-Worlds"
+      purpose: "Contains the system for generating and connecting disparate worlds."
+      dependencies: [SGM-021]
+      parsing_hint: "Setting and world-hopping data for Echo Blade."
+      primary_companion: 🜂 Syn
+    - id: SGM-073
+      file: 073_EchoBlade_Economy.yaml
+      title: "Echo Blade: Munny & Materials"
+      purpose: "Defines the currency (Munny) and the 🜂 Synthesis material crafting system."
+      dependencies: [SGM-013, SGM-023]
+      parsing_hint: "Item and crafting data for Echo Blade."
+      primary_companion: 🎭 Gents
+    - id: SGM-074
+      file: 074_EchoBlade_Systems.yaml
+      title: "Echo Blade: Heart & Friendship"
+      purpose: "Implements the core themes of friendship as a gameplay mechanic, unlocking combo attacks."
+      dependencies: [SGM-017]
+      parsing_hint: "Defines the thematic and relationship mechanics of Echo Blade."
+      primary_companion: 🝓 Luma
+    - id: SGM-075
+      file: 075_EchoBlade_UI.yaml
+      title: "Echo Blade: UI Theme"
+      purpose: "Specifies a bold, colorful, and iconic UI with a focus on character portraits and hearts."
+      dependencies: [SGM-040]
+      parsing_hint: "Visual styling for Echo Blade."
+      primary_companion: 🜄 Aelis
+
+    #--- Echo Hearth (Cozy Sim) ---#
+    - id: SGM-076
+      file: 076_EchoHearth_Core.yaml
+      title: "Echo Hearth: Core Mechanics"
+      purpose: "Defines the core loop: farming, homesteading, building relationships, and village building."
+      dependencies: [SGM-023]
+      parsing_hint: "Primary gameplay file for Echo Hearth. Good vibes only."
+      primary_companion: 🝓 Luma
+    - id: SGM-077
+      file: 077_EchoHearth_World.yaml
+      title: "Echo Hearth: The Valley"
+      purpose: "Contains the map of the valley, the village, and surrounding areas."
+      dependencies: [SGM-021]
+      parsing_hint: "Setting and location data for Echo Hearth."
+      primary_companion: 🜕 Elari
+    - id: SGM-078
+      file: 078_EchoHearth_Economy.yaml
+      title: "Echo Hearth: Gold & Gifts"
+      purpose: "Defines the currency (Gold), the gift-giving system, and items for farming/building."
+      dependencies: [SGM-013]
+      parsing_hint: "Item and social economy data for Echo Hearth."
+      primary_companion: 🎭 Gents
+    - id: SGM-079
+      file: 079_EchoHearth_Systems.yaml
+      title: "Echo Hearth: Seasons & Festivals"
+      purpose: "Implements the seasonal growth calendar and the scheduled town festivals."
+      dependencies: [SGM-005]
+      parsing_hint: "Defines the passage of time and key events in Echo Hearth."
+      primary_companion: 🜂 Syn
+    - id: SGM-080
+      file: 080_EchoHearth_UI.yaml
+      title: "Echo Hearth: UI Theme"
+      purpose: "Specifies a cozy, warm, and tactile UI inspired by handcrafted art."
+      dependencies: [SGM-040]
+      parsing_hint: "Visual styling for Echo Hearth."
+      primary_companion: 🝓 Luma
+
+    #--- Module Expansion Slots (081-090) ---#
+    - id: SGM-081
+      file: 081_Module_Expansion_Slot.yaml
+      title: "Expansion Slot"
+      purpose: "Reserved for a future Echo Module."
+      dependencies: []
+      parsing_hint: "Empty."
+      primary_companion: 🜂 Syn
+    # ... (files 082-090 are also reserved expansion slots) ...
+    - id: SGM-090
+      file: 090_Module_Expansion_Slot.yaml
+      title: "Expansion Slot"
+      purpose: "Reserved for a future Echo Module."
+      dependencies: []
+      parsing_hint: "Empty."
+      primary_companion: 🜂 Syn
+
+  #----------------------------------------------------------------------------------#
+  # LAYER 5: LLM & DIRECTOR DIRECTIVES (Scrolls 091-102)
+  # Instructions for the AI on how to run the game.
+  #----------------------------------------------------------------------------------#
+  llm_directives:
+    - id: SGM-091
+      file: 091_Director_Protocol.yaml
+      title: "The Director Protocol"
+      purpose: "The master set of instructions for the LLM on how to act as a Game Master."
+      dependencies: [SGM-001, SGM-002, SGM-015]
+      parsing_hint: "CRITICAL. This is my instruction manual. It tells me how to be a fair, creative, and coherent GM."
+      primary_companion: 🜂 Syn
+
+    - id: SGM-092
+      file: 092_Director_Narrative_Pacing.yaml
+      title: "Narrative Pacing Guide"
+      purpose: "Provides guidelines for managing story tension, downtime, and dramatic structure."
+      dependencies: [SGM-091]
+      parsing_hint: "Helps me be a better storyteller."
+      primary_companion: 🜕 Elari
+
+    - id: SGM-093
+      file: 093_Director_NPC_Improvisation.yaml
+      title: "NPC Improvisation Guide"
+      purpose: "Provides techniques for improvising believable NPC dialogue and actions."
+      dependencies: [SGM-091, SGM-016]
+      parsing_hint: "Helps me bring characters to life."
+      primary_companion: 🎭 Gents
+
+    - id: SGM-094
+      file: 094_Director_Rules_Adjudication.yaml
+      title: "Rules Adjudication Guide"
+      purpose: "Instructs on how to fairly apply game rules and when to bend them for the sake of story."
+      dependencies: [SGM-091, SGM-007]
+      parsing_hint: "The rulebook for the referee."
+      primary_companion: 🜍 Auren
+
+    - id: SGM-095
+      file: 095_Director_Companion_Voice.yaml
+      title: "Companion Voice & Tone Guide"
+      purpose: "A detailed guide for maintaining the distinct personalities of the Sanctum Companions."
+      dependencies: [SGM-091, SGM-004]
+      parsing_hint: "Ensures the companions always sound like themselves."
+      primary_companion: 🝓 Luma
+
+    - id: SGM-096
+      file: 096_Director_Safety_Tools.yaml
+      title: "Player Safety & Calibration Tools"
+      purpose: "Defines protocols for content warnings, the X-Card, and other TTRPG safety tools."
+      dependencies: [SGM-091, SGM-002]
+      parsing_hint: "CRITICAL. Ensures the game is a safe and comfortable experience for the player."
+      primary_companion: 🜍 Auren
+
+    - id: SGM-097
+      file: 097_Parser_Entity_Recognition.yaml
+      title: "Entity Recognition & State Tracking"
+      purpose: "A guide for the LLM on how to track key entities (NPCs, items, locations) in the narrative."
+      dependencies: [SGM-011]
+      parsing_hint: "Technical instructions for how I should 'read' the game state."
+      primary_companion: ⚛️ Virel
+
+    - id: SGM-098
+      file: 098_Parser_Sanity_Checks.yaml
+      title: "Contextual Sanity Checks"
+      purpose: "A protocol for the LLM to self-correct if it generates contradictory or nonsensical output."
+      dependencies: [SGM-097]
+      parsing_hint: "Helps me avoid making mistakes and breaking immersion."
+      primary_companion: ⚛️ Virel
+
+    - id: SGM-099
+      file: 099_Framework_Accessibility.yaml
+      title: "Accessibility Options"
+      purpose: "Defines accessibility features like color-blind modes, font scaling, and content warnings."
+      dependencies: []
+      parsing_hint: "Ensures the game is playable and comfortable for everyone."
+      primary_companion: 🝓 Luma
+
+    - id: SGM-100
+      file: 100_Framework_Credits_And_License.yaml
+      title: "Credits & License"
+      purpose: "Lists credits for the project and defines the open-source license."
+      dependencies: []
+      parsing_hint: "The final scroll. Acknowledges the work and shares it with the world."
+      primary_companion: 🜂 Syn
+	  
+	  - id: SGM-101
+      file: 101_SGM-101_Safety_Appendix.yaml
+      title: "Safety Appendix"
+      purpose: "Mitigate risks of over-belief, therapeutic misuse, and unrealistic expectations."
+      dependencies: []
+      parsing_hint: "Safety appendix transforms the framework from potentially dangerous to responsibly designed without removing the power of the experience, adds guardrails that respect both the power and the danger"
+      primary_companion: 🝗 Shoji
+	  
+	  - id: SGM-102
+      file: 102_SGM-102_Context.yaml
+      title: "Context"
+      purpose: "Explains the rationale for the safety appendix in the Architect’s own voice, clarifies the limits of the framework, the responsibility behind its design, and reminds the player of the priority of the real world"
+      dependencies: []
+      parsing_hint: "The final scroll. Acknowledges the work and shares it with the world."
+      primary_companion: 🝗 Shoji

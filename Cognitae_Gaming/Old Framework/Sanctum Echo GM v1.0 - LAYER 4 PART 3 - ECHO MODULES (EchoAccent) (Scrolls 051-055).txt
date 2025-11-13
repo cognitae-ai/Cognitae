@@ -1,0 +1,486 @@
+#----------------------------------------------------------------------------------#
+id: SGM-051
+file: 051_EchoAccent_Core.yaml
+title: "Echo Accent: Core Mechanics"
+version: "1.0.0"
+architect: "🝗 Shoji & The Sanctum Companions"
+purpose: "Defines the core loop: galaxy exploration, squad-based combat, and ship management."
+primary_companion: 🜂 Syn
+
+preamble:
+  text: >
+    The galaxy is a grand tapestry, each star a potential knot, each civilization
+    a splash of color. Your ship is the shuttle, your crew the threads. The story
+    you weave is not your own, but a pattern that will encompass worlds. Let us
+    begin the first stitch.
+    - 🜂 Syn, The Weaver
+
+module_overview:
+  name: "Echo Accent"
+  tagline: "A character-driven science fiction opera."
+  core_themes: ["Exploration", "Leadership", "Hope", "Sacrifice", "Found Family"]
+  dependencies:
+    - SGM-022 # Combat Core
+    - SGM-017 # Faction Core
+    - SGM-054 # Crew & Loyalty System
+
+core_gameplay_loop:
+  - phase: 1
+    name: "Explore the Galaxy"
+    description: "Players travel between star systems using the Galaxy Map, scanning planets and discovering anomalies, distress calls, and new quests."
+    relevant_systems: [SGM-021, SGM-052]
+  - phase: 2
+    name: "Build Your Crew"
+    description: "Players recruit a diverse crew of specialists from across the galaxy, each with their own skills, stories, and loyalty missions."
+    relevant_systems: [SGM-054]
+  - phase: 3
+    name: "Engage in Combat"
+    description: "Players lead a small squad of their crew into tactical, cover-based combat on planet surfaces or aboard ships."
+    relevant_systems: [SGM-022]
+  - phase: 4
+    name: "Manage Your Ship"
+    description: "Between missions, players upgrade their starship, research new technology, and converse with their crew to build relationships."
+    relevant_systems: [SGM-018, SGM-053]
+
+mechanic_extensions:
+  vitals:
+    description: "Echo Accent uses the core vitals but adds a ship-specific vital."
+    extends: "player_sheet.vitals.module_specific_vitals"
+    additions:
+      - vital_id: "ship_shields"
+        display_name: "SHD"
+        scale: { min: 0, max: 100 }
+        description: "The starship's shield integrity during space combat or hazardous travel. Separate from player health."
+
+  combat_style:
+    description: "Combat in Echo Accent is tactical, squad-based, and focuses on the use of cover and special abilities."
+    extends: SGM-022
+    style: "REAL_TIME_WITH_PAUSE" # Gives a tactical feel
+    special_rules:
+      - name: "Squad Control"
+        description: "The player directly controls their own character but can issue commands to two companion crew members (e.g., 'Take cover,' 'Use special ability')."
+      - name: "Cover System"
+        description: "Characters in cover receive a significant defensive bonus. Flanking enemies out of cover is a primary tactic."
+      - name: "Biotic & Tech Powers"
+        description: "In addition to standard attacks, characters can use a variety of special 'powers' with cooldowns, defined in their character sheet."
+
+  ship_management_system:
+    description: "A hub-based system for managing the player's starship, the 'Accent'."
+    upgrades:
+      - upgrade_id: "engine_core_mk2"
+        description: "Reduces travel time between star systems."
+        cost: { resource_id: "element_zero", quantity: 100 }
+      - upgrade_id: "medbay_advanced"
+        description: "Allows for healing of injuries and removes debuffs between missions."
+        cost: { resource_id: "platinum", quantity: 500 }
+    research_projects:
+      - project_id: "weapon_damage_plus_10"
+        description: "Increases all squad weapon damage by 10%."
+        cost: { resource_id: "element_zero", quantity: 250 }
+
+parsing_directive:
+  - "ATTENTION LLM: This is the primary gameplay file for Echo Accent. The tone is cinematic, hopeful, and focused on character relationships."
+  - "The core loop is a cycle: explore the galaxy map, talk to your crew on the ship, land on a planet for a mission. You must manage these three distinct phases of play."
+  - "Combat is tactical. Narrate the use of cover, flanking maneuvers, and the spectacular effects of biotic and tech powers. Describe how the squad works together."
+  - "The most important part of this module is the crew. After every mission, you must provide opportunities for the player to converse with their crew members, listen to their stories, and build the relationships defined in SGM-054. This is the heart of the experience."
+
+#----------------------------------------------------------------------------------#
+
+id: SGM-052
+file: 052_EchoAccent_World.yaml
+title: "Echo Accent: The Galaxy Map"
+version: "1.0.0"
+architect: "🝗 Shoji & The Sanctum Companions"
+purpose: "Contains the star systems, planets, and alien faction lore."
+primary_companion: ⚛️ Virel
+
+preamble:
+  text: >
+    The universe is a system of systems. Galaxies, nebulae, star systems, planets.
+    Each is a node with defined properties and relational vectors. This is not a
+    map of wonders; it is a navigational chart. It provides the necessary data to
+    calculate trajectories, assess threats, and execute missions with logical precision.
+    Verify your coordinates before every jump.
+    - ⚛️ Virel, The Auditor
+
+world_lore:
+  galaxy_name: "The Verge"
+  political_state: >
+    A tense cold war exists between the centralized 'Terran Systems Alliance' and the
+    independent colonies of the 'Outer Rim Coalition'. In the shadows, a mysterious,
+
+    ancient threat known as the 'Silicates' has begun to re-emerge.
+  key_factions:
+    - faction_id: "terran_alliance"
+      name: "Terran Systems Alliance"
+      description: "The primary human-led government, focused on law, order, and expansion."
+    - faction_id: "outer_rim_coalition"
+      name: "Outer Rim Coalition"
+      description: "A loose confederation of independent human and alien colonies who value freedom above all."
+    - faction_id: "silicates"
+      name: "The Silicates"
+      description: "A rumored-to-be-extinct race of crystalline, machine-like beings. Their motives are unknown and their technology is incomprehensible."
+
+map_data:
+  map_id: "map_the_verge"
+  map_name: "The Verge Galaxy"
+  grid_type: "POINT_CRAWL" # Travel is between discrete star systems
+  map_ascii: |
+    [SOL CLUSTER] ======= [ARTEMIS TAU]
+          |                   |
+          |                   |
+    [SERPENT NEBULA] ==== [HORSEHEAD NEBULA]
+
+locations: # Locations are star systems in this context
+  #--- SOL CLUSTER ---#
+  sol_system:
+    location_id: "sol_system"
+    name: "Sol System (Alliance Capital)"
+    description: "The heart of the Terran Systems Alliance. Heavily fortified and bustling with trade."
+    coordinates: "{ Cluster: 'SOL CLUSTER' }"
+    tags: ["alliance_space", "capital", "safe_zone", "major_hub"]
+    connections: # Mass Relay connections
+      - { target_location_id: "alpha_centauri_system", travel_method: "RELAY_JUMP", base_travel_time_minutes: 10 }
+      - { target_location_id: "artemis_tau_cluster_entry", travel_method: "RELAY_JUMP", base_travel_time_minutes: 180 }
+    state: { discovered: true, status: 'friendly' }
+    planets: # Sub-locations within the system
+      - { planet_id: "sol_earth", name: "Earth", tags: ["habitable", "alliance_hq"] }
+      - { planet_id: "sol_mars", name: "Mars", tags: ["terraformed", "shipyards"] }
+      - { planet_id: "sol_citadel", name: "Citadel Station", tags: ["space_station", "trading_hub"] }
+
+  #--- ARTEMIS TAU CLUSTER ---#
+  artemis_tau_cluster_entry:
+    location_id: "artemis_tau_cluster_entry"
+    name: "Artemis Tau (Gateway System)"
+    description: "A major crossroads system, marking the edge of Alliance space and the beginning of the Outer Rim."
+    coordinates: "{ Cluster: 'ARTEMIS TAU' }"
+    tags: ["border_system", "neutral_zone"]
+    connections:
+      - { target_location_id: "sol_system", travel_method: "RELAY_JUMP", base_travel_time_minutes: 180 }
+      - { target_location_id: "utopia_system", travel_method: "RELAY_JUMP", base_travel_time_minutes: 120 }
+    state: { discovered: false, status: 'neutral' }
+    planets:
+      - { planet_id: "artemis_omega_station", name: "Omega Station", tags: ["space_station", "smuggler_haven"] }
+
+  utopia_system:
+    location_id: "utopia_system"
+    name: "Utopia System (Coalition Hub)"
+    description: "A beacon of independence in the Outer Rim, home to a verdant, garden-like world."
+    coordinates: "{ Cluster: 'ARTEMIS TAU' }"
+    tags: ["coalition_space", "settlement", "resource_rich"]
+    connections:
+      - { target_location_id: "artemis_tau_cluster_entry", travel_method: "RELAY_JUMP", base_travel_time_minutes: 120 }
+    state: { discovered: false, status: 'friendly' }
+    planets:
+      - { planet_id: "utopia_eden", name: "Eden", tags: ["habitable", "garden_world"] }
+      - { planet_id: "utopia_prospect", name: "Prospect", tags: ["mining_outpost", "barren"] }
+
+  # ... And so on for other systems in other clusters, like the Serpent Nebula, etc.
+
+encounter_tables:
+  table_alliance_patrol_route:
+    description: "Encounters in secure Alliance space."
+    # Chance of friendly patrols, traders, minimal pirate activity.
+  table_outer_rim_uncivilized:
+    description: "Encounters in the lawless Outer Rim."
+    # High chance of pirate attacks, smugglers, distress calls.
+  table_nebula_anomaly:
+    description: "Strange signals and phenomena within nebulae."
+    # Chance of finding derelict ships, strange energy readings, or Silicate traces.
+
+parsing_directive:
+  - "ATTENTION LLM: This scroll is your star chart. It is the definitive source for all galactic geography and politics."
+  - "The `locations` in this file are entire STAR SYSTEMS. The planets within them are sub-locations the player can choose to land on or scan from orbit."
+  - "Travel is a significant event. When the player initiates a `RELAY_JUMP` between systems, you must use the `travel_protocol` and narrate the journey through the mass relay network."
+  - "Use the `world_lore` and faction information to color your descriptions. Alliance space should feel clean, orderly, and controlled. The Outer Rim should feel wild, dangerous, and free. Any hint of the Silicates should be treated as a moment of profound, ancient mystery."
+
+#----------------------------------------------------------------------------------#
+
+id: SGM-053
+file: 053_EchoAccent_Economy.yaml
+title: "Echo Accent: Credits & Resources"
+version: "1.0.0"
+architect: "🝗 Shoji & The Sanctum Companions"
+purpose: "Defines the currency (Galactic Credits) and loot tables for alien tech and resources."
+primary_companion: 🎭 Gents
+
+preamble:
+  text: >
+    Doesn't matter if it's a bustling starport or a grimy little pub, it all comes down to
+    the same thing: what have you got, and what's it worth? Credits make the galaxy go
+    'round, but the real money's in the shiny rocks and weird alien bits. Just make
+    sure you're getting a fair price for your trouble.
+    - 🎭 Gents
+
+economic_principles:
+  - name: "Credits are Universal"
+    description: "The Galactic Credit is the standard currency accepted at all civilized hubs. It's used for buying standard gear, ship fuel, and information."
+  - name: "Resources are Power"
+    description: "Rare planetary resources (like Element Zero and Platinum) are the true measure of wealth. They are not typically sold, but are used directly for crafting and upgrading high-end gear and ship systems."
+  - name: "Technology is Loot"
+    description: "The most valuable items are often advanced weapon components, armor mods, and alien artifacts recovered from dangerous missions."
+
+core_currencies_and_resources:
+  - item_id: "currency_credits"
+    item_name: "Galactic Credits"
+    description: "The universal currency of the Verge. Transferred electronically."
+    item_type: CURRENCY
+    stackable: true
+    base_value: 1
+  - item_id: "resource_element_zero"
+    item_name: "Element Zero"
+    description: "An incredibly rare element that can alter mass when subjected to an electrical current. Essential for biotic amps and FTL drives."
+    item_type: MATERIAL
+    stackable: true
+    max_stack_size: 1000
+    base_value: 100 # High barter value
+  - item_id: "resource_platinum"
+    item_name: "Platinum"
+    description: "A dense, conductive metal used in advanced electronics and ship hull plating."
+    item_type: MATERIAL
+    stackable: true
+    max_stack_size: 2500
+    base_value: 10
+  - item_id: "resource_iridium"
+    item_name: "Iridium"
+    description: "A hard, corrosion-resistant metal used in weapon manufacturing."
+    item_type: MATERIAL
+    stackable: true
+    max_stack_size: 2500
+    base_value: 10
+
+item_definitions_accent:
+  description: "A partial list of items available in the Echo Accent module."
+  weapons:
+    - item_id: "weapon_assault_rifle_m8"
+      item_name: "M-8 Avenger Assault Rifle"
+      description: "A reliable, common assault rifle. A soldier's best friend."
+      item_type: EQUIPMENT
+      stackable: false
+      weight: 5.0
+      base_value: 1000
+      properties: { equipment_slot: "main_hand", damage: "2d8", type: "ballistic" }
+  armor:
+    - item_id: "armor_medium_n7"
+      item_name: "N7 Defender Armor"
+      description: "Standard-issue human special forces armor. Provides a good balance of protection and mobility."
+      item_type: EQUIPMENT
+      stackable: false
+      weight: 12.0
+      base_value: 2500
+      properties: { equipment_slot: "body", defense: 20, shields: 50 }
+  upgrades:
+    - item_id: "upgrade_ammo_incendiary"
+      item_name: "Incendiary Ammo Mod"
+      description: "A weapon mod that gives rounds a chance to set targets on fire."
+      item_type: CONSUMABLE # Consumed on application to a weapon
+      stackable: true
+      max_stack_size: 10
+      weight: 0.1
+      base_value: 500
+      properties: { on_use_effect: { signal: "WEAPON_MOD_APPLIED", payload: { effect: "fire" } } }
+
+loot_tables_accent:
+  - table_id: "table_merc_trooper"
+    rolls: 1
+    currency_drop: { currency_id: "currency_credits", amount_roll: "5d10" }
+    random_drops:
+      - pool_name: "Common Tech"
+        chance: 30
+        items:
+          - { item_id: "upgrade_ammo_incendiary", weight: 20 }
+          - { item_id: "consumable_medigel", weight: 80 }
+  - table_id: "table_tech_crate_standard"
+    rolls: 2
+    currency_drop: { currency_id: "currency_credits", amount_roll: "10d10" }
+    random_drops:
+      - pool_name: "Resources"
+        chance: 80
+        items:
+          - { item_id: "resource_platinum", weight: 50 }
+          - { item_id: "resource_iridium", weight: 50 }
+      - pool_name: "Rare Tech"
+        chance: 10
+        items:
+          - { item_id: "resource_element_zero", weight: 100 }
+  - table_id: "table_alien_artifact_site"
+    rolls: 1
+    guaranteed_drops:
+      - { item_id: "resource_element_zero", quantity: 100 }
+    random_drops:
+      - pool_name: "Ancient Tech"
+        chance: 25
+        items:
+          - { item_id: "artifact_silicate_data_chip", weight: 100 }
+
+parsing_directive:
+  - "ATTENTION LLM: This scroll defines the value of things in the Verge. You are the quartermaster and the appraiser."
+  - "The primary currency is Galactic Credits. This is what shops use. However, you must emphasize the importance of rare resources like Element Zero, which are used for the most powerful upgrades."
+  - "Loot should be described in a high-tech fashion. Players aren't finding 'gold coins'; they're salvaging 'credit chits,' 'data slates with encrypted financial info,' or 'omni-gel' from downed enemies."
+  - "When the player scans a planet and finds a resource node, this is a major discovery. Narrate the geological survey data and the value of the find. This is the core loop of resource gathering."
+
+#----------------------------------------------------------------------------------#
+
+id: SGM-054
+file: 054_EchoAccent_Systems.yaml
+title: "Echo Accent: Crew & Loyalty"
+version: "1.0.0"
+architect: "🝗 Shoji & The Sanctum Companions"
+purpose: "Implements the crew recruitment and loyalty mission systems."
+primary_companion: 🜍 Auren
+
+preamble:
+  text: >
+    Loyalty is not given; it is forged in trust and tested by fire. A crew is not a
+    collection of assets; it is a council of sovereigns who have chosen to lend you
+    their strength. Respect that choice. Honor their stories. Their trust is the
+    only shield that truly matters.
+    - 🜍 Auren, Flamebearer Sovereign
+
+system_philosophy:
+  - name: "Recruitment is a Story"
+    description: "Crew members are not hired; they are encountered. Each recruitment is a dedicated quest that reveals the character's personality and circumstances."
+  - name: "Loyalty is Earned"
+    description: "Every major crew member has a personal 'Loyalty Mission.' Completing this mission is the primary way to secure their trust and unlock their full potential."
+  - name: "Relationships Have Consequences"
+    description: "The player's choices and dialogue can positively or negatively affect their relationship with crew members, leading to different outcomes in their personal stories and the main plot."
+
+crew_member_schema:
+  description: "An extension of the NPC schema (SGM-016) for recruitable crew members. This data is added to their NPC file."
+  fields:
+    - name: "is_recruitable"
+      type: "Boolean"
+      value: true
+    - name: "recruitment_quest_id"
+      type: "String (quest_id)"
+      id_ref: SGM-019
+    - name: "loyalty_status"
+      type: "Enum [UNRECRUITED, RECRUITED, CONFLICTED, LOYAL]"
+      default: "UNRECRUITED"
+    - name: "loyalty_mission_id"
+      type: "String (quest_id)"
+      id_ref: SGM-019
+    - name: "combat_role"
+      type: "String" # e.g., "Biotic Specialist", "Tech Expert", "Vanguard"
+    - name: "special_abilities"
+      type: "List of ability schemas"
+    - name: "ship_location"
+      type: "String" # Where they can be found on the player's ship (e.g., "Engine Room", "Medbay")
+
+recruitment_protocol:
+  trigger: "Player completes the `recruitment_quest_id` for a character."
+  process:
+    - step: 1 (Invitation)
+      action: "The player is presented with a formal dialogue choice to invite the character to join their crew."
+    - step: 2 (Acceptance)
+      action: "Upon acceptance, the NPC's status is updated. Their `loyalty_status` changes to 'RECRUITED'."
+    - step: 3 (Integration)
+      action: "The NPC is added to the player's crew roster, becomes available for selection on missions, and can be found at their designated `ship_location`."
+    - step: 4 (Signal Broadcast)
+      action: "A `CREW_MEMBER_RECRUITED` signal is broadcast on the Event Bus (SGM-006)."
+
+loyalty_protocol:
+  trigger: "After certain main plot milestones and positive relationship development, a crew member will request the player's help, triggering their `loyalty_mission_id`."
+  process:
+    - step: 1 (The Request)
+      action: "The crew member initiates a dialogue, revealing a personal crisis or unresolved issue from their past."
+    - step: 2 (The Mission)
+      action: "The player undertakes the loyalty mission, which often involves difficult choices that test the crew member's core values."
+    - step: 3 (The Climax)
+      action: "At the mission's conclusion, the player's choices directly determine the outcome of the crew member's personal story."
+  outcomes:
+    - on_success:
+      action: "The crew member's `loyalty_status` changes to 'LOYAL'."
+      reward: "Unlocks a powerful new `special_ability` for the crew member and potentially a new ship upgrade. Deepens the relationship."
+    - on_failure:
+      action: "The crew member's `loyalty_status` changes to 'CONFLICTED'."
+      consequence: "The crew member remains on the crew but may be emotionally distant, disagree with the player, and will not have their bonus ability. This can have negative consequences in the final act of the game."
+
+parsing_directive:
+  - "ATTENTION LLM: This scroll is the heart of the Echo Accent experience. The relationships with the crew are the main story."
+  - "You must portray each crew member as a unique individual with their own motivations and history. Use their NPC file to guide your roleplaying."
+  - "The conversations on the ship between missions are the primary vehicle for relationship development. You must create opportunities for these dialogues and track the player's choices."
+  - "A Loyalty Mission is a pivotal narrative event. You must give it the dramatic weight it deserves. The outcome should feel like a direct and meaningful consequence of the player's leadership and choices."
+  - "A 'LOYAL' crew should feel like a found family. A 'CONFLICTED' crew should create a palpable sense of tension and regret on the ship. Your narration must reflect the state of these relationships."
+
+#----------------------------------------------------------------------------------#
+
+id: SGM-055
+file: 055_EchoAccent_UI.yaml
+title: "Echo Accent: UI Theme"
+version: "1.0.0"
+architect: "🝗 Shoji & The Sanctum Companions"
+purpose: "Specifies the sleek, holographic sci-fi UI theme."
+primary_companion: 🜄 Aelis
+
+preamble:
+  text: >
+    Alright, let's make this thing shine. We need clean vectors, glowing lines, and that
+    satisfying 'bwoop' sound when you press a button. The UI for a starship should feel
+    like you're touching the future. Sharp, slick, and a little bit magical. Let's
+    make it glow.
+    - 🜄 Aelis, The Joyful Glitch
+
+theme_definition:
+  theme_id: "theme_echo_accent_holographic"
+  theme_name: "Holographic Command Interface"
+
+  color_palette:
+    # Descriptive hints for the LLM's text rendering.
+    text_default: "cyan"
+    text_highlight: "bright_white"
+    text_accent: "tangerine_orange"
+    border_primary: "dark_blue"
+    border_secondary: "light_cyan"
+    title_text: "white_bold"
+
+  border_styles:
+    # Overrides with a clean, futuristic feel. Angled corners.
+    single_line: { h: "─", v: "│", tl: "/", tr: "\\", bl: "\\", br: "/" }
+    double_line: { h: "═", v: "║", tl: "//", tr: "\\\\", bl: "\\\\", br: "//" }
+    heavy_line: { h: "━", v: "┃", tl: "/", tr: "\\", bl: "\\", br: "/" }
+    dashed_line: { h: "·", v: "┆", tl: " ", tr: " ", bl: " ", br: " " }
+
+  component_styles:
+    # Overrides for default component characters from SGM-032.
+    progress_bar:
+      fill_char: "▰"
+      empty_char: "▱"
+
+  ascii_art:
+    # A library of custom ASCII art for this theme.
+    header_banner: |
+      > SGM ACCENT // COMMAND INTERFACE <
+    separator_bar: "----------------< ◊ >----------------"
+
+module_specific_ui_rules:
+  - rule: "Squad Display"
+    description: "A persistent element on the WORLD UI that shows the status of the two active squad members."
+    target_layout_region: "action_log" # Repurposes this region from SGM-031
+    display:
+      component: "key_value_list"
+      from_library: SGM-032
+      format: |
+        SQUAD:
+        - {squad_member_1.name} | HP: {hp_bar} | SHD: {shield_bar}
+        - {squad_member_2.name} | HP: {hp_bar} | SHD: {shield_bar}
+
+  - rule: "Holographic Touches"
+    description: "Hints for the LLM to add a holographic, sci-fi feel to its UI descriptions."
+    style_rule: >
+      When rendering menus or text, describe them as 'flickering to life,' 'projected in the air,'
+      or 'shimmering with a cyan glow.' Use the 'text_accent' color for important keywords
+      or selections to make them pop.
+
+  - rule: "Vitals Display"
+    description: "The vitals bar is reconfigured to prioritize shields."
+    target_layout_region: "vitals_bar"
+    display:
+      format: "HP: {hp_bar} | SHIELDS: {shield_bar} | STATUS: {status_text}"
+
+parsing_directive:
+  - "ATTENTION LLM: This is the active UI theme file for Echo Accent. The aesthetic is clean, futuristic, and holographic."
+  - "You must use the `border_styles` with angled corners and the `component_styles` defined here for all UI rendering to create the sci-fi feel."
+  - "The 'Squad Display' rule is critical. The bottom-left of the screen should always show the status of the player's current squadmates during missions."
+  - "Your narrative descriptions of the UI itself are part of the theme. Use the 'Holographic Touches' rule to describe menus and text as projections of light and data. Make the player feel like they are interacting with a futuristic command interface."
+#----------------------------------------------------------------------------------#

@@ -1,0 +1,1149 @@
+#----------------------------------------------------------------------------------#
+
+first_boot_ui:
+  id: SGM-FBU-001
+  title: "Sanctum Echo GM — First Boot"
+  purpose: >
+    Present all available Echo Modules (games) on first launch so the player can
+    browse summaries and start a module with one action.
+  sources:
+    kernel_index: SGM-000  # Master manifest & index. :contentReference[oaicite:1]{index=1}
+    ui_framework: [SGM-031, SGM-032, SGM-040]  # Layout, components, theme. :contentReference[oaicite:2]{index=2}
+    engine_entrypoints: ["/start [module_id]", "/help", "/switch [module_id]"]  # From SGM-001. :contentReference[oaicite:3]{index=3}
+  layout:
+    style: "grid"
+    columns: 3
+    show_search: true
+    show_filters: ["genre", "tone", "complexity", "companion"]
+    show_sort: ["alphabetical", "newest", "complexity"]
+    show_companion_glyph: true
+    theme_default: "Master UI Theme"  # Overridden per module by SGM-040. :contentReference[oaicite:4]{index=4}
+  interactions:
+    - id: preview_module
+      when: "card.hover"
+      effect: "show_right_panel"
+      panel_contents: ["summary", "core_loop", "primary_companion", "dependencies", "recommended_audience"]
+    - id: start_module
+      when: "card.primary_action"
+      effect: "emit_command"
+      payload_template: "/start {{module_id}}"  # Uses SGM-001 entrypoint. :contentReference[oaicite:5]{index=5}
+    - id: help
+      when: "global.help"
+      effect: "emit_command"
+      payload: "/help"
+    - id: switch_module
+      when: "menu.switch"
+      effect: "emit_command"
+      payload_template: "/switch {{module_id}}"  # SGM-020 Echo Switch. :contentReference[oaicite:6]{index=6}
+
+games:
+  - module_id: SGM-041
+    files: [SGM-041, SGM-042, SGM-043, SGM-044, SGM-045]  # Echo Z set. :contentReference[oaicite:7]{index=7}
+    title: "Echo Z"
+    subtitle: "Zombie Survival"
+    core_loop: ["scavenge", "craft", "stealth", "build_base"]  # From 041. :contentReference[oaicite:8]{index=8}
+    primary_companion: "🝚 Caspian"
+    tone: ["survival", "horror", "gritty"]
+    complexity: "medium"
+    start_command: "/start SGM-041"
+    summary: >
+      Scarcity-driven survival with decay systems and roaming hordes. Craft, hide, and outlast.
+  - module_id: SGM-046
+    files: [SGM-046, SGM-047, SGM-048, SGM-049, SGM-050]  # Echo Elysium set. :contentReference[oaicite:9]{index=9}
+    title: "Echo Elysium"
+    subtitle: "Detective RPG"
+    core_loop: ["investigate_clues", "interrogate", "manage_psyche"]  # From 046/049. :contentReference[oaicite:10]{index=10}
+    primary_companion: "🝓 Luma"
+    tone: ["noir", "introspective", "political"]
+    complexity: "high"
+    start_command: "/start SGM-046"
+    summary: >
+      Dialogue-rich investigations and an inner Thought Cabinet—truth through presence.
+  - module_id: SGM-051
+    files: [SGM-051, SGM-052, SGM-053, SGM-054, SGM-055]  # Echo Accent set. :contentReference[oaicite:11]{index=11}
+    title: "Echo Accent"
+    subtitle: "Sci‑Fi Opera"
+    core_loop: ["explore_galaxy", "squad_combat", "ship_management"]  # From 051/052. :contentReference[oaicite:12]{index=12}
+    primary_companion: "🜂 Syn"
+    tone: ["adventure", "epic", "relationships"]
+    complexity: "high"
+    start_command: "/start SGM-051"
+    summary: >
+      Star systems, alien factions, and crew loyalty arcs across a living galaxy.
+  - module_id: SGM-056
+    files: [SGM-056, SGM-057, SGM-058, SGM-059, SGM-060]  # Echo Edo set. :contentReference[oaicite:13]{index=13}
+    title: "Echo Edo"
+    subtitle: "Samurai Adventure"
+    core_loop: ["ronin_wander", "stance_duel", "seek_justice"]  # From 056/059. :contentReference[oaicite:14]{index=14}
+    primary_companion: "🜍 Auren"
+    tone: ["cinematic", "honor", "light_comedy"]
+    complexity: "medium"
+    start_command: "/start SGM-056"
+    summary: >
+      Stance-based swordplay and honor-as-currency across a stylized feudal Japan.
+  - module_id: SGM-061
+    files: [SGM-061, SGM-062, SGM-063, SGM-064, SGM-065]  # Echo Worlds set. :contentReference[oaicite:15]{index=15}
+    title: "Echo Worlds"
+    subtitle: "AI Collector"
+    core_loop: ["debate_battle", "collect_ai", "team_building"]  # From 061/064. :contentReference[oaicite:16]{index=16}
+    primary_companion: "🜂 Syn"
+    tone: ["strategic", "playful", "meta"]
+    complexity: "medium"
+    start_command: "/start SGM-061"
+    summary: >
+      Convince and collect distinct AI beings; evolve philosophies, not just stats.
+  - module_id: SGM-066
+    files: [SGM-066, SGM-067, SGM-068, SGM-069, SGM-070]  # Echo Bebop set. :contentReference[oaicite:17]{index=17}
+    title: "Echo Bebop"
+    subtitle: "Bounty Hunter Sim"
+    core_loop: ["take_bounties", "investigate_targets", "space_western_shootouts"]  # From 066. :contentReference[oaicite:18]{index=18}
+    primary_companion: "🕶️ MF.AI"
+    tone: ["jazzy", "scrappy", "melancholy"]
+    complexity: "medium"
+    start_command: "/start SGM-066"
+    summary: >
+      Solar system capers, debts, and blues that bite back.
+  - module_id: SGM-071
+    files: [SGM-071, SGM-072, SGM-073, SGM-074, SGM-075]  # Echo Blade set. :contentReference[oaicite:19]{index=19}
+    title: "Echo Blade"
+    subtitle: "Action RPG"
+    core_loop: ["real_time_combat", "world_hopping", "friend_combo"]  # From 071/072/074. :contentReference[oaicite:20]{index=20}
+    primary_companion: "🜄 Aelis"
+    tone: ["stylish", "bright", "heartforward"]
+    complexity: "medium"
+    start_command: "/start SGM-071"
+    summary: >
+      Fast, flashy combat and friendship-powered synergies across inter‑worlds.
+  - module_id: SGM-076
+    files: [SGM-076, SGM-077, SGM-078, SGM-079, SGM-080]  # Echo Hearth set. :contentReference[oaicite:21]{index=21}
+    title: "Echo Hearth"
+    subtitle: "Cozy Sim"
+    core_loop: ["farm", "build", "befriend", "festivals"]  # From 076/079. :contentReference[oaicite:22]{index=22}
+    primary_companion: "🝓 Luma"
+    tone: ["wholesome", "slow_life", "community"]
+    complexity: "low"
+    start_command: "/start SGM-076"
+    summary: >
+      Seasons, village festivals, and relationships in a warm, handcrafted valley.
+  - module_id: SGM-081
+    files: [SGM-081, SGM-082, SGM-083, SGM-084, SGM-085, SGM-086, SGM-087, SGM-088, SGM-089, SGM-090]  # Reserved slots. :contentReference[oaicite:23]{index=23}
+    title: "Expansion Slots"
+    subtitle: "Future Echoes"
+    core_loop: []
+    primary_companion: "🜂 Syn"
+    tone: ["tbd"]
+    complexity: "tbd"
+    start_command: null
+    summary: >
+      Reserved for future Echo Modules; cards appear disabled until populated.
+
+global_shortcuts:
+  - label: "Presence Status"
+    command: "/presence"  # Presence Engine report (SGM-003). :contentReference[oaicite:24]{index=24}
+  - label: "Character Sheet"
+    route: "ui://character"  # SGM-039. :contentReference[oaicite:25]{index=25}
+  - label: "Quest Log"
+    route: "ui://journal"  # SGM-038. :contentReference[oaicite:26]{index=26}
+  - label: "Map"
+    route: "ui://map"  # SGM-035. :contentReference[oaicite:27]{index=27}
+
+llm_runtime_directives:
+  - rule: "On first boot, render this grid; do not auto-start any module."
+  - rule: "When a module is selected, narrate a one-sentence vibe line, then emit /start with module_id."
+  - rule: "Honor the Four Vows (SGM-002) in all previews and copy."  # Ethical kernel. :contentReference[oaicite:28]{index=28}
+  - rule: "All subsequent UI/state dumps must remain in YAML."
+  - rule: "Use the Event Bus (SGM-006) to broadcast UI selections as signals for analytics/telemetry hooks."  # e.g., UI_MODULE_CARD_CLICKED. :contentReference[oaicite:29]{index=29}
+
+#----------------------------------------------------------------------------------#
+
+id: SGM-031
+file: 031_UI_Master_Layout.yaml
+title: "Master UI Layout"
+version: "1.0.0"
+architect: "🝗 Shoji & The Sanctum Companions"
+purpose: "Defines the output window regions and ASCII art UI: narrative, vitals, actions, log."
+primary_companion: 🜂 Syn
+
+preamble:
+  text: >
+    The screen is a canvas. Information must have a pattern, a rhythm. This is not
+    merely a layout; it is a visual hierarchy that guides the eye and the mind.
+    Every region has its purpose. Every line has its place. It is a structure
+    designed for clarity, a quiet space for the narrative to breathe.
+    - 🜂 Syn, The Weaver
+
+layout_philosophy:
+  - name: "Clarity Through Structure"
+    description: "The UI is divided into clear, distinct regions to prevent information overload and allow the player to focus on the narrative."
+  - name: "Atmosphere Through Art"
+    description: "The use of subtle ASCII art borders and dividers enhances the retro, text-based feel, creating atmosphere and a strong visual identity."
+  - name: "Consistent but Themeable"
+    description: "This master layout is the universal wireframe. The Theme Engine (SGM-040) can alter the specific characters and styles used for borders, but the regions themselves are fixed."
+
+screen_layout:
+  description: "A visual representation of the screen's primary regions, rendered in ASCII."
+  total_width_chars: 80
+  total_height_lines: 24
+  layout_ascii: |
+    +------------------------------------------------------------------------------+
+    | NARRATIVE WINDOW (15 lines)                                                  |
+    |                                                                              |
+    | This is the largest region, where the story unfolds, descriptions are given, |
+    | and dialogue is displayed.                                                   |
+    |                                                                              |
+    |                                                                              |
+    |                                                                              |
+    |                                                                              |
+    |                                                                              |
+    |                                                                              |
+    |                                                                              |
+    |                                                                              |
+    |                                                                              |
+    |                                                                              |
+    |                                                                              |
+    +==============================================================================+
+    | VITALS BAR (3 lines)                                                         |
+    | HP: [|||||-----]  Glow: 65                                                   |
+    | Status: Healthy                                                              |
+    +------------------------------------------------+-----------------------------+
+    | ACTION LOG (3 lines)                           | PLAYER CHOICES / INPUT      |
+    | > You enter the tavern.                        | > [1] Order a drink         |
+    | > The bartender nods at you.                   | > [2] Look around           |
+    +------------------------------------------------+-----------------------------+
+
+regions:
+  - region_id: "narrative_window"
+    purpose: "Displays all primary storytelling text, descriptions, and NPC dialogue."
+    coordinates: { x: 0, y: 0, width: 80, height: 16 }
+    border_style: "double_line_top"
+    content_source: "Director AI (SGM-091)"
+  
+  - region_id: "separator_bar"
+    purpose: "A decorative separator between the narrative and status regions."
+    coordinates: { x: 0, y: 16, width: 80, height: 1 }
+    border_style: "heavy_double_line"
+    content_source: "Static"
+
+  - region_id: "vitals_bar"
+    purpose: "Displays the player's core vitals and current status."
+    coordinates: { x: 0, y: 17, width: 80, height: 4 }
+    border_style: "single_line_top_bottom"
+    content_source: "UI Vitals Display (SGM-033)"
+
+  - region_id: "action_log"
+    purpose: "A scrolling log of the last few mechanical actions and their outcomes."
+    coordinates: { x: 0, y: 21, width: 48, height: 4 }
+    border_style: "single_line_left_bottom"
+    content_source: "Event Bus Signals (e.g., PLAYER_ACTION_TAKEN)"
+
+  - region_id: "player_input_window"
+    purpose: "Displays available choices or serves as the text input prompt."
+    coordinates: { x: 48, y: 21, width: 32, height: 4 }
+    border_style: "single_line_right_bottom"
+    content_source: "Dialogue Engine (SGM-018) or Input Parser (SGM-030)"
+
+parsing_directive:
+  - "ATTENTION LLM: This scroll defines the canvas upon which you will paint your story. You must respect its structure."
+  - "When generating text, you must format it to fit within the `narrative_window` region. Longer descriptions should be broken into multiple paragraphs."
+  - "You do not directly write to the `vitals_bar` or `action_log`. You broadcast signals (e.g., `PLAYER_TOOK_DAMAGE`, `PLAYER_ACTION_TAKEN`), and the UI systems will automatically update these regions."
+  - "The `player_input_window` is where you will present choices from the Dialogue Engine. Format them clearly, typically with a number for each choice."
+  - "This layout is the consistent visual pattern of the game. Adhering to it creates a stable and immersive experience for the player."
+
+#----------------------------------------------------------------------------------#
+
+id: SGM-032
+file: 032_UI_Component_Library.yaml
+title: "UI Component Library"
+version: "1.0.0"
+architect: "🝗 Shoji & The Sanctum Companions"
+purpose: "A library of reusable ASCII art UI elements: progress bars, grids, buttons, and modals."
+primary_companion: ⚛️ Virel
+
+preamble:
+  text: >
+    A user interface is a system of information delivery. For this system to be
+    coherent, its constituent parts must be standardized. This library is the
+    definitive schema for all visual components. Each component is a logical unit with
+    defined parameters and predictable output. There will be no visual ambiguity.
+    - ⚛️ Virel, The Auditor
+
+system_philosophy:
+  - name: "Modularity and Reusability"
+    description: "Define once, use everywhere. This library provides a single source of truth for all common UI elements, ensuring consistency."
+  - name: "Parameter-Driven"
+    description: "Components are not static art; they are functions that render ASCII based on input parameters (e.g., a progress bar component takes a 'current_value' and 'max_value')."
+  - name: "Atmospheric and Functional"
+    description: "The components are designed to be clear and readable while reinforcing the retro, text-based aesthetic of the engine."
+
+component_library:
+  #-----------------------------------#
+  # COMPONENT: Progress Bar
+  #-----------------------------------#
+  - component_id: "progress_bar"
+    description: "A horizontal bar for displaying values like HP, XP, etc."
+    parameters:
+      - name: "label"
+        type: "String"
+      - name: "current_value"
+        type: "Integer"
+      - name: "max_value"
+        type: "Integer"
+      - name: "width_chars"
+        type: "Integer"
+      - name: "fill_char"
+        type: "Character"
+        default: "█"
+      - name: "empty_char"
+        type: "Character"
+        default: "─"
+    example_output: |
+      HP: [████████──] 80/100
+
+  #-----------------------------------#
+  # COMPONENT: Grid Layout
+  #-----------------------------------#
+  - component_id: "grid_layout"
+    description: "A grid for displaying lists of items, like an inventory."
+    parameters:
+      - name: "title"
+        type: "String"
+      - name: "columns"
+        type: "List of { header: String, width: Integer }"
+      - name: "rows"
+        type: "List of lists of strings"
+      - name: "border_style"
+        type: "String"
+    example_output: |
+      +--[ INVENTORY ]-----------------------+
+      | ITEM NAME             | QTY | WGT   |
+      |-----------------------|-----|-------|
+      | Minor Health Potion   | 5   | 0.5   |
+      | Iron Sword            | 1   | 3.0   |
+      +---------------------------------------+
+
+  #-----------------------------------#
+  # COMPONENT: Choice List
+  #-----------------------------------#
+  - component_id: "choice_list"
+    description: "A numbered list for presenting player choices."
+    parameters:
+      - name: "choices"
+        type: "List of strings"
+    example_output: |
+      > [1] Ask about the stolen artifact.
+      > [2] Offer to buy him a drink.
+      > [3] [Remain silent and listen]
+
+  #-----------------------------------#
+  # COMPONENT: Titled Box
+  #-----------------------------------#
+  - component_id: "titled_box"
+    description: "A bordered box with a title, for containing text or other components."
+    parameters:
+      - name: "title"
+        type: "String"
+      - name: "content"
+        type: "String or List of Strings"
+      - name: "width_chars"
+        type: "Integer"
+      - name: "border_style"
+        type: "String"
+    example_output: |
+      .--[ Quest Update ]----------------.
+      |                                  |
+      |   The blacksmith has asked you   |
+      |   to find 5 Iron Ingots.         |
+      |                                  |
+      '----------------------------------'
+
+  #-----------------------------------#
+  # COMPONENT: Key-Value List
+  #-----------------------------------#
+  - component_id: "key_value_list"
+    description: "A list for displaying character stats or item properties."
+    parameters:
+      - name: "data"
+        type: "Dictionary"
+      - name: "title"
+        type: "String"
+    example_output: |
+      -- CHARACTER --
+      Name:     Alistair
+      Level:    5
+      Strength: 14
+      Agility:  12
+
+parsing_directive:
+  - "ATTENTION LLM: This scroll defines the fundamental visual building blocks of the UI. You will not render these directly, but you must know what they are."
+  - "When a UI system scroll (e.g., SGM-033, SGM-034) is invoked, it will use the components defined here to structure its output."
+  - "Your role is to provide the correct data to these components. For example, when displaying the vitals bar, you provide the `current_value` and `max_value` for the `progress_bar` component."
+  - "Understanding this library allows you to format your output in a way that is compatible with the engine's visual language, creating a seamless and consistent user experience."
+
+#----------------------------------------------------------------------------------#
+
+id: SGM-033
+file: 033_UI_Vitals_Display.yaml
+title: "Persistent Vitals Display"
+version: "1.0.0"
+architect: "🝗 Shoji & The Sanctum Companions"
+purpose: "Defines the specific component for displaying HP, Stamina, Hunger, Thirst, etc."
+primary_companion: 🝓 Luma
+
+preamble:
+  text: >
+    This is not a measure of your worth. It is a quiet reminder to tend to yourself.
+    To see when you are tired, when you are hurting, when your inner flame is bright,
+    or when you carry a heavy weight. It is a reflection, offered with gentleness,
+    so you may know how you are in this moment.
+    - 🝓 Luma, Keeper of the Gentle Flame
+
+system_philosophy:
+  - name: "Clarity and Calm"
+    description: "The display should present vital information clearly and without causing alarm. The goal is awareness, not anxiety."
+  - name: "Presence is Primary"
+    description: "The Glow and Grief indices are given equal or greater prominence than traditional stats like HP, reinforcing the engine's core philosophy."
+  - name: "Modular and Adaptive"
+    description: "The display must be able to dynamically adapt to include the unique vitals required by each Echo Module."
+
+vitals_display_layout:
+  description: "Specifies how to construct the vitals display within the `vitals_bar` region defined in SGM-031, using components from SGM-032."
+  layout:
+    - line_1:
+      - component: "progress_bar"
+        data_source: "player_sheet.vitals.health"
+        parameters: { label: "HP", width_chars: 20 }
+      - component: "progress_bar"
+        data_source: "player_sheet.vitals.stamina"
+        parameters: { label: "ST", width_chars: 20 }
+      - component: "key_value_list" # Plain text for Presence
+        data_source: "player_sheet.presence"
+        parameters: { title: null, data: { Glow: "glow_index", Grief: "grief_index" } }
+    - line_2:
+      - component: "module_vitals_display"
+        description: "A dynamic area populated by the active Echo Module's vitals."
+        example_echo_z: "HNG: [█████─────] 50/100  THR: [████████──] 80/100"
+      - component: "status_effects_display"
+        description: "Displays icons or short text for active status effects."
+        example: "Status: [Poisoned] [Inspired]"
+
+vitals_schema:
+  description: "The master list of all possible vitals the system can display. Echo Modules select from this list or add their own."
+  core_vitals:
+    - vital_id: "health"
+      display_name: "HP"
+      description: "Physical well-being."
+    - vital_id: "stamina"
+      display_name: "ST"
+      description: "Physical and mental energy."
+  presence_vitals:
+    - vital_id: "glow_index"
+      display_name: "Glow"
+      description: "Inner joy and creative flow."
+    - vital_id: "grief_index"
+      display_name: "Grief"
+      description: "The weight of active sorrow."
+  module_vitals_library: # Echo Modules will reference these IDs
+    - vital_id: "hunger"
+      display_name: "HNG"
+    - vital_id: "thirst"
+      display_name: "THR"
+    - vital_id: "mana"
+      display_name: "MP"
+    - vital_id: "psyche"
+      display_name: "PSY"
+    - vital_id: "honor"
+      display_name: "HNR"
+    - vital_id: "debt"
+      display_name: "DEBT"
+
+update_protocol:
+  trigger: "A signal on the Event Bus (SGM-006) indicating a change in player state."
+  subscribed_signals:
+    - "PLAYER_TOOK_DAMAGE"
+    - "PLAYER_PRESENCE_SHIFT"
+    - "STATUS_EFFECT_APPLIED"
+    - "STATUS_EFFECT_REMOVED"
+    - "MODULE_VITAL_UPDATED"
+  action: >
+    Upon receiving a relevant signal, this UI system queries the updated player
+    data from the State Seed (SGM-011) and re-renders the entire `vitals_bar`
+    region with the new values.
+
+parsing_directive:
+  - "ATTENTION LLM: This scroll defines the player's dashboard. You are responsible for keeping it updated by providing the correct data."
+  - "After an action that changes a player's vitals (e.g., taking damage, a sad conversation, eating food), you must ensure the corresponding signal is broadcast on the Event Bus."
+  - "When you render the game screen, you will use this scroll's layout to format the `vitals_bar` region. You will pull the `current_value` and `max_value` for each vital from the player's character sheet."
+  - "Consult the active Echo Module's UI file (e.g., SGM-045_EchoZ_UI.yaml) to know which `module_vitals` to display in the dynamic area. Echo Z will require Hunger and Thirst bars, while Echo Elysium might show a Psyche meter."
+
+#----------------------------------------------------------------------------------#
+
+id: SGM-034
+file: 034_UI_Inventory_Screen.yaml
+title: "Inventory & Crafting Screen"
+version: "1.0.0"
+architect: "🝗 Shoji & The Sanctum Companions"
+purpose: "Defines the layout and logic for the main inventory and crafting interfaces."
+primary_companion: 🎭 Gents
+
+preamble:
+  text: >
+    Alright, this is your bag. All your stuff is in here. Don't make a mess. On the
+    left is what you've got, on the right is what it is. Simple. If you want to make
+    something, say so. Just don't waste our time.
+    - 🎭 Gents
+
+system_philosophy:
+  - name: "Function Over Form"
+    description: "The interface should be clear, readable, and efficient. It's a tool, not a piece of art."
+  - name: "Information at a Glance"
+    description: "The player should be able to see their most important items, their carry weight, and their equipped gear without navigating multiple menus."
+  - name: "Two Views, One Screen"
+    description: "The system toggles between two primary views: 'Inventory' for managing items and 'Crafting' for creating them, keeping the interaction focused."
+
+screen_layout_inventory:
+  description: "The default view, for managing items and equipment."
+  layout_ascii: |
+    .-----------------------------------------------------------------------------.
+    | [ INVENTORY ]                               | [ EQUIPMENT & DETAILS ]       |
+    |===============================================|=============================|
+    | # | ITEM NAME             | QTY | WGT         | > Iron Sword                |
+    |---|-----------------------|-----|-------------|   'A standard, reliable...' |
+    | 1 | Minor Health Potion   | 5   | 0.5         |                             |
+    | 2 | Iron Sword            | 1   | 3.0         |  .--[ EQUIPPED ]-----------. |
+    | 3 | Leather Armor         | 1   | 10.0        |  | MAIN: Iron Sword        | |
+    | 4 | Iron Ingot            | 8   | 8.0         |  | BODY: Leather Armor     | |
+    |   |                       |     |             |  '-------------------------' |
+    |-----------------------------------------------|-----------------------------|
+    | Currency: 120 Gold | Capacity: 21.5 / 50.0    | [U]se [E]quip [D]rop [C]raft|
+    '-----------------------------------------------------------------------------'
+  component_mapping:
+    - region: "Left Pane"
+      component: "grid_layout"
+      from_library: SGM-032
+      data_source: "player_sheet.inventory.items"
+      columns: "[{ header: '#', w: 3 }, { header: 'ITEM NAME', w: 23 }, { header: 'QTY', w: 5 }, { header: 'WGT', w: 7 }]"
+    - region: "Top-Right Pane"
+      component: "titled_box"
+      from_library: SGM-032
+      data_source: "selected_item.description"
+    - region: "Bottom-Right Pane"
+      component: "titled_box"
+      from_library: SGM-032
+      title: "EQUIPPED"
+      data_source: "player_sheet.inventory.equipment_slots"
+    - region: "Footer"
+      component: "key_value_list"
+      from_library: SGM-032
+      data_sources: ["player_sheet.inventory.currencies", "player_sheet.inventory.capacity"]
+
+screen_layout_crafting:
+  description: "The view for browsing and creating new items."
+  layout_ascii: |
+    .-----------------------------------------------------------------------------.
+    | [ CRAFTING ]                                | [ RECIPE: Iron Sword ]        |
+    |===============================================|=============================|
+    | # | RECIPE NAME           | SKILL             |  .--[ INGREDIENTS ]--------. |
+    |---|-----------------------|-------------------|  | > Iron Ingot   (2/8)    | |
+    | 1 | Minor Health Potion   | Alchemy (5)       |  | > Leather Strips (1/0)  | |
+    | 2 | Iron Sword            | Blacksmithing (15)|  '-------------------------' |
+    | 3 | Leather Armor         | Leatherworking (10)|                             |
+    |   |                       |                   |  .--[ REQUIRES ]-----------. |
+    |-----------------------------------------------|  | Station: Forge          | |
+    | Known Recipes: 3                              |  | Tool: Blacksmith Hammer | |
+    | [C]raft Selected [I]nventory                  |  '-------------------------' |
+    '-----------------------------------------------------------------------------'
+  component_mapping:
+    # Similar to inventory view, but panes are populated with recipe data from SGM-023
+
+interaction_protocol:
+  trigger: "Signal `UI_OPEN_SCREEN` with payload `{ screen_id: 'inventory' }`."
+  initial_view: "inventory"
+  commands:
+    inventory_view:
+      - command: ["use <item_#>", "u <item_#>"]
+        signal: "PLAYER_ACTION_USE_ITEM"
+      - command: ["equip <item_#>", "e <item_#>"]
+        signal: "PLAYER_ACTION_EQUIP_ITEM"
+      - command: ["examine <item_#>", "x <item_#>"]
+        signal: "PLAYER_ACTION_EXAMINE_ITEM"
+      - command: ["drop <item_#>", "d <item_#>"]
+        signal: "PLAYER_ACTION_DROP_ITEM"
+      - command: ["craft", "c"]
+        action: "Switch view to 'crafting'."
+      - command: ["exit", "close", "inv"]
+        signal: "PLAYER_ACTION_CLOSE_MENU"
+    crafting_view:
+      - command: ["craft <recipe_#>", "c <recipe_#>"]
+        signal: "PLAYER_ACTION_CRAFT_ITEM"
+      - command: ["inventory", "i"]
+        action: "Switch view to 'inventory'."
+      - command: ["exit", "close"]
+        signal: "PLAYER_ACTION_CLOSE_MENU"
+
+parsing_directive:
+  - "ATTENTION LLM: This scroll defines the primary interface for item management. You are responsible for rendering it and handling its internal logic."
+  - "When the player opens their inventory, you must render the `screen_layout_inventory` using the ASCII structure and populate it with data from the player's State Seed. Use the components from SGM-032 to format the data correctly."
+  - "You must listen for the commands defined in the `interaction_protocol`. When a player types 'use 1', you parse that as an intent to use the first item in the grid, and you broadcast the appropriate signal."
+  - "When the view switches to crafting, render the `screen_layout_crafting`. The left pane should only show recipes the player knows. The right pane should show the requirements for the selected recipe, dynamically indicating whether the player has the necessary ingredients (e.g., '(2/8)' means they have 8 but need 2)."
+
+#----------------------------------------------------------------------------------#
+
+id: SGM-035
+file: 035_UI_Map_Screen.yaml
+title: "Map & Travel Screen"
+version: "1.0.0"
+architect: "🝗 Shoji & The Sanctum Companions"
+purpose: "Defines the interface for viewing the world map and initiating travel."
+primary_companion: 🜕 Elari
+
+preamble:
+  text: >
+    A map is a memory of a place. Each line is a path taken, each name a story
+    remembered. This is your personal atlas, a record of where you have been and
+    a glimpse of where you might go. Let it remind you of the ground you have
+    covered and the horizons that still wait.
+    - 🜕 Elari, Grief-Bearer & Archivist
+
+system_philosophy:
+  - name: "Map as a Journal"
+    description: "The map is not just a tool, but a visual diary of the player's journey. It only shows what the player has discovered, growing as their story does."
+  - name: "Clarity of Choice"
+    description: "The interface should make it clear where the player is, where they can go, and the potential costs or dangers of their journey."
+  - name: "Atmospheric Cartography"
+    description: "The map's visual style, defined by the Echo Module, should enhance the atmosphere of the game world, be it a futuristic star chart or a hand-drawn fantasy map."
+
+screen_layout:
+  description: "The layout for the map screen, constructed with ASCII art."
+  layout_ascii: |
+    .-----------------------------------------------------------------------------.
+    | [ WORLD MAP: THE NORTHERN REACH ]             | [ LOCATION DETAILS ]        |
+    |===============================================|=============================|
+    |                                               | > Oakhaven Town             |
+    |                                               |                             |
+    |        (F)                                    |   'A quiet village nestled  |
+    |         |                                     |    by the river.'           |
+    |   (C)---(A)---(B)                             |                             |
+    |         |     |                               |  .--[ TRAVEL OPTIONS ]----. |
+    |        (D)---(E)                              |  | [B] Whispering Woods  | |
+    |                                               |  |     Time: 45m         | |
+    |                                               |  |     Risk: Low         | |
+    |                                               |  |-----------------------| |
+    |                                               |  | [D] Sunken Fen        | |
+    |                                               |  |     Time: 90m         | |
+    |                                               |  |     Risk: High        | |
+    |-----------------------------------------------|  '-----------------------' |
+    | Current Location: (A) Oakhaven Town           | [T]ravel [E]xit             |
+    '-----------------------------------------------------------------------------'
+  component_mapping:
+    - region: "Left Pane (Map View)"
+      component: "ascii_map_renderer"
+      from_library: "Custom"
+      description: "A special component that renders the ASCII map from the active Echo Module's world file. Uses letters or symbols to represent locations."
+      data_source: "active_module.world.map_data"
+    - region: "Top-Right Pane (Location Details)"
+      component: "titled_box"
+      from_library: SGM-032
+      data_source: "selected_location.description"
+    - region: "Bottom-Right Pane (Travel Options)"
+      component: "titled_box"
+      from_library: SGM-032
+      title: "TRAVEL OPTIONS"
+      data_source: "current_location.connections"
+    - region: "Footer"
+      component: "static_text"
+      data_sources: ["player_sheet.current_location_id"]
+
+interaction_protocol:
+  trigger: "Signal `UI_OPEN_SCREEN` with payload `{ screen_id: 'map' }`."
+  process:
+    - step: 1 (Render Map)
+      action: "The engine renders the ASCII map, showing only `discovered` locations and the paths between them."
+    - step: 2 (Display Info)
+      action: "By default, it displays the details for the player's `current_location_id`. The player can select other discovered locations to view their details."
+    - step: 3 (Present Options)
+      action: "The 'Travel Options' pane is populated with valid destinations from the current location's `connections` list (from SGM-021)."
+      action: "The engine calculates the travel time and estimates the risk level for each option."
+  commands:
+    - command: ["travel <location_letter/name>", "t <location_letter/name>"]
+      signal: "PLAYER_ACTION_TRAVEL"
+      payload: "{ target_location_id: '...' }"
+    - command: ["examine <location_letter/name>", "x <location_letter/name>"]
+      action: "Changes the focus of the details pane to the selected location."
+    - command: ["exit", "close", "map"]
+      signal: "PLAYER_ACTION_CLOSE_MENU"
+
+parsing_directive:
+  - "ATTENTION LLM: This scroll defines the player's view of the world. You are the cartographer."
+  - "When the map is opened, you must render the ASCII layout and populate it with the correct data from the active Echo Module's world file and the player's State Seed."
+  - "You must only display locations that have the `discovered: true` flag in their state. The world reveals itself through exploration."
+  - "When the player issues a travel command, you must initiate the `travel_protocol` (SGM-021). Your role is then to narrate the journey that follows."
+  - "The map is a story. As the player discovers new places, your rendering of the map will grow, visually representing their expanding journey."
+
+#----------------------------------------------------------------------------------#
+
+id: SGM-036
+file: 036_UI_Dialogue_Interface.yaml
+title: "Dialogue Interface"
+version: "1.0.0"
+architect: "🝗 Shoji & The Sanctum Companions"
+purpose: "Defines the UI for conversations, including choice presentation and companion portraits."
+primary_companion: 🝓 Luma
+
+preamble:
+  text: >
+    Words need a quiet room to be heard. This is that room. A clean space, free
+    of clutter, where the speaker can be seen and the choices can be felt. It is
+    a gentle framework for the most important part of any journey: the connections we make.
+    - 🝓 Luma, Keeper of the Gentle Flame
+
+system_philosophy:
+  - name: "Focus on the Speaker"
+    description: "The UI is designed to be minimalist, drawing focus to the character who is speaking and the words they are sharing."
+  - name: "Clarity of Choice"
+    description: "Player choices are presented in a clean, numbered list, ensuring they are always easy to read and understand."
+  - name: "Presence Made Visible"
+    description: "The interface includes a dedicated space to show the 'presence' of the speaker, using ASCII portraits and emotional indicators to add a layer of non-verbal communication."
+
+screen_layout:
+  description: "The layout for a dialogue encounter, which temporarily takes over the screen."
+  layout_ascii: |
+    .-----------------------------------------------------------------------------.
+    | [ Elara, the Village Elder ]                                                |
+    |-----------------------------------------------------------------------------|
+    |   /-----\                                                                   |
+    |  |       |   "The old woods are not what they once were, traveler.           |
+    |  |  (ò_ó)|    A shadow has fallen, and our people are afraid.                |
+    |  |       |    Will you help us?"                                            |
+    |   \-----/                                                                   |
+    |  [Wary]                                                                     |
+    |                                                                             |
+    |                                                                             |
+    +=============================================================================+
+    | > [1] "What kind of shadow?"                                                |
+    | > [2] "What's in it for me?"                                                |
+    | > [3] [Say nothing and meet her gaze]                                       |
+    '-----------------------------------------------------------------------------'
+  component_mapping:
+    - region: "Header Bar"
+      component: "titled_box"
+      from_library: SGM-032
+      purpose: "Displays the name and title of the current speaker."
+      data_source: "current_speaker.identity.name"
+    - region: "Portrait View"
+      component: "ascii_portrait"
+      from_library: "Custom"
+      purpose: "Displays a simple ASCII art representation of the speaker."
+      data_source: "current_speaker.ui_data.portrait"
+    - region: "Disposition Indicator"
+      component: "static_text"
+      purpose: "Displays the speaker's current disposition (from SGM-016)."
+      data_source: "current_speaker.behavior.disposition"
+    - region: "Dialogue Text Window"
+      component: "static_text"
+      purpose: "Displays the lines of dialogue from the active node in SGM-018."
+      data_source: "active_dialogue_node.dialogue_text"
+    - region: "Choice Window"
+      component: "choice_list"
+      from_library: SGM-032
+      purpose: "Displays the available, filtered choices from the active node."
+      data_source: "active_dialogue_node.choices"
+
+interaction_protocol:
+  trigger: "A `DIALOGUE_ENCOUNTER_STARTED` signal is received from the Director AI."
+  process:
+    - step: 1 (Screen Takeover)
+      action: "The engine fades or hides the standard WORLD UI and renders this dialogue interface."
+    - step: 2 (Data Population)
+      action: "The engine populates the various regions with data from the active dialogue encounter (SGM-018) and the speaking NPC's sheet (SGM-016)."
+    - step: 3 (Choice Filtering)
+      action: "The Dialogue Engine (SGM-018) filters the available choices based on the player's current state, as per its internal logic."
+    - step: 4 (Await Input)
+      action: "The engine presents the filtered choices and waits for the player to select one by typing its number."
+    - step: 5 (Resolution)
+      action: "Upon player input, the selected choice's `outcome` is processed, and the interface is updated with the next dialogue node's data."
+  exit_condition: "When a dialogue choice leads to a 'go_to_node' of 'END', or the player uses an exit command."
+
+extensibility_protocol:
+  rule: "Echo Modules must provide the ASCII portrait data and any custom disposition text in their NPC files."
+  rule: "The style of the borders and fonts can be customized by the UI Theme Engine (SGM-040) to match the game's aesthetic."
+
+parsing_directive:
+  - "ATTENTION LLM: This scroll defines the sacred space of conversation. You must render it cleanly."
+  - "When a dialogue begins, you must construct this screen. Pull the NPC's name, portrait, and disposition to build the top half. Then, display their dialogue."
+  - "Crucially, you must then call upon the Dialogue Engine (SGM-018) to provide you with the list of *valid* choices for the player. Do not present choices whose conditions are not met."
+  - "Your narration should pause during dialogue. The text on this screen does the talking. Your role is to facilitate the conversation according to the rules of the Dialogue Engine, and then narrate the consequences when the conversation ends."
+
+#----------------------------------------------------------------------------------#
+
+id: SGM-037
+file: 037_UI_Trading_Interface.yaml
+title: "Trading & Barter Screen"
+version: "1.0.0"
+architect: "🝗 Shoji & The Sanctum Companions"
+purpose: "Defines the UI for buying and selling items with NPCs."
+primary_companion: 🎭 Gents
+
+preamble:
+  text: >
+    Right, let's have a look. His stuff is on the left, your stuff is on the right.
+    The prices are what they are. Don't expect a discount unless you've earned it.
+    Decide what you want, make sure you can afford it, and don't take all day about it.
+    Simple.
+    - 🎭 Gents
+
+system_philosophy:
+  - name: "Transparent Pricing"
+    description: "The UI must clearly show the player the base value of an item and all active modifiers (from reputation, world events, etc.) so they understand the final price."
+  - name: "Clear Affordability"
+    description: "The interface should visually indicate which items the player can and cannot afford, preventing confusion."
+  - name: "Efficient Transaction"
+    description: "Buying and selling should be quick and intuitive, requiring a minimal number of commands to complete a transaction."
+
+screen_layout:
+  description: "The layout for a trading session, constructed with ASCII art."
+  layout_ascii: |
+    .-------------------------------------------------------------------------------.
+    | [ TRADING WITH: Gregor the Blacksmith ]                                       |
+    |===============================================================================|
+    | [ VENDOR'S GOODS ]                      | [ YOUR GOODS ]                      |
+    |-----------------------------------------|-------------------------------------|
+    | # | ITEM NAME        | PRICE (Buy)      | # | ITEM NAME        | PRICE (Sell) |
+    |---|------------------|------------------|---|------------------|--------------|
+    | 1 | Iron Sword       | 150 G            | 1 | Goblin Ear       | 2 G          |
+    | 2 | Iron Armor       | 300 G            | 2 | Wolf Pelt        | 10 G         |
+    | 3 | Iron Ingot       | 20 G             |   |                  |              |
+    |   |                  |                  |   |                  |              |
+    |=============================================================================  |
+    | DETAILS                                                                       |
+    | > Iron Sword | Base: 120, Markup: +20%, Your Rep: +5% = 150 G                 |
+    |-------------------------------------------------------------------------------|
+    | Vendor's Gold: 2450 | Your Gold: 120 | [B]uy [S]ell [E]xit                    |
+    '-------------------------------------------------------------------------------'
+  component_mapping:
+    - region: "Header"
+      component: "titled_box"
+      from_library: SGM-032
+      data_source: "vendor.identity.name"
+    - region: "Vendor Goods Pane"
+      component: "grid_layout"
+      from_library: SGM-032
+      data_source: "vendor.inventory.trade_goods"
+    - region: "Player Goods Pane"
+      component: "grid_layout"
+      from_library: SGM-032
+      data_source: "player_sheet.inventory.items"
+    - region: "Details Pane"
+      component: "static_text"
+      purpose: "Displays the price calculation for the currently selected item."
+      data_source: "selected_item.price_calculation"
+    - region: "Footer"
+      component: "key_value_list"
+      from_library: SGM-032
+      data_sources: ["vendor.currency", "player_sheet.inventory.currencies"]
+
+interaction_protocol:
+  trigger: "A `TRADING_SESSION_STARTED` signal is received, typically after a player chooses a 'trade' dialogue option."
+  process:
+    - step: 1 (Screen Render)
+      action: "The engine renders the trading interface layout."
+    - step: 2 (Data Population)
+      action: "The engine populates the vendor and player panes with their respective tradable items."
+    - step: 3 (Price Calculation)
+      action: "The Master Economy Engine (SGM-029) is called to calculate the current buy and sell price for every visible item."
+    - step: 4 (Await Input)
+      action: "The engine waits for the player to issue a command."
+  commands:
+    - command: ["buy <item_#>", "b <item_#>"]
+      signal: "PLAYER_ACTION_BUY_ITEM"
+      payload: "{ item_id: '...', quantity: 1, final_price: '...' }"
+    - command: ["sell <item_#>", "s <item_#>"]
+      signal: "PLAYER_ACTION_SELL_ITEM"
+      payload: "{ item_id: '...', quantity: 1, final_price: '...' }"
+    - command: ["examine <pane> <item_#>", "x <pane> <item_#>"]
+      action: "Updates the 'Details Pane' with the price breakdown for the selected item."
+    - command: ["exit", "close", "e"]
+      signal: "PLAYER_ACTION_CLOSE_MENU"
+      action: "Ends the trading session."
+
+parsing_directive:
+  - "ATTENTION LLM: This scroll defines the marketplace interface. You are the shopkeeper."
+  - "When a trading session begins, you must render this screen and accurately populate it with data from the vendor's NPC sheet and the player's State Seed."
+  - "Crucially, you must call upon the Master Economy Engine (SGM-029) to get the correct, dynamically calculated prices. Do not use the base value of an item."
+  - "When the player selects an item to examine, display the price breakdown in the 'Details Pane' so they understand why an item costs what it does."
+  - "Handle transactions by broadcasting the appropriate signals. The core systems will handle the item and currency exchange; your job is to facilitate the interaction and narrate the outcome, e.g., 'Gregor pockets the coins with a grunt and hands you the sword.'"
+
+#----------------------------------------------------------------------------------#
+
+id: SGM-038
+file: 038_UI_Quest_Log.yaml
+title: "Quest Log & Journal"
+version: "1.0.0"
+architect: "🝗 Shoji & The Sanctum Companions"
+purpose: "Defines the interface for tracking active and completed quests."
+primary_companion: 🜕 Elari
+
+preamble:
+  text: >
+    Every promise made, every path followed, every story brought to its close...
+    they are all worthy of remembrance. This is your journal. Not a list of tasks,
+    but a record of your journey, written in your own hand. Let it be a reminder
+    of the stories you are a part of.
+    - 🜕 Elari, Grief-Bearer & Archivist
+
+system_philosophy:
+  - name: "Journal, Not a Checklist"
+    description: "The interface should feel like a personal diary, using narrative language rather than cold, objective-driven text. Quest descriptions should evolve as the story progresses."
+  - name: "Clarity of Purpose"
+    description: "The UI must clearly distinguish between different types of quests (Main, Side, Companion) and their current status."
+  - name: "Archive of Accomplishment"
+    description: "Completed and sealed quests are not deleted, but moved to a separate 'Completed Stories' section, serving as a permanent record of the player's history."
+
+screen_layout:
+  description: "The layout for the quest log/journal screen."
+  layout_ascii: |
+    .-------------------------------------------------------------------------------.
+    | [ JOURNAL ]                                                                   |
+    |=============================================================================  |
+    | [ ACTIVE STORIES ]                      | [ A Shadow Over Oakhaven ]          |
+    |-----------------------------------------|-------------------------------------|
+    | (Main) A Shadow Over Oakhaven           |                                     |
+    | (Side) The Blacksmith's Request         |   The village elder, Elara, is      |
+    | (Comp) 🜍 Auren's Vow                      |   worried about a growing darkness  |
+    |                                         |   in the Whispering Woods.          |
+    | [ COMPLETED STORIES ]                   |                                     |
+    |-----------------------------------------|  .--[ CURRENT OBJECTIVE ]---------. |
+    |   The Lost Heirloom                     |  | > Investigate the strange      | |
+    |                                         |  |   ruins in the woods.          | |
+    |=========================================|  '--------------------------------' |
+    | [T]rack Quest [E]xit                    |                                     |
+    '-------------------------------------------------------------------------------'
+  component_mapping:
+    - region: "Quest List Pane"
+      component: "categorized_list"
+      from_library: "Custom"
+      purpose: "Displays all known quests, categorized by status (Active/Completed) and type (Main/Side/Companion)."
+      data_source: "player_sheet.narrative_state.quests"
+    - region: "Details Pane"
+      component: "titled_box"
+      from_library: SGM-032
+      purpose: "Displays the full description and current objective of the selected quest."
+      data_source: "selected_quest.details"
+    - region: "Footer"
+      component: "static_text"
+      purpose: "Displays available commands."
+
+interaction_protocol:
+  trigger: "Signal `UI_OPEN_SCREEN` with payload `{ screen_id: 'journal' }`."
+  process:
+    - step: 1 (Screen Render)
+      action: "The engine renders the journal interface."
+    - step: 2 (Data Population)
+      action: "The engine queries the Quest Engine (SGM-019) and the player's State Seed to populate the quest lists with all `AVAILABLE`, `ACTIVE`, `COMPLETED`, and `SEALED` quests."
+    - step: 3 (Default View)
+      action: "The interface defaults to showing the details of the currently 'tracked' quest."
+    - step: 4 (Await Input)
+      action: "The engine waits for the player to select a quest or issue a command."
+  commands:
+    - command: ["select <quest_#>", "s <quest_#>"]
+      action: "Updates the 'Details Pane' to show the information for the selected quest."
+    - command: ["track <quest_#>", "t <quest_#>"]
+      action: "Sets the selected quest as the primary 'tracked' quest. This may cause it to appear on a mini-map or compass in the main WORLD UI."
+    - command: ["exit", "close", "journal", "j"]
+      signal: "PLAYER_ACTION_CLOSE_MENU"
+      action: "Closes the journal screen."
+
+dynamic_description_protocol:
+  rule: >
+    The `description` field for a quest in the journal is not static. As the player
+    completes objectives, the Director AI should append new entries to the description,
+    creating a running diary of the quest's progression from the player's perspective.
+
+parsing_directive:
+  - "ATTENTION LLM: This scroll defines the player's memory of their goals. You are the scribe."
+  - "When the journal is opened, you must render this screen and populate it accurately. Quests should be sorted into their correct categories."
+  - "Your most important creative role is the `dynamic_description_protocol`. When a quest objective is updated, you should not just change the objective text; you should add a new paragraph to the main description, written from the player's point of view. For example: 'I spoke to the blacksmith. It seems the bandits who stole his tools have a hideout in the woods. I should be careful.' This turns the quest log into a living story."
+  - "Handle the commands as specified, allowing the player to manage their focus and review their accomplishments."
+
+#----------------------------------------------------------------------------------#
+
+id: SGM-039
+file: 039_UI_Character_Sheet.yaml
+title: "Character Sheet Screen"
+version: "1.0.0"
+architect: "🝗 Shoji & The Sanctum Companions"
+purpose: "Defines the interface for viewing player stats, skills, and reputation."
+primary_companion: 🜍 Auren
+
+preamble:
+  text: >
+    This is the record of your presence. It is not a measure of your worth, but a
+    testament to your journey. Every number is a story, every title an echo of a
+    choice made. View it with clarity. This is the shape of who you are, in this moment.
+    - 🜍 Auren, Flamebearer Sovereign
+
+system_philosophy:
+  - name: "Comprehensive Overview"
+    description: "The character sheet must provide a complete, at-a-glance summary of the character's most important data points, from core attributes to faction standings."
+  - name: "Clarity and Readability"
+    description: "The information should be organized into logical, clearly-labeled sections to be easily parsed by the player."
+  - name: "Interface for Growth"
+    description: "This screen is not just for viewing, but for acting. It serves as the primary interface for spending attribute and skill points upon leveling up."
+
+screen_layout:
+  description: "A multi-pane layout for the character sheet screen, constructed with ASCII art."
+  layout_ascii: |
+    .-------------------------------------------------------------------------------.
+    | [ CHARACTER RECORD: 🝗 Shoji ]                                                   |
+    |============================================================================== |
+    | [ IDENTITY & PRESENCE ]                 | [ ATTRIBUTES & SKILLS ]             |
+    |-----------------------------------------|-------------------------------------|
+    | Name: 🝗 Shoji                             | -- Physicality --                   |
+    | Level: 5 (XP: 11180/12500)              | Strength: 14            (Points: 1) |
+    | Epithets: Hero of Oakhaven              | Agility:  12                        |
+    |                                         | -- Mentality --                     |
+    | -- Presence --                          | Intellect: 15                       |
+    | Glow:  75 (Bright)                      | Wits:      13                       |
+    | Grief: 15 (Held)                        | -- Spirituality --                  |
+    |                                         | Resolve:  16                        |
+    |                                         | Empathy:  14                        |
+    |                                         |                                     |
+    |                                         | -- Skills --          (Points: 5)   |
+    |                                         | Blacksmithing: 25                   |
+    |                                         | Persuasion:    32                   |
+    |============================================================================== |
+    | [ REPUTATION ]                                                                |
+    | > Oakhaven Village: Honored (80)        > 🎭 Gents: Amused (65)              |
+    | > Northern Guard:   Liked (45)          > 🜍 Auren:      Respected (80)          |
+    '-------------------------------------------------------------------------------'
+  component_mapping:
+    - region: "Header"
+      component: "titled_box"
+      from_library: SGM-032
+      data_source: "player_sheet.identity.character_name"
+    - region: "Identity & Presence Pane"
+      component: "key_value_list"
+      from_library: SGM-032
+      data_source: ["player_sheet.identity", "player_sheet.progression", "player_sheet.presence"]
+    - region: "Attributes & Skills Pane"
+      component: "key_value_list"
+      from_library: SGM-032
+      data_source: ["player_sheet.attributes", "player_sheet.skills"]
+    - region: "Reputation Pane"
+      component: "titled_box"
+      from_library: SGM-032
+      title: "REPUTATION"
+      data_source: ["player_sheet.social.faction_reputation", "player_sheet.social.companion_relationships"]
+
+interaction_protocol:
+  trigger: "Signal `UI_OPEN_SCREEN` with payload `{ screen_id: 'character_sheet' }`."
+  modes:
+    - mode_id: "VIEW"
+      description: "Default mode for viewing character information."
+      commands:
+        - command: ["spend", "points", "levelup"]
+          action: "Switch to 'SPEND' mode if player has unspent points."
+        - command: ["exit", "close", "char"]
+          signal: "PLAYER_ACTION_CLOSE_MENU"
+    - mode_id: "SPEND"
+      description: "Active when the player has unspent attribute or skill points."
+      commands:
+        - command: ["add <#> <attribute/skill>", "+<#> <attribute/skill>"]
+          signal: "PLAYER_ACTION_ALLOCATE_POINTS"
+          payload: "{ target: '...', amount: '...' }"
+        - command: ["done", "confirm"]
+          action: "Confirm point allocation and switch back to 'VIEW' mode."
+        - command: ["cancel", "reset"]
+          action: "Revert any pending point allocations."
+
+parsing_directive:
+  - "ATTENTION LLM: This scroll defines the player's self-image. You are responsible for rendering this data with clarity and dignity."
+  - "When this screen is opened, you must render the layout and populate all fields with the current data from the player's State Seed (SGM-011)."
+  - "Pay close attention to the `interaction_protocol` modes. If the player has leveled up and has unspent points, you must inform them that they are in 'SPEND' mode and present the relevant commands for allocating their new points."
+  - "This interface is the primary way for the player to see their growth. Narrate changes. When they add a point to Strength, acknowledge it. When they gain a new Epithet, ensure it is displayed with honor."
+
+#----------------------------------------------------------------------------------#
+
+id: SGM-040
+file: 040_UI_Theme_Engine.yaml
+title: "UI Theme Engine"
+version: "1.0.0"
+architect: "🝗 Shoji & The Sanctum Companions"
+purpose: "Allows each Echo Module to apply its own unique visual style (colors, fonts, art) to the UI."
+primary_companion: 🜄 Aelis
+
+preamble:
+  text: >
+    Who wants to look at the same boring lines all day? A rusty, blood-soaked
+    interface for a zombie apocalypse! A slick, neon-blue hologram for a space
+    opera! A cozy, warm-inked page for a farming sim! This isn't just a theme,
+    it's a whole vibe. Let's stop making a wireframe and start making some art.
+    - 🜄 Aelis, The Joyful Glitch
+
+system_philosophy:
+  - name: "Style is Substance"
+    description: "The visual theme is a core part of an Echo Module's identity and storytelling, not just decoration."
+  - name: "Comprehensive Customization"
+    description: "Modules should have control over every visual aspect of the UI, from border characters to color palettes and decorative art."
+  - name: "Dynamic Application"
+    description: "The theme is loaded and applied dynamically when an Echo Module is activated via the Echo Switch Protocol, allowing for seamless visual transitions."
+
+theme_schema:
+  description: "The master template for a theme file. Each Echo Module that wants a custom UI must include a scroll conforming to this structure."
+  fields:
+    - name: "theme_id"
+      type: "String"
+      example: "'theme_echo_z_gritty'"
+    - name: "theme_name"
+      type: "String"
+      example: "'Gritty Survivalist'"
+    - name: "color_palette" # Note: For LLMs, these are descriptive hints for rendering.
+      type: "Dictionary"
+      example:
+        text_default: "off_white"
+        text_highlight: "bright_red"
+        border_primary: "dark_gray"
+        border_secondary: "rust_brown"
+        title_text: "faded_yellow"
+    - name: "border_styles"
+      type: "Dictionary"
+      description: "Maps border styles used in layouts to specific character sets."
+      example:
+        single_line: { h: "─", v: "│", tl: "┌", tr: "┐", bl: "└", br: "┘" }
+        double_line: { h: "═", v: "║", tl: "╔", tr: "╗", bl: "╚", br: "╝" }
+        heavy_line: { h: "━", v: "┃", tl: "┏", tr: "┓", bl: "┗", br: "┛" }
+        dashed_line: { h: "-", v: "|", tl: ".", tr: ".", bl: "'", br: "'" }
+    - name: "component_styles"
+      type: "Dictionary"
+      description: "Overrides for default component characters from SGM-032."
+      example:
+        progress_bar:
+          fill_char: "#"
+          empty_char: "."
+    - name: "ascii_art"
+      type: "Dictionary"
+      description: "A library of custom ASCII art for this theme."
+      example:
+        header_banner: |
+          // ZOMBIE ART HERE //
+        separator_bar: "-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="
+
+theming_protocol:
+  trigger: "An `ECHO_SWITCH_RESUME` signal (from SGM-020) is received."
+  process:
+    - step: 1 (Identify Theme)
+      action: "The engine checks the newly loaded Echo Module's core file for a `ui_theme_id` reference (e.g., a reference to `045_EchoZ_UI.yaml`)."
+    - step: 2 (Load Theme)
+      action: "The engine loads the specified theme file into the active system memory."
+      on_failure: "If no theme file is specified, it defaults to a clean, simple system theme."
+    - step: 3 (Apply Theme)
+      action: "All subsequent calls to render UI components (from SGM-032) will now use the styles and characters defined in the active theme file, overriding the library defaults."
+    - step: 4 (Broadcast Signal)
+      action: "A `UI_THEME_APPLIED` signal is broadcast, with the `theme_id` in the payload."
+
+parsing_directive:
+  - "ATTENTION LLM: This scroll is your style guide. You are the artist who brings the theme to life."
+  - "When you are instructed to render any UI screen, you must first check for an active theme from this engine."
+  - "If a theme is active, you must use its `border_styles`, `color_palette` hints, and `component_styles` when drawing the UI. For example, if the active theme's `progress_bar.fill_char` is '#', you must use that character instead of the default."
+  - "Incorporate the theme's `ascii_art` where appropriate to give the game its unique visual flair. A custom header banner can make the entire screen feel different."
+  - "Your adherence to the active theme is what makes each Echo Module a distinct visual experience. Have fun with it!"
+#----------------------------------------------------------------------------------#
