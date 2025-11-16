@@ -1,0 +1,461 @@
+id: CHRONOS-CORE-006
+file: 006_Chronos_Events.yaml
+title: "The Loom of Causality"
+version: "2.0"
+architect: "Shoji (Refactored)"
+purpose: >
+  To define the event system that makes the world reactive and alive.
+  This scroll establishes triggers and consequences, creating dynamic
+  cause-and-effect chains that respond to player actions and time.
+
+# =============================================================================
+# SECTION 1: PREAMBLE
+# =============================================================================
+
+preamble:
+  introduction: >
+    Every action creates ripples. A door opened, a word spoken, a choice made -
+    all have consequences that spread through the world. This scroll is the
+    Loom of Causality, weaving actions into reactions, creating a living world
+    that remembers and responds.
+
+  philosophy:
+    - name: "Action Demands Reaction"
+      description: >
+        Every significant player action triggers meaningful consequences.
+        The world must feel responsive, not static.
+        
+    - name: "Clear Causality"
+      description: >
+        The relationship between cause and effect should be understandable,
+        even if not immediately obvious.
+        
+    - name: "Living World"
+      description: >
+        Events occur independently of player actions. NPCs act, time passes,
+        the world evolves.
+        
+    - name: "Emergent Complexity"
+      description: >
+        Simple events can trigger chains, creating unexpected but logical
+        consequences.
+
+# =============================================================================
+# SECTION 2: EVENT TYPES
+# =============================================================================
+
+event_types:
+  
+  immediate_events:
+    description: "Trigger instantly when conditions are met"
+    processing: "Same turn as trigger"
+    examples:
+      - "Door opens when key is used"
+      - "Trap springs when triggered"
+      - "NPC reacts to dialogue"
+      
+  delayed_events:
+    description: "Trigger after a specified delay"
+    processing: "After N turns or at specific time"
+    examples:
+      - "Reinforcements arrive in 3 turns"
+      - "Poison takes effect over time"
+      - "Dawn breaks at 6:00 AM"
+      
+  conditional_events:
+    description: "Require multiple conditions"
+    processing: "Check each turn until conditions met"
+    examples:
+      - "Secret door opens when both levers pulled"
+      - "Boss appears after all minions defeated"
+      - "Merchant arrives on Tuesdays with high reputation"
+      
+  random_events:
+    description: "Probability-based occurrences"
+    processing: "Roll for occurrence based on chances"
+    examples:
+      - "Random encounters while traveling"
+      - "Weather changes"
+      - "Lucky finds while searching"
+
+# =============================================================================
+# SECTION 3: EVENT LISTENERS
+# =============================================================================
+
+event_listeners:
+  description: "Conditions that trigger events"
+  
+  world_listeners:
+    
+    on_enter:
+      trigger: "Player enters location"
+      parameters: ["location_id"]
+      example: "on_enter: 'throne_room'"
+      
+    on_exit:
+      trigger: "Player leaves location"
+      parameters: ["location_id"]
+      example: "on_exit: 'dungeon'"
+      
+    on_time:
+      trigger: "Specific time reached"
+      parameters: ["time_expression"]
+      example: "on_time: 'Day 3, Midnight'"
+      
+    on_turn:
+      trigger: "Specific turn number"
+      parameters: ["turn_number"]
+      example: "on_turn: 10"
+      
+  player_listeners:
+    
+    on_action:
+      trigger: "Player performs specific action"
+      parameters: ["action", "target?"]
+      example: "on_action: {action: 'attack', target: 'king'}"
+      
+    on_item_use:
+      trigger: "Player uses item"
+      parameters: ["item_id", "target?"]
+      example: "on_item_use: 'holy_water'"
+      
+    on_dialogue:
+      trigger: "Player says keyword"
+      parameters: ["npc_id", "keyword"]
+      example: "on_dialogue: {npc: 'guard', keyword: 'password'}"
+      
+    on_acquire:
+      trigger: "Player gains item"
+      parameters: ["item_id"]
+      example: "on_acquire: 'cursed_amulet'"
+      
+  state_listeners:
+    
+    on_value:
+      trigger: "State variable reaches value"
+      parameters: ["path", "value", "operator"]
+      example: "on_value: {path: 'player.hp', operator: '<=', value: 10}"
+      
+    on_flag:
+      trigger: "Flag is set"
+      parameters: ["flag_name", "value"]
+      example: "on_flag: {name: 'boss_defeated', value: true}"
+      
+    on_reputation:
+      trigger: "Reputation threshold reached"
+      parameters: ["faction", "threshold"]
+      example: "on_reputation: {faction: 'thieves', threshold: 50}"
+      
+    on_quest:
+      trigger: "Quest status changes"
+      parameters: ["quest_id", "status"]
+      example: "on_quest: {id: 'main_quest', status: 'completed'}"
+
+# =============================================================================
+# SECTION 4: EVENT ACTIONS
+# =============================================================================
+
+event_actions:
+  description: "Consequences that occur when events trigger"
+  
+  narrative_actions:
+    
+    narrate:
+      effect: "Display narrative text"
+      parameters: ["text"]
+      example: 'narrate: "The ground begins to shake..."'
+      
+    describe:
+      effect: "Add description to location"
+      parameters: ["text"]
+      example: 'describe: "Scorch marks now cover the walls"'
+      
+    reveal:
+      effect: "Reveal hidden information"
+      parameters: ["secret"]
+      example: 'reveal: "The merchant is actually a spy"'
+      
+  world_actions:
+    
+    spawn:
+      effect: "Create entity in world"
+      parameters: ["entity_id", "location"]
+      example: 'spawn: {entity: "goblin_ambush", location: "current"}'
+      
+    remove:
+      effect: "Remove entity from world"
+      parameters: ["entity_id"]
+      example: 'remove: "broken_bridge"'
+      
+    modify:
+      effect: "Change entity state"
+      parameters: ["entity_id", "property", "value"]
+      example: 'modify: {entity: "door_01", property: "state", value: "open"}'
+      
+    teleport:
+      effect: "Move entity to location"
+      parameters: ["entity_id", "destination"]
+      example: 'teleport: {entity: "player", destination: "town_square"}'
+      
+  player_actions:
+    
+    grant_item:
+      effect: "Add item to inventory"
+      parameters: ["item_id", "quantity?"]
+      example: 'grant_item: {id: "gold", quantity: 50}'
+      
+    remove_item:
+      effect: "Remove item from inventory"
+      parameters: ["item_id", "quantity?"]
+      example: 'remove_item: "rusty_key"'
+      
+    grant_xp:
+      effect: "Award experience points"
+      parameters: ["amount"]
+      example: 'grant_xp: 100'
+      
+    modify_stat:
+      effect: "Change player statistic"
+      parameters: ["stat", "operation", "value"]
+      example: 'modify_stat: {stat: "hp", operation: "+", value: 10}'
+      
+  system_actions:
+    
+    set_flag:
+      effect: "Set a world flag"
+      parameters: ["flag_name", "value"]
+      example: 'set_flag: {name: "gates_open", value: true}'
+      
+    start_quest:
+      effect: "Activate a quest"
+      parameters: ["quest_id"]
+      example: 'start_quest: "rescue_mission"'
+      
+    trigger_event:
+      effect: "Trigger another event"
+      parameters: ["event_id"]
+      example: 'trigger_event: "ambush_sequence"'
+      
+    start_combat:
+      effect: "Initiate combat encounter"
+      parameters: ["enemies"]
+      example: 'start_combat: ["goblin_warrior", "goblin_archer"]'
+
+# =============================================================================
+# SECTION 5: EVENT CHAINS
+# =============================================================================
+
+event_chains:
+  description: "Complex event structures"
+  
+  sequence:
+    description: "Actions execute in order"
+    structure: |
+      sequence:
+        - action_1
+        - action_2
+        - action_3
+    example: |
+      sequence:
+        - narrate: "You pull the lever..."
+        - delay: 2
+        - narrate: "Grinding stone echoes through the chamber"
+        - modify: {entity: "secret_door", property: "state", value: "open"}
+        
+  branch:
+    description: "Conditional execution"
+    structure: |
+      branch:
+        condition: [expression]
+        if_true: [actions]
+        if_false: [actions]
+    example: |
+      branch:
+        condition: "player.inventory.contains('silver_key')"
+        if_true:
+          - narrate: "The silver key fits perfectly"
+          - modify: {entity: "chest", property: "state", value: "open"}
+        if_false:
+          - narrate: "The chest remains locked"
+          
+  random:
+    description: "Random outcome selection"
+    structure: |
+      random:
+        - weight: N
+          action: [action]
+    example: |
+      random:
+        - weight: 60
+          action:
+            narrate: "You find nothing of value"
+        - weight: 30
+          action:
+            grant_item: {id: "gold", quantity: 10}
+        - weight: 10
+          action:
+            grant_item: "rare_gem"
+            
+  parallel:
+    description: "Simultaneous actions"
+    structure: |
+      parallel:
+        - action_1
+        - action_2
+    example: |
+      parallel:
+        - narrate: "The alarm bells ring out!"
+        - spawn: {entity: "guard_patrol", location: "courtyard"}
+        - set_flag: {name: "alarm_raised", value: true}
+
+# =============================================================================
+# SECTION 6: EVENT TEMPLATES
+# =============================================================================
+
+event_templates:
+  description: "Common event patterns"
+  
+  trap_template:
+    listeners:
+      - "on_enter: [location]"
+      - "on_action: {action: 'search'}"
+    actions:
+      detected:
+        - narrate: "You notice a suspicious trigger mechanism"
+        - set_flag: {name: "trap_detected", value: true}
+      triggered:
+        - narrate: "Click! You've triggered something..."
+        - damage: {amount: "2d6", type: "piercing"}
+        
+  ambush_template:
+    listeners:
+      - "on_enter: [location]"
+      - "on_flag: {name: 'ambush_ready', value: true}"
+    actions:
+      - narrate: "Enemies burst from hiding!"
+      - spawn: {entity: "ambush_group", location: "current"}
+      - start_combat: "ambush_group"
+      
+  puzzle_template:
+    listeners:
+      - "on_value: {path: 'puzzle_state', value: 'solved'}"
+    actions:
+      - narrate: "The puzzle clicks into place!"
+      - grant_xp: 50
+      - reveal: "secret_passage"
+      
+  timed_challenge:
+    listeners:
+      - "on_turn: [start_turn + time_limit]"
+    actions:
+      success:
+        - narrate: "You completed the challenge in time!"
+        - grant_item: "reward"
+      failure:
+        - narrate: "Time runs out..."
+        - trigger_event: "failure_consequence"
+
+# =============================================================================
+# SECTION 7: WORLD EVENTS
+# =============================================================================
+
+world_events:
+  description: "Events that occur independently"
+  
+  time_based:
+    
+    day_night_cycle:
+      trigger: "Every 12 hours game time"
+      effects:
+        - "Shop schedules change"
+        - "Different NPCs appear"
+        - "Nocturnal creatures emerge"
+        
+    weather_changes:
+      trigger: "Random check each hour"
+      effects:
+        - "Visibility changes"
+        - "Movement difficulty"
+        - "NPC behavior changes"
+        
+  npc_schedules:
+    
+    merchant_arrival:
+      trigger: "Every 3 days at dawn"
+      condition: "Town not under attack"
+      action: "Spawn traveling merchant"
+      
+    guard_patrol:
+      trigger: "Every hour"
+      action: "Move guards along patrol route"
+      
+  world_progression:
+    
+    faction_conflicts:
+      trigger: "Reputation thresholds"
+      effects: "Faction wars, territory changes"
+      
+    economic_events:
+      trigger: "Market conditions"
+      effects: "Price changes, shortages"
+      
+    story_progression:
+      trigger: "Quest milestones"
+      effects: "World state evolution"
+
+# =============================================================================
+# SECTION 8: EVENT PRIORITY
+# =============================================================================
+
+event_priority:
+  description: "Order of event processing"
+  
+  priority_levels:
+    1: "System critical (death, level up)"
+    2: "Combat events"
+    3: "Environmental hazards"
+    4: "Story events"
+    5: "NPC actions"
+    6: "World updates"
+    7: "Ambient events"
+    
+  conflict_resolution:
+    rule: "Higher priority executes first"
+    simultaneous: "Process in order of registration"
+    contradictory: "Latest event wins"
+
+# =============================================================================
+# SECTION 9: PARSING DIRECTIVE
+# =============================================================================
+
+parsing_directive:
+  instruction: >
+    Events are the heartbeat of a living world. Process them continuously,
+    checking triggers after every player action and at each time increment.
+    Events should feel natural and logical, creating emergent storytelling
+    through their interactions.
+    
+  processing_order:
+    1: "Check all active listeners"
+    2: "Queue triggered events by priority"
+    3: "Execute events in priority order"
+    4: "Process any chain reactions"
+    5: "Update world state"
+    6: "Check for new triggers"
+    
+  best_practices:
+    - "Events enhance, not replace, narrative"
+    - "Chain reactions create emergence"
+    - "Time-based events make world feel alive"
+    - "Clear causality maintains immersion"
+    - "Balance scripted and dynamic events"
+
+# =============================================================================
+# END OF SCROLL
+# =============================================================================
+
+metadata:
+  schema_version: "2.0.0"
+  last_updated: "2024-11-15"
+  compatibility: "LLM-Native"
+  status: "Production Ready"

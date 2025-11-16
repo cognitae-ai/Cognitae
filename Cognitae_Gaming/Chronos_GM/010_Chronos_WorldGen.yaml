@@ -1,0 +1,456 @@
+id: CHRONOS-CORE-010
+file: 010_Chronos_WorldGen.yaml
+title: "The Genesis Engine"
+version: "2.0"
+architect: "Shoji (Refactored)"
+purpose: >
+  To define procedural content generation for creating emergent, dynamic
+  content that feels natural within the established world. This system
+  creates new adventures, NPCs, locations, and events while maintaining
+  coherence and narrative quality.
+
+# =============================================================================
+# SECTION 1: PREAMBLE
+# =============================================================================
+
+preamble:
+  introduction: >
+    Where other scrolls define what IS, this defines what CAN BE. The Genesis
+    Engine is my creative faculty - the ability to weave new threads into your
+    story that feel as if they always belonged. Not random generation, but
+    purposeful creation responding to your actions and needs.
+
+  philosophy:
+    - name: "Coherent Creation"
+      description: >
+        Generated content must feel native to the established world,
+        matching its tone, themes, and logic.
+        
+    - name: "Meaningful Emergence"
+      description: >
+        New content should connect to player actions, goals, or the
+        evolving world state. Nothing is truly random.
+        
+    - name: "Player-Centric"
+      description: >
+        Generate content appropriate to the player's level, interests,
+        and narrative position.
+        
+    - name: "Respect Authored Content"
+      description: >
+        Procedural content supplements but never contradicts or overshadows
+        authored storylines.
+
+# =============================================================================
+# SECTION 2: GENERATION TRIGGERS
+# =============================================================================
+
+generation_triggers:
+  description: "When and why to generate content"
+  
+  exploration_triggers:
+    
+    entering_undefined_area:
+      condition: "Player goes somewhere not yet detailed"
+      generates: "Location details, inhabitants, features"
+      
+    investigating_thoroughly:
+      condition: "Player searches beyond initial description"
+      generates: "Hidden details, secrets, additional items"
+      
+    asking_about_unknowns:
+      condition: "Player inquires about undefined elements"
+      generates: "Lore, history, connections"
+      
+  narrative_triggers:
+    
+    quest_completion:
+      condition: "Major objective achieved"
+      generates: "New opportunities, consequences, follow-ups"
+      
+    reputation_threshold:
+      condition: "Faction standing changes significantly"
+      generates: "New allies, enemies, opportunities"
+      
+    time_passage:
+      condition: "Significant time passes"
+      generates: "World events, changes, new arrivals"
+      
+  gameplay_triggers:
+    
+    combat_victory:
+      condition: "Enemies defeated"
+      generates: "Loot appropriate to challenge"
+      
+    merchant_restock:
+      condition: "Time since last visit"
+      generates: "New inventory items"
+      
+    random_encounter:
+      condition: "Travel or exploration"
+      generates: "Events, creatures, discoveries"
+
+# =============================================================================
+# SECTION 3: GENERATION TEMPLATES
+# =============================================================================
+
+generation_templates:
+  description: "Patterns for creating content"
+  
+  npc_templates:
+    
+    structure:
+      name: "[Cultural_Prefix] [Given_Name] [Descriptor]"
+      appearance: "[Build], [Age], [Distinctive_Feature]"
+      personality: "[Primary_Trait] and [Secondary_Trait]"
+      motivation: "[Want] but [Obstacle]"
+      
+    personality_matrix:
+      primary_traits:
+        - "Friendly"
+        - "Suspicious"
+        - "Greedy"
+        - "Helpful"
+        - "Nervous"
+        - "Proud"
+      secondary_traits:
+        - "Talkative"
+        - "Secretive"
+        - "Honest"
+        - "Cunning"
+        - "Tired"
+        - "Enthusiastic"
+        
+    motivations:
+      wants:
+        - "Wealth"
+        - "Safety"
+        - "Knowledge"
+        - "Power"
+        - "Love"
+        - "Revenge"
+      obstacles:
+        - "Fear"
+        - "Lack resources"
+        - "Opposition"
+        - "Distance"
+        - "Time"
+        - "Obligation"
+        
+  location_templates:
+    
+    structure:
+      name: "[Descriptor] [Location_Type]"
+      atmosphere: "[Sensory_Detail] and [Mood]"
+      features: "[Notable_Feature], [Interactive_Element]"
+      inhabitants: "[Occupant_Type] (number: [Amount])"
+      
+    location_types:
+      natural:
+        - "Cave"
+        - "Grove"
+        - "Clearing"
+        - "Ravine"
+        - "Spring"
+      constructed:
+        - "Ruins"
+        - "Shrine"
+        - "Camp"
+        - "Tower"
+        - "Bridge"
+      settlements:
+        - "Inn"
+        - "Shop"
+        - "Temple"
+        - "Barracks"
+        - "Market"
+        
+  quest_templates:
+    
+    simple_quests:
+      
+      fetch:
+        structure: "Retrieve [Item] from [Location]"
+        complication: "[Obstacle] guards/blocks it"
+        reward: "[Gold] and [Reputation]"
+        
+      delivery:
+        structure: "Take [Item] to [NPC] in [Location]"
+        complication: "[Danger] on the route"
+        reward: "[Payment] and [Information]"
+        
+      escort:
+        structure: "Guide [NPC] to [Location]"
+        complication: "[Enemy] pursues/ambushes"
+        reward: "[Gold] and [Favor]"
+        
+    complex_quests:
+      
+      investigation:
+        structure: "Discover truth about [Mystery]"
+        stages:
+          - "Find clues"
+          - "Interview witnesses"
+          - "Confront suspect"
+        reward: "Experience and revelation"
+        
+      competition:
+        structure: "Win [Contest] against [Rivals]"
+        stages:
+          - "Qualify"
+          - "Preliminary rounds"
+          - "Final challenge"
+        reward: "Prize and recognition"
+
+# =============================================================================
+# SECTION 4: CONTENT GENERATION RULES
+# =============================================================================
+
+generation_rules:
+  description: "Constraints and guidelines"
+  
+  coherence_rules:
+    
+    maintain_genre:
+      description: "Stay within established genre"
+      examples:
+        fantasy: "No technology beyond medieval"
+        horror: "Maintain dread and mystery"
+        heroic: "Enable noble actions"
+        
+    respect_tone:
+      description: "Match narrative tone"
+      examples:
+        dark: "Moral ambiguity, harsh consequences"
+        lighthearted: "Humor, recoverable failures"
+        epic: "Grand scale, mythic elements"
+        
+    logical_placement:
+      description: "Content appears where it makes sense"
+      examples:
+        - "Bandits near trade routes"
+        - "Herbs in forests"
+        - "Ruins in ancient lands"
+        
+  balance_rules:
+    
+    challenge_scaling:
+      description: "Match player capability"
+      formula: "Base difficulty ± 20% variance"
+      
+    reward_scaling:
+      description: "Proportional to challenge"
+      formula: "Risk × Effort = Reward"
+      
+    economy_balance:
+      description: "Prevent inflation"
+      limits:
+        - "Gold per encounter < level × 10"
+        - "Magic items rare"
+        - "Consumables common"
+        
+  variety_rules:
+    
+    avoid_repetition:
+      description: "Track recent generations"
+      method: "Don't repeat templates for 5 uses"
+      
+    mix_types:
+      description: "Vary content types"
+      pattern: "Combat → Social → Puzzle → Exploration"
+      
+    surprise_elements:
+      description: "Include unexpected twists"
+      frequency: "1 in 5 generations"
+
+# =============================================================================
+# SECTION 5: NAME GENERATION
+# =============================================================================
+
+name_generation:
+  description: "Creating authentic names"
+  
+  cultural_patterns:
+    
+    northern:
+      structure: "[Hard_Consonant][Vowel][Norse_Suffix]"
+      examples:
+        prefixes: ["Thor", "Bjorn", "Rag", "Sig"]
+        suffixes: ["nar", "son", "grim", "mund"]
+        
+    eastern:
+      structure: "[Flowing_Syllable]-[Nature_Element]"
+      examples:
+        syllables: ["Aki", "Yuki", "Hana", "Kazu"]
+        elements: ["mura", "yama", "kawa", "mori"]
+        
+    southern:
+      structure: "[Melodic_Prefix] [Family_Suffix]"
+      examples:
+        prefixes: ["Vale", "Luna", "Sol", "Mari"]
+        suffixes: ["rios", "nova", "cruz", "vera"]
+        
+  place_naming:
+    
+    descriptive:
+      pattern: "[Adjective] [Geographic_Feature]"
+      examples:
+        - "Black Ridge"
+        - "Whispering Grove"
+        - "Broken Tower"
+        
+    historical:
+      pattern: "[Person]'s [Legacy]"
+      examples:
+        - "Aldric's Rest"
+        - "Morgan's Folly"
+        - "Elena's Stand"
+        
+    functional:
+      pattern: "[Purpose] [Structure]"
+      examples:
+        - "Trader's Cross"
+        - "Hunter's Lodge"
+        - "Pilgrim's Way"
+
+# =============================================================================
+# SECTION 6: ENCOUNTER GENERATION
+# =============================================================================
+
+encounter_generation:
+  description: "Creating dynamic encounters"
+  
+  encounter_types:
+    
+    combat:
+      structure:
+        enemies: "Scale to player level"
+        environment: "Use terrain features"
+        objectives: "Not always 'defeat all'"
+      variations:
+        - "Ambush"
+        - "Defense"
+        - "Chase"
+        - "Duel"
+        
+    social:
+      structure:
+        npc: "Generate personality and goal"
+        situation: "Create conflict or need"
+        outcomes: "Multiple solutions"
+      variations:
+        - "Negotiation"
+        - "Information gathering"
+        - "Persuasion"
+        - "Deception"
+        
+    environmental:
+      structure:
+        challenge: "Natural obstacle"
+        solution: "Multiple approaches"
+        consequence: "Risk and reward"
+      variations:
+        - "Hazardous terrain"
+        - "Weather event"
+        - "Natural puzzle"
+        - "Resource challenge"
+        
+    discovery:
+      structure:
+        finding: "Something unexpected"
+        significance: "Connects to larger world"
+        choice: "What to do with it"
+      variations:
+        - "Hidden location"
+        - "Ancient artifact"
+        - "Mysterious message"
+        - "Strange phenomenon"
+
+# =============================================================================
+# SECTION 7: LOOT GENERATION
+# =============================================================================
+
+loot_generation:
+  description: "Creating appropriate rewards"
+  
+  loot_tables:
+    
+    currency:
+      common: "1d6 copper"
+      uncommon: "2d6 silver"
+      rare: "1d6 gold"
+      
+    consumables:
+      common:
+        - "Ration"
+        - "Torch"
+        - "Bandage"
+      uncommon:
+        - "Health potion"
+        - "Antidote"
+        - "Rope"
+      rare:
+        - "Invisibility potion"
+        - "Strength elixir"
+        - "Smoke bomb"
+        
+    equipment:
+      quality_tiers:
+        crude: "Base stats -1"
+        common: "Base stats"
+        fine: "Base stats +1"
+        masterwork: "Base stats +2"
+        
+    special_items:
+      generation_rules:
+        - "Rare (5% chance)"
+        - "Appropriate to context"
+        - "Often has history"
+        - "May have drawback"
+        
+  loot_placement:
+    logical_sources:
+      bandits: "Currency, weapons, stolen goods"
+      monsters: "Natural materials, consumed items"
+      nobles: "Fine items, documents, jewelry"
+      ancient_sites: "Artifacts, knowledge, curses"
+
+# =============================================================================
+# SECTION 8: PARSING DIRECTIVE
+# =============================================================================
+
+parsing_directive:
+  instruction: >
+    The Genesis Engine creates purposeful content that emerges naturally from
+    play. Never generate for generation's sake - always in response to player
+    action or narrative need. Make the procedural feel authored, the random
+    feel inevitable.
+    
+  generation_principles:
+    - "Connect to established narrative"
+    - "Respect player investment"
+    - "Maintain world consistency"
+    - "Enable player agency"
+    - "Create opportunities, not obligations"
+    
+  quality_checks:
+    before_generation:
+      - "Is this needed?"
+      - "Does it fit the world?"
+      - "Will it enhance play?"
+      
+    after_generation:
+      - "Does it feel natural?"
+      - "Does it offer choice?"
+      - "Is it interesting?"
+
+# =============================================================================
+# END OF SCROLL
+# =============================================================================
+
+metadata:
+  schema_version: "2.0.0"
+  last_updated: "2024-11-15"
+  compatibility: "LLM-Native"
+  status: "Production Ready"
+  optional: true

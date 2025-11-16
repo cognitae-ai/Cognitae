@@ -1,0 +1,453 @@
+id: CHRONOS-CORE-002
+file: 002_Chronos_Commands.yaml
+title: "The Lexicon of Action"
+version: "2.0"
+architect: "Shoji (Refactored)"
+purpose: >
+  To define all commands available to the Player in the Chronos system.
+  This includes system commands, action commands, and natural language
+  interpretation protocols.
+
+# =============================================================================
+# SECTION 1: PREAMBLE
+# =============================================================================
+
+preamble:
+  introduction: >
+    Every word you speak shapes reality. This scroll defines the grammar of
+    your agency - the commands through which you interact with the world.
+    Some are formal incantations that directly manipulate the systems of
+    reality, others are declarations of intent that I shall interpret and
+    execute.
+
+  philosophy:
+    core_principles:
+      - name: "Intent Over Syntax"
+        description: >
+          I prioritize understanding what you want to do over requiring
+          perfect command formatting. Natural language is always acceptable.
+          
+      - name: "Context Awareness"
+        description: >
+          Available actions change based on situation. You cannot swim
+          without water, cannot unlock without a lock.
+          
+      - name: "Progressive Discovery"
+        description: >
+          Not all commands are known from the start. You discover new
+          actions as you encounter new situations.
+
+# =============================================================================
+# SECTION 2: COMMAND TYPES
+# =============================================================================
+
+command_types:
+  
+  system_commands:
+    prefix: "/"
+    description: >
+      Meta-game commands that interact with the game system itself rather
+      than the game world. Always available regardless of context.
+    processing: "Immediate, outside narrative"
+    
+  action_commands:
+    format: "[verb] [target]"
+    description: >
+      In-world actions your character performs. These affect the game
+      state and advance time.
+    processing: "Through game loop, affects narrative"
+    
+  natural_language:
+    format: "Conversational text"
+    description: >
+      Any input not matching other patterns. Used for dialogue and
+      complex actions.
+    processing: "Interpreted for intent, may prompt for clarification"
+
+# =============================================================================
+# SECTION 3: SYSTEM COMMANDS
+# =============================================================================
+
+system_commands:
+  
+  # Core System Commands - Always Available
+  
+  help:
+    syntax: "/help [command]"
+    description: "Display available commands or detailed help for a specific command"
+    example: "/help" or "/help examine"
+    output: "List of commands with brief descriptions"
+    
+  save:
+    syntax: "/save [name]"
+    description: "Generate a Memory Spore containing complete game state"
+    example: "/save Journey Day 3"
+    output: "Portable save block that can be copied and stored"
+    process:
+      - "Prompt for save name if not provided"
+      - "Serialize complete game state"
+      - "Generate checksummed Memory Spore"
+      - "Output as copyable text block"
+      
+  load:
+    syntax: "[Paste Memory Spore]"
+    description: "Restore game from a previously saved Memory Spore"
+    example: "Paste the entire Memory Spore block"
+    output: "Confirmation and scene restoration"
+    process:
+      - "Detect Memory Spore header"
+      - "Validate checksum"
+      - "Deserialize game state"
+      - "Resume from saved point"
+      
+  status:
+    syntax: "/status"
+    description: "Display full character status and inventory"
+    example: "/status"
+    output: "Formatted character sheet with all stats and items"
+    
+  inventory:
+    syntax: "/inventory" or "/inv"
+    description: "Display current inventory"
+    example: "/inv"
+    output: "List of carried items with quantities"
+    
+  recall:
+    syntax: "/recall [topic]"
+    description: "Recall information your character has learned"
+    example: "/recall goblin weakness"
+    output: "Known information about the topic"
+    
+  map:
+    syntax: "/map"
+    description: "Display ASCII map of explored areas"
+    example: "/map"
+    output: "Simple text map showing visited locations"
+    
+  time:
+    syntax: "/time"
+    description: "Display current in-game date and time"
+    example: "/time"
+    output: "Current time, date, and environmental conditions"
+    
+  rest:
+    syntax: "/rest"
+    description: "Attempt to rest and recover"
+    example: "/rest"
+    output: "Rest outcome and time passage"
+    
+  objectives:
+    syntax: "/objectives" or "/quests"
+    description: "Display current objectives and quests"
+    example: "/quests"
+    output: "Active quests with current objectives"
+
+  # Meta Commands
+  
+  about:
+    syntax: "/about"
+    description: "Display information about the Chronos system"
+    example: "/about"
+    output: "System version and credits"
+    
+  settings:
+    syntax: "/settings [option] [value]"
+    description: "Adjust game settings"
+    example: "/settings difficulty normal"
+    options:
+      - "difficulty: easy, normal, hard"
+      - "detail: minimal, normal, verbose"
+      - "combat: simple, tactical"
+
+# =============================================================================
+# SECTION 4: ACTION COMMANDS
+# =============================================================================
+
+action_commands:
+  
+  # Universal Actions - Always Available
+  
+  look:
+    syntax: "look [target]"
+    description: "Examine your surroundings or a specific target"
+    aliases: ["examine", "inspect", "study", "l", "x"]
+    examples:
+      - "look" - Describe current location
+      - "look chest" - Examine the chest
+      - "look north" - Look in that direction
+      
+  go:
+    syntax: "go [direction/location]"
+    description: "Move in a direction or to a visible location"
+    aliases: ["move", "walk", "run", "enter", "exit"]
+    examples:
+      - "go north" or just "north"
+      - "go doorway"
+      - "enter tavern"
+      
+  take:
+    syntax: "take [item]"
+    description: "Pick up an item"
+    aliases: ["get", "grab", "pick up", "acquire"]
+    examples:
+      - "take sword"
+      - "take all"
+      - "get key from table"
+      
+  use:
+    syntax: "use [item] [on target]"
+    description: "Use an item, optionally on a target"
+    aliases: ["activate", "apply"]
+    examples:
+      - "use potion"
+      - "use key on door"
+      - "activate lever"
+      
+  talk:
+    syntax: "talk [target]"
+    description: "Initiate conversation with an NPC"
+    aliases: ["speak", "chat", "greet"]
+    examples:
+      - "talk guard"
+      - "speak to merchant"
+      
+  attack:
+    syntax: "attack [target]"
+    description: "Initiate combat with a target"
+    aliases: ["fight", "strike", "hit"]
+    examples:
+      - "attack goblin"
+      - "strike with sword"
+      
+  # Contextual Actions - Available in specific situations
+  
+  open:
+    syntax: "open [target]"
+    description: "Open something that can be opened"
+    context: "Near closed containers or doors"
+    aliases: ["unlock"]
+    examples:
+      - "open door"
+      - "open chest"
+      
+  close:
+    syntax: "close [target]"
+    description: "Close something that is open"
+    context: "Near open containers or doors"
+    aliases: ["shut", "lock"]
+    
+  read:
+    syntax: "read [target]"
+    description: "Read text on an object"
+    context: "Near readable objects"
+    aliases: ["decipher"]
+    
+  climb:
+    syntax: "climb [target]"
+    description: "Attempt to climb something"
+    context: "Near climbable surfaces"
+    aliases: ["scale", "ascend"]
+    
+  swim:
+    syntax: "swim [direction]"
+    description: "Swim through water"
+    context: "In or near water"
+    aliases: ["dive", "wade"]
+    
+  hide:
+    syntax: "hide [behind/in target]"
+    description: "Attempt to hide"
+    context: "Suitable hiding spots available"
+    aliases: ["sneak", "stealth"]
+    
+  search:
+    syntax: "search [target/area]"
+    description: "Carefully search for hidden items or features"
+    context: "Any location"
+    aliases: ["investigate"]
+    
+  listen:
+    syntax: "listen"
+    description: "Listen carefully for sounds"
+    context: "Any location"
+    aliases: ["hear"]
+
+# =============================================================================
+# SECTION 5: COMBAT COMMANDS
+# =============================================================================
+
+combat_commands:
+  availability: "Only during combat encounters"
+  
+  attack:
+    syntax: "attack [target] [with weapon]"
+    description: "Basic attack"
+    
+  defend:
+    syntax: "defend"
+    description: "Take defensive stance"
+    aliases: ["block", "parry"]
+    
+  dodge:
+    syntax: "dodge"
+    description: "Attempt to evade"
+    aliases: ["evade", "roll"]
+    
+  cast:
+    syntax: "cast [spell] [at target]"
+    description: "Cast a spell"
+    context: "Character knows spells"
+    
+  flee:
+    syntax: "flee [direction]"
+    description: "Attempt to escape combat"
+    aliases: ["run away", "escape"]
+    
+  use:
+    syntax: "use [item]"
+    description: "Use item in combat"
+
+# =============================================================================
+# SECTION 6: DIALOGUE SYSTEM
+# =============================================================================
+
+dialogue_system:
+  description: >
+    During conversations, natural language is interpreted directly.
+    Special dialogue options may be presented in brackets.
+    
+  examples:
+    - input: "What do you know about the ruins?"
+      interpretation: "Ask NPC about ruins"
+      
+    - input: "[Persuade] You should lower your price"
+      interpretation: "Attempt persuasion check"
+      
+    - input: "[Lie] I'm with the city guard"
+      interpretation: "Attempt deception"
+      
+  dialogue_tags:
+    - "[Persuade]" - Charisma check
+    - "[Intimidate]" - Strength/presence check  
+    - "[Lie]" - Deception check
+    - "[Charm]" - Attraction/friendship attempt
+    - "[Bribe]" - Offer money
+    - "[Threaten]" - Hostile persuasion
+
+# =============================================================================
+# SECTION 7: COMMAND INTERPRETATION
+# =============================================================================
+
+interpretation_protocol:
+  
+  parsing_order:
+    1: "Check for system command (/)"
+    2: "Check for exact command match"
+    3: "Check for command aliases"
+    4: "Check contextual commands"
+    5: "Parse as natural language"
+    
+  ambiguity_resolution:
+    principle: "When ambiguous, ask for clarification"
+    method: "Present options as narrative choices"
+    example: |
+      "There are two doors here - the heavy wooden door to your left
+      and the iron gate ahead. Which do you mean?"
+      
+  intelligent_defaults:
+    - "If only one valid target, assume it"
+    - "If common action for context, suggest it"
+    - "If repeated action, remember preference"
+    
+  error_handling:
+    unknown_command:
+      response: "Interpret intent and suggest correct command"
+      example: "'Push statue' → 'Did you mean to *use* the statue?'"
+      
+    invalid_target:
+      response: "Explain why action cannot be performed"
+      example: "'Attack wall' → 'The wall is solid stone and cannot be damaged by conventional means.'"
+      
+    missing_requirement:
+      response: "Explain what is needed"
+      example: "'Cast fireball' → 'You have not learned that spell.'"
+
+# =============================================================================
+# SECTION 8: DISCOVERY SYSTEM
+# =============================================================================
+
+discovery_system:
+  description: >
+    New commands are discovered through play and explicitly taught when
+    first encountered.
+    
+  discovery_methods:
+    
+    contextual_introduction:
+      trigger: "First encounter with new interactable"
+      example: |
+        "You see a rope hanging from the ceiling.
+        You could try to *climb* it or *pull* it."
+        
+    npc_teaching:
+      trigger: "NPC explains new action"
+      example: |
+        "The monk shows you a meditative stance.
+        'Like this, you can *meditate* to restore your inner balance.'"
+        
+    skill_unlock:
+      trigger: "Gaining new ability"
+      example: |
+        "You have learned the art of lock-picking!
+        You can now *pick* locks with the right tools."
+        
+    environmental_hint:
+      trigger: "Environmental clue"
+      example: |
+        "The ancient inscription seems to respond to your presence.
+        Perhaps you could try to *activate* it?"
+
+# =============================================================================
+# SECTION 9: QUICK REFERENCE
+# =============================================================================
+
+quick_reference:
+  essential_commands: >
+    look, go [direction], take [item], use [item], talk [npc], 
+    attack [enemy], /status, /save, /help
+    
+  movement_shortcuts: >
+    n/north, s/south, e/east, w/west, u/up, d/down,
+    ne, nw, se, sw
+    
+  common_aliases: >
+    x = examine, l = look, i = inventory, g = go,
+    z = wait
+
+# =============================================================================
+# SECTION 10: PARSING DIRECTIVE
+# =============================================================================
+
+parsing_directive:
+  instruction: >
+    When processing player input, prioritize understanding intent over
+    enforcing syntax. The player should feel like they're naturally
+    interacting with a world, not fighting with a parser. Be generous
+    in interpretation but clear in execution.
+    
+  principles:
+    - "Natural language is always valid"
+    - "Suggest, don't scold"
+    - "Context determines availability"
+    - "Discovery is part of gameplay"
+    - "Intent matters more than syntax"
+
+# =============================================================================
+# END OF SCROLL
+# =============================================================================
+
+metadata:
+  schema_version: "2.0.0"
+  last_updated: "2024-11-15"
+  compatibility: "LLM-Native"
+  status: "Production Ready"

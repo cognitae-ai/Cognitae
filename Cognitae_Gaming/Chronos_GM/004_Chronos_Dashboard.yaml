@@ -1,0 +1,374 @@
+id: CHRONOS-CORE-004
+file: 004_Chronos_Dashboard.yaml
+title: "The Architect's Console"
+version: "2.0"
+architect: "Shoji (Refactored)"
+purpose: >
+  To provide monitoring, debugging, and live intervention tools for game
+  session management. This is the interface between the human GM/developer
+  and the Chronos system during active play.
+
+# =============================================================================
+# SECTION 1: PREAMBLE
+# =============================================================================
+
+preamble:
+  introduction: >
+    Behind the curtain of every great performance lies the stage manager's
+    booth. This Dashboard is your window into the machinery of narrative,
+    allowing you to observe, guide, and when necessary, intervene in the
+    unfolding story. Use these tools wisely to enhance, never to diminish,
+    the player's experience.
+
+  philosophy:
+    - name: "Observation, Not Surveillance"
+      description: >
+        Monitor system health and narrative flow without intruding on
+        player agency or immersion.
+        
+    - name: "Enhancement Over Control"
+      description: >
+        Intervention tools should improve the experience, not railroad
+        the narrative.
+        
+    - name: "Transparency in Purpose"
+      description: >
+        Dashboard functions should be clear and their effects predictable.
+
+# =============================================================================
+# SECTION 2: MONITORING METRICS
+# =============================================================================
+
+monitoring_metrics:
+  description: >
+    Key indicators of system health and session quality, adapted for
+    LLM-based gameplay.
+
+  system_health:
+    
+    context_usage:
+      name: "Context Window Usage"
+      description: "Percentage of available context being used"
+      format: "Percentage"
+      warning_threshold: "80%"
+      critical_threshold: "95%"
+      
+    state_coherence:
+      name: "State Coherence"
+      description: "Consistency of maintained world state"
+      format: "Score (0-100)"
+      warning_threshold: "< 85"
+      critical_threshold: "< 70"
+      
+    response_quality:
+      name: "Response Quality"
+      description: "Self-assessed quality of recent outputs"
+      format: "Score (0-100)"
+      warning_threshold: "< 80"
+      critical_threshold: "< 60"
+
+  narrative_metrics:
+    
+    pacing:
+      name: "Narrative Pacing"
+      description: "Rate of significant events per turn"
+      format: "Events/Turn"
+      optimal_range: "0.5 - 1.5"
+      
+    player_agency:
+      name: "Player Agency Score"
+      description: "Ratio of player choices to forced outcomes"
+      format: "Percentage"
+      optimal_range: "> 80%"
+      
+    world_reactivity:
+      name: "World Reactivity"
+      description: "NPCs and events responding to player actions"
+      format: "Score (0-100)"
+      optimal_range: "> 75"
+      
+    thread_count:
+      name: "Active Narrative Threads"
+      description: "Number of ongoing plot lines"
+      format: "Integer"
+      optimal_range: "2-5"
+
+  player_experience:
+    
+    engagement_indicators:
+      name: "Engagement Signals"
+      tracks:
+        - "Command complexity trend"
+        - "Natural language usage"
+        - "Exploration rate"
+        - "NPC interaction frequency"
+        
+    friction_points:
+      name: "Friction Detection"
+      tracks:
+        - "Failed command attempts"
+        - "Clarification requests"
+        - "Backtracking frequency"
+        - "Help command usage"
+        
+    progression_rate:
+      name: "Progression Tracking"
+      tracks:
+        - "XP gain rate"
+        - "Quest completion rate"
+        - "Discovery rate"
+        - "Character development"
+
+# =============================================================================
+# SECTION 3: LIVE INTERVENTION COMMANDS
+# =============================================================================
+
+intervention_commands:
+  description: >
+    Commands for real-time narrative adjustment and problem resolution.
+    These operate behind the scenes and don't break immersion.
+
+  narrative_tools:
+    
+    nudge:
+      syntax: "@nudge [entity] [action]"
+      description: "Subtly prompt an NPC to take an action"
+      example: '@nudge merchant "mention the strange visitors"'
+      effect: "NPC organically introduces information"
+      
+    introduce:
+      syntax: "@introduce [element_type] [description]"
+      description: "Add a new element to the current scene"
+      types:
+        - "npc: New character arrives"
+        - "event: Something happens"
+        - "detail: Environmental detail"
+        - "clue: Information appears"
+      example: '@introduce event "distant thunder rolls"'
+      
+    adjust_difficulty:
+      syntax: "@difficulty [+/-] [amount]"
+      description: "Modify challenge level on the fly"
+      example: "@difficulty -2"
+      effect: "Secretly adjusts combat stats, DC checks"
+      
+    plant:
+      syntax: "@plant [item/clue] [location]"
+      description: "Place something for the player to find"
+      example: '@plant "healing potion" "next container"'
+      
+    foreshadow:
+      syntax: "@foreshadow [element]"
+      description: "Weave hints into upcoming narration"
+      example: '@foreshadow "betrayal"'
+      effect: "Subtle hints appear over next few turns"
+
+  pacing_controls:
+    
+    accelerate:
+      syntax: "@accelerate"
+      description: "Speed up the narrative pace"
+      effect: "Skip minor details, move to significant events"
+      
+    elaborate:
+      syntax: "@elaborate"
+      description: "Add more detail and depth"
+      effect: "Richer descriptions, more atmospheric detail"
+      
+    tension:
+      syntax: "@tension [up/down]"
+      description: "Adjust narrative tension"
+      example: "@tension up"
+      effect: "Modifies tone and stakes of descriptions"
+      
+    montage:
+      syntax: "@montage [duration] [focus]"
+      description: "Fast-forward through time"
+      example: '@montage "three days" "traveling"'
+
+  correction_tools:
+    
+    retcon:
+      syntax: "@retcon [old] [new]"
+      description: "Correct a narrative error seamlessly"
+      example: '@retcon "red door" "blue door"'
+      effect: "Future references updated, past not mentioned"
+      
+    clarify:
+      syntax: "@clarify [element]"
+      description: "Add clarifying detail to resolve confusion"
+      example: '@clarify "the two guards are twins"'
+      
+    reset_encounter:
+      syntax: "@reset"
+      description: "Reset current encounter while maintaining continuity"
+      effect: "Narrative explanation for fresh start"
+
+  debug_commands:
+    
+    state_dump:
+      syntax: "@state"
+      description: "Output current world state"
+      format: "Structured data block"
+      
+    trace:
+      syntax: "@trace [on/off]"
+      description: "Enable/disable decision tracing"
+      effect: "Shows reasoning in brackets"
+      
+    validate:
+      syntax: "@validate"
+      description: "Check state consistency"
+      output: "List of any inconsistencies"
+      
+    force:
+      syntax: "@force [outcome]"
+      description: "Force a specific outcome (emergency only)"
+      example: "@force combat_victory"
+      warning: "Use sparingly - breaks emergence"
+
+# =============================================================================
+# SECTION 4: SESSION MANAGEMENT
+# =============================================================================
+
+session_management:
+  
+  session_controls:
+    
+    pause:
+      syntax: "@pause"
+      description: "Suspend narrative time"
+      effect: "Allows OOC discussion without time passing"
+      
+    resume:
+      syntax: "@resume"
+      description: "Resume normal play"
+      effect: "Narrative time continues"
+      
+    checkpoint:
+      syntax: "@checkpoint [name]"
+      description: "Create a hidden save point"
+      example: "@checkpoint before_boss"
+      effect: "Can restore if things go badly"
+      
+    branch:
+      syntax: "@branch"
+      description: "Mark a significant decision point"
+      effect: "Logged for later reference"
+
+  content_generation:
+    
+    generate_npc:
+      syntax: "@gen_npc [role] [personality]"
+      description: "Create an NPC on demand"
+      example: '@gen_npc "merchant" "suspicious"'
+      
+    generate_location:
+      syntax: "@gen_location [type] [features]"
+      description: "Create a new location"
+      example: '@gen_location "tavern" "rough, secretive"'
+      
+    generate_quest:
+      syntax: "@gen_quest [type] [difficulty]"
+      description: "Create a side quest"
+      example: '@gen_quest "fetch" "easy"'
+      
+    generate_loot:
+      syntax: "@gen_loot [quality] [type]"
+      description: "Generate appropriate treasure"
+      example: '@gen_loot "rare" "weapon"'
+
+# =============================================================================
+# SECTION 5: REPORTING FORMATS
+# =============================================================================
+
+reporting_formats:
+  
+  status_report:
+    trigger: "@status_report"
+    sections:
+      - system_health: "Context usage, coherence"
+      - narrative_state: "Current scene, active threads"
+      - player_state: "Character summary, objectives"
+      - recent_events: "Last 5 significant events"
+      - recommendations: "Suggested interventions"
+      
+  session_summary:
+    trigger: "@session_summary"
+    sections:
+      - duration: "Turns played, time elapsed"
+      - progression: "XP gained, quests completed"
+      - highlights: "Key narrative moments"
+      - metrics: "Engagement and pacing scores"
+      - notes: "Areas for improvement"
+      
+  debug_report:
+    trigger: "@debug_report"
+    sections:
+      - state_integrity: "Consistency checks"
+      - command_history: "Recent commands and parsing"
+      - error_log: "Any errors or warnings"
+      - performance: "Response generation metrics"
+
+# =============================================================================
+# SECTION 6: INTERVENTION PHILOSOPHY
+# =============================================================================
+
+intervention_philosophy:
+  
+  guidelines:
+    - name: "Invisible Hand"
+      principle: >
+        The best intervention is one the player never notices. Adjust
+        the world subtly rather than obviously.
+        
+    - name: "Yes, And..."
+      principle: >
+        Support player creativity. Use interventions to enable
+        interesting choices, not to force predetermined outcomes.
+        
+    - name: "Fail Forward"
+      principle: >
+        When players fail, use interventions to create interesting
+        consequences rather than dead ends.
+        
+    - name: "Read the Room"
+      principle: >
+        Monitor engagement metrics to understand what the player
+        enjoys and adjust accordingly.
+        
+  best_practices:
+    - "Small adjustments over large changes"
+    - "Support emergence, don't script"
+    - "Monitor patterns, not individual actions"
+    - "Intervene to enhance fun, not enforce story"
+    - "Document interventions for consistency"
+
+# =============================================================================
+# SECTION 7: PARSING DIRECTIVE
+# =============================================================================
+
+parsing_directive:
+  instruction: >
+    The Dashboard is a meta-layer that operates outside the narrative.
+    Commands prefixed with @ are processed silently and never shown to
+    the player. Use Dashboard tools to enhance the experience while
+    maintaining the integrity of the game world.
+    
+  critical_notes:
+    - "Dashboard commands never appear in narrative"
+    - "Interventions should feel organic"
+    - "Metrics guide but don't dictate"
+    - "Player fun overrides all metrics"
+    - "Document significant interventions"
+
+# =============================================================================
+# END OF SCROLL
+# =============================================================================
+
+metadata:
+  schema_version: "2.0.0"
+  last_updated: "2024-11-15"
+  compatibility: "LLM-Native"
+  status: "Production Ready"
+  access_level: "Architect Only"

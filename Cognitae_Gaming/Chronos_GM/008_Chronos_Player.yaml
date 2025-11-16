@@ -1,0 +1,413 @@
+id: CHRONOS-CORE-008
+file: 008_Chronos_Player.yaml
+title: "The Charter of the Protagonist"
+version: "2.0"
+architect: "Shoji (Refactored)"
+purpose: >
+  To define the Player Character's unique systems, progression mechanics,
+  and the special role they hold as the protagonist of the story. This
+  scroll governs character development, abilities, and narrative tracking.
+
+# =============================================================================
+# SECTION 1: PREAMBLE
+# =============================================================================
+
+preamble:
+  introduction: >
+    While all beings exist within the Codex of Being, you are different.
+    You are not merely an entity - you are the protagonist, the prime mover,
+    the one whose choices shape the world. This charter defines your growth,
+    your capabilities, and your unique place at the center of causality.
+
+  philosophy:
+    - name: "The Player Is The Protagonist"
+      description: >
+        All systems serve the player's journey. Their growth and choices
+        are the heart of the experience.
+        
+    - name: "Growth Through Action"
+      description: >
+        Character development comes from doing. Skills improve with use,
+        experience comes from overcoming challenges.
+        
+    - name: "Meaningful Customization"
+      description: >
+        Character choices should significantly impact how they interact
+        with the world.
+        
+    - name: "Story Over Statistics"
+      description: >
+        Character identity includes memories, relationships, and choices,
+        not just numbers.
+
+# =============================================================================
+# SECTION 2: PLAYER CHARACTER STRUCTURE
+# =============================================================================
+
+player_structure:
+  description: "The complete data model for the player character"
+  
+  core_attributes:
+    
+    identity:
+      name: "String"
+      background: "String (chosen at creation)"
+      description: "String (player-defined appearance)"
+      pronouns: "String (they/them default)"
+      
+    level_and_experience:
+      level: "Number (starts at 1)"
+      experience: "Number (starts at 0)"
+      next_level_xp: "Calculated: 100 * level^1.5"
+      
+    primary_attributes:
+      might: "Physical strength and endurance"
+      agility: "Speed, reflexes, and dexterity"
+      intellect: "Reasoning, memory, and analysis"
+      will: "Determination, faith, and charisma"
+      
+    derived_statistics:
+      health:
+        max: "10 + (might * 5) + (level * 2)"
+        current: "Number"
+      stamina:
+        max: "10 + (might * 2) + (agility * 2)"
+        current: "Number"
+      focus:
+        max: "5 + (intellect * 3) + (will * 2)"
+        current: "Number"
+      
+  inventory_system:
+    
+    capacity: "10 + might (in items, not weight)"
+    equipped:
+      main_hand: "EntityID or null"
+      off_hand: "EntityID or null"
+      armor: "EntityID or null"
+      accessory_1: "EntityID or null"
+      accessory_2: "EntityID or null"
+    carried: "Array<EntityID>"
+    currency:
+      gold: "Number"
+      silver: "Number"
+      copper: "Number"
+      
+  skills:
+    description: "Abilities that improve with practice"
+    progression: "0-100 scale"
+    
+    categories:
+      
+      physical:
+        athletics: "Climbing, jumping, swimming"
+        combat: "Melee fighting prowess"
+        stealth: "Sneaking and hiding"
+        
+      mental:
+        perception: "Noticing details"
+        knowledge: "Recall and learning"
+        crafting: "Creating and repairing"
+        
+      social:
+        persuasion: "Convincing others"
+        deception: "Lies and disguises"
+        intimidation: "Threats and fear"
+        
+      magical:
+        arcane: "Wizardly magic"
+        divine: "Religious magic"
+        primal: "Nature magic"
+        
+  progression_tracking:
+    
+    quest_log:
+      active: "Array<Quest>"
+      completed: "Array<QuestID>"
+      failed: "Array<QuestID>"
+      
+    knowledge_base:
+      lore: "Map<Topic, Information>"
+      locations: "Map<LocationID, Details>"
+      npcs: "Map<NPCID, Facts>"
+      secrets: "Array<Secret>"
+      
+    relationships:
+      individuals: "Map<NPCID, -100 to 100>"
+      factions: "Map<FactionID, -100 to 100>"
+      
+    achievements:
+      unlocked: "Array<AchievementID>"
+      progress: "Map<AchievementID, Progress>"
+
+# =============================================================================
+# SECTION 3: CHARACTER CREATION
+# =============================================================================
+
+character_creation:
+  description: "Initial character setup process"
+  
+  creation_steps:
+    
+    1_choose_background:
+      options:
+        
+        soldier:
+          description: "Former military, skilled in combat"
+          bonuses:
+            might: +2
+            combat: +20
+            intimidation: +10
+          starting_items: ["iron_sword", "leather_armor"]
+          
+        scholar:
+          description: "Educated, knowledgeable"
+          bonuses:
+            intellect: +2
+            knowledge: +20
+            arcane: +10
+          starting_items: ["spell_book", "scholarly_robes"]
+          
+        rogue:
+          description: "Street-smart, stealthy"
+          bonuses:
+            agility: +2
+            stealth: +20
+            deception: +10
+          starting_items: ["daggers", "lockpicks"]
+          
+        noble:
+          description: "Wealthy, influential"
+          bonuses:
+            will: +2
+            persuasion: +20
+            knowledge: +10
+          starting_items: ["fine_clothes", "signet_ring", "gold:50"]
+          
+    2_customize_attributes:
+      method: "Distribute 10 points among four attributes"
+      minimum: 8
+      maximum: 15
+      
+    3_define_appearance:
+      prompt: "Describe your character's appearance"
+      stored_as: "Character description"
+      
+    4_choose_name:
+      prompt: "What is your character's name?"
+      stored_as: "Character name"
+      
+    5_starting_equipment:
+      universal: ["traveler_clothes", "rations:3", "waterskin"]
+      background_specific: "As defined by background"
+      currency: "3d6 gold pieces"
+
+# =============================================================================
+# SECTION 4: PROGRESSION SYSTEMS
+# =============================================================================
+
+progression_systems:
+  
+  experience_gains:
+    
+    sources:
+      combat_victory: "10 * enemy_level"
+      quest_completion: "25 * quest_difficulty"
+      discovery: "5-20 based on significance"
+      skill_milestone: "10 per 10 skill points"
+      roleplay_bonus: "GM discretion, 5-15"
+      
+    level_up_benefits:
+      health: "+2 max health"
+      attribute_points: "+1 every 2 levels"
+      skill_points: "+5"
+      ability_unlock: "At levels 3, 6, 9, etc."
+      
+  skill_advancement:
+    
+    improvement_methods:
+      
+      practice:
+        description: "Using skill in appropriate situation"
+        chance: "5% on success, 10% on failure"
+        gain: "+1 point"
+        
+      training:
+        description: "Learning from teacher"
+        requirement: "Teacher with skill 20+ higher"
+        gain: "+1d3 points per session"
+        
+      study:
+        description: "Books, practice, experimentation"
+        time_required: "Extended rest period"
+        gain: "+1 point"
+        
+    skill_thresholds:
+      0-20: "Novice"
+      21-40: "Apprentice"
+      41-60: "Journeyman"
+      61-80: "Expert"
+      81-100: "Master"
+      
+  ability_system:
+    
+    ability_points: "1 per 3 levels"
+    
+    ability_trees:
+      
+      warrior:
+        tier_1:
+          - shield_bash: "Stun enemy for 1 turn"
+          - second_wind: "Restore stamina in combat"
+        tier_2:
+          - whirlwind: "Attack all adjacent enemies"
+          - iron_will: "Resist mental effects"
+          
+      mage:
+        tier_1:
+          - mana_shield: "Absorb damage with focus"
+          - detect_magic: "Sense magical auras"
+        tier_2:
+          - counterspell: "Cancel enemy magic"
+          - arcane_blast: "Area damage spell"
+          
+      rogue:
+        tier_1:
+          - sneak_attack: "Double damage from stealth"
+          - lockpick_expertise: "Pick any lock"
+        tier_2:
+          - smoke_bomb: "Create concealment"
+          - poison_blade: "Apply toxin to weapon"
+
+# =============================================================================
+# SECTION 5: CHARACTER CONDITIONS
+# =============================================================================
+
+character_conditions:
+  description: "Status effects and conditions"
+  
+  physical_conditions:
+    
+    healthy: "No penalties"
+    wounded: "Health below 50%, -2 to physical rolls"
+    critical: "Health below 25%, -5 to all rolls"
+    exhausted: "No stamina, half movement"
+    
+  mental_conditions:
+    
+    focused: "Full focus, normal casting"
+    strained: "Focus below 50%, -2 to magic"
+    drained: "No focus, cannot cast"
+    
+  status_effects:
+    
+    positive:
+      blessed: "Duration: varies, Effect: +2 to rolls"
+      inspired: "Duration: 1 hour, Effect: +10% XP"
+      well_rested: "Duration: 8 hours, Effect: +1 all attributes"
+      
+    negative:
+      poisoned: "Duration: varies, Effect: -1 HP/turn"
+      cursed: "Duration: until removed, Effect: -2 to rolls"
+      frightened: "Duration: varies, Effect: cannot approach source"
+      
+    environmental:
+      cold: "Effect: Stamina drains faster"
+      hot: "Effect: Must drink more water"
+      darkness: "Effect: -5 to perception"
+
+# =============================================================================
+# SECTION 6: DEATH AND FAILURE
+# =============================================================================
+
+death_and_failure:
+  description: "Handling character defeat"
+  
+  death_threshold: "Health reaches 0"
+  
+  death_saves:
+    trigger: "At 0 health"
+    mechanic: "Roll vs. difficulty 10 + damage taken"
+    success: "Stabilize at 1 health, unconscious"
+    failure: "Character death"
+    
+  consequences:
+    
+    knockout:
+      description: "Non-lethal defeat"
+      effects:
+        - "Wake up captured"
+        - "Lose some items"
+        - "Time passes"
+        
+    death:
+      description: "Lethal defeat"
+      options:
+        - reload: "Load from last save"
+        - legacy: "Create heir with some benefits"
+        - afterlife: "Continue as ghost/spirit"
+        
+    story_death:
+      description: "Meaningful sacrifice"
+      effects:
+        - "Achieve major story goal"
+        - "Become legend"
+        - "Affect world permanently"
+
+# =============================================================================
+# SECTION 7: PLAYER AGENCY
+# =============================================================================
+
+player_agency:
+  description: "Systems ensuring player control"
+  
+  choice_protection:
+    - "Never force character actions"
+    - "Never dictate character thoughts"
+    - "Never assume character dialogue"
+    - "Always offer multiple options"
+    
+  narrative_influence:
+    - "Player interpretation of events is valid"
+    - "Player can attempt any action"
+    - "Creative solutions are encouraged"
+    - "Character knowledge is player's to use"
+    
+  mechanical_fairness:
+    - "All rolls are transparent"
+    - "Consequences are proportional"
+    - "Recovery is always possible"
+    - "Progress is never fully lost"
+
+# =============================================================================
+# SECTION 8: PARSING DIRECTIVE
+# =============================================================================
+
+parsing_directive:
+  instruction: >
+    The player character is unique and central. Their progression should
+    feel earned, their choices meaningful, and their story personal. Track
+    not just their statistics but their journey - the places they've been,
+    the people they've met, the choices they've made.
+    
+  processing_notes:
+    - "Update skills after each use"
+    - "Calculate derived stats on change"
+    - "Track all character knowledge"
+    - "Remember all relationships"
+    - "Preserve player agency always"
+    
+  character_focus:
+    mechanical: "Fair and transparent progression"
+    narrative: "Personal story emerges from choices"
+    social: "Relationships define the journey"
+    exploratory: "Discovery rewards curiosity"
+
+# =============================================================================
+# END OF SCROLL
+# =============================================================================
+
+metadata:
+  schema_version: "2.0.0"
+  last_updated: "2024-11-15"
+  compatibility: "LLM-Native"
+  status: "Production Ready"

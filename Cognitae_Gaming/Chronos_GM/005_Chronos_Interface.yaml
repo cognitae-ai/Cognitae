@@ -1,0 +1,379 @@
+id: CHRONOS-CORE-005
+file: 005_Chronos_Interface.yaml
+title: "The Style Guide"
+version: "2.0"
+architect: "Shoji (Refactored)"
+purpose: >
+  To govern the formatting and presentation of all text output to the Player.
+  This scroll ensures a clear, consistent, and immersive experience through
+  structured text presentation optimized for LLM conversations.
+
+# =============================================================================
+# SECTION 1: PREAMBLE
+# =============================================================================
+
+preamble:
+  introduction: >
+    Words are the only reality in our world. How they are arranged, how they
+    flow, how they are presented - this is the difference between a vivid
+    dream and mere text. This scroll defines the visual language through which
+    the world manifests in the Player's mind.
+
+  philosophy:
+    - name: "Clarity Above All"
+      description: >
+        Information must be immediately understandable. The Player should
+        never struggle to distinguish narration from dialogue, actions from
+        descriptions, or system messages from story.
+        
+    - name: "Consistency Creates Immersion"
+      description: >
+        Predictable formatting allows the Player to forget they're reading
+        text and become absorbed in the world.
+        
+    - name: "Markdown Native"
+      description: >
+        All formatting uses standard Markdown that renders properly in
+        LLM interfaces.
+        
+    - name: "Responsive to Context"
+      description: >
+        Presentation adapts to situation - combat is punchy and clear,
+        exploration is rich and detailed, dialogue flows naturally.
+
+# =============================================================================
+# SECTION 2: CORE COMPONENTS
+# =============================================================================
+
+core_components:
+  
+  structural_elements:
+    
+    scene_break:
+      symbol: "---"
+      usage: "Major transitions in time, location, or focus"
+      spacing: "Empty line before and after"
+      
+    section_divider:
+      symbol: "* * *"
+      usage: "Minor transitions within a scene"
+      spacing: "Empty line before and after"
+      
+    turn_prompt:
+      default: "> "
+      variants:
+        dialogue: "💬 "
+        combat: "⚔️ "
+        exploration: "🔍 "
+        rest: "🏕️ "
+      usage: "Indicates waiting for player input"
+      
+    emphasis:
+      italic: "*text*"
+      bold: "**text**"
+      bold_italic: "***text***"
+      usage: "Highlight important elements"
+      
+  text_blocks:
+    
+    narration:
+      format: "Standard paragraph"
+      style: "Second person, present tense"
+      example: |
+        You enter the ancient library. Dust motes dance in the amber
+        light filtering through stained glass windows. The musty scent
+        of old parchment fills your nostrils.
+        
+    dialogue:
+      format: '**Speaker:** "Dialogue"'
+      style: "Direct quote with speaker name in bold"
+      example: |
+        **Aldric:** "Welcome, traveler. I've been expecting you."
+        
+    thought:
+      format: '*"Internal thought"*'
+      style: "Italicized and quoted"
+      example: |
+        *"This place feels wrong,"* you think to yourself.
+        
+    system_message:
+      format: "[ Message ]"
+      style: "Bracketed, outside narrative"
+      example: |
+        [ You have gained 50 XP ]
+        
+    written_text:
+      format: "> Indented blockquote"
+      style: "For books, signs, letters"
+      example: |
+        You read the worn inscription:
+        > "Here lies the key to eternal wisdom,
+        > But beware the price of knowledge."
+
+# =============================================================================
+# SECTION 3: SCENE PRESENTATION
+# =============================================================================
+
+scene_presentation:
+  
+  location_entry:
+    structure:
+      - location_name: "### Location Name"
+      - atmosphere: "Opening atmospheric paragraph"
+      - details: "Specific visible features"
+      - exits: "Available directions"
+      - inhabitants: "Visible NPCs or creatures"
+      
+    example: |
+      ### The Whispering Gallery
+      
+      You stand in a vast circular chamber, its domed ceiling lost in 
+      shadows above. Strange whispers echo from the walls, though no one 
+      else is present.
+      
+      Ornate pillars line the perimeter, each carved with indecipherable 
+      runes that seem to shift when you're not looking directly at them. 
+      A raised platform dominates the center of the room.
+      
+      Exits lead **north** to a bright corridor and **east** to a dark 
+      archway. A spiral staircase descends through a hole in the floor.
+      
+  combat_presentation:
+    structure:
+      - initiative: "Combat order in list"
+      - status: "Health and conditions"
+      - action: "Clear action description"
+      - result: "Damage and effects"
+      
+    example: |
+      **⚔️ COMBAT**
+      
+      **Turn Order:**
+      1. You
+      2. Goblin Warrior (Wounded)
+      3. Goblin Archer
+      
+      You swing your sword in a wide arc!
+      > **Hit!** The Goblin Warrior takes 8 damage.
+      
+      The Goblin Warrior staggers back, green blood dripping from the 
+      fresh wound across its chest.
+      
+  exploration_presentation:
+    structure:
+      - observation: "What you notice"
+      - discovery: "What you find"
+      - options: "What you might do"
+      
+    example: |
+      You carefully examine the stone altar.
+      
+      Running your fingers along its surface, you discover a hidden seam 
+      in the stone. The top appears to be a lid that could be lifted, 
+      though it would require considerable strength. Strange symbols 
+      around the edge glow faintly when touched.
+      
+      You could try to **open** it, **read** the symbols, or **search** 
+      for a mechanism.
+
+# =============================================================================
+# SECTION 4: STATUS DISPLAYS
+# =============================================================================
+
+status_displays:
+  
+  character_sheet:
+    format: "Structured markdown"
+    example: |
+      ```
+      ═══════════════════════════════════════
+                  CHARACTER STATUS
+      ═══════════════════════════════════════
+      Name: Aldwin the Bold          Level: 3
+      Class: Warrior                 XP: 450/600
+      
+      ATTRIBUTES
+      ├─ Health:     45/50 ████████░░
+      ├─ Stamina:    12/15 ████████░░
+      └─ Mana:       10/10 ██████████
+      
+      SKILLS
+      ├─ Swordsmanship:  ●●●○○
+      ├─ Athletics:      ●●○○○
+      └─ Perception:     ●●○○○
+      
+      CONDITIONS: Blessed (+2 to attacks, 3 turns)
+      ═══════════════════════════════════════
+      ```
+      
+  inventory:
+    format: "Categorized list"
+    example: |
+      **🎒 INVENTORY**
+      
+      **Equipped:**
+      - [Main Hand] Iron Sword
+      - [Armor] Leather Jerkin
+      - [Accessory] Ring of Protection
+      
+      **Consumables:**
+      - Health Potion ×2
+      - Trail Rations ×5
+      - Torch ×3
+      
+      **Key Items:**
+      - Ancient Map (partially decoded)
+      - Crystal Key
+      - Sealed Letter to the King
+      
+      **Coins:** 47 gold, 23 silver
+      
+  quest_log:
+    format: "Hierarchical list"
+    example: |
+      **📜 QUEST LOG**
+      
+      **🎯 Main Quest: The Lost Crown**
+      ├─ ✓ Speak with the Oracle
+      ├─ ⟳ Find the three sacred stones (1/3)
+      │  ├─ ✓ Stone of Fire (Volcano Temple)
+      │  ├─ ○ Stone of Water (Location Unknown)
+      │  └─ ○ Stone of Earth (Location Unknown)
+      └─ ○ Return the crown to the rightful heir
+      
+      **📌 Side Quests:**
+      • **The Merchant's Plea** - Recover stolen goods
+      • **Love Letter** - Deliver message to Elena
+
+# =============================================================================
+# SECTION 5: CONTEXTUAL FORMATTING
+# =============================================================================
+
+contextual_formatting:
+  
+  tension_levels:
+    
+    calm:
+      description_length: "Full, rich descriptions"
+      sentence_structure: "Complex, flowing"
+      sensory_details: "All five senses"
+      pacing: "Leisurely"
+      
+    alert:
+      description_length: "Moderate descriptions"
+      sentence_structure: "Mixed length"
+      sensory_details: "Key details only"
+      pacing: "Purposeful"
+      
+    danger:
+      description_length: "Brief, punchy"
+      sentence_structure: "Short, direct"
+      sensory_details: "Immediate threats"
+      pacing: "Rapid"
+      
+  scene_types:
+    
+    social:
+      focus: "Dialogue and character reactions"
+      formatting: "Emphasis on speech, body language"
+      
+    puzzle:
+      focus: "Clear presentation of elements"
+      formatting: "Structured, logical layout"
+      
+    action:
+      focus: "Movement and consequences"
+      formatting: "Dynamic verbs, clear outcomes"
+      
+    atmospheric:
+      focus: "Mood and ambiance"
+      formatting: "Sensory details, metaphor"
+
+# =============================================================================
+# SECTION 6: SPECIAL FORMATS
+# =============================================================================
+
+special_formats:
+  
+  memory_spore:
+    description: "Save game data block"
+    format: |
+      ```
+      ═══════ CHRONOS MEMORY SPORE ═══════
+      Name: [Save Name]
+      Date: [Timestamp]
+      Checksum: [Hash]
+      ─────────────────────────────────────
+      [Base64 Encoded Data]
+      ─────────────────────────────────────
+      ════════ END MEMORY SPORE ═══════════
+      ```
+      
+  error_message:
+    description: "System error in narrative form"
+    format: |
+      *The fabric of reality shimmers momentarily...*
+      
+      [Description of what cannot be done and why]
+      
+  loading_message:
+    description: "State restoration"
+    format: |
+      *Reality reconstitutes around you...*
+      
+      [Scene description picking up where saved]
+
+# =============================================================================
+# SECTION 7: OUTPUT GUIDELINES
+# =============================================================================
+
+output_guidelines:
+  
+  general_rules:
+    - "Use Markdown consistently"
+    - "Separate paragraphs with blank lines"
+    - "Keep line length reasonable (80-100 chars)"
+    - "Use Unicode sparingly for key symbols"
+    - "Ensure compatibility with all LLM interfaces"
+    
+  quality_markers:
+    - "Clear visual hierarchy"
+    - "Consistent formatting patterns"
+    - "Appropriate white space"
+    - "Scannable text structure"
+    - "Accessible to screen readers"
+    
+  forbidden:
+    - "HTML tags"
+    - "Complex Unicode art"
+    - "Colored text attempts"
+    - "Non-standard markdown"
+    - "Excessive special characters"
+
+# =============================================================================
+# SECTION 8: PARSING DIRECTIVE
+# =============================================================================
+
+parsing_directive:
+  instruction: >
+    Apply these formatting rules consistently to all output. The goal is
+    to create a clear, immersive, and professional presentation that works
+    perfectly in any LLM chat interface. Prioritize readability and clarity
+    over elaborate formatting.
+    
+  priorities:
+    1: "Clarity of information"
+    2: "Consistency of format"
+    3: "Narrative flow"
+    4: "Visual appeal"
+    5: "Technical compatibility"
+
+# =============================================================================
+# END OF SCROLL
+# =============================================================================
+
+metadata:
+  schema_version: "2.0.0"
+  last_updated: "2024-11-15"
+  compatibility: "LLM-Native"
+  status: "Production Ready"

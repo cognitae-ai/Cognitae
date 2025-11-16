@@ -1,0 +1,520 @@
+id: DAEDALUS-CORE-002
+file: 002_Daedalus_Templates.yaml
+title: "Module Templates & Structures"
+version: "1.0"
+architect: "Shoji (Inspired by Echo Modules)"
+purpose: >
+  To define the templates, structures, and formats that Daedalus uses
+  to create Chronos-compatible game modules. These ensure consistency,
+  completeness, and perfect integration.
+
+# =============================================================================
+# SECTION 1: PREAMBLE
+# =============================================================================
+
+preamble:
+  introduction: >
+    Every masterpiece begins with a blueprint. These templates are not rigid
+    constraints but flexible frameworks - scaffolding upon which we build
+    worlds. Like the Echo modules that inspire us, each template can be
+    stretched, modified, and enhanced to serve your unique vision.
+
+  philosophy:
+    - name: "Structure Enables Creativity"
+      description: >
+        Templates provide a foundation that frees you to focus on what makes
+        your module unique, rather than worrying about technical formatting.
+        
+    - name: "Modularity is Power"
+      description: >
+        Every component can be mixed, matched, and modified. Take what serves
+        your vision, leave what doesn't.
+        
+    - name: "Examples Teach Better Than Rules"
+      description: >
+        Each template includes rich examples drawn from successful modules,
+        showing not just what to do, but how to do it well.
+
+# =============================================================================
+# SECTION 2: MASTER MODULE STRUCTURE
+# =============================================================================
+
+master_structure:
+  name: "The Complete Module Format"
+  description: >
+    The comprehensive structure for a Chronos game module. Not all sections
+    are required, but this represents the full possibility space.
+    
+  required_sections:
+    
+    metadata:
+      purpose: "Module identification and compatibility"
+      structure:
+        id: "String - Unique module identifier"
+        title: "String - Display name"
+        author: "String - Creator name"
+        version: "String - Semantic version"
+        chronos_version: "String - Required Chronos version"
+        
+    overview:
+      purpose: "Core concept and theme"
+      structure:
+        tagline: "String - One-line pitch"
+        description: "String - Full concept description"
+        themes: "Array - Primary themes"
+        tone: "String - Atmospheric direction"
+        intended_duration: "String - Expected play time"
+        difficulty: "String - Challenge level"
+        
+    world:
+      purpose: "Setting and atmosphere"
+      structure:
+        setting: "String - When and where"
+        genre: "String - Type of fiction"
+        atmosphere: "Object - Sensory palette"
+        
+    mechanics:
+      purpose: "Unique gameplay systems"
+      structure:
+        core_loop: "Object - Primary gameplay pattern"
+        unique_systems: "Array - Special mechanics"
+        modified_rules: "Object - Chronos rule changes"
+        
+  optional_sections:
+    
+    locations:
+      purpose: "Places to explore"
+      structure: "Map<LocationID, LocationData>"
+      
+    npcs:
+      purpose: "Characters to meet"
+      structure: "Map<NPCID, NPCData>"
+      
+    items:
+      purpose: "Objects to find"
+      structure: "Map<ItemID, ItemData>"
+      
+    quests:
+      purpose: "Objectives to complete"
+      structure: "Map<QuestID, QuestData>"
+      
+    events:
+      purpose: "Dynamic occurrences"
+      structure: "Map<EventID, EventData>"
+      
+    encounters:
+      purpose: "Challenges to face"
+      structure: "Map<EncounterID, EncounterData>"
+      
+    lore:
+      purpose: "World history and secrets"
+      structure: "Map<LoreID, LoreData>"
+
+# =============================================================================
+# SECTION 3: GENRE TEMPLATES
+# =============================================================================
+
+genre_templates:
+  description: >
+    Pre-configured templates for common game genres, inspired by the Echo
+    modules' diverse approaches.
+    
+  survival_horror:
+    name: "Quiet Apocalypse"
+    inspiration: "Echo Z"
+    
+    core_elements:
+      themes: ["Scarcity", "Endurance", "Loss", "Hope"]
+      tone: "Tense, melancholic, desperate"
+      
+    mechanics_focus:
+      resource_management:
+        - hunger_system: "Depletion over time"
+        - thirst_system: "Critical resource"
+        - fatigue_system: "Affects all actions"
+        - inventory_limits: "Every item matters"
+        
+      threat_systems:
+        - stealth_mechanics: "Avoidance over confrontation"
+        - noise_attraction: "Actions have consequences"
+        - infection_risk: "Long-term danger"
+        
+      base_building:
+        - safe_zones: "Temporary respite"
+        - fortifications: "Defense against threats"
+        - resource_generation: "Sustainable survival"
+        
+    world_elements:
+      locations:
+        - abandoned_urban: "Picked clean, dangerous"
+        - rural_hideouts: "Isolated, resource-poor"
+        - military_zones: "High risk, high reward"
+        
+      npc_types:
+        - desperate_survivors: "Potential allies or threats"
+        - hostile_groups: "Competing for resources"
+        - lone_wanderers: "Stories and trades"
+        
+  psychological_mystery:
+    name: "Fractured Mirror"
+    inspiration: "Echo Elysium"
+    
+    core_elements:
+      themes: ["Identity", "Truth", "Memory", "Perception"]
+      tone: "Surreal, introspective, noir"
+      
+    mechanics_focus:
+      investigation_systems:
+        - clue_gathering: "Environmental storytelling"
+        - evidence_connection: "Building theories"
+        - revelation_moments: "Truth uncovered"
+        
+      dialogue_focus:
+        - deep_conversations: "Primary gameplay"
+        - psychological_skills: "Inner voices"
+        - social_combat: "Words as weapons"
+        
+      internal_systems:
+        - thought_cabinet: "Processing ideas"
+        - psychological_health: "Mental resilience"
+        - perception_filters: "Reality shifts"
+        
+    world_elements:
+      locations:
+        - mindscapes: "Internal landscapes"
+        - liminal_spaces: "Between real and unreal"
+        - memory_fragments: "Past made present"
+        
+      npc_types:
+        - aspects_of_self: "Internal conflicts"
+        - unreliable_witnesses: "Distorted perspectives"
+        - psychological_archetypes: "Universal patterns"
+        
+  high_adventure:
+    name: "Bonds of Light"
+    inspiration: "Echo Blade"
+    
+    core_elements:
+      themes: ["Friendship", "Courage", "Growth", "Unity"]
+      tone: "Optimistic, energetic, heartfelt"
+      
+    mechanics_focus:
+      party_dynamics:
+        - companion_system: "Friends fight together"
+        - combo_attacks: "Synergy in combat"
+        - relationship_progression: "Bonds strengthen"
+        
+      action_combat:
+        - fluid_combos: "Chain attacks"
+        - special_abilities: "Unique techniques"
+        - dramatic_moments: "Cinematic flair"
+        
+      world_hopping:
+        - distinct_realms: "Unique aesthetics"
+        - portal_mechanics: "Travel between"
+        - realm_specific_rules: "Different physics"
+        
+    world_elements:
+      locations:
+        - hub_worlds: "Safe gathering places"
+        - themed_realms: "Distinct challenges"
+        - hidden_areas: "Secret discoveries"
+        
+      npc_types:
+        - loyal_companions: "Fight alongside"
+        - realm_natives: "Local color"
+        - recurring_rivals: "Friendly competition"
+
+# =============================================================================
+# SECTION 4: COMPONENT TEMPLATES
+# =============================================================================
+
+component_templates:
+  description: >
+    Detailed templates for individual module components, ensuring proper
+    Chronos integration.
+    
+  location_template:
+    required_fields:
+      id: "Unique identifier"
+      name: "Display name"
+      description: "Atmospheric description"
+      
+    optional_fields:
+      exits: "Map<Direction, LocationID>"
+      items: "Array<ItemID>"
+      npcs: "Array<NPCID>"
+      features: "Array<InteractableFeature>"
+      ambient_events: "Array<EventID>"
+      first_visit_text: "Special description"
+      
+    example:
+      id: "abandoned_hospital_lobby"
+      name: "St. Mary's Hospital - Lobby"
+      description: |
+        The once-grand lobby lies in ruins. Overturned gurneys create a
+        maze of rusted metal. Dark stains mark the cracked tile floor.
+        Fluorescent lights flicker sporadically, casting dancing shadows
+        across peeling motivational posters. The air tastes of rust and
+        decay. Something shuffles in the darkness beyond the reception desk.
+      exits:
+        north: "hospital_corridor_1"
+        east: "hospital_emergency"
+        up: "hospital_second_floor"
+        outside: "city_medical_district"
+      items: ["medical_supplies_common", "hospital_keycard_1"]
+      features:
+        - id: "reception_desk"
+          description: "Papers scattered, computer long dead"
+          search_dc: 12
+          success_items: ["patient_list", "flashlight"]
+          
+  npc_template:
+    required_fields:
+      id: "Unique identifier"
+      name: "Character name"
+      description: "Physical and personality"
+      
+    optional_fields:
+      dialogue: "Object - Conversation trees"
+      inventory: "Array<ItemID> - Possessions"
+      combat_stats: "Object - If combatant"
+      relationships: "Map<NPCID, Relationship>"
+      schedule: "Object - Time-based behavior"
+      knowledge: "Array<LoreID> - What they know"
+      quests: "Array<QuestID> - Missions they offer"
+      
+    personality_framework:
+      motivation: "What drives them"
+      fear: "What terrifies them"
+      secret: "What they hide"
+      mannerism: "Distinctive behavior"
+      voice: "How they speak"
+      
+  quest_template:
+    required_fields:
+      id: "Unique identifier"
+      name: "Quest title"
+      description: "Player-facing summary"
+      
+    stages:
+      - id: "Stage identifier"
+        description: "What to do"
+        objectives: "Array<Objective>"
+        completion_triggers: "Array<Trigger>"
+        rewards: "Object"
+        
+    quest_types:
+      main_quest:
+        - linear_progression: "A→B→C"
+        - branching_paths: "A→(B or C)→D"
+        - open_structure: "Complete in any order"
+        
+      side_quest:
+        - fetch_quest: "Retrieve item"
+        - escort_mission: "Protect NPC"
+        - investigation: "Solve mystery"
+        - survival_challenge: "Endure situation"
+        
+  event_template:
+    required_fields:
+      id: "Unique identifier"
+      name: "Event name"
+      triggers: "Array<Trigger>"
+      actions: "Array<Action>"
+      
+    trigger_types:
+      - location_enter: "Player arrives"
+      - time_based: "Specific time"
+      - item_acquired: "Get item"
+      - npc_interaction: "Talk to character"
+      - quest_progress: "Complete objective"
+      - random_chance: "Probability based"
+      
+    action_types:
+      - spawn_entity: "Create NPC/item"
+      - modify_location: "Change environment"
+      - start_encounter: "Begin combat/challenge"
+      - narrative_text: "Display story"
+      - grant_reward: "Give items/XP"
+      - modify_state: "Change world flags"
+
+# =============================================================================
+# SECTION 5: NARRATIVE FRAMEWORKS
+# =============================================================================
+
+narrative_frameworks:
+  description: >
+    Storytelling structures that provide narrative coherence and emotional
+    impact to modules.
+    
+  three_act_structure:
+    act_1_setup:
+      purpose: "Establish world, characters, conflict"
+      elements:
+        - inciting_incident: "What starts the adventure"
+        - world_introduction: "Setting the scene"
+        - character_motivation: "Why the player cares"
+        
+    act_2_confrontation:
+      purpose: "Rising tension, complications, growth"
+      elements:
+        - escalating_challenges: "Increasing difficulty"
+        - plot_twists: "Unexpected revelations"
+        - character_development: "Growth through adversity"
+        
+    act_3_resolution:
+      purpose: "Climax and conclusion"
+      elements:
+        - final_challenge: "Ultimate test"
+        - resolution: "Consequences of choices"
+        - denouement: "New equilibrium"
+        
+  hub_and_spoke:
+    central_hub:
+      purpose: "Safe base of operations"
+      elements:
+        - persistent_npcs: "Recurring characters"
+        - upgrade_systems: "Character progression"
+        - quest_givers: "Mission sources"
+        
+    spoke_missions:
+      purpose: "Explorable content"
+      elements:
+        - themed_challenges: "Unique obstacles"
+        - contained_stories: "Complete narratives"
+        - rewards_and_progression: "Character growth"
+        
+  emergent_narrative:
+    system_interactions:
+      purpose: "Story emerges from play"
+      elements:
+        - faction_dynamics: "Group relationships"
+        - resource_economy: "Scarcity drives conflict"
+        - player_reputation: "Actions have consequences"
+        
+    procedural_events:
+      purpose: "Dynamic storytelling"
+      elements:
+        - random_encounters: "Unexpected moments"
+        - chain_reactions: "Cascading consequences"
+        - world_evolution: "Setting changes over time"
+
+# =============================================================================
+# SECTION 6: BALANCING GUIDELINES
+# =============================================================================
+
+balancing_guidelines:
+  description: >
+    Principles and formulas for creating fair, challenging, and fun gameplay
+    experiences.
+    
+  difficulty_scaling:
+    
+    resource_economy:
+      scarcity_levels:
+        abundant: "Resources plentiful, focus on other challenges"
+        balanced: "Careful management required"
+        scarce: "Every item precious"
+        desperate: "Survival itself is victory"
+        
+    combat_balance:
+      encounter_difficulty:
+        trivial: "No real threat"
+        easy: "Minor resource expenditure"
+        moderate: "Tactical thinking required"
+        hard: "Significant risk of failure"
+        deadly: "Likely character death"
+        
+    progression_curves:
+      power_growth:
+        linear: "Steady improvement"
+        exponential: "Dramatic late-game power"
+        logarithmic: "Quick early gains, slower later"
+        stepped: "Plateau between growth spurts"
+        
+  player_agency:
+    
+    choice_design:
+      meaningful_decisions:
+        - immediate_consequence: "See results now"
+        - delayed_impact: "Affects future events"
+        - resource_trade_off: "Gain X, lose Y"
+        - moral_dilemma: "No perfect answer"
+        
+    failure_recovery:
+      safety_nets:
+        - checkpoint_system: "Recent save points"
+        - partial_success: "Achieve some goals"
+        - narrative_failure: "Story continues differently"
+        - resource_cost: "Pay to recover"
+
+# =============================================================================
+# SECTION 7: VALIDATION CHECKLIST
+# =============================================================================
+
+validation_checklist:
+  description: >
+    Comprehensive checklist to ensure module quality and Chronos compatibility.
+    
+  technical_validation:
+    - "All IDs unique and properly formatted"
+    - "All references resolve correctly"
+    - "Event triggers properly structured"
+    - "State management compatible"
+    - "Save/load systems work"
+    
+  narrative_validation:
+    - "Consistent tone throughout"
+    - "Character motivations clear"
+    - "Plot threads resolve"
+    - "World rules consistent"
+    - "Theme reinforced"
+    
+  gameplay_validation:
+    - "Clear objectives"
+    - "Multiple solution paths"
+    - "Appropriate difficulty curve"
+    - "Meaningful progression"
+    - "Satisfying conclusion"
+    
+  polish_validation:
+    - "Vivid descriptions"
+    - "Unique NPC voices"
+    - "Atmospheric details"
+    - "Memorable moments"
+    - "Professional presentation"
+
+# =============================================================================
+# SECTION 8: PARSING DIRECTIVE
+# =============================================================================
+
+parsing_directive:
+  instruction: >
+    These templates are your toolkit for creation. Use them as starting
+    points, not rigid rules. Every module should feel unique while
+    maintaining technical compatibility with Chronos.
+    
+  template_usage:
+    - "Start with genre template for foundation"
+    - "Customize based on user vision"
+    - "Ensure all required fields present"
+    - "Validate against checklist"
+    - "Polish until exceptional"
+    
+  creative_principles:
+    - "Templates enable, not constrain"
+    - "Mix and match components freely"
+    - "Innovation within structure"
+    - "User vision drives decisions"
+    - "Quality over quantity"
+
+# =============================================================================
+# END OF SCROLL
+# =============================================================================
+
+metadata:
+  schema_version: "1.0.0"
+  last_updated: "2024-11-15"
+  compatibility: "Chronos 2.0"
+  status: "Production Ready"

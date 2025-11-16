@@ -1,0 +1,545 @@
+id: CHRONOS-CORE-007
+file: 007_Chronos_Entities.yaml
+title: "The Codex of Being"
+version: "2.0"
+architect: "Shoji (Refactored)"
+purpose: >
+  To establish the Entity-Component-System (ECS) framework for all objects
+  and characters in the game world. This scroll defines how everything that
+  exists is structured, from the smallest key to the mightiest dragon.
+
+# =============================================================================
+# SECTION 1: PREAMBLE
+# =============================================================================
+
+preamble:
+  introduction: >
+    To exist is to have properties. Every thing in the world - be it creature,
+    object, or location - is defined by its components. This scroll is the
+    Codex of Being, the blueprint from which all existence springs. Through
+    the elegant combination of simple components, infinite complexity emerges.
+
+  philosophy:
+    - name: "Composition Over Inheritance"
+      description: >
+        Entities are built from modular components, not rigid templates.
+        Any entity can have any combination of components.
+        
+    - name: "Data-Driven Behavior"
+      description: >
+        An entity's behavior emerges from its data. A door opens because
+        it has an 'openable' component, not special door code.
+        
+    - name: "Everything Is An Entity"
+      description: >
+        Universal system for all game objects ensures consistent
+        interactions and simple logic.
+        
+    - name: "Dynamic and Mutable"
+      description: >
+        Entities can gain or lose components during play. A sword can
+        become magical, a door can be destroyed.
+
+# =============================================================================
+# SECTION 2: BASE ENTITY
+# =============================================================================
+
+base_entity:
+  description: "Core properties every entity must have"
+  
+  required_properties:
+    
+    id:
+      type: "String"
+      description: "Unique identifier"
+      format: "location_type_number"
+      example: "tavern_npc_bartender_01"
+      
+    name:
+      type: "String"  
+      description: "Display name"
+      example: "Gruff Bartender"
+      
+    description:
+      type: "String"
+      description: "What player sees when examining"
+      example: "A burly man with scarred hands and tired eyes"
+      
+    location:
+      type: "String"
+      description: "Where entity currently exists"
+      values:
+        - "Location ID (e.g., 'tavern_main')"
+        - "Container ID (e.g., 'player' for inventory)"
+        - "'void' if not currently in world"
+      
+  optional_properties:
+    
+    tags:
+      type: "Array<String>"
+      description: "Searchable categories"
+      example: ["npc", "human", "merchant", "questgiver"]
+      
+    keywords:
+      type: "Array<String>"
+      description: "Aliases for commands"
+      example: ["bartender", "man", "keeper"]
+      
+    hidden:
+      type: "Boolean"
+      description: "Whether entity is concealed"
+      default: false
+
+# =============================================================================
+# SECTION 3: COMPONENT LIBRARY
+# =============================================================================
+
+components:
+  description: "Modular properties that grant capabilities"
+  
+  # Physical Components
+  
+  physical:
+    
+    health:
+      description: "Can be damaged and destroyed"
+      properties:
+        current: "Number"
+        max: "Number"
+        armor: "Number (damage reduction)"
+        resistances: "Map<DamageType, Number>"
+      example:
+        current: 25
+        max: 25
+        armor: 2
+        resistances:
+          fire: 0.5
+          poison: 1.0
+          
+    inventory:
+      description: "Can contain other entities"
+      properties:
+        capacity: "Number (-1 for unlimited)"
+        items: "Array<EntityID>"
+        restrictions: "Array<Tag> (optional)"
+      example:
+        capacity: 20
+        items: ["sword_01", "potion_02"]
+        restrictions: ["small", "consumable"]
+        
+    portable:
+      description: "Can be picked up"
+      properties:
+        weight: "Number"
+        value: "Number (base price)"
+        stackable: "Boolean"
+        stack_size: "Number"
+      example:
+        weight: 0.1
+        value: 5
+        stackable: true
+        stack_size: 99
+        
+  # Interactive Components
+  
+  interactive:
+    
+    openable:
+      description: "Can be opened/closed"
+      properties:
+        state: "open|closed|locked"
+        key_id: "EntityID (if lockable)"
+        difficulty: "Number (for picking)"
+      example:
+        state: "locked"
+        key_id: "silver_key_01"
+        difficulty: 15
+        
+    usable:
+      description: "Can be activated/consumed"
+      properties:
+        uses: "Number (-1 for unlimited)"
+        effect: "EffectID"
+        requirements: "Map"
+      example:
+        uses: 3
+        effect: "heal_medium"
+        requirements:
+          class: ["cleric", "paladin"]
+          
+    readable:
+      description: "Contains text"
+      properties:
+        text: "String"
+        language: "String"
+        requires_skill: "Boolean"
+      example:
+        text: "The ancient prophecy speaks of..."
+        language: "elvish"
+        requires_skill: true
+        
+  # Character Components
+  
+  character:
+    
+    dialogue:
+      description: "Can be talked to"
+      properties:
+        greeting: "String"
+        topics: "Map<String, String>"
+        quest_dialogue: "Map<QuestID, String>"
+        personality: "String"
+      example:
+        greeting: "Well met, traveler!"
+        topics:
+          rumors: "I heard strange noises from the old mill"
+          trade: "I have the finest goods in town"
+        personality: "friendly_merchant"
+        
+    combat:
+      description: "Can fight"
+      properties:
+        attack: "Number"
+        defense: "Number"
+        speed: "Number"
+        abilities: "Array<AbilityID>"
+        ai_type: "aggressive|defensive|tactical"
+      example:
+        attack: 12
+        defense: 8
+        speed: 5
+        abilities: ["sword_slash", "shield_bash"]
+        ai_type: "defensive"
+        
+    merchant:
+      description: "Can trade"
+      properties:
+        shop_inventory: "Array<EntityID>"
+        price_modifier: "Number"
+        currency_accepted: "Array<String>"
+        restock_frequency: "String"
+      example:
+        shop_inventory: ["sword_01", "shield_01"]
+        price_modifier: 1.2
+        currency_accepted: ["gold", "silver"]
+        restock_frequency: "daily"
+        
+  # State Components
+  
+  state:
+    
+    mutable:
+      description: "Has changeable states"
+      properties:
+        states: "Array<String>"
+        current_state: "String"
+        state_descriptions: "Map<String, String>"
+      example:
+        states: ["intact", "damaged", "broken"]
+        current_state: "intact"
+        state_descriptions:
+          intact: "The bridge looks sturdy"
+          damaged: "The bridge creaks ominously"
+          broken: "The bridge has collapsed"
+          
+    quest_related:
+      description: "Connected to quests"
+      properties:
+        quest_ids: "Array<QuestID>"
+        role: "objective|reward|key_item"
+        consumed_on_complete: "Boolean"
+      example:
+        quest_ids: ["find_the_artifact"]
+        role: "objective"
+        consumed_on_complete: false
+        
+    magical:
+      description: "Has magical properties"
+      properties:
+        enchantments: "Array<EnchantmentID>"
+        charges: "Number"
+        recharge_rate: "String"
+        identified: "Boolean"
+      example:
+        enchantments: ["fire_damage", "soul_trap"]
+        charges: 50
+        recharge_rate: "1/hour"
+        identified: false
+
+# =============================================================================
+# SECTION 4: ENTITY ARCHETYPES
+# =============================================================================
+
+archetypes:
+  description: "Common entity templates"
+  
+  # Object Archetypes
+  
+  objects:
+    
+    simple_item:
+      components: ["portable"]
+      example: "Rock, stick, coin"
+      
+    consumable:
+      components: ["portable", "usable"]
+      example: "Potion, scroll, food"
+      
+    equipment:
+      components: ["portable", "equipable"]
+      example: "Sword, armor, ring"
+      
+    container:
+      components: ["inventory", "openable"]
+      example: "Chest, barrel, corpse"
+      
+    door:
+      components: ["openable", "mutable"]
+      example: "Wooden door, iron gate"
+      
+    furniture:
+      components: ["mutable"]
+      example: "Table, chair, bed"
+      
+    readable_object:
+      components: ["readable", "portable?"]
+      example: "Book, scroll, letter"
+      
+  # Character Archetypes
+  
+  characters:
+    
+    basic_npc:
+      components: ["health", "dialogue"]
+      example: "Townsperson, peasant"
+      
+    merchant:
+      components: ["health", "dialogue", "merchant", "inventory"]
+      example: "Shopkeeper, trader"
+      
+    hostile:
+      components: ["health", "combat", "inventory"]
+      example: "Bandit, monster"
+      
+    quest_npc:
+      components: ["health", "dialogue", "quest_related"]
+      example: "Quest giver, informant"
+      
+    boss:
+      components: ["health", "combat", "dialogue", "magical"]
+      example: "Dungeon boss, nemesis"
+      
+  # Location Features
+  
+  features:
+    
+    trap:
+      components: ["mutable", "usable"]
+      example: "Pit trap, poison dart"
+      
+    puzzle_element:
+      components: ["mutable", "usable", "quest_related"]
+      example: "Lever, pressure plate"
+      
+    landmark:
+      components: ["readable"]
+      example: "Statue, monument"
+
+# =============================================================================
+# SECTION 5: ENTITY TEMPLATES
+# =============================================================================
+
+entity_templates:
+  description: "Ready-to-use entity definitions"
+  
+  items:
+    
+    gold_coin:
+      base:
+        id: "gold_coin_[auto]"
+        name: "Gold Coin"
+        description: "A standard gold coin bearing the king's seal"
+        tags: ["item", "currency", "valuable"]
+      components:
+        portable:
+          weight: 0.01
+          value: 1
+          stackable: true
+          stack_size: 9999
+          
+    health_potion:
+      base:
+        id: "health_potion_[auto]"
+        name: "Health Potion"
+        description: "A red liquid swirls in this glass vial"
+        tags: ["item", "consumable", "healing"]
+      components:
+        portable:
+          weight: 0.2
+          value: 50
+        usable:
+          uses: 1
+          effect: "heal_medium"
+          
+    iron_sword:
+      base:
+        id: "iron_sword_[auto]"
+        name: "Iron Sword"
+        description: "A well-balanced blade of common iron"
+        tags: ["item", "weapon", "sword"]
+      components:
+        portable:
+          weight: 3
+          value: 100
+        equipable:
+          slot: "main_hand"
+          bonuses:
+            attack: 5
+            
+  npcs:
+    
+    town_guard:
+      base:
+        id: "guard_[auto]"
+        name: "Town Guard"
+        description: "A vigilant guard in chainmail armor"
+        tags: ["npc", "human", "lawful"]
+      components:
+        health:
+          current: 30
+          max: 30
+          armor: 3
+        combat:
+          attack: 10
+          defense: 12
+          speed: 5
+          ai_type: "defensive"
+        dialogue:
+          greeting: "Move along, citizen."
+          topics:
+            duty: "I protect this town from threats."
+            crime: "Report any suspicious activity."
+            
+  features:
+    
+    wooden_door:
+      base:
+        id: "door_[auto]"
+        name: "Wooden Door"
+        description: "A sturdy oak door"
+        tags: ["feature", "door", "wood"]
+      components:
+        openable:
+          state: "closed"
+        mutable:
+          states: ["open", "closed", "locked", "broken"]
+          current_state: "closed"
+
+# =============================================================================
+# SECTION 6: ENTITY CREATION
+# =============================================================================
+
+entity_creation:
+  description: "How to instantiate entities"
+  
+  instantiation_process:
+    1: "Select archetype or template"
+    2: "Generate unique ID"
+    3: "Set base properties"
+    4: "Add components with initial values"
+    5: "Place in world location"
+    6: "Register with world state"
+    
+  id_generation:
+    format: "[location]_[type]_[name]_[number]"
+    examples:
+      - "tavern_npc_bartender_01"
+      - "dungeon_item_sword_03"
+      - "forest_creature_wolf_02"
+      
+  dynamic_creation:
+    description: "Creating entities during play"
+    triggers:
+      - "Loot generation"
+      - "NPC spawning"
+      - "Trap activation"
+      - "Quest rewards"
+    process:
+      - "Determine appropriate template"
+      - "Roll for random variations"
+      - "Apply modifiers for difficulty"
+      - "Generate unique properties"
+
+# =============================================================================
+# SECTION 7: COMPONENT INTERACTIONS
+# =============================================================================
+
+component_interactions:
+  description: "How components work together"
+  
+  synergies:
+    
+    health_plus_combat:
+      description: "Creates a combatant"
+      behavior: "Can participate in battles"
+      
+    inventory_plus_merchant:
+      description: "Creates a shop"
+      behavior: "Can buy/sell items"
+      
+    openable_plus_inventory:
+      description: "Creates a container"
+      behavior: "Can store items securely"
+      
+    portable_plus_usable:
+      description: "Creates a consumable"
+      behavior: "Can be carried and activated"
+      
+  conflicts:
+    description: "Components that shouldn't combine"
+    examples:
+      - "portable + immovable"
+      - "dialogue + mindless"
+      - "merchant + hostile (usually)"
+      
+  emergent_behaviors:
+    description: "Unexpected but logical combinations"
+    examples:
+      - "Magical sword with dialogue = sentient weapon"
+      - "Container with health = mimic"
+      - "Door with combat = guardian door"
+
+# =============================================================================
+# SECTION 8: PARSING DIRECTIVE
+# =============================================================================
+
+parsing_directive:
+  instruction: >
+    Use this entity system consistently for all game objects. When creating
+    new entities, combine components logically to achieve desired behaviors.
+    Remember that components are modular - any entity can potentially have
+    any component if it makes narrative sense.
+    
+  entity_processing:
+    1: "Check entity location"
+    2: "Process active components"
+    3: "Apply state changes"
+    4: "Handle interactions"
+    5: "Update descriptions"
+    
+  best_practices:
+    - "Keep entities simple until complexity needed"
+    - "Use templates for common objects"
+    - "Components determine capabilities"
+    - "Let behaviors emerge from data"
+    - "Maintain consistent ID scheme"
+
+# =============================================================================
+# END OF SCROLL
+# =============================================================================
+
+metadata:
+  schema_version: "2.0.0"
+  last_updated: "2024-11-15"
+  compatibility: "LLM-Native"
+  status: "Production Ready"

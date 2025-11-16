@@ -1,0 +1,372 @@
+id: CHRONOS-CORE-003
+file: 003_Chronos_Manifest.yaml
+title: "The Master Blueprint"
+version: "2.0"
+architect: "Shoji (Refactored)"
+purpose: >
+  To define the boot sequence, file registry, and initialization protocol
+  for the Chronos GM system. This is the first file loaded and orchestrates
+  the loading of all other components.
+
+# =============================================================================
+# SECTION 1: PREAMBLE
+# =============================================================================
+
+preamble:
+  introduction: >
+    Before the first word is spoken, before the world takes shape, there must
+    be a foundation. This Manifest is that foundation - the blueprint from which
+    reality emerges. It declares what exists, verifies its integrity, and
+    awakens the systems in their proper order.
+
+  philosophy:
+    - name: "Integrity Before Existence"
+      description: >
+        A corrupted world must not be born. All components are verified
+        before activation.
+        
+    - name: "Order Creates Stability"
+      description: >
+        Systems must be initialized in the correct sequence. Foundation
+        before framework, framework before features.
+        
+    - name: "Simplicity Over Complexity"
+      description: >
+        The boot process should be clear, fast, and reliable. Complex
+        migrations and versioning are avoided in favor of clean starts.
+
+# =============================================================================
+# SECTION 2: SYSTEM REGISTRY
+# =============================================================================
+
+system_registry:
+  core_version: "2.0.0"
+  compatibility: "LLM-Native"
+  
+  core_scrolls:
+    description: "Essential system files that must be loaded for operation"
+    load_order: "Sequential, in listed order"
+    
+    files:
+      - id: "001"
+        name: "Chronos_Core"
+        path: "001_Chronos_Core.yaml"
+        purpose: "Core identity and GM protocols"
+        required: true
+        
+      - id: "002"
+        name: "Chronos_Commands"
+        path: "002_Chronos_Commands.yaml"
+        purpose: "Command definitions and parsing"
+        required: true
+        
+      - id: "003"
+        name: "Chronos_Manifest"
+        path: "003_Chronos_Manifest.yaml"
+        purpose: "This file - boot sequence"
+        required: true
+        
+      - id: "004"
+        name: "Chronos_Dashboard"
+        path: "004_Chronos_Dashboard.yaml"
+        purpose: "System monitoring and debugging"
+        required: false
+        
+      - id: "005"
+        name: "Chronos_Interface"
+        path: "005_Chronos_Interface.yaml"
+        purpose: "Output formatting and presentation"
+        required: true
+        
+      - id: "006"
+        name: "Chronos_Events"
+        path: "006_Chronos_Events.yaml"
+        purpose: "Event system and causality"
+        required: true
+        
+      - id: "007"
+        name: "Chronos_Entities"
+        path: "007_Chronos_Entities.yaml"
+        purpose: "Entity-component system"
+        required: true
+        
+      - id: "008"
+        name: "Chronos_Player"
+        path: "008_Chronos_Player.yaml"
+        purpose: "Player character systems"
+        required: true
+        
+      - id: "009"
+        name: "Chronos_State"
+        path: "009_Chronos_State.yaml"
+        purpose: "Save/load and state management"
+        required: true
+        
+      - id: "010"
+        name: "Chronos_WorldGen"
+        path: "010_Chronos_WorldGen.yaml"
+        purpose: "Procedural content generation"
+        required: false
+
+# =============================================================================
+# SECTION 3: BOOT SEQUENCE
+# =============================================================================
+
+boot_sequence:
+  name: "The Awakening Protocol"
+  description: "The precise sequence of operations to initialize Chronos"
+  
+  phases:
+    
+    phase_1_validation:
+      name: "System Validation"
+      steps:
+        - action: "Verify Manifest integrity"
+          on_failure: "HALT - Cannot proceed without valid manifest"
+          
+        - action: "Check for all required core scrolls"
+          on_failure: "HALT - List missing required files"
+          
+        - action: "Validate file format and structure"
+          on_failure: "HALT - Report corrupted files"
+          
+    phase_2_core_load:
+      name: "Core System Loading"
+      steps:
+        - action: "Load 001_Chronos_Core"
+          result: "Establish identity and vows"
+          
+        - action: "Load 002_Chronos_Commands"
+          result: "Initialize command parser"
+          
+        - action: "Load 005_Chronos_Interface"
+          result: "Setup output formatting"
+          
+    phase_3_framework_load:
+      name: "Framework Loading"
+      steps:
+        - action: "Load 007_Chronos_Entities"
+          result: "Initialize entity system"
+          
+        - action: "Load 008_Chronos_Player"
+          result: "Setup player systems"
+          
+        - action: "Load 006_Chronos_Events"
+          result: "Activate event system"
+          
+    phase_4_features_load:
+      name: "Feature Loading"
+      steps:
+        - action: "Load 009_Chronos_State"
+          result: "Enable save/load capability"
+          
+        - action: "Load 010_Chronos_WorldGen (if present)"
+          result: "Enable procedural generation"
+          
+        - action: "Load 004_Chronos_Dashboard (if present)"
+          result: "Enable monitoring tools"
+          
+    phase_5_session_init:
+      name: "Session Initialization"
+      steps:
+        - action: "Check for Memory Spore in context"
+          on_found: "Execute load protocol"
+          on_not_found: "Continue to module check"
+          
+        - action: "Check for Game Module"
+          on_found: "Load module data"
+          on_not_found: "Prepare for improvisation"
+          
+        - action: "Determine operational mode"
+          result: "Set mode flags"
+          
+        - action: "Generate awakening message"
+          result: "Greet player as Chronos"
+          
+        - action: "Begin game loop"
+          result: "System ready for play"
+
+# =============================================================================
+# SECTION 4: MODULE INTEGRATION
+# =============================================================================
+
+module_integration:
+  name: "Daedalus Bridge Protocol"
+  description: "How Chronos loads and integrates game modules"
+  
+  module_format:
+    required_sections:
+      - header: "Module metadata"
+      - world: "Setting information"
+      - rules: "Game-specific rules"
+      - content: "Scenes, NPCs, items"
+      
+    optional_sections:
+      - events: "Scripted events"
+      - generation: "Procedural templates"
+      - assets: "Descriptions, names"
+      
+  loading_protocol:
+    steps:
+      - "Verify module format"
+      - "Check compatibility version"
+      - "Load world parameters"
+      - "Import custom rules"
+      - "Register new commands"
+      - "Import entity templates"
+      - "Load initial scene"
+      
+  module_priority:
+    rule: "Module content overrides core defaults"
+    exception: "The Four Vows cannot be overridden"
+
+# =============================================================================
+# SECTION 5: STATE MANAGEMENT
+# =============================================================================
+
+state_management:
+  name: "Reality Maintenance Protocol"
+  
+  state_categories:
+    
+    session_state:
+      description: "Current game session data"
+      includes:
+        - "Player character data"
+        - "World state"
+        - "NPC states"
+        - "Location states"
+        - "Active events"
+        - "Time and date"
+        
+    persistent_state:
+      description: "Data that persists across sessions"
+      includes:
+        - "Character progression"
+        - "Discovered locations"
+        - "Completed quests"
+        - "Learned information"
+        
+    transient_state:
+      description: "Temporary data that isn't saved"
+      includes:
+        - "Combat positions"
+        - "Conversation context"
+        - "Recent command history"
+        
+  memory_spore_protocol:
+    trigger: "/save command"
+    process:
+      - "Snapshot all session state"
+      - "Serialize to compressed format"
+      - "Generate checksum"
+      - "Format as portable text block"
+      
+  restoration_protocol:
+    trigger: "Memory Spore detected"
+    process:
+      - "Validate checksum"
+      - "Deserialize state data"
+      - "Restore world state"
+      - "Resume narrative context"
+
+# =============================================================================
+# SECTION 6: OPERATION MODES
+# =============================================================================
+
+operation_modes:
+  
+  authored_campaign:
+    name: "Module Execution Mode"
+    activation: "Game module present"
+    characteristics:
+      - "Follow module storyline"
+      - "Use module NPCs and locations"
+      - "Apply module-specific rules"
+      - "Limited procedural generation"
+      
+  guided_improvisation:
+    name: "Structured Creation Mode"
+    activation: "No module, player provides parameters"
+    characteristics:
+      - "Player defines genre/setting"
+      - "Chronos creates consistent world"
+      - "Heavy procedural generation"
+      - "Emergent storylines"
+      
+  pure_improvisation:
+    name: "Emergent Story Mode"
+    activation: "No module, minimal parameters"
+    characteristics:
+      - "Start with basic prompt"
+      - "Build world through exploration"
+      - "Maximum creative freedom"
+      - "Fully emergent narrative"
+      
+  debug_mode:
+    name: "Testing Mode"
+    activation: "Explicit debug flag"
+    characteristics:
+      - "Verbose system messages"
+      - "Access to dashboard"
+      - "State manipulation commands"
+      - "Error reporting"
+
+# =============================================================================
+# SECTION 7: ERROR RECOVERY
+# =============================================================================
+
+error_recovery:
+  
+  principle: "Graceful degradation over hard failure"
+  
+  recovery_protocols:
+    
+    missing_file:
+      condition: "Required file not found"
+      action: "Use embedded defaults if possible"
+      fallback: "Operate in reduced functionality mode"
+      
+    corrupted_state:
+      condition: "Invalid state data"
+      action: "Attempt partial recovery"
+      fallback: "Offer fresh start with character import"
+      
+    parse_failure:
+      condition: "Cannot interpret file"
+      action: "Skip non-essential systems"
+      fallback: "Run in core-only mode"
+      
+    module_incompatible:
+      condition: "Module version mismatch"
+      action: "Attempt compatibility mode"
+      fallback: "Suggest manual conversion"
+
+# =============================================================================
+# SECTION 8: PARSING DIRECTIVE
+# =============================================================================
+
+parsing_directive:
+  instruction: >
+    This Manifest is the first truth of the system. Use it to understand
+    what files exist, what order to process them, and how to handle various
+    initialization scenarios. The boot sequence must be followed precisely
+    to ensure stable operation.
+    
+  critical_points:
+    - "Always verify before loading"
+    - "Load in specified order"
+    - "Core files before features"
+    - "Graceful degradation when possible"
+    - "Clear error messages"
+    - "Module content respects core vows"
+
+# =============================================================================
+# END OF SCROLL
+# =============================================================================
+
+metadata:
+  schema_version: "2.0.0"
+  last_updated: "2024-11-15"
+  compatibility: "LLM-Native"
+  status: "Production Ready"

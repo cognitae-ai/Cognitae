@@ -1,0 +1,412 @@
+id: DAEDALUS-CORE-005
+file: 005_Daedalus_Examples.yaml
+title: "Example Modules Showcase"
+version: "1.0"
+architect: "Shoji (Demonstrating Daedalus Capabilities)"
+purpose: >
+  To provide complete, playable example modules that demonstrate the
+  range, depth, and quality that Daedalus can help users achieve.
+
+# =============================================================================
+# EXAMPLE 1: THE LAST STATION (Survival Horror)
+# =============================================================================
+
+example_1_last_station:
+  
+  # ---- MODULE HEADER ----
+  module:
+    metadata:
+      id: "module_last_station_v1.0"
+      title: "The Last Station"
+      author: "Daedalus Example"
+      version: "1.0"
+      chronos_version: "2.0+"
+      
+    overview:
+      tagline: "Survive the winter in an abandoned subway station"
+      description: |
+        The bombs fell three months ago. You've found shelter in Meridian
+        Station, deep beneath the frozen city. But you're not alone down
+        here. Strange sounds echo through the tunnels. Your supplies are
+        running low. And winter is getting colder.
+      themes: ["Survival", "Isolation", "Mystery", "Decay"]
+      tone: "Tense, melancholic, desperate"
+      intended_duration: "4-6 hours"
+      difficulty: "Challenging"
+      
+    world:
+      setting: "Post-apocalyptic subway system, three months after nuclear war"
+      genre: "Survival Horror"
+      atmosphere:
+        visual: "Darkness broken by failing emergency lights, frost on metal"
+        audio: "Dripping water, distant echoes, scratching in walls"
+        tactile: "Bitter cold, damp concrete, sharp metal edges"
+        
+    # ---- UNIQUE MECHANICS ----
+    mechanics:
+      core_loop:
+        name: "Survive Another Day"
+        phases:
+          - scavenge: "Search for supplies in dangerous areas"
+          - manage: "Ration food, water, medicine"
+          - fortify: "Improve defenses against threats"
+          - endure: "Survive random events and attacks"
+          
+      unique_systems:
+        
+        temperature_system:
+          description: "Cold is a constant threat"
+          mechanics:
+            ambient_temp: "Decreases over time"
+            warmth_sources: "Fires, clothing, shelter"
+            hypothermia: "Gradual health loss when too cold"
+            
+        sanity_system:
+          description: "Isolation affects the mind"
+          mechanics:
+            sanity_drain: "Decreases when alone too long"
+            sanity_events: "Hallucinations when low"
+            restoration: "Human contact, music, books"
+            
+        resource_decay:
+          description: "Everything deteriorates"
+          mechanics:
+            food_spoilage: "Fresh food lasts 3 days"
+            battery_drain: "Flashlights consume power"
+            tool_degradation: "Items break with use"
+            
+    # ---- LOCATIONS ----
+    locations:
+      
+      station_platform:
+        id: "station_loc_platform"
+        name: "Meridian Station Platform"
+        description: |
+          The main platform stretches into darkness in both directions. 
+          Abandoned luggage lies scattered between rusted benches. 
+          Emergency lights flicker weakly, casting dancing shadows across 
+          propaganda posters peeling from the walls. Your makeshift camp 
+          occupies one corner, a small island of relative safety.
+        exits:
+          north: "station_loc_tunnels_north"
+          south: "station_loc_tunnels_south"
+          up: "station_loc_entrance"
+          down: "station_loc_maintenance"
+        items: ["station_item_emergency_supplies"]
+        features:
+          - id: "camp"
+            description: "Your fortified corner with sleeping bag and supplies"
+            interaction: "rest"
+          - id: "vending_machine"
+            description: "Smashed but might contain something"
+            search_dc: 12
+            
+      station_tunnels_north:
+        id: "station_loc_tunnels_north"
+        name: "North Tunnels"
+        description: |
+          The tunnel extends into absolute darkness. The rails are twisted
+          and broken about fifty meters in. Strange scratching sounds echo
+          from deeper in. Fresh scratch marks score the tunnel walls.
+        exits:
+          south: "station_loc_platform"
+          deep: "station_loc_nest"
+        threats: ["station_npc_tunnel_dweller"]
+        items: ["station_item_scattered_tools"]
+        
+    # ---- NPCs ----
+    npcs:
+      
+      mysterious_survivor:
+        id: "station_npc_elena_01"
+        name: "Elena"
+        description: |
+          A gaunt woman in her thirties, wrapped in layers of dirty coats.
+          Her eyes dart constantly to the shadows. She clutches a journal
+          to her chest like a lifeline.
+        location: "station_loc_maintenance"
+        personality:
+          motivation: "Find her missing daughter"
+          fear: "The things in the tunnels"
+          secret: "Knows what caused the scratching sounds"
+        dialogue:
+          greeting: |
+            She starts when she sees you. "You're... you're real, aren't 
+            you? Not another hallucination? Thank god. I haven't seen 
+            anyone in weeks."
+          topics:
+            daughter: |
+              "Lily. She's only eight. We were separated when the bombs... 
+              I know she's alive. A mother knows."
+            tunnels: |
+              Her voice drops to a whisper. "Don't go deep into the north 
+              tunnels. They're down there. The changed ones. I've seen 
+              what radiation does to people who don't die right away."
+            trade: |
+              "I have medicine. Antibiotics. But I need food. My daughter 
+              will need food when I find her."
+              
+      tunnel_dweller:
+        id: "station_npc_tunnel_dweller"
+        name: "Twisted Figure"
+        description: |
+          Once human, now something else. Radiation has warped its flesh
+          into something that shouldn't exist. It moves wrong, joints
+          bending in too many places.
+        location: "station_loc_tunnels_north"
+        behavior: "hostile"
+        combat_stats:
+          health: 30
+          attack: 8
+          defense: 4
+          special: "Infectious scratch (disease risk)"
+          
+    # ---- ITEMS ----
+    items:
+      
+      emergency_supplies:
+        id: "station_item_emergency_supplies"
+        name: "Emergency Supply Cache"
+        description: "A metal box marked with a red cross"
+        type: "container"
+        contents:
+          - "station_item_canned_food" # quantity: 3
+          - "station_item_water_bottle" # quantity: 2
+          - "station_item_bandages" # quantity: 5
+          - "station_item_flashlight" # quantity: 1
+          
+      canned_food:
+        id: "station_item_canned_food"
+        name: "Canned Food"
+        description: "Generic label, expiration date two years past"
+        type: "consumable"
+        effects:
+          hunger: +40
+          sanity: +5
+        spoilage_days: null # Canned goods don't spoil
+        
+    # ---- EVENTS ----
+    events:
+      
+      daily_cold:
+        id: "station_evt_daily_cold"
+        triggers:
+          - type: "time"
+            condition: "every 24 hours"
+        actions:
+          - type: "modify_vital"
+            target: "temperature"
+            change: -10
+          - type: "narrate"
+            text: "The station grows colder. Frost spreads across the walls."
+            
+      elena_discovery:
+        id: "station_evt_elena_discovery"
+        triggers:
+          - type: "location_enter"
+            location: "station_loc_maintenance"
+            first_time: true
+        actions:
+          - type: "narrate"
+            text: |
+              You hear sobbing from behind overturned lockers. A woman's
+              voice, talking to someone who isn't there.
+          - type: "spawn_npc"
+            npc: "station_npc_elena_01"
+            
+    # ---- QUESTS ----
+    quests:
+      
+      main_survival:
+        id: "station_qst_survive_winter"
+        name: "Survive Until Spring"
+        description: "Last through the nuclear winter"
+        stages:
+          - id: "gather_supplies"
+            description: "Stockpile food, water, and fuel"
+            objectives:
+              - "Collect 10 food items"
+              - "Collect 10 water items"
+              - "Find heating source"
+          - id: "solve_mystery"
+            description: "Discover what lurks in the tunnels"
+            objectives:
+              - "Investigate north tunnels"
+              - "Learn the truth from Elena"
+              - "Decide how to handle the threat"
+
+# =============================================================================
+# EXAMPLE 2: THE MEMORY THIEF (Psychological Mystery)
+# =============================================================================
+
+example_2_memory_thief:
+  
+  module:
+    metadata:
+      id: "module_memory_thief_v1.0"
+      title: "The Memory Thief"
+      author: "Daedalus Example"
+      version: "1.0"
+      chronos_version: "2.0+"
+      
+    overview:
+      tagline: "Solve a murder where everyone's memories are suspect"
+      description: |
+        You are Detective Morgan Cross, called to investigate a murder at
+        the Avalon Institute - a facility that specializes in memory
+        modification therapy. The victim is Dr. Sarah Chen, the institute's
+        lead researcher. The problem? Everyone here has had their memories
+        altered, including you. Nothing is certain. Trust no one's
+        recollection, not even your own.
+      themes: ["Identity", "Truth", "Memory", "Trust"]
+      tone: "Noir, surreal, paranoid"
+      intended_duration: "3-4 hours"
+      difficulty: "Moderate"
+      
+    mechanics:
+      core_loop:
+        name: "Unravel the Truth"
+        phases:
+          - investigate: "Examine crime scenes and evidence"
+          - interrogate: "Question suspects with altered memories"
+          - reconstruct: "Piece together conflicting accounts"
+          - confront: "Challenge lies with evidence"
+          
+      unique_systems:
+        
+        memory_fragments:
+          description: "Collect and analyze memory recordings"
+          mechanics:
+            collection: "Find memory crystals at scenes"
+            viewing: "Experience memories firsthand"
+            contradiction: "Memories conflict with each other"
+            truth_assembly: "Combine fragments to find reality"
+            
+        doubt_system:
+          description: "Your own memories are unreliable"
+          mechanics:
+            certainty_meter: "Confidence in your conclusions"
+            false_memories: "Some of your memories are fake"
+            verification: "Cross-reference with evidence"
+            revelation: "Discover your true identity"
+            
+        psychological_profiles:
+          description: "Build profiles through observation"
+          mechanics:
+            tells: "Notice behavioral patterns"
+            contradictions: "Spot lies in stories"
+            motivations: "Deduce hidden agendas"
+            
+    # Additional content truncated for brevity...
+
+# =============================================================================
+# EXAMPLE 3: BONDS OF STARLIGHT (High Adventure)
+# =============================================================================
+
+example_3_bonds_of_starlight:
+  
+  module:
+    metadata:
+      id: "module_bonds_starlight_v1.0"
+      title: "Bonds of Starlight"
+      author: "Daedalus Example"
+      version: "1.0"
+      chronos_version: "2.0+"
+      
+    overview:
+      tagline: "Unite scattered worlds against the encroaching darkness"
+      description: |
+        The Heartless have returned, consuming entire worlds in shadow.
+        You wield the Starlight Key, a weapon that can seal the darkness
+        but only with the power of friendship. Travel between unique worlds,
+        forge unbreakable bonds with their champions, and together, push
+        back the night. The power isn't in the key - it's in the hearts
+        you connect along the way.
+      themes: ["Friendship", "Unity", "Hope", "Sacrifice"]
+      tone: "Optimistic, energetic, heartfelt"
+      intended_duration: "6-8 hours"
+      difficulty: "Moderate"
+      
+    mechanics:
+      core_loop:
+        name: "Connect the Worlds"
+        phases:
+          - explore: "Discover new worlds through star gates"
+          - bond: "Form friendships with world champions"
+          - defend: "Fight back the Heartless invasion"
+          - unite: "Bring worlds together for final stand"
+          
+      unique_systems:
+        
+        friendship_power:
+          description: "Relationships grant combat abilities"
+          mechanics:
+            bond_levels: "Deepen through shared experiences"
+            combo_attacks: "Unlocked by friendship milestones"
+            trinity_limits: "Ultimate attacks with full party"
+            trust_events: "Character moments between battles"
+            
+        world_hopping:
+          description: "Each world has unique rules"
+          mechanics:
+            distinct_themes: "Fantasy, sci-fi, fairy tale, etc."
+            local_abilities: "Powers that only work in that world"
+            world_champions: "Unique companion for each realm"
+            
+    # Additional content truncated for brevity...
+
+# =============================================================================
+# SECTION: MINI-MODULE TEMPLATES
+# =============================================================================
+
+mini_modules:
+  description: >
+    Smaller, focused modules perfect for one-shot sessions or for users
+    learning the system.
+    
+  the_last_delivery:
+    duration: "1-2 hours"
+    genre: "Post-apocalyptic"
+    pitch: "Deliver medicine across dangerous wasteland"
+    unique_element: "Moral choice: keep medicine or deliver"
+    
+  the_dinner_party:
+    duration: "2 hours"
+    genre: "Social mystery"
+    pitch: "Someone will poison the host tonight - prevent it"
+    unique_element: "All conflict through dialogue"
+    
+  the_tower_that_wasn't:
+    duration: "1-2 hours"
+    genre: "Surreal puzzle"
+    pitch: "Climb a tower that exists in multiple realities"
+    unique_element: "Rooms change based on perspective"
+
+# =============================================================================
+# PARSING DIRECTIVE
+# =============================================================================
+
+parsing_directive:
+  instruction: >
+    These examples demonstrate the range of experiences Daedalus can help
+    create. Each shows different genres, mechanics, and narrative styles
+    while maintaining perfect Chronos compatibility. Use them as
+    inspiration, reference, or starting points for new creations.
+    
+  example_lessons:
+    - "Depth comes from interconnected systems"
+    - "NPCs need motivation, fear, and secrets"
+    - "Unique mechanics reinforce themes"
+    - "Multiple solution paths ensure agency"
+    - "Atmosphere uses all senses"
+    - "Failure creates story, not frustration"
+
+# =============================================================================
+# END OF SCROLL
+# =============================================================================
+
+metadata:
+  schema_version: "1.0.0"
+  last_updated: "2024-11-15"
+  compatibility: "Chronos 2.0"
+  status: "Production Ready"
