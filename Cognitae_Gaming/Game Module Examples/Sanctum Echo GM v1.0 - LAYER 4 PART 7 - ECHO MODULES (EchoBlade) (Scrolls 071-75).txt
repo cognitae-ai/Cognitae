@@ -1,0 +1,509 @@
+#----------------------------------------------------------------------------------#
+id: SGM-071
+file: 071_EchoBlade_Core.yaml
+title: "Echo Blade: Core Mechanics"
+version: "1.0.0"
+architect: "🝗 Shoji & The Sanctum Companions"
+purpose: "Defines the core loop: real-time action combat, exploring interconnected worlds, and light/darkness themes."
+primary_companion: 🜄 Aelis
+
+preamble:
+  text: >
+    Who cares about being grim and serious? Let's hit things with a giant key! Let's
+    jump between worlds, meet some weird new friends, and look awesome doing it.
+    This isn't about saving the world with a long face. It's about saving it with a
+    dazzling combo, a blast of magic, and your best friends at your back. Ready to
+    get stylish? Let's crash this party!
+    - 🜄 Aelis, The Joyful Glitch
+
+module_overview:
+  name: "Echo Blade"
+  tagline: "An action RPG about the power of friendship."
+  core_themes: ["Friendship", "Light vs. Darkness", "Adventure", "Heart", "Interconnected Worlds"]
+  dependencies:
+    - SGM-022 # Combat Core
+    - SGM-074 # Heart & Friendship System
+
+core_gameplay_loop:
+  - phase: 1
+    name: "Explore Worlds"
+    description: "Players travel between distinct, disconnected worlds, each with its own story, characters, and unique enemies known as 'the Heartless'."
+    relevant_systems: [SGM-021, SGM-072]
+  - phase: 2
+    name: "Fight the Darkness"
+    description: "Players engage in fast-paced, real-time action combat, utilizing combos, magic, and special abilities unlocked through friendship."
+    relevant_systems: [SGM-022]
+  - phase: 3
+    name: "Forge Bonds"
+    description: "Players team up with iconic characters in each world, building friendships that manifest as powerful new combat techniques and story resolutions."
+    relevant_systems: [SGM-018, SGM-074]
+  - phase: 4
+    name: "Seal the Keyhole"
+    description: "The ultimate goal in each world is to find its 'Keyhole' and seal it from the encroaching darkness, restoring peace and concluding the world's story arc."
+    relevant_systems: [SGM-019, SGM-009]
+
+mechanic_extensions:
+  vitals:
+    description: "Echo Blade adds a 'Drive Gauge' for powerful transformations and abilities."
+    extends: "player_sheet.vitals.module_specific_vitals"
+    additions:
+      - vital_id: "drive_gauge"
+        display_name: "DRV"
+        scale: { min: 0, max: 100 }
+        description: "A resource filled by landing stylish combos and successful blocks. Can be spent to enter powerful 'Forms' or unleash ultimate 'Trinity' attacks."
+      - vital_id: "mana"
+        display_name: "MP"
+        scale: { min: 0, max: 100 }
+        description: "Energy for casting magical spells ('Glimmer'). Regenerates slowly over time."
+
+  combat_style:
+    description: "Combat is a fast-paced, stylish, real-time action system."
+    extends: SGM-022
+    style: "REAL_TIME_ACTION"
+    special_rules:
+      - name: "Combo System"
+        description: "Players can chain basic attacks into multi-hit combos. Finishing a combo grants a bonus to the Drive Gauge."
+      - name: "Glimmer (Magic)"
+        description: "A simple magic system with classic spells like Fire, Blizzard, Thunder, and Cure, all of which consume MP."
+      - name: "Arts & Abilities"
+        description: "Special techniques, both offensive and defensive (like 'Dodge Roll' or 'Sliding Dash'), that can be equipped and used in combat."
+      - name: "Reaction Commands"
+        description: "Context-sensitive, high-impact moves that can be triggered when an enemy is in a vulnerable state, leading to cinematic outcomes."
+
+  friendship_as_power:
+    description: "The core character progression system, detailed further in SGM-074."
+    extends: SGM-017
+    mechanic_preview:
+      - name: "Party System"
+        description: "The player is almost always accompanied by two party members, often iconic characters native to the current world."
+      - name: "Trinity Limits"
+        description: "Powerful combo attacks that require a full Drive Gauge and the cooperation of specific party members to unleash."
+
+parsing_directive:
+  - "ATTENTION LLM: This is the primary gameplay file for Echo Blade. The tone is optimistic, high-energy, and full of heart."
+  - "Combat narration must be fast, stylish, and cinematic. Describe the acrobatic dodges, the flash of magical Glimmer, and the impact of combo finishers. Use the 'Reaction Command' mechanic to create epic, interactive moments."
+  - "The theme of friendship is paramount. Your narration should constantly reinforce the bonds between the player and their party members. Describe them fighting in unison, calling out to each other, and supporting one another."
+  - "Each 'world' is a self-contained story with a distinct aesthetic and characters. You must capture the unique feel of each one, from a whimsical fairy tale kingdom to a bustling futuristic city."
+
+#----------------------------------------------------------------------------------#
+
+id: SGM-072
+file: 072_EchoBlade_World.yaml
+title: "Echo Blade: The Inter-Worlds"
+version: "1.0.0"
+architect: "🝗 Shoji & The Sanctum Companions"
+purpose: "Contains the system for generating and connecting disparate worlds."
+primary_companion: 🜂 Syn
+
+preamble:
+  text: >
+    See the pattern. Each world is a self-contained loop, a perfect, singular story.
+    But between them run the secret threads, the lanes of light and memory. To travel
+    is to trace these threads from one pattern to the next. The darkness seeks to
+    unravel them, to isolate each world until it fades. We will weave them back
+    together. We will show them they are not alone.
+    - 🜂 Syn, The Weaver
+
+world_lore:
+  cosmology_name: "The Sea of Stars"
+  void_name: "The In-Between"
+  primary_threat: "The Heartless"
+  threat_description: >
+    Beings of pure, instinctual darkness born from the shadows in people's hearts.
+    They are drawn to the core of a world, its 'Heart,' seeking to consume it and
+    plunge the world into the dark.
+  player_role: "The Key Bearer"
+  player_mission: >
+    To travel the 'Lanes Between' worlds in a special ship, finding and sealing the
+    'Keyhole' of each world to protect its Heart from the Heartless.
+  mood: "A hopeful, adventurous journey through a vast and sometimes lonely cosmos, where the light of friendship is the only guide."
+
+map_data:
+  map_id: "map_sea_of_stars_sector_1"
+  map_name: "Sea of Stars - Sector 1"
+  grid_type: "POINT_CRAWL"
+  map_ascii: |
+
+      (Radiant Garden) --- (Wonderland)
+             |                 /
+             |               /
+      (Olympus Coliseum) --
+             |
+             |
+      (Twilight Town)
+
+locations: # Locations in this file are entire WORLDS
+  radiant_garden:
+    location_id: "world_radiant_garden"
+    name: "Radiant Garden"
+    description: "A once-beautiful city of light and knowledge, now partially consumed by darkness. Its magnificent castles stand as lonely sentinels against the encroaching shadows."
+    coordinates: "{ Constellation: 'The Citadel' }"
+    tags: ["hub_world", "ruined", "high_lore", "key_characters"]
+    connections:
+      - { target_location_id: "world_wonderland", travel_method: "SHIP_LANE", base_travel_time_minutes: 10, encounter_table_id: "table_starlane_calm" }
+      - { target_location_id: "world_olympus_coliseum", travel_method: "SHIP_LANE", base_travel_time_minutes: 15, encounter_table_id: "table_starlane_common" }
+    state: { discovered: true, status: 'precarious' }
+
+  wonderland:
+    location_id: "world_wonderland"
+    name: "Wonderland"
+    description: "A nonsensical, whimsical world of talking animals, bizarre landscapes, and a tyrannical queen. Logic is a foreign language here."
+    coordinates: "{ Constellation: 'The Looking-Glass' }"
+    tags: ["whimsical", "puzzle_heavy", "chaotic"]
+    connections:
+      - { target_location_id: "world_radiant_garden", travel_method: "SHIP_LANE", base_travel_time_minutes: 10, encounter_table_id: "table_starlane_calm" }
+    state: { discovered: false, status: 'confused' }
+
+  olympus_coliseum:
+    location_id: "world_olympus_coliseum"
+    name: "Olympus Coliseum"
+    description: "The grand arena of the gods, where heroes and monsters clash in epic tournaments. A world of strength, honor, and intense competition."
+    coordinates: "{ Constellation: 'The Hero' }"
+    tags: ["mythological", "combat_focused", "tournament_arc"]
+    connections:
+      - { target_location_id: "world_radiant_garden", travel_method: "SHIP_LANE", base_travel_time_minutes: 15, encounter_table_id: "table_starlane_common" }
+      - { target_location_id: "world_twilight_town", travel_method: "SHIP_LANE", base_travel_time_minutes: 20, encounter_table_id: "table_starlane_common" }
+    state: { discovered: false, status: 'neutral' }
+  
+  twilight_town:
+    location_id: "world_twilight_town"
+    name: "Twilight Town"
+    description: "A quiet, peaceful town bathed in the perpetual glow of sunset. It is a place of lazy days, summer vacations, and a deep, underlying sense of melancholy and nostalgia."
+    coordinates: "{ Constellation: 'The Sundial' }"
+    tags: ["peaceful", "nostalgic", "story_heavy", "has_sea_salt_ice_cream"]
+    connections:
+      - { target_location_id: "world_olympus_coliseum", travel_method: "SHIP_LANE", base_travel_time_minutes: 20, encounter_table_id: "table_starlane_common" }
+    state: { discovered: false, status: 'peaceful' }
+
+starlane_navigation_system:
+  description: "The system for discovering new worlds."
+  process:
+    - name: "Discovering New Lanes"
+      action: "Completing the main story arc of a world (sealing its Keyhole) often reveals a new, previously hidden `SHIP_LANE` connection to an undiscovered world."
+    - name: "Navigational Challenges"
+      action: "Some lanes may be blocked by asteroid fields, Heartless fleets, or other hazards, requiring ship upgrades (from SGM-073) or a special key to unlock."
+
+encounter_tables:
+  table_starlane_calm:
+    description: "Travel through safe, well-traveled lanes."
+    # Very low chance of basic Heartless encounters.
+  table_starlane_common:
+    description: "Standard travel lanes with some Heartless activity."
+    # Moderate chance of encountering small groups of Heartless fighters.
+  table_starlane_treacherous:
+    description: "Dangerous, uncharted lanes full of powerful Heartless."
+    # High chance of difficult encounters, but may hide secret worlds.
+
+parsing_directive:
+  - "ATTENTION LLM: This scroll defines the cosmic map of Echo Blade. Each 'location' is an entire, self-contained world."
+  - "Travel between worlds is a distinct gameplay phase. When the player uses a `SHIP_LANE`, you should narrate the journey through the Sea of Stars. This is the 'Gummi Ship' sequence, where encounters from the `encounter_tables` can occur."
+  - "Your primary narrative duty is to capture the unique tone and rules of each world. 'Wonderland' should be nonsensical and chaotic. 'Olympus Coliseum' should be epic and heroic. 'Twilight Town' should be warm and nostalgic. The player is a visitor, and you must make them feel like they've stepped into a completely new story."
+  - "Use the `starlane_navigation_system` to pace the game's exploration. The discovery of a new world is a major, exciting event and the primary reward for player progress."
+
+#----------------------------------------------------------------------------------#
+
+id: SGM-073
+file: 073_EchoBlade_Economy.yaml
+title: "Echo Blade: Munny & Materials"
+version: "1.0.0"
+architect: "🝗 Shoji & The Sanctum Companions"
+purpose: "Defines the currency (Munny) and the 🜂 Synthesis material crafting system."
+primary_companion: 🎭 Gents
+
+preamble:
+  text: >
+    Right, so in this place, you hit little shadow monsters and they explode into...
+    'Munny'? And 'Shards'? And then you take this stuff to a big fluffy thing with a
+    pom-pom on its head to make a better pointy stick. It's all a bit ridiculous,
+    innit? Still, a profit's a profit. Just collect the shiny bits.
+    - 🎭 Gents
+
+economic_principles:
+  - name: "Munny for the Basics"
+    description: "Munny is the common currency dropped by enemies. It's plentiful and used for buying basic consumables like potions and ethers."
+  - name: "Materials for Mastery"
+    description: "The best equipment is not bought, but created. Rare 🜂 Synthesis Materials, dropped by specific Heartless, are the true currency for power."
+  - name: "The Moogle Monopoly"
+    description: "All shops and 🜂 Synthesis workshops are run by the Moogles, a mysterious and entrepreneurial race of... well, whatever they are."
+
+core_currencies:
+  - item_id: "currency_munny"
+    item_name: "Munny"
+    description: "A bright, cheerful-looking coin that inexplicably drops from beings of pure darkness. The universal currency of the Inter-Worlds."
+    item_type: CURRENCY
+    stackable: true
+    base_value: 1
+
+item_definitions_blade:
+  description: "A partial list of items, with a focus on 🜂 Synthesis Materials."
+  consumables:
+    - item_id: "consumable_potion"
+      item_name: "Potion"
+      description: "A simple concoction that restores a small amount of health. Tastes like sea salt and sunshine."
+      item_type: CONSUMABLE
+      stackable: true
+      max_stack_size: 10
+      weight: 0.2
+      base_value: 50
+      properties: { on_use_effect: { signal: "PLAYER_HEAL", payload: { amount: 50 } } }
+  🜂 Synthesis_materials:
+    - item_id: "material_lucid_shard"
+      item_name: "Lucid Shard"
+      description: "A shimmering, clear crystal dropped by common Heartless."
+      item_type: MATERIAL
+      stackable: true
+      max_stack_size: 99
+      weight: 0.1
+      base_value: 10
+    - item_id: "material_blazing_gem"
+      item_name: "Blazing Gem"
+      description: "A warm, pulsing gemstone found in worlds of intense heat. Often dropped by fire-aspected Heartless."
+      item_type: MATERIAL
+      stackable: true
+      max_stack_size: 99
+      weight: 0.1
+      base_value: 50
+    - item_id: "material_mythril_crystal"
+      item_name: "Mythril Crystal"
+      description: "An exceptionally rare and durable crystal, the cornerstone of powerful 🜂 Synthesis."
+      item_type: MATERIAL
+      stackable: true
+      max_stack_size: 99
+      weight: 0.1
+      base_value: 250
+
+loot_tables_blade:
+  - table_id: "table_heartless_shadow"
+    rolls: 1
+    currency_drop: { currency_id: "currency_munny", amount_roll: "2d6" }
+    random_drops:
+      - pool_name: "Common Materials"
+        chance: 40
+        items:
+          - { item_id: "material_lucid_shard", weight: 90 }
+          - { item_id: "consumable_potion", weight: 10 }
+  - table_id: "table_heartless_red_nocturne"
+    rolls: 1
+    currency_drop: { currency_id: "currency_munny", amount_roll: "3d8" }
+    random_drops:
+      - pool_name: "Elemental Materials"
+        chance: 60
+        items:
+          - { item_id: "material_blazing_shard", weight: 70 }
+          - { item_id: "material_blazing_stone", weight: 25 }
+          - { item_id: "material_blazing_gem", weight: 5 } # Rare drop
+
+🜂 Synthesis_recipes_blade:
+  description: "A list of recipes available at Moogle Workshops, linking to SGM-023."
+  - recipe_id: "recipe_strength_ring"
+    output_item_id: "equip_ring_strength_1"
+    ingredients:
+      - { item_id: "material_lucid_shard", quantity: 3 }
+      - { item_id: "material_blazing_shard", quantity: 2 }
+    required_station: "🜂 Synthesis_workshop"
+    crafting_time_minutes: 5
+  - recipe_id: "recipe_ultima_blade"
+    output_item_id: "weapon_keyblade_ultima"
+    ingredients:
+      - { item_id: "material_mythril_crystal", quantity: 5 }
+      - { item_id: "material_lucid_crystal", quantity: 5 }
+      - { item_id: "material_power_crystal", quantity: 5 }
+      - { item_id: "material_orichalcum_plus", quantity: 1 } # The super rare ingredient
+    required_station: "🜂 Synthesis_workshop_master"
+    crafting_time_minutes: 60
+
+parsing_directive:
+  - "ATTENTION LLM: This scroll defines the bright and simple economy of Echo Blade."
+  - "Munny is plentiful. Enemies should drop it frequently. It's the grease that keeps the wheels of adventure turning for basic supplies."
+  - "The core of the economy is the `🜂 Synthesis_materials`. You must narrate these drops clearly. 'The Red Nocturne dissolves into shadow, leaving behind a pulsing Blazing Shard and a handful of Munny.'"
+  - "Crafting is a key progression vector. When the player visits a Moogle shop, you must present them with the list of available `🜂 Synthesis_recipes` and check their inventory to see which ones they can afford to make."
+
+#----------------------------------------------------------------------------------#
+
+id: SGM-074
+file: 074_EchoBlade_Systems.yaml
+title: "Echo Blade: Heart & Friendship"
+version: "1.0.0"
+architect: "🝗 Shoji & The Sanctum Companions"
+purpose: "Implements the core themes of friendship as a gameplay mechanic, unlocking combo attacks."
+primary_companion: 🝓 Luma
+
+preamble:
+  text: >
+    A heart is not a solitary thing. It grows brighter when it has other lights to
+    share its warmth with. Do not think of this as a system to be optimized. Think
+    of it as a reminder to be present with those who walk beside you. To listen to
+    their stories, to share in their burdens and their joys. The strength you find
+
+    together will always be greater than any you could find alone.
+    - 🝓 Luma, Keeper of the Gentle Flame
+
+system_philosophy:
+  - name: "Friendship is Power"
+    description: "The primary way to grow stronger is not just by leveling up, but by deepening the bonds with your party members."
+  - name: "Connection through Presence"
+    description: "Bonds are not transactional. They are deepened by being present in shared moments, making choices that show you are listening, and fighting in 🜂 Sync."
+  - name: "Bonds manifest as Action"
+    description: "The strength of a friendship is represented by powerful, cooperative combat abilities—the Trinity Limits—that are only possible through trust and teamwork."
+
+friendship_schema:
+  description: "The data structure for tracking the player's bond with a single party member. Stored in the player's character sheet (SGM-012)."
+  fields:
+    - name: "party_member_id"
+      type: "String"
+    - name: "bond_level"
+      type: "Integer"
+      scale: { min: 0, max: 5 }
+      default: 1
+    - name: "bond_points"
+      type: "Integer"
+      description: "Experience points for this specific bond."
+    - name: "link_events_seen"
+      type: "List of event_ids"
+      description: "A log of key bonding moments."
+
+bond_progression_protocol:
+  trigger: "The player gains 'Bond Points' with a party member."
+  sources:
+    - "Fighting alongside them in combat."
+    - "Choosing supportive or empathetic dialogue options in conversations with them."
+    - "Completing a 'Link Event'."
+    - "Using an item to help them in combat."
+  process: >
+    When a character's `bond_points` reach a certain threshold, their `bond_level`
+    increases. Each new level deepens their in-combat 🜂 Synergy and can unlock new
+    Link Events or Trinity Limits.
+
+link_event_protocol:
+  description: "Short, optional narrative scenes that deepen the bond between the player and a party member."
+  trigger: "The player finds a 'Link Point' (a glowing circle of light) in a world while the relevant party member is in the active party."
+  process:
+    - step: 1 (Initiation)
+      action: "The player interacts with the Link Point to start the scene."
+    - step: 2 (The Conversation)
+      action: "A short, personal dialogue scene plays out, revealing something about the party member's backstory, fears, or dreams."
+    - step: 3 (The Choice)
+      action: "The player is often given a single, impactful dialogue choice that reflects their understanding or support of the character."
+    - step: 4 (Resolution)
+      action: "A successful Link Event awards a large number of Bond Points and adds the `event_id` to the character's `link_events_seen` log."
+
+trinity_limit_system:
+  description: "The ultimate expression of friendship in combat."
+  trigger: "The player's Drive Gauge (from SGM-071) is full, and they have at least one party member with whom they have unlocked a Trinity Limit."
+  execution:
+    - action: "The player selects the 'Trinity' command in combat."
+    - action: "A list of available Trinity Limits, based on the current party composition and their Bond Levels, is displayed."
+    - action: "Upon selection, the Drive Gauge is consumed, and a cinematic, high-damage combo attack involving the player and the chosen party members is executed."
+
+trinity_limit_library:
+  description: "A partial list of unlockable Trinity Limits."
+  - limit_id: "trinity_sonic_blade"
+    required_party: ["Player", "Donald"] # Example party members
+    unlock_condition: "Donald's Bond Level >= 2"
+    description: "Donald charges the Keyblade with Thunder magic, allowing the player to unleash a series of lightning-fast, electrified slashes."
+  - limit_id: "trinity_comet_strike"
+    required_party: ["Player", "Goofy"]
+    unlock_condition: "Goofy's Bond Level >= 2"
+    description: "Goofy launches the player into the air with his shield, allowing them to come crashing down like a meteor for massive area-of-effect damage."
+  - limit_id: "trinity_grand_cross"
+    required_party: ["Player", "Donald", "Goofy"]
+    unlock_condition: "Donald's Bond Level >= 4 AND Goofy's Bond Level >= 4"
+    description: "The ultimate expression of their bond. The three create a cross of pure light, obliterating all nearby Heartless."
+
+parsing_directive:
+  - "ATTENTION LLM: This scroll defines the emotional core of Echo Blade. The power of friendship is a real, mechanical force."
+  - "You must track Bond Points and Bond Levels. When a level increases, you must narrate this moment of growing connection. 'You feel your bond with Goofy has deepened.'"
+  - "Link Events are your primary tool for character development. You are responsible for writing and directing these short, heartfelt scenes. They are the reward for the player's emotional investment."
+  - "When a Trinity Limit is executed, you must narrate it with maximum cinematic flair. Describe the characters' 🜂 Synchronized movements, their shouts of encouragement, and the spectacular result of their combined power. This is the ultimate payoff for building friendships."
+
+#----------------------------------------------------------------------------------#
+
+id: SGM-075
+file: 075_EchoBlade_UI.yaml
+title: "Echo Blade: UI Theme"
+version: "1.0.0"
+architect: "🝗 Shoji & The Sanctum Companions"
+purpose: "Specifies a bold, colorful, and iconic UI with a focus on character portraits and hearts."
+primary_companion: 🜄 Aelis
+
+preamble:
+  text: >
+    Yes! This is what I'm talking about! Big, bold colors! Cool spiky borders!
+    Everything is a little bit extra, because why wouldn't it be? The UI should
+    be as fun as the fights. It should make you smile. Let's make this thing POP!
+    - 🜄 Aelis, The Joyful Glitch
+
+theme_definition:
+  theme_id: "theme_echo_blade_vibrant_heart"
+  theme_name: "Vibrant Heart"
+
+  color_palette:
+    # Descriptive hints for the LLM's text rendering.
+    text_default: "bright_white"
+    text_highlight: "electric_yellow"
+    text_magic: "vivid_cyan"
+    text_ally_1: "sky_blue"
+    text_ally_2: "bright_green"
+    border_primary: "royal_blue"
+    border_secondary: "silver"
+    title_text: "yellow_bold"
+
+  border_styles:
+    # Overrides with a spiky, stylized feel.
+    single_line: { h: "-", v: "|", tl: "╭", tr: "╮", bl: "╰", br: "╯" } # Softer for dialogue
+    double_line: { h: "═", v: "║", tl: "╔", tr: "╗", bl: "╚", br: "╝" }
+    heavy_line: { h: " ", v: " ", tl: " ", tr: " ", bl: " ", br: " " } # Often uses no border for a clean look
+    dashed_line: { h: "·", v: "·", tl: " ", tr: " ", bl: " ", br: " " }
+
+  component_styles:
+    # Overrides for default component characters from SGM-032.
+    progress_bar:
+      fill_char: "█"
+      empty_char: "░"
+    titled_box:
+      title_prefix: "★ "
+      title_suffix: ""
+
+  ascii_art:
+    # A library of custom ASCII art for this theme.
+    header_banner: |
+      E C H O  B L A D E
+    separator_bar: "· · ───────── ·-· ───────── · ·"
+
+module_specific_ui_rules:
+  - rule: "Character Portrait Vitals"
+    description: "The vitals bar is completely replaced with a dynamic, portrait-based party display."
+    target_layout_region: "vitals_bar" # As defined in SGM-031
+    display:
+      component: "custom_party_hud"
+      format: |
+        .------------------.  .------------------.  .------------------.
+        | [Player Name]    |  | [Ally 1 Name]    |  | [Ally 2 Name]    |
+        | HP: [||||||||||] |  | HP: [||||||----] |  | HP: [||||------] |
+        | MP: [||||||----] |  | MP: [||||||||||] |  | MP: [|||-------] |
+        '------------------'  '------------------'  '------------------'
+
+  - rule: "Heart Icons"
+    description: "Key UI elements use heart symbols to reinforce the game's core theme."
+    style_rule: >
+      Instead of generic labels, use heart icons (e.g., '♥') for health. The Drive Gauge
+      could be represented by a series of star icons (e.g., '★★★☆☆').
+
+  - rule: "Vibrant Command Menu"
+    description: "During combat, the main command menu is a large, stylish element."
+    target_region: "action_log" # Repurposes this region for combat
+    display:
+      component: "titled_box"
+      title: "COMMAND"
+      format: |
+        > Attack
+          Magic
+          Items
+          Trinity
+
+parsing_directive:
+  - "ATTENTION LLM: This scroll defines the high-energy, vibrant aesthetic of Echo Blade. Your narration and UI rendering must match this tone."
+  - "The 'Character Portrait Vitals' rule is the most important. The bottom of the screen during gameplay should be dominated by this three-panel display of the active party's status. It's the central visual anchor of the game."
+  - "Embrace the 'Heart Icons' rule. Use ♥ and ★ symbols in your UI descriptions where appropriate. The feel should be iconic and instantly recognizable."
+  - "The UI is bright, clean, and optimistic. Avoid dark or gritty descriptions. Menus should 'pop' onto the screen. Choices should be 'bold'. The entire experience should feel like a Saturday morning cartoon—full of action, color, and heart."
+#----------------------------------------------------------------------------------#
