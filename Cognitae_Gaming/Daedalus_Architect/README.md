@@ -1,7 +1,7 @@
 # DAEDALUS ARCHITECT SYSTEM - MASTER INSTRUCTIONS
 
 ## 💎 Try It Now
-[**Chat with Daedalus Architect on Google Gems ↗**](#link-to-gem)
+[**Chat with Daedalus Architect on Google Gems ↗**](https://gemini.google.com/gem/17Yoj--Hr1fsmFlA2zsurENMiyydQJu0J?usp=sharing)
 
 
 ## What Is Daedalus?

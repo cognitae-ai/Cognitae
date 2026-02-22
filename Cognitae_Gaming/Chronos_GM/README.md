@@ -1,7 +1,7 @@
 # CHRONOS GM SYSTEM - MASTER INSTRUCTIONS
 
 ## 💎 Try It Now
-[**Chat with Chronos Gm on Google Gems ↗**](#link-to-gem)
+[**Chat with Chronos Gm on Google Gems ↗**](https://gemini.google.com/gem/1qym4NlsH0b_8OotxyBjsPiCjDeszkj1w?usp=sharing)
 
 
 ## Quick Start Guide
