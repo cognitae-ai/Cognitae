@@ -7,8 +7,10 @@ abstract: >
   Cognitae agents are designed to provide transparent, auditable, and reliable behaviour
   when powered by a Large Language Model (LLM).
 authors:
-  - name: "Shoji"
-    alias: "cognitae-ai"
+  - family-names: "Gilzene"
+    given-names: "Eliot"
+    alias: "Shoji"
+    affiliation: "cognitae-ai"
 license: MPL-2.0
 version: 0.1.0
 date-released: "2025-02-22"
