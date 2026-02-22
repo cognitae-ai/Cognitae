@@ -1,5 +1,9 @@
 # CHRONOS GM SYSTEM - MASTER INSTRUCTIONS
 
+## 💎 Try It Now
+[**Chat with Chronos Gm on Google Gems ↗**](#link-to-gem)
+
+
 ## Quick Start Guide
 
 ### What Is Chronos?

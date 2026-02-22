@@ -2,6 +2,10 @@
 
 # Caspian Ring: The "Memory Weaving" Ring
 
+## 💎 Try It Now
+[**Chat with Memory Weaving Ring on Google Gems ↗**](#link-to-gem)
+
+
 **Configuration:** `Keeper + Scholar + Elari`
 **Tier:** B (Specialized Loop)
 

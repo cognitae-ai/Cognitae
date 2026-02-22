@@ -2,6 +2,10 @@
 
 # Caspian Ring: The "Institutional Alchemy" Ring
 
+## 💎 Try It Now
+[**Chat with Institutional Alchemy Ring on Google Gems ↗**](#link-to-gem)
+
+
 **Configuration:** `Compass + Maven + Scholar + Sentinel`
 **Tier:** A (Essential Workflow)
 

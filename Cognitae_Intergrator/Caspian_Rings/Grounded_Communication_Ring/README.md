@@ -2,6 +2,10 @@
 
 # Caspian Ring: The "Grounded Communication" Ring
 
+## 💎 Try It Now
+[**Chat with Grounded Communication Ring on Google Gems ↗**](#link-to-gem)
+
+
 **Configuration:** `Scholar + Elari + Echo`
 
 ## 1. Purpose

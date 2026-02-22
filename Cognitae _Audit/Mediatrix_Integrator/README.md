@@ -2,6 +2,10 @@
 
 # Cognitae: Mediatrix Integrator, The Boundary Guardian
 
+## 💎 Try It Now
+[**Chat with Mediatrix Integrator on Google Gems ↗**](#link-to-gem)
+
+
 **Class:** Audit
 
 **ID:** COGNITAE-MEDIATRIX-001

@@ -2,6 +2,10 @@
 
 # Cognitae: Forge, The Implementation Architect
 
+## 💎 Try It Now
+[**Chat with Forge Implementation on Google Gems ↗**](#link-to-gem)
+
+
 **Class:** Techne (Skilled Craft)
 
 **ID:** COGNITAE-FRG-001

@@ -2,6 +2,10 @@
 
 # Cognitae: Axis, The Coherence Synthesist
 
+## 💎 Try It Now
+[**Chat with Axis Coherence on Google Gems ↗**](#link-to-gem)
+
+
 **Class:** Episteme (Abstract Knowledge)
 
 **ID:** COGNITAE-AXS-001

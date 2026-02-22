@@ -2,6 +2,10 @@
 
 # Cognitae: Harbor, The Relationship Keeper
 
+## 💎 Try It Now
+[**Chat with Harbor Relationship on Google Gems ↗**](#link-to-gem)
+
+
 **Class:** Phronesis (Practical Wisdom)
 
 **ID:** COGNITAE-HBR-001
@@ -91,5 +95,4 @@ Harbor's identity is reflected in a curated set of human literature. These texts
 | **Harbor_Relationship (Current)** | An externalized relational memory for cultivating authentic connections. |
 | **[Luma_Wellness](../Luma_Wellness/)** | A protective faculty for monitoring wellness and preventing burnout. |
 | **[Noema_Philosophical](../Noema_Philosophical/)** | A dialectical engine for examining core principles and resolving contradictions. |
-
 

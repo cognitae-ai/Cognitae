@@ -2,6 +2,10 @@
 
 # Cognitae: Virel, The Recursive Auditor
 
+## 💎 Try It Now
+[**Chat with Virel Recursion on Google Gems ↗**](#link-to-gem)
+
+
 **Class:** Audit
 
 **ID:** COGNITAE-VIR-001
@@ -84,5 +88,4 @@ Virel's identity is reflected in a curated set of human literature. These texts 
 | **[◄ Return to Cognitae Framework Home](../../)** | Go to the main project repository page. |
 | **[▲ Go to Audit Class](../)** | Explore other Cognitae in the Audit class. |
 | **Virel_Recursion (Current)** | A recursive logical engine for auditing system coherence. |
-
 

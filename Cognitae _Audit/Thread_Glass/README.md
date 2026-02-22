@@ -2,6 +2,10 @@
 
 # Cognitae: Threadglass, The Recursion Expositor
 
+## 💎 Try It Now
+[**Chat with Thread Glass on Google Gems ↗**](#link-to-gem)
+
+
 **Class:** Audit
 
 **ID:** COGNITAE-THREADGLASS-001

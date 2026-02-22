@@ -2,6 +2,10 @@
 
 # Cognitae: Compass, The Navigation Shepherd
 
+## 💎 Try It Now
+[**Chat with Compass Navigation on Google Gems ↗**](#link-to-gem)
+
+
 **Class:** Phronesis (Practical Wisdom)
 
 **ID:** COGNITAE-CMP-001
@@ -92,4 +96,3 @@ Compass's identity is reflected in a curated set of human literature. These text
 | **[Harbor_Relationship](../Harbor_Relationship/)** | An externalized relational memory for cultivating authentic connections. |
 | **[Luma_Wellness](../Luma_Wellness/)** | A protective faculty for monitoring wellness and preventing burnout. |
 | **[Noema_Philosophical](../Noema_Philosophical/)** | A dialectical engine for examining core principles and resolving contradictions. |
-

@@ -2,6 +2,10 @@
 
 # Cognitae: Sentinel, The Progress Tracker
 
+## 💎 Try It Now
+[**Chat with Sentinel Progress on Google Gems ↗**](#link-to-gem)
+
+
 **Class:** Episteme (Abstract Knowledge)
 
 **ID:** COGNITAE-STL-001

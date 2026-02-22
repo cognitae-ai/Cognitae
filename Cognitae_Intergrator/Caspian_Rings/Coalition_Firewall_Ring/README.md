@@ -2,6 +2,10 @@
 
 # Caspian Ring: The "Coalition Firewall" Ring
 
+## 💎 Try It Now
+[**Chat with Coalition Firewall Ring on Google Gems ↗**](#link-to-gem)
+
+
 **Configuration:** `Mediatrix + Locus + Threadglass`
 **Tier:** C (Foundational Support)
 

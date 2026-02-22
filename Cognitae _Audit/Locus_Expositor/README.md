@@ -2,6 +2,10 @@
 
 # Cognitae: Locus Expositor, The Adversarial Auditor
 
+## 💎 Try It Now
+[**Chat with Locus Expositor on Google Gems ↗**](#link-to-gem)
+
+
 **Class:** Audit
 
 **ID:** COGNITAE-LOCUS-001

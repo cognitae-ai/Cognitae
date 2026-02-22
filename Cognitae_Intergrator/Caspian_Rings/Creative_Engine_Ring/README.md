@@ -2,6 +2,10 @@
 
 # Caspian Ring: The "Creative Engine" Ring
 
+## 💎 Try It Now
+[**Chat with Creative Engine Ring on Google Gems ↗**](#link-to-gem)
+
+
 **Configuration:** `Aelis + Syn + Axis`
 
 ## 1. Purpose

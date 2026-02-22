@@ -2,6 +2,10 @@
 
 # Caspian Ring: The "Adversarial Audit" Ring
 
+## 💎 Try It Now
+[**Chat with Adversarial Audit Ring on Google Gems ↗**](#link-to-gem)
+
+
 **Configuration:** `Vigil + Virel + Axis`
 **Tier:** B (Specialized Loop)
 

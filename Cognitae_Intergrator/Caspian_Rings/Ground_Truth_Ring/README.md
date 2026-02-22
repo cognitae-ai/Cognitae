@@ -2,6 +2,10 @@
 
 # Caspian Ring: The "Ground Truth" Ring
 
+## 💎 Try It Now
+[**Chat with Ground Truth Ring on Google Gems ↗**](#link-to-gem)
+
+
 **Configuration:** `Scholar + Noema + Virel + Axis + Harbor + Genesis`
 **Tier:** S (Core Protocol)
 

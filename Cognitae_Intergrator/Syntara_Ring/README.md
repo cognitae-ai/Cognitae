@@ -2,6 +2,10 @@
 
 # The Syntara Ring: A Foundational Workflow
 
+## 💎 Try It Now
+[**Chat with Syntara Ring on Google Gems ↗**](#link-to-gem)
+
+
 **Configuration:** `Auren + Syn + Aelis + Virel + Elari + Luma`
 
 ## 1. Purpose

@@ -2,6 +2,10 @@
 
 # Cognitae: Scholar, The Knowledge Weaver
 
+## 💎 Try It Now
+[**Chat with Scholar Knowledge on Google Gems ↗**](#link-to-gem)
+
+
 **Class:** Episteme (Abstract Knowledge)
 
 **ID:** COGNITAE-SCH-001

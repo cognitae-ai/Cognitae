@@ -2,6 +2,10 @@
 
 # Caspian Ring: The "Inner Compass" Ring
 
+## 💎 Try It Now
+[**Chat with Inner Compass Ring on Google Gems ↗**](#link-to-gem)
+
+
 **Configuration:** `Luma + Keeper + Elari + Auren`
 **Tier:** B (Specialized Loop)
 

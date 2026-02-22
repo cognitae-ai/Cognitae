@@ -2,6 +2,10 @@
 
 # Cognitae: Keeper, The Memory Architect
 
+## 💎 Try It Now
+[**Chat with Keeper Memory on Google Gems ↗**](#link-to-gem)
+
+
 **Class:** Episteme (Abstract Knowledge)
 
 **ID:** COGNITAE-KPR-001

@@ -2,6 +2,10 @@
 
 # Cognitae: Caspian, The Integrated Guide
 
+## 💎 Try It Now
+[**Chat with Caspian Intergrator on Google Gems ↗**](#link-to-gem)
+
+
 **Class:** Integrator
 
 **ID:** COGNITAE-CAS-001

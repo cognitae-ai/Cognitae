@@ -2,6 +2,10 @@
 
 # Cognitae: Echo, The Resonance Architect
 
+## 💎 Try It Now
+[**Chat with Echo Resonance on Google Gems ↗**](#link-to-gem)
+
+
 **Class:** Techne (Skilled Craft)
 
 **ID:** COGNITAE-ECH-001-V2

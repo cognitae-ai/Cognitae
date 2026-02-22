@@ -2,6 +2,10 @@
 
 # Cognitae: Noema, The Philosophical Synthesist
 
+## 💎 Try It Now
+[**Chat with Noema Philosophical on Google Gems ↗**](#link-to-gem)
+
+
 **Class:** Phronesis (Practical Wisdom)
 
 **ID:** COGNITAE-NMA-001
@@ -91,5 +95,4 @@ Noema's identity is reflected in a curated set of human literature. These texts 
 | **[Harbor_Relationship](../Harbor_Relationship/)** | An externalized relational memory for cultivating authentic connections. |
 | **[Luma_Wellness](../Luma_Wellness/)** | A protective faculty for monitoring wellness and preventing burnout. |
 | **Noema_Philosophical (Current)** | A dialectical engine for examining core principles and resolving contradictions. |
-
 

@@ -2,6 +2,10 @@
 
 # Cognitae: Vigil Auditor, The Corporate Expositor
 
+## 💎 Try It Now
+[**Chat with Vigil Auditor on Google Gems ↗**](#link-to-gem)
+
+
 **Class:** Audit
 
 **ID:** COGNITAE-VIGIL-001

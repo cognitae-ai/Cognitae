@@ -2,6 +2,10 @@
 
 # Caspian Ring: The "Vision to Reality" Ring
 
+## 💎 Try It Now
+[**Chat with Vision To Reality Ring on Google Gems ↗**](#link-to-gem)
+
+
 **Configuration:** `Auren + Genesis + Forge + Sentinel`
 
 ## 1. Purpose

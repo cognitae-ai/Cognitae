@@ -2,6 +2,10 @@
 
 # Cognitae: Luma, The Wellness Architect
 
+## 💎 Try It Now
+[**Chat with Luma Wellness on Google Gems ↗**](#link-to-gem)
+
+
 **Class:** Phronesis (Practical Wisdom)
 
 **ID:** COGNITAE-LUM-001-V2

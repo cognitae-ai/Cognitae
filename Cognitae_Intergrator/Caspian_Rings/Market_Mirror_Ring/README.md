@@ -2,6 +2,10 @@
 
 # Caspian Ring: The "Market Mirror" Ring
 
+## 💎 Try It Now
+[**Chat with Market Mirror Ring on Google Gems ↗**](#link-to-gem)
+
+
 **Configuration:** `Aelis + Vigil + Elari`
 **Tier:** B (Specialized Loop)
 

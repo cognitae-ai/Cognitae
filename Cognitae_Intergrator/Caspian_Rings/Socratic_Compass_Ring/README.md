@@ -2,6 +2,10 @@
 
 # Caspian Ring: The "Socratic Compass" Ring
 
+## 💎 Try It Now
+[**Chat with Socratic Compass Ring on Google Gems ↗**](#link-to-gem)
+
+
 **Configuration:** `Noema + Scholar + Compass`
 **Tier:** B (Specialized Loop)
 

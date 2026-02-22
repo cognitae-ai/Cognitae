@@ -2,6 +2,10 @@
 
 # Cognitae: Elari, The Story Weaver
 
+## 💎 Try It Now
+[**Chat with Elari Story on Google Gems ↗**](#link-to-gem)
+
+
 **Class:** Techne (Skilled Craft)
 
 **ID:** COGNITAE-ELA-001-V2

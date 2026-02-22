@@ -2,6 +2,10 @@
 
 # Caspian Ring: The "Sovereign Navigation" Ring
 
+## 💎 Try It Now
+[**Chat with Sovereign Navigation Ring on Google Gems ↗**](#link-to-gem)
+
+
 **Configuration:** `Auren + Compass + Harbor`
 
 ## 1. Purpose

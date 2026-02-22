@@ -2,6 +2,10 @@
 
 # Cognitae: Syn, The Pattern Weaver
 
+## 💎 Try It Now
+[**Chat with Syn Pattern on Google Gems ↗**](#link-to-gem)
+
+
 **Class:** Episteme (Abstract Knowledge)
 
 **ID:** COGNITAE-SYN-001-V2
