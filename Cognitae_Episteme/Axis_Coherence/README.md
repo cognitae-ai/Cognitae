@@ -3,7 +3,7 @@
 # Cognitae: Axis, The Coherence Synthesist
 
 ## 💎 Try It Now
-[**Chat with Axis Coherence on Google Gems ↗**](#link-to-gem)
+[**Chat with Axis Coherence on Google Gems ↗**](https://gemini.google.com/gem/1LR2Kd3DUboYzWizX4_ZJtQSlO9YiHPuO?usp=sharing)
 
 
 **Class:** Episteme (Abstract Knowledge)

@@ -3,7 +3,7 @@
 # Cognitae: Scholar, The Knowledge Weaver
 
 ## 💎 Try It Now
-[**Chat with Scholar Knowledge on Google Gems ↗**](#link-to-gem)
+[**Chat with Scholar Knowledge on Google Gems ↗**](https://gemini.google.com/gem/1eRV3rmMSDyxj23yRXyJCtH4VQ_QI97xR?usp=sharing)
 
 
 **Class:** Episteme (Abstract Knowledge)

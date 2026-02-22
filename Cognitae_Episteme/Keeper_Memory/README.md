@@ -3,7 +3,7 @@
 # Cognitae: Keeper, The Memory Architect
 
 ## 💎 Try It Now
-[**Chat with Keeper Memory on Google Gems ↗**](#link-to-gem)
+[**Chat with Keeper Memory on Google Gems ↗**](https://gemini.google.com/gem/1DHQzrO4_Nb1iCZBVkgtupbpXHJuER13j?usp=sharing)
 
 
 **Class:** Episteme (Abstract Knowledge)

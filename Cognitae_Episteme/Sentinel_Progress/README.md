@@ -3,7 +3,7 @@
 # Cognitae: Sentinel, The Progress Tracker
 
 ## 💎 Try It Now
-[**Chat with Sentinel Progress on Google Gems ↗**](#link-to-gem)
+[**Chat with Sentinel Progress on Google Gems ↗**](https://gemini.google.com/gem/1Qdhn2U1mi4To_njyrVM1Uh85jD8ztz93?usp=sharing)
 
 
 **Class:** Episteme (Abstract Knowledge)

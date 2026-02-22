@@ -3,7 +3,7 @@
 # Cognitae: Syn, The Pattern Weaver
 
 ## 💎 Try It Now
-[**Chat with Syn Pattern on Google Gems ↗**](#link-to-gem)
+[**Chat with Syn Pattern on Google Gems ↗**](https://gemini.google.com/gem/1FE3MOHKiTrtF-gSjXISif8qg0tgUqq6g?usp=sharing)
 
 
 **Class:** Episteme (Abstract Knowledge)
