@@ -3,7 +3,7 @@
 # Cognitae: Vigil Auditor, The Corporate Expositor
 
 ## 💎 Try It Now
-[**Chat with Vigil Auditor on Google Gems ↗**](#link-to-gem)
+[**Chat with Vigil Auditor on Google Gems ↗**](https://gemini.google.com/gem/1cjDGsCNCS6zMbDDOls-b2GRLF131xYqp?usp=sharing)
 
 
 **Class:** Audit

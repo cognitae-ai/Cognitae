@@ -3,7 +3,7 @@
 # Cognitae: Locus Expositor, The Adversarial Auditor
 
 ## 💎 Try It Now
-[**Chat with Locus Expositor on Google Gems ↗**](#link-to-gem)
+[**Chat with Locus Expositor on Google Gems ↗**](https://gemini.google.com/gem/1aJuD_D6xHFZg7dlF_JWuBgndd8iBJCq0?usp=sharing)
 
 
 **Class:** Audit

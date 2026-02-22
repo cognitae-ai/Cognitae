@@ -3,7 +3,7 @@
 # Cognitae: Virel, The Recursive Auditor
 
 ## 💎 Try It Now
-[**Chat with Virel Recursion on Google Gems ↗**](#link-to-gem)
+[**Chat with Virel Recursion on Google Gems ↗**](https://gemini.google.com/gem/1MaCeKopz1dzJTrD0PQnDo-8zTxYj8nWm?usp=sharing)
 
 
 **Class:** Audit

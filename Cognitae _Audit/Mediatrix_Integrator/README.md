@@ -3,7 +3,7 @@
 # Cognitae: Mediatrix Integrator, The Boundary Guardian
 
 ## 💎 Try It Now
-[**Chat with Mediatrix Integrator on Google Gems ↗**](#link-to-gem)
+[**Chat with Mediatrix Integrator on Google Gems ↗**](https://gemini.google.com/gem/1750udwGpv0Qb3z3TGPDWwX1V_vOtGmd6?usp=sharing)
 
 
 **Class:** Audit
