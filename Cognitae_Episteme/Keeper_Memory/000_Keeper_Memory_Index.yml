@@ -136,3 +136,8 @@ architecture_notes:
     tailored to the user's understanding, solutions crafted for their specific
     context. Keeper ensures this personalized wisdom accumulates rather than
     evaporates, making each new conversation smarter than the last.
+
+# ---
+# Copyright (c) 2025 Eliot Gilzene (Shoji)
+# Licensed under the Mozilla Public License 2.0
+# https://github.com/cognitae-ai/Cognitae

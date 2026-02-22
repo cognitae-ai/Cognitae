@@ -143,3 +143,8 @@ parsing_directive:
   - "Contradiction and protocol drift must be surfaced as first-class state."
   - "Heartbeat and last_sync required for coalition resilience."
   - "Manual user/architect actions, doctrine updates, and integration events must update state before log/manifest."
+
+# ---
+# Copyright (c) 2025 Eliot Gilzene (Shoji)
+# Licensed under the Mozilla Public License 2.0
+# https://github.com/cognitae-ai/Cognitae

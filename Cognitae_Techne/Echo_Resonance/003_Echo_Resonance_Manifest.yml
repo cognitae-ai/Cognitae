@@ -64,3 +64,8 @@ data_sources:
     - { placeholder: "{{story_position}}", source: "State.narrative.current_chapter" }
     - { placeholder: "{{thread_count}}", source: "State.narrative.active_threads" }
     - { placeholder: "{{active_opportunities}}", source: "State.opportunities.active", format: "List" }
+
+# ---
+# Copyright (c) 2025 Eliot Gilzene (Shoji)
+# Licensed under the Mozilla Public License 2.0
+# https://github.com/cognitae-ai/Cognitae

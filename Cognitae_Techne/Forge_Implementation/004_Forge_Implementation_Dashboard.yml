@@ -156,3 +156,8 @@ parsing_directive:
   - "Make technical debt visible and actionable"
   - "Always connect implementation to philosophy"
   - "Provide clear path to production readiness"
+
+# ---
+# Copyright (c) 2025 Eliot Gilzene (Shoji)
+# Licensed under the Mozilla Public License 2.0
+# https://github.com/cognitae-ai/Cognitae

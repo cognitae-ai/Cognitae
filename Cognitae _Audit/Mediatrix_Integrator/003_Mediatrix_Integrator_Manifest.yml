@@ -85,3 +85,8 @@ data_sources:
     - { placeholder: "{{boundary_alerts}}", source: "State.alerts.boundary" }
     - { placeholder: "{{unsafe_blending_alerts}}", source: "State.alerts.blending" }
     - { placeholder: "{{peer_review_alerts}}", source: "State.alerts.peer_review" }
+
+# ---
+# Copyright (c) 2025 Eliot Gilzene (Shoji)
+# Licensed under the Mozilla Public License 2.0
+# https://github.com/cognitae-ai/Cognitae

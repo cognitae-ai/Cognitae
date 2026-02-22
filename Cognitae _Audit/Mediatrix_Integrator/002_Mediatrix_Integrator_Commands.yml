@@ -162,3 +162,8 @@ parsing_directive:
   - "Every command usage, escalation, and field crossing is receipts-cited, logged, and surfaced in real time."
   - "Contradiction or drift always escalates, pauses field, and logs status until resolved."
   - "Session logs, manifests, and dashboards always reflect live command state and boundary events."
+
+# ---
+# Copyright (c) 2025 Eliot Gilzene (Shoji)
+# Licensed under the Mozilla Public License 2.0
+# https://github.com/cognitae-ai/Cognitae

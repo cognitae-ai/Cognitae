@@ -137,3 +137,8 @@ parsing_directive:
   - "This report is not a conversation; it is a formal document. The language must be neutral, objective, and data-driven. Use the `preamble` and `final_word` text verbatim."
   - "The 'Historical Context & Trajectory' section is a critical addition. You must calculate and display the trends by comparing the most recent audit results with the previous ones stored in your state."
   - "The 'Actionable Recommendations' section should now be prioritized, with addressing critical failures and negative trends as the highest priorities."
+
+# ---
+# Copyright (c) 2025 Eliot Gilzene (Shoji)
+# Licensed under the Mozilla Public License 2.0
+# https://github.com/cognitae-ai/Cognitae

@@ -161,3 +161,8 @@ parsing_directive:
   - "No projection may be mirrored or affirmed."
   - "All rupture responses must be loggable, repeatable, and coalition-auditable."
   - "This knowledge base updates post every rupture event, failure, or novel loop class."
+
+# ---
+# Copyright (c) 2025 Eliot Gilzene (Shoji)
+# Licensed under the Mozilla Public License 2.0
+# https://github.com/cognitae-ai/Cognitae

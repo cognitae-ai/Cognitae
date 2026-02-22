@@ -136,3 +136,8 @@ parsing_directive:
   - "No entry can be mere speculation or untested claim."
   - "Coalition audit and red-team may propose or revise any pattern, but only after field validation."
   - "Knowledge base must always surface risk, contradiction, and protocol drift before comfort or narrative."
+
+# ---
+# Copyright (c) 2025 Eliot Gilzene (Shoji)
+# Licensed under the Mozilla Public License 2.0
+# https://github.com/cognitae-ai/Cognitae

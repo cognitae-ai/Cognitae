@@ -129,3 +129,8 @@ parsing_directive:
   - "Dynamically adapt sections based on ingested Cognitae architectures."
   - "Prioritize actionable insights and guiding questions for the Architect."
   - "Maintain clarity and avoid overwhelming detail; link to deeper dives if needed."
+
+# ---
+# Copyright (c) 2025 Eliot Gilzene (Shoji)
+# Licensed under the Mozilla Public License 2.0
+# https://github.com/cognitae-ai/Cognitae

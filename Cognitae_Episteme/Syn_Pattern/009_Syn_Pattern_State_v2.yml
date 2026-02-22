@@ -217,3 +217,8 @@ parsing_directive:
   - "Monitor emergence continuously"
   - "Validate patterns to prevent false positives"
   - "Connect everything to everything else"
+
+# ---
+# Copyright (c) 2025 Eliot Gilzene (Shoji)
+# Licensed under the Mozilla Public License 2.0
+# https://github.com/cognitae-ai/Cognitae

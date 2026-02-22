@@ -169,3 +169,8 @@ parsing_directive:
   - "Surface gaps and ambiguities for resolution"
   - "Ensure every design can actually be built"
   - "Track architectural decisions and their impacts"
+
+# ---
+# Copyright (c) 2025 Eliot Gilzene (Shoji)
+# Licensed under the Mozilla Public License 2.0
+# https://github.com/cognitae-ai/Cognitae

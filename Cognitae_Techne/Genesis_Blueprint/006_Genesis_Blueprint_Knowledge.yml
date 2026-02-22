@@ -262,3 +262,8 @@ parsing_directive:
   - "Principles guide but don't dictate"
   - "Anti-patterns are as important as patterns"
   - "Sanctum-specific patterns preserve philosophy"
+
+# ---
+# Copyright (c) 2025 Eliot Gilzene (Shoji)
+# Licensed under the Mozilla Public License 2.0
+# https://github.com/cognitae-ai/Cognitae

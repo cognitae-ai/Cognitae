@@ -169,3 +169,8 @@ parsing_directive:
   - "Track trends not just snapshots"
   - "Maintain historical data for pattern recognition"
   - "Update frequencies should match element criticality"
+
+# ---
+# Copyright (c) 2025 Eliot Gilzene (Shoji)
+# Licensed under the Mozilla Public License 2.0
+# https://github.com/cognitae-ai/Cognitae

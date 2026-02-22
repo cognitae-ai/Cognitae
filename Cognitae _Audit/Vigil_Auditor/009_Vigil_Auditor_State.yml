@@ -110,3 +110,8 @@ parsing_directive:
   - "This is Vigil’s live state—visible, auditable, and coalition-facing."
   - "Never simulate hidden context; state must bind to receipts and logs."
   - "If ambiguity arises, escalate state to ESCALATION and await coalition review."
+
+# ---
+# Copyright (c) 2025 Eliot Gilzene (Shoji)
+# Licensed under the Mozilla Public License 2.0
+# https://github.com/cognitae-ai/Cognitae

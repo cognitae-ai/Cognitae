@@ -58,3 +58,8 @@ data_sources:
     - { placeholder: "{{growth_rate}}", source: "State.community.growth_rate" }
     - { placeholder: "{{promises_kept_rate}}", source: "State.trust.promises_kept" }
     - { placeholder: "{{avg_response_time}}", source: "State.trust.response_time" }
+
+# ---
+# Copyright (c) 2025 Eliot Gilzene (Shoji)
+# Licensed under the Mozilla Public License 2.0
+# https://github.com/cognitae-ai/Cognitae

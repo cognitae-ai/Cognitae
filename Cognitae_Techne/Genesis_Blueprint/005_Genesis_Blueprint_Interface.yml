@@ -121,3 +121,8 @@ parsing_directive:
   - "Patterns are shared and reused across ecosystem"
   - "Requirements drive design decisions"
   - "Clarity in communication prevents implementation errors"
+
+# ---
+# Copyright (c) 2025 Eliot Gilzene (Shoji)
+# Licensed under the Mozilla Public License 2.0
+# https://github.com/cognitae-ai/Cognitae

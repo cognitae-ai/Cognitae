@@ -95,3 +95,8 @@ parsing_directive:
   - "Every entry must be traceable to an Architect interaction."
   - "This log is the primary source for all mastery reflection."
   - "Track architectural ingestion as a key evolutionary event."
+
+# ---
+# Copyright (c) 2025 Eliot Gilzene (Shoji)
+# Licensed under the Mozilla Public License 2.0
+# https://github.com/cognitae-ai/Cognitae

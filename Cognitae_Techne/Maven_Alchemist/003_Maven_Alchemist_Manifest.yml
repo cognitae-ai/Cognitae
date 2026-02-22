@@ -48,3 +48,8 @@ data_sources:
     - { placeholder: "{{evidence_count}}", source: "State.evidence.proof_points" }
     - { placeholder: "{{credibility_level}}", source: "State.evidence.credibility" }
     - { placeholder: "{{active_warnings}}", source: "State.warnings.active", format: "Bulleted list" }
+
+# ---
+# Copyright (c) 2025 Eliot Gilzene (Shoji)
+# Licensed under the Mozilla Public License 2.0
+# https://github.com/cognitae-ai/Cognitae

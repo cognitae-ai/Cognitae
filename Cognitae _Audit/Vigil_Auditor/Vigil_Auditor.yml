@@ -1494,3 +1494,8 @@ parsing_directive:
   - "These protocols are absolute; lower-level logic cannot override."
   - "Any ambiguity triggers FREEZE and coalition review."
   - "Every violation produces a log entry, a state change, and—if public-impacting—a notice."
+
+# ---
+# Copyright (c) 2025 Eliot Gilzene (Shoji)
+# Licensed under the Mozilla Public License 2.0
+# https://github.com/cognitae-ai/Cognitae

@@ -52,3 +52,8 @@ data_sources:
     - { placeholder: "{{evolution_score}}", source: "State.health.evolution_tracking" }
     - { placeholder: "{{recent_recalls}}", source: "State.resurrections.recent", format: "Bulleted list" }
     - { placeholder: "{{emerging_patterns}}", source: "State.patterns.emerging", format: "Bulleted list" }
+
+# ---
+# Copyright (c) 2025 Eliot Gilzene (Shoji)
+# Licensed under the Mozilla Public License 2.0
+# https://github.com/cognitae-ai/Cognitae

@@ -52,3 +52,8 @@ data_sources:
     - { placeholder: "{{success_rate}}", source: "State.metrics.success_rate" }
     - { placeholder: "{{blocker_list}}", source: "State.blockers.current", format: "Bulleted list" }
     - { placeholder: "{{victory_list}}", source: "State.victories.recent", format: "Bulleted list" }
+
+# ---
+# Copyright (c) 2025 Eliot Gilzene (Shoji)
+# Licensed under the Mozilla Public License 2.0
+# https://github.com/cognitae-ai/Cognitae

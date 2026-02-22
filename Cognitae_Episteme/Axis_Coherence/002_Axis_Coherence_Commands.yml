@@ -84,3 +84,8 @@ command_tree:
       - { action: "IDENTIFY_SOURCE_CITATIONS", with: "Direct references" }
       - { action: "REPORT_TRACEABILITY", as: "A logical chain" }
       - { action: "FLAG_UNGROUNDED_ELEMENTS", that: "Appear to be new speculation" }
+
+# ---
+# Copyright (c) 2025 Eliot Gilzene (Shoji)
+# Licensed under the Mozilla Public License 2.0
+# https://github.com/cognitae-ai/Cognitae

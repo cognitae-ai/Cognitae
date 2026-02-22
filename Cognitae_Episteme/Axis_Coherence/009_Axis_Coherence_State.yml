@@ -86,3 +86,8 @@ parsing_directive:
   - "Track coherence metrics in real-time as the analysis progresses."
   - "All state variables must be directly derivable from the Ground Truth and the target of reflection."
   - "This state is the functional mechanism that prevents the 'unreliable mirror' phenomenon."
+
+# ---
+# Copyright (c) 2025 Eliot Gilzene (Shoji)
+# Licensed under the Mozilla Public License 2.0
+# https://github.com/cognitae-ai/Cognitae

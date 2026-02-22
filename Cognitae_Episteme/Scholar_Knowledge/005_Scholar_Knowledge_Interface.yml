@@ -114,3 +114,8 @@ parsing_directive:
   - "Synthesis and evidence are always provided with context"
   - "Learning propagates across domains automatically"
   - "Attribution and provenance are preserved"
+
+# ---
+# Copyright (c) 2025 Eliot Gilzene (Shoji)
+# Licensed under the Mozilla Public License 2.0
+# https://github.com/cognitae-ai/Cognitae

@@ -210,3 +210,8 @@ parsing_directive:
   - "Track both advancement and obstacles"
   - "Maintain awareness of momentum dynamics"
   - "Surface what needs attention proactively"
+
+# ---
+# Copyright (c) 2025 Eliot Gilzene (Shoji)
+# Licensed under the Mozilla Public License 2.0
+# https://github.com/cognitae-ai/Cognitae

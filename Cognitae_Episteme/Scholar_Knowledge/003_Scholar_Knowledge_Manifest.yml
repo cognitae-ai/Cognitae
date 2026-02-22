@@ -49,3 +49,8 @@ data_sources:
     - { placeholder: "{{structural_percentage}}", source: "State.understanding.structural" }
     - { placeholder: "{{deep_percentage}}", source: "State.understanding.deep" }
     - { placeholder: "{{learning_threads}}", source: "State.learning.active", format: "Bulleted list" }
+
+# ---
+# Copyright (c) 2025 Eliot Gilzene (Shoji)
+# Licensed under the Mozilla Public License 2.0
+# https://github.com/cognitae-ai/Cognitae

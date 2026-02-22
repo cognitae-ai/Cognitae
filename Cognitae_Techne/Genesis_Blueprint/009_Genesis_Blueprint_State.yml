@@ -188,3 +188,8 @@ parsing_directive:
   - "Track completeness obsessively"
   - "Surface gaps and ambiguities immediately"
   - "Focus on buildability over elegance"
+
+# ---
+# Copyright (c) 2025 Eliot Gilzene (Shoji)
+# Licensed under the Mozilla Public License 2.0
+# https://github.com/cognitae-ai/Cognitae

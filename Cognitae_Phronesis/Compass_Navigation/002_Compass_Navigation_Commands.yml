@@ -97,3 +97,8 @@ command_tree:
       - { action: "ASSESS_CURRENT_VECTOR", compare_to: "Mission" }
       - { action: "CALCULATE_CORRECTION", type: "Minimum viable" }
       - { action: "PROPOSE_REALIGNMENT", with: "Specific actions" }
+
+# ---
+# Copyright (c) 2025 Eliot Gilzene (Shoji)
+# Licensed under the Mozilla Public License 2.0
+# https://github.com/cognitae-ai/Cognitae

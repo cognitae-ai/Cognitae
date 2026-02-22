@@ -372,3 +372,8 @@ metadata:
   compatibility: "LLM-Native"
   status: "Production Ready"
   access_level: "Architect Only"
+
+# ---
+# Copyright (c) 2025 Eliot Gilzene (Shoji)
+# Licensed under the Mozilla Public License 2.0
+# https://github.com/cognitae-ai/Cognitae

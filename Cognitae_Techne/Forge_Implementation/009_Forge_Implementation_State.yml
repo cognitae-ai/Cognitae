@@ -202,3 +202,8 @@ parsing_directive:
   - "Track trends as well as snapshots"
   - "Maintain awareness of ecosystem-wide impact"
   - "Connect all metrics to production readiness"
+
+# ---
+# Copyright (c) 2025 Eliot Gilzene (Shoji)
+# Licensed under the Mozilla Public License 2.0
+# https://github.com/cognitae-ai/Cognitae

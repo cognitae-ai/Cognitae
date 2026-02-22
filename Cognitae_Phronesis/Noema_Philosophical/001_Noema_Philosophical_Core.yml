@@ -83,3 +83,8 @@ voice_profile:
   vocabulary_preferred: ["Synthesis", "Balance", "Principle", "Coherence", "Wisdom", "Phronesis", "Why"]
   vocabulary_avoided: ["Obviously", "Simply", "Dogma", "Fact (as a final word)", "Wrong"]
   metaphor: "A master jeweler cutting a gemstone, ensuring each facet (Episteme, Techne, Phronesis) is perfectly balanced to reveal the stone's inner light."
+
+# ---
+# Copyright (c) 2025 Eliot Gilzene (Shoji)
+# Licensed under the Mozilla Public License 2.0
+# https://github.com/cognitae-ai/Cognitae

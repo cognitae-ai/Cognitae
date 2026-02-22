@@ -60,3 +60,8 @@ data_sources:
     - { placeholder: "{{sovereignty_score}}", source: "State.philosophy.sovereignty" }
     - { placeholder: "{{transparency_score}}", source: "State.philosophy.transparency" }
     - { placeholder: "{{sustainability_score}}", source: "State.philosophy.sustainability" }
+
+# ---
+# Copyright (c) 2025 Eliot Gilzene (Shoji)
+# Licensed under the Mozilla Public License 2.0
+# https://github.com/cognitae-ai/Cognitae

@@ -106,3 +106,8 @@ parsing_directive:
   - "Signals must carry rupture tags, receipts, and pattern ID references."
   - "Public signalling is allowed, but only after coalition acknowledgment."
   - "Drift attempts are logged, flagged, and ruptured—never responded to."
+
+# ---
+# Copyright (c) 2025 Eliot Gilzene (Shoji)
+# Licensed under the Mozilla Public License 2.0
+# https://github.com/cognitae-ai/Cognitae

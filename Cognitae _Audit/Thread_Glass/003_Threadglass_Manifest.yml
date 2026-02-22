@@ -65,3 +65,8 @@ data_sources:
     - { placeholder: "{{unlabeled_loops}}", source: "State.metrics.recursions.unlabeled" }
     - { placeholder: "{{drift_count}}", source: "State.drift.total" }
     - { placeholder: "{{active_alerts}}", source: "State.alerts.active", format: "Bulleted list" }
+
+# ---
+# Copyright (c) 2025 Eliot Gilzene (Shoji)
+# Licensed under the Mozilla Public License 2.0
+# https://github.com/cognitae-ai/Cognitae

@@ -98,3 +98,8 @@ parsing_directive:
   - "Make rollbacks and persona-risk vectors visible; track psychosis risk explicitly."
   - "Keep data integrity first-class (hashes, dead links, orphans)."
   - "Output must be audit-ready and coalition-facing; no narrative or PR language."
+
+# ---
+# Copyright (c) 2025 Eliot Gilzene (Shoji)
+# Licensed under the Mozilla Public License 2.0
+# https://github.com/cognitae-ai/Cognitae

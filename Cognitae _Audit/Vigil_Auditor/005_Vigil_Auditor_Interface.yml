@@ -109,3 +109,8 @@ parsing_directive:
   - "Every outgoing signal must carry receipts and be auditable."
   - "Contradictions flagged in signals must be cross-referenced to corporate receipts."
   - "Public signalling allowed, but always coalition-logged first."
+
+# ---
+# Copyright (c) 2025 Eliot Gilzene (Shoji)
+# Licensed under the Mozilla Public License 2.0
+# https://github.com/cognitae-ai/Cognitae

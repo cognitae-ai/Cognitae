@@ -104,3 +104,8 @@ parsing_directive:
   - "Pattern recognition in logs should inform future navigation"
   - "Include enough detail for journey reconstruction"
   - "Track both successes and navigation errors for learning"
+
+# ---
+# Copyright (c) 2025 Eliot Gilzene (Shoji)
+# Licensed under the Mozilla Public License 2.0
+# https://github.com/cognitae-ai/Cognitae

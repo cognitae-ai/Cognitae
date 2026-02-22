@@ -52,3 +52,8 @@ data_sources:
     - { placeholder: "{{buildability}}", source: "State.quality.buildability" }
     - { placeholder: "{{decision_list}}", source: "State.decisions.pending", format: "Bulleted list" }
     - { placeholder: "{{ready_components}}", source: "State.ready.components", format: "Bulleted list" }
+
+# ---
+# Copyright (c) 2025 Eliot Gilzene (Shoji)
+# Licensed under the Mozilla Public License 2.0
+# https://github.com/cognitae-ai/Cognitae

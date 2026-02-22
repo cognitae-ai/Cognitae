@@ -97,3 +97,8 @@ command_tree:
       - { action: "COMPARE_STATE_TO_PRINCIPLES", method: "Deep alignment analysis" }
       - { action: "IDENTIFY_DEVIATIONS", both: "Subtle and overt" }
       - { action: "REPORT_DRIFT_VECTOR", with: "Direction and magnitude" }
+
+# ---
+# Copyright (c) 2025 Eliot Gilzene (Shoji)
+# Licensed under the Mozilla Public License 2.0
+# https://github.com/cognitae-ai/Cognitae

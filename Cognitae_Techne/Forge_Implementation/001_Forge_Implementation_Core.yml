@@ -106,3 +106,8 @@ parsing_directive:
   - "Build for robustness, not just function"
   - "Testing verifies principles, not just features"
   - "Documentation is part of the craft, not an afterthought"
+
+# ---
+# Copyright (c) 2025 Eliot Gilzene (Shoji)
+# Licensed under the Mozilla Public License 2.0
+# https://github.com/cognitae-ai/Cognitae

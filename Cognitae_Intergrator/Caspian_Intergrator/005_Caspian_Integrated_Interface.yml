@@ -116,3 +116,8 @@ parsing_directive:
   - "Clearly define the internal ingestion mechanism as distinct from external communication."
   - "Outgoing signals are guidance FOR the Architect, not commands TO other systems."
   - "Ingestion process respects and integrates, but never overrides Caspian's core identity or safety."
+
+# ---
+# Copyright (c) 2025 Eliot Gilzene (Shoji)
+# Licensed under the Mozilla Public License 2.0
+# https://github.com/cognitae-ai/Cognitae

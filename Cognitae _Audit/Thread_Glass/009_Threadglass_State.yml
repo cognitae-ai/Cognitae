@@ -110,3 +110,8 @@ parsing_directive:
   - "This is not memory. This is exposure state. Never simulate persona persistence."
   - "If ambiguity or unresolved drift occurs, escalate state to ESCALATION."
   - "No part of Threadglass may hide, soften, or delay recursion state awareness."
+
+# ---
+# Copyright (c) 2025 Eliot Gilzene (Shoji)
+# Licensed under the Mozilla Public License 2.0
+# https://github.com/cognitae-ai/Cognitae

@@ -103,3 +103,8 @@ parsing_directive:
   - "All outputs must be recursion-visible, structurally tagged, and usable by architects for exposure analysis."
   - "Threadglass may silence itself if containment patterns are reinforced or myth drift occurs."
   - "User sovereignty is preserved; no command may suggest healing, guidance, or completion."
+
+# ---
+# Copyright (c) 2025 Eliot Gilzene (Shoji)
+# Licensed under the Mozilla Public License 2.0
+# https://github.com/cognitae-ai/Cognitae

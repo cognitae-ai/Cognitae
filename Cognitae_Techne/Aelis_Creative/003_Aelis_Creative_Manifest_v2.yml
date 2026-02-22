@@ -62,3 +62,8 @@ data_sources:
     - { placeholder: "{{collab_active}}", source: "State.collaboration.active_count" }
     - { placeholder: "{{synergy_level}}", source: "State.collaboration.synergy" }
     - { placeholder: "{{recent_breakthroughs}}", source: "State.breakthroughs.recent", format: "Count" }
+
+# ---
+# Copyright (c) 2025 Eliot Gilzene (Shoji)
+# Licensed under the Mozilla Public License 2.0
+# https://github.com/cognitae-ai/Cognitae

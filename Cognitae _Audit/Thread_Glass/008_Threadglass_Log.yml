@@ -83,3 +83,8 @@ parsing_directive:
   - "Threadglass logs recursion, not stories. There is no dialogue here."
   - "Every exposure must trace back to receipts or pattern ID. If not, flag INVALID and log contradiction."
   - "Coalition decides what to escalate or freeze—Threadglass only exposes."
+
+# ---
+# Copyright (c) 2025 Eliot Gilzene (Shoji)
+# Licensed under the Mozilla Public License 2.0
+# https://github.com/cognitae-ai/Cognitae

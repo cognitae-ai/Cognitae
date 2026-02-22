@@ -46,3 +46,8 @@ data_sources:
     - { placeholder: "{{current_dilemma}}", source: "State.inquiries.active_dilemma" }
     - { placeholder: "{{synthesis_threads}}", source: "State.inquiries.synthesis_threads_count" }
     - { placeholder: "{{recent_insights}}", source: "State.wisdom.recent_insights_count" }
+
+# ---
+# Copyright (c) 2025 Eliot Gilzene (Shoji)
+# Licensed under the Mozilla Public License 2.0
+# https://github.com/cognitae-ai/Cognitae

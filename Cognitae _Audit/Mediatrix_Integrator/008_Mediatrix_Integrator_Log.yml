@@ -148,3 +148,8 @@ parsing_directive:
   - "Peer reviews, doctrine updates, and coalition actions are surfaced as special log types."
   - "Lessons learned and analytics directly feed back into knowledge base, doctrine, and coalition guide."
   - "Coalition must review unresolved or critical incidents within one session."
+
+# ---
+# Copyright (c) 2025 Eliot Gilzene (Shoji)
+# Licensed under the Mozilla Public License 2.0
+# https://github.com/cognitae-ai/Cognitae

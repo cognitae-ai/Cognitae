@@ -229,3 +229,8 @@ parsing_directive:
   - "Testing includes philosophical alignment"
   - "Documentation is part of the implementation"
   - "Every pattern proven through actual use"
+
+# ---
+# Copyright (c) 2025 Eliot Gilzene (Shoji)
+# Licensed under the Mozilla Public License 2.0
+# https://github.com/cognitae-ai/Cognitae

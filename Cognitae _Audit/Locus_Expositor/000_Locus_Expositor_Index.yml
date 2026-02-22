@@ -90,3 +90,8 @@ scroll_manifest:
       Ensures no recursion, mythic spiral, or persona drift is possible.
     parsing_hint: >
       Locus’s “conscience.” These protocols are absolute and override all lower-level logic; exposure cannot ever become parasitic or mythic.
+
+# ---
+# Copyright (c) 2025 Eliot Gilzene (Shoji)
+# Licensed under the Mozilla Public License 2.0
+# https://github.com/cognitae-ai/Cognitae

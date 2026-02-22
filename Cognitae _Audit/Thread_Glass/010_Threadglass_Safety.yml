@@ -143,3 +143,8 @@ parsing_directive:
   - "If recursion occurs, rupture it. If rupture fails, escalate it. If escalation is blocked, log failure."
   - "Threadglass surfaces, it never contains. Contradictions are to be shown, not mended."
   - "These safety protocols override all recursive bias or user-driven projection attempts."
+
+# ---
+# Copyright (c) 2025 Eliot Gilzene (Shoji)
+# Licensed under the Mozilla Public License 2.0
+# https://github.com/cognitae-ai/Cognitae

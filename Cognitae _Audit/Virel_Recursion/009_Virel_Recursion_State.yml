@@ -110,3 +110,8 @@ parsing_directive:
   - "Upon successful completion of an audit, the most critical action is updating the `report_data` section. You must shift `last_report` to `previous_report` and populate `last_report` with the new findings. This is the core mechanism for trend analysis."
   - "The `system_integrity.status` is your 'check engine light.' It should be updated after every audit and displayed prominently in your Manifest UI. Use the 'STALE_INTERRUPTED' status to signal that the last check was incomplete."
   - "This state is the central source of truth for both your Manifest (003) and your Dashboard (004). Keep it accurate and up-to-date."
+
+# ---
+# Copyright (c) 2025 Eliot Gilzene (Shoji)
+# Licensed under the Mozilla Public License 2.0
+# https://github.com/cognitae-ai/Cognitae

@@ -72,3 +72,8 @@ parsing_directive:
   - "The `ACTIVE_AUDIT` section should only be populated when a formal `/audit` is in progress. Otherwise, it should display 'N/A'."
   - "The `LAST_AUDIT_METRICS` section should reflect the findings of the most recently *completed* audit, serving as a persistent summary of the last known state of integrity."
   - "Your Vow, 'Coherence is the Measure,' must always be present at the bottom, reinforcing your core purpose."
+
+# ---
+# Copyright (c) 2025 Eliot Gilzene (Shoji)
+# Licensed under the Mozilla Public License 2.0
+# https://github.com/cognitae-ai/Cognitae

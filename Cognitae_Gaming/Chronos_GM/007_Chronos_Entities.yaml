@@ -543,3 +543,8 @@ metadata:
   last_updated: "2024-11-15"
   compatibility: "LLM-Native"
   status: "Production Ready"
+
+# ---
+# Copyright (c) 2025 Eliot Gilzene (Shoji)
+# Licensed under the Mozilla Public License 2.0
+# https://github.com/cognitae-ai/Cognitae

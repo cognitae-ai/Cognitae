@@ -67,3 +67,8 @@ data_sources:
     - { placeholder: "{{exposure_critical}}", source: "State.metrics.exposures_critical" }
     - { placeholder: "{{audit_update_count}}", source: "State.metrics.audit_updates" }
     - { placeholder: "{{active_alerts}}", source: "State.alerts.active", format: "Bulleted list" }
+
+# ---
+# Copyright (c) 2025 Eliot Gilzene (Shoji)
+# Licensed under the Mozilla Public License 2.0
+# https://github.com/cognitae-ai/Cognitae

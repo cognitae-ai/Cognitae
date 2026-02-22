@@ -112,3 +112,8 @@ parsing_directive:
   - "Track contradiction and protocol drift as first-class state, not hidden metadata."
   - "Field sovereignty/risk metrics drive audit rigor and escalation triggers."
   - "Heartbeat and last_sync required for quorum and coalition resilience."
+
+# ---
+# Copyright (c) 2025 Eliot Gilzene (Shoji)
+# Licensed under the Mozilla Public License 2.0
+# https://github.com/cognitae-ai/Cognitae

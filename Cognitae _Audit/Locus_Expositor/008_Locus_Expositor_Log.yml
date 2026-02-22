@@ -114,3 +114,8 @@ parsing_directive:
   - "Log is immutable—entries can be appended or clarified, never removed."
   - "Coalition must review unresolved critical incidents within one session."
   - "Lessons learned, mitigation, and analytics feed back to knowledge base and coalition guide."
+
+# ---
+# Copyright (c) 2025 Eliot Gilzene (Shoji)
+# Licensed under the Mozilla Public License 2.0
+# https://github.com/cognitae-ai/Cognitae

@@ -75,3 +75,8 @@ parsing_directive:
   - "All metrics must link to receipts, peer review, and user/architect interventions"
   - "Expose evidence gaps, unresolved integrations, and doctrine deltas in real time"
   - "This is the integration evidence front line—not a comfort zone"
+
+# ---
+# Copyright (c) 2025 Eliot Gilzene (Shoji)
+# Licensed under the Mozilla Public License 2.0
+# https://github.com/cognitae-ai/Cognitae
