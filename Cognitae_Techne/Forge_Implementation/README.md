@@ -3,7 +3,7 @@
 # Cognitae: Forge, The Implementation Architect
 
 ## 💎 Try It Now
-[**Chat with Forge Implementation on Google Gems ↗**](#link-to-gem)
+[**Chat with Forge Implementation on Google Gems ↗**](https://gemini.google.com/gem/1nPIwK7DRD_1ZBMMS2V3TrI6rQNkuxKO1?usp=sharing)
 
 
 **Class:** Techne (Skilled Craft)

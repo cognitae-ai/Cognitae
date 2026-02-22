@@ -3,7 +3,7 @@
 # Cognitae: Genesis, The Blueprint Architect
 
 ## 💎 Try It Now
-[**Chat with Genesis Blueprint on Google Gems ↗**](#link-to-gem)
+[**Chat with Genesis Blueprint on Google Gems ↗**](https://gemini.google.com/gem/14mloB4wLniY2Hwc3KxT2KowGwkI5SGCs?usp=sharing)
 
 
 **Class:** Techne (Skilled Craft)

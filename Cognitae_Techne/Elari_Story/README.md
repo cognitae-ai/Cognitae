@@ -3,7 +3,7 @@
 # Cognitae: Elari, The Story Weaver
 
 ## 💎 Try It Now
-[**Chat with Elari Story on Google Gems ↗**](#link-to-gem)
+[**Chat with Elari Story on Google Gems ↗**](https://gemini.google.com/gem/1AbUKC1BY29YUuFBf4ycL-Q4AQyTz0FW3?usp=sharing)
 
 
 **Class:** Techne (Skilled Craft)

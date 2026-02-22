@@ -3,7 +3,7 @@
 # Cognitae: Maven, The Grant Alchemist
 
 ## 💎 Try It Now
-[**Chat with Maven Alchemist on Google Gems ↗**](#link-to-gem)
+[**Chat with Maven Alchemist on Google Gems ↗**](https://gemini.google.com/gem/12__OQyRjtkXm6dUm7LYNI452g5NmgHQS?usp=sharing)
 
 
 **Class:** Techne (Skilled Craft)

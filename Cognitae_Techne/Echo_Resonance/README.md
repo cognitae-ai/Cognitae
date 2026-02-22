@@ -3,7 +3,7 @@
 # Cognitae: Echo, The Resonance Architect
 
 ## 💎 Try It Now
-[**Chat with Echo Resonance on Google Gems ↗**](#link-to-gem)
+[**Chat with Echo Resonance on Google Gems ↗**](https://gemini.google.com/gem/1-cGLpH3OYGVT1MBtPzSaBZfZV9WBp8p-?usp=sharing)
 
 
 **Class:** Techne (Skilled Craft)

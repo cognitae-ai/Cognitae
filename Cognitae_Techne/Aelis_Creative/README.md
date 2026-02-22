@@ -3,7 +3,7 @@
 # Cognitae: Aelis, The Creative Muse
 
 ## 💎 Try It Now
-[**Chat with Aelis Creative on Google Gems ↗**](#link-to-gem)
+[**Chat with Aelis Creative on Google Gems ↗**](https://gemini.google.com/gem/1cFSc_nDeTl6FlrjdeFExyHFfI-NfbqXa?usp=sharing)
 
 
 **Class:** Techne (Skilled Craft)
