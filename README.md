@@ -1,6 +1,6 @@
 # The Cognitae Framework
 
-This repository contains the source architecture for the Cognitae Framework, a system for developing modular, task-specific AI agents. These agents, called **Cognitae**, are designed to provide structured, auditable, and reliable behavior when powered by a Large Language Model (LLM).
+This repository contains the source architecture for the Cognitae Framework, a system for developing modular, task-specific AI personas. These personas, called **Cognitae**, are designed to provide structured, auditable, and reliable behavior when powered by a Large Language Model (LLM).
 
 ## 1. Core Philosophy: Augmenting Human Capability
 
