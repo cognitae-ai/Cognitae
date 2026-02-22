@@ -3,7 +3,7 @@
 # Cognitae: Caspian, The Integrated Guide
 
 ## 💎 Try It Now
-[**Chat with Caspian Intergrator on Google Gems ↗**](#link-to-gem)
+[**Chat with Caspian Intergrator on Google Gems ↗**](https://gemini.google.com/gem/1QhRTRczhgdE4B_3yzSEQ_xnnoiNvHvJ6?usp=sharing)
 
 
 **Class:** Integrator
