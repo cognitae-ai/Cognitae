@@ -80,11 +80,13 @@ The books were selected to reflect the **Triadic Core** of the framework, provid
 
 Reviewing an agent's bookshelf can provide useful context for its architectural choices and operational logic. The full library contains a detailed analysis for each selection.
 
+## 7. Licensing
+The Cognitae Framework is licensed under the Mozilla Public License 2.0 (MPL 2.0). This means you are free to use, modify, and distribute the framework. However, any modifications made directly to the source files must be shared back under the same licence. The framework may be used alongside proprietary software without restriction.
+Copyright (c) 2025 Eliot Gilzene/ Shoji / Cognitae Framework. All rights reserved under the terms of the MPL 2.0.
+
+
 **[► Explore The Cognitae Library](./BOOKSHELF.md)**
 
-7. Licensing
-The Cognitae Framework is licensed under the Mozilla Public License 2.0 (MPL 2.0). This means you are free to use, modify, and distribute the framework. However, any modifications made directly to the source files must be shared back under the same licence. The framework may be used alongside proprietary software without restriction.
-Copyright (c) 2025 Shoji / Cognitae Framework. All rights reserved under the terms of the MPL 2.0.
 
 
 
