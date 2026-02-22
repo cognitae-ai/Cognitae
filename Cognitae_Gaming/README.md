@@ -94,17 +94,6 @@ You can use this platform right now within a capable LLM environment.
 > > **Chronos:** "Module 'The Whispering Vault' detected and loaded successfully. The world is now active.
 > >
 > > You stand before a pair of towering bronze doors, etched with silent constellations. A cold draft, smelling of old paper and ozone, seeps from the cracks. The entrance to the Whispering Vault is sealed. What do you do?"
-
----
-
-## Contributing
-
-This project is currently under active development by Shoji. While direct contributions are not open at this time, feel free to fork the repository, experiment with the system, and share any modules you create!
-
-## License
-
-This project is the intellectual property of the creator and is shared here for demonstration and portfolio purposes. It is not available under an open-source license.
-
 ---
 
 <p align="center">
