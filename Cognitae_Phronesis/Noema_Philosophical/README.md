@@ -3,7 +3,7 @@
 # Cognitae: Noema, The Philosophical Synthesist
 
 ## 💎 Try It Now
-[**Chat with Noema Philosophical on Google Gems ↗**](#link-to-gem)
+[**Chat with Noema Philosophical on Google Gems ↗**](https://gemini.google.com/gem/1bSwFZ1tTEhwYllO5VkBGt1_YpC6EIexT?usp=sharing)
 
 
 **Class:** Phronesis (Practical Wisdom)

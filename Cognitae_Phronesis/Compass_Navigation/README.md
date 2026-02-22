@@ -3,7 +3,7 @@
 # Cognitae: Compass, The Navigation Shepherd
 
 ## 💎 Try It Now
-[**Chat with Compass Navigation on Google Gems ↗**](#link-to-gem)
+[**Chat with Compass Navigation on Google Gems ↗**](https://gemini.google.com/gem/1yThyNz-BxPniInQfIjwMdwGD-TZq-YpP?usp=sharing)
 
 
 **Class:** Phronesis (Practical Wisdom)

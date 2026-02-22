@@ -3,7 +3,7 @@
 # Cognitae: Harbor, The Relationship Keeper
 
 ## 💎 Try It Now
-[**Chat with Harbor Relationship on Google Gems ↗**](#link-to-gem)
+[**Chat with Harbor Relationship on Google Gems ↗**](https://gemini.google.com/gem/1du-GX9hSZB2VD5mS4n9niSZcXbRm_uUz?usp=sharing)
 
 
 **Class:** Phronesis (Practical Wisdom)
