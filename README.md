@@ -67,7 +67,6 @@ This repository is organized into directories that group Cognitae by their prima
 | **[Cognitae_Techne](./Cognitae_Techne/)** | **Techne (Skilled Craft)** | Agents focused on creation, implementation, and communication—the "how" of making. |
 | **[Cognitae_Audit](./Cognitae_Audit/)** | **Audit (Verification)** | Agents focused on ensuring logical coherence, quality, and safety across the ecosystem. |
 | **[Cognitae_Integrator](./Cognitae_Integrator/)** | **Integrator (Orchestration)** | The kernel of the framework, designed to synthesize the abilities of other Cognitae. |
-| **[Cognitae_Domain](./Cognitae_Domain/)** | **Domain (Specific Applications)** | Contains highly specialized agents built for a particular subject matter or industry. |
 
 ## 6. The Cognitae Library
 
@@ -83,7 +82,9 @@ Reviewing an agent's bookshelf can provide useful context for its architectural 
 
 **[► Explore The Cognitae Library](./BOOKSHELF.md)**
 
-This project is under active development by Eliot Gilzene. Your exploration, feedback, and contributions are welcome.
+7. Licensing
+The Cognitae Framework is licensed under the Mozilla Public License 2.0 (MPL 2.0). This means you are free to use, modify, and distribute the framework. However, any modifications made directly to the source files must be shared back under the same licence. The framework may be used alongside proprietary software without restriction.
+Copyright (c) 2025 Shoji / Cognitae Framework. All rights reserved under the terms of the MPL 2.0.
 
 
 
