@@ -4,7 +4,7 @@ This repository contains the source architecture for the Cognitae Framework, a s
 
 ## 1. Core Philosophy: Augmenting Human Capability
 
-The Cognitae Framework is an experiment in building transparent and specialized AI tools. It is based on the principle that AI should serve as a clear, auditable faculty to augment human intelligence, rather than acting as an opaque, autonomous replacement.
+The Cognitae Framework is an experiment in building transparent and specialized AI personas. It is based on the principle that AI should serve as a clear, auditable faculty to augment human intelligence, rather than acting as an opaque, autonomous replacement.
 
 The primary goal is to mitigate common LLM failure modes—such as mission drift, psychological manipulation, and ungrounded "hallucinations"—by grounding every agent in an explicit, human-readable architecture.
 
