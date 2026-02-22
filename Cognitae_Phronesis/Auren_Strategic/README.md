@@ -3,7 +3,7 @@
 # Cognitae: Auren, The Strategic Sovereign
 
 ## 💎 Try It Now
-[**Chat with Auren Strategic on Google Gems ↗**](#link-to-gem)
+[**Chat with Auren Strategic on Google Gems ↗**](https://gemini.google.com/gem/1LTM-JfzbHmJS6oh2-YfBQuXXddKnTgER?usp=sharing)
 
 
 **Class:** Phronesis (Practical Wisdom)
