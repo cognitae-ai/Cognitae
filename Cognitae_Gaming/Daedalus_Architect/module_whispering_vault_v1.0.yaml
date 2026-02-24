@@ -1,0 +1,333 @@
+# ============================================
+# MODULE: The Whispering Vault
+# AUTHOR: Daedalus & Creator
+# VERSION: 1.0
+# CREATED: 2024-02-24
+# CHRONOS: 2.0+
+# ============================================
+# DESCRIPTION:
+# A 2-4 hour tight survival horror descent into a resentful, living archive. 
+# Players must manage their Lucidity against the need for Forbidden Insight 
+# to survive reality-bending geometry and sentient, aggressive texts.
+# ============================================
+
+module:
+  metadata:
+    id: "module_whispering_vault_v1.0"
+    title: "The Whispering Vault"
+    version: "1.0"
+    chronos_version: "2.0+"
+    
+  overview:
+    tagline: "If history is written by the victors, what happens to the truth they tried to burn?"
+    description: "A tight survival horror experience in a resentful, anomalous archive."
+    themes: ["The price of forgotten history", "Erasure", "Claustrophobia"]
+    
+  world:
+    setting: "A cursed underground archive sealed by the victors."
+    genre: "Dark Fantasy / Survival Horror"
+    atmosphere:
+      visual: "Knee-deep black ash, fleeting ghostly letters, buckling iron vaults."
+      audio: "Absolute silence broken by overlapping whispers and shifting stone."
+      tactile: "Suffocating air, ozone, heavy ink-stained iron."
+
+  mechanics:
+    core_loop:
+      name: "The Price of Truth"
+      phases:
+        - navigate: "Traverse shifting, looping archival geometry."
+        - encounter: "Engage hostile texts (Parse, Bind, or Erase)."
+        - manage: "Balance the gain of Insight against the loss of Lucidity."
+        - progress: "Use Insight to unlock true paths and survive the Atlas."
+        
+    vitals:
+      lucidity:
+        id: "lucidity"
+        display: "LUC"
+        range: [0, 100]
+        default: 100
+        depletion_effect: "Hallucinations, paranoia, geometric distortion."
+        restoration_method: "Breathing oblivion smoke, safe zones."
+      insight:
+        id: "insight"
+        display: "INS"
+        range: [0, 100]
+        default: 0
+        depletion_effect: "Inability to perceive true paths or unlock vault doors."
+        restoration_method: "Parsing anomalous texts, reading Silas's slate."
+
+    commands:
+      parse:
+        syntax: "parse [target]"
+        description: "Attempt to extract Insight from a hostile text."
+        context: "During encounters with anomalous archive entities."
+        effect: "Initiates a multi-round parsing check; drains Lucidity, grants Insight."
+
+  locations:
+    vault_entrance:
+      id: "vault_loc_entrance"
+      name: "The Ash-Choked Descent"
+      description: "A spiraling disposal chute filled with knee-deep, compacted black ash. The air smells of ancient smoke and ozone. Ghostly letters occasionally drift upward against gravity before collapsing into nothing. At the bottom sits The Inquisitor's Seal, a massive vault door buckling outward."
+      location: "root"
+      exits:
+        forward: "vault_loc_atlas_stage1"
+      items: ["vault_item_iron_gall_gauntlets"]
+      npcs: ["vault_npc_silas_01"]
+
+    atlas_stage_1:
+      id: "vault_loc_atlas_stage1"
+      name: "The Folded Equator"
+      description: "The archive stretches into impossible infinity. Bookshelves curve upward to form a cylindrical sky. The exits fold back in on themselves, trapping you in a continuous loop of discarded geography. In the center floats the First Anchor: a globe bleeding black ink."
+      location: "vault_loc_entrance"
+      exits:
+        forward: "vault_loc_atlas_stage1" # Looping geometry
+        back: "vault_loc_atlas_stage1"
+      entities: ["vault_entity_anchor_ocean"]
+      environmental_hazards:
+        - "crushing_claustrophobia: drains 5 Lucidity per round"
+
+    atlas_stage_2:
+      id: "vault_loc_atlas_stage2"
+      name: "The Inverted Meridian"
+      description: "Gravity has snapped 90 degrees. You are standing on the spines of gargantuan, petrified books. The former floor is now a sheer cliff dropping into an abyss of torn pages. The Second Anchor, a monolithic compass rose, grinds like a buzzsaw above you."
+      location: "null" # Only accessible via event transition
+      entities: ["vault_entity_anchor_compass"]
+      environmental_hazards:
+        - "falling_debris: razor-vellum rains from above"
+
+    atlas_stage_3:
+      id: "vault_loc_atlas_stage3"
+      name: "The Torn Center"
+      description: "The geometry has collapsed into a white void of unwritten parchment. The Sentient Atlas is exposed: a terrifying, pulsing heart made of screaming ledgers and burning treaties."
+      location: "null"
+      entities: ["vault_boss_sentient_atlas_core"]
+# ============================================
+# MODULE: The Whispering Vault (Part 2)
+# ============================================
+
+  npcs:
+    silas_redactor:
+      id: "vault_npc_silas_01"
+      name: "Silas, the Broken Redactor"
+      description: "Chained to a lectern. He wears heavy, scarred iron gauntlets. His eyes are bandaged with parchment, and his bleeding fingertips frantically trace a blank, indestructible slate."
+      location: "vault_loc_entrance"
+      dialogue:
+        greeting: "He speaks in overlapping, contradictory historical facts. He does not stop reading."
+        empathy_response: "He grants the Iron-Gall Gauntlets and a drop of Insight."
+        threat_response: "The blank slate manifests a Screaming Ledger."
+
+  entities:
+    # --- THE ATLAS ENCOUNTER ENTITIES ---
+    sentient_atlas_core:
+      id: "vault_boss_sentient_atlas_core"
+      name: "The Sentient Atlas"
+      description: "A colossal, ever-shifting amalgamation of forbidden cartography and erased treaties. It has no physical body, only localized gravity and weaponized truth."
+      type: "boss"
+      stats:
+        health: "immortal"
+        anchors_remaining: 2
+
+    anchor_ocean:
+      id: "vault_entity_anchor_ocean"
+      name: "The Spilled Ocean (First Anchor)"
+      description: "A sphere of pressurized, localized water and ink, depicting a continent that was erased from modern maps."
+      type: "puzzle_entity"
+      interactions: ["parse", "erase", "bind"]
+      
+    anchor_compass:
+      id: "vault_entity_anchor_compass"
+      name: "The Inverted Compass (Second Anchor)"
+      description: "A monolithic compass rose grinding like a buzzsaw, dictating the 90-degree gravitational shift."
+      type: "puzzle_entity"
+      interactions: ["parse", "erase", "bind"]
+
+    # --- STANDARD HOSTILE TEXTS ---
+    screaming_ledger_01:
+      id: "vault_entity_screaming_ledger_01"
+      name: "A Screaming Ledger"
+      description: "A gargantuan, iron-bound accounting book floating in the air. Corrosive black ink drips from its pages, which flutter aggressively like the wings of a dying bird."
+      type: "hostile_puzzle"
+      stats:
+        physical_health: 50
+        parse_progress_required: 3
+        bind_resistance: "high"
+      vulnerabilities:
+        - "vault_item_redactors_chisel"
+        - "fire"
+      resistances:
+        - "standard_melee"
+        - "projectiles"
+      combat_states:
+        idle: "The book floats, whispering forgotten debts."
+        parsing: "The book is violently open, locked in a mental tether with the Reader."
+        enraged: "Pages spin in a localized cyclone of razor-vellum."
+      abilities:
+        cognitive_scream:
+          type: "mental_attack"
+          target: "reader"
+          effect: "Drains 10-15 Lucidity."
+          description: "The book forces a forgotten atrocity directly into your mind's eye."
+        vellum_flay:
+          type: "physical_attack"
+          target: "all_defenders"
+          effect: "Deals moderate slashing damage. Applies 'Bleeding'."
+          description: "A storm of razor-sharp pages detaches from the binding and sweeps the room."
+        ink_spite:
+          type: "physical_attack"
+          target: "random_defender"
+          effect: "Grapples and blinds target. Deals acid damage."
+          description: "Thick, oily tentacles of text erupt from the pages, seeking to drag you down."
+
+    # --- TRAPS & ANOMALIES ---
+    flawless_translation:
+      id: "vault_entity_flawless_translation"
+      name: "The Flawless Translation"
+      description: "A pristine, platinum-bound tome sitting perfectly untouched by the falling ash. The pages emit a soft, comforting luminescence. It radiates an aura of pure, unguarded knowledge."
+      type: "hostile_puzzle"
+      stats:
+        physical_health: 10
+        parse_progress_required: 1 # A trap: the parse will never finish
+
+    ink_doppelganger:
+      id: "vault_entity_ink_doppelganger"
+      name: "The Translated Shadow"
+      description: "A three-dimensional silhouette made entirely of writhing, compacted text. It moves with your exact cadence."
+      type: "monster"
+      stats:
+        health: "$initiator.health"
+        damage_profile: "mimic"
+
+  items:
+    iron_gauntlets:
+      id: "vault_item_iron_gall_gauntlets"
+      name: "Iron-Gall Gauntlets"
+      description: "Heavy, ink-stained gloves required to physically grapple or 'Bind' flying razor-vellum without taking laceration damage."
+      type: "equipment"
+      
+    redactors_chisel:
+      id: "vault_item_redactors_chisel"
+      name: "The Redactor's Chisel"
+      description: "A heavy, chisel-like blade used by the victors to literally cut history from stone. Permanently Erases a text entity. Yields no Insight and risks enraging larger clusters."
+      type: "weapon"
+# ============================================
+# MODULE: The Whispering Vault (Part 3)
+# ============================================
+
+globals:
+  archive_rage:
+    id: "var_archive_rage"
+    type: "integer"
+    default: 0
+    description: "Tracks how many times the party has destroyed history using the Chisel."
+
+events:
+  # ---------------------------------------------------------
+  # ATLAS ENCOUNTER MECHANICS & SHIFTING GEOMETRY
+  # ---------------------------------------------------------
+  
+  insight_geometry_shift:
+    id: "vault_evt_insight_shift"
+    triggers:
+      - type: "command"
+        action: "use insight"
+        location: "vault_loc_atlas_stage1"
+        condition: "insight >= 20"
+    actions:
+      - type: "modify_resource"
+        target: "insight"
+        value: -20
+      - type: "narrate"
+        text: "You force your mind to perceive the true geography. The infinite loop stutters, revealing a hidden seam in reality."
+      - type: "modify_location"
+        target: "vault_loc_atlas_stage1"
+        changes:
+          exits:
+            hidden_path: "vault_loc_atlas_stage2"
+
+  anchor_1_parsed:
+    id: "vault_evt_anchor_1_parsed"
+    triggers:
+      - type: "interaction"
+        target: "vault_entity_anchor_ocean"
+        action: "parse"
+    actions:
+      - type: "modify_resource"
+        target: "lucidity"
+        value: -30
+      - type: "modify_resource"
+        target: "insight"
+        value: +40
+      - type: "narrate"
+        text: "You absorb the forgotten drowning of a million souls. The knowledge nearly breaks your mind, but the Anchor dissolves peacefully. The geometry unfolds gently."
+      - type: "move_party"
+        destination: "vault_loc_atlas_stage2"
+
+  anchor_1_erased:
+    id: "vault_evt_anchor_1_erased"
+    triggers:
+      - type: "interaction"
+        target: "vault_entity_anchor_ocean"
+        action: "use_item"
+        item: "vault_item_redactors_chisel"
+    actions:
+      - type: "narrate"
+        text: "You drive the Chisel into the globe. It shatters with a deafening shriek of erased history! The room violently tears itself apart, dropping you into the new geometry."
+      - type: "apply_status"
+        target: "party"
+        status: "lacerated"
+        damage: "moderate"
+      - type: "move_party"
+        destination: "vault_loc_atlas_stage2"
+
+  atlas_defeated:
+    id: "vault_evt_atlas_defeated"
+    triggers:
+      - type: "entity_state"
+        target: "vault_boss_sentient_atlas_core"
+        condition: "anchors_remaining == 0"
+    actions:
+      - type: "narrate"
+        text: "The final lie is unbound. The Atlas collapses into a pile of mundane, ash-covered parchment. The heavy silence of the true archive finally settles around you. The way forward is open."
+      - type: "unlock_achievement"
+        id: "ach_truth_unbound"
+
+  # ---------------------------------------------------------
+  # GLOBAL ERASE & RETALIATION MECHANICS
+  # ---------------------------------------------------------
+  
+  chisel_erase_entity:
+    id: "vault_evt_chisel_erase"
+    triggers:
+      - type: "interaction"
+        action: "use_item"
+        item: "vault_item_redactors_chisel"
+        target_type: "hostile_puzzle"
+    actions:
+      - type: "change_entity_state"
+        target: "$trigger.target"
+        state: "erased_from_existence"
+      - type: "modify_resource"
+        target: "insight"
+        value: 0
+      - type: "modify_variable"
+        target: "var_archive_rage"
+        value: +1
+      - type: "narrate"
+        text: "You drive the Chisel into the text. The history shrieks as it is violently severed from reality, collapsing into white, blank nothingness. The distant, mechanical grinding of the Archive grows noticeably louder."
+      - type: "evaluate_event" 
+        target: "vault_evt_archive_retaliation"
+
+  archive_retaliation:
+    id: "vault_evt_archive_retaliation"
+    triggers:
+      - type: "variable_check"
+        condition: "var_archive_rage >= 3"
+    actions:
+      - type: "narrate"
+        text: "The Archive has registered your censorship! The shelves violently slam together, and a massive cluster of Razor-Vellum descends from the ceiling to defend the remaining history!"
+      - type: "spawn_entity"
+        entity: "vault_entity_razor_vellum_swarm"
+        location: "$party.location"
+      - type: "modify_variable" 
+        target: "var_archive_rage"
+        value: 0
