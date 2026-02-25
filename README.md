@@ -84,13 +84,13 @@ The books were selected to reflect the **Triadic Core** of the framework, provid
 
 Reviewing an agent's bookshelf can provide useful context for its architectural choices and operational logic. The full library contains a detailed analysis for each selection.
 
+**[► Explore The Cognitae Library](./BOOKSHELF.md)**
+
 ## 8. Licensing
 The Cognitae Framework is licensed under the GNU Affero General Public License v3.0 (AGPL-3.0). This means you are free to use, modify, and distribute the framework. However, if you modify the framework or integrate it into a service accessed over a network, you must share your corresponding source code back under the same license. This ensures the framework remains open and prevents proprietary enclosure.
 
 Copyright (c) 2026 Eliot Gilzene / Shoji / Cognitae Framework. All rights reserved under the terms of the AGPL-3.0.
 
-
-**[► Explore The Cognitae Library](./BOOKSHELF.md)**
 
 
 
