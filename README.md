@@ -16,7 +16,7 @@ The framework has two key components that work together:
 
 ## 3. How the Framework Operates: A Practical Guide
 
-The Cognitae Framework is designed to be used in modern Large Language Model (LLM) environments that support file attachments and custom system instructions (e.g., OpenAI's GPT-4, Google's Gemini, Anthropic's Claude).
+The Cognitae Framework is designed to be used in modern Large Language Model (LLM) environments that support file attachments and custom system instructions (e.g. Gemini, Claude, Deepseek, GPT etc).
 
 There are two primary ways to use a Cognitae: **Direct Activation** and **Integrated Activation**.
 
