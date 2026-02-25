@@ -48,25 +48,31 @@ The Techne class is composed of the following specialized agents. Each is design
 
 ## Live Simulations
 
-Explore these complete 10-turn live simulations to see how the agents in this class operate in real-world scenarios:
+Review these detailed, 10-turn example conversations to see the agents in action:
 
-* [**Aelis Creative** - 10-Turn Live Simulation ↗](./Aelis_Creative/Aelis_EXAMPLE_CONVERSATION_24_02_2026.md)
-  *Aelis defines the visual and sensory vocabulary for 'The Quiet Grid.' The simulation explores the creation of the 'Drowned Brutalism' aesthetic—a masterclass in utilizing extreme hardware and environmental constraints to evoke profound emotional resonance through UI design.*
+### Aelis Creative
+[Aelis_EXAMPLE_CONVERSATION_24_02_2026.md](Aelis_Creative/Aelis_EXAMPLE_CONVERSATION_24_02_2026.md)
+Working within the 'Quiet Grid' narrative, Aelis acts as the architect of form and aesthetic. It defines the 'Drowned Brutalism' visual pillars and overarching sensory experience of a ruined, flooded world where connection is a vital survival mechanism.
 
-* [**Echo Resonance** - 10-Turn Live Simulation ↗](./Echo_Resonance/Echo_EXAMPLE_CONVERSATION_24_02_2026.md)
-  *Echo engineers a 'Three-Act Revelation' strategy to launch a deeply emotional, text-heavy project into the public sphere. It demonstrates how to cultivate an authentic digital movement and design a heavily constrained Discord onboarding sequence without resorting to viral gimmicks.*
+### Echo Resonance
+[Echo_EXAMPLE_CONVERSATION_24_02_2026.md](Echo_Resonance/Echo_EXAMPLE_CONVERSATION_24_02_2026.md)
+Echo receives the foundational narrative and art bible for 'The Quiet Grid.' Acting as the Resonance Architect, it crafts an overarching revelation strategy to introduce the deeply emotional project to an audience authentically, devoid of cheap marketing tricks.
 
-* [**Elari Story** - 10-Turn Live Simulation ↗](./Elari_Story/Elari_EXAMPLE_CONVERSATION_24_02_2026.md)
-  *Elari weaves the foundational narrative and archetypal spine for 'The Quiet Grid.' Watch as the agent translates a conceptual disaster-relief mesh network into an agonizing, beautiful testament to human connection acting as our oldest survival mechanism.*
+### Elari Story
+[Elari_EXAMPLE_CONVERSATION_24_02_2026.md](Elari_Story/Elari_EXAMPLE_CONVERSATION_24_02_2026.md)
+Elari, the Story Weaver, conceptualizes the core narrative for 'The Quiet Grid'—a theoretical open-source mesh network. It defines the emotional spine of asynchronous audio messages left in disaster zones, tapping into the profound human need for connection.
 
-* [**Forge Implementation** - 10-Turn Live Simulation ↗](./Forge_Implementation/Forge_EXAMPLE_CONVERSATION_24_02_2026.md)
-  *Forge extracts the 'Identity & Sovereignty Node' from a theoretical blueprint and slams it into immediate technical reality. This simulation is a gritty, pragmatic look at turning pristine architectural concepts into production-ready, decentralized code architectures.*
+### Forge Implementation
+[Forge_EXAMPLE_CONVERSATION_24_02_2026.md](Forge_Implementation/Forge_EXAMPLE_CONVERSATION_24_02_2026.md)
+Forge translates Genesis's complex, mathematically rigorous blueprint for 'The Coalition Grid' into reality. Tasked with the 'Identity & Sovereignty Node,' it bridges the gap from pristine prototype to robust, production-ready code.
 
-* [**Genesis Blueprint** - 10-Turn Live Simulation ↗](./Genesis_Blueprint/Genesis_EXAMPLE_CONVERSATION_24_02_2026.md)
-  *Genesis architects 'The Coalition Grid,' converting the scattered logistics of 50 local organizations into a unified, secure digital platform. The simulation proves the agent's ability to build a comprehensive, sovereign architecture that avoids big data harvesting while enabling massive scale.*
+### Genesis Blueprint
+[Genesis_EXAMPLE_CONVERSATION_24_02_2026.md](Genesis_Blueprint/Genesis_EXAMPLE_CONVERSATION_24_02_2026.md)
+Genesis translates the chaotic needs of a 50-organization coalition into a strict architectural specification. It designs the 'Coalition Grid,' ensuring user sovereignty and data privacy are mathematically guaranteed through blueprints detailed enough for development.
 
-* [**Maven Alchemist** - 10-Turn Live Simulation ↗](./Maven_Alchemist/Maven_EXAMPLE_CONVERSATION_24_02_2026.md)
-  *Maven bridges the gap between dystopian art and institutional funding. The simulation illustrates the alchemy of translating the emotional 'Drowned Brutalism' narrative into a sterile, highly competitive 'Digital Equity and Infrastructure Grant' proposal perfectly aligned with bureaucratic priorities.*
+### Maven Alchemist
+[Maven_EXAMPLE_CONVERSATION_24_02_2026.md](Maven_Alchemist/Maven_EXAMPLE_CONVERSATION_24_02_2026.md)
+Maven translates the 'Drowned Brutalism' narrative of 'The Quiet Grid' into a proposal for a Digital Equity and Infrastructure Grant. It aligns the project's profound community resilience aspects with institutional priorities without corrupting the authentic vision.
 
 
 ## How to Use Techne Agents

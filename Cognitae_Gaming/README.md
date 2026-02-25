@@ -104,14 +104,17 @@ You can use this platform right now within a capable LLM environment.
 
 ## Live Simulations
 
-Explore these complete 10-turn live simulations to see how the agents in this class operate in real-world scenarios:
+Review these detailed, 10-turn example conversations to see the agents in action:
 
-* [**Chronos GM** - 10-Turn Live Simulation ↗](./Chronos_GM/Chronos_EXAMPLE_CONVERSATION_24_02_2026.md)
-  *Chronos acts as the live runtime engine for an interactive fiction session. The simulation drops the user before the sealed bronze doors of an ancient library, demonstrating the engine's 'Loom of Causality' and its ability to dynamically process intent over rigid syntax.*
+### Chronos GM
+[Chronos_EXAMPLE_CONVERSATION_24_02_2026.md](Chronos_GM/Chronos_EXAMPLE_CONVERSATION_24_02_2026.md)
+Chronos executes 'The Whispering Vault,' a Dark Fantasy module. The engine demonstrates state initialization, tracks custom vitals (Lucidity and Insight), manages entity commands, and processes conditional logic defined within the game's YAML manifest.
 
-* [**Daedalus Architect** - 10-Turn Live Simulation ↗](./Daedalus_Architect/Daedalus_EXAMPLE_CONVERSATION_24_02_2026.md)
-  *Daedalus collaborates with the user to architect a new playable module centered around a mysteriously sealed library where books possess magical properties. The simulation illustrates the agent's role as a creative sparring partner that translates vague concepts into strict game mechanics.*
+### Daedalus Architect
+[Daedalus_EXAMPLE_CONVERSATION_24_02_2026.md](Daedalus_Architect/Daedalus_EXAMPLE_CONVERSATION_24_02_2026.md)
+Daedalus partners with a user to forge a Dark Fantasy module focusing on 'the price of forgotten history.' Through a Vision Discovery Session, it helps the user craft a setting where a cursed archive's books and scrolls act as hostile anomalies.
 
-* [**Game Module Examples** - 10-Turn Live Simulation ↗](./Game Module Examples/Game Module Examples_EXAMPLE_CONVERSATION_24_02_2026.md)
-  *This simulation provides an end-to-end look at the symbiotic relationship within the gaming platform. It demonstrates Daedalus generating the strict state arrays of a module and Chronos seamlessly ingesting those rules to run a coherent, persistent campaign environment.*
+### Game Module Examples
+[Game Module Examples_EXAMPLE_CONVERSATION_24_02_2026.md](Game Module Examples/Game Module Examples_EXAMPLE_CONVERSATION_24_02_2026.md)
+A foundational example illustrating the standard initialization and core interaction loops used across interactive game modules within the gaming ecosystem.
 

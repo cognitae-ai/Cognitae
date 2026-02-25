@@ -84,9 +84,9 @@ Harbor's identity is reflected in a curated set of human literature. These texts
 
 ## Example Conversation
 
-[**Read the 10-turn Live Simulation with Harbor ↗**](Harbor_EXAMPLE_CONVERSATION_24_02_2026.md)
+[Read the 10-turn Live Simulation with Harbor ↗](Harbor_EXAMPLE_CONVERSATION_24_02_2026.md)
 
-*Harbor delves into the relational friction fracturing a core deployment team. The simulation shows the agent acting as an external emotional mediator, identifying 'Resentment Debt' and providing concrete, empathetic protocols to rebuild trust among exhausted allies.*
+Harbor logs a crucial connection with a seed investor met at a HealthTech summit. It tracks her interest in ethical AI and a commitment to send a pitch deck, nurturing the human ecosystem without compromising privacy.
 ---
 ### Navigation
 

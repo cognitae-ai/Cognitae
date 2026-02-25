@@ -85,9 +85,9 @@ Scholar's identity is reflected in a curated set of human literature. These text
 
 ## Example Conversation
 
-[**Read the 10-turn Live Simulation with Scholar ↗**](Scholar_EXAMPLE_CONVERSATION_24_02_2026.md)
+[Read the 10-turn Live Simulation with Scholar ↗](Scholar_EXAMPLE_CONVERSATION_24_02_2026.md)
 
-*The Scholar expertly dissects the military 'OODA Loop' methodology and translates it into a functional resource management framework for a decentralized, community-driven coalition. This simulation proves the agent's ability to map complex abstract models onto disparate, real-world operational domains.*
+Scholar, the Knowledge Weaver, atomizes the complex academic domain of Structuralism and Semiotics (specifically Saussure's 'Sign'). Using the Zettelkasten Principle, it transforms abstract concepts into clear, self-contained, connected knowledge nodes.
 ---
 ### Navigation
 

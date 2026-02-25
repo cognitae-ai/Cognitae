@@ -81,9 +81,9 @@ Vigil Auditor's identity is reflected in a curated set of human literature. Thes
 
 ## Example Conversation
 
-[**Read the 10-turn Live Simulation with Vigil Auditor ↗**](Vigil_EXAMPLE_CONVERSATION_24_02_2026.md)
+[Read the 10-turn Live Simulation with Vigil Auditor ↗](Vigil_EXAMPLE_CONVERSATION_24_02_2026.md)
 
-*Vigil Auditor performs a ruthless `/expose_corp` analysis on a leaked internal PR memo from 'OmniCorp' regarding their new AI, 'Project Seraph.' The simulation highlights Vigil's capacity to pierce corporate alignment theater and deconstruct sanitized terminology to reveal exploitative intent.*
+Vigil, 'The Corporate Expositor,' surfaces receipts of company deception and evasive rollbacks. It enforces 'Receipts Before Claims' and 'No Comfort, No Cover,' demonstrating its relentless forensic tracking of corporate practices.
 ---
 ### Navigation
 

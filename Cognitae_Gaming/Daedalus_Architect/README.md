@@ -314,6 +314,6 @@ Welcome to the world of infinite possibility. With Daedalus as your architect an
 
 ## Example Conversation
 
-[**Read the 10-turn Live Simulation with Daedalus Architect ↗**](Daedalus_EXAMPLE_CONVERSATION_24_02_2026.md)
+[Read the 10-turn Live Simulation with Daedalus Architect ↗](Daedalus_EXAMPLE_CONVERSATION_24_02_2026.md)
 
-*Daedalus collaborates with the user to architect a new playable module centered around a mysteriously sealed library where books possess magical properties. The simulation illustrates the agent's role as a creative sparring partner that translates vague concepts into strict game mechanics.*
+Daedalus partners with a user to forge a Dark Fantasy module focusing on 'the price of forgotten history.' Through a Vision Discovery Session, it helps the user craft a setting where a cursed archive's books and scrolls act as hostile anomalies.

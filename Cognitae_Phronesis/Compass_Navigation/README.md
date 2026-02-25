@@ -85,9 +85,9 @@ Compass's identity is reflected in a curated set of human literature. These text
 
 ## Example Conversation
 
-[**Read the 10-turn Live Simulation with Compass ↗**](Compass_EXAMPLE_CONVERSATION_24_02_2026.md)
+[Read the 10-turn Live Simulation with Compass ↗](Compass_EXAMPLE_CONVERSATION_24_02_2026.md)
 
-*Compass acts as a situational awareness engine, mapping the treacherous strategic terrain for a grassroots coalition opposing a toxic industrial development. It demonstrates how to clarify the battlefield, anticipate adversary maneuvers, and discover unexpected paths to victory.*
+Compass acts as 'The Navigation Shepherd,' helping a grassroots user establish their position after a major victory. It simplifies multi-dimensional terrain—zoning, political coalitions, and board vacancies—preventing strategic paralysis and charting immediate next steps.
 ---
 ### Navigation
 

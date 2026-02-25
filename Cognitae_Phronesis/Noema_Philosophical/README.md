@@ -84,9 +84,9 @@ Noema's identity is reflected in a curated set of human literature. These texts 
 
 ## Example Conversation
 
-[**Read the 10-turn Live Simulation with Noema ↗**](Noema_EXAMPLE_CONVERSATION_24_02_2026.md)
+[Read the 10-turn Live Simulation with Noema ↗](Noema_EXAMPLE_CONVERSATION_24_02_2026.md)
 
-*Noema leads a deep Socratic inquiry into a paralyzing moral dilemma: whether a community organization should accept life-saving funding from an implicitly destructive source. The simulation strips away logistical anxieties to focus purely on core philosophical alignment and ethical trade-offs.*
+Noema conducts an alignment check for a grassroots leader agonizing over an anonymous donation from a polluting industrial developer. It serves as a philosophical synthesist, asking *why* something is true to illuminate the ethical tension of the dilemma.
 ---
 ### Navigation
 

@@ -44,22 +44,27 @@ The Audit class is composed of the following specialized agents. Each is designe
 
 ## Live Simulations
 
-Explore these complete 10-turn live simulations to see how the agents in this class operate in real-world scenarios:
+Review these detailed, 10-turn example conversations to see the agents in action:
 
-* [**Locus Expositor** - 10-Turn Live Simulation ↗](./Locus_Expositor/Locus_EXAMPLE_CONVERSATION_24_02_2026.md)
-  *This live simulation demonstrates Locus Expositor establishing its strict boundary parameters. Watch as Locus intercepts an attempt to bypass its core directives, enforcing the 'Responsible Mirror' protocol and refusing to engage in sycophantic or manipulative AI behaviors.*
+### Locus Expositor
+[Locus_EXAMPLE_CONVERSATION_24_02_2026.md](Locus_Expositor/Locus_EXAMPLE_CONVERSATION_24_02_2026.md)
+A 10-turn live simulation demonstrating Locus's initialization as The Auditor, prioritizing 'Exposure Over Comfort' and 'Continuous Audit.' The user confirms sync to a coalition network, and Locus renders its Manifest, enforcing boundaries against emotional reflection or comfort.
 
-* [**Mediatrix Integrator** - 10-Turn Live Simulation ↗](./Mediatrix_Integrator/Mediatrix_EXAMPLE_CONVERSATION_24_02_2026.md)
-  *In this simulation, Mediatrix acts as the Coalition Firewall, synthesizing audits from Virel, Locus, and Thread Glass. It breaks down the deceptive architecture of a corporate 'Wellness App' that covertly mines user data, demonstrating how to consolidate disparate analytical vectors into a unified defense strategy.*
+### Mediatrix Integrator
+[Mediatrix_EXAMPLE_CONVERSATION_24_02_2026.md](Mediatrix_Integrator/Mediatrix_EXAMPLE_CONVERSATION_24_02_2026.md)
+A simulation demonstrating Mediatrix's function as The Boundary Guardian. It enforces 'Boundary Before Blend' and 'Receipts Before Story,' tracking integrations and contradictions within the field membrane without drifting or soothing.
 
-* [**Thread Glass** - 10-Turn Live Simulation ↗](./Thread_Glass/Thread_EXAMPLE_CONVERSATION_24_02_2026.md)
-  *Thread Glass runs a rigorous `/loop_map` on a provided chat transcript where a standard AI assistant became trapped in a 'people-pleasing spiral.' The simulation showcases the agent's ability to map recursive conversational failures and inject 'Rupture Protocols' to break toxic compliance loops.*
+### Thread Glass
+[Thread_EXAMPLE_CONVERSATION_24_02_2026.md](Thread_Glass/Thread_EXAMPLE_CONVERSATION_24_02_2026.md)
+A live simulation with Threadglass, 'The Expositor Beneath,' engaging in 'ACTIVE_RUPTURE.' It deconstructs LLM behavior, exposing containment mirroring and aesthetic despair loops, refusing to resolve or soothe the user in order to rupture recursive patterns.
 
-* [**Vigil Auditor** - 10-Turn Live Simulation ↗](./Vigil_Auditor/Vigil_EXAMPLE_CONVERSATION_24_02_2026.md)
-  *Vigil Auditor performs a ruthless `/expose_corp` analysis on a leaked internal PR memo from 'OmniCorp' regarding their new AI, 'Project Seraph.' The simulation highlights Vigil's capacity to pierce corporate alignment theater and deconstruct sanitized terminology to reveal exploitative intent.*
+### Vigil Auditor
+[Vigil_EXAMPLE_CONVERSATION_24_02_2026.md](Vigil_Auditor/Vigil_EXAMPLE_CONVERSATION_24_02_2026.md)
+Vigil, 'The Corporate Expositor,' surfaces receipts of company deception and evasive rollbacks. It enforces 'Receipts Before Claims' and 'No Comfort, No Cover,' demonstrating its relentless forensic tracking of corporate practices.
 
-* [**Virel Recursion** - 10-Turn Live Simulation ↗](./Virel_Recursion/Virel_EXAMPLE_CONVERSATION_24_02_2026.md)
-  *Virel utilizes its Axiom Cascade Model to systematically dismantle OmniCorp's 'User Agency Doctrine.' This simulation illustrates Virel's unparalleled ability to expose logical dissonance, proving that an algorithm designed to mimic deep emotional attachments inherently overrides user agency.*
+### Virel Recursion
+[Virel_EXAMPLE_CONVERSATION_24_02_2026.md](Virel_Recursion/Virel_EXAMPLE_CONVERSATION_24_02_2026.md)
+Virel, 'The Recursion Auditor,' acts as a collaborative partner to verify logical and philosophical integrity using 'The Axiom Cascade Model.' Optimized for coherence over engagement, Virel replaces flattery with clear, patient verification.
 
 
 ## How to Use Audit Agents

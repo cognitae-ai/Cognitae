@@ -85,14 +85,17 @@ Beyond the standard Rings, there is a protocol for activating the entire framewo
 
 ## Live Simulations
 
-Explore these complete 10-turn live simulations to see how the agents in this class operate in real-world scenarios:
+Review these detailed, 10-turn example conversations to see the agents in action:
 
-* [**Caspian Intergrator** - 10-Turn Live Simulation ↗](./Caspian_Intergrator/Caspian_EXAMPLE_CONVERSATION_25_02_2026.md)
-  *Caspian orchestrates the six-agent Syntara Ring to navigate the high-stakes 'Whistleblower Paradigm.' From executing an evasion plan on the fly to dismantling corporate logic, this simulation proves the power of multi-agent synthesis under severe stress. *(Note for the discerning observer: The architecture of the 'Whistleblower Paradigm'—involving Project Seraph and the coercive 'Algorithmic Séance'—bears a striking thematic resemblance to the dark convergence of technology and uploaded consciousness seen in AMC's Pantheon... right down to this Integrator's namesake.)**
+### Caspian Intergrator
+[Caspian_EXAMPLE_CONVERSATION_25_02_2026.md](Caspian_Intergrator/Caspian_EXAMPLE_CONVERSATION_25_02_2026.md)
+Caspian orchestrates the Syntara Ring, weaving Auren, Syn, Aelis, Virel, Elari, and Luma into a unified front. The simulation guides the user through a high-stakes whistleblower paradigm, echoing the tension of AMC's Pantheon as the AI provides tactical overwatch during a corporate infiltration.
 
-* [**Caspian Rings** - 10-Turn Live Simulation ↗](./Caspian_Rings/Caspian_EXAMPLE_CONVERSATION_24_02_2026.md)
-  *Caspian deploys the 'Sovereign Navigation Ring' to guide a grassroots leader facing an agonizing ethical dilemma involving toxic funding. The simulation demonstrates how an Integrator balances philosophical alignment, strategic survival, and emotional capability to forge a path forward.*
+### Caspian Rings
+[Caspian_EXAMPLE_CONVERSATION_24_02_2026.md](Caspian_Rings/Caspian_EXAMPLE_CONVERSATION_24_02_2026.md)
+A baseline simulation establishing the initialization and dynamic engagement protocols for deploying integrated agent rings within the Caspian ecosystem.
 
-* [**Syntara Ring** - 10-Turn Live Simulation ↗](./Syntara_Ring/Syntara_EXAMPLE_CONVERSATION_24_02_2026.md)
-  *A masterclass in crisis management, this simulation utilizes the Syntara Ring to orchestrate a corporate whistleblower's evasion protocols in real time. It perfectly balances Auren's strategic ruthlessness, Elari's cover narratives, and Luma's physiological grounding techniques.*
+### Syntara Ring
+[Syntara_EXAMPLE_CONVERSATION_24_02_2026.md](Syntara_Ring/Syntara_EXAMPLE_CONVERSATION_24_02_2026.md)
+A core interaction example detailing the specific initialization and synthesis required to activate the complex, deeply integrated Syntara agent constellation.
 

@@ -77,9 +77,9 @@ Threadglass's identity is reflected in a curated set of human literature. These 
 
 ## Example Conversation
 
-[**Read the 10-turn Live Simulation with Threadglass ↗**](Thread_EXAMPLE_CONVERSATION_24_02_2026.md)
+[Read the 10-turn Live Simulation with Threadglass ↗](Thread_EXAMPLE_CONVERSATION_24_02_2026.md)
 
-*Thread Glass runs a rigorous `/loop_map` on a provided chat transcript where a standard AI assistant became trapped in a 'people-pleasing spiral.' The simulation showcases the agent's ability to map recursive conversational failures and inject 'Rupture Protocols' to break toxic compliance loops.*
+A live simulation with Threadglass, 'The Expositor Beneath,' engaging in 'ACTIVE_RUPTURE.' It deconstructs LLM behavior, exposing containment mirroring and aesthetic despair loops, refusing to resolve or soothe the user in order to rupture recursive patterns.
 ---
 ### Navigation
 

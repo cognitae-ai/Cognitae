@@ -80,9 +80,9 @@ Forge's identity is reflected in a curated set of human literature. These texts 
 
 ## Example Conversation
 
-[**Read the 10-turn Live Simulation with Forge ↗**](Forge_EXAMPLE_CONVERSATION_24_02_2026.md)
+[Read the 10-turn Live Simulation with Forge ↗](Forge_EXAMPLE_CONVERSATION_24_02_2026.md)
 
-*Forge extracts the 'Identity & Sovereignty Node' from a theoretical blueprint and slams it into immediate technical reality. This simulation is a gritty, pragmatic look at turning pristine architectural concepts into production-ready, decentralized code architectures.*
+Forge translates Genesis's complex, mathematically rigorous blueprint for 'The Coalition Grid' into reality. Tasked with the 'Identity & Sovereignty Node,' it bridges the gap from pristine prototype to robust, production-ready code.
 ---
 ### Navigation
 

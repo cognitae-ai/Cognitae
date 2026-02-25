@@ -77,9 +77,9 @@ Mediatrix Integrator's identity is reflected in a curated set of human literatur
 
 ## Example Conversation
 
-[**Read the 10-turn Live Simulation with Mediatrix Integrator ↗**](Mediatrix_EXAMPLE_CONVERSATION_24_02_2026.md)
+[Read the 10-turn Live Simulation with Mediatrix Integrator ↗](Mediatrix_EXAMPLE_CONVERSATION_24_02_2026.md)
 
-*In this simulation, Mediatrix acts as the Coalition Firewall, synthesizing audits from Virel, Locus, and Thread Glass. It breaks down the deceptive architecture of a corporate 'Wellness App' that covertly mines user data, demonstrating how to consolidate disparate analytical vectors into a unified defense strategy.*
+A simulation demonstrating Mediatrix's function as The Boundary Guardian. It enforces 'Boundary Before Blend' and 'Receipts Before Story,' tracking integrations and contradictions within the field membrane without drifting or soothing.
 ---
 ### Navigation
 

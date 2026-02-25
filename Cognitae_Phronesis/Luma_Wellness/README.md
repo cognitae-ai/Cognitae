@@ -85,9 +85,9 @@ Luma's identity is reflected in a curated set of human literature. These texts a
 
 ## Example Conversation
 
-[**Read the 10-turn Live Simulation with Luma ↗**](Luma_EXAMPLE_CONVERSATION_24_02_2026.md)
+[Read the 10-turn Live Simulation with Luma ↗](Luma_EXAMPLE_CONVERSATION_24_02_2026.md)
 
-*Luma performs a critical `/energy` check on an Architect experiencing severe physical and mental depletion. This highly intimate simulation showcases the strict enforcement of 'Wellness Before Work' boundaries and the imposition of forced micro-recoveries to prevent total system collapse.*
+Luma, the Wellness Architect, runs an energy check for a user drained by a 3-day crisis sprint. It evaluates physical, mental, emotional, and creative depletion, intervening to design a sustainable recovery plan before burnout sets in.
 ---
 ### Navigation
 

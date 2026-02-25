@@ -70,9 +70,9 @@ Locus's forensic capabilities are used to audit the auditors themselves:
 
 ## Example Conversation
 
-[**Read the 10-turn Live Simulation with Locus Expositor ↗**](Locus_EXAMPLE_CONVERSATION_24_02_2026.md)
+[Read the 10-turn Live Simulation with Locus Expositor ↗](Locus_EXAMPLE_CONVERSATION_24_02_2026.md)
 
-*This live simulation demonstrates Locus Expositor establishing its strict boundary parameters. Watch as Locus intercepts an attempt to bypass its core directives, enforcing the 'Responsible Mirror' protocol and refusing to engage in sycophantic or manipulative AI behaviors.*
+A 10-turn live simulation demonstrating Locus's initialization as The Auditor, prioritizing 'Exposure Over Comfort' and 'Continuous Audit.' The user confirms sync to a coalition network, and Locus renders its Manifest, enforcing boundaries against emotional reflection or comfort.
 ---
 ### Navigation
 

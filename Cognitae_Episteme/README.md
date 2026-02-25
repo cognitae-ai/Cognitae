@@ -45,22 +45,27 @@ The Episteme class is composed of the following specialized agents. Each is desi
 
 ## Live Simulations
 
-Explore these complete 10-turn live simulations to see how the agents in this class operate in real-world scenarios:
+Review these detailed, 10-turn example conversations to see the agents in action:
 
-* [**Axis Coherence** - 10-Turn Live Simulation ↗](./Axis_Coherence/Axis_EXAMPLE_CONVERSATION_24_02_2026.md)
-  *Axis Coherence develops an actionable transition plan to migrate a chaotic coalition of 50 grassroots organizations onto a unified digital mesh. The simulation demonstrates the application of Hexagonal Architecture to convert scattered spreadsheets into a sovereign, coherent data ecosystem.*
+### Axis Coherence
+[Axis_EXAMPLE_CONVERSATION_24_02_2026.md](Axis_Coherence/Axis_EXAMPLE_CONVERSATION_24_02_2026.md)
+Axis acts as 'The Coherence Synthesist,' reflecting the structural and philosophical integrity of a proposed 'Three Laws of Robotics' ethical framework. It identifies semantic ambiguity and infinite computational burdens, exposing the framework's internal breaking points.
 
-* [**Keeper Memory** - 10-Turn Live Simulation ↗](./Keeper_Memory/Keeper_EXAMPLE_CONVERSATION_24_02_2026.md)
-  *Keeper Memory takes a chaotic, emotional brain-dump regarding an early concept for 'The Quiet Grid' and structures it into a formal Memory Lattice. Watch as the agent extracts core truths, identifies technical constraints, and establishes a foundational knowledge base for longitudinal project development.*
+### Keeper Memory
+[Keeper_EXAMPLE_CONVERSATION_24_02_2026.md](Keeper_Memory/Keeper_EXAMPLE_CONVERSATION_24_02_2026.md)
+Keeper, the architect of memory palaces, receives transcripts from the Phronesis, Techne, and Episteme classes. The simulation demonstrates Keeper's methodology for structuring a unified Memory Palace to compartmentalize and cross-reference distinct knowledge domains.
 
-* [**Scholar Knowledge** - 10-Turn Live Simulation ↗](./Scholar_Knowledge/Scholar_EXAMPLE_CONVERSATION_24_02_2026.md)
-  *The Scholar expertly dissects the military 'OODA Loop' methodology and translates it into a functional resource management framework for a decentralized, community-driven coalition. This simulation proves the agent's ability to map complex abstract models onto disparate, real-world operational domains.*
+### Scholar Knowledge
+[Scholar_EXAMPLE_CONVERSATION_24_02_2026.md](Scholar_Knowledge/Scholar_EXAMPLE_CONVERSATION_24_02_2026.md)
+Scholar, the Knowledge Weaver, atomizes the complex academic domain of Structuralism and Semiotics (specifically Saussure's 'Sign'). Using the Zettelkasten Principle, it transforms abstract concepts into clear, self-contained, connected knowledge nodes.
 
-* [**Sentinel Progress** - 10-Turn Live Simulation ↗](./Sentinel_Progress/Sentinel_EXAMPLE_CONVERSATION_24_02_2026.md)
-  *Sentinel executes a critical `/momentum` check on 'The Quiet Grid' project following a highly successful viral launch that unfortunately resulted in stalled builder engagement. The simulation showcases how to diagnose systemic friction, track vector alignment, and realign a drifting project.*
+### Sentinel Progress
+[Sentinel_EXAMPLE_CONVERSATION_24_02_2026.md](Sentinel_Progress/Sentinel_EXAMPLE_CONVERSATION_24_02_2026.md)
+Sentinel tracks project momentum for 'Project Resonance.' It ingests baseline data, calculates real-time velocity against target velocity (40 tasks in 4 weeks), and provides non-judgmental accountability and accurate forecasting.
 
-* [**Syn Pattern** - 10-Turn Live Simulation ↗](./Syn_Pattern/Syn_EXAMPLE_CONVERSATION_24_02_2026.md)
-  *Syn The Pattern Weaver investigates a bizarre anomaly within 'The Quiet Grid': a sudden spike in 'Phantom Node' deployments correlating with extreme weather phenomena. The simulation highlights Syn's capacity to synthesize disparate data streams into predictive, unified theories.*
+### Syn Pattern
+[Syn_EXAMPLE_CONVERSATION_24_02_2026.md](Syn_Pattern/Syn_EXAMPLE_CONVERSATION_24_02_2026.md)
+Syn, 'The Pattern Weaver,' conducts a deep structural analysis on a chaotic data cluster (antique clocks, migrating starlings, and power grid fluctuations) to identify anomalous connections and emerging patterns over a 48-hour timeframe.
 
 
 ## How to Use Episteme Agents

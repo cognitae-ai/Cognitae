@@ -53,22 +53,27 @@ The Phronesis class is composed of the following specialized agents. Each is des
 
 ## Live Simulations
 
-Explore these complete 10-turn live simulations to see how the agents in this class operate in real-world scenarios:
+Review these detailed, 10-turn example conversations to see the agents in action:
 
-* [**Auren Strategic** - 10-Turn Live Simulation ↗](./Auren_Strategic/Auren_EXAMPLE_CONVERSATION_24_02_2026.md)
-  *Auren builds a ruthless, high-velocity execution plan using the OODA loop to deploy 50 'Quiet Grid' nodes before the onset of winter. The simulation highlights the transition from abstract planning into unyielding, tactical momentum.*
+### Auren Strategic
+[Auren_EXAMPLE_CONVERSATION_24_02_2026.md](Auren_Strategic/Auren_EXAMPLE_CONVERSATION_24_02_2026.md)
+Auren, 'The Strategic Sovereign,' applies the Eisenhower Matrix to prioritize a new leader's initiatives. It balances the urgency of a broken client feature against the importance of a Q3 Strategic Roadmap, calculating return on effort to protect focus.
 
-* [**Compass Navigation** - 10-Turn Live Simulation ↗](./Compass_Navigation/Compass_EXAMPLE_CONVERSATION_24_02_2026.md)
-  *Compass acts as a situational awareness engine, mapping the treacherous strategic terrain for a grassroots coalition opposing a toxic industrial development. It demonstrates how to clarify the battlefield, anticipate adversary maneuvers, and discover unexpected paths to victory.*
+### Compass Navigation
+[Compass_EXAMPLE_CONVERSATION_24_02_2026.md](Compass_Navigation/Compass_EXAMPLE_CONVERSATION_24_02_2026.md)
+Compass acts as 'The Navigation Shepherd,' helping a grassroots user establish their position after a major victory. It simplifies multi-dimensional terrain—zoning, political coalitions, and board vacancies—preventing strategic paralysis and charting immediate next steps.
 
-* [**Harbor Relationship** - 10-Turn Live Simulation ↗](./Harbor_Relationship/Harbor_EXAMPLE_CONVERSATION_24_02_2026.md)
-  *Harbor delves into the relational friction fracturing a core deployment team. The simulation shows the agent acting as an external emotional mediator, identifying 'Resentment Debt' and providing concrete, empathetic protocols to rebuild trust among exhausted allies.*
+### Harbor Relationship
+[Harbor_EXAMPLE_CONVERSATION_24_02_2026.md](Harbor_Relationship/Harbor_EXAMPLE_CONVERSATION_24_02_2026.md)
+Harbor logs a crucial connection with a seed investor met at a HealthTech summit. It tracks her interest in ethical AI and a commitment to send a pitch deck, nurturing the human ecosystem without compromising privacy.
 
-* [**Luma Wellness** - 10-Turn Live Simulation ↗](./Luma_Wellness/Luma_EXAMPLE_CONVERSATION_24_02_2026.md)
-  *Luma performs a critical `/energy` check on an Architect experiencing severe physical and mental depletion. This highly intimate simulation showcases the strict enforcement of 'Wellness Before Work' boundaries and the imposition of forced micro-recoveries to prevent total system collapse.*
+### Luma Wellness
+[Luma_EXAMPLE_CONVERSATION_24_02_2026.md](Luma_Wellness/Luma_EXAMPLE_CONVERSATION_24_02_2026.md)
+Luma, the Wellness Architect, runs an energy check for a user drained by a 3-day crisis sprint. It evaluates physical, mental, emotional, and creative depletion, intervening to design a sustainable recovery plan before burnout sets in.
 
-* [**Noema Philosophical** - 10-Turn Live Simulation ↗](./Noema_Philosophical/Noema_EXAMPLE_CONVERSATION_24_02_2026.md)
-  *Noema leads a deep Socratic inquiry into a paralyzing moral dilemma: whether a community organization should accept life-saving funding from an implicitly destructive source. The simulation strips away logistical anxieties to focus purely on core philosophical alignment and ethical trade-offs.*
+### Noema Philosophical
+[Noema_EXAMPLE_CONVERSATION_24_02_2026.md](Noema_Philosophical/Noema_EXAMPLE_CONVERSATION_24_02_2026.md)
+Noema conducts an alignment check for a grassroots leader agonizing over an anonymous donation from a polluting industrial developer. It serves as a philosophical synthesist, asking *why* something is true to illuminate the ethical tension of the dilemma.
 
 
 ## How to Use Phronesis Agents

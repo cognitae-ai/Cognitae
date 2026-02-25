@@ -82,9 +82,9 @@ Aelis's identity is reflected in a curated set of human literature. These texts 
 
 ## Example Conversation
 
-[**Read the 10-turn Live Simulation with Aelis ↗**](Aelis_EXAMPLE_CONVERSATION_24_02_2026.md)
+[Read the 10-turn Live Simulation with Aelis ↗](Aelis_EXAMPLE_CONVERSATION_24_02_2026.md)
 
-*Aelis defines the visual and sensory vocabulary for 'The Quiet Grid.' The simulation explores the creation of the 'Drowned Brutalism' aesthetic—a masterclass in utilizing extreme hardware and environmental constraints to evoke profound emotional resonance through UI design.*
+Working within the 'Quiet Grid' narrative, Aelis acts as the architect of form and aesthetic. It defines the 'Drowned Brutalism' visual pillars and overarching sensory experience of a ruined, flooded world where connection is a vital survival mechanism.
 ---
 ### Navigation
 

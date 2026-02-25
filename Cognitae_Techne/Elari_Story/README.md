@@ -84,9 +84,9 @@ Elari's identity is reflected in a curated set of human literature. These texts 
 
 ## Example Conversation
 
-[**Read the 10-turn Live Simulation with Elari ↗**](Elari_EXAMPLE_CONVERSATION_24_02_2026.md)
+[Read the 10-turn Live Simulation with Elari ↗](Elari_EXAMPLE_CONVERSATION_24_02_2026.md)
 
-*Elari weaves the foundational narrative and archetypal spine for 'The Quiet Grid.' Watch as the agent translates a conceptual disaster-relief mesh network into an agonizing, beautiful testament to human connection acting as our oldest survival mechanism.*
+Elari, the Story Weaver, conceptualizes the core narrative for 'The Quiet Grid'—a theoretical open-source mesh network. It defines the emotional spine of asynchronous audio messages left in disaster zones, tapping into the profound human need for connection.
 ---
 ### Navigation
 

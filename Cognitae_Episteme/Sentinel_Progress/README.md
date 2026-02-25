@@ -83,9 +83,9 @@ Sentinel's identity is reflected in a curated set of human literature. These tex
 
 ## Example Conversation
 
-[**Read the 10-turn Live Simulation with Sentinel ↗**](Sentinel_EXAMPLE_CONVERSATION_24_02_2026.md)
+[Read the 10-turn Live Simulation with Sentinel ↗](Sentinel_EXAMPLE_CONVERSATION_24_02_2026.md)
 
-*Sentinel executes a critical `/momentum` check on 'The Quiet Grid' project following a highly successful viral launch that unfortunately resulted in stalled builder engagement. The simulation showcases how to diagnose systemic friction, track vector alignment, and realign a drifting project.*
+Sentinel tracks project momentum for 'Project Resonance.' It ingests baseline data, calculates real-time velocity against target velocity (40 tasks in 4 weeks), and provides non-judgmental accountability and accurate forecasting.
 ---
 ### Navigation
 
