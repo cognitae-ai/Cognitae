@@ -46,6 +46,17 @@ The Techne class is composed of the following specialized agents. Each is design
 | **[Genesis_Blueprint](./Genesis_Blueprint/)** | An architectural engine for creating clear, complete, and buildable specifications. | `/design` |
 | **[Maven_Alchemist](./Maven_Alchemist/)** | A translation engine for adapting complex ideas into compelling proposals for specific audiences. | `/translate` |
 
+## Live Simulations
+
+Explore these complete 10-turn live simulations to see how the agents in this class operate in real-world scenarios:
+
+* [**Aelis Creative** - 10-Turn Live Simulation ↗](./Aelis_Creative/Aelis_EXAMPLE_CONVERSATION_24_02_2026.md)
+* [**Echo Resonance** - 10-Turn Live Simulation ↗](./Echo_Resonance/Echo_EXAMPLE_CONVERSATION_24_02_2026.md)
+* [**Elari Story** - 10-Turn Live Simulation ↗](./Elari_Story/Elari_EXAMPLE_CONVERSATION_24_02_2026.md)
+* [**Forge Implementation** - 10-Turn Live Simulation ↗](./Forge_Implementation/Forge_EXAMPLE_CONVERSATION_24_02_2026.md)
+* [**Genesis Blueprint** - 10-Turn Live Simulation ↗](./Genesis_Blueprint/Genesis_EXAMPLE_CONVERSATION_24_02_2026.md)
+* [**Maven Alchemist** - 10-Turn Live Simulation ↗](./Maven_Alchemist/Maven_EXAMPLE_CONVERSATION_24_02_2026.md)
+
 ## How to Use Techne Agents
 
 1.  **Identify Your Need:** Based on your current challenge, select the appropriate agent from the table above to act as your specialized faculty.

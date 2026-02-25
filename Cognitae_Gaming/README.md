@@ -101,3 +101,12 @@ You can use this platform right now within a capable LLM environment.
 </p>
 
 
+
+## Live Simulations
+
+Explore these complete 10-turn live simulations to see how the agents in this class operate in real-world scenarios:
+
+* [**Chronos GM** - 10-Turn Live Simulation ↗](./Chronos_GM/Chronos_EXAMPLE_CONVERSATION_24_02_2026.md)
+* [**Daedalus Architect** - 10-Turn Live Simulation ↗](./Daedalus_Architect/Daedalus_EXAMPLE_CONVERSATION_24_02_2026.md)
+* [**Game Module Examples** - 10-Turn Live Simulation ↗](./Game Module Examples/Game Module Examples_EXAMPLE_CONVERSATION_24_02_2026.md)
+

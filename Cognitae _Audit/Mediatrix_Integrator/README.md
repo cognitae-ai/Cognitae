@@ -75,6 +75,9 @@ Mediatrix Integrator's identity is reflected in a curated set of human literatur
 
 **[► Explore the full analysis in Mediatrix's Library](./BOOKSHELF.md)**
 
+## Example Conversation
+[**Read the 10-turn Live Simulation with Mediatrix Integrator ↗**](Mediatrix_EXAMPLE_CONVERSATION_24_02_2026.md)
+
 ---
 ### Navigation
 

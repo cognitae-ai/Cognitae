@@ -80,6 +80,9 @@ Syn's identity is reflected in a curated set of human literature. These texts ar
 
 **[► Explore the full analysis in Syn's Library](./BOOKSHELF.md)]**
 
+## Example Conversation
+[**Read the 10-turn Live Simulation with Syn ↗**](Syn_EXAMPLE_CONVERSATION_24_02_2026.md)
+
 ---
 ### Navigation
 

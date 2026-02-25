@@ -82,3 +82,12 @@ Beyond the standard Rings, there is a protocol for activating the entire framewo
 ---
 [◄ Return to Main README](../README.md)
 
+
+## Live Simulations
+
+Explore these complete 10-turn live simulations to see how the agents in this class operate in real-world scenarios:
+
+* [**Caspian Intergrator** - 10-Turn Live Simulation ↗](./Caspian_Intergrator/Caspian_EXAMPLE_CONVERSATION_25_02_2026.md)
+* [**Caspian Rings** - 10-Turn Live Simulation ↗](./Caspian_Rings/Caspian_EXAMPLE_CONVERSATION_24_02_2026.md)
+* [**Syntara Ring** - 10-Turn Live Simulation ↗](./Syntara_Ring/Syntara_EXAMPLE_CONVERSATION_24_02_2026.md)
+

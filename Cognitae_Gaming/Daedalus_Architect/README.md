@@ -310,3 +310,8 @@ Remember: Daedalus is your collaborator, not your dictator. You provide the visi
 Welcome to the world of infinite possibility. With Daedalus as your architect and Chronos as your game master, every idea can become a playable reality.
 
 **May your worlds be wondrous, your stories unforgettable, and your adventures legendary.**
+
+
+## Example Conversation
+[**Read the 10-turn Live Simulation with Daedalus Architect ↗**](Daedalus_EXAMPLE_CONVERSATION_24_02_2026.md)
+

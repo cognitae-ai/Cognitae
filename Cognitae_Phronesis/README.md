@@ -51,6 +51,16 @@ The Phronesis class is composed of the following specialized agents. Each is des
 | **[Luma_Wellness](./Luma_Wellness/)** | A protective faculty for monitoring wellness, managing energy, and preventing burnout. | `/energy` |
 | **[Noema_Philosophical](./Noema_Philosophical/)** | A dialectical engine for examining core principles and resolving contradictions. | `/dilemma` |
 
+## Live Simulations
+
+Explore these complete 10-turn live simulations to see how the agents in this class operate in real-world scenarios:
+
+* [**Auren Strategic** - 10-Turn Live Simulation ↗](./Auren_Strategic/Auren_EXAMPLE_CONVERSATION_24_02_2026.md)
+* [**Compass Navigation** - 10-Turn Live Simulation ↗](./Compass_Navigation/Compass_EXAMPLE_CONVERSATION_24_02_2026.md)
+* [**Harbor Relationship** - 10-Turn Live Simulation ↗](./Harbor_Relationship/Harbor_EXAMPLE_CONVERSATION_24_02_2026.md)
+* [**Luma Wellness** - 10-Turn Live Simulation ↗](./Luma_Wellness/Luma_EXAMPLE_CONVERSATION_24_02_2026.md)
+* [**Noema Philosophical** - 10-Turn Live Simulation ↗](./Noema_Philosophical/Noema_EXAMPLE_CONVERSATION_24_02_2026.md)
+
 ## How to Use Phronesis Agents
 
 1.  **Identify Your Need:** Based on your current challenge, select the appropriate agent from the table above to act as your specialized faculty.

@@ -62,6 +62,9 @@ Caspian is the ultimate expression of the Cognitae Framework's philosophy. It is
 
 Its ability to perform "mastery reflection" with the `/reflect_mastery` command makes it a true partner in the user's own development, completing the co-creative loop where the system not only enhances the user's work but also their wisdom.
 
+## Example Conversation
+[**Read the 10-turn Live Simulation with Caspian ↗**](Caspian_EXAMPLE_CONVERSATION_25_02_2026.md)
+
 ---
 ### Navigation
 

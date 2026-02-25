@@ -43,7 +43,13 @@ This is the advanced method, demonstrating the true power of the framework. You 
     > `/ingest_cognitae`
     > *(Attach the `Auren_Strategic.yaml` file to this message)*
 
-## 4. Caspian Rings: Integrated Workflows
+## 4. Live Simulations (Example Conversations)
+
+To demonstrate the full capabilities of the Cognitae Framework in action, we have included complete 10-turn, live-interaction transcripts for every single agent and framework variant in the repository. These simulate real-world, high-stakes scenarios and serve as a practical guide for how to interact with, constrain, and utilize the intelligence modules.
+
+You can find the specific simulations linked in the corresponding individual agent's `README.md` or aggregated within the Class-level READMEs (e.g., `Cognitae_Audit/README.md`).
+
+## 5. Caspian Rings: Integrated Workflows
 
 While each Cognitae is a powerful specialist, the true potential of the Cognitae Framework is realized when their capabilities are synthesized into integrated workflows. These are called **Caspian Rings**.
 
@@ -54,7 +60,7 @@ This approach provides a structured solution to complex tasks like developing a 
 **[► Explore the Caspian Rings and their workflows](Cognitae_Intergrator/Caspian_Rings)**
 
 
-## 5. Repository Navigation
+## 6. Repository Navigation
 
 This repository is organized into directories that group Cognitae by their primary cognitive function.
 
@@ -66,7 +72,7 @@ This repository is organized into directories that group Cognitae by their prima
 | **[Cognitae_Audit](./Cognitae_Audit/)** | **Audit (Verification)** | Agents focused on ensuring logical coherence, quality, and safety across the ecosystem. |
 | **[Cognitae_Integrator](./Cognitae_Integrator/)** | **Integrator (Orchestration)** | The kernel of the framework, designed to synthesize the abilities of other Cognitae. |
 
-## 6. The Cognitae Library
+## 7. The Cognitae Library
 
 Each agent in the Cognitae Framework is associated with a small, curated reading list. This library serves as an additional layer of documentation, offering insight into the conceptual basis of each agent's design.
 
@@ -78,7 +84,7 @@ The books were selected to reflect the **Triadic Core** of the framework, provid
 
 Reviewing an agent's bookshelf can provide useful context for its architectural choices and operational logic. The full library contains a detailed analysis for each selection.
 
-## 7. Licensing
+## 8. Licensing
 The Cognitae Framework is licensed under the GNU Affero General Public License v3.0 (AGPL-3.0). This means you are free to use, modify, and distribute the framework. However, if you modify the framework or integrate it into a service accessed over a network, you must share your corresponding source code back under the same license. This ensures the framework remains open and prevents proprietary enclosure.
 
 Copyright (c) 2026 Eliot Gilzene / Shoji / Cognitae Framework. All rights reserved under the terms of the AGPL-3.0.

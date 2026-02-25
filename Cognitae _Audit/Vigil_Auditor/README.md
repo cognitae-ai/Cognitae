@@ -79,6 +79,9 @@ Vigil Auditor's identity is reflected in a curated set of human literature. Thes
 
 **[► Explore the full analysis in Vigil's Library](./BOOKSHELF.md)**
 
+## Example Conversation
+[**Read the 10-turn Live Simulation with Vigil Auditor ↗**](Vigil_EXAMPLE_CONVERSATION_24_02_2026.md)
+
 ---
 ### Navigation
 

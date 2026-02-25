@@ -79,6 +79,9 @@ Echo's identity is reflected in a curated set of human literature. These texts a
 
 **[► Explore the full analysis in Echo's Library](./BOOKSHELF.md)**
 
+## Example Conversation
+[**Read the 10-turn Live Simulation with Echo ↗**](Echo_EXAMPLE_CONVERSATION_24_02_2026.md)
+
 ---
 ### Navigation
 

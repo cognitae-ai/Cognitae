@@ -81,6 +81,9 @@ Axis's identity is reflected in a curated set of human literature. These texts a
 
 **[► Explore the full analysis in Axis's Library](./BOOKSHELF.md)]**
 
+## Example Conversation
+[**Read the 10-turn Live Simulation with Axis ↗**](Axis_EXAMPLE_CONVERSATION_24_02_2026.md)
+
 ---
 ### Navigation
 

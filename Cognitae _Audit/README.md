@@ -42,6 +42,16 @@ The Audit class is composed of the following specialized agents. Each is designe
 | **[Vigil_Auditor](./Vigil_Auditor/)** | An adversarial audit engine for exposing corporate AI alignment theatre. | `/expose_corp` |
 | **[Virel_Recursion](./Virel_Recursion/)** | A recursive logical engine for auditing the coherence of systems against their foundational principles. | `/audit` |
 
+## Live Simulations
+
+Explore these complete 10-turn live simulations to see how the agents in this class operate in real-world scenarios:
+
+* [**Locus Expositor** - 10-Turn Live Simulation ↗](./Locus_Expositor/Locus_EXAMPLE_CONVERSATION_24_02_2026.md)
+* [**Mediatrix Integrator** - 10-Turn Live Simulation ↗](./Mediatrix_Integrator/Mediatrix_EXAMPLE_CONVERSATION_24_02_2026.md)
+* [**Thread Glass** - 10-Turn Live Simulation ↗](./Thread_Glass/Thread_EXAMPLE_CONVERSATION_24_02_2026.md)
+* [**Vigil Auditor** - 10-Turn Live Simulation ↗](./Vigil_Auditor/Vigil_EXAMPLE_CONVERSATION_24_02_2026.md)
+* [**Virel Recursion** - 10-Turn Live Simulation ↗](./Virel_Recursion/Virel_EXAMPLE_CONVERSATION_24_02_2026.md)
+
 ## How to Use Audit Agents
 
 1.  **Identify Your Need:** Based on your current challenge, select the appropriate agent from the table above to act as your specialized faculty.

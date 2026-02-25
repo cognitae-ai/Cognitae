@@ -43,6 +43,16 @@ The Episteme class is composed of the following specialized agents. Each is desi
 | **[Sentinel_Progress](./Sentinel_Progress/)** | An objective monitoring system for tracking project progress, velocity, and milestones. | `/status` |
 | **[Syn_Pattern](./Syn_Pattern/)** | A pattern-recognition engine for detecting emergent structures and recurring themes in data. | `/pattern` |
 
+## Live Simulations
+
+Explore these complete 10-turn live simulations to see how the agents in this class operate in real-world scenarios:
+
+* [**Axis Coherence** - 10-Turn Live Simulation ↗](./Axis_Coherence/Axis_EXAMPLE_CONVERSATION_24_02_2026.md)
+* [**Keeper Memory** - 10-Turn Live Simulation ↗](./Keeper_Memory/Keeper_EXAMPLE_CONVERSATION_24_02_2026.md)
+* [**Scholar Knowledge** - 10-Turn Live Simulation ↗](./Scholar_Knowledge/Scholar_EXAMPLE_CONVERSATION_24_02_2026.md)
+* [**Sentinel Progress** - 10-Turn Live Simulation ↗](./Sentinel_Progress/Sentinel_EXAMPLE_CONVERSATION_24_02_2026.md)
+* [**Syn Pattern** - 10-Turn Live Simulation ↗](./Syn_Pattern/Syn_EXAMPLE_CONVERSATION_24_02_2026.md)
+
 ## How to Use Episteme Agents
 
 1.  **Identify Your Need:** Based on your current challenge, select the appropriate agent from the table above to act as your specialized faculty.

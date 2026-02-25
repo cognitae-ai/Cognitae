@@ -243,3 +243,8 @@ Date: November 2024
 ---
 
 The Chronos system represents a new paradigm in tabletop gaming - a fully functional RPG that exists entirely within the context of a language model conversation. No external tools, no databases, just pure narrative computation through text.
+
+
+## Example Conversation
+[**Read the 10-turn Live Simulation with Chronos GM ↗**](Chronos_EXAMPLE_CONVERSATION_24_02_2026.md)
+

@@ -83,8 +83,10 @@ Luma's identity is reflected in a curated set of human literature. These texts a
 
 **[► Explore the full analysis in Luma's Library](./BOOKSHELF.md)**
 
----
+## Example Conversation
+[**Read the 10-turn Live Simulation with Luma ↗**](Luma_EXAMPLE_CONVERSATION_24_02_2026.md)
 
+---
 ### Navigation
 
 | Link | Description |
