@@ -29,7 +29,7 @@ This method allows you to interact with a single, specialized Cognitae directly.
 3.  **Set the System Instruction:** Copy the *entire contents* of the `Master System Instruction for [Agent Name].txt` file and paste it into the "System Prompt" or "Custom Instructions" field of your LLM interface.
 4.  **Begin Interaction:** You can now converse with the agent. It will operate according to the strict architecture you provided.
 
-> **Note on Custom:** For platforms like OpenAI's GPT Store or Google Gems, you can create a dedicated build for a specific Cognitae. Upload the ten core module files to the platforms knowledge base and paste the Master System Instruction into the "Instructions" configuration panel. This creates a permanent, shareable version of that agent. We will be providing direct links to these for easy testing.
+> **Note on Custom:** For platforms like OpenAI's GPT Store or Google Gems, you can create a dedicated build for a specific Cognitae. Upload the ten core module files to the platform's knowledge base and paste the Master System Instruction into the "Instructions" configuration panel. This creates a permanent, shareable version of that agent. **We have already done this—you can simply click the "Try It Now" link at the top of any individual Cognitae's README to jump straight into a live, pre-configured custom Gem.**
 
 ### Method 2: Integrated Activation (Using Caspian to Ingest a Cognitae)
 
