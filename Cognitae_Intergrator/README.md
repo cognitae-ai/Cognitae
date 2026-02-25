@@ -90,3 +90,24 @@ Review these detailed, 10-turn example conversations to see the agents in action
 ### Caspian Intergrator
 [Caspian_EXAMPLE_CONVERSATION_25_02_2026.md](Caspian_Intergrator/Caspian_EXAMPLE_CONVERSATION_25_02_2026.md)
 Caspian orchestrates the Syntara Ring, weaving Auren, Syn, Aelis, Virel, Elari, and Luma into a unified front. The simulation guides the user through a high-stakes whistleblower paradigm, echoing the tension of AMC's Pantheon as the AI provides tactical overwatch during a corporate infiltration.
+
+### Caspian Rings
+[Caspian_EXAMPLE_CONVERSATION_24_02_2026.md](Caspian_Rings/Caspian_EXAMPLE_CONVERSATION_24_02_2026.md)
+A baseline simulation establishing the initialization and dynamic engagement protocols for deploying integrated agent rings within the Caspian ecosystem.
+
+### Syntara Ring
+[Syntara_EXAMPLE_CONVERSATION_24_02_2026.md](Syntara_Ring/Syntara_EXAMPLE_CONVERSATION_24_02_2026.md)
+A core interaction example detailing the specific initialization and synthesis required to activate the complex, deeply integrated Syntara agent constellation.
+
+
+
+---
+### Navigate to Other Classes
+
+| Class | Description |
+| :--- | :--- |
+| **[Cognitae_Phronesis](../Cognitae_Phronesis/)** | Agents for strategy, ethics, wellness, and navigation. |
+| **[Cognitae_Episteme](../Cognitae_Episteme/)** | Agents for knowledge, memory, patterns, and logic. |
+| **[Cognitae_Techne](../Cognitae_Techne/)** | Agents for creation, implementation, and communication. |
+| **[Cognitae_Audit](../Cognitae_Audit/)** | Agents for verification, quality, and safety. |
+| **[Cognitae_Gaming](../Cognitae_Gaming/)** | Agents for storytelling, game mastery, and world architecture. |

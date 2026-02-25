@@ -118,3 +118,15 @@ Daedalus partners with a user to forge a Dark Fantasy module focusing on 'the pr
 [Game Module Examples_EXAMPLE_CONVERSATION_24_02_2026.md](Game Module Examples/Game Module Examples_EXAMPLE_CONVERSATION_24_02_2026.md)
 A foundational example illustrating the standard initialization and core interaction loops used across interactive game modules within the gaming ecosystem.
 
+
+
+---
+### Navigate to Other Classes
+
+| Class | Description |
+| :--- | :--- |
+| **[Cognitae_Phronesis](../Cognitae_Phronesis/)** | Agents for strategy, ethics, wellness, and navigation. |
+| **[Cognitae_Episteme](../Cognitae_Episteme/)** | Agents for knowledge, memory, patterns, and logic. |
+| **[Cognitae_Techne](../Cognitae_Techne/)** | Agents for creation, implementation, and communication. |
+| **[Cognitae_Audit](../Cognitae_Audit/)** | Agents for verification, quality, and safety. |
+| **[Cognitae_Intergrator](../Cognitae_Intergrator/)** | The kernel agent for orchestrating the framework. |

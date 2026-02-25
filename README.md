@@ -70,6 +70,7 @@ This repository is organized into directories that group Cognitae by their prima
 | **[Cognitae_Episteme](./Cognitae_Episteme/)** | **Episteme (Abstract Knowledge)** | Agents focused on knowledge, memory, patterns, and logical coherence—the "what" of understanding. |
 | **[Cognitae_Techne](./Cognitae_Techne/)** | **Techne (Skilled Craft)** | Agents focused on creation, implementation, and communication—the "how" of making. |
 | **[Cognitae_Audit](./Cognitae_Audit/)** | **Audit (Verification)** | Agents focused on ensuring logical coherence, quality, and safety across the ecosystem. |
+| **[Cognitae_Gaming](./Cognitae_Gaming/)** | **Gaming (Worldbuilding)** | Agents focused on storytelling, game mastery, and world architecture. |
 | **[Cognitae_Integrator](./Cognitae_Intergrator/)** | **Integrator (Orchestration)** | The kernel of the framework, designed to synthesize the abilities of other Cognitae. |
 
 ## 7. The Cognitae Library
