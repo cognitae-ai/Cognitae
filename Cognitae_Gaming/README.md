@@ -11,14 +11,12 @@ The Cognitae Gaming platform is a suite of tools designed to leverage the power 
 
 This separation of concerns allows creators to focus on their vision without getting bogged down in technical implementation, and it allows Chronos to be a highly optimized and reliable game engine.
 
-## Why This Project is Unique
-
-This is more than just a collection of prompts; it's a fully-engineered, LLM-native game development platform with several key architectural innovations:
+## Why This is Unique
 
 *   **Symbiotic Design**: Daedalus (the authoring tool) and Chronos (the game engine) are built as two halves of a whole. Modules built with Daedalus are guaranteed to be 100% compatible with the Chronos runtime, creating a seamless "build-and-play" workflow.
-*   **The "Memory Spore" System**: Chronos solves the problem of LLM context persistence with a brilliant serialization protocol. It can generate a compact, verifiable, and portable save state, allowing for true, long-term campaign play across multiple sessions.
+*   **The "Memory Spore" System**: Chronos solves the problem of LLM context persistence with a brilliant serialization protocol. It can generate a compact, verifiable, and portable save state, allowing for true, long-term campaign play across multiple sessions. (WIP)
 *   **The "Loom of Causality"**: This is Chronos's event-driven engine. It allows for complex, unscripted interactions and consequences, creating emergent narratives that respond logically to player actions rather than following a rigid script.
-*   **Collaborative AI Personas**: Daedalus isn't just a tool; it's a creative partner. It embodies multiple "Creative Companions" (the Poet, the Keeper, the Challenger) to make the complex process of game design feel like a natural conversation with a team of experts.
+*   **Collaborative AI Personas**: Daedalus is a creative partner. It embodies multiple "Creative Companions" (the Poet, the Keeper, the Challenger) to make the complex process of game design feel like a natural conversation with a team of experts.
 
 ---
 
