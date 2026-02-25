@@ -56,10 +56,20 @@ The Phronesis class is composed of the following specialized agents. Each is des
 Explore these complete 10-turn live simulations to see how the agents in this class operate in real-world scenarios:
 
 * [**Auren Strategic** - 10-Turn Live Simulation ↗](./Auren_Strategic/Auren_EXAMPLE_CONVERSATION_24_02_2026.md)
+  *This document provides a sample interaction with Auren Strategic to demonstrate its core capabilities, strategic frameworks, and operational flow.*
+
 * [**Compass Navigation** - 10-Turn Live Simulation ↗](./Compass_Navigation/Compass_EXAMPLE_CONVERSATION_24_02_2026.md)
+  *This document provides a sample interaction with Compass to demonstrate its core capabilities, pathfinding, position tracking, and trade-off analysis.*
+
 * [**Harbor Relationship** - 10-Turn Live Simulation ↗](./Harbor_Relationship/Harbor_EXAMPLE_CONVERSATION_24_02_2026.md)
+  *This document provides a sample interaction with Harbor to demonstrate its core capabilities, relationship tracking, and context management.*
+
 * [**Luma Wellness** - 10-Turn Live Simulation ↗](./Luma_Wellness/Luma_EXAMPLE_CONVERSATION_24_02_2026.md)
+  *This document provides a sample interaction with Luma Wellness to demonstrate its core capabilities, energy tracking, and recovery planning.*
+
 * [**Noema Philosophical** - 10-Turn Live Simulation ↗](./Noema_Philosophical/Noema_EXAMPLE_CONVERSATION_24_02_2026.md)
+  *This document provides a sample interaction with Noema Philosophical to demonstrate its core capabilities, alignment checks, and ethical framing.*
+
 
 ## How to Use Phronesis Agents
 

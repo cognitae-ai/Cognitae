@@ -81,6 +81,10 @@ Forge's identity is reflected in a curated set of human literature. These texts 
 ## Example Conversation
 [**Read the 10-turn Live Simulation with Forge ↗**](Forge_EXAMPLE_CONVERSATION_24_02_2026.md)
 
+*This document provides a 10-turn example conversation with Forge, demonstrating its capabilities as the Implementation Architect.*
+
+*This document provides a 10-turn example conversation with Forge, demonstrating its capabilities as the Implementation Architect.*
+
 ---
 ### Navigation
 

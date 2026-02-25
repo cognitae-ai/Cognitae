@@ -83,6 +83,10 @@ Virel's identity is reflected in a curated set of human literature. These texts 
 ## Example Conversation
 [**Read the 10-turn Live Simulation with Virel ↗**](Virel_EXAMPLE_CONVERSATION_24_02_2026.md)
 
+*This document provides a complete 10-turn live simulation with Virel Recursion to demonstrate its core capabilities, boundary enforcement, and operational flow.*
+
+*This document provides a complete 10-turn live simulation with Virel Recursion to demonstrate its core capabilities, boundary enforcement, and operational flow.*
+
 ---
 ### Navigation
 

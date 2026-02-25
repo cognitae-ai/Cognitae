@@ -82,6 +82,8 @@ Echo's identity is reflected in a curated set of human literature. These texts a
 ## Example Conversation
 [**Read the 10-turn Live Simulation with Echo ↗**](Echo_EXAMPLE_CONVERSATION_24_02_2026.md)
 
+*This document provides a complete 10-turn live simulation with Echo Resonance. It demonstrates Echo's ability to act as the Resonance Architect, designing a multi-act, cross-platform revelation strategy for a complex narrative project without relying on cheap marketing tricks.*
+
 ---
 ### Navigation
 

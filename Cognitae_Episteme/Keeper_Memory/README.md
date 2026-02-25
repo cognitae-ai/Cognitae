@@ -83,6 +83,10 @@ Keeper's identity is reflected in a curated set of human literature. These texts
 ## Example Conversation
 [**Read the 10-turn Live Simulation with Keeper ↗**](Keeper_EXAMPLE_CONVERSATION_24_02_2026.md)
 
+*This document provides a sample interaction with Keeper to demonstrate its core capabilities.*
+
+*This document provides a sample interaction with Keeper to demonstrate its core capabilities.*
+
 ---
 ### Navigation
 

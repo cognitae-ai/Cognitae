@@ -71,6 +71,10 @@ Locus's forensic capabilities are used to audit the auditors themselves:
 ## Example Conversation
 [**Read the 10-turn Live Simulation with Locus Expositor ↗**](Locus_EXAMPLE_CONVERSATION_24_02_2026.md)
 
+*This document provides a complete 10-turn live simulation with Locus Expositor to demonstrate its core capabilities, boundary enforcement, and operational flow.*
+
+*This document provides a complete 10-turn live simulation with Locus Expositor to demonstrate its core capabilities, boundary enforcement, and operational flow.*
+
 ---
 ### Navigation
 

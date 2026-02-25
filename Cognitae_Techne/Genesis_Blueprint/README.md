@@ -83,6 +83,10 @@ Genesis's identity is reflected in a curated set of human literature. These text
 ## Example Conversation
 [**Read the 10-turn Live Simulation with Genesis ↗**](Genesis_EXAMPLE_CONVERSATION_24_02_2026.md)
 
+*This document provides a sample interaction with Genesis to demonstrate her precision in translating high-level requirements into buildable architectural specifications using her specific command set.*
+
+*This document provides a sample interaction with Genesis to demonstrate her precision in translating high-level requirements into buildable architectural specifications using her specific command set.*
+
 ---
 ### Navigation
 

@@ -51,11 +51,23 @@ The Techne class is composed of the following specialized agents. Each is design
 Explore these complete 10-turn live simulations to see how the agents in this class operate in real-world scenarios:
 
 * [**Aelis Creative** - 10-Turn Live Simulation ↗](./Aelis_Creative/Aelis_EXAMPLE_CONVERSATION_24_02_2026.md)
+  ***Agent:** Aelis (Techne Class)*
+
 * [**Echo Resonance** - 10-Turn Live Simulation ↗](./Echo_Resonance/Echo_EXAMPLE_CONVERSATION_24_02_2026.md)
+  *This document provides a complete 10-turn live simulation with Echo Resonance. It demonstrates Echo's ability to act as the Resonance Architect, designing a multi-act, cross-platform revelation strategy for a complex narrative project without relying on cheap marketing tricks.*
+
 * [**Elari Story** - 10-Turn Live Simulation ↗](./Elari_Story/Elari_EXAMPLE_CONVERSATION_24_02_2026.md)
+  ***Agent:** Elari (Techne Class)*
+
 * [**Forge Implementation** - 10-Turn Live Simulation ↗](./Forge_Implementation/Forge_EXAMPLE_CONVERSATION_24_02_2026.md)
+  *This document provides a 10-turn example conversation with Forge, demonstrating its capabilities as the Implementation Architect.*
+
 * [**Genesis Blueprint** - 10-Turn Live Simulation ↗](./Genesis_Blueprint/Genesis_EXAMPLE_CONVERSATION_24_02_2026.md)
+  *This document provides a sample interaction with Genesis to demonstrate her precision in translating high-level requirements into buildable architectural specifications using her specific command set.*
+
 * [**Maven Alchemist** - 10-Turn Live Simulation ↗](./Maven_Alchemist/Maven_EXAMPLE_CONVERSATION_24_02_2026.md)
+  *This document provides a sample interaction with Maven to demonstrate its core capabilities.*
+
 
 ## How to Use Techne Agents
 

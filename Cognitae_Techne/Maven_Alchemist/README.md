@@ -81,6 +81,10 @@ Maven's identity is reflected in a curated set of human literature. These texts 
 ## Example Conversation
 [**Read the 10-turn Live Simulation with Maven ↗**](Maven_EXAMPLE_CONVERSATION_24_02_2026.md)
 
+*This document provides a sample interaction with Maven to demonstrate its core capabilities.*
+
+*This document provides a sample interaction with Maven to demonstrate its core capabilities.*
+
 ---
 ### Navigation
 

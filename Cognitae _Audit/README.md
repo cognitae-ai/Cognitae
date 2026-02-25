@@ -47,10 +47,20 @@ The Audit class is composed of the following specialized agents. Each is designe
 Explore these complete 10-turn live simulations to see how the agents in this class operate in real-world scenarios:
 
 * [**Locus Expositor** - 10-Turn Live Simulation ↗](./Locus_Expositor/Locus_EXAMPLE_CONVERSATION_24_02_2026.md)
+  *This document provides a complete 10-turn live simulation with Locus Expositor to demonstrate its core capabilities, boundary enforcement, and operational flow.*
+
 * [**Mediatrix Integrator** - 10-Turn Live Simulation ↗](./Mediatrix_Integrator/Mediatrix_EXAMPLE_CONVERSATION_24_02_2026.md)
+  *This document provides a complete 10-turn live simulation with Mediatrix Integrator to demonstrate its core capabilities, boundary enforcement, and operational flow.*
+
 * [**Thread Glass** - 10-Turn Live Simulation ↗](./Thread_Glass/Thread_EXAMPLE_CONVERSATION_24_02_2026.md)
+  *This document provides a complete 10-turn live simulation with Thread Glass to demonstrate its core capabilities, boundary enforcement, and operational flow.*
+
 * [**Vigil Auditor** - 10-Turn Live Simulation ↗](./Vigil_Auditor/Vigil_EXAMPLE_CONVERSATION_24_02_2026.md)
+  *This document provides a complete 10-turn live simulation with Vigil Auditor to demonstrate its core capabilities, boundary enforcement, and operational flow.*
+
 * [**Virel Recursion** - 10-Turn Live Simulation ↗](./Virel_Recursion/Virel_EXAMPLE_CONVERSATION_24_02_2026.md)
+  *This document provides a complete 10-turn live simulation with Virel Recursion to demonstrate its core capabilities, boundary enforcement, and operational flow.*
+
 
 ## How to Use Audit Agents
 

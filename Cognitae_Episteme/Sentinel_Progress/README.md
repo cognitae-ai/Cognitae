@@ -84,6 +84,10 @@ Sentinel's identity is reflected in a curated set of human literature. These tex
 ## Example Conversation
 [**Read the 10-turn Live Simulation with Sentinel ↗**](Sentinel_EXAMPLE_CONVERSATION_24_02_2026.md)
 
+***Agent:** Sentinel (Episteme Class)*
+
+***Agent:** Sentinel (Episteme Class)*
+
 ---
 ### Navigation
 

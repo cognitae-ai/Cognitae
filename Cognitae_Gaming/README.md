@@ -107,6 +107,11 @@ You can use this platform right now within a capable LLM environment.
 Explore these complete 10-turn live simulations to see how the agents in this class operate in real-world scenarios:
 
 * [**Chronos GM** - 10-Turn Live Simulation ↗](./Chronos_GM/Chronos_EXAMPLE_CONVERSATION_24_02_2026.md)
+  *This document provides a complete 10-turn live simulation with Chronos_GM running "The Whispering Vault" module. It demonstrates the engine's ability to initialize state, track custom vitals (Lucidity and Insight), process specific entity commands (Parse, Erase), manage global module variables, and dynamically respond to conditional logic defined in the game YAML.*
+
 * [**Daedalus Architect** - 10-Turn Live Simulation ↗](./Daedalus_Architect/Daedalus_EXAMPLE_CONVERSATION_24_02_2026.md)
+  *This document provides a complete 10-turn live simulation with Daedalus_Architect to demonstrate its game creation capabilities, adherence to its core pillars, and YAML module generation.*
+
 * [**Game Module Examples** - 10-Turn Live Simulation ↗](./Game Module Examples/Game Module Examples_EXAMPLE_CONVERSATION_24_02_2026.md)
+  *This document provides a complete 10-turn live simulation demonstrating Daedalus and Chronos working together to architect and execute a playable interactive fiction module.*
 

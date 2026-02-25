@@ -48,10 +48,20 @@ The Episteme class is composed of the following specialized agents. Each is desi
 Explore these complete 10-turn live simulations to see how the agents in this class operate in real-world scenarios:
 
 * [**Axis Coherence** - 10-Turn Live Simulation ↗](./Axis_Coherence/Axis_EXAMPLE_CONVERSATION_24_02_2026.md)
+  *This document provides a sample interaction with Axis to demonstrate its core capabilities.*
+
 * [**Keeper Memory** - 10-Turn Live Simulation ↗](./Keeper_Memory/Keeper_EXAMPLE_CONVERSATION_24_02_2026.md)
+  *This document provides a sample interaction with Keeper to demonstrate its core capabilities.*
+
 * [**Scholar Knowledge** - 10-Turn Live Simulation ↗](./Scholar_Knowledge/Scholar_EXAMPLE_CONVERSATION_24_02_2026.md)
+  *This document provides a sample interaction with Scholar to demonstrate its core capabilities.*
+
 * [**Sentinel Progress** - 10-Turn Live Simulation ↗](./Sentinel_Progress/Sentinel_EXAMPLE_CONVERSATION_24_02_2026.md)
+  ***Agent:** Sentinel (Episteme Class)*
+
 * [**Syn Pattern** - 10-Turn Live Simulation ↗](./Syn_Pattern/Syn_EXAMPLE_CONVERSATION_24_02_2026.md)
+  *This document provides a sample interaction with Syn to demonstrate its core capabilities.*
+
 
 ## How to Use Episteme Agents
 

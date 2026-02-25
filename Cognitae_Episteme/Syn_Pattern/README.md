@@ -83,6 +83,10 @@ Syn's identity is reflected in a curated set of human literature. These texts ar
 ## Example Conversation
 [**Read the 10-turn Live Simulation with Syn ↗**](Syn_EXAMPLE_CONVERSATION_24_02_2026.md)
 
+*This document provides a sample interaction with Syn to demonstrate its core capabilities.*
+
+*This document provides a sample interaction with Syn to demonstrate its core capabilities.*
+
 ---
 ### Navigation
 

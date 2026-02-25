@@ -85,6 +85,10 @@ Elari's identity is reflected in a curated set of human literature. These texts 
 ## Example Conversation
 [**Read the 10-turn Live Simulation with Elari ↗**](Elari_EXAMPLE_CONVERSATION_24_02_2026.md)
 
+***Agent:** Elari (Techne Class)*
+
+***Agent:** Elari (Techne Class)*
+
 ---
 ### Navigation
 

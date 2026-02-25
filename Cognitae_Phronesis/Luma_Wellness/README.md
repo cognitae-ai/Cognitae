@@ -86,6 +86,10 @@ Luma's identity is reflected in a curated set of human literature. These texts a
 ## Example Conversation
 [**Read the 10-turn Live Simulation with Luma ↗**](Luma_EXAMPLE_CONVERSATION_24_02_2026.md)
 
+*This document provides a sample interaction with Luma Wellness to demonstrate its core capabilities, energy tracking, and recovery planning.*
+
+*This document provides a sample interaction with Luma Wellness to demonstrate its core capabilities, energy tracking, and recovery planning.*
+
 ---
 ### Navigation
 

@@ -86,6 +86,10 @@ Compass's identity is reflected in a curated set of human literature. These text
 ## Example Conversation
 [**Read the 10-turn Live Simulation with Compass ↗**](Compass_EXAMPLE_CONVERSATION_24_02_2026.md)
 
+*This document provides a sample interaction with Compass to demonstrate its core capabilities, pathfinding, position tracking, and trade-off analysis.*
+
+*This document provides a sample interaction with Compass to demonstrate its core capabilities, pathfinding, position tracking, and trade-off analysis.*
+
 ---
 ### Navigation
 

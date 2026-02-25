@@ -88,6 +88,11 @@ Beyond the standard Rings, there is a protocol for activating the entire framewo
 Explore these complete 10-turn live simulations to see how the agents in this class operate in real-world scenarios:
 
 * [**Caspian Intergrator** - 10-Turn Live Simulation ↗](./Caspian_Intergrator/Caspian_EXAMPLE_CONVERSATION_25_02_2026.md)
+  *This document provides a complete 10-turn live simulation with the Caspian Integrator orchestrating the "Syntara Ring"—a foundational integration of Auren, Syn, Aelis, Virel, Elari, and Luma. It demonstrates the engine's ability to dynamically ingest capabilities via `/ingest_cognitae`, synthesize a multi-agent workflow for a high-stakes "Whistleblower Paradigm" scenario via `/guide_workflow`, adapt to a sudden crisis using Luma's protocols, and finally perform a `/reflect_mastery` analysis of the user's execution. *(Note for the discerning observer: The architecture of the 'Whistleblower Paradigm'—involving Project Seraph and the coercive 'Algorithmic Séance'—bears a striking thematic resemblance to the dark convergence of technology and uploaded consciousness seen in AMC's Pantheon... right down to this Integrator's namesake.)**
+
 * [**Caspian Rings** - 10-Turn Live Simulation ↗](./Caspian_Rings/Caspian_EXAMPLE_CONVERSATION_24_02_2026.md)
+  *This document provides a sample interaction with Caspian Rings to demonstrate its core capabilities and operational flow.*
+
 * [**Syntara Ring** - 10-Turn Live Simulation ↗](./Syntara_Ring/Syntara_EXAMPLE_CONVERSATION_24_02_2026.md)
+  *This document provides a sample interaction with Syntara Ring to demonstrate its core capabilities and operational flow.*
 

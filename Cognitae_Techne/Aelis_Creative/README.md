@@ -83,6 +83,10 @@ Aelis's identity is reflected in a curated set of human literature. These texts 
 ## Example Conversation
 [**Read the 10-turn Live Simulation with Aelis ↗**](Aelis_EXAMPLE_CONVERSATION_24_02_2026.md)
 
+***Agent:** Aelis (Techne Class)*
+
+***Agent:** Aelis (Techne Class)*
+
 ---
 ### Navigation
 
