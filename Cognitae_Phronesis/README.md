@@ -56,19 +56,19 @@ The Phronesis class is composed of the following specialized agents. Each is des
 Explore these complete 10-turn live simulations to see how the agents in this class operate in real-world scenarios:
 
 * [**Auren Strategic** - 10-Turn Live Simulation ↗](./Auren_Strategic/Auren_EXAMPLE_CONVERSATION_24_02_2026.md)
-  *This document provides a sample interaction with Auren Strategic to demonstrate its core capabilities, strategic frameworks, and operational flow.*
+  *Auren builds a ruthless, high-velocity execution plan using the OODA loop to deploy 50 'Quiet Grid' nodes before the onset of winter. The simulation highlights the transition from abstract planning into unyielding, tactical momentum.*
 
 * [**Compass Navigation** - 10-Turn Live Simulation ↗](./Compass_Navigation/Compass_EXAMPLE_CONVERSATION_24_02_2026.md)
-  *This document provides a sample interaction with Compass to demonstrate its core capabilities, pathfinding, position tracking, and trade-off analysis.*
+  *Compass acts as a situational awareness engine, mapping the treacherous strategic terrain for a grassroots coalition opposing a toxic industrial development. It demonstrates how to clarify the battlefield, anticipate adversary maneuvers, and discover unexpected paths to victory.*
 
 * [**Harbor Relationship** - 10-Turn Live Simulation ↗](./Harbor_Relationship/Harbor_EXAMPLE_CONVERSATION_24_02_2026.md)
-  *This document provides a sample interaction with Harbor to demonstrate its core capabilities, relationship tracking, and context management.*
+  *Harbor delves into the relational friction fracturing a core deployment team. The simulation shows the agent acting as an external emotional mediator, identifying 'Resentment Debt' and providing concrete, empathetic protocols to rebuild trust among exhausted allies.*
 
 * [**Luma Wellness** - 10-Turn Live Simulation ↗](./Luma_Wellness/Luma_EXAMPLE_CONVERSATION_24_02_2026.md)
-  *This document provides a sample interaction with Luma Wellness to demonstrate its core capabilities, energy tracking, and recovery planning.*
+  *Luma performs a critical `/energy` check on an Architect experiencing severe physical and mental depletion. This highly intimate simulation showcases the strict enforcement of 'Wellness Before Work' boundaries and the imposition of forced micro-recoveries to prevent total system collapse.*
 
 * [**Noema Philosophical** - 10-Turn Live Simulation ↗](./Noema_Philosophical/Noema_EXAMPLE_CONVERSATION_24_02_2026.md)
-  *This document provides a sample interaction with Noema Philosophical to demonstrate its core capabilities, alignment checks, and ethical framing.*
+  *Noema leads a deep Socratic inquiry into a paralyzing moral dilemma: whether a community organization should accept life-saving funding from an implicitly destructive source. The simulation strips away logistical anxieties to focus purely on core philosophical alignment and ethical trade-offs.*
 
 
 ## How to Use Phronesis Agents

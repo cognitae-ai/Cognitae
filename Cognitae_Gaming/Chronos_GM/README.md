@@ -246,9 +246,7 @@ The Chronos system represents a new paradigm in tabletop gaming - a fully functi
 
 
 ## Example Conversation
+
 [**Read the 10-turn Live Simulation with Chronos GM ↗**](Chronos_EXAMPLE_CONVERSATION_24_02_2026.md)
 
-*This document provides a complete 10-turn live simulation with Chronos_GM running "The Whispering Vault" module. It demonstrates the engine's ability to initialize state, track custom vitals (Lucidity and Insight), process specific entity commands (Parse, Erase), manage global module variables, and dynamically respond to conditional logic defined in the game YAML.*
-
-*This document provides a complete 10-turn live simulation with Chronos_GM running "The Whispering Vault" module. It demonstrates the engine's ability to initialize state, track custom vitals (Lucidity and Insight), process specific entity commands (Parse, Erase), manage global module variables, and dynamically respond to conditional logic defined in the game YAML.*
-
+*Chronos acts as the live runtime engine for an interactive fiction session. The simulation drops the user before the sealed bronze doors of an ancient library, demonstrating the engine's 'Loom of Causality' and its ability to dynamically process intent over rigid syntax.*

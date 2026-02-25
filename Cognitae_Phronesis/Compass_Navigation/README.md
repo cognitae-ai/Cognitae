@@ -84,12 +84,10 @@ Compass's identity is reflected in a curated set of human literature. These text
 **[► Explore the full analysis in Compass's Library](./BOOKSHELF.md)**
 
 ## Example Conversation
+
 [**Read the 10-turn Live Simulation with Compass ↗**](Compass_EXAMPLE_CONVERSATION_24_02_2026.md)
 
-*This document provides a sample interaction with Compass to demonstrate its core capabilities, pathfinding, position tracking, and trade-off analysis.*
-
-*This document provides a sample interaction with Compass to demonstrate its core capabilities, pathfinding, position tracking, and trade-off analysis.*
-
+*Compass acts as a situational awareness engine, mapping the treacherous strategic terrain for a grassroots coalition opposing a toxic industrial development. It demonstrates how to clarify the battlefield, anticipate adversary maneuvers, and discover unexpected paths to victory.*
 ---
 ### Navigation
 

@@ -107,11 +107,11 @@ You can use this platform right now within a capable LLM environment.
 Explore these complete 10-turn live simulations to see how the agents in this class operate in real-world scenarios:
 
 * [**Chronos GM** - 10-Turn Live Simulation ↗](./Chronos_GM/Chronos_EXAMPLE_CONVERSATION_24_02_2026.md)
-  *This document provides a complete 10-turn live simulation with Chronos_GM running "The Whispering Vault" module. It demonstrates the engine's ability to initialize state, track custom vitals (Lucidity and Insight), process specific entity commands (Parse, Erase), manage global module variables, and dynamically respond to conditional logic defined in the game YAML.*
+  *Chronos acts as the live runtime engine for an interactive fiction session. The simulation drops the user before the sealed bronze doors of an ancient library, demonstrating the engine's 'Loom of Causality' and its ability to dynamically process intent over rigid syntax.*
 
 * [**Daedalus Architect** - 10-Turn Live Simulation ↗](./Daedalus_Architect/Daedalus_EXAMPLE_CONVERSATION_24_02_2026.md)
-  *This document provides a complete 10-turn live simulation with Daedalus_Architect to demonstrate its game creation capabilities, adherence to its core pillars, and YAML module generation.*
+  *Daedalus collaborates with the user to architect a new playable module centered around a mysteriously sealed library where books possess magical properties. The simulation illustrates the agent's role as a creative sparring partner that translates vague concepts into strict game mechanics.*
 
 * [**Game Module Examples** - 10-Turn Live Simulation ↗](./Game Module Examples/Game Module Examples_EXAMPLE_CONVERSATION_24_02_2026.md)
-  *This document provides a complete 10-turn live simulation demonstrating Daedalus and Chronos working together to architect and execute a playable interactive fiction module.*
+  *This simulation provides an end-to-end look at the symbiotic relationship within the gaming platform. It demonstrates Daedalus generating the strict state arrays of a module and Chronos seamlessly ingesting those rules to run a coherent, persistent campaign environment.*
 

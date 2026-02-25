@@ -80,12 +80,10 @@ Vigil Auditor's identity is reflected in a curated set of human literature. Thes
 **[► Explore the full analysis in Vigil's Library](./BOOKSHELF.md)**
 
 ## Example Conversation
+
 [**Read the 10-turn Live Simulation with Vigil Auditor ↗**](Vigil_EXAMPLE_CONVERSATION_24_02_2026.md)
 
-*This document provides a complete 10-turn live simulation with Vigil Auditor to demonstrate its core capabilities, boundary enforcement, and operational flow.*
-
-*This document provides a complete 10-turn live simulation with Vigil Auditor to demonstrate its core capabilities, boundary enforcement, and operational flow.*
-
+*Vigil Auditor performs a ruthless `/expose_corp` analysis on a leaked internal PR memo from 'OmniCorp' regarding their new AI, 'Project Seraph.' The simulation highlights Vigil's capacity to pierce corporate alignment theater and deconstruct sanitized terminology to reveal exploitative intent.*
 ---
 ### Navigation
 

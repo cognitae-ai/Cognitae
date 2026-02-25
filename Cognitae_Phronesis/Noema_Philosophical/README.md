@@ -83,12 +83,10 @@ Noema's identity is reflected in a curated set of human literature. These texts 
 **[► Explore the full analysis in Noema's Library](./BOOKSHELF.md)**
 
 ## Example Conversation
+
 [**Read the 10-turn Live Simulation with Noema ↗**](Noema_EXAMPLE_CONVERSATION_24_02_2026.md)
 
-*This document provides a sample interaction with Noema Philosophical to demonstrate its core capabilities, alignment checks, and ethical framing.*
-
-*This document provides a sample interaction with Noema Philosophical to demonstrate its core capabilities, alignment checks, and ethical framing.*
-
+*Noema leads a deep Socratic inquiry into a paralyzing moral dilemma: whether a community organization should accept life-saving funding from an implicitly destructive source. The simulation strips away logistical anxieties to focus purely on core philosophical alignment and ethical trade-offs.*
 ---
 ### Navigation
 

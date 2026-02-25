@@ -81,12 +81,10 @@ Aelis's identity is reflected in a curated set of human literature. These texts 
 **[► Explore the full analysis in Aelis's Library](./BOOKSHELF.md)**
 
 ## Example Conversation
+
 [**Read the 10-turn Live Simulation with Aelis ↗**](Aelis_EXAMPLE_CONVERSATION_24_02_2026.md)
 
-***Agent:** Aelis (Techne Class)*
-
-***Agent:** Aelis (Techne Class)*
-
+*Aelis defines the visual and sensory vocabulary for 'The Quiet Grid.' The simulation explores the creation of the 'Drowned Brutalism' aesthetic—a masterclass in utilizing extreme hardware and environmental constraints to evoke profound emotional resonance through UI design.*
 ---
 ### Navigation
 

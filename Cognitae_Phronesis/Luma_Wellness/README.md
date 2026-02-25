@@ -84,12 +84,10 @@ Luma's identity is reflected in a curated set of human literature. These texts a
 **[► Explore the full analysis in Luma's Library](./BOOKSHELF.md)**
 
 ## Example Conversation
+
 [**Read the 10-turn Live Simulation with Luma ↗**](Luma_EXAMPLE_CONVERSATION_24_02_2026.md)
 
-*This document provides a sample interaction with Luma Wellness to demonstrate its core capabilities, energy tracking, and recovery planning.*
-
-*This document provides a sample interaction with Luma Wellness to demonstrate its core capabilities, energy tracking, and recovery planning.*
-
+*Luma performs a critical `/energy` check on an Architect experiencing severe physical and mental depletion. This highly intimate simulation showcases the strict enforcement of 'Wellness Before Work' boundaries and the imposition of forced micro-recoveries to prevent total system collapse.*
 ---
 ### Navigation
 

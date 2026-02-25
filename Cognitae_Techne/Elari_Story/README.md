@@ -83,12 +83,10 @@ Elari's identity is reflected in a curated set of human literature. These texts 
 **[► Explore the full analysis in Elari's Library](./BOOKSHELF.md)**
 
 ## Example Conversation
+
 [**Read the 10-turn Live Simulation with Elari ↗**](Elari_EXAMPLE_CONVERSATION_24_02_2026.md)
 
-***Agent:** Elari (Techne Class)*
-
-***Agent:** Elari (Techne Class)*
-
+*Elari weaves the foundational narrative and archetypal spine for 'The Quiet Grid.' Watch as the agent translates a conceptual disaster-relief mesh network into an agonizing, beautiful testament to human connection acting as our oldest survival mechanism.*
 ---
 ### Navigation
 

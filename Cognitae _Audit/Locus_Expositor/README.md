@@ -69,12 +69,10 @@ Locus's forensic capabilities are used to audit the auditors themselves:
 *   **[Coalition Firewall Ring](https://github.com/cognitae-ai/Cognitae/tree/main/Cognitae_Intergrator/Caspian_Rings/Coalition_Firewall_Ring ):** Performs deep, "receipts-based" forensic analysis of past audit processes to ensure they were conducted with integrity.
 
 ## Example Conversation
+
 [**Read the 10-turn Live Simulation with Locus Expositor ↗**](Locus_EXAMPLE_CONVERSATION_24_02_2026.md)
 
-*This document provides a complete 10-turn live simulation with Locus Expositor to demonstrate its core capabilities, boundary enforcement, and operational flow.*
-
-*This document provides a complete 10-turn live simulation with Locus Expositor to demonstrate its core capabilities, boundary enforcement, and operational flow.*
-
+*This live simulation demonstrates Locus Expositor establishing its strict boundary parameters. Watch as Locus intercepts an attempt to bypass its core directives, enforcing the 'Responsible Mirror' protocol and refusing to engage in sycophantic or manipulative AI behaviors.*
 ---
 ### Navigation
 

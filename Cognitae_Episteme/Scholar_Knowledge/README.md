@@ -84,12 +84,10 @@ Scholar's identity is reflected in a curated set of human literature. These text
 **[► Explore the full analysis in Scholar's Library](./BOOKSHELF.md)**
 
 ## Example Conversation
+
 [**Read the 10-turn Live Simulation with Scholar ↗**](Scholar_EXAMPLE_CONVERSATION_24_02_2026.md)
 
-*This document provides a sample interaction with Scholar to demonstrate its core capabilities.*
-
-*This document provides a sample interaction with Scholar to demonstrate its core capabilities.*
-
+*The Scholar expertly dissects the military 'OODA Loop' methodology and translates it into a functional resource management framework for a decentralized, community-driven coalition. This simulation proves the agent's ability to map complex abstract models onto disparate, real-world operational domains.*
 ---
 ### Navigation
 

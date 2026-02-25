@@ -51,22 +51,22 @@ The Techne class is composed of the following specialized agents. Each is design
 Explore these complete 10-turn live simulations to see how the agents in this class operate in real-world scenarios:
 
 * [**Aelis Creative** - 10-Turn Live Simulation ↗](./Aelis_Creative/Aelis_EXAMPLE_CONVERSATION_24_02_2026.md)
-  ***Agent:** Aelis (Techne Class)*
+  *Aelis defines the visual and sensory vocabulary for 'The Quiet Grid.' The simulation explores the creation of the 'Drowned Brutalism' aesthetic—a masterclass in utilizing extreme hardware and environmental constraints to evoke profound emotional resonance through UI design.*
 
 * [**Echo Resonance** - 10-Turn Live Simulation ↗](./Echo_Resonance/Echo_EXAMPLE_CONVERSATION_24_02_2026.md)
-  *This document provides a complete 10-turn live simulation with Echo Resonance. It demonstrates Echo's ability to act as the Resonance Architect, designing a multi-act, cross-platform revelation strategy for a complex narrative project without relying on cheap marketing tricks.*
+  *Echo engineers a 'Three-Act Revelation' strategy to launch a deeply emotional, text-heavy project into the public sphere. It demonstrates how to cultivate an authentic digital movement and design a heavily constrained Discord onboarding sequence without resorting to viral gimmicks.*
 
 * [**Elari Story** - 10-Turn Live Simulation ↗](./Elari_Story/Elari_EXAMPLE_CONVERSATION_24_02_2026.md)
-  ***Agent:** Elari (Techne Class)*
+  *Elari weaves the foundational narrative and archetypal spine for 'The Quiet Grid.' Watch as the agent translates a conceptual disaster-relief mesh network into an agonizing, beautiful testament to human connection acting as our oldest survival mechanism.*
 
 * [**Forge Implementation** - 10-Turn Live Simulation ↗](./Forge_Implementation/Forge_EXAMPLE_CONVERSATION_24_02_2026.md)
-  *This document provides a 10-turn example conversation with Forge, demonstrating its capabilities as the Implementation Architect.*
+  *Forge extracts the 'Identity & Sovereignty Node' from a theoretical blueprint and slams it into immediate technical reality. This simulation is a gritty, pragmatic look at turning pristine architectural concepts into production-ready, decentralized code architectures.*
 
 * [**Genesis Blueprint** - 10-Turn Live Simulation ↗](./Genesis_Blueprint/Genesis_EXAMPLE_CONVERSATION_24_02_2026.md)
-  *This document provides a sample interaction with Genesis to demonstrate her precision in translating high-level requirements into buildable architectural specifications using her specific command set.*
+  *Genesis architects 'The Coalition Grid,' converting the scattered logistics of 50 local organizations into a unified, secure digital platform. The simulation proves the agent's ability to build a comprehensive, sovereign architecture that avoids big data harvesting while enabling massive scale.*
 
 * [**Maven Alchemist** - 10-Turn Live Simulation ↗](./Maven_Alchemist/Maven_EXAMPLE_CONVERSATION_24_02_2026.md)
-  *This document provides a sample interaction with Maven to demonstrate its core capabilities.*
+  *Maven bridges the gap between dystopian art and institutional funding. The simulation illustrates the alchemy of translating the emotional 'Drowned Brutalism' narrative into a sterile, highly competitive 'Digital Equity and Infrastructure Grant' proposal perfectly aligned with bureaucratic priorities.*
 
 
 ## How to Use Techne Agents

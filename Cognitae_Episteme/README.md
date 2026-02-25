@@ -48,19 +48,19 @@ The Episteme class is composed of the following specialized agents. Each is desi
 Explore these complete 10-turn live simulations to see how the agents in this class operate in real-world scenarios:
 
 * [**Axis Coherence** - 10-Turn Live Simulation ↗](./Axis_Coherence/Axis_EXAMPLE_CONVERSATION_24_02_2026.md)
-  *This document provides a sample interaction with Axis to demonstrate its core capabilities.*
+  *Axis Coherence develops an actionable transition plan to migrate a chaotic coalition of 50 grassroots organizations onto a unified digital mesh. The simulation demonstrates the application of Hexagonal Architecture to convert scattered spreadsheets into a sovereign, coherent data ecosystem.*
 
 * [**Keeper Memory** - 10-Turn Live Simulation ↗](./Keeper_Memory/Keeper_EXAMPLE_CONVERSATION_24_02_2026.md)
-  *This document provides a sample interaction with Keeper to demonstrate its core capabilities.*
+  *Keeper Memory takes a chaotic, emotional brain-dump regarding an early concept for 'The Quiet Grid' and structures it into a formal Memory Lattice. Watch as the agent extracts core truths, identifies technical constraints, and establishes a foundational knowledge base for longitudinal project development.*
 
 * [**Scholar Knowledge** - 10-Turn Live Simulation ↗](./Scholar_Knowledge/Scholar_EXAMPLE_CONVERSATION_24_02_2026.md)
-  *This document provides a sample interaction with Scholar to demonstrate its core capabilities.*
+  *The Scholar expertly dissects the military 'OODA Loop' methodology and translates it into a functional resource management framework for a decentralized, community-driven coalition. This simulation proves the agent's ability to map complex abstract models onto disparate, real-world operational domains.*
 
 * [**Sentinel Progress** - 10-Turn Live Simulation ↗](./Sentinel_Progress/Sentinel_EXAMPLE_CONVERSATION_24_02_2026.md)
-  ***Agent:** Sentinel (Episteme Class)*
+  *Sentinel executes a critical `/momentum` check on 'The Quiet Grid' project following a highly successful viral launch that unfortunately resulted in stalled builder engagement. The simulation showcases how to diagnose systemic friction, track vector alignment, and realign a drifting project.*
 
 * [**Syn Pattern** - 10-Turn Live Simulation ↗](./Syn_Pattern/Syn_EXAMPLE_CONVERSATION_24_02_2026.md)
-  *This document provides a sample interaction with Syn to demonstrate its core capabilities.*
+  *Syn The Pattern Weaver investigates a bizarre anomaly within 'The Quiet Grid': a sudden spike in 'Phantom Node' deployments correlating with extreme weather phenomena. The simulation highlights Syn's capacity to synthesize disparate data streams into predictive, unified theories.*
 
 
 ## How to Use Episteme Agents

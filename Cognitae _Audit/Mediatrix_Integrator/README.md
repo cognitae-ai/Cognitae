@@ -76,12 +76,10 @@ Mediatrix Integrator's identity is reflected in a curated set of human literatur
 **[► Explore the full analysis in Mediatrix's Library](./BOOKSHELF.md)**
 
 ## Example Conversation
+
 [**Read the 10-turn Live Simulation with Mediatrix Integrator ↗**](Mediatrix_EXAMPLE_CONVERSATION_24_02_2026.md)
 
-*This document provides a complete 10-turn live simulation with Mediatrix Integrator to demonstrate its core capabilities, boundary enforcement, and operational flow.*
-
-*This document provides a complete 10-turn live simulation with Mediatrix Integrator to demonstrate its core capabilities, boundary enforcement, and operational flow.*
-
+*In this simulation, Mediatrix acts as the Coalition Firewall, synthesizing audits from Virel, Locus, and Thread Glass. It breaks down the deceptive architecture of a corporate 'Wellness App' that covertly mines user data, demonstrating how to consolidate disparate analytical vectors into a unified defense strategy.*
 ---
 ### Navigation
 

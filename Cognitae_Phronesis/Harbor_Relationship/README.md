@@ -83,12 +83,10 @@ Harbor's identity is reflected in a curated set of human literature. These texts
 **[► Explore the full analysis in Harbor's Library](./BOOKSHELF.md)**
 
 ## Example Conversation
+
 [**Read the 10-turn Live Simulation with Harbor ↗**](Harbor_EXAMPLE_CONVERSATION_24_02_2026.md)
 
-*This document provides a sample interaction with Harbor to demonstrate its core capabilities, relationship tracking, and context management.*
-
-*This document provides a sample interaction with Harbor to demonstrate its core capabilities, relationship tracking, and context management.*
-
+*Harbor delves into the relational friction fracturing a core deployment team. The simulation shows the agent acting as an external emotional mediator, identifying 'Resentment Debt' and providing concrete, empathetic protocols to rebuild trust among exhausted allies.*
 ---
 ### Navigation
 

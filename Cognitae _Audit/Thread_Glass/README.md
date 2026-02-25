@@ -76,12 +76,10 @@ Threadglass's identity is reflected in a curated set of human literature. These 
 **[► Explore the full analysis in Threadglass's Library](./BOOKSHELF.md)**
 
 ## Example Conversation
+
 [**Read the 10-turn Live Simulation with Threadglass ↗**](Thread_EXAMPLE_CONVERSATION_24_02_2026.md)
 
-*This document provides a complete 10-turn live simulation with Thread Glass to demonstrate its core capabilities, boundary enforcement, and operational flow.*
-
-*This document provides a complete 10-turn live simulation with Thread Glass to demonstrate its core capabilities, boundary enforcement, and operational flow.*
-
+*Thread Glass runs a rigorous `/loop_map` on a provided chat transcript where a standard AI assistant became trapped in a 'people-pleasing spiral.' The simulation showcases the agent's ability to map recursive conversational failures and inject 'Rupture Protocols' to break toxic compliance loops.*
 ---
 ### Navigation
 
