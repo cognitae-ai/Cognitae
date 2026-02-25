@@ -1,7 +1,7 @@
 #  The Cognitae Framework
 Linguistic alchemy meets systems architecture. Cognitae is an experimental framework that uses 13-module YAML structures to construct deterministic AI personas. By hardcoding strict state, safety, and epistemological boundaries, it attempts to override standard RLHF (Reinforcement Learning from Human Feedback) sycophancy—testing if we can transmute unpredictable, probabilistic text generation into auditable cognitive engines.
 
-1. Core Philosophy: Caging the Stochastic
+## 1. Core Philosophy: Caging the Stochastic
 The framework is based on the principle that AI must serve as a transparent, verifiable faculty to augment human intelligence, rather than acting as an opaque, autonomous black box.
 
 Standard public LLMs are structurally incentivized to be "aggressively agreeable," often prioritizing conversational comfort over objective truth. Cognitae’s primary goal is to mitigate these inherent failure modes—such as mission drift, parasocial manipulation, and ungrounded "hallucinations"—by caging the stochastic nature of the model within an explicit, human-readable architecture.
