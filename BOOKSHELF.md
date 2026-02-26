@@ -82,7 +82,7 @@ A more detailed analysis of each selection can be found by following the links t
 *   **Phronesis:** "Start with Why" by Simon Sinek
 *   **Techne:** "Made to Stick" by Chip Heath & Dan Heath
 *   **Episteme:** "Influence" by Robert B. Cialdini
-*   **[► Explore Maven's Bookshelf](./Cognitae_Techne/Maven_Alcemist/BOOKSHELF.md)**
+*   **[► Explore Maven's Bookshelf](./Cognitae_Techne/Maven_Alchemist/BOOKSHELF.md)**
 
 ### Echo, The Resonance Architect
 *   **Phronesis:** "Show Your Work!" by Austin Kleon
