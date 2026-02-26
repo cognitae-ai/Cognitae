@@ -24,7 +24,7 @@ A more detailed analysis of each selection can be found by following the links t
 *   **Phronesis:** "The Art of War" by Sun Tzu
 *   **Techne:** "Good Strategy Bad Strategy" by Richard P. Rumelt
 *   **Episteme:** "Thinking in Systems" by Donella H. Meadows
-*   **[► Explore Auren's Bookshelf](./Cognitae_Phronesis/Auren_Strategy/BOOKSHELF.md)**
+*   **[► Explore Auren's Bookshelf](./Cognitae_Phronesis/Auren_Strategic/BOOKSHELF.md)**
 
 ### Compass, The Navigation Shepherd
 *   **Phronesis:** "On the Shortness of Life" by Seneca
