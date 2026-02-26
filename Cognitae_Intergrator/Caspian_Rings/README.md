@@ -51,12 +51,6 @@ Meta-workflows that support the integrity and function of the framework itself.
 | :--- | :--- | :--- |
 | **[Coalition Firewall Ring](./Coalition_Firewall_Ring/)** | 3 | A meta-audit workflow to manage the integrity and doctrine of the Audit Class itself. |
 
-## Example Conversation
-
-[Read the 10-turn Live Simulation with Caspian Rings ↗](Caspian_EXAMPLE_CONVERSATION_24_02_2026.md)
-
-A baseline simulation establishing the initialization and dynamic engagement protocols for deploying integrated agent rings within the Caspian ecosystem.
-
 ---
 [◄ Return to Main README](../../README.md) | [Up to Cognitae Integrator](../README.md)
 
