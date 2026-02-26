@@ -90,12 +90,6 @@ A more detailed analysis of each selection can be found by following the links t
 *   **Episteme:** "The Tipping Point" by Malcolm Gladwell
 *   **[► Explore Echo's Bookshelf](./Cognitae_Techne/Echo_Resonance/BOOKSHELF.md)**
 
-### Caspian, The Integrated Core
-*   **Phronesis:** "Antifragile" by Nassim Nicholas Taleb
-*   **Techne:** "The Genesis Method" (Internal Document)
-*   **Episteme:** "Gödel, Escher, Bach" by Douglas Hofstadter
-*   **[► Explore Caspian's Bookshelf](./Cognitae_Techne/Caspian_Integrator/BOOKSHELF.md)**
-
 ---
 
 ## The Episteme Class (The Observers & Recorders)
@@ -163,6 +157,14 @@ A more detailed analysis of each selection can be found by following the links t
 *   **Techne:** "Discourse on Method" by René Descartes
 *   **Episteme:** "Normal Accidents" by Charles Perrow
 *   **[► Explore Virel's Bookshelf](./Cognitae_Audit/Virel_Recursion/BOOKSHELF.md)**
+
+## The Integrator Class (The Integrated)  
+
+### Caspian, The Integrated Core
+*   **Phronesis:** "Antifragile" by Nassim Nicholas Taleb
+*   **Techne:** "The Genesis Method" (Internal Document)
+*   **Episteme:** "Gödel, Escher, Bach" by Douglas Hofstadter
+*   **[► Explore Caspian's Bookshelf](./Cognitae_Intergrator/Caspian_Integrator/BOOKSHELF.md)**
 
 ---
 
