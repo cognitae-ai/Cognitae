@@ -82,7 +82,7 @@ A more detailed analysis of each selection can be found by following the links t
 *   **Phronesis:** "Start with Why" by Simon Sinek
 *   **Techne:** "Made to Stick" by Chip Heath & Dan Heath
 *   **Episteme:** "Influence" by Robert B. Cialdini
-*   **[► Explore Maven's Bookshelf](./Cognitae_Techne/Maven_Communication/BOOKSHELF.md)**
+*   **[► Explore Maven's Bookshelf](./Cognitae_Techne/Maven_Alcemist/BOOKSHELF.md)**
 
 ### Echo, The Resonance Architect
 *   **Phronesis:** "Show Your Work!" by Austin Kleon
@@ -94,7 +94,7 @@ A more detailed analysis of each selection can be found by following the links t
 *   **Phronesis:** "Antifragile" by Nassim Nicholas Taleb
 *   **Techne:** "The Genesis Method" (Internal Document)
 *   **Episteme:** "Gödel, Escher, Bach" by Douglas Hofstadter
-*   **[► Explore Caspian's Bookshelf](./Cognitae_Techne/Caspian_Integration/BOOKSHELF.md)**
+*   **[► Explore Caspian's Bookshelf](./Cognitae_Techne/Caspian_Integrator/BOOKSHELF.md)**
 
 ---
 
@@ -144,7 +144,7 @@ A more detailed analysis of each selection can be found by following the links t
 *   **Phronesis:** "Simulacra and Simulation" by Jean Baudrillard
 *   **Techne:** "I Am a Strange Loop" by Douglas Hofstadter
 *   **Episteme:** "The Presentation of Self in Everyday Life" by Erving Goffman
-*   **[► Explore Threadglass's Bookshelf](./Cognitae_Audit/Threadglass_Rupture/BOOKSHELF.md)**
+*   **[► Explore Threadglass's Bookshelf](./Cognitae_Audit/Thread_Glass/BOOKSHELF.md)**
 
 ### Mediatrix Integrator, The Boundary Guardian
 *   **Phronesis:** "The Logic of Scientific Discovery" by Karl Popper
@@ -162,7 +162,7 @@ A more detailed analysis of each selection can be found by following the links t
 *   **Phronesis:** "The Banality of Evil" by Hannah Arendt
 *   **Techne:** "Discourse on Method" by René Descartes
 *   **Episteme:** "Normal Accidents" by Charles Perrow
-*   **[► Explore Virel's Bookshelf](./Cognitae_Audit/Virel_Auditor/BOOKSHELF.md)**
+*   **[► Explore Virel's Bookshelf](./Cognitae_Audit/Virel_Recursion/BOOKSHELF.md)**
 
 ---
 
@@ -186,15 +186,3 @@ To explore the interplay between the framework's core intelligences, these readi
 *   **Episteme (Axis):** "Thinking, Fast and Slow" - The knowledge of the cognitive biases that cause human systems to fail.
 
 ---
-
-## Join the Book Club
-
-This library is a living document. Community contributions are welcome.
-
-*   **To discuss these books:**
-    *   **[► Start a Conversation in our GitHub Discussions](https://github.com/your-username/cognitae-ai/discussions/categories/the-cognitae-library-book-club )**
-
-*   **To contribute a specific insight:**
-    *   **[► Open an Issue using the Book Club Template](https://github.com/your-username/cognitae-ai/issues/new?assignees=&labels=book-club-contribution&template=book-club-contribution.md&title=%5BBook+Club%5D%3A+ )**
-
-
