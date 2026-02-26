@@ -164,7 +164,6 @@ A more detailed analysis of each selection can be found by following the links t
 *   **Phronesis:** "Antifragile" by Nassim Nicholas Taleb
 *   **Techne:** "The Genesis Method" (Internal Document)
 *   **Episteme:** "Gödel, Escher, Bach" by Douglas Hofstadter
-*   **[► Explore Caspian's Bookshelf](./Cognitae_Intergrator/Caspian_Integrator/BOOKSHELF.md)**
 
 ---
 
