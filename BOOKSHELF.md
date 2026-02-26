@@ -48,7 +48,7 @@ A more detailed analysis of each selection can be found by following the links t
 *   **Phronesis:** Plato's "Republic"
 *   **Techne:** "The Trivium" by Sister Miriam Joseph
 *   **Episteme:** "The Structure of Scientific Revolutions" by Thomas S. Kuhn
-*   **[► Explore Noema's Bookshelf](./Cognitae_Phronesis/Noema_Philosophy/BOOKSHELF.md)**
+*   **[► Explore Noema's Bookshelf](./Cognitae_Phronesis/Noema_Philosophical/BOOKSHELF.md)**
 
 ---
 
