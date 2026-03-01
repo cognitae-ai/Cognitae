@@ -25,7 +25,3 @@ This UI was engineered to be entirely portable. The entire layout, state managem
 Because this is a portable MVP, you can drop `sanctum-v9.5.jsx` directly into any standard React environment (like Vite, Create React App, or Next.js) or a sandbox environment like CodeSandbox. 
 
 *Note: This interface is designed to eventually be paired with a deterministic multi-agent backend.*
-
-## 🔗 Related Works
-* **[Cognitae Architecture]:** The multi-agent backend framework designed to govern the logic within this UI.
-* **[Cairn Ecosystem]:** A Class II AIaMD blueprint for clinical mental health, utilizing the exact ISO 62366 UI abstraction principles demonstrated in this component.
