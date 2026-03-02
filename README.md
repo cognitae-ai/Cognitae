@@ -87,7 +87,31 @@ Reviewing an agent's bookshelf can provide useful context for its architectural 
 
 **[► Explore The Cognitae Library](./BOOKSHELF.md)**
 
-## 8. Licensing
+## 8. Sanctum OS: The Frontend Manifestation
+
+While the core Cognitae architecture is focused on backend multi-agent routing, an AI system ultimately meets the human user through an interface. **Sanctum OS** is the frontend manifestation of this ecosystem—a local-first React MVP built to solve the human-computer interaction (HCI) challenges of cognitive reflection.
+
+### The Problem: AI Interfaces Are Not "Quiet Places"
+Every modern AI app is designed as an aggressive input/output machine. They demand rapid interaction and leave nowhere for the user to simply *think*. If you want to record a private thought without an AI instantly generating a reply, you are forced to use a separate app (like Apple Notes or Discord) and awkwardly copy-paste it later. 
+
+Sanctum was built to act as a **Quiet Place**. It features a local, resizable sidebar where users can simply write, organize their thoughts, and drop them into the central reflection session only when they are ready.
+
+### The Role of Cognitae in the Design Process
+While I personally directed the architecture, UX, and coded the final React manifestation, Sanctum serves as a live demonstration of using Cognitae as a design accelerator. 
+
+To brainstorm and stress-test the "Quiet Place" philosophy, I loaded **Caspian** (The Integrated Guide) with a specific Ring of agents:
+* `Axis` (Coherence Synthesist)
+* `Auren` (Strategic Sovereign)
+* `Genesis` (Blueprint Architect)
+* `Forge` (Implementation Architect)
+* `Noema` (Philosophical Synthesist)
+* `Sentinel` (Progress Tracker)
+
+I used this coalition as a sounding board to refine the core UI mechanics, map out the psychological pacing constraints, and crystalize the Socratic workflow. They didn't build the app for me, but they provided the rigorous, multi-disciplinary friction required to design it properly.
+
+🔗 **[View the Sanctum OS Directory Here](./SanctumOS)**
+
+## 9. Licensing
 The Cognitae Framework is licensed under the GNU Affero General Public License v3.0 (AGPL-3.0). This means you are free to use, modify, and distribute the framework. However, if you modify the framework or integrate it into a service accessed over a network, you must share your corresponding source code back under the same license. This ensures the framework remains open and prevents proprietary enclosure.
 
 Copyright (c) 2026 Eliot Gilzene / Shoji / Cognitae Framework. All rights reserved under the terms of the AGPL-3.0.
