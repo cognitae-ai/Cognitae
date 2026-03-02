@@ -1,27 +1,30 @@
-#  Sanctum UI (Frontend MVP)
-### A Single-File React Manifestation for Sovereign Reflection
+#  Sanctum OS (Frontend MVP)
+### A Digital Monastery for Sovereign Reflection
 
-**Sanctum** is a high-fidelity UI/UX prototype designed for deep reflection and mental clarity. This repository contains the raw frontend manifestation (`sanctum-v9.5.jsx`) of a broader sociotechnical architecture. It bridges the gap between high-end UI design and psychological safety. Back end availble upon request
+**Sanctum** is a high-fidelity, standalone React prototype designed for deep reflection and mental clarity. It is not an agent IDE or a standard chatbot wrapper; it is a rigorously constrained psychological container.
 
-##  The Philosophy: Cognitive Pacing
-Most modern chat applications are designed for "Attention Extraction" and rapid-fire inputs. **Sanctum** is designed for "Cognitive Pacing." 
+##  The Philosophy: The Quiet Place
+Most conversational AI is built for "Attention Extraction" and rapid-fire inputs, which induces anxiety during moments of vulnerability. 
 
-By utilizing intentional layout constraints and a structured session flow, the interface acts as a psychological governor, ensuring the user moves through their reflections with intent rather than impulsivity.
+Sanctum is built around the concept of the **Quiet Place**. It features an integrated, resizable notepad that allows you to simply write and categorize your thoughts (Know, Can Do, Matters) without an AI immediately replying to you. You are in complete control of when your thoughts enter the active session.
 
 ### Core UX Mechanics:
-* **The Shift In / Shift Out:** A ritualized entry and exit protocol. Users must declare what they "Brought" to the session and crystalize what "Emerged" before they can leave.
+* **The Shift In / Shift Out:** A ritualized entry and exit protocol. You must declare what you "Brought" to the session and crystalize what "Emerged" before you leave. 
 * **The Vow:** A concluding commitment that turns digital reflection into real-world action.
 * **Engineered Pacing:** Custom CSS-in-JS keyframes force the UI to reveal itself at a human pace, translating computational latency into the feeling of "therapeutic thoughtfulness."
 
-##  Technical Architecture (The Single-File Flex)
-This UI was engineered to be entirely portable. The entire layout, state management, CSS typography, and animation logic are condensed into a single `.jsx` file.
+##  The Prompt Architecture (`SKELETON`, `ORGANS`, `MUSCLES`, `SKIN`)
+Sanctum utilizes a highly bespoke, monolithic system prompt baked directly into the JSX. When a user interacts with the session, the LLM is governed by a strict anatomical constraint framework:
+* **SKELETON (Core Directive):** Act as a philosophical mirror, not a problem solver.
+* **ORGANS (Internal Logic):** Map user inputs across Episteme (Truth), Techne (Action), and Phronesis (Wisdom).
+* **MUSCLES (Pacing):** Match the user's depth and avoid sycophancy.
+* **SKIN (Tone):** Speak with the gravity of an old, quiet library.
 
-* **Local-First State:** Utilizes a custom wrapper for client-side storage, ensuring human reflections never touch a corporate cloud without explicit API integration.
-* **Draggable Split-Panel:** Features custom React hooks (`useRef`, `onDragStart`) to manage a resizable dual-pane workspace for simultaneous note-taking and chat.
-* **Data Sovereignty:** Built-in Markdown (`.md`) and clipboard exporters so the user owns their final "Artifact."
-* **Editorial Typography:** A precise CSS implementation pairing **Cormorant Garamond** (for reflection) and **DM Sans** (for utility) over an "Earth and Void" color palette (`#0c0b0a` and `#c49a6c`).
+##  Technical Architecture
+Sanctum is a **Local-First / Zero-Server-Cost** application. 
+* All state management runs entirely on the user's local hardware (`localStorage`/`IndexedDB`). 
+* The entire layout, API fetching logic, CSS typography, and animation logic are condensed into a single, portable `.jsx` file.
+* It includes built-in Markdown (`.md`) exporters so the user permanently owns their final Artifact.
 
-##  How to View
-Because this is a portable MVP, you can drop `sanctum-v9.5.jsx` directly into any standard React environment (like Vite, Create React App, or Next.js) or a sandbox environment like CodeSandbox. 
-
-*Note: This interface is designed to eventually be paired with a deterministic multi-agent backend.*
+---
+*Note: While I directed the architecture and coded this interface, the foundational UI philosophy and UX constraints were refined using a custom multi-agent brainstorming session via the [Cognitae Architecture](../).*
