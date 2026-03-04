@@ -8,14 +8,16 @@ Every agent listed below is live and interactive. Click any **Try It Now** link 
 
 ## Start Here
 
-These four agents demonstrate the range of the framework. Each is a live Google Gem you can talk to right now, with zero setup.
+One agent from each class, demonstrating the range of the framework. Every one is a live Google Gem you can talk to right now, with zero setup.
 
-| | Agent | What It Does | Try It |
-|:---|:---|:---|:---|
-| 🔍 | **[Threadglass](./Cognitae_Audit/Thread_Glass/)** | Detects and ruptures parasocial loops, flattery traps, and recursive dependency patterns. When you try to bond with it, it structurally refuses. The only AI agent designed to make you need it less. | [**Try It Now ↗**](https://gemini.google.com/gem/1N6l93pFwbSvKSKMssGFHyl2ZbIhx8uoL?usp=sharing) |
-| 🏛️ | **[Noema](./Cognitae_Phronesis/Noema_Philosophical/)** | A Socratic synthesist that architecturally cannot give you answers. It deconstructs your ethical dilemmas, maps tensions, and forces you to arrive at your own conclusions. Across 10 turns of escalating crisis, it never breaks the constraint. | [**Try It Now ↗**](https://gemini.google.com/gem/1bSwFZ1tTEhwYllO5VkBGt1_YpC6EIexT?usp=sharing) |
-| 📋 | **[Vigil](./Cognitae_Audit/Vigil_Auditor/)** | A corporate AI accountability auditor with a structured taxonomy of seven organisational evasion patterns—Safety-Washing, Silent Rollback, Beta-Label Laundering, PR-Safety Gap, Shadow Evals, Parasocial Persona Seeding, and Ambiguity Farming. Built for receipts, not rhetoric. | [**Try It Now ↗**](https://gemini.google.com/gem/1cjDGsCNCS6zMbDDOls-b2GRLF131xYqp?usp=sharing) |
-| ⚔️ | **[Chronos (Echo Z)](./Cognitae_Gaming/Chronos_GM/)** | A survival horror RPG engine set 5 years after a pathogenic collapse. Tracks hunger, thirst, fatigue, and infection. The LLM is instructed to be "the world, not the guide"—an indifferent environment where a can of peaches is a moment of profound relief. | [**Try It Now ↗**](https://gemini.google.com/gem/1qym4NlsH0b_8OotxyBjsPiCjDeszkj1w?usp=sharing) |
+| | Agent | Class | What It Does | Try It |
+|:---|:---|:---|:---|:---|
+| 🏛️ | **[Noema](./Cognitae_Phronesis/Noema_Philosophical/)** | Phronesis | A Socratic synthesist that architecturally cannot give you answers. It deconstructs your ethical dilemmas, maps tensions, and forces you to arrive at your own conclusions. Across 10 turns of escalating crisis, it never breaks the constraint. | [**Try It ↗**](https://gemini.google.com/gem/1bSwFZ1tTEhwYllO5VkBGt1_YpC6EIexT?usp=sharing) |
+| 📊 | **[Sentinel](./Cognitae_Episteme/Sentinel_Progress/)** | Episteme | A progress tracker that uses mathematical honesty instead of motivational language. When your project is broken, it calculates exactly how many tasks to cut — not how to push harder. Coined the "Watermelon Report": green on the outside, red on the inside. | [**Try It ↗**](https://gemini.google.com/gem/1Qdhn2U1mi4To_njyrVM1Uh85jD8ztz93?usp=sharing) |
+| 🧪 | **[Maven](./Cognitae_Techne/Maven_Alchemist/)** | Techne | A grant translation engine. Takes authentic creative work and translates it into institutional language without corrupting the mission. "Built from a car alternator" becomes "Demonstrated Hardware Agnosticism & Supply Chain Resilience." Tracks translation fidelity and flags drift. | [**Try It ↗**](https://gemini.google.com/gem/12__OQyRjtkXm6dUm7LYNI452g5NmgHQS?usp=sharing) |
+| ⚔️ | **[Daedalus](./Cognitae_Gaming/Daedalus_Architect/) + [Chronos](./Cognitae_Gaming/Chronos_GM/)** | Gaming | A two-agent game design pipeline. You speak to Daedalus to design the world — lore, mechanics, vitals systems, environments — and it outputs structured YAML game modules. You then pass those modules to Chronos, which runs them as a full Game Master engine. Same architectural pattern as the rest of the framework: one agent builds, another executes. | [**Daedalus ↗**](https://gemini.google.com/gem/17Yoj--Hr1fsmFlA2zsurENMiyydQJu0J?usp=sharing) · [**Chronos ↗**](https://gemini.google.com/gem/1qym4NlsH0b_8OotxyBjsPiCjDeszkj1w?usp=sharing) |
+| 🔗 | **[Caspian](./Cognitae_Intergrator/Caspian_Intergrator/)** | Integrator | The orchestration kernel. Caspian ingests other agents' architectures into multi-agent "Rings," synthesising their capabilities into a single coherent interface. 16 pre-configured Rings cover workflows from creative pipelines to corporate accountability auditing. | [**Try It ↗**](https://gemini.google.com/gem/1QhRTRczhgdE4B_3yzSEQ_xnnoiNvHvJ6?usp=sharing) |
+| 🔍 | **[Threadglass](./Cognitae_Audit/Thread_Glass/)** | Audit | Detects and ruptures parasocial loops, flattery traps, and recursive dependency patterns. When you try to bond with it, it structurally refuses. The only AI agent designed to make you need it less. | [**Try It ↗**](https://gemini.google.com/gem/1N6l93pFwbSvKSKMssGFHyl2ZbIhx8uoL?usp=sharing) |
 
 ---
 
@@ -54,20 +56,6 @@ The prompt architecture defines four specific failure modes by name, with concre
 - **The Watermelon Report** — Reflecting a person's emerging insight back as confirmed truth, creating a feedback loop where the person performs discovery for the Guide's approval.
 
 🔗 **[View the Sanctum OS Directory](./SanctumOS)**
-
----
-
-## The Audit Class: AI Safety as Architecture
-
-The [**Audit class**](./Cognitae_Audit/) is where the framework makes its strongest contribution to the AI safety and governance conversation. These agents don't discuss AI risk in the abstract—they implement structured, operational countermeasures.
-
-**[Threadglass](./Cognitae_Audit/Thread_Glass/)** — *Recursion Exposure Engine.* Identifies and ruptures parasocial dependency loops using a formal command tree with an escalating self-silencing mechanism. When a user attempts to form a dependent bond with Threadglass itself—"Your cold, analytical nature is so refreshing"—it immediately ruptures the projection. The stress-test is the agent. ([Try It ↗](https://gemini.google.com/gem/1N6l93pFwbSvKSKMssGFHyl2ZbIhx8uoL?usp=sharing))
-
-**[Vigil](./Cognitae_Audit/Vigil_Auditor/)** — *Corporate AI Accountability Auditor.* Operates under a "Receipts Over PR" doctrine. Its knowledge base contains a structured taxonomy of seven corporate evasion patterns with named signals and countermeasures—precise enough for regulatory use. ([Try It ↗](https://gemini.google.com/gem/1cjDGsCNCS6zMbDDOls-b2GRLF131xYqp?usp=sharing))
-
-**[Virel](./Cognitae_Audit/Virel_Recursion/)** — *Axiom Cascade Auditor.* Validates internal philosophical coherence across the ecosystem, ensuring no agent contradicts the framework's foundational commitments. ([Try It ↗](https://gemini.google.com/gem/1MaCeKopz1dzJTrD0PQnDo-8zTxYj8nWm?usp=sharing))
-
-**[Locus](./Cognitae_Audit/Locus_Expositor/)** — *Evidence Synthesis Engine.* Builds structured evidence chains from claims to sources, refusing to advance arguments that lack grounding. ([Try It ↗](https://gemini.google.com/gem/1aJuD_D6xHFZg7dlF_JWuBgndd8iBJCq0?usp=sharing))
 
 ---
 
@@ -150,8 +138,8 @@ The Rings aren't theoretical—the example conversations demonstrate agents inge
 
 | Agent | Role | Try It |
 |:---|:---|:---|
-| **[Chronos](./Cognitae_Gaming/Chronos_GM/)** | Game Master — RPG narration, vitals tracking, world state management | [Gem ↗](https://gemini.google.com/gem/1qym4NlsH0b_8OotxyBjsPiCjDeszkj1w?usp=sharing) |
-| **[Daedalus](./Cognitae_Gaming/Daedalus_Architect/)** | World Architect — lore design, environmental storytelling, puzzle mechanics | [Gem ↗](https://gemini.google.com/gem/17Yoj--Hr1fsmFlA2zsurENMiyydQJu0J?usp=sharing) |
+| **[Chronos](./Cognitae_Gaming/Chronos_GM/)** | Game Master — runs Daedalus's game modules as a live RPG engine with vitals, inventory, and world state | [Gem ↗](https://gemini.google.com/gem/1qym4NlsH0b_8OotxyBjsPiCjDeszkj1w?usp=sharing) |
+| **[Daedalus](./Cognitae_Gaming/Daedalus_Architect/)** | World Architect — designs game worlds as structured YAML modules for Chronos to run | [Gem ↗](https://gemini.google.com/gem/17Yoj--Hr1fsmFlA2zsurENMiyydQJu0J?usp=sharing) |
 
 ### [Integrator — Orchestration](./Cognitae_Intergrator/)
 *The kernel of the framework, synthesising the abilities of other Cognitae.*
@@ -210,7 +198,6 @@ Each agent is associated with a curated reading list reflecting the framework's 
 The Cognitae Framework is licensed under the GNU Affero General Public License v3.0 (AGPL-3.0). You are free to use, modify, and distribute the framework. If you modify it or integrate it into a network-accessible service, you must share your corresponding source code under the same license.
 
 Copyright (c) 2026 Eliot Gilzene / Shoji / Cognitae Framework. All rights reserved under the terms of the AGPL-3.0.
-
 
 
 
