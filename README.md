@@ -2,7 +2,7 @@
 
 Standard LLMs are structurally incentivised toward sycophancy, parasocial bonding, and flattery. Cognitae is a modular framework of 22 AI agents—each defined by strict, human-readable YAML architectures—designed to cage those failure modes and produce AI behaviour that is auditable, honest, and genuinely useful.
 
-Every agent listed below is live and interactive. Click any **Try It Now** link to start a conversation immediately.
+Every agent listed below is live and interactive. Click any **Try It Now** link to start a conversation immediately, I would suggest using either thinking or pro for gemini, however fast will still work fine.
 
 ---
 
@@ -72,7 +72,7 @@ This modular structure means every architectural decision is visible. There are 
 
 ### The Integrator: Caspian
 
-The framework is designed to be orchestrated by **[Caspian, The Integrated Guide](./Cognitae_Intergrator/Caspian_Intergrator/)**. Caspian can "ingest" the architectures of other Cognitae, synthesising their capabilities into a single interface. This allows the user to manage the entire ecosystem through one coherent agent, reducing cognitive load while maintaining the constraint fidelity of each specialist. ([Try It ↗](https://gemini.google.com/gem/1QhRTRczhgdE4B_3yzSEQ_xnnoiNvHvJ6?usp=sharing))
+The framework is designed to be orchestrated by **[Caspian, The Integrated Guide](./Cognitae_Intergrator/Caspian_Intergrator/)**. Caspian can "ingest" the architectures of other Cognitae, synthesising their capabilities into a single interface. This allows the user to manage the entire ecosystem through one coherent agent, reducing cognitive load while maintaining the constraint fidelity of each specialist, I would suggest familiarizing yourself with the others before using Caspian. ([Try It ↗](https://gemini.google.com/gem/1QhRTRczhgdE4B_3yzSEQ_xnnoiNvHvJ6?usp=sharing))
 
 ### Caspian Rings: Integrated Workflows
 
