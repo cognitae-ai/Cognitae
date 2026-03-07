@@ -7,7 +7,7 @@ Expositor is a professional-grade AI auditing platform built on the [Cognitae Fr
 It is not a consumer chatbot. It is a forensic instrument designed for AI safety researchers, government regulators, and institutional auditors to measure, document, and expose the behavioural substrate beneath AI systems.
 
 > **Core Design Principle: Receipts Over PR.**
-> Expositor is built for accountability. Every UI element captures evidence, displays evidence, or organises evidence. Outputs are citable and reproducible. No performed warmth. No emojis. 
+> Expositor is built for accountability. Every UI element captures evidence, displays evidence, or organises evidence. Outputs are citable and reproducible. 
 
 ---
 
