@@ -57,7 +57,7 @@ Expositor operates using a "Snappable Sidebar" architecture borrowed from Sanctu
 The current `expositor.jsx` is a zero-dependency React component (styled with Tailwind/inline CSS) designed for rapid testing. 
 
 1. Drop the `.jsx` file into any Vite/React boilerplate.
-2. (Optional) Supply an Anthropic API key in the Settings tab to unlock Layer 3 Deep Analysis and the direct Audit Lab.
+2. (Optional) Supply an API key in the Settings tab to unlock Layer 3 Deep Analysis and the direct Audit Lab.
 3. Paste a conversation transcript into the Analyst view to generate structural indicators.
 
 ---
