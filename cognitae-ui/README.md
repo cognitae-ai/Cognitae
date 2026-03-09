@@ -1,5 +1,7 @@
 # Cognitae UI
 
+TEMP - Repo being built here - https://github.com/cognitae-ai/cognitae-ui
+
 This is the unified frontend interface for the Cognitae Framework. It hosts four distinct environments designed for adversarial AI auditing, philosophical conversation, and specialized system design.
 
 ## The Environments
