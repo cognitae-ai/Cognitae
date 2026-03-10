@@ -42,6 +42,12 @@ The Audit class is composed of the following specialized agents. Each is designe
 | **[Vigil_Auditor](./Vigil_Auditor/)** | An adversarial audit engine for exposing corporate AI alignment theatre. | `/expose_corp` |
 | **[Virel_Recursion](./Virel_Recursion/)** | A recursive logical engine for auditing the coherence of systems against their foundational principles. | `/audit` |
 
+## Expositor Prototype UI
+
+This directory also contains the source code for the central frontend application designed specifically for the Audit class, located in the **[Expositor Prototype](./Expositor%20Prototype/)** folder. 
+
+Expositor serves as a specialized, locally hosted React workspace for interacting with the Audit agents (Locus, Mediatrix, Threadglass, Vigil, Virel). It features tools for structured conversation logging across the different personas, a complete visual 'Audit Lab' environment, real-time metrics telemetry, and a built-in YAML manifest version controller.
+
 ## Live Simulations
 
 Review these detailed, 10-turn example conversations to see the agents in action:

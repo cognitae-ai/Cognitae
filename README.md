@@ -55,7 +55,13 @@ The prompt architecture defines four specific failure modes by name, with concre
 - **The Verdict** — Delivering conclusions disguised as questions.
 - **The Watermelon Report** — Reflecting a person's emerging insight back as confirmed truth, creating a feedback loop where the person performs discovery for the Guide's approval.
 
-🔗 **[View the Sanctum OS Directory](./SanctumOS)**
+🔗 **[View the Sanctum OS Directory](./SanctumOS/)**
+
+### Expositor Prototype
+
+Additionally, a discrete front-end UI environment—**Expositor**—has been developed specifically alongside the **Audit** class. Rather than a unified workspace for thought, Expositor serves as an analytical dashboard and verification workbench explicitly designed for managing interactions with the adversarial Audit engines (Locus, Threadglass, Vigil, Virel, Mathiatrix). It contains a built-in YAML manifest version controller, raw telemetry graphing, and precise response charting.
+
+🔗 **[View the Expositor Prototype Directory](./Cognitae_Audit/Expositor%20Prototype/)**
 
 ---
 
