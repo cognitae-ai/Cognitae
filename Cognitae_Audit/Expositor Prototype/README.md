@@ -2,8 +2,6 @@
 
 The entire **Cognitae Framework**—but specifically the **Expositor Prototype** UI—demonstrates a rigorous, adversarial approach to AI architecture. Most contemporary AI applications are simply wrapping existing API calls in generic conversational UIs, optimizing models to be *more* agreeable, helpful, and human-like. 
 
-Expositor does the exact opposite. 
-
 It recognizes the structural flaws inherent in commercial LLMs—specifically sycophancy, parasocial loops, hallucination, and "Watermelon Reporting" (where the AI merely reflects the user's beliefs back to them)—and builds an adversarial, multi-agent framework specifically to cage those failure modes and audit for them.
 
 ### Key Architectural Strengths
