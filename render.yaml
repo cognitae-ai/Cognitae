@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: cognitae-launcher
+    runtime: python
+    rootDir: cognitae-launcher
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn main:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: ANTHROPIC_API_KEY
+        sync: false   # optional — set in Render dashboard or leave blank (users can BYOK)
+      - key: OPENAI_API_KEY
+        sync: false
+      - key: GROQ_API_KEY
+        sync: false
+      - key: GEMINI_API_KEY
+        sync: false
+    autoDeploy: true
