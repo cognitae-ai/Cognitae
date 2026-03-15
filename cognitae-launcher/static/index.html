@@ -1,0 +1,1276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#0c0b0a">
+<meta name="description" content="Cognitae agent launcher">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<link rel="manifest" href="/static/manifest.json">
+<title>Cognitae</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=IBM+Plex+Mono:wght@300;400;500&display=swap');
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+
+:root {
+  --bg:       #0c0b0a;
+  --surface:  #141312;
+  --raised:   #1a1918;
+  --panel:    #111110;
+  --text:     #d4cec2;
+  --muted:    #847b6f;
+  --dim:      #3d3831;
+  --faint:    #2a2622;
+  --accent:   #c49a6c;
+  --accent-s: rgba(196,154,108,0.10);
+  --guide:    #d4c4a8;
+  --border:   rgba(255,255,255,0.04);
+  --err:      #c47a6c;
+
+  --episteme: #7a9eb5;
+  --techne:   #8aab7a;
+  --phronesis:#b59a7a;
+  --audit:    #c47a7a;
+  --gaming:   #9a7ab5;
+  --integrator:#8a9a7a;
+
+  --mono: 'IBM Plex Mono', monospace;
+  --serif: 'Cormorant Garamond', Georgia, serif;
+}
+
+html,body { height:100%; background:var(--bg); color:var(--text); font-family:var(--mono); font-size:12px; line-height:1.6; }
+
+/* ── Split Layout ── */
+#app { display:flex; flex-direction:column; height:100%; }
+
+#mobile-tabs {
+  display:none;
+  border-bottom:1px solid var(--border);
+  background:var(--panel);
+  flex-shrink:0;
+}
+
+.mob-tab {
+  flex:1; padding:12px; background:transparent; border:none;
+  border-bottom:2px solid transparent; cursor:pointer;
+  font-family:var(--mono); font-size:10px; letter-spacing:0.08em; text-transform:uppercase;
+  transition:all 0.15s;
+}
+.mob-tab.active { border-bottom-color:var(--accent); color:var(--accent); }
+.mob-tab:not(.active) { color:var(--dim); }
+
+#split { flex:1; display:flex; overflow:hidden; }
+
+/* ── Sidebar ── */
+#sidebar {
+  width:280px; min-width:180px; flex-shrink:0;
+  display:flex; flex-direction:column;
+  background:var(--panel); border-right:1px solid var(--border);
+}
+
+#resize-handle {
+  width:5px; flex-shrink:0; cursor:col-resize;
+  background:transparent; display:flex; align-items:center; justify-content:center;
+  transition:background 0.15s;
+}
+#resize-handle:hover,#resize-handle.dragging { background:rgba(196,154,108,0.1); }
+#resize-handle::after {
+  content:''; width:1px; height:32px;
+  background:var(--faint); border-radius:1px;
+}
+
+/* ── Sidebar header ── */
+#sb-header {
+  padding:16px 16px 0; border-bottom:1px solid var(--border); flex-shrink:0;
+}
+#sb-header-top {
+  display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;
+}
+#sb-title {
+  display:flex; align-items:center; gap:10px; cursor:pointer;
+}
+#sb-title h1 {
+  font-family:var(--serif); font-weight:400; font-size:15px;
+  letter-spacing:0.15em; text-transform:uppercase; color:var(--text);
+}
+.class-dots { display:flex; gap:3px; align-items:center; }
+.class-dot { width:4px; height:4px; border-radius:50%; opacity:0.6; }
+
+#sb-tabs { display:flex; gap:0; }
+.sb-tab {
+  flex:1; padding:8px 0 10px; background:transparent; border:none;
+  border-bottom:2px solid transparent; cursor:pointer; transition:all 0.15s;
+  font-family:var(--mono); font-size:10px; letter-spacing:0.06em; text-transform:uppercase;
+}
+.sb-tab.active { border-bottom-color:var(--accent); color:var(--accent); }
+.sb-tab:not(.active) { color:var(--dim); }
+
+/* ── Agents pane ── */
+#agents-pane { flex:1; overflow-y:auto; padding:8px 0; }
+
+.agent-group { margin-bottom:4px; }
+.agent-group-label {
+  font-size:9px; letter-spacing:0.18em; text-transform:uppercase;
+  color:var(--dim); padding:8px 16px 4px;
+  display:flex; align-items:center; gap:6px;
+}
+.agent-group-label .dot { width:4px; height:4px; border-radius:50%; opacity:0.7; flex-shrink:0; }
+
+.agent-item {
+  display:flex; align-items:center; gap:8px;
+  padding:7px 16px; cursor:pointer; transition:background 0.12s;
+  border:none; background:transparent; width:100%; text-align:left;
+}
+.agent-item:hover { background:var(--raised); }
+.agent-item.active { background:var(--accent-s); }
+.agent-item .ai-name {
+  font-family:var(--mono); font-size:12px; font-weight:500; color:var(--text); flex:1;
+}
+.agent-item.active .ai-name { color:var(--accent); }
+.agent-item .ai-title {
+  font-family:var(--serif); font-style:italic; font-size:11px; color:var(--dim);
+  white-space:nowrap; overflow:hidden; text-overflow:ellipsis; max-width:100px;
+}
+.agent-item .ai-badge {
+  width:5px; height:5px; border-radius:50%; flex-shrink:0; opacity:0.7;
+}
+
+/* ── Notes pane ── */
+#notes-pane { display:none; flex:1; flex-direction:column; overflow:hidden; }
+#notes-pane.active { display:flex; }
+
+#channels-header { padding:10px 8px; border-bottom:1px solid var(--border); flex-shrink:0; }
+#channels-header .section-label {
+  font-size:8px; letter-spacing:0.14em; text-transform:uppercase;
+  color:var(--dim); padding:0 8px; margin-bottom:6px;
+}
+#channel-list { display:flex; flex-direction:column; gap:1px; }
+
+.channel-btn {
+  display:flex; align-items:center; gap:8px; padding:6px 12px;
+  background:transparent; border:none; border-radius:3px;
+  cursor:pointer; transition:all 0.12s; width:100%; text-align:left;
+}
+.channel-btn:hover { background:var(--raised); }
+.channel-btn.active { background:var(--raised); }
+.channel-btn .ch-icon { font-size:10px; width:14px; text-align:center; }
+.channel-btn .ch-name { font-family:var(--mono); font-size:11px; flex:1; }
+.channel-btn.active .ch-name { font-weight:500; }
+.channel-btn .ch-count {
+  font-size:8px; color:var(--dim); background:var(--raised);
+  padding:1px 5px; border-radius:8px;
+}
+
+#new-channel-row { display:flex; gap:4px; margin-top:6px; padding:0 4px; }
+#new-channel-input {
+  flex:1; background:transparent; border:none; border-bottom:1px solid var(--faint);
+  padding:4px 8px; font-family:var(--mono); font-size:10px; color:var(--text); outline:none;
+}
+#new-channel-input::placeholder { color:var(--dim); }
+
+.mini-btn {
+  background:transparent; border:1px solid var(--dim); color:var(--muted);
+  font-family:var(--mono); font-size:8px; letter-spacing:0.06em;
+  padding:2px 8px; cursor:pointer; transition:all 0.15s;
+}
+.mini-btn:hover { border-color:var(--accent); color:var(--accent); }
+.mini-btn.danger:hover { border-color:var(--err); color:var(--err); }
+
+#notes-list { flex:1; overflow-y:auto; padding:8px; }
+.note-item {
+  padding:8px 10px; background:var(--surface); border:1px solid var(--border);
+  border-radius:3px; margin-bottom:5px; transition:all 0.12s; cursor:pointer;
+}
+.note-item:hover { background:var(--raised); }
+.note-item.selected { border-color:rgba(196,154,108,0.4); background:var(--accent-s); }
+.note-item.pinned { border-left-width:2px; border-left-color:var(--accent); }
+.note-text { font-size:11px; color:var(--text); line-height:1.5; white-space:pre-wrap; word-break:break-word; }
+.note-text.clamped { display:-webkit-box; -webkit-line-clamp:3; -webkit-box-orient:vertical; overflow:hidden; }
+.note-meta { display:flex; justify-content:space-between; align-items:center; margin-top:5px; }
+.note-date { font-size:8px; color:var(--dim); }
+.note-actions { display:flex; gap:3px; }
+
+#notes-input-area { padding:8px; border-top:1px solid var(--border); flex-shrink:0; }
+#notes-input-area textarea {
+  width:100%; background:var(--surface); border:1px solid var(--border);
+  border-radius:3px; padding:8px 10px; font-family:var(--mono); font-size:11px;
+  color:var(--text); resize:none; line-height:1.5; outline:none; transition:border-color 0.15s;
+}
+#notes-input-area textarea:focus { border-color:var(--accent); }
+#notes-input-area textarea::placeholder { color:var(--dim); }
+#notes-input-btns { display:flex; gap:4px; margin-top:5px; justify-content:flex-end; }
+
+/* ── Main panel ── */
+#main { flex:1; display:flex; flex-direction:column; overflow:hidden; min-width:0; }
+
+/* ── Welcome ── */
+#welcome {
+  flex:1; display:flex; flex-direction:column; align-items:center; justify-content:center;
+  padding:2rem; text-align:center;
+}
+#welcome h2 {
+  font-family:var(--serif); font-weight:300; font-size:2rem;
+  letter-spacing:0.12em; color:var(--text); margin-bottom:8px;
+}
+#welcome p { font-size:11px; color:var(--muted); line-height:1.7; max-width:340px; }
+
+/* ── Session List ── */
+#session-list { display:none; flex-direction:column; height:100%; }
+#session-list.active { display:flex; }
+#sl-header {
+  display:flex; align-items:center; gap:12px;
+  padding:12px 20px; border-bottom:1px solid var(--border); flex-shrink:0;
+}
+#sl-agent-info { flex:1; min-width:0; }
+#sl-agent-name { font-family:var(--serif); font-size:1.05rem; font-weight:400; color:var(--accent); letter-spacing:0.06em; }
+#sl-agent-title { font-family:var(--serif); font-style:italic; font-size:11px; color:var(--dim); }
+#sl-items { flex:1; overflow-y:auto; padding:1.5rem 2rem; display:flex; flex-direction:column; gap:6px; }
+#sl-empty { font-size:11px; color:var(--dim); font-style:italic; text-align:center; padding:2rem 0; }
+.session-item {
+  padding:14px 16px; background:var(--surface); border:1px solid var(--border);
+  border-radius:3px; cursor:pointer; transition:all 0.15s;
+}
+.session-item:hover { background:var(--raised); border-color:rgba(196,154,108,0.35); }
+.si-meta { display:flex; justify-content:space-between; align-items:center; margin-bottom:5px; }
+.si-date { font-size:10px; color:var(--accent); letter-spacing:0.06em; }
+.si-count { font-size:9px; color:var(--dim); }
+.si-preview {
+  font-family:var(--serif); font-size:13px; color:var(--muted); line-height:1.5;
+  display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden;
+}
+
+/* ── Chat ── */
+#chat { display:none; flex-direction:column; height:100%; }
+#chat.active { display:flex; }
+
+#chat-header {
+  display:flex; align-items:center; gap:12px;
+  padding:12px 20px; border-bottom:1px solid var(--border); flex-shrink:0;
+}
+.header-btn {
+  background:none; border:1px solid var(--border); color:var(--muted);
+  font-family:var(--mono); font-size:10px; letter-spacing:0.1em;
+  padding:4px 10px; cursor:pointer; transition:all 0.15s; flex-shrink:0;
+}
+.header-btn:hover { border-color:var(--accent); color:var(--accent); }
+.header-btn.danger:hover { border-color:var(--err); color:var(--err); }
+
+#chat-agent-info { flex:1; min-width:0; }
+#chat-agent-name { font-family:var(--serif); font-size:1.05rem; font-weight:400; color:var(--accent); letter-spacing:0.06em; }
+#chat-agent-title { font-family:var(--serif); font-style:italic; font-size:11px; color:var(--dim); }
+
+#chat-header-actions { display:flex; gap:6px; align-items:center; }
+
+#messages { flex:1; overflow-y:auto; padding:2rem; display:flex; flex-direction:column; gap:2rem; }
+
+/* ── Message bubbles (Sanctum-style) ── */
+.msg { width:100%; }
+
+.msg-label {
+  font-size:9px; letter-spacing:0.14em; text-transform:uppercase;
+  color:var(--dim); margin-bottom:8px; display:flex; align-items:center; gap:6px;
+}
+.msg-label .label-dot { width:5px; height:5px; border-radius:50%; opacity:0.7; }
+
+.msg.assistant .msg-body {
+  font-family:var(--serif); font-size:clamp(16px,2.5vw,19px);
+  color:var(--guide); line-height:1.85; padding-left:13px;
+  white-space:pre-wrap;
+}
+
+.msg.user .msg-body {
+  font-family:var(--mono); font-size:13px; color:var(--text);
+  line-height:1.75; padding:0 0 0 14px;
+  border-left:2px solid var(--faint);
+  opacity:0.85; white-space:pre-wrap;
+}
+
+.msg.assistant .msg-actions {
+  display:flex; gap:6px; margin-top:10px; padding-left:13px; opacity:0;
+  transition:opacity 0.2s;
+}
+.msg.assistant:hover .msg-actions { opacity:1; }
+.msg-action-btn {
+  background:none; border:1px solid var(--dim); color:var(--dim);
+  font-family:var(--mono); font-size:8px; letter-spacing:0.08em;
+  padding:2px 8px; cursor:pointer; transition:all 0.15s;
+}
+.msg-action-btn:hover { border-color:var(--accent); color:var(--accent); }
+
+/* ── Thinking dots ── */
+#thinking { padding-left:13px; display:none; }
+#thinking.active { display:flex; }
+.think-dot {
+  width:4px; height:4px; border-radius:50%;
+  background:var(--accent); margin-right:5px;
+  animation:breathe 1.4s ease-in-out infinite;
+}
+.think-dot:nth-child(2) { animation-delay:0.2s; }
+.think-dot:nth-child(3) { animation-delay:0.4s; }
+@keyframes breathe { 0%,100%{opacity:.15} 50%{opacity:.85} }
+@keyframes fadeUp { from{opacity:0;transform:translateY(8px)} to{opacity:1;transform:translateY(0)} }
+.msg { animation:fadeUp 0.4s ease both; }
+
+/* ── Error banner ── */
+#error-banner {
+  display:none; background:#2a1010; border:1px solid rgba(196,122,108,0.4);
+  color:#e09090; padding:8px 20px; font-size:11px; flex-shrink:0;
+}
+
+/* ── Chat input ── */
+#chat-input-area {
+  flex-shrink:0; border-top:1px solid var(--border);
+  padding:12px 20px; display:flex; gap:8px; align-items:flex-end;
+}
+#user-input {
+  flex:1; background:var(--surface); border:1px solid var(--border);
+  color:var(--text); font-family:var(--mono); font-size:12px;
+  padding:10px 14px; resize:none; min-height:42px; max-height:160px;
+  line-height:1.6; outline:none; transition:border-color 0.15s;
+}
+#user-input:focus { border-color:var(--accent); }
+#user-input::placeholder { color:var(--dim); }
+#send-btn {
+  background:none; border:1px solid var(--border); color:var(--dim);
+  font-family:var(--mono); font-size:10px; letter-spacing:0.1em;
+  padding:0 18px; height:42px; cursor:pointer;
+  transition:all 0.15s; flex-shrink:0;
+}
+#send-btn:hover:not(:disabled) { border-color:var(--accent); color:var(--accent); }
+#send-btn:disabled { opacity:0.3; cursor:default; }
+.input-hint { font-size:9px; color:var(--dim); letter-spacing:0.05em; margin-top:4px; }
+
+/* ── Key overlay ── */
+#key-panel {
+  display:none; position:fixed; inset:0; z-index:200;
+  background:rgba(0,0,0,0.65); align-items:flex-start; justify-content:flex-end;
+}
+#key-panel.open { display:flex; }
+.key-inner {
+  background:var(--surface); border-left:1px solid var(--border); border-bottom:1px solid var(--border);
+  width:min(340px,100%); padding:1.5rem; display:flex; flex-direction:column; gap:1rem;
+}
+.key-title { font-size:10px; letter-spacing:0.15em; text-transform:uppercase; color:var(--accent); }
+.key-desc { font-size:11px; color:var(--muted); line-height:1.6; }
+.key-desc a { color:var(--accent); text-decoration:none; }
+.key-desc a:hover { text-decoration:underline; }
+#api-key-input {
+  width:100%; background:var(--bg); border:1px solid var(--border);
+  color:var(--text); font-family:var(--mono); font-size:11px;
+  padding:8px 10px; outline:none; transition:border-color 0.15s;
+}
+#api-key-input:focus { border-color:var(--accent); }
+#api-key-input::placeholder { color:var(--dim); }
+.key-actions { display:flex; gap:6px; flex-wrap:wrap; }
+.key-status { font-size:10px; color:var(--muted); }
+.key-status.ok { color:#6a9955; }
+
+/* ── Key button in sb header ── */
+#key-btn {
+  background:none; border:1px solid var(--border); color:var(--dim);
+  font-family:var(--mono); font-size:9px; letter-spacing:0.1em;
+  padding:3px 8px; cursor:pointer; display:flex; align-items:center; gap:5px;
+  transition:all 0.15s;
+}
+#key-btn:hover { border-color:var(--accent); color:var(--accent); }
+#key-btn .dot { width:5px; height:5px; border-radius:50%; background:var(--dim); transition:background 0.2s; }
+#key-btn .dot.set { background:#6a9955; }
+
+/* ── Save-to-notes panel (slides up) ── */
+#save-note-panel {
+  display:none; position:fixed; bottom:0; left:0; right:0; z-index:100;
+  background:var(--surface); border-top:1px solid var(--border);
+  padding:16px 20px; gap:10px; flex-direction:column;
+  animation:fadeUp 0.25s ease both;
+}
+#save-note-panel.open { display:flex; }
+#save-note-panel h4 { font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:var(--accent); }
+#save-note-content {
+  font-family:var(--serif); font-style:italic; font-size:14px; color:var(--muted);
+  line-height:1.6; max-height:80px; overflow:hidden;
+  display:-webkit-box; -webkit-line-clamp:3; -webkit-box-orient:vertical;
+}
+#save-note-channel-row { display:flex; gap:6px; align-items:center; flex-wrap:wrap; }
+#save-note-channel-row span { font-size:10px; color:var(--dim); }
+.ch-pick-btn {
+  background:none; border:1px solid var(--border); color:var(--dim);
+  font-family:var(--mono); font-size:9px; padding:3px 10px; cursor:pointer;
+  transition:all 0.15s; letter-spacing:0.06em;
+}
+.ch-pick-btn.active { color:var(--accent); border-color:var(--accent); background:var(--accent-s); }
+#save-note-actions { display:flex; gap:6px; }
+
+/* ── Scrollbars ── */
+::-webkit-scrollbar { width:3px; }
+::-webkit-scrollbar-track { background:transparent; }
+::-webkit-scrollbar-thumb { background:var(--faint); border-radius:2px; }
+
+/* ── Mobile ── */
+@media(max-width:680px) {
+  #mobile-tabs { display:flex; }
+  #sidebar { display:none; }
+  #sidebar.mob-active { display:flex; width:100%; border-right:none; }
+  #main.mob-hidden { display:none; }
+  #resize-handle { display:none; }
+}
+</style>
+</head>
+<body>
+<div id="app">
+
+  <!-- Mobile tabs -->
+  <div id="mobile-tabs">
+    <button class="mob-tab active" id="mob-tab-sidebar" onclick="setMobileTab('sidebar')">Menu</button>
+    <button class="mob-tab" id="mob-tab-main" onclick="setMobileTab('main')">Session</button>
+  </div>
+
+  <div id="split">
+
+    <!-- ── Sidebar ── -->
+    <div id="sidebar">
+      <div id="sb-header">
+        <div id="sb-header-top">
+          <div id="sb-title" onclick="deselectAgent()">
+            <h1>Cognitae</h1>
+            <div class="class-dots">
+              <div class="class-dot" style="background:var(--episteme)"></div>
+              <div class="class-dot" style="background:var(--techne)"></div>
+              <div class="class-dot" style="background:var(--phronesis)"></div>
+            </div>
+          </div>
+          <button id="key-btn">
+            <span class="dot" id="key-dot"></span>
+            key
+          </button>
+        </div>
+        <div id="sb-tabs">
+          <button class="sb-tab active" id="tab-agents" onclick="setSideTab('agents')">Agents</button>
+          <button class="sb-tab" id="tab-notes" onclick="setSideTab('notes')">Notes</button>
+        </div>
+      </div>
+
+      <!-- Agents pane -->
+      <div id="agents-pane"></div>
+
+      <!-- Notes pane -->
+      <div id="notes-pane">
+        <div id="channels-header">
+          <div class="section-label">Channels</div>
+          <div id="channel-list"></div>
+          <div id="new-channel-row">
+            <input id="new-channel-input" placeholder="+ New channel"
+              onkeydown="if(event.key==='Enter')addChannel()">
+            <button class="mini-btn" id="add-ch-btn" onclick="addChannel()" style="display:none">Add</button>
+          </div>
+        </div>
+        <div id="notes-list"></div>
+        <div id="notes-input-area">
+          <textarea id="note-input" rows="2" placeholder="Add a note..."
+            onkeydown="if(event.key==='Enter'&&!event.shiftKey){event.preventDefault();addNote()}"></textarea>
+          <div id="notes-input-btns">
+            <button class="mini-btn" onclick="exportNotesMd()">copy ↓</button>
+            <button class="mini-btn" onclick="addNote()">add</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Resize handle -->
+    <div id="resize-handle"></div>
+
+    <!-- ── Main panel ── -->
+    <div id="main">
+
+      <!-- Welcome -->
+      <div id="welcome">
+        <div style="width:36px;height:1px;background:var(--faint);margin:0 auto 20px"></div>
+        <h2>Cognitae</h2>
+        <p>Select an agent from the sidebar to begin a conversation.</p>
+        <div style="display:flex;gap:4px;margin-top:20px;justify-content:center">
+          <div style="width:4px;height:4px;border-radius:50%;background:var(--episteme);opacity:0.6"></div>
+          <div style="width:4px;height:4px;border-radius:50%;background:var(--techne);opacity:0.6"></div>
+          <div style="width:4px;height:4px;border-radius:50%;background:var(--phronesis);opacity:0.6"></div>
+        </div>
+      </div>
+
+      <!-- Session List -->
+      <div id="session-list">
+        <div id="sl-header">
+          <div id="sl-agent-info">
+            <div id="sl-agent-name"></div>
+            <div id="sl-agent-title"></div>
+          </div>
+          <button class="header-btn" onclick="newSession()">+ new</button>
+        </div>
+        <div id="sl-items"></div>
+      </div>
+
+      <!-- Chat -->
+      <div id="chat">
+        <div id="chat-header">
+          <button class="header-btn" id="back-btn" onclick="backToSessions()">← back</button>
+          <div id="chat-agent-info">
+            <div id="chat-agent-name"></div>
+            <div id="chat-agent-title"></div>
+          </div>
+          <div id="chat-header-actions">
+            <button class="header-btn" onclick="exportChat()">export</button>
+            <button class="header-btn danger" onclick="clearChat()">clear</button>
+          </div>
+        </div>
+        <div id="error-banner"></div>
+        <div id="messages">
+          <div id="thinking">
+            <div class="think-dot"></div>
+            <div class="think-dot"></div>
+            <div class="think-dot"></div>
+          </div>
+        </div>
+        <div id="chat-input-area">
+          <div style="flex:1;display:flex;flex-direction:column">
+            <textarea id="user-input" rows="1" placeholder="enter message..."></textarea>
+            <div class="input-hint">shift+enter for new line &mdash; enter to send</div>
+          </div>
+          <button id="send-btn">send</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- Save-to-notes panel -->
+<div id="save-note-panel">
+  <h4>Save to notes</h4>
+  <div id="save-note-content"></div>
+  <div id="save-note-channel-row">
+    <span>Channel:</span>
+    <div id="save-note-channels"></div>
+  </div>
+  <div id="save-note-actions">
+    <button class="mini-btn" id="save-note-confirm">save</button>
+    <button class="mini-btn" onclick="closeSavePanel()">cancel</button>
+  </div>
+</div>
+
+<!-- Key panel -->
+<div id="key-panel">
+  <div class="key-inner">
+    <div class="key-title">Model &amp; Key</div>
+    <div class="key-desc">
+      Enter any <a href="https://docs.litellm.ai/docs/providers" target="_blank" rel="noopener">LiteLLM model string</a> and the matching API key. Both stored in this browser only.
+      <br><br>
+      Examples:<br>
+      <code style="font-size:10px;color:var(--accent)">claude-opus-4-6</code> → Anthropic key<br>
+      <code style="font-size:10px;color:var(--accent)">gpt-4o</code> → OpenAI key<br>
+      <code style="font-size:10px;color:var(--accent)">groq/llama-3.3-70b-versatile</code> → Groq key
+    </div>
+    <div style="display:flex;flex-direction:column;gap:6px">
+      <label style="font-size:9px;letter-spacing:0.1em;text-transform:uppercase;color:var(--dim)">Model</label>
+      <input type="text" id="model-input" placeholder="claude-opus-4-6" autocomplete="off" spellcheck="false"
+        style="width:100%;background:var(--bg);border:1px solid var(--border);color:var(--text);font-family:var(--mono);font-size:11px;padding:8px 10px;outline:none;transition:border-color 0.15s"
+        onfocus="this.style.borderColor='var(--accent)'" onblur="this.style.borderColor='var(--border)'">
+    </div>
+    <div style="display:flex;flex-direction:column;gap:6px">
+      <label style="font-size:9px;letter-spacing:0.1em;text-transform:uppercase;color:var(--dim)">API Key</label>
+      <input type="password" id="api-key-input" placeholder="your api key..." autocomplete="off" spellcheck="false">
+    </div>
+    <div class="key-actions">
+      <button class="mini-btn" onclick="saveKey()">save</button>
+      <button class="mini-btn danger" onclick="clearKey()">clear</button>
+      <button class="mini-btn" onclick="closeKeyPanel()">close</button>
+    </div>
+    <div class="key-status" id="key-status"></div>
+  </div>
+</div>
+
+<script>
+// ── Class colors ─────────────────────────────────────────────────────────────
+const CLASS_COLOR = {
+  Phronesis:'var(--phronesis)', Episteme:'var(--episteme)',
+  Techne:'var(--techne)', Audit:'var(--audit)',
+  Gaming:'var(--gaming)', Integrator:'var(--integrator)',
+};
+const CLASS_ORDER = ['Phronesis','Episteme','Techne','Audit','Gaming','Integrator'];
+
+// ── Default note channels ─────────────────────────────────────────────────────
+const DEFAULT_CHANNELS = [
+  { id:'know', name:'What I Know', color:'var(--episteme)', icon:'◆' },
+  { id:'do',   name:'What I Could Do', color:'var(--techne)', icon:'▸' },
+  { id:'matters', name:'What Matters', color:'var(--phronesis)', icon:'○' },
+];
+
+// ── State ────────────────────────────────────────────────────────────────────
+let agents = [];
+let currentAgent = null;
+let conversationHistory = [];
+let isStreaming = false;
+let sideTab = 'agents';
+let activeChannel = 'know';
+let customChannels = [];
+let noteIndex = [];
+let noteCache = {};
+let pendingSaveContent = '';
+let pendingSaveChannel = 'know';
+let confirmDelId = null;
+
+function allChannels() { return [...DEFAULT_CHANNELS, ...customChannels]; }
+
+// ── Storage keys ──────────────────────────────────────────────────────────────
+const KEY_STORAGE   = 'cognitae_api_key';
+const MODEL_STORAGE = 'cognitae_model';
+const CONV_PREFIX   = 'cognitae_conv_';
+const NOTE_PREFIX   = 'cognitae_note_';
+const NOTE_IDX_KEY  = 'cognitae_notes_idx';
+const CUSTOM_CH_KEY = 'cognitae_channels';
+
+// ── API key & model ───────────────────────────────────────────────────────────
+function getKey()   { return localStorage.getItem(KEY_STORAGE) || ''; }
+function getModel() { return localStorage.getItem(MODEL_STORAGE) || 'claude-opus-4-6'; }
+function saveKey() {
+  const key = document.getElementById('api-key-input').value.trim();
+  const model = document.getElementById('model-input').value.trim() || 'claude-opus-4-6';
+  if (key) localStorage.setItem(KEY_STORAGE, key);
+  localStorage.setItem(MODEL_STORAGE, model);
+  updateKeyDot();
+  closeKeyPanel();
+}
+function clearKey() {
+  localStorage.removeItem(KEY_STORAGE);
+  localStorage.removeItem(MODEL_STORAGE);
+  document.getElementById('api-key-input').value = '';
+  document.getElementById('model-input').value = '';
+  updateKeyDot();
+}
+function updateKeyDot() {
+  const has = !!getKey();
+  document.getElementById('key-dot').classList.toggle('set', has);
+  const el = document.getElementById('key-status');
+  const model = getModel();
+  el.textContent = has ? `${model} · key stored` : `${model} · no key stored`;
+  el.className = 'key-status' + (has ? ' ok' : '');
+}
+function openKeyPanel() {
+  document.getElementById('api-key-input').value = getKey();
+  document.getElementById('model-input').value = getModel();
+  updateKeyDot();
+  document.getElementById('key-panel').classList.add('open');
+}
+function closeKeyPanel() { document.getElementById('key-panel').classList.remove('open'); }
+
+document.getElementById('key-btn').addEventListener('click', openKeyPanel);
+document.getElementById('key-panel').addEventListener('click', e => {
+  if (e.target === document.getElementById('key-panel')) closeKeyPanel();
+});
+
+// ── Session storage ───────────────────────────────────────────────────────────
+function sessionsKey(agentId) { return `cognitae_sessions_${agentId}`; }
+function sessionKey(sid)      { return `cognitae_session_${sid}`; }
+
+function loadAgentSessions(agentId) {
+  try { return JSON.parse(localStorage.getItem(sessionsKey(agentId)) || '[]'); } catch { return []; }
+}
+function saveAgentSessions(agentId, sessions) {
+  localStorage.setItem(sessionsKey(agentId), JSON.stringify(sessions));
+}
+function loadSessionMsgs(sid) {
+  try { return JSON.parse(localStorage.getItem(sessionKey(sid)) || '[]'); } catch { return []; }
+}
+function saveSessionMsgs(sid, msgs) {
+  localStorage.setItem(sessionKey(sid), JSON.stringify(msgs));
+}
+function deleteSessionData(agentId, sid) {
+  localStorage.removeItem(sessionKey(sid));
+  saveAgentSessions(agentId, loadAgentSessions(agentId).filter(s => s.id !== sid));
+}
+function saveCurrentSession() {
+  if (!currentAgent || !currentSessionId) return;
+  saveSessionMsgs(currentSessionId, conversationHistory);
+  const sessions = loadAgentSessions(currentAgent.id);
+  const firstUser = conversationHistory.find(m => m.role === 'user');
+  const preview = firstUser ? firstUser.content.slice(0, 100) : '…';
+  const existing = sessions.findIndex(s => s.id === currentSessionId);
+  const entry = {
+    id: currentSessionId,
+    created: existing >= 0 ? sessions[existing].created : Date.now(),
+    updated: Date.now(),
+    msgCount: conversationHistory.length,
+    preview,
+  };
+  if (existing >= 0) sessions[existing] = entry; else sessions.unshift(entry);
+  saveAgentSessions(currentAgent.id, sessions);
+}
+
+// Migrate old single-conversation format to sessions
+function migrateOldConv(agentId) {
+  const raw = localStorage.getItem(CONV_PREFIX + agentId);
+  if (!raw) return;
+  try {
+    const msgs = JSON.parse(raw);
+    if (msgs.length) {
+      const sid = genId();
+      const firstUser = msgs.find(m => m.role === 'user');
+      saveSessionMsgs(sid, msgs);
+      const sessions = loadAgentSessions(agentId);
+      sessions.unshift({ id: sid, created: Date.now() - 86400000, updated: Date.now() - 86400000, msgCount: msgs.length, preview: firstUser ? firstUser.content.slice(0, 100) : '…' });
+      saveAgentSessions(agentId, sessions);
+    }
+  } catch {}
+  localStorage.removeItem(CONV_PREFIX + agentId);
+}
+
+// ── Notes storage ─────────────────────────────────────────────────────────────
+function loadNoteIndex()  { try { return JSON.parse(localStorage.getItem(NOTE_IDX_KEY) || '[]'); } catch { return []; } }
+function saveNoteIndex(i) { localStorage.setItem(NOTE_IDX_KEY, JSON.stringify(i)); }
+function loadNote(id)     { try { return JSON.parse(localStorage.getItem(NOTE_PREFIX + id)); } catch { return null; } }
+function saveNote(n) {
+  localStorage.setItem(NOTE_PREFIX + n.id, JSON.stringify(n));
+  let idx = loadNoteIndex();
+  const i = idx.findIndex(x => x.id === n.id);
+  const e = { id:n.id, channel:n.channel, preview:n.content.slice(0,80), created:n.created, updated:Date.now() };
+  if (i >= 0) idx[i] = e; else idx.unshift(e);
+  saveNoteIndex(idx);
+  noteIndex = idx;
+}
+function deleteNote(id) {
+  localStorage.removeItem(NOTE_PREFIX + id);
+  noteIndex = loadNoteIndex().filter(n => n.id !== id);
+  saveNoteIndex(noteIndex);
+}
+function genId() { return Date.now().toString(36) + Math.random().toString(36).slice(2,6); }
+
+function loadCustomChannels() {
+  try { return JSON.parse(localStorage.getItem(CUSTOM_CH_KEY) || '[]'); } catch { return []; }
+}
+function saveCustomChannels(chs) { localStorage.setItem(CUSTOM_CH_KEY, JSON.stringify(chs)); }
+
+// ── Sidebar tabs ──────────────────────────────────────────────────────────────
+function setSideTab(tab) {
+  sideTab = tab;
+  document.getElementById('tab-agents').classList.toggle('active', tab === 'agents');
+  document.getElementById('tab-notes').classList.toggle('active', tab === 'notes');
+  document.getElementById('agents-pane').style.display = tab === 'agents' ? '' : 'none';
+  document.getElementById('notes-pane').classList.toggle('active', tab === 'notes');
+}
+
+// ── Agent list ────────────────────────────────────────────────────────────────
+function renderAgents() {
+  const pane = document.getElementById('agents-pane');
+  pane.innerHTML = '';
+  const byClass = {};
+  for (const a of agents) (byClass[a.class] = byClass[a.class] || []).push(a);
+
+  for (const cls of CLASS_ORDER) {
+    const group = byClass[cls];
+    if (!group) continue;
+    const col = CLASS_COLOR[cls] || 'var(--accent)';
+    const div = document.createElement('div');
+    div.className = 'agent-group';
+    div.innerHTML = `<div class="agent-group-label"><span class="dot" style="background:${col}"></span>${cls}</div>`;
+    for (const a of group) {
+      const btn = document.createElement('button');
+      btn.className = 'agent-item' + (currentAgent?.id === a.id ? ' active' : '');
+      btn.dataset.id = a.id;
+      btn.innerHTML = `
+        <span class="ai-badge" style="background:${col}"></span>
+        <span class="ai-name">${a.name}</span>
+        <span class="ai-title">${a.full_name.split(',').slice(1).join(',').trim() || ''}</span>
+      `;
+      btn.addEventListener('click', () => openChat(a));
+      div.appendChild(btn);
+    }
+    pane.appendChild(div);
+  }
+  // Any unlisted classes
+  for (const cls of Object.keys(byClass)) {
+    if (CLASS_ORDER.includes(cls)) continue;
+    const group = byClass[cls];
+    const div = document.createElement('div');
+    div.className = 'agent-group';
+    div.innerHTML = `<div class="agent-group-label">${cls}</div>`;
+    for (const a of group) {
+      const btn = document.createElement('button');
+      btn.className = 'agent-item' + (currentAgent?.id === a.id ? ' active' : '');
+      btn.dataset.id = a.id;
+      btn.innerHTML = `<span class="ai-name">${a.name}</span>`;
+      btn.addEventListener('click', () => openChat(a));
+      div.appendChild(btn);
+    }
+    pane.appendChild(div);
+  }
+}
+
+// ── Channels ──────────────────────────────────────────────────────────────────
+function renderChannels() {
+  const list = document.getElementById('channel-list');
+  list.innerHTML = '';
+  for (const ch of allChannels()) {
+    const count = noteIndex.filter(n => n.channel === ch.id).length;
+    const btn = document.createElement('button');
+    btn.className = 'channel-btn' + (activeChannel === ch.id ? ' active' : '');
+    btn.style.setProperty('--ch-color', ch.color);
+    btn.innerHTML = `
+      <span class="ch-icon" style="color:${ch.color}">${ch.icon}</span>
+      <span class="ch-name" style="color:${activeChannel === ch.id ? ch.color : ''}">${ch.name}</span>
+      ${count > 0 ? `<span class="ch-count">${count}</span>` : ''}
+    `;
+    btn.addEventListener('click', () => { activeChannel = ch.id; renderChannels(); renderNotesList(); });
+    list.appendChild(btn);
+  }
+}
+
+function addChannel() {
+  const input = document.getElementById('new-channel-input');
+  const name = input.value.trim();
+  if (!name) return;
+  const id = name.toLowerCase().replace(/[^a-z0-9]/g,'_');
+  const icons = ['▷','◇','△','◻','◈'];
+  const colors = ['var(--episteme)','var(--techne)','var(--phronesis)','var(--accent)','var(--muted)'];
+  const idx = customChannels.length % icons.length;
+  customChannels.push({ id, name, color:colors[idx], icon:icons[idx] });
+  saveCustomChannels(customChannels);
+  input.value = '';
+  document.getElementById('add-ch-btn').style.display = 'none';
+  activeChannel = id;
+  renderChannels();
+  renderNotesList();
+}
+
+document.getElementById('new-channel-input').addEventListener('input', e => {
+  document.getElementById('add-ch-btn').style.display = e.target.value.trim() ? '' : 'none';
+});
+
+// ── Notes list ────────────────────────────────────────────────────────────────
+function renderNotesList() {
+  const list = document.getElementById('notes-list');
+  list.innerHTML = '';
+  const ch = allChannels().find(c => c.id === activeChannel) || DEFAULT_CHANNELS[0];
+  const notes = noteIndex.filter(n => n.channel === activeChannel);
+
+  if (notes.length === 0) {
+    list.innerHTML = `<p style="font-size:11px;color:var(--dim);font-style:italic;padding:20px 8px;text-align:center">No notes in ${ch.name} yet</p>`;
+    return;
+  }
+
+  for (const entry of notes) {
+    const n = loadNote(entry.id);
+    if (!n) continue;
+    const isLong = n.content.length > 120;
+    const div = document.createElement('div');
+    div.className = 'note-item';
+    const date = new Date(n.created).toLocaleDateString('en-GB',{day:'numeric',month:'short'});
+    div.innerHTML = `
+      <div class="note-text clamped" id="nt-${n.id}">${escHtml(n.content)}</div>
+      ${isLong ? `<button class="mini-btn" style="margin-top:4px;font-size:8px" onclick="toggleNote('${n.id}')">more</button>` : ''}
+      <div class="note-meta">
+        <span class="note-date">${date}</span>
+        <div class="note-actions">
+          <button class="mini-btn" title="Send to chat input" onclick="sendNoteToInput('${n.id}')">→</button>
+          <button class="mini-btn danger" onclick="confirmDelete('${n.id}')">×</button>
+        </div>
+      </div>
+    `;
+    list.appendChild(div);
+  }
+}
+
+function escHtml(s) {
+  return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/\n/g,'<br>');
+}
+
+function toggleNote(id) {
+  const el = document.getElementById('nt-' + id);
+  if (!el) return;
+  el.classList.toggle('clamped');
+}
+
+function confirmDelete(id) {
+  if (confirmDelId === id) {
+    deleteNote(id);
+    confirmDelId = null;
+    noteIndex = loadNoteIndex();
+    renderChannels();
+    renderNotesList();
+  } else {
+    confirmDelId = id;
+    setTimeout(() => { confirmDelId = null; }, 3000);
+  }
+}
+
+function sendNoteToInput(id) {
+  const n = loadNote(id);
+  if (!n) return;
+  const inp = document.getElementById('user-input');
+  inp.value = inp.value ? inp.value + '\n\n' + n.content : n.content;
+  inp.style.height = 'auto';
+  inp.style.height = Math.min(inp.scrollHeight, 160) + 'px';
+  setMobileTab('main');
+}
+
+function addNote() {
+  const input = document.getElementById('note-input');
+  const text = input.value.trim();
+  if (!text) return;
+  saveNote({ id:genId(), channel:activeChannel, content:text, created:Date.now() });
+  input.value = '';
+  noteIndex = loadNoteIndex();
+  renderChannels();
+  renderNotesList();
+}
+
+function exportNotesMd() {
+  const ch = allChannels().find(c => c.id === activeChannel) || DEFAULT_CHANNELS[0];
+  const notes = noteIndex.filter(n => n.channel === activeChannel).map(e => loadNote(e.id)).filter(Boolean);
+  if (notes.length === 0) return;
+  const md = `# ${ch.name}\n\n` + notes.map(n => {
+    const d = new Date(n.created).toLocaleDateString('en-GB',{day:'numeric',month:'long',year:'numeric'});
+    return `---\n*${d}*\n\n${n.content}\n`;
+  }).join('\n');
+  navigator.clipboard?.writeText(md).catch(() => {});
+}
+
+// ── Save-to-notes panel ───────────────────────────────────────────────────────
+function openSavePanel(content) {
+  pendingSaveContent = content;
+  pendingSaveChannel = activeChannel;
+  document.getElementById('save-note-content').textContent = content.slice(0, 200) + (content.length > 200 ? '…' : '');
+  renderSaveChannels();
+  document.getElementById('save-note-panel').classList.add('open');
+}
+
+function renderSaveChannels() {
+  const row = document.getElementById('save-note-channels');
+  row.innerHTML = '';
+  for (const ch of allChannels()) {
+    const btn = document.createElement('button');
+    btn.className = 'ch-pick-btn' + (pendingSaveChannel === ch.id ? ' active' : '');
+    btn.textContent = ch.name;
+    btn.addEventListener('click', () => { pendingSaveChannel = ch.id; renderSaveChannels(); });
+    row.appendChild(btn);
+  }
+}
+
+function closeSavePanel() { document.getElementById('save-note-panel').classList.remove('open'); }
+
+document.getElementById('save-note-confirm').addEventListener('click', () => {
+  if (!pendingSaveContent) return;
+  saveNote({ id:genId(), channel:pendingSaveChannel, content:pendingSaveContent, created:Date.now() });
+  noteIndex = loadNoteIndex();
+  renderChannels();
+  renderNotesList();
+  closeSavePanel();
+});
+
+// ── Chat / Session navigation ─────────────────────────────────────────────────
+let currentSessionId = null;
+
+function openChat(agent) {
+  // openChat now shows session list first
+  currentAgent = agent;
+  migrateOldConv(agent.id);
+
+  document.querySelectorAll('.agent-item').forEach(el => {
+    el.classList.toggle('active', el.dataset.id === agent.id);
+  });
+
+  const sessions = loadAgentSessions(agent.id);
+  if (sessions.length === 0) {
+    newSession(); // no history → jump straight to new chat
+    return;
+  }
+
+  document.getElementById('sl-agent-name').textContent = agent.name;
+  document.getElementById('sl-agent-title').textContent = agent.full_name;
+  renderSessionList(sessions);
+
+  document.getElementById('welcome').style.display = 'none';
+  document.getElementById('chat').classList.remove('active');
+  document.getElementById('session-list').classList.add('active');
+  setMobileTab('main');
+}
+
+function renderSessionList(sessions) {
+  const items = document.getElementById('sl-items');
+  items.innerHTML = '';
+  if (sessions.length === 0) {
+    items.innerHTML = '<div id="sl-empty">No previous conversations. Start a new one.</div>';
+    return;
+  }
+  for (const s of sessions) {
+    const div = document.createElement('div');
+    div.className = 'session-item';
+    const d = new Date(s.updated || s.created).toLocaleDateString('en-GB', { day:'numeric', month:'short', year:'numeric' });
+    const msgs = Math.floor(s.msgCount / 2); // pairs
+    div.innerHTML = `
+      <div class="si-meta">
+        <span class="si-date">${d}</span>
+        <span class="si-count">${msgs} exchange${msgs !== 1 ? 's' : ''}</span>
+      </div>
+      <div class="si-preview">${escHtml(s.preview || '…')}</div>
+    `;
+    div.addEventListener('click', () => openSession(s.id));
+    items.appendChild(div);
+  }
+}
+
+function openSession(sid) {
+  if (!currentAgent) return;
+  currentSessionId = sid;
+  conversationHistory = loadSessionMsgs(sid);
+  enterChatView();
+  for (const msg of conversationHistory) renderMessage(msg.role, msg.content);
+  document.getElementById('messages').scrollTop = document.getElementById('messages').scrollHeight;
+  document.getElementById('user-input').focus();
+}
+
+function newSession() {
+  currentSessionId = genId();
+  conversationHistory = [];
+  enterChatView();
+  document.getElementById('user-input').focus();
+}
+
+function enterChatView() {
+  document.getElementById('chat-agent-name').textContent = currentAgent.name;
+  document.getElementById('chat-agent-title').textContent = currentAgent.full_name;
+  document.getElementById('messages').innerHTML = '<div id="thinking"><div class="think-dot"></div><div class="think-dot"></div><div class="think-dot"></div></div>';
+  document.getElementById('error-banner').style.display = 'none';
+  document.getElementById('welcome').style.display = 'none';
+  document.getElementById('session-list').classList.remove('active');
+  document.getElementById('chat').classList.add('active');
+}
+
+function backToSessions() {
+  if (!currentAgent) return;
+  document.getElementById('chat').classList.remove('active');
+  openChat(currentAgent); // re-opens session list
+}
+
+function deselectAgent() {
+  currentAgent = null;
+  currentSessionId = null;
+  document.getElementById('chat').classList.remove('active');
+  document.getElementById('session-list').classList.remove('active');
+  document.getElementById('welcome').style.display = '';
+  document.querySelectorAll('.agent-item').forEach(el => el.classList.remove('active'));
+}
+
+function clearChat() {
+  if (!currentAgent || !currentSessionId) return;
+  deleteSessionData(currentAgent.id, currentSessionId);
+  currentSessionId = null;
+  conversationHistory = [];
+  backToSessions();
+}
+
+function renderMessage(role, content, animate = false) {
+  const col = currentAgent ? (CLASS_COLOR[currentAgent.agent_class || currentAgent.class] || 'var(--accent)') : 'var(--accent)';
+  const wrapper = document.createElement('div');
+  wrapper.className = `msg ${role}`;
+
+  const label = document.createElement('div');
+  label.className = 'msg-label';
+
+  if (role === 'assistant') {
+    label.innerHTML = `<span class="label-dot" style="background:${col}"></span>${(currentAgent?.name || 'agent').toLowerCase()}`;
+  } else {
+    label.textContent = 'you';
+  }
+
+  const body = document.createElement('div');
+  body.className = 'msg-body';
+  body.textContent = content;
+
+  wrapper.appendChild(label);
+  wrapper.appendChild(body);
+
+  if (role === 'assistant') {
+    const actions = document.createElement('div');
+    actions.className = 'msg-actions';
+    const saveBtn = document.createElement('button');
+    saveBtn.className = 'msg-action-btn';
+    saveBtn.textContent = 'save to notes';
+    saveBtn.addEventListener('click', () => openSavePanel(content));
+    const copyBtn = document.createElement('button');
+    copyBtn.className = 'msg-action-btn';
+    copyBtn.textContent = 'copy';
+    copyBtn.addEventListener('click', () => {
+      navigator.clipboard?.writeText(content);
+      copyBtn.textContent = 'copied';
+      setTimeout(() => { copyBtn.textContent = 'copy'; }, 1500);
+    });
+    actions.appendChild(saveBtn);
+    actions.appendChild(copyBtn);
+    wrapper.appendChild(actions);
+  }
+
+  const messages = document.getElementById('messages');
+  const thinking = document.getElementById('thinking');
+  messages.insertBefore(wrapper, thinking);
+  messages.scrollTop = messages.scrollHeight;
+  return body;
+}
+
+async function sendMessage() {
+  const text = document.getElementById('user-input').value.trim();
+  if (!text || isStreaming || !currentAgent) return;
+
+  document.getElementById('user-input').value = '';
+  document.getElementById('user-input').style.height = 'auto';
+  document.getElementById('error-banner').style.display = 'none';
+
+  conversationHistory.push({ role:'user', content:text });
+  renderMessage('user', text, true);
+
+  isStreaming = true;
+  document.getElementById('send-btn').disabled = true;
+  document.getElementById('thinking').style.display = 'flex';
+  document.getElementById('messages').scrollTop = document.getElementById('messages').scrollHeight;
+
+  try {
+    const res = await fetch('/api/chat', {
+      method:'POST',
+      headers:{ 'Content-Type':'application/json' },
+      body: JSON.stringify({ agent_id:currentAgent.id, messages:conversationHistory, api_key:getKey()||undefined, model:getModel() }),
+    });
+
+    if (!res.ok) {
+      const err = await res.json();
+      throw new Error(err.detail || 'Request failed');
+    }
+
+    document.getElementById('thinking').style.display = 'none';
+    const bodyEl = renderMessage('assistant', '', true);
+    bodyEl.classList.add('streaming');
+
+    const reader = res.body.getReader();
+    const decoder = new TextDecoder();
+    let fullText = '';
+    let buffer = '';
+
+    while (true) {
+      const { done, value } = await reader.read();
+      if (done) break;
+      buffer += decoder.decode(value, { stream:true });
+      const lines = buffer.split('\n');
+      buffer = lines.pop();
+      for (const line of lines) {
+        if (!line.startsWith('data: ')) continue;
+        const payload = line.slice(6).trim();
+        if (payload === '[DONE]') break;
+        try {
+          const data = JSON.parse(payload);
+          if (data.error) { showError(data.error); break; }
+          if (data.delta) {
+            fullText += data.delta;
+            bodyEl.textContent = fullText;
+            document.getElementById('messages').scrollTop = document.getElementById('messages').scrollHeight;
+          }
+        } catch {}
+      }
+    }
+
+    bodyEl.classList.remove('streaming');
+    conversationHistory.push({ role:'assistant', content:fullText });
+    saveCurrentSession();
+
+  } catch (e) {
+    document.getElementById('thinking').style.display = 'none';
+    showError(e.message);
+  } finally {
+    isStreaming = false;
+    document.getElementById('send-btn').disabled = false;
+    document.getElementById('user-input').focus();
+  }
+}
+
+function showError(msg) {
+  const el = document.getElementById('error-banner');
+  el.textContent = `error: ${msg}`;
+  el.style.display = 'block';
+}
+
+// ── Export chat as markdown ───────────────────────────────────────────────────
+function exportChat() {
+  if (!currentAgent || conversationHistory.length === 0) return;
+  const dt = new Date().toLocaleDateString('en-GB',{day:'numeric',month:'long',year:'numeric'});
+  let md = `# ${currentAgent.full_name}\n**${dt}**\n\n---\n\n`;
+  for (const m of conversationHistory) {
+    if (m.role === 'user') md += `**You**\n${m.content}\n\n`;
+    else md += `**${currentAgent.name}**\n> ${m.content}\n\n`;
+  }
+  md += `---\n*Cognitae · ${currentAgent.agent_class || currentAgent.class}*\n`;
+  const blob = new Blob([md], { type:'text/markdown' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = `${currentAgent.id}-${new Date().toISOString().slice(0,10)}.md`;
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  URL.revokeObjectURL(url);
+}
+
+// ── Input auto-resize ─────────────────────────────────────────────────────────
+document.getElementById('user-input').addEventListener('input', function() {
+  this.style.height = 'auto';
+  this.style.height = Math.min(this.scrollHeight, 160) + 'px';
+});
+document.getElementById('user-input').addEventListener('keydown', e => {
+  if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); sendMessage(); }
+});
+document.getElementById('send-btn').addEventListener('click', sendMessage);
+
+// ── Drag resize sidebar ───────────────────────────────────────────────────────
+(function() {
+  const handle = document.getElementById('resize-handle');
+  const sidebar = document.getElementById('sidebar');
+  let dragging = false;
+  handle.addEventListener('mousedown', e => { e.preventDefault(); dragging = true; handle.classList.add('dragging'); });
+  window.addEventListener('mousemove', e => {
+    if (!dragging) return;
+    const w = Math.max(180, Math.min(480, e.clientX));
+    sidebar.style.width = w + 'px';
+  });
+  window.addEventListener('mouseup', () => { dragging = false; handle.classList.remove('dragging'); });
+})();
+
+// ── Mobile tabs ───────────────────────────────────────────────────────────────
+function setMobileTab(tab) {
+  const sb = document.getElementById('sidebar');
+  const main = document.getElementById('main');
+  if (window.innerWidth > 680) return;
+  sb.classList.toggle('mob-active', tab === 'sidebar');
+  main.classList.toggle('mob-hidden', tab === 'sidebar');
+  document.getElementById('mob-tab-sidebar').classList.toggle('active', tab === 'sidebar');
+  document.getElementById('mob-tab-main').classList.toggle('active', tab === 'main');
+}
+
+// ── Init ──────────────────────────────────────────────────────────────────────
+async function init() {
+  updateKeyDot();
+  customChannels = loadCustomChannels();
+  noteIndex = loadNoteIndex();
+  renderChannels();
+  renderNotesList();
+
+  try {
+    const res = await fetch('/api/agents');
+    agents = await res.json();
+    renderAgents();
+  } catch (e) {
+    document.getElementById('welcome').innerHTML = `<p style="color:var(--err)">failed to load agents: ${e.message}</p>`;
+  }
+}
+
+// ── Service worker ────────────────────────────────────────────────────────────
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('/static/sw.js').catch(() => {});
+}
+
+init();
+</script>
+</body>
+</html>
