@@ -1,56 +1,74 @@
 # Cognitae Launcher
 
-A local web app that auto-discovers all Cognitae agents from the repository and lets you chat with them using any LLM provider. Installable as a PWA.
+Chat with all Cognitae agents in a single web app. Bring your own API key from any major LLM provider. Installable as a PWA.
+
+🌐 **Live app: [cognitae.onrender.com](https://cognitae.onrender.com)**
 
 ---
 
-## What it does
+## Using the live app
 
-- Auto-discovers all agents by reading their Master System Instruction files
-- Serves a split-panel UI: agent selector sidebar + streamed chat
-- Session history — each agent stores individual conversations; click an agent to browse past sessions or start a new one
-- Notes system with Episteme / Techne / Phronesis channels
-- **Bring Your Own Key** — works with Anthropic, OpenAI, Groq, Gemini, Mistral, and any other [LiteLLM-supported provider](https://docs.litellm.ai/docs/providers)
-- Model selector — switch models directly in the UI (e.g. `claude-opus-4-6`, `gpt-4o`, `groq/llama-3.3-70b-versatile`)
+### 1. Get an API key
+
+You need an API key from one of the supported providers:
+
+| Provider | Get a key | Example model string |
+|----------|-----------|----------------------|
+| Anthropic (Claude) | [console.anthropic.com](https://console.anthropic.com) | `claude-opus-4-6` |
+| OpenAI (GPT) | [platform.openai.com](https://platform.openai.com) | `gpt-4o` |
+| Groq (fast & free tier) | [console.groq.com](https://console.groq.com) | `groq/llama-3.3-70b-versatile` |
+| Google Gemini | [aistudio.google.com](https://aistudio.google.com) | `gemini/gemini-1.5-pro` |
+| Mistral | [console.mistral.ai](https://console.mistral.ai) | `mistral/mistral-large-latest` |
+
+> **Groq** offers a free tier with generous rate limits — a good option to get started without a credit card.
+
+### 2. Enter your key in the app
+
+1. Open [cognitae.onrender.com](https://cognitae.onrender.com) in Chrome or Edge
+2. Click the **key icon** (🔑) in the top-left corner
+3. Enter your **model string** (e.g. `claude-opus-4-6`) and your **API key**
+4. Click **Save** — your key is stored only in your browser, never sent to our servers
+
+### 3. Start chatting
+
+- Click any agent in the left sidebar to open their session list
+- Start a **New Session** or continue a previous conversation
+- Responses stream in real time, token by token
+
+### Install as a PWA
+
+For a native app-like experience, install it directly from the browser:
+
+**Desktop (Chrome / Edge):** Click the install icon in the address bar → "Install Cognitae"
+
+**iOS Safari:** Tap **Share → Add to Home Screen**
+
+**Android Chrome:** Tap the browser menu → **Add to Home Screen**
+
+> **Note:** The app is hosted on Render's free tier and sleeps after 15 minutes of inactivity. The first message after a period of no use may take ~30 seconds to respond while the server wakes up.
 
 ---
 
-## Requirements
+## Notes system
 
-- Python 3.10+
-- An API key from any supported LLM provider (or leave blank — the server will use env vars if set)
+The sidebar includes a Notes area with three built-in channels — **Episteme**, **Techne**, and **Phronesis** — plus the ability to create custom channels. Save any agent response to notes using the save button that appears on messages.
 
 ---
 
-## Setup
+## Running locally
+
+If you want to run the launcher against your own copy of the Cognitae repository:
 
 ```bash
 cd cognitae-launcher
 pip install -r requirements.txt
-cp .env.example .env          # optional: add server-side fallback keys
-```
-
-`.env.example` shows all supported providers:
-```
-ANTHROPIC_API_KEY=
-# OPENAI_API_KEY=
-# GROQ_API_KEY=
-# GEMINI_API_KEY=
-```
-
-You can leave `.env` blank and supply keys via the UI instead (BYOK). Server-side keys act as a shared fallback for all users.
-
----
-
-## Run
-
-```bash
+cp .env.example .env   # optional: add server-side fallback API keys
 python -m uvicorn main:app --port 8000
 ```
 
-Open `http://localhost:8000` in your browser.
+Open `http://localhost:8000`. The launcher auto-discovers all agents from the repository.
 
-> **Windows note:** Omit `--reload` on Windows — it causes errors with the file watcher.
+> **Windows:** Omit `--reload` — it causes errors with the file watcher.
 
 ---
 
@@ -58,8 +76,8 @@ Open `http://localhost:8000` in your browser.
 
 ```
 cognitae-launcher/
-├── agent_loader.py     # walks ../Cognitae/ and builds the agent registry
-├── main.py             # FastAPI app — /api/agents, /api/chat (SSE), /
+├── agent_loader.py     # agent discovery — walks repo for Master System Instruction files
+├── main.py             # FastAPI app — /api/agents, /api/chat (SSE streaming)
 ├── requirements.txt
 ├── .env.example
 └── static/
@@ -69,63 +87,22 @@ cognitae-launcher/
     └── icon.svg
 ```
 
-The launcher expects the `Cognitae/` directory to be one level up (`../Cognitae/`). It works out of the box when run from inside the main repository.
+---
+
+## Self-hosting on Render
+
+1. Fork or clone this repository to your own GitHub account
+2. Go to [render.com](https://render.com) → **New → Web Service** → connect your repo
+3. Set the **Runtime** to `Python 3`, **Root Directory** to `cognitae-launcher`, **Build Command** to `pip install -r requirements.txt`, **Start Command** to `uvicorn main:app --host 0.0.0.0 --port $PORT`
+4. Optionally add server-side API key env vars in the Render dashboard (`ANTHROPIC_API_KEY`, `OPENAI_API_KEY`, etc.) as a shared fallback — or leave blank and let users BYOK
+5. Deploy — your instance will be live at `https://your-app.onrender.com`
 
 ---
 
-## API key & model options
+## Technical notes
 
-| Method | How |
-|--------|-----|
-| `.env` file | Set `ANTHROPIC_API_KEY`, `OPENAI_API_KEY`, etc. before starting the server |
-| UI (BYOK) | Click the **key** icon in the top-left of the app |
-
-The UI key takes priority over server env vars and is stored only in your browser's localStorage. Use a LiteLLM model string to select your provider:
-
-| Provider | Example model string |
-|----------|----------------------|
-| Anthropic | `claude-opus-4-6` |
-| OpenAI | `gpt-4o` |
-| Groq | `groq/llama-3.3-70b-versatile` |
-| Gemini | `gemini/gemini-1.5-pro` |
-| Mistral | `mistral/mistral-large-latest` |
-
-See the [LiteLLM provider list](https://docs.litellm.ai/docs/providers) for the full set of supported model strings.
-
----
-
-## PWA
-
-Cognitae Launcher is a Progressive Web App — it can be installed on desktop or mobile and runs offline for the UI shell.
-
-**Install on desktop (Chrome / Edge):**
-1. Open the app URL in Chrome or Edge
-2. Click the install icon in the address bar (or the browser menu → "Install Cognitae Launcher")
-3. The app opens in its own window, separate from the browser
-
-**Install on mobile (iOS Safari / Android Chrome):**
-- iOS Safari: tap **Share → Add to Home Screen**
-- Android Chrome: tap the browser menu → **Add to Home Screen** or use the install banner
-
-**Offline behaviour:**
-The service worker (`sw.js`) caches the UI shell on first load. The app opens and displays correctly without a network connection, but chat requires a live connection to the API server.
-
----
-
-## Deploy as a live PWA (Render)
-
-1. Push the **full repository** to GitHub — both `Cognitae/` and `cognitae-launcher/` must be present, as the launcher reads `../Cognitae/` for agent files
-2. Go to [render.com](https://render.com) → New → Web Service → connect your GitHub repo
-3. Render detects `render.yaml` automatically and configures everything
-4. In the Render dashboard, optionally set server-side API key env vars (`ANTHROPIC_API_KEY`, `OPENAI_API_KEY`, etc.) — or leave them blank so users supply their own keys via the UI
-5. Once deployed, open your `https://your-app.onrender.com` URL in Chrome or Edge and install the PWA from the address bar
-
-> **Note:** Render's free tier spins down after 15 minutes of inactivity. The first request after a sleep takes ~30 seconds to wake. For always-on availability, upgrade to a paid instance.
-
----
-
-## Notes
-
-- Responses stream token-by-token via Server-Sent Events
+- Keys entered in the UI are stored in **browser localStorage only** — never transmitted to the server beyond the single API call
 - Session history and notes are stored in browser localStorage — clearing site data will erase them
-- Do not commit your `.env` file — it is excluded by `.gitignore`
+- Responses stream via **Server-Sent Events** (SSE)
+- No build step — the entire frontend is a single `index.html`
+
