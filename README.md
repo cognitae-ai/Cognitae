@@ -191,6 +191,39 @@ The Cognitae Framework is designed to work in any LLM environment that supports 
 
 ---
 
+## Cognitae Launcher *(Work in Progress)*
+
+A hosted web app that loads all agents from this repository and lets you chat with any of them directly — no file attachments, no system prompt copy-pasting.
+
+🌐 **[cognitae.onrender.com](https://cognitae.onrender.com)**
+
+### What it does
+
+- All 22+ agents available in a single sidebar — click any agent to start or resume a conversation
+- Full session history per agent — previous conversations are preserved and resumable
+- Notes system with Episteme / Techne / Phronesis channels for capturing thoughts alongside conversations
+- Installable as a PWA on desktop or mobile (Chrome / Edge address bar, or iOS Share → Add to Home Screen)
+
+### Bring Your Own Key
+
+The launcher requires an API key from a provider of your choice — your key is stored only in your browser and never sent to our servers beyond the API call itself.
+
+| Provider | Get a key | Model string |
+|----------|-----------|--------------|
+| Anthropic (Claude) | [console.anthropic.com](https://console.anthropic.com) | `claude-opus-4-6` |
+| OpenAI (GPT) | [platform.openai.com](https://platform.openai.com) | `gpt-4o` |
+| Groq *(free tier available)* | [console.groq.com](https://console.groq.com) | `groq/llama-3.3-70b-versatile` |
+| Google Gemini | [aistudio.google.com](https://aistudio.google.com) | `gemini/gemini-1.5-pro` |
+| Mistral | [console.mistral.ai](https://console.mistral.ai) | `mistral/mistral-large-latest` |
+
+Enter your model string and key via the **key icon** in the top-left of the app.
+
+> **Note:** The launcher is hosted on Render's free tier and sleeps after 15 minutes of inactivity. The first message after a period of no use may take ~30 seconds while the server wakes. The launcher itself is a work in progress — expect rough edges and ongoing updates.
+
+🔗 **[View the launcher source and self-hosting instructions](./cognitae-launcher/)**
+
+---
+
 ## The Cognitae Library
 
 Each agent is associated with a curated reading list reflecting the framework's Triadic Core—one text for its guiding philosophy (Phronesis), one for its practical methodology (Techne), and one for its theoretical foundation (Episteme). The full library contains 66 selections with detailed analysis for each.
