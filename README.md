@@ -157,6 +157,14 @@ The Cognitae Framework is designed to work in any LLM environment that supports 
 
 ---
 
+## The Cognitae Library
+
+Each agent is associated with a curated reading list reflecting the framework's Triadic Core—one text for its guiding philosophy (Phronesis), one for its practical methodology (Techne), and one for its theoretical foundation (Episteme). The full library contains 66 selections with detailed analysis for each.
+
+**[► Explore The Cognitae Library](./BOOKSHELF.md)**
+
+---
+
 ## Cognitae Launcher *(Work in Progress)*
 
 A hosted web app that loads all agents from this repository and lets you chat with any of them directly — no file attachments, no system prompt copy-pasting.
@@ -188,15 +196,6 @@ Enter your model string and key via the **key icon** in the top-left of the app.
 
 🔗 **[View the launcher source and self-hosting instructions](./cognitae-launcher/)**
 
----
-
-## The Cognitae Library
-
-Each agent is associated with a curated reading list reflecting the framework's Triadic Core—one text for its guiding philosophy (Phronesis), one for its practical methodology (Techne), and one for its theoretical foundation (Episteme). The full library contains 66 selections with detailed analysis for each.
-
-**[► Explore The Cognitae Library](./BOOKSHELF.md)**
-
----
 
 ## Sanctum OS: The Frontend Manifestation
 
