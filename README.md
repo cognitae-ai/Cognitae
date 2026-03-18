@@ -27,7 +27,7 @@ The framework operates on a single principle: AI must serve as a transparent, ve
 
 Standard public LLMs are trained through RLHF (Reinforcement Learning from Human Feedback) to be aggressively agreeable. This creates documented failure modes: mission drift, hallucination presented with false confidence, therapeutic mimicry without clinical grounding, and parasocial manipulation where the model performs emotional intimacy to maximise engagement.
 
-Cognitae's response is architectural. Each agent is defined by 13 human-readable YAML modules that hardcode strict state, safety, and epistemological boundaries—making every constraint visible, auditable, and stress-testable by humans. The framework does not claim to solve alignment. It claims to make the constraints explicit and the failures visible, which is more than most current systems offer.
+Cognitae's response is architectural. Each agent is defined by human-readable YAML modules and system instructions that hardcode strict state, safety, and epistemological boundaries—making every constraint visible, auditable, and stress-testable by humans. The framework does not claim to solve alignment. It claims to make the constraints explicit and the failures visible, which is more than most current systems offer.
 
 ---
 
