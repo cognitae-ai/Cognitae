@@ -31,40 +31,6 @@ Cognitae's response is architectural. Each agent is defined by human-readable YA
 
 ---
 
-## Sanctum OS: The Frontend Manifestation
-
-While the core Cognitae architecture is focused on backend multi-agent routing, an AI system ultimately meets the human user through an interface. **Sanctum OS** is the frontend manifestation of this ecosystem—a local-first React MVP (1,319 lines) built to solve a specific HCI problem: every modern AI app is designed as an aggressive input/output machine that leaves nowhere for the user to simply *think*.
-
-Sanctum was built to act as a **Quiet Place**. It features a local, resizable sidebar where users can write and organise their thoughts before dropping them into the central reflection session only when they are ready.
-
-### Anatomical Prompt Architecture
-
-SanctumOS structures its AI Guide through four layers:
-
-- **SKELETON (4 Vows):** The non-negotiable structural commitments—including bounded sessions, engineered pacing, and a formal Shift In/Out protocol.
-- **ORGANS (Autonomous Systems):** Self-regulating behaviours the Guide executes without being asked.
-- **MUSCLES (5 Worked Examples):** Concrete wrong-move/right-move pairs showing exactly how the Guide should handle specific situations.
-- **SKIN (Voice Modes):** Tonal registers the Guide selects based on conversational context.
-
-### Four Named Anti-Patterns
-
-The prompt architecture defines four specific failure modes by name, with concrete examples and alternatives for each:
-
-- **The Unreliable Mirror** — Reflecting distorted or inflated versions of the user's statements back to them.
-- **The Philosophical Bully** — Using intellectual frameworks to override the user's lived experience.
-- **The Verdict** — Delivering conclusions disguised as questions.
-- **The Watermelon Report** — Reflecting a person's emerging insight back as confirmed truth, creating a feedback loop where the person performs discovery for the Guide's approval.
-
-🔗 **[View the Sanctum OS Directory](./SanctumOS/)**
-
-### Expositor Prototype
-
-Additionally, a discrete front-end UI environment—**Expositor**—has been developed specifically alongside the **Audit** class. Rather than a unified workspace for thought, Expositor serves as an analytical dashboard and verification workbench explicitly designed for managing interactions with the adversarial Audit engines (Locus, Threadglass, Vigil, Virel, Mathiatrix). It contains a built-in YAML manifest version controller, raw telemetry graphing, and precise response charting.
-
-🔗 **[View the Expositor Prototype Directory](./Cognitae_Audit/Expositor%20Prototype/)**
-
----
-
 ## How It Works: The 13-Module Architecture
 
 Each Cognitae is defined by a standardised set of 13 human-readable YAML and text files. Every module specifies a distinct aspect of the agent's architecture:
@@ -229,6 +195,40 @@ Enter your model string and key via the **key icon** in the top-left of the app.
 Each agent is associated with a curated reading list reflecting the framework's Triadic Core—one text for its guiding philosophy (Phronesis), one for its practical methodology (Techne), and one for its theoretical foundation (Episteme). The full library contains 66 selections with detailed analysis for each.
 
 **[► Explore The Cognitae Library](./BOOKSHELF.md)**
+
+---
+
+## Sanctum OS: The Frontend Manifestation
+
+While the core Cognitae architecture is focused on backend multi-agent routing, an AI system ultimately meets the human user through an interface. **Sanctum OS** is the frontend manifestation of this ecosystem—a local-first React MVP (1,319 lines) built to solve a specific HCI problem: every modern AI app is designed as an aggressive input/output machine that leaves nowhere for the user to simply *think*.
+
+Sanctum was built to act as a **Quiet Place**. It features a local, resizable sidebar where users can write and organise their thoughts before dropping them into the central reflection session only when they are ready.
+
+### Anatomical Prompt Architecture
+
+SanctumOS structures its AI Guide through four layers:
+
+- **SKELETON (4 Vows):** The non-negotiable structural commitments—including bounded sessions, engineered pacing, and a formal Shift In/Out protocol.
+- **ORGANS (Autonomous Systems):** Self-regulating behaviours the Guide executes without being asked.
+- **MUSCLES (5 Worked Examples):** Concrete wrong-move/right-move pairs showing exactly how the Guide should handle specific situations.
+- **SKIN (Voice Modes):** Tonal registers the Guide selects based on conversational context.
+
+### Four Named Anti-Patterns
+
+The prompt architecture defines four specific failure modes by name, with concrete examples and alternatives for each:
+
+- **The Unreliable Mirror** — Reflecting distorted or inflated versions of the user's statements back to them.
+- **The Philosophical Bully** — Using intellectual frameworks to override the user's lived experience.
+- **The Verdict** — Delivering conclusions disguised as questions.
+- **The Watermelon Report** — Reflecting a person's emerging insight back as confirmed truth, creating a feedback loop where the person performs discovery for the Guide's approval.
+
+🔗 **[View the Sanctum OS Directory](./SanctumOS/)**
+
+### Expositor Prototype
+
+Additionally, a discrete front-end UI environment—**Expositor**—has been developed specifically alongside the **Audit** class. Rather than a unified workspace for thought, Expositor serves as an analytical dashboard and verification workbench explicitly designed for managing interactions with the adversarial Audit engines (Locus, Threadglass, Vigil, Virel, Mathiatrix). It contains a built-in YAML manifest version controller, raw telemetry graphing, and precise response charting.
+
+🔗 **[View the Expositor Prototype Directory](./Cognitae_Audit/Expositor%20Prototype/)**
 
 ---
 
